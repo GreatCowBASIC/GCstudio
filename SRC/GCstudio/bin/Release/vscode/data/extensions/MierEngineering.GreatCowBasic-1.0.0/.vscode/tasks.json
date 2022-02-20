@@ -3,78 +3,7 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "Make HEX and Flash",
-            "type": "process",
-            "command": "C:\\GCB@Syn\\G+Stools\\G+Stool.exe",
-                "args": ["USEINI","${file}"],
-                    "options": {
-                        "cwd": "C:\\GCB@Syn\\G+Stools\\",
-                        
-                    },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-            
-
-        },
-
-        {
-            "label": "Make HEX",
-            "type": "process",
-            "command": "C:\\GCB@Syn\\G+Stools\\G+Stool.exe",
-                "args": ["HEX","${file}"],
-                    "options": {
-                        "cwd": "C:\\GCB@Syn\\G+Stools\\",
-                        
-                    },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-            
-
-        },
-
-        {
-            "label": "Make ASM",
-            "type": "process",
-            "command": "C:\\GCB@Syn\\G+Stools\\G+Stool.exe",
-                "args": ["asm","${file}"],
-                    "options": {
-                        "cwd": "C:\\GCB@Syn\\G+Stools\\",
-                        
-                    },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-            
-
-        },
-
-        {
-            "label": "GCB-Help",
-            "type": "process",
-            "command": "C:\\GCB@Syn\\G+Stools\\CallCHM.exe",
-                //"args": ["USEINI","${file}"],
-                    "options": {
-                        "cwd": "C:\\GCB@Syn\\G+Stools\\",
-                        
-                    },
-            "problemMatcher": [],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            }
-            
-
-        }
-
+       
         
     ]
 }
