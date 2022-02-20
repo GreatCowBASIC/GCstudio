@@ -1,0 +1,12 @@
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\bin\Debug\Vapour Framework CS.exe.config
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\bin\Debug\Vapour Framework CS.exe
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\bin\Debug\Vapour Framework CS.pdb
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.csprojAssemblyReference.cache
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour_Framework_CS.Loader.resources
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour_Framework_CS.Properties.Resources.resources
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.csproj.GenerateResource.cache
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.csproj.CoreCompileInputs.cache
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.exe
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.pdb
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\bin\Debug\DBSEngine.dll
+\\serverone\DevSRC\Vapour Framework SDK CS\Vapour Framework CS\obj\Debug\Vapour Framework CS.csproj.CopyComplete
