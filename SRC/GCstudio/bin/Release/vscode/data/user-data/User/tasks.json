@@ -194,6 +194,9 @@
             "label": "GCB-Help [F1]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
+            "args": [
+                "${selectedText}"
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\"
             },
