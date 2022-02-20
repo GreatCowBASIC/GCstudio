@@ -1,0 +1,124 @@
+{
+	"name": "gcb",
+	"displayName": "GC Studio Extension",
+	"description": "Provides GCB, FBasic and Assembler languaje support",
+	"version": "1.0.0",
+	"icon": "images/GCstudio.png",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/angelivan-spartan/GCstudio/tree/master/SRC/GCstudio/bin/Release/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0"
+	},
+	"publisher": "MierEngineering",
+	"categories": [
+		"Programming Languages"
+	],
+
+
+	"contributes": {
+		
+
+		"languages": [
+			{
+				"id": "GCB",
+				"aliases": [
+					"GCB",
+					"gcb"
+				],
+				"extensions": [
+					".gcb",
+					".h"
+				],
+				"configuration": "./GCBlanguage-configuration.json"
+			},
+
+			{
+				"id": "FBasic",
+				"aliases": [
+					"FBasic",
+					"fbasic"
+				],
+				"extensions": [
+					".bas",
+					".bi"
+				],
+				"configuration": "./FBasiclanguage-configuration.json"
+			},
+
+			{
+				"id": "ASM",
+				"aliases": [
+					"ASM",
+					"asm"
+				],
+				"extensions": [
+					".asm",
+					".inc",
+					".lst"
+				],
+				"configuration": "./ASMlanguage-configuration.json"
+			}
+
+		],
+		"grammars": [
+			{
+				"language": "GCB",
+				"scopeName": "source.GCBtm",
+				"path": "./syntaxes/GCB.tmLanguage.json"
+			},
+
+			{
+				"language": "GCB",
+				"scopeName": "source.GCB",
+				"path": "./syntaxes/GCB.Languaje.xml"
+			},
+
+
+			{
+				"language": "FBasic",
+				"scopeName": "source.FBasic",
+				"path": "./syntaxes/FBasic.tmLanguage.json"
+			},
+
+			{
+				"language": "ASM",
+				"scopeName": "source.ASM",
+				"path": "./syntaxes/ASM.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+			  "language": "GCB",
+			  "path": "./snippets/GCB.snippets.json"
+			}
+		],
+		"configurationDefaults": {
+
+			"editor.tokenColorCustomizations": {
+				"comments": "#6A9955",
+				"variables": "#569CD6",
+				"types": "#4EC9B0",
+				"strings": "#CE9178",
+				"numbers": "#c6c6c6",
+				"keywords": "#C586C0",
+				"functions": "#C586C0"
+			}
+
+
+			
+		}
+
+
+	},
+
+
+	
+
+	"__metadata": {
+		
+		"publisherDisplayName": "Evan R. Venn, Angel Mier"
+		
+	}
+}

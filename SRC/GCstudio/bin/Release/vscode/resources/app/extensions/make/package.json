@@ -1,0 +1,62 @@
+{
+	"name": "make",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vscode",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"scripts": {
+		"update-grammar": "node ../node_modules/vscode-grammar-updater/bin fadeevab/make.tmbundle Syntaxes/Makefile.plist ./syntaxes/make.tmLanguage.json"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "makefile",
+				"aliases": [
+					"Makefile",
+					"makefile"
+				],
+				"extensions": [
+					".mak",
+					".mk"
+				],
+				"filenames": [
+					"Makefile",
+					"makefile",
+					"GNUmakefile",
+					"OCamlMakefile"
+				],
+				"firstLine": "^#!\\s*/usr/bin/make",
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "makefile",
+				"scopeName": "source.makefile",
+				"path": "./syntaxes/make.tmLanguage.json",
+				"tokenTypes": {
+					"string.interpolated": "other"
+				}
+			}
+		],
+		"configurationDefaults": {
+			"[makefile]": {
+				"editor.insertSpaces": false
+			}
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	},
+	"__metadata": {
+		"id": "5ee86569-8c5c-4c9d-bd4f-b2144ff5bc0e",
+		"publisherDisplayName": null,
+		"publisherId": "9156ae8e-c2fd-4dab-9232-54bbce5b1621",
+		"isPreReleaseVersion": false
+	}
+}

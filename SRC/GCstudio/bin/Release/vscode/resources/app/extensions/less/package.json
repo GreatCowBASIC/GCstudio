@@ -1,0 +1,66 @@
+{
+	"name": "less",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vscode",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"scripts": {
+		"update-grammar": "node ../node_modules/vscode-grammar-updater/bin atom/language-less grammars/less.cson ./syntaxes/less.tmLanguage.json"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "less",
+				"aliases": [
+					"Less",
+					"less"
+				],
+				"extensions": [
+					".less"
+				],
+				"mimetypes": [
+					"text/x-less",
+					"text/less"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "less",
+				"scopeName": "source.css.less",
+				"path": "./syntaxes/less.tmLanguage.json"
+			}
+		],
+		"problemMatchers": [
+			{
+				"name": "lessc",
+				"label": "Lessc compiler",
+				"owner": "lessc",
+				"source": "less",
+				"fileLocation": "absolute",
+				"pattern": {
+					"regexp": "(.*)\\sin\\s(.*)\\son line\\s(\\d+),\\scolumn\\s(\\d+)",
+					"message": 1,
+					"file": 2,
+					"line": 3,
+					"column": 4
+				}
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	},
+	"__metadata": {
+		"id": "bca2eb65-17f6-4b65-96f5-a1bde17aecf8",
+		"publisherDisplayName": null,
+		"publisherId": "9156ae8e-c2fd-4dab-9232-54bbce5b1621",
+		"isPreReleaseVersion": false
+	}
+}

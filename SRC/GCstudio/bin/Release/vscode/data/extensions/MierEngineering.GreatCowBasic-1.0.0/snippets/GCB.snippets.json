@@ -1,0 +1,162 @@
+{
+    "for ... next": {
+        "prefix": "for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next"
+    },
+    "for ... next step": {
+        "prefix": "for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step ${StepValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step"
+    },
+    "for ... next step negative": {
+        "prefix": "for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step -StepValue",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step negative"
+    },
+    "do ... loop": {
+        "prefix": "do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... exit ... loop": {
+        "prefix": "do",
+        "body": [
+			"do",
+			"\t$0",
+			"\texit",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... loop while": {
+        "prefix": "do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop while ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop while"
+    },
+    "do ... loop until": {
+        "prefix": "do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop until ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop until"
+    },
+    "do while ... loop": {
+        "prefix": "do while",
+        "body": [
+			"do while ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do while ... loop"
+    },
+    "do until ... loop": {
+        "prefix": "do until",
+        "body": [
+			"do until ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do until ... loop"
+    },
+
+    "select case": {
+        "prefix": "select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case"
+    },
+    "select case comparison": {
+        "prefix": "select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${Comparison} ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case comparison"
+    },
+
+   "if then": {
+        "prefix": "if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then"
+    },
+    "if then else": {
+        "prefix": "if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else"
+    },
+    "if then else if": {
+        "prefix": "if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else if"
+	},
+	"if then goto": {
+        "prefix": "if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then goto ${label}"
+		],
+		"description": "if then goto"
+	},
+     "if then gosub": {
+        "prefix": "if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then gosub ${label}"
+		],
+		"description": "if then gosub"
+    }
+}

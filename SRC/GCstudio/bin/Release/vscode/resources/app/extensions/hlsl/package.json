@@ -1,0 +1,53 @@
+{
+	"name": "hlsl",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vscode",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"scripts": {
+		"update-grammar": "node ../node_modules/vscode-grammar-updater/bin tgjones/shaders-tmLanguage grammars/hlsl.json ./syntaxes/hlsl.tmLanguage.json"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "hlsl",
+				"extensions": [
+					".hlsl",
+					".hlsli",
+					".fx",
+					".fxh",
+					".vsh",
+					".psh",
+					".cginc",
+					".compute"
+				],
+				"aliases": [
+					"HLSL",
+					"hlsl"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "hlsl",
+				"path": "./syntaxes/hlsl.tmLanguage.json",
+				"scopeName": "source.hlsl"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	},
+	"__metadata": {
+		"id": "a57750a7-b75a-456d-b679-f5e5279138c8",
+		"publisherDisplayName": null,
+		"publisherId": "9156ae8e-c2fd-4dab-9232-54bbce5b1621",
+		"isPreReleaseVersion": false
+	}
+}

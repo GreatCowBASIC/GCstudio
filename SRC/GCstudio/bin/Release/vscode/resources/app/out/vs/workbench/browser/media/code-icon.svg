@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="500px" height="500px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 500 500"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil3 {fill:url(#id0)}
+    .fil6 {fill:url(#id1)}
+    .fil5 {fill:url(#id2)}
+    .fil4 {fill:url(#id3)}
+    .fil2 {fill:url(#id4)}
+    .fil1 {fill:url(#id5);fill-rule:nonzero}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="2.51" y1="179.58" x2="134.81" y2="179.58">
+   <stop offset="0" style="stop-opacity:1; stop-color:#55B4F4"/>
+   <stop offset="0.509804" style="stop-opacity:1; stop-color:#4CA6E3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#4397D2"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="244.25" y1="263.87" x2="457.37" y2="263.87">
+   <stop offset="0" style="stop-opacity:1; stop-color:#1270AF"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#3997D3"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="116.28" y1="277.29" x2="292.13" y2="277.29">
+   <stop offset="0" style="stop-opacity:1; stop-color:#848688"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#606062"/>
+  </linearGradient>
+  <linearGradient id="id3" gradientUnits="userSpaceOnUse" xlink:href="#id2" x1="114.75" y1="179.39" x2="337.1" y2="179.39">
+  </linearGradient>
+  <linearGradient id="id4" gradientUnits="userSpaceOnUse" xlink:href="#id2" x1="461.33" y1="211.03" x2="498.96" y2="211.03">
+  </linearGradient>
+  <linearGradient id="id5" gradientUnits="userSpaceOnUse" xlink:href="#id1" x1="44.96" y1="101.15" x2="81.34" y2="83.31">
+  </linearGradient>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" width="500" height="500"/>
+  <path class="fil1" d="M28.66 67.9l68.97 48.66 -43.27 3.75 -25.7 -52.41zm34.49 24.33m12.84 26.21m-34.48 -24.34"/>
+  <polygon class="fil2" points="461.33,155.47 466.58,234.22 498.96,266.6 "/>
+  <polygon class="fil3" points="100.05,125.99 134.81,233.17 14.39,231.6 2.51,194.22 57.5,125.99 "/>
+  <polygon class="fil4" points="337.1,277.06 212.48,81.71 114.75,125.31 "/>
+  <polygon class="fil5" points="116.28,137.51 199.08,417.06 292.13,258.24 "/>
+  <polygon class="fil6" points="244.25,113.94 433.31,413.81 457.37,132.62 "/>
+ </g>
+</svg>

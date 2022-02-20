@@ -1,0 +1,51 @@
+{
+	"name": "clojure",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vscode",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"scripts": {
+		"update-grammar": "node ../node_modules/vscode-grammar-updater/bin atom/language-clojure grammars/clojure.cson ./syntaxes/clojure.tmLanguage.json"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "clojure",
+				"aliases": [
+					"Clojure",
+					"clojure"
+				],
+				"extensions": [
+					".clj",
+					".cljs",
+					".cljc",
+					".cljx",
+					".clojure",
+					".edn"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "clojure",
+				"scopeName": "source.clojure",
+				"path": "./syntaxes/clojure.tmLanguage.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	},
+	"__metadata": {
+		"id": "64023ab7-80da-49bf-9217-c0a2e8a3dcd2",
+		"publisherDisplayName": null,
+		"publisherId": "9156ae8e-c2fd-4dab-9232-54bbce5b1621",
+		"isPreReleaseVersion": false
+	}
+}

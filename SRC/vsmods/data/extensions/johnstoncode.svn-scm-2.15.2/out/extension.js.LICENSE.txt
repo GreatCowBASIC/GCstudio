@@ -1,0 +1,9 @@
+/*!
+ * Tmp
+ *
+ * Copyright (c) 2011-2017 KARASZI Istvan <github@spam.raszi.hu>
+ *
+ * MIT Licensed
+ */
+
+/*! http://mths.be/fromcodepoint v0.1.0 by @mathias */

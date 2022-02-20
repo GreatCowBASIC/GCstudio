@@ -1,0 +1,117 @@
+{
+  "nameShort": "GCcode",
+  "nameLong": "GC Code",
+  "applicationName": "code",
+  "dataFolderName": ".vscode-oss",
+  "win32MutexName": "GCcode",
+  "licenseName": "MIT",
+  "licenseUrl": "https://github.com/angelivan-spartan/GCstudio/blob/master/LicenseGCcode/LICENSE",
+  "serverGreeting": [],
+  "serverLicense": [],
+  "serverLicensePrompt": "",
+  "serverApplicationName": "code-server-oss",
+  "serverDataFolderName": ".vscode-server-oss",
+  "win32DirName": "VSCode",
+  "win32NameVersion": "GCcode",
+  "win32RegValueName": "GCcode",
+  "win32AppId": "{{E34003BB-9E10-4501-8C11-BE3FAA83F23F}",
+  "win32x64AppId": "{{D77B7E06-80BA-4137-BCF4-654B95CCEBC5}",
+  "win32arm64AppId": "{{D1ACE434-89C5-48D1-88D3-E2991DF85475}",
+  "win32UserAppId": "{{C6065F05-9603-4FC4-8101-B9781A25D88E}",
+  "win32x64UserAppId": "{{2E1F05D1-C245-4562-81EE-28188DB6FD17}",
+  "win32arm64UserAppId": "{{3AEBF0C8-F733-4AD4-BADE-FDB816D53D7B}",
+  "win32AppUserModelId": "Microsoft.VSCodium",
+  "win32ShellNameShort": "Code",
+  "darwinBundleIdentifier": "com.visualstudio.code.oss",
+  "linuxIconName": "GCcode",
+  "licenseFileName": "LICENSE.txt",
+  "reportIssueUrl": "",
+  "urlProtocol": "vscodium",
+  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-webview.net/insider/d372f9187401bd145a0a6e15ba369e2d82d02005/out/vs/workbench/contrib/webview/browser/pre/",
+  "extensionAllowedProposedApi": ["ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "GitHub.remotehub", "GitHub.remotehub-insiders", "ms-vscode.cpptools", "ms-azuretools.vscode-docker", "visualstudioexptteam.vscodeintellicode", "GitHub.codespaces", "GitHub.vscode-pull-request-github-insiders", "GitHub.vscode-pull-request-github", "Microsoft.vscode-nmake-tools", "ms-ai-tools.notebook-renderers", "ms-dotnettools.dotnet-interactive-vscode", "ms-python.gather", "ms-python.python", "ms-toolsai.jupyter", "ms-toolsai.vscode-ai", "ms-toolsai.vscode-ai-remote", "ms-vscode-remote.remote-containers-nightly", "ms-vscode-remote.remote-containers", "ms-vscode-remote.remote-ssh-edit-nightly", "ms-vscode-remote.remote-ssh-edit", "ms-vscode-remote.remote-ssh-nightly", "ms-vscode-remote.remote-ssh", "ms-vscode-remote.remote-wsl-nightly", "ms-vscode-remote.remote-wsl", "ms-vscode-remote.remote-wsl-recommender", "ms-vscode-remote.vscode-remote-extensionpack-nightly", "ms-vscode-remote.vscode-remote-extensionpack", "ms-vscode.azure-account", "ms-vscode.azure-sphere-tools-ui", "ms-vscode.azure-sphere-tools", "ms-vscode.github-browser", "ms-vscode.github-richnav", "ms-vscode.js-debug-nightly", "ms-vscode.js-debug", "ms-vscode.lsif-browser", "ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "ms-vscode.vscode-selfhost-test-provider", "ms-vsliveshare.cloudenv-explorer", "ms-vsliveshare.cloudenv", "ms-vsliveshare.vsliveshare", "ms-vsonline.vsonline", "dbaeumer.vscode-eslint"],
+  "builtInExtensions": [{
+    "name": "ms-vscode.references-view",
+    "version": "0.0.81",
+    "repo": "https://github.com/microsoft/vscode-references-view",
+    "metadata": {
+      "id": "dc489f46-520d-4556-ae85-1f9eab3c412d",
+      "publisherId": {
+        "publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+        "publisherName": "ms-vscode",
+        "displayName": "Microsoft",
+        "flags": "verified"
+      },
+      "publisherDisplayName": "Microsoft"
+    }
+  }, {
+    "name": "ms-vscode.js-debug-companion",
+    "version": "1.0.15",
+    "repo": "https://github.com/microsoft/vscode-js-debug-companion",
+    "metadata": {
+      "id": "99cb0b7f-7354-4278-b8da-6cc79972169d",
+      "publisherId": {
+        "publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+        "publisherName": "ms-vscode",
+        "displayName": "Microsoft",
+        "flags": "verified"
+      },
+      "publisherDisplayName": "Microsoft"
+    }
+  }, {
+    "name": "ms-vscode.js-debug",
+    "version": "1.64.2",
+    "repo": "https://github.com/microsoft/vscode-js-debug",
+    "metadata": {
+      "id": "25629058-ddac-4e17-abba-74678e126c5d",
+      "publisherId": {
+        "publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+        "publisherName": "ms-vscode",
+        "displayName": "Microsoft",
+        "flags": "verified"
+      },
+      "publisherDisplayName": "Microsoft"
+    }
+  }, {
+    "name": "ms-vscode.vscode-js-profile-table",
+    "version": "0.0.18",
+    "repo": "https://github.com/microsoft/vscode-js-profile-visualizer",
+    "metadata": {
+      "id": "7e52b41b-71ad-457b-ab7e-0620f1fc4feb",
+      "publisherId": {
+        "publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+        "publisherName": "ms-vscode",
+        "displayName": "Microsoft",
+        "flags": "verified"
+      },
+      "publisherDisplayName": "Microsoft"
+    }
+  }],
+  "checksumFailMoreInfoUrl": "https://go.microsoft.com/fwlink/?LinkId=828886",
+  "tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118",
+  "twitterUrl": "https://go.microsoft.com/fwlink/?LinkID=533687",
+  "requestFeatureUrl": "",
+  "documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484#vscode",
+  "introductoryVideosUrl": "https://go.microsoft.com/fwlink/?linkid=832146",
+  "extensionAllowedBadgeProviders": ["api.bintray.com", "api.travis-ci.com", "api.travis-ci.org", "app.fossa.io", "badge.fury.io", "badge.waffle.io", "badgen.net", "badges.frapsoft.com", "badges.gitter.im", "badges.greenkeeper.io", "cdn.travis-ci.com", "cdn.travis-ci.org", "ci.appveyor.com", "circleci.com", "cla.opensource.microsoft.com", "codacy.com", "codeclimate.com", "codecov.io", "coveralls.io", "david-dm.org", "deepscan.io", "dev.azure.com", "flat.badgen.net", "gemnasium.com", "githost.io", "gitlab.com", "godoc.org", "goreportcard.com", "img.shields.io", "isitmaintained.com", "marketplace.visualstudio.com", "nodesecurity.io", "opencollective.com", "snyk.io", "travis-ci.com", "travis-ci.org", "visualstudio.com", "vsmarketplacebadge.apphb.com", "www.bithound.io", "www.versioneye.com"],
+  "updateUrl": "",
+  "releaseNotesUrl": "https://go.microsoft.com/fwlink/?LinkID=533483#vscode",
+  "keyboardShortcutsUrlMac": "https://go.microsoft.com/fwlink/?linkid=832143",
+  "keyboardShortcutsUrlLinux": "https://go.microsoft.com/fwlink/?linkid=832144",
+  "keyboardShortcutsUrlWin": "https://go.microsoft.com/fwlink/?linkid=832145",
+  "quality": "stable",
+  "extensionsGallery": {
+    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+    "itemUrl": "https://open-vsx.org/vscode/item"
+  },
+  "linkProtectionTrustedDomains": ["https://open-vsx.org"],
+  "commit": "5554b12acf27056905806867f251c859323ff7e9",
+  "date": "2022-02-04T00:30:43.476Z",
+  "checksums": {
+    "vs/base/parts/sandbox/electron-browser/preload.js": "TgZHN8Ih4P86pSkTrqFRzA",
+    "vs/workbench/workbench.desktop.main.js": "uG6DuEKOD3FYrc0r/jtB8w",
+    "vs/workbench/workbench.desktop.main.css": "60gjGzORgdStEH6Qd1UexA",
+    "vs/workbench/services/extensions/node/extensionHostProcess.js": "pwt1ELTiAWFt+S0pdleVxQ",
+    "vs/code/electron-browser/workbench/workbench.html": "l8jPIdODqyMeav5sZa3tNQ",
+    "vs/code/electron-browser/workbench/workbench.js": "PLXnwXBPVizebHZfT/yrlQ"
+  }
+}

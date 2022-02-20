@@ -1,0 +1,67 @@
+{
+	"name": "asm",
+	"displayName": "PIC18 Assembler syntax Highlighter",
+	"description": "PIC18 Controllers Assembler",
+	"version": "1.0.8",
+	"icon": "asm.png",
+	"engines": {
+		"vscode": "^1.61.0"
+	},
+	"license": "GPlv3",
+	"publisher": "Kabak",
+	"keywords": [
+		"PIC",
+		"pic18",
+		"pic16",
+		"asm",
+		"ASM",
+		"pic assembly",
+		"pic",
+		"assembly",
+		"pic 18",
+		"pic 16",
+		"PIC18",
+		"PIC16",
+		"microchip",
+		"MPASM",
+		"mpasm",
+		"mplab",
+		"mplabx",
+		"assembler",
+		"pic assembler"
+	],
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "asm",
+				"aliases": [
+					"PIC18 Assembler",
+					"asm"
+				],
+				"extensions": [
+					".asm",
+					".inc",
+					".lst"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "asm",
+				"scopeName": "source.asm",
+				"path": "./syntaxes/asm.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f368e815-5b15-4358-9762-5f18761aee99",
+		"publisherId": "955d0f60-01ee-4bb9-8c9a-0988ee8d9ec3",
+		"publisherDisplayName": "Alexei Kobak",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1643728072177
+	}
+}

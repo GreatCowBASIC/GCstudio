@@ -1,0 +1,57 @@
+{
+	"name": "gcb",
+	"displayName": "GCB",
+	"description": "Provides GCB languaje support",
+	"version": "1.0.0",
+	"icon": "images/cow.png",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MierEngineering/vscode-GCB"
+	},
+	"publisher": "MierEngineering",
+	"categories": [
+		"Programming Languages"
+	],
+
+
+	"contributes": {
+		
+
+		"languages": [
+			{
+				"id": "GCB",
+				"aliases": [
+					"GCB",
+					"gcb"
+				],
+				"extensions": [
+					".gcb",
+					".h",
+					".bas",
+					".bi"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "GCB",
+				"scopeName": "source.GCB",
+				"path": "./syntaxes/GCB.tmLanguage.json"
+			}
+		]
+	},
+
+
+	
+
+	"__metadata": {
+		"id": "e73933a6-da39-4ad5-89fd-84430bdb6b0b",
+		"publisherId": "9648768c-4ac1-4b49-ad53-aa35ec2ad540",
+		"publisherDisplayName": "MierEngineering",
+		"installedTimestamp": 1635584088630
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"name": "bat",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vscode",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"scripts": {
+		"update-grammar": "node ../node_modules/vscode-grammar-updater/bin mmims/language-batchfile grammars/batchfile.cson ./syntaxes/batchfile.tmLanguage.json"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "bat",
+				"extensions": [
+					".bat",
+					".cmd"
+				],
+				"aliases": [
+					"Batch",
+					"bat"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "bat",
+				"scopeName": "source.batchfile",
+				"path": "./syntaxes/batchfile.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "bat",
+				"path": "./snippets/batchfile.code-snippets"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	},
+	"__metadata": {
+		"id": "bcc65744-5d6a-49db-8814-d9c13563fd7a",
+		"publisherDisplayName": null,
+		"publisherId": "9156ae8e-c2fd-4dab-9232-54bbce5b1621",
+		"isPreReleaseVersion": false
+	}
+}
