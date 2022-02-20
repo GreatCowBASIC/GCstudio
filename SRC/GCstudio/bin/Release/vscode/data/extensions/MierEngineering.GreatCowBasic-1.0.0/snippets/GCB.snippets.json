@@ -1,6 +1,6 @@
 {
     "for ... next": {
-        "prefix": "for",
+        "prefix": "__for",
         "body": [
 			"for ${LoopVariable} = ${StartValue} to ${EndValue}",
 			"\t$0",
@@ -9,7 +9,7 @@
 		"description": "for ... next"
     },
     "for ... next step": {
-        "prefix": "for",
+        "prefix": "__for",
         "body": [
 			"for ${LoopVariable} = ${StartValue} to ${EndValue} step ${StepValue}",
 			"\t$0",
@@ -18,7 +18,7 @@
 		"description": "for ... next step"
     },
     "for ... next step negative": {
-        "prefix": "for",
+        "prefix": "__for",
         "body": [
 			"for ${LoopVariable} = ${StartValue} to ${EndValue} step -StepValue",
 			"\t$0",
@@ -27,7 +27,7 @@
 		"description": "for ... next step negative"
     },
     "do ... loop": {
-        "prefix": "do",
+        "prefix": "__do",
         "body": [
 			"do",
 			"\t$0",
@@ -36,7 +36,7 @@
 		"description": "do ... loop"
     },
     "do ... exit ... loop": {
-        "prefix": "do",
+        "prefix": "__do",
         "body": [
 			"do",
 			"\t$0",
@@ -47,7 +47,7 @@
 		"description": "do ... loop"
     },
     "do ... loop while": {
-        "prefix": "do",
+        "prefix": "__do",
         "body": [
 			"do",
 			"\t$0",
@@ -56,7 +56,7 @@
 		"description": "do ... loop while"
     },
     "do ... loop until": {
-        "prefix": "do",
+        "prefix": "__do",
         "body": [
 			"do",
 			"\t$0",
@@ -65,7 +65,7 @@
 		"description": "do ... loop until"
     },
     "do while ... loop": {
-        "prefix": "do while",
+        "prefix": "__do while",
         "body": [
 			"do while ${Variable} ${Comparison} ${VariableOrNumber}",
 			"\t$0",
@@ -74,7 +74,7 @@
 		"description": "do while ... loop"
     },
     "do until ... loop": {
-        "prefix": "do until",
+        "prefix": "__do until",
         "body": [
 			"do until ${Variable} ${Comparison} ${VariableOrNumber}",
 			"\t$0",
@@ -84,7 +84,7 @@
     },
 
     "select case": {
-        "prefix": "select case",
+        "prefix": "__select case",
         "body": [
 			"select case ${Variable}",
 			"\tcase ${VariableOrNumber}",
@@ -98,7 +98,7 @@
 		"description": "select case"
     },
     "select case comparison": {
-        "prefix": "select case",
+        "prefix": "__select case",
         "body": [
 			"select case ${Variable}",
 			"\tcase ${Comparison} ${VariableOrNumber}",
@@ -113,7 +113,7 @@
     },
 
    "if then": {
-        "prefix": "if",
+        "prefix": "__if",
         "body": [
 			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
 			"\t$0",
@@ -122,7 +122,7 @@
 		"description": "if then"
     },
     "if then else": {
-        "prefix": "if",
+        "prefix": "__if",
         "body": [
 			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
 			"\t$0",
@@ -133,7 +133,7 @@
 		"description": "if then else"
     },
     "if then else if": {
-        "prefix": "if",
+        "prefix": "__if",
         "body": [
 			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
 			"\t$0",
@@ -146,17 +146,105 @@
 		"description": "if then else if"
 	},
 	"if then goto": {
-        "prefix": "if",
+        "prefix": "__if",
         "body": [
 			"if ${Variable} ${Comparison} ${VariableOrNumber} then goto ${label}"
 		],
 		"description": "if then goto"
 	},
      "if then gosub": {
-        "prefix": "if",
+        "prefix": "__if",
         "body": [
 			"if ${Variable} ${Comparison} ${VariableOrNumber} then gosub ${label}"
 		],
 		"description": "if then gosub"
-    }
+    },
+	"Add chip basics": {
+	"prefix": "__chip",
+	"body": [
+	 		"#CHIP ${1:chipname}",
+			 "#OPTION EXPLICIT",
+			 ""
+	 	],
+	 	"description": "Enter chip and frequency"
+	 },
+
+	 "Add interrupt handler": {
+		"prefix": "__oninterrupt",
+		"body": [
+				 "ON INTERRUPT $1 CALL $2",
+				 ""
+			 ],
+			 "description": "Enter chip and frequency"
+		 },
+	"Add sub routine": {
+		"prefix": "__sub",
+		"body": [
+					"Sub ${1:SubroutineName} (  in ${2:passedvariable} as ${3:byte}  )",
+					"",
+					"",
+					"End Sub",
+					""
+
+				],
+				"description": "Create outline sub routine"
+		},
+	"Add Pulseout": {
+		"prefix": "__pulseout",
+		"body": [
+					"PulseOut ${1:Port.Pin}, ${2:delay} ms",
+					""
+
+				],
+				"description": "Add pulseout instruction"
+		},
+	"Add Option Explicit": {
+		"prefix": "__option",
+		"body": [
+					"#OPTON EXPLICIT",
+					""
+
+				],
+				"description": "Add Option Explicit"
+		},
+		"Add Header": {
+			"prefix": "__header",
+			"body": [
+
+				"'''A demonstration program for GCGB and GCB.",
+				"'''--------------------------------------------------------------------------------",
+				"'''This program ${1:add description here}",
+				"'''",
+				"'''",
+				"'''@author    ${2:name}   ",
+				"'''@license   GPL",
+				"'''@version   ${3:version}   ",
+				"'''@date      $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+				"'''********************************************************************************",
+				""
+					],
+					"description": "Add Header"
+			},
+			"Add Wait": {
+				"prefix": "__wait",
+				"body": [
+							"Wait ${1:delay} ms",
+							""
+		
+						],
+						"description": "Add millisecond delay"
+			},
+
+			"Add USART support": {
+				"prefix": "__usart setup",
+				"body": [
+							"#DEFINE USART_BAUD_RATE ${1:9600}",
+							"#DEFINE USART_TX_BLOCKING",
+							"#DEFINE USART_DELAY OFF",
+							""
+						],
+						"description": "Add USART1 support"
+			}
+
+
 }
