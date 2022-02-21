@@ -88,7 +88,19 @@ namespace GC_Studio
             ver.Text = AppVer.ToString();
 
             LoadConfig();
-            LoadRecent();
+
+            //first run
+            if (File.Exists("mrf.dat") == false)
+            {
+                LoadRecent();
+                LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\Demos\\first-start-sample.gcb" + "\"", "GCcode");
+            }
+            else
+            {
+                LoadRecent();
+            }
+
+            
 
             comboupdate.Text = ReleaseChanel;
             comboide.Text = IDE;

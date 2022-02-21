@@ -29,10 +29,7 @@
                     ]
                 }
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "clear": true,
                 "revealProblems": "onProblem"
@@ -62,9 +59,7 @@
                             "regexp": "^(.*)\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
                         }
                     ]
-
-                    
-                },
+                }
             ],
             "group": {
                 "kind": "build",
@@ -114,7 +109,7 @@
             "label": "Open ASM [Shift+F7]",
             "type": "shell",
             "command": "${execPath}",
-            "args": [ 
+            "args": [
                 "-r",
                 "${fileDirname}\\${fileBasenameNoExtension}.ASM"
             ],
@@ -147,13 +142,12 @@
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
-            
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "presentation": {
-                "clear": true,               
+                "clear": true
             }
         },
         {
@@ -195,14 +189,14 @@
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
             "args": [
-                "${selectedText}"
+                "${command:extension.commandvariable.selectedText}"
             ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\"
             },
             "problemMatcher": [],
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
             "presentation": {
