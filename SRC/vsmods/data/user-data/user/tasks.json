@@ -29,10 +29,7 @@
                     ]
                 }
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "clear": true,
                 "revealProblems": "onProblem"
@@ -62,14 +59,9 @@
                             "regexp": "^(.*)\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
                         }
                     ]
-
-                    
-                },
+                }
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "clear": true,
                 "revealProblems": "onProblem"
@@ -114,7 +106,7 @@
             "label": "Open ASM [Shift+F7]",
             "type": "shell",
             "command": "${execPath}",
-            "args": [ 
+            "args": [
                 "-r",
                 "${fileDirname}\\${fileBasenameNoExtension}.ASM"
             ],
@@ -147,17 +139,16 @@
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
-            
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "presentation": {
-                "clear": true,               
+                "clear": true
             }
         },
         {
-            "label": "Push Library to Include Dir",
+            "label": "Push Library to Include Dir [F8]",
             "type": "shell",
             "command": "Copy-Item '${file}' '${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\Include\\'",
             "options": {
@@ -194,12 +185,15 @@
             "label": "GCB-Help [F1]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
+            "args": [
+                "${command:extension.commandvariable.selectedText}"
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\"
             },
             "problemMatcher": [],
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
             "presentation": {

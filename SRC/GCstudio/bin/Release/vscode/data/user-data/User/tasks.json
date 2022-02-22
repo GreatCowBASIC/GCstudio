@@ -61,10 +61,7 @@
                     ]
                 }
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "clear": true,
                 "revealProblems": "onProblem"
@@ -151,7 +148,7 @@
             }
         },
         {
-            "label": "Push Library to Include Dir",
+            "label": "Push Library to Include Dir [F8]",
             "type": "shell",
             "command": "Copy-Item '${file}' '${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\Include\\'",
             "options": {

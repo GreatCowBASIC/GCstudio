@@ -91,6 +91,12 @@
         "when": "resourceExtname == .gcb"
     },
     {
+        "key": "f8",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Push Library to Include Dir [F8]",
+        "when": "resourceExtname == .h"
+    },
+    {
         "key": "f9",
         "command": "workbench.action.tasks.runTask",
         "args": "Serial Terminal [F9]",
