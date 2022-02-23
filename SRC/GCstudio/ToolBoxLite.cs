@@ -527,9 +527,8 @@ namespace GC_Studio
 
         private void button7_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = BugTracking;
-            Process.Start(p);
+            Process.Start("explorer", BugTracking);
+         
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
