@@ -2,6 +2,7 @@
 cd GCstudio
 cd bin
 cd release
+cd net6.0-windows
 del *.pdb
 del *.config
 del cvs.nfo
@@ -34,5 +35,5 @@ cd ..
 cd ..
 cd ..
 cd ..
-Xcopy /E /I /Y .\release "C:\GCB@Syn"
+Xcopy /E /I /Y .\net6.0-windows "C:\GCB@Syn"
 pause

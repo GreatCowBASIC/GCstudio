@@ -66,7 +66,7 @@ namespace Update
                 p.FileName = "minidump.exe";
                 p.Arguments = "x Update.pkg -y";
                 p.WindowStyle = ProcessWindowStyle.Hidden;
-                
+                p.CreateNoWindow = true;
                 Process x = Process.Start(p);
                 x.WaitForExit();
             }

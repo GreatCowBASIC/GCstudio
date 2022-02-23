@@ -69,11 +69,7 @@ namespace GC_Studio
         private void Main_Load(object sender, EventArgs e)
         {
             MaxBounds();
-            // Make the GUI ignore the DPI setting
-            // Font = new Font(Font.Name, 8.25f * 96f / CreateGraphics().DpiX, Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
-            // this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
+ 
             try
             {
                 dbs.LoadRead("CurrentVersion.nfo");

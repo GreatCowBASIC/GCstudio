@@ -41,8 +41,6 @@ namespace GC_Studio
         /// </summary>
         public Loader()
         {
-            // Make the GUI ignore the DPI setting
-            // Font = new Font(Font.Name, 8.25f * 96f / CreateGraphics().DpiX, Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
 
             InitializeComponent();
             this.Shown += new System.EventHandler(this.Form_Shown);
