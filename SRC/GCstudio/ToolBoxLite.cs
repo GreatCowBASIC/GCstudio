@@ -571,6 +571,7 @@ namespace GC_Studio
                 p.FileName = "minidump.exe";
                 p.Arguments = "x \"GCBprog.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
                 p.WindowStyle = ProcessWindowStyle.Hidden;
+                p.CreateNoWindow = true;
                 Process x = Process.Start(p);
                 x.WaitForExit();
             }
@@ -623,7 +624,8 @@ namespace GC_Studio
             p.FileName = "minidump.exe";
             p.Arguments = "x \"GCBLib.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
             p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process x = Process.Start(p);
+                p.CreateNoWindow = true;
+                Process x = Process.Start(p);
             x.WaitForExit();
             }
             catch
@@ -673,7 +675,8 @@ namespace GC_Studio
             p.FileName = "minidump.exe";
             p.Arguments = "x \"FBasicProg.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
             p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process x = Process.Start(p);
+                p.CreateNoWindow = true;
+                Process x = Process.Start(p);
             x.WaitForExit();
             }
             catch
