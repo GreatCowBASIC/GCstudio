@@ -21,11 +21,15 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 
 
 ### OS Support
-Win7 SP2  x86/x64 to Win11 x64.
+Win7 SP1**  x86/x64 to Win11 x64.
+
+**Service Pack 1 whit [KB4474419](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4474419), [KB2999226](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2999226).
 
 ### Prerequisites:
 [.Net 6.0 - x64](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.2-windows-x64-installer)
-or
+
+or (acording to your OS)
+
 [.Net 6.0 - x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.2-windows-x86-installer)
 
 [optional] [GIT](https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-64-bit.exe)
