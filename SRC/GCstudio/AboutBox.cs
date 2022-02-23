@@ -15,8 +15,6 @@ namespace GC_Studio
         DBS dbs=new DBS();
         public AboutBox()
         {
-            // Make the GUI ignore the DPI setting
-            Font = new Font(Font.Name, 8.25f * 96f / CreateGraphics().DpiX, Font.Style, Font.Unit, Font.GdiCharSet, Font.GdiVerticalFont);
 
             InitializeComponent();
             
