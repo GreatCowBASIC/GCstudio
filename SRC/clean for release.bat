@@ -2,6 +2,7 @@
 cd GCstudio
 cd bin
 cd release
+cd net6.0-windows
 del *.pdb
 del *.config
 del cvs.nfo

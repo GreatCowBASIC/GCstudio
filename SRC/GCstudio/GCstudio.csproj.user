@@ -10,4 +10,15 @@
     <FallbackCulture>es-ES</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Loader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ToolBoxLite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
