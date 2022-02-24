@@ -65,16 +65,9 @@
 		"grammars": [
 			{
 				"language": "GCB",
-				"scopeName": "source.GCBtm",
+				"scopeName": "source.GCB",
 				"path": "./syntaxes/GCB.tmLanguage.json"
 			},
-
-			{
-				"language": "GCB",
-				"scopeName": "source.GCB",
-				"path": "./syntaxes/GCB.Languaje.xml"
-			},
-
 
 			{
 				"language": "FBasic",
@@ -96,15 +89,7 @@
 		],
 		"configurationDefaults": {
 
-			"editor.tokenColorCustomizations": {
-				"comments": "#6A9955",
-				"variables": "#569CD6",
-				"types": "#4EC9B0",
-				"strings": "#CE9178",
-				"numbers": "#c6c6c6",
-				"keywords": "#C586C0",
-				"functions": "#C586C0"
-			}
+
 
 
 			
