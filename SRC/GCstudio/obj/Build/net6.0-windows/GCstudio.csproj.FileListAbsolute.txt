@@ -1,0 +1,16 @@
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.exe
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.dll.config
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.deps.json
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.runtimeconfig.json
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.dll
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.AssemblyReference.cache
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.AboutBox.resources
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.Loader.resources
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.Properties.Resources.resources
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.ToolBoxLite.resources
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.GenerateResource.cache
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.CoreCompileInputs.cache
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.CopyComplete
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.dll
+C:\DevSRC Local\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.genruntimeconfig.cache

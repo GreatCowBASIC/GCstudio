@@ -1,0 +1,16 @@
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\Update.exe
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\Update.dll.config
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\Update.deps.json
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\Update.runtimeconfig.json
+C:\DevSRC Local\GCstudio\Build\net6.0-windows\Update.dll
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.csproj.AssemblyReference.cache
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.Properties.Resources.resources
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.Updater.resources
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.csproj.GenerateResource.cache
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.csproj.CoreCompileInputs.cache
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.csproj.CopyComplete
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.dll
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\refint\Update.dll
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\Update.genruntimeconfig.cache
+C:\DevSRC Local\GCstudio\SRC\Update\obj\Build\net6.0-windows\ref\Update.dll
