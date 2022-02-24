@@ -38,7 +38,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.GCB",
-				"match": "(?i)\\b(as|at|asm|do|else|return|for|function|gosub|goto|if|implements|import|include|let|loop|next|repeat|redim|resume|scope|select|step|sub|then|to|type|union|until|using|var|end|while|with)\\b",
+				"match": "(?i)\\b(as|at|asm|do|else|return|for|exit|function|gosub|goto|if|implements|import|include|let|loop|next|repeat|redim|resume|scope|select|step|sub|then|to|type|union|until|using|var|end|while|with)\\b",
 				"comment": "Main Keywords Control (dont use double words separated by spaces like: 'End If' just single words or use \\s as space)"
 			},
 			{
@@ -47,6 +47,15 @@
 				"comment": "Label Recognition!  bucle:"
 			}]
 		},
+
+	"intrinsics": {
+		"patterns": [{
+			"name": "constant.language.GCB",
+			"match": "(?i)\\b(TFT[_]\\S*|ILI9341[_]\\S*|AD_REF_SOURCE|10ms|10us|31k|32.768k|ms|Out|IN|ON|OFF|TRUE|FALSE|swap4|swap|bootloader|explicit|NoConfig|NoContextSave|NoLatch|ReserveHighProg|Volatile|USE_HPWMCCP[0-9]|USE_HPWM[0-9]|USE_HPWM_TIMER[0-9]|USE_AD([0-9a-fA-F]|[0-9a-fA-F][0-9a-fA-F])|case|trim|ucase|Right|Rtrim|INKEY|INSTR|LCase|BIT|DEF|NODEF|_GLCDPage|_GLCDPagesH|_GLCDPagesL|ABS|ADOff|ALLOC|AllOf|Array|Asc|ATan|Average|BcdToDec_GCB|Box|ByteToBin|Call|canskip|ChipADC|ChipEEprom|ChipFamily|ChipIO|ChipMHz|ChipName|ChipNameStr|ChipOsc|ChipPins|ChipProgrammerNameStr|ChipRAM|ChipReserveHighProg|ChipUsingIntOsc|ChipWords|CHR|Circle|ClearSMT1|ClearSMT2|ClearTimer|CLS|cos|CreateButton|CURSOROFF|CURSORON|DecToBcd_GCB|Difference|Dir|DisplayChar|DisplayValue|DS18B20SetResolution|EERAM_AutoStore|EERAM_Backup|EERAM_HS|EERAM_HWStore|EERAM_I2C_Adr|EERAM_Read|EERAM_Recall|EERAM_Status|EERAM_Trecall|EERAM_Tstore|EERAM_Write|EERAM_Write_Command|Ellipse|EPRead|EPWrite|FAST|FastHWSPITransfer|Fill|FilledBox|FilledCircle|FilledEllipse|FilledTriangle|FillRoundRect|FLASH|FLASHOFF|FLASHON|FnLSL|FnLSR|Forever|FOSC|FOSC4|FVR_1x|FVR_2x|FVR_4x|FVR_off|FVRInitialize|FVRIsOutputReady|Get|GetUserID|GLCD_Close_PageTransaction|GLCD_NextionSerialPrint|GLCD_NextionSerialSend|GLCD_Open_PageTransaction|GLCDBackground|GLCDCLS|GLCDDisplay|GLCDDrawChar|GLCDDrawString|GLCDfntDefaultSize|GLCDFontWidth|GLCDForeground|GLCDGetTouch_Nextion|GLCDLocateString|GLCDLocateString_Nextion|GLCDPrint|GLCDPrint_Nextion|GLCDPrintDefaultFont_Nextion|GLCDPrintLargeFont|GLCDPrintString|GLCDPrintString_Nextion|GLCDPrintStringLn|GLCDPrintStringLn_Nextion|GLCDPrintWithSize|GLCDReadByte|GLCDRotate|GLCDSendOpInstruction_Nextion|GLCDSetContrast|GLCDTimeDelay|GLCDUpdateObject_Nextion|GLCDWriteByte|HEFEraseBlock|HEFRead|HEFReadBlock|HEFReadByte|HEFReadWord|HEFWrite|HEFWriteBlock|HEFWriteWord|Hex|HFINTOSC|HI2C2AckpollState|HI2C2Mode|HI2C2Receive|HI2C2ReStart|HI2C2Send|HI2C2SetAddress|HI2C2Start|HI2C2StartOccurred|HI2C2Stop|HI2C2Stopped|HI2C2WaitMSSP|HI2CAckpollState|HI2CMode|HI2CReceive|HI2CReStart|HI2CSend|HI2CSetAddress|HI2CStart|HI2CStartOccurred|HI2CStop|HI2CStopped|HI2CWaitMSSP|HI2CWaitMSSPTimeout|HLine|HPWM|HPWM_CCPTimerN|HPWM_Fast|HPWMOff|HPWMUpdate|HSerGetNum|HSerGetString|HSerPrint|HSerPrintByteCRLF|HSerPrintCRLF|HSerPrintStringCRLF|HSerReceive|HSerReceive1|HSerReceive2|HSerReceiveFrom|HSerSend|I2C_Adr_EERAM|I2CAckpoll|I2CReceive|I2CReset|I2CRestart|I2CSend|I2CSlaveDeviceReceive|I2CStart|I2CStartOccurred|I2CStop|If|Ignore|IndCall|InitGLCD|InitSer|InitSMT1|InitSMT2|InitTimer0|InitTimer1|InitTimer10|InitTimer12|InitTimer2|InitTimer3|InitTimer4|InitTimer5|InitTimer6|InitTimer7|InitTimer8|IntegerToBin|Interrupt|IntOff|IntOn|KeypadData|KeypadRaw|Landscape|Landscape_Rev|LCD_I2C_Address_1|LCD_I2C_Address_2|LCD_I2C_Address_3|LCD_I2C_Address_4|LCD_I2C_Address_Current|LCD_IO|LCD_SPEED|LCD_VARIANT|LCD_VFD_DELAY|LCDBacklight|LCDCMD|LCDCreateChar|LCDCreateGraph|LCDCursor|LCDDisplayOff|LCDDisplayOn|LCDHex|LCDHome|LCDOFF|LCDON|LCDSpace|LCDWriteChar|Left|LeftPad|Len|LFINTOSC|Line|Locate|LOCKPPS|Log10|Log2|Loge|LongtoBin|Loop|Ltrim|m|Macro|MEDIUM|MFINTOSC|Mid|MOD|NoBit|NoVar|OneOf|Optional|Pad|Peek|PFMErase|PFMRead|PFMWrite|Play|PlayRTTTL|Poke|Portrait|Portrait_Rev|Pot|Power|Print|ProgramErase|ProgramRead|ProgramWrite|PS2ReadByte|PS2SetKBLeds|PS2WriteByte|Pset|Pulsein|PulseOut|PulseOutInv|Put|PWMModule|PWMOff|PWMOn|PWMOut|Random|Randomize|ReadAD|ReadAD10|ReadAD12|ReadDigitalTemp|ReadTable|ReadTemp|ReadTemp12|Rotate|RoundRect|s|SAFEraseBlock|SAFRead|SAFReadBlock|SAFReadByte|SAFReadWord|SAFWrite|SAFWriteBlock|SAFWriteWord|Scale|Ser1Print|Ser1Receive|Ser1Send|Ser2Print|Ser2Receive|Ser2Send|Ser3Print|Ser3Receive|Ser3Send|SerPrint|SerReceive|SerSend|Set|SetSMT1|SetSMT1Period|SetSMT2|SetSMT2Period|SetTimer|SetWith|ShortTone|Simple|sin|SLOW|SOSC|SPIMode|SPITransfer|Sqrt|SRAMRead|SRAMWrite|ST7735Rotation|ST7735SendCommand|ST7920cTile|ST7920GLCDClearGraphics|ST7920GLCDDisableGraphics|ST7920GLCDEnableGraphics|ST7920GLCDReadByte|ST7920gLocate|ST7920GraphicTest|ST7920gReaddata|ST7920gTile|ST7920lineh|ST7920LineHs|ST7920linev|ST7920Locate|ST7920Tile|ST7920WriteByte|ST7920WriteCommand|ST7920WriteData|StartSMT1|StartSMT2|StartTimer|Stopscroll_uc1601|StopSMT1|StopSMT2|StopTimer|Str|Str32|StrInteger|SWAP4|SYSDEFAULTCONCATSTRING|Table|Timer0|Timer1|Timer10|Timer12|Timer2|Timer3|Timer4|Timer5|Timer6|Timer7|Timer8|Tone|Triangle|TxCKIPPS|UNLOCKPPS|us|Val|Val32|VarToBin|VarWToBin|Vline|Wait|Word|WORDTOBIN)\\b",
+			"comment": "i deleted XOR as it must go on condition operators"
+			}]
+		},
+
 		"numeric": {
 			"patterns": [
 				{
@@ -73,18 +82,12 @@
 			
 
 		]
-		},
-		"intrinsics": {
-			"patterns": [{
-				"name": "constant.language.GCB",
-				"match": "(?i)\\b(TFT[_]\\S*|ILI9341[_]\\S*|AD_REF_SOURCE|ms|Out|IN|ON|OFF|TRUE|FALSE|bootloader|explicit|NoConfig|NoContextSave|NoLatch|ReserveHighProg|Volatile|USE_HPWMCCP[0-9]|USE_HPWM[0-9]|USE_HPWM_TIMER[0-9]|USE_AD([0-9a-fA-F]|[0-9a-fA-F][0-9a-fA-F])|case|trim|ucase|Right|Rtrim|INKEY|INSTR|LCase|BIT|DEF|NODEF|_GLCDPage|_GLCDPagesH|_GLCDPagesL|10ms|10us|31k|32.768k|ABS|ADOff|ALLOC|AllOf|Array|Asc|ATan|Average|BcdToDec_GCB|Box|ByteToBin|Call|canskip|ChipADC|ChipEEprom|ChipFamily|ChipIO|ChipMHz|ChipName|ChipNameStr|ChipOsc|ChipPins|ChipProgrammerNameStr|ChipRAM|ChipReserveHighProg|ChipUsingIntOsc|ChipWords|CHR|Circle|ClearSMT1|ClearSMT2|ClearTimer|CLS|cos|CreateButton|CURSOROFF|CURSORON|DecToBcd_GCB|Difference|Dir|DisplayChar|DisplayValue|DS18B20SetResolution|EERAM_AutoStore|EERAM_Backup|EERAM_HS|EERAM_HWStore|EERAM_I2C_Adr|EERAM_Read|EERAM_Recall|EERAM_Status|EERAM_Trecall|EERAM_Tstore|EERAM_Write|EERAM_Write_Command|Ellipse|EPRead|EPWrite|FAST|FastHWSPITransfer|Fill|FilledBox|FilledCircle|FilledEllipse|FilledTriangle|FillRoundRect|FLASH|FLASHOFF|FLASHON|FnLSL|FnLSR|Forever|FOSC|FOSC4|FVR_1x|FVR_2x|FVR_4x|FVR_off|FVRInitialize|FVRIsOutputReady|Get|GetUserID|GLCD_Close_PageTransaction|GLCD_NextionSerialPrint|GLCD_NextionSerialSend|GLCD_Open_PageTransaction|GLCDBackground|GLCDCLS|GLCDDisplay|GLCDDrawChar|GLCDDrawString|GLCDfntDefaultSize|GLCDFontWidth|GLCDForeground|GLCDGetTouch_Nextion|GLCDLocateString|GLCDLocateString_Nextion|GLCDPrint|GLCDPrint_Nextion|GLCDPrintDefaultFont_Nextion|GLCDPrintLargeFont|GLCDPrintString|GLCDPrintString_Nextion|GLCDPrintStringLn|GLCDPrintStringLn_Nextion|GLCDPrintWithSize|GLCDReadByte|GLCDRotate|GLCDSendOpInstruction_Nextion|GLCDSetContrast|GLCDTimeDelay|GLCDUpdateObject_Nextion|GLCDWriteByte|HEFEraseBlock|HEFRead|HEFReadBlock|HEFReadByte|HEFReadWord|HEFWrite|HEFWriteBlock|HEFWriteWord|Hex|HFINTOSC|HI2C2AckpollState|HI2C2Mode|HI2C2Receive|HI2C2ReStart|HI2C2Send|HI2C2SetAddress|HI2C2Start|HI2C2StartOccurred|HI2C2Stop|HI2C2Stopped|HI2C2WaitMSSP|HI2CAckpollState|HI2CMode|HI2CReceive|HI2CReStart|HI2CSend|HI2CSetAddress|HI2CStart|HI2CStartOccurred|HI2CStop|HI2CStopped|HI2CWaitMSSP|HI2CWaitMSSPTimeout|HLine|HPWM|HPWM_CCPTimerN|HPWM_Fast|HPWMOff|HPWMUpdate|HSerGetNum|HSerGetString|HSerPrint|HSerPrintByteCRLF|HSerPrintCRLF|HSerPrintStringCRLF|HSerReceive|HSerReceive1|HSerReceive2|HSerReceiveFrom|HSerSend|I2C_Adr_EERAM|I2CAckpoll|I2CReceive|I2CReset|I2CRestart|I2CSend|I2CSlaveDeviceReceive|I2CStart|I2CStartOccurred|I2CStop|If|Ignore|IndCall|InitGLCD|InitSer|InitSMT1|InitSMT2|InitTimer0|InitTimer1|InitTimer10|InitTimer12|InitTimer2|InitTimer3|InitTimer4|InitTimer5|InitTimer6|InitTimer7|InitTimer8|IntegerToBin|Interrupt|IntOff|IntOn|KeypadData|KeypadRaw|Landscape|Landscape_Rev|LCD_I2C_Address_1|LCD_I2C_Address_2|LCD_I2C_Address_3|LCD_I2C_Address_4|LCD_I2C_Address_Current|LCD_IO|LCD_SPEED|LCD_VARIANT|LCD_VFD_DELAY|LCDBacklight|LCDCMD|LCDCreateChar|LCDCreateGraph|LCDCursor|LCDDisplayOff|LCDDisplayOn|LCDHex|LCDHome|LCDOFF|LCDON|LCDSpace|LCDWriteChar|Left|LeftPad|Len|LFINTOSC|Line|Locate|LOCKPPS|Log10|Log2|Loge|LongtoBin|Loop|Ltrim|m|Macro|MEDIUM|MFINTOSC|Mid|MOD|NoBit|NoVar|OneOf|Optional|Pad|Peek|PFMErase|PFMRead|PFMWrite|Play|PlayRTTTL|Poke|Portrait|Portrait_Rev|Pot|Power|Print|ProgramErase|ProgramRead|ProgramWrite|PS2ReadByte|PS2SetKBLeds|PS2WriteByte|Pset|Pulsein|PulseOut|PulseOutInv|Put|PWMModule|PWMOff|PWMOn|PWMOut|Random|Randomize|ReadAD|ReadAD10|ReadAD12|ReadDigitalTemp|ReadTable|ReadTemp|ReadTemp12|Rotate|RoundRect|s|SAFEraseBlock|SAFRead|SAFReadBlock|SAFReadByte|SAFReadWord|SAFWrite|SAFWriteBlock|SAFWriteWord|Scale|Ser1Print|Ser1Receive|Ser1Send|Ser2Print|Ser2Receive|Ser2Send|Ser3Print|Ser3Receive|Ser3Send|SerPrint|SerReceive|SerSend|Set|SetSMT1|SetSMT1Period|SetSMT2|SetSMT2Period|SetTimer|SetWith|ShortTone|Simple|sin|SLOW|SOSC|SPIMode|SPITransfer|Sqrt|SRAMRead|SRAMWrite|ST7735Rotation|ST7735SendCommand|ST7920cTile|ST7920GLCDClearGraphics|ST7920GLCDDisableGraphics|ST7920GLCDEnableGraphics|ST7920GLCDReadByte|ST7920gLocate|ST7920GraphicTest|ST7920gReaddata|ST7920gTile|ST7920lineh|ST7920LineHs|ST7920linev|ST7920Locate|ST7920Tile|ST7920WriteByte|ST7920WriteCommand|ST7920WriteData|StartSMT1|StartSMT2|StartTimer|Stopscroll_uc1601|StopSMT1|StopSMT2|StopTimer|Str|Str32|StrInteger|SWAP4|SYSDEFAULTCONCATSTRING|Table|Timer0|Timer1|Timer10|Timer12|Timer2|Timer3|Timer4|Timer5|Timer6|Timer7|Timer8|Tone|Triangle|TxCKIPPS|UNLOCKPPS|us|Val|Val32|VarToBin|VarWToBin|Vline|Wait|Word|WORDTOBIN)\\b",
-				"comment": "i deleted XOR as it must go on condition operators"
-			}]
+
 		},
 		"preprocessor": {
 			"patterns": [{
 				"name": "keyword.other.GCB",
-				"match": "(?i)^\\s*(\\#\\s*(IGNOREWARNING|option|end macro|else if|error|exit|ifdef|ifndef|endif|include|macro|pragma|ASMRAW|chip|config|ENDSCRIPT|MEM|OPTION|SAMEBIT|SAMEVAR|SCRIPT|STARTUP))"
+				"match": "(?i)^\\s*(\\#\\s*(IGNOREWARNING|option|end macro|else if|error|ifdef|ifndef|endif|include|macro|pragma|ASMRAW|chip|config|ENDSCRIPT|MEM|OPTION|SAMEBIT|SAMEVAR|SCRIPT|STARTUP|IF))"
 			}]
 
 		},
@@ -101,7 +104,7 @@
 		"operators": {
 			"patterns": [{
 				"name": "support.function.GCB",
-				"match": "(?i)\\b(and|andnot|atan|bit|clear|cos|dcd|dig|inv|is|max|min|mod|nand|ncd|nob|nor|not|or|ornot|rev|set|sin|sqr|xnor|xor|xornot)\\b"
+				"match": "(?i)\\b(and|andnot|atan|bit|clear|cos|tan|dcd|dig|inv|is|max|min|mod|nand|ncd|nob|nor|not|or|ornot|rev|set|sin|sqr|xnor|xor|xornot)\\b"
 				
 			}
 		]
@@ -109,7 +112,7 @@
 		"types": {
 			"patterns": [{
 				"name": "support.type.GCB",
-				"match": "(?i)\\b(alloc|array|byte|word|string|long)\\b"
+				"match": "(?i)\\b(alloc|array|byte|word|string|long|integer)\\b"
 			}]
 		},
 		"typemods": {
