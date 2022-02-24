@@ -9,18 +9,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Update", "Update\Update.csp
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Build|Any CPU = Build|Any CPU
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Build|Any CPU.ActiveCfg = Build|Any CPU
+		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Build|Any CPU.Build.0 = Build|Any CPU
 		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBD24164-1B7F-45E1-8150-4D62E063F478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Build|Any CPU.ActiveCfg = Build|Any CPU
+		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Build|Any CPU.Build.0 = Build|Any CPU
 		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AC6018D-2F7F-4321-A0EE-05F32D24AD67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

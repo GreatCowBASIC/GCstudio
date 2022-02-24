@@ -15,10 +15,10 @@
       <Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="ui,workspace,web" />
       <Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
       
-        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/MierEngineering/vscode-GCB" />
-        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/MierEngineering/vscode-GCB" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/angelivan-spartan/GCstudio/tree/master/SRC/GCstudio/bin/Release/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/angelivan-spartan/GCstudio/blob/master/SRC/GCstudio/bin/Release/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0/README.md" />
         
-          <Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/MierEngineering/vscode-GCB" />
+          <Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/angelivan-spartan/GCstudio/tree/master/SRC/GCstudio/bin/Release/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0" />
         
       
       

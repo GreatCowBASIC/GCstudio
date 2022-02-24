@@ -14,10 +14,10 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 | Description | Directory |
 | --- | --- |
 | GCstudio Source/Project | "SRC/" |
-| GCstudio Current Build | "SRC/GCstudio/bin/Release/net6.0-windows/" |
-| GCcode Current Build | "SRC/GCstudio/bin/Release/net6.0-windows/vscode/" |
-| GCB Extension | "SRC/GCstudio/bin/Release/net6.0-windows/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0/" |
-| Batch files Clean/Push | "SRC/" |
+| GCstudio Current Build | "Build/net6.0-windows/" |
+| GCcode Current Build | "Build/net6.0-windows/vscode/" |
+| GCB Extension | "Build/net6.0-windows/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0/" |
+| Batch files Clean/Push | "@Root" |
 
 
 ### OS Support
@@ -42,12 +42,12 @@ or (acording to your OS)
 
 ### If you found a bug, please [report it here!](http://www.aritaconsultores.com/GCBbug/bug_report_page.php)
 
-### For Pull Requests:
 
-# Important:
-* Remember to always run "clean for release.bat" batch file before commit your work.
-* You can clean and push current build to "C:\GCB@Syn" for testing whit "Push release to GCB@Syn.bat" (all contents of "C:\GCB@Syn" will be overwritten)
-* You can run GCstudio directly from release directory to modify the project files of the repo, then push to GCB@Syn for testing.
+# For Pull Requests:
+
+* Remember to always run "_Clean.bat" batch file before commit your work.
+* You can clean and push current build to "C:\GCB@Syn" for testing whit "_Push to GCB@Syn.bat" (all contents of "C:\GCB@Syn" will be overwritten)
+* You can run GCstudio directly from Build directory to modify the project files of the repo, then push to GCB@Syn for testing.
 
 This repository uses Git LFS from GitHub https://git-lfs.github.com/ for *.exe files; if you are going to commit exe files you need to install and then run this command:
 

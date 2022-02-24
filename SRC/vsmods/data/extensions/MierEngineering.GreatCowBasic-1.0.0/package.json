@@ -1,15 +1,15 @@
 {
 	"name": "gcb",
-	"displayName": "GCB",
-	"description": "Provides GCB languaje support",
+	"displayName": "GC Studio Extension",
+	"description": "Provides GCB, FBasic and Assembler languaje support",
 	"version": "1.0.0",
-	"icon": "images/cow.png",
+	"icon": "images/GCstudio.png",
 	"engines": {
 		"vscode": "^1.35.0"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/MierEngineering/vscode-GCB"
+		"url": "https://github.com/angelivan-spartan/GCstudio/tree/master/SRC/GCstudio/bin/Release/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0"
 	},
 	"publisher": "MierEngineering",
 	"categories": [
@@ -29,29 +29,81 @@
 				],
 				"extensions": [
 					".gcb",
-					".h",
+					".h"
+				],
+				"configuration": "./GCBlanguage-configuration.json"
+			},
+
+			{
+				"id": "FBasic",
+				"aliases": [
+					"FBasic",
+					"fbasic"
+				],
+				"extensions": [
 					".bas",
 					".bi"
 				],
-				"configuration": "./language-configuration.json"
+				"configuration": "./FBasiclanguage-configuration.json"
+			},
+
+			{
+				"id": "ASM",
+				"aliases": [
+					"ASM",
+					"asm"
+				],
+				"extensions": [
+					".asm",
+					".inc",
+					".lst"
+				],
+				"configuration": "./ASMlanguage-configuration.json"
 			}
+
 		],
 		"grammars": [
 			{
 				"language": "GCB",
 				"scopeName": "source.GCB",
 				"path": "./syntaxes/GCB.tmLanguage.json"
+			},
+
+			{
+				"language": "FBasic",
+				"scopeName": "source.FBasic",
+				"path": "./syntaxes/FBasic.tmLanguage.json"
+			},
+
+			{
+				"language": "ASM",
+				"scopeName": "source.ASM",
+				"path": "./syntaxes/ASM.tmLanguage.json"
 			}
-		]
+		],
+		"snippets": [
+			{
+			  "language": "GCB",
+			  "path": "./snippets/GCB.snippets.json"
+			}
+		],
+		"configurationDefaults": {
+
+
+
+
+			
+		}
+
+
 	},
 
 
 	
 
 	"__metadata": {
-		"id": "e73933a6-da39-4ad5-89fd-84430bdb6b0b",
-		"publisherId": "9648768c-4ac1-4b49-ad53-aa35ec2ad540",
-		"publisherDisplayName": "MierEngineering",
-		"installedTimestamp": 1635584088630
+		
+		"publisherDisplayName": "Evan R. Venn, Angel Mier"
+		
 	}
 }

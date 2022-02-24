@@ -1,4 +1,4 @@
-'    Copyright (C) 2022 Angel Mier
+'    Copyright (C) 2022 Evan R. Ven, Angel Mier.
 
 '    This library is free software; you can redistribute it and/or
 '    modify it under the terms of the GNU Lesser General Public
