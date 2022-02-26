@@ -198,10 +198,19 @@
 				],
 				"description": "Add pulseout instruction"
 		},
+	"Add PulseIn": {
+			"prefix": "__pulsein",
+			"body": [
+						"PulseIn ${1:Port.Pin}, ${2:TimeResult_Word}, ${3:ms}",
+						""
+	
+					],
+					"description": "Add PulseIn  Port.pin, TimeResult, ms"
+			},
 	"Add Option Explicit": {
 		"prefix": "__option",
 		"body": [
-					"#OPTON EXPLICIT",
+					"#OPTION EXPLICIT",
 					""
 
 				],
@@ -221,6 +230,7 @@
 				"'''@version   ${3:version}   ",
 				"'''@date      $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
 				"'''********************************************************************************",
+				"",
 				""
 					],
 					"description": "Add Header"
@@ -244,7 +254,54 @@
 							""
 						],
 						"description": "Add USART1 support"
-			}
+			},
+			"Add port layout": {
+				"prefix": "__®portlayout(PortA,B&C)",
+				"body": [
+					"/*",
+					"\t       ------------PORTA---------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTB----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTC----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"*/",
+					""
+				],
+				"description": "Enter a port layout to your code"
+			},
+			
+
+			"Add version control": {
+				"prefix": "__add version control",
+				"body": [
+
+							"\/*",
+							"Include the GCBVersionNumber.cnt to increment versionString and create the build time string called GCBBuildTimeStr.",
+							"versionString a string is created automatically.",
+							"GCBBuildTimeStr is a string that is also created automatically.",
+							"use \"GCBVersionNumber.cnt\" as this will create a local copy of the versionString tracker.",
+							"if you use <GCBVersionNumber.cnt> this is a system wide versionString tracker.",
+							"*\/",
+							"#INCLUDE \"gcbversionnumber.cnt\"",
+							"Dim versionString as String * 40",
+							"versionString = \"Build\"+GCBBuildStr",
+							"versionString = versionString + \"@\"+GCBBuildTimeStr",
+							""
+						],
+						"description": "Add version control"
+				}
+
 
 
 }

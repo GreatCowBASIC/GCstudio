@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
 
 
@@ -919,6 +920,28 @@ namespace GC_Studio
 
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory whit a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            folderBrowserDialog.ShowDialog();
+            if (File.Exists(folderBrowserDialog.SelectedPath + "\\PICkit2Plus.exe"))
+            {
+                try
+                {
+                    FileSystem.CopyDirectory(folderBrowserDialog.SelectedPath, AppDomain.CurrentDomain.BaseDirectory + "PICKitPlus", UIOption.AllDialogs);
+                    MessageBox.Show("PICKitPlus Cloned successfully!", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch
+                {
+                    MessageBox.Show("An error occurred while cloning.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("PICKitPlus wasn’t found on selected directory, clone aborted.","PICKitPlus Clone Tool",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            folderBrowserDialog.SelectedPath = "";
+        }
     }
 
 
