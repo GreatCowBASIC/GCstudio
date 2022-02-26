@@ -25,7 +25,6 @@ rmdir logs /S /Q
 rmdir "service worker" /S /Q
 rmdir "session storage" /S /Q
 cd user
-del settings.json
 rmdir globalstorage /S /Q
 rmdir workspacestorage /S /Q
 

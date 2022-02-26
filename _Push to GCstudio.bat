@@ -25,7 +25,6 @@ rmdir logs /S /Q
 rmdir "service worker" /S /Q
 rmdir "session storage" /S /Q
 cd user
-del settings.json
 rmdir globalstorage /S /Q
 rmdir workspacestorage /S /Q
 cd ..
@@ -33,5 +32,5 @@ cd ..
 cd ..
 cd ..
 cd ..
-Xcopy /E /I /Y .\net6.0-windows "C:\GCB@Syn"
+Xcopy /E /I /Y .\net6.0-windows "C:\GCstudio"
 pause

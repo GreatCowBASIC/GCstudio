@@ -86,19 +86,7 @@ namespace GC_Studio
 
             LoadConfig();
 
-            //first run
-            if (File.Exists("mrf.dat") == false)
-            {
-                LoadRecent();
-                LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\Demos\\first-start-sample.gcb" + "\"", "GCcode");
-            }
-            else
-            {
-                LoadRecent();
-            }
-
-            
-
+           
             comboupdate.Text = ReleaseChanel;
             comboide.Text = IDE;
 
@@ -131,6 +119,12 @@ namespace GC_Studio
                         LaunchIDE(ideargs, "SynWrite");
                         break;
 
+                    case "/pkp":
+                        this.Visible = false;
+                        pkptool();
+                        Environment.Exit(0);
+                        break;
+
 
                     default:
                         this.Visible = false;
@@ -152,6 +146,17 @@ namespace GC_Studio
                         break;
 
                 }
+            }
+
+            //first run
+            if (File.Exists("mrf.dat") == false)
+            {
+                LoadRecent();
+                LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\Demos\\first-start-sample.gcb" + "\"", "GCcode");
+            }
+            else
+            {
+                LoadRecent();
             }
 
 
@@ -922,7 +927,12 @@ namespace GC_Studio
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory whit a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            pkptool();
+        }
+
+        private void pkptool()
+        {
+            MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory whit a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
             folderBrowserDialog.ShowDialog();
             if (File.Exists(folderBrowserDialog.SelectedPath + "\\PICkit2Plus.exe"))
             {
@@ -938,10 +948,11 @@ namespace GC_Studio
             }
             else
             {
-                MessageBox.Show("PICKitPlus wasn’t found on selected directory, clone aborted.","PICKitPlus Clone Tool",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("PICKitPlus wasn’t found on selected directory, clone aborted.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             folderBrowserDialog.SelectedPath = "";
         }
+
     }
 
 

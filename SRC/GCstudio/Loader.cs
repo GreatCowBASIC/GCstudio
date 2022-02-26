@@ -29,6 +29,7 @@ namespace GC_Studio
         string ManifestTitle;
         string ManifestNotes;
         string UpdateChecksum;
+        string[] arguments;
         bool continueflag = false;
         bool downloading = false;
         System.Net.WebClient WebClientCVS = new System.Net.WebClient();
@@ -57,9 +58,18 @@ namespace GC_Studio
             RoundCorners(this);
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
-            //  ApplicationTitle.Text = Assembly.GetEntryAssembly().GetName().Name;
-            //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
-            try
+            arguments = Environment.GetCommandLineArgs();
+            if (arguments.Length > 1)
+            {
+                if (arguments[1] == "/pkp")
+                {
+                    this.Close();
+                }
+            }
+
+                //  ApplicationTitle.Text = Assembly.GetEntryAssembly().GetName().Name;
+                //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
+                try
             {
                 dbs.LoadRead("CurrentVersion.nfo");
                 AppVer = decimal.Parse(dbs.ReadData());

@@ -1,14 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "f4",
-        "command": "workbench.action.tasks.runTask"
-    },
-    {
-        "key": "ctrl+f4",
-        "command": "workbench.action.tasks.build"
-    },
-    {
         "key": "ctrl+shift+b",
         "command": "-workbench.action.tasks.build"
     },
@@ -101,5 +93,13 @@
         "command": "workbench.action.tasks.runTask",
         "args": "Serial Terminal [F9]",
         "when": "resourceExtname == .gcb"
+    },
+    {
+        "key": "f4",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "workbench.action.tasks.build"
     },
 ]
