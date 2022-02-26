@@ -102,6 +102,7 @@ namespace GC_Studio
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -647,6 +648,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button7);
             this.panelconfig.Controls.Add(this.buttongcbext);
             this.panelconfig.Controls.Add(this.buttongccode);
             this.panelconfig.Controls.Add(this.buttongstools);
@@ -1209,6 +1211,20 @@ namespace GC_Studio
             this.label7.TabIndex = 15;
             this.label7.Text = "Create a new project";
             // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(97, 458);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(202, 48);
+            this.button7.TabIndex = 72;
+            this.button7.Text = "Clone PICKitPlus Tool";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // ToolBoxLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -1225,9 +1241,9 @@ namespace GC_Studio
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonclone);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelconfig);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panelnewproj);
-            this.Controls.Add(this.panelconfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1315, 1130);
@@ -1329,5 +1345,6 @@ namespace GC_Studio
         private System.Windows.Forms.ListView listViewRecent;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.LinkLabel linkLabelclear;
+        private System.Windows.Forms.Button button7;
     }
 }
