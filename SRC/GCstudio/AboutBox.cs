@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -182,6 +183,21 @@ namespace GC_Studio
             {
                 MessageBox.Show("Error when loading an about file.");
             }
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/changelog_page.php");
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/roadmap_page.php");
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/bug_report_page.php");
         }
     }
 }
