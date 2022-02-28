@@ -1,0 +1,35 @@
+{
+	"name": "vscode-auto-open-markdown-preview",
+	"displayName": "Auto-Open Markdown Preview",
+	"description": "Open Markdown preview automatically when opening a Markdown file",
+	"version": "0.0.4",
+	"publisher": "hnw",
+	"repository": "https://github.com/hnw/vscode-auto-open-markdown-preview",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"main": "./out/src/extension",
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "ccf9294f-f78f-429a-8856-387624db2432",
+		"publisherId": "3b7d8640-99aa-431b-ac5e-0969a2794cf2",
+		"publisherDisplayName": "hnw",
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1646021236773
+	}
+}

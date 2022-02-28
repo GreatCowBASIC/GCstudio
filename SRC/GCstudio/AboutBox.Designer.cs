@@ -42,15 +42,19 @@
             this.labelassembly = new System.Windows.Forms.Label();
             this.labelfbas = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GC_Studio.Properties.Resources._0_3IFEy_hfoIpgFjBl;
-            this.pictureBox1.Location = new System.Drawing.Point(-99, 300);
+            this.pictureBox1.Location = new System.Drawing.Point(-77, 225);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(522, 562);
+            this.pictureBox1.Size = new System.Drawing.Size(406, 422);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -61,14 +65,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDescription.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBoxDescription.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.Location = new System.Drawing.Point(322, 300);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(9, 5, 4, 5);
+            this.textBoxDescription.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDescription.Location = new System.Drawing.Point(250, 225);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(7, 4, 3, 4);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(808, 453);
+            this.textBoxDescription.Size = new System.Drawing.Size(629, 341);
             this.textBoxDescription.TabIndex = 29;
             this.textBoxDescription.TabStop = false;
             this.textBoxDescription.Text = "Description";
@@ -80,12 +84,12 @@
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.okButton.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.okButton.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.okButton.ForeColor = System.Drawing.Color.White;
-            this.okButton.Location = new System.Drawing.Point(987, 769);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.okButton.Location = new System.Drawing.Point(768, 577);
+            this.okButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(112, 45);
+            this.okButton.Size = new System.Drawing.Size(87, 34);
             this.okButton.TabIndex = 30;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
@@ -93,11 +97,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 60);
+            this.label1.Location = new System.Drawing.Point(12, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 57);
+            this.label1.Size = new System.Drawing.Size(160, 39);
             this.label1.TabIndex = 31;
             this.label1.Text = "GC Studio";
             // 
@@ -105,13 +110,12 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(33, 155);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(26, 116);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(253, 31);
+            this.linkLabel1.Size = new System.Drawing.Size(170, 22);
             this.linkLabel1.TabIndex = 32;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Acknowledgements";
@@ -121,13 +125,12 @@
             // 
             this.linkLabel2.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.linkLabel2.Location = new System.Drawing.Point(33, 205);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel2.Location = new System.Drawing.Point(26, 150);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(102, 31);
+            this.linkLabel2.Size = new System.Drawing.Size(68, 22);
             this.linkLabel2.TabIndex = 33;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "License";
@@ -137,13 +140,12 @@
             // 
             this.linkLabel3.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel3.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.linkLabel3.Location = new System.Drawing.Point(33, 255);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel3.Location = new System.Drawing.Point(26, 184);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(113, 31);
+            this.linkLabel3.Size = new System.Drawing.Size(75, 22);
             this.linkLabel3.TabIndex = 34;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Readme";
@@ -152,86 +154,141 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(342, 88);
+            this.label2.Location = new System.Drawing.Point(266, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 31);
+            this.label2.Size = new System.Drawing.Size(109, 21);
             this.label2.TabIndex = 35;
             this.label2.Text = "GCB Version:";
             // 
             // labelver
             // 
             this.labelver.AutoSize = true;
-            this.labelver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelver.ForeColor = System.Drawing.Color.White;
-            this.labelver.Location = new System.Drawing.Point(512, 88);
+            this.labelver.Location = new System.Drawing.Point(398, 66);
+            this.labelver.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelver.Name = "labelver";
-            this.labelver.Size = new System.Drawing.Size(44, 31);
+            this.labelver.Size = new System.Drawing.Size(31, 21);
             this.labelver.TabIndex = 36;
             this.labelver.Text = "---";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(342, 225);
+            this.label3.Location = new System.Drawing.Point(266, 169);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 31);
+            this.label3.Size = new System.Drawing.Size(199, 21);
             this.label3.TabIndex = 37;
             this.label3.Text = "Copyright © 2007 - 2022";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(342, 177);
+            this.label4.Location = new System.Drawing.Point(266, 133);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(340, 31);
+            this.label4.Size = new System.Drawing.Size(227, 21);
             this.label4.TabIndex = 38;
             this.label4.Text = "GC Studio assembly Version:";
             // 
             // labelassembly
             // 
             this.labelassembly.AutoSize = true;
-            this.labelassembly.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelassembly.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelassembly.ForeColor = System.Drawing.Color.White;
-            this.labelassembly.Location = new System.Drawing.Point(702, 177);
+            this.labelassembly.Location = new System.Drawing.Point(546, 133);
+            this.labelassembly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelassembly.Name = "labelassembly";
-            this.labelassembly.Size = new System.Drawing.Size(44, 31);
+            this.labelassembly.Size = new System.Drawing.Size(31, 21);
             this.labelassembly.TabIndex = 39;
             this.labelassembly.Text = "---";
             // 
             // labelfbas
             // 
             this.labelfbas.AutoSize = true;
-            this.labelfbas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelfbas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelfbas.ForeColor = System.Drawing.Color.White;
-            this.labelfbas.Location = new System.Drawing.Point(546, 131);
+            this.labelfbas.Location = new System.Drawing.Point(425, 98);
+            this.labelfbas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelfbas.Name = "labelfbas";
-            this.labelfbas.Size = new System.Drawing.Size(44, 31);
+            this.labelfbas.Size = new System.Drawing.Size(31, 21);
             this.labelfbas.TabIndex = 41;
             this.labelfbas.Text = "---";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(342, 131);
+            this.label6.Location = new System.Drawing.Point(266, 98);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 31);
+            this.label6.Size = new System.Drawing.Size(123, 21);
             this.label6.TabIndex = 40;
             this.label6.Text = "FBasic Version:";
             // 
+            // linkLabel4
+            // 
+            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel4.LinkColor = System.Drawing.Color.CornflowerBlue;
+            this.linkLabel4.Location = new System.Drawing.Point(26, 219);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(140, 22);
+            this.linkLabel4.TabIndex = 42;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Full Change Log";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel5.LinkColor = System.Drawing.Color.CornflowerBlue;
+            this.linkLabel5.Location = new System.Drawing.Point(26, 253);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(93, 22);
+            this.linkLabel5.TabIndex = 43;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Road Map";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel6.LinkColor = System.Drawing.Color.CornflowerBlue;
+            this.linkLabel6.Location = new System.Drawing.Point(26, 288);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(117, 22);
+            this.linkLabel6.TabIndex = 44;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Report a Bug";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
             // AboutBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1131, 832);
+            this.ClientSize = new System.Drawing.Size(880, 624);
+            this.Controls.Add(this.linkLabel6);
+            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.labelfbas);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.labelassembly);
@@ -247,12 +304,12 @@
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1141, 853);
+            this.MinimumSize = new System.Drawing.Size(891, 649);
             this.Name = "AboutBox";
-            this.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About GC Studio";
@@ -278,5 +335,8 @@
         private System.Windows.Forms.Label labelassembly;
         private System.Windows.Forms.Label labelfbas;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabel6;
     }
 }
