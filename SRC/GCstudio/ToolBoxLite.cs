@@ -125,6 +125,21 @@ namespace GC_Studio
                         Environment.Exit(0);
                         break;
 
+                    case "/firststart":
+                        if (File.Exists("mrf.dat"))
+                        {
+                            try
+                            {
+                                File.Delete("mrf.dat");
+                            }
+                            catch
+                            {
+
+                            }
+                        }
+
+                        break;
+
 
                     default:
                         this.Visible = false;
@@ -152,7 +167,7 @@ namespace GC_Studio
             if (File.Exists("mrf.dat") == false)
             {
                 LoadRecent();
-                LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\Demos\\first-start-sample.gcb" + "\"", "GCcode");
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\GCcode-KeyBindings.pdf\" \".\\GreatCowBasic\\Demos\\This is useful list of tools for the IDE.md\"", "GCcode");
             }
             else
             {
