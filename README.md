@@ -5,7 +5,7 @@
     <h3>Modern User Interface and IDE for a GREAT compiler!</h3>
 </div>
 
-GC Studio it’s a contribution to [Great Cow Basic](https://sourceforge.net/projects/gcbasic/), that brings the option to select between multiple IDE’s, integrates an automatic update system, tailors a very powerful IDE called GC Code whit specific customizations, and incorporates an integrated dev environment for the project itself, while gives a modern look to the user interface.
+GC Studio it’s a contribution to [Great Cow Basic](https://www.gcbasic.com), that brings the option to select between multiple IDE’s, integrates an automatic update system, tailors a very powerful IDE called GC Code whit specific customizations, and incorporates an integrated dev environment for the project itself, while gives a modern look to the user interface.
 
 This project is brought to you by: Evan R. Venn and Angel Mier.
 
@@ -33,10 +33,10 @@ Win7 SP1**  x86/x64 to Win11 x64.
 [optional] [SVN](https://osdn.net/projects/tortoisesvn/storage/1.14.1/Application/TortoiseSVN-1.14.1.29085-x64-svn-1.14.1.msi/)
 
 ### Current Changes and Updates:
-- [Change Log](http://www.aritaconsultores.com/GCBbug/changelog_page.php)
-- [Road Map](http://www.aritaconsultores.com/GCBbug/roadmap_page.php)
+- [Change Log](https://www.gcbasic.com/bugtracking/changelog_page.php)
+- [Road Map](https://www.gcbasic.com/bugtracking/roadmap_page.php)
 
-### If you found a bug, please [report it here!](http://www.aritaconsultores.com/GCBbug/bug_report_page.php)
+### If you found a bug, please [report it here!](https://www.gcbasic.com/bugtracking/bug_report_page.php)
 
 
 # For Pull Requests:
