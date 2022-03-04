@@ -20,7 +20,7 @@ namespace GC_Studio
     public partial class Loader : Form
     {
         DBS dbs = new DBS();
-        readonly string ReleasePath = "https://www.mier.com.mx/rel/GCB/";
+        readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
         decimal AppVer;
         decimal ManifestVer;

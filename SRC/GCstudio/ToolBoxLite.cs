@@ -25,7 +25,7 @@ namespace GC_Studio
         string IDE = "GCcode";
         string[] arguments;
         string ideargs = "";
-        readonly string BugTracking = "http://www.aritaconsultores.com/GCBbug/bug_report_page.php";
+        readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
         string[] RecentName = new string[10];
         string[] RecentDir = new string[10];
         int RecentN = 0;
@@ -167,7 +167,7 @@ namespace GC_Studio
             if (File.Exists("mrf.dat") == false)
             {
                 LoadRecent();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\GCcode-KeyBindings.pdf\" \".\\GreatCowBasic\\Demos\\This is useful list of tools for the IDE.md\"", "GCcode");
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\This is useful list of tools for the IDE.txt\"", "GCcode");
             }
             else
             {
