@@ -187,17 +187,17 @@ namespace GC_Studio
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/changelog_page.php");
+            Process.Start("explorer", "https://www.gcbasic.com/bugtracking/changelog_page.php");
         }
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/roadmap_page.php");
+            Process.Start("explorer", "https://www.gcbasic.com/bugtracking/roadmap_page.php");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("explorer", "http://www.aritaconsultores.com/GCBbug/bug_report_page.php");
+            Process.Start("explorer", "https://www.gcbasic.com/bugtracking/bug_report_page.php");
         }
     }
 }
