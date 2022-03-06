@@ -56,7 +56,8 @@
 				"extensions": [
 					".asm",
 					".inc",
-					".lst"
+					".lst",
+					".s"
 				],
 				"configuration": "./ASMlanguage-configuration.json"
 			}

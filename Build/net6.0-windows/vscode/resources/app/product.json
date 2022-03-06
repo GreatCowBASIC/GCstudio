@@ -11,7 +11,7 @@
   "serverLicensePrompt": "",
   "serverApplicationName": "code-server-oss",
   "serverDataFolderName": ".vscode-server-oss",
-  "win32DirName": "VSCode",
+  "win32DirName": "GCcode",
   "win32NameVersion": "GCcode",
   "win32RegValueName": "GCcode",
   "win32AppId": "{{E34003BB-9E10-4501-8C11-BE3FAA83F23F}",
@@ -26,12 +26,12 @@
   "linuxIconName": "GCcode",
   "licenseFileName": "LICENSE.txt",
   "reportIssueUrl": "",
-  "urlProtocol": "vscodium",
-  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-webview.net/insider/d372f9187401bd145a0a6e15ba369e2d82d02005/out/vs/workbench/contrib/webview/browser/pre/",
+  "urlProtocol": "GCcode",
+  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-webview.net/insider/93a2a2fa12dd3ae0629eec01c05a28cb60ac1c4b/out/vs/workbench/contrib/webview/browser/pre/",
   "extensionAllowedProposedApi": ["ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "GitHub.remotehub", "GitHub.remotehub-insiders", "ms-vscode.cpptools", "ms-azuretools.vscode-docker", "visualstudioexptteam.vscodeintellicode", "GitHub.codespaces", "GitHub.vscode-pull-request-github-insiders", "GitHub.vscode-pull-request-github", "Microsoft.vscode-nmake-tools", "ms-ai-tools.notebook-renderers", "ms-dotnettools.dotnet-interactive-vscode", "ms-python.gather", "ms-python.python", "ms-toolsai.jupyter", "ms-toolsai.vscode-ai", "ms-toolsai.vscode-ai-remote", "ms-vscode-remote.remote-containers-nightly", "ms-vscode-remote.remote-containers", "ms-vscode-remote.remote-ssh-edit-nightly", "ms-vscode-remote.remote-ssh-edit", "ms-vscode-remote.remote-ssh-nightly", "ms-vscode-remote.remote-ssh", "ms-vscode-remote.remote-wsl-nightly", "ms-vscode-remote.remote-wsl", "ms-vscode-remote.remote-wsl-recommender", "ms-vscode-remote.vscode-remote-extensionpack-nightly", "ms-vscode-remote.vscode-remote-extensionpack", "ms-vscode.azure-account", "ms-vscode.azure-sphere-tools-ui", "ms-vscode.azure-sphere-tools", "ms-vscode.github-browser", "ms-vscode.github-richnav", "ms-vscode.js-debug-nightly", "ms-vscode.js-debug", "ms-vscode.lsif-browser", "ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "ms-vscode.vscode-selfhost-test-provider", "ms-vsliveshare.cloudenv-explorer", "ms-vsliveshare.cloudenv", "ms-vsliveshare.vsliveshare", "ms-vsonline.vsonline", "dbaeumer.vscode-eslint"],
   "builtInExtensions": [{
     "name": "ms-vscode.references-view",
-    "version": "0.0.81",
+    "version": "0.0.85",
     "repo": "https://github.com/microsoft/vscode-references-view",
     "metadata": {
       "id": "dc489f46-520d-4556-ae85-1f9eab3c412d",
@@ -59,7 +59,7 @@
     }
   }, {
     "name": "ms-vscode.js-debug",
-    "version": "1.64.2",
+    "version": "1.65.0",
     "repo": "https://github.com/microsoft/vscode-js-debug",
     "metadata": {
       "id": "25629058-ddac-4e17-abba-74678e126c5d",
@@ -104,14 +104,14 @@
     "itemUrl": "https://open-vsx.org/vscode/item"
   },
   "linkProtectionTrustedDomains": ["https://open-vsx.org"],
-  "commit": "5554b12acf27056905806867f251c859323ff7e9",
-  "date": "2022-02-04T00:30:43.476Z",
+  "commit": "b5205cc8eb4fbaa726835538cd82372cc0222d43",
+  "date": "2022-03-04T09:13:01.928Z",
   "checksums": {
-    "vs/base/parts/sandbox/electron-browser/preload.js": "TgZHN8Ih4P86pSkTrqFRzA",
-    "vs/workbench/workbench.desktop.main.js": "uG6DuEKOD3FYrc0r/jtB8w",
-    "vs/workbench/workbench.desktop.main.css": "60gjGzORgdStEH6Qd1UexA",
-    "vs/workbench/services/extensions/node/extensionHostProcess.js": "pwt1ELTiAWFt+S0pdleVxQ",
+    "vs/base/parts/sandbox/electron-browser/preload.js": "ZigynOS6crqTpOv1TseBVA",
+    "vs/workbench/workbench.desktop.main.js": "829SWgg/zuTGEGgyPfhHMw",
+    "vs/workbench/workbench.desktop.main.css": "9eafW2Tgy8GYkQa4oaccJw",
+    "vs/workbench/api/node/extensionHostProcess.js": "X0gDZq7oSpJ17A+2KplqLQ",
     "vs/code/electron-browser/workbench/workbench.html": "l8jPIdODqyMeav5sZa3tNQ",
-    "vs/code/electron-browser/workbench/workbench.js": "PLXnwXBPVizebHZfT/yrlQ"
+    "vs/code/electron-browser/workbench/workbench.js": "4LWczVW0A33yK8pIAUq8cA"
   }
 }
