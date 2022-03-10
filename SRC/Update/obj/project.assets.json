@@ -124,11 +124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ing.mier\\Desktop\\DevSRCLocal\\GCstudio\\SRC\\Update\\Update.csproj",
+      "projectUniqueName": "C:\\DevSRC Local\\GCstudio\\SRC\\Update\\Update.csproj",
       "projectName": "Update",
-      "projectPath": "C:\\Users\\ing.mier\\Desktop\\DevSRCLocal\\GCstudio\\SRC\\Update\\Update.csproj",
+      "projectPath": "C:\\DevSRC Local\\GCstudio\\SRC\\Update\\Update.csproj",
       "packagesPath": "C:\\Users\\ing.mier\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ing.mier\\Desktop\\DevSRCLocal\\GCstudio\\SRC\\Update\\obj\\",
+      "outputPath": "C:\\DevSRC Local\\GCstudio\\SRC\\Update\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ing.mier\\AppData\\Roaming\\NuGet\\NuGet.Config",
