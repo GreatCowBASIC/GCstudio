@@ -80,7 +80,7 @@ namespace GC_Studio
                 MessageBox.Show("Error reading current version manifest.");
                 Environment.Exit(0);
             }
-            Version.Text = "Versión " + AppVer;
+            Version.Text = "Version " + AppVer;
             Copyright.Text = ((AssemblyCopyrightAttribute)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright;
 
             EnvVarThread.Start();

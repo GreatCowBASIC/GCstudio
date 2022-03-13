@@ -46,10 +46,11 @@ namespace GC_Studio
             // 
             // ProgressUpdate
             // 
-            this.ProgressUpdate.Location = new System.Drawing.Point(262, 242);
+            this.ProgressUpdate.Location = new System.Drawing.Point(204, 182);
+            this.ProgressUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.ProgressUpdate.MarqueeAnimationSpeed = 1;
             this.ProgressUpdate.Name = "ProgressUpdate";
-            this.ProgressUpdate.Size = new System.Drawing.Size(308, 15);
+            this.ProgressUpdate.Size = new System.Drawing.Size(240, 11);
             this.ProgressUpdate.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ProgressUpdate.TabIndex = 16;
             this.ProgressUpdate.Visible = false;
@@ -58,23 +59,25 @@ namespace GC_Studio
             // 
             this.Version.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Version.BackColor = System.Drawing.Color.Transparent;
-            this.Version.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Version.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Version.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Version.Location = new System.Drawing.Point(274, 245);
+            this.Version.Location = new System.Drawing.Point(213, 184);
+            this.Version.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(308, 20);
+            this.Version.Size = new System.Drawing.Size(240, 15);
             this.Version.TabIndex = 14;
-            this.Version.Text = "Versión {0}.{1:00}";
+            this.Version.Text = "Version {0}.{1:00}";
             // 
             // Copyright
             // 
             this.Copyright.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Copyright.BackColor = System.Drawing.Color.Transparent;
-            this.Copyright.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Copyright.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Copyright.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Copyright.Location = new System.Drawing.Point(272, 265);
+            this.Copyright.Location = new System.Drawing.Point(212, 199);
+            this.Copyright.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Copyright.Name = "Copyright";
-            this.Copyright.Size = new System.Drawing.Size(312, 40);
+            this.Copyright.Size = new System.Drawing.Size(243, 30);
             this.Copyright.TabIndex = 15;
             this.Copyright.Text = "Copyright";
             // 
@@ -82,11 +85,12 @@ namespace GC_Studio
             // 
             this.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ApplicationTitle.BackColor = System.Drawing.Color.Transparent;
-            this.ApplicationTitle.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApplicationTitle.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ApplicationTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ApplicationTitle.Location = new System.Drawing.Point(276, 57);
+            this.ApplicationTitle.Location = new System.Drawing.Point(215, 43);
+            this.ApplicationTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ApplicationTitle.Name = "ApplicationTitle";
-            this.ApplicationTitle.Size = new System.Drawing.Size(308, 193);
+            this.ApplicationTitle.Size = new System.Drawing.Size(240, 145);
             this.ApplicationTitle.TabIndex = 13;
             this.ApplicationTitle.Text = "GC Studio";
             this.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,11 +102,12 @@ namespace GC_Studio
             this.BtnMini.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.BtnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMini.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnMini.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnMini.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnMini.Location = new System.Drawing.Point(468, 0);
+            this.BtnMini.Location = new System.Drawing.Point(364, 0);
+            this.BtnMini.Margin = new System.Windows.Forms.Padding(2);
             this.BtnMini.Name = "BtnMini";
-            this.BtnMini.Size = new System.Drawing.Size(64, 54);
+            this.BtnMini.Size = new System.Drawing.Size(50, 40);
             this.BtnMini.TabIndex = 10;
             this.BtnMini.Text = "―";
             this.BtnMini.UseVisualStyleBackColor = false;
@@ -115,11 +120,12 @@ namespace GC_Studio
             this.BtnExit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExit.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold);
+            this.BtnExit.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnExit.Location = new System.Drawing.Point(532, 0);
+            this.BtnExit.Location = new System.Drawing.Point(414, 0);
+            this.BtnExit.Margin = new System.Windows.Forms.Padding(2);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(64, 54);
+            this.BtnExit.Size = new System.Drawing.Size(50, 40);
             this.BtnExit.TabIndex = 9;
             this.BtnExit.Text = "X";
             this.BtnExit.UseVisualStyleBackColor = false;
@@ -132,9 +138,10 @@ namespace GC_Studio
             // 
             // PictureBox2
             // 
-            this.PictureBox2.Location = new System.Drawing.Point(7, 4);
+            this.PictureBox2.Location = new System.Drawing.Point(5, 3);
+            this.PictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.PictureBox2.Name = "PictureBox2";
-            this.PictureBox2.Size = new System.Drawing.Size(60, 61);
+            this.PictureBox2.Size = new System.Drawing.Size(47, 46);
             this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox2.TabIndex = 12;
             this.PictureBox2.TabStop = false;
@@ -142,19 +149,20 @@ namespace GC_Studio
             // PictureBox1
             // 
             this.PictureBox1.Image = global::GC_Studio.Properties.Resources._0_3IFEy_hfoIpgFjBl;
-            this.PictureBox1.Location = new System.Drawing.Point(-38, -20);
+            this.PictureBox1.Location = new System.Drawing.Point(-30, -15);
+            this.PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(368, 354);
+            this.PictureBox1.Size = new System.Drawing.Size(286, 266);
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox1.TabIndex = 11;
             this.PictureBox1.TabStop = false;
             // 
             // Loader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(598, 305);
+            this.ClientSize = new System.Drawing.Size(465, 229);
             this.Controls.Add(this.ProgressUpdate);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.Copyright);
@@ -165,6 +173,7 @@ namespace GC_Studio
             this.Controls.Add(this.BtnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Loader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Loader_Load);
