@@ -25,6 +25,7 @@ namespace GC_Studio
         string IDE = "GCcode";
         string[] arguments;
         string ideargs = "";
+        string architecture = "Auto";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
         string[] RecentName = new string[10];
         string[] RecentDir = new string[10];
@@ -86,11 +87,14 @@ namespace GC_Studio
 
             LoadConfig();
 
+
            
             comboupdate.Text = ReleaseChanel;
             comboide.Text = IDE;
+            comboarch.Text = architecture;    
 
 
+            CompilerArchitecture();
             
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
@@ -203,6 +207,7 @@ namespace GC_Studio
                 dbs.LoadRead("config.ini");
                 ReleaseChanel = dbs.ReadData();
                 IDE = dbs.ReadData();
+                architecture = dbs.ReadData();
                 dbs.CloseRead();
             }
             else
@@ -211,6 +216,7 @@ namespace GC_Studio
                 dbs.LoadWrite("config.ini");
                 dbs.RecordData("mainstream");
                 dbs.RecordData("GCcode");
+                dbs.RecordData("Auto");
                 dbs.RecordData("END");
                 dbs.CloseWrite();
             }
@@ -219,6 +225,14 @@ namespace GC_Studio
             {
                 MessageBox.Show("Error loading config.");
             }
+
+            //Compat whit older config files
+            if (architecture == "END")
+            {
+                architecture = "Auto";
+                SaveConfig();
+            }
+
 
         }
 
@@ -234,6 +248,7 @@ namespace GC_Studio
             dbs.LoadWrite("config.ini");
             dbs.RecordData(ReleaseChanel);
             dbs.RecordData(IDE);
+            dbs.RecordData(architecture);
             dbs.RecordData("END");
             dbs.CloseWrite();
             }
@@ -785,6 +800,18 @@ namespace GC_Studio
             SaveConfig();
         }
 
+        private void comboarch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((comboarch.Text == "x64") && (Environment.Is64BitOperatingSystem == false))
+            {
+                comboarch.Text = "x86";
+                MessageBox.Show("Your current operating system is 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            architecture = comboarch.Text;
+            SaveConfig();
+            CompilerArchitecture();
+        }
+
 
         public void LaunchIDE(string Args, string IDE)
         {
@@ -966,6 +993,86 @@ namespace GC_Studio
                 MessageBox.Show("PICKitPlus wasn’t found on selected directory, clone aborted.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             folderBrowserDialog.SelectedPath = "";
+        }
+
+        private void CompilerArchitecture()
+        {
+            if (Environment.Is64BitOperatingSystem)
+            {
+                labelarch.Text = "x64";
+            }
+            else
+            {
+                labelarch.Text = "x86";
+            }
+
+            switch (architecture)
+            {
+                case "Auto":
+                    try
+                    {
+                        if (Environment.Is64BitOperatingSystem)
+                        {
+                            File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        }
+                        else
+                        {
+                            File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        }
+                    }
+                    catch 
+                    {
+                        MessageBox.Show("Error selecting compiler architecture.");
+                    }
+                    break;
+
+                case "x86":
+                    try
+                    {
+                        File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error selecting compiler architecture.");
+                    }
+
+                    break;
+
+                case "x64":
+                    try
+                    {
+                        File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error selecting compiler architecture.");
+                    }
+
+                    break;
+
+                case "Developer":
+
+                    break;
+
+                default:
+                    try
+                    {
+                        if (Environment.Is64BitOperatingSystem)
+                        {
+                            File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        }
+                        else
+                        {
+                            File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error selecting compiler architecture.");
+                    }
+
+                    break;
+            }
         }
 
     }
