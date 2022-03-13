@@ -159,16 +159,16 @@
             this.label2.Location = new System.Drawing.Point(266, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 21);
+            this.label2.Size = new System.Drawing.Size(121, 21);
             this.label2.TabIndex = 35;
-            this.label2.Text = "GCB Version:";
+            this.label2.Text = "GCB Compiler:";
             // 
             // labelver
             // 
             this.labelver.AutoSize = true;
             this.labelver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelver.ForeColor = System.Drawing.Color.White;
-            this.labelver.Location = new System.Drawing.Point(398, 66);
+            this.labelver.Location = new System.Drawing.Point(391, 66);
             this.labelver.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelver.Name = "labelver";
             this.labelver.Size = new System.Drawing.Size(31, 21);
@@ -195,16 +195,16 @@
             this.label4.Location = new System.Drawing.Point(266, 133);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(227, 21);
+            this.label4.Size = new System.Drawing.Size(165, 21);
             this.label4.TabIndex = 38;
-            this.label4.Text = "GC Studio assembly Version:";
+            this.label4.Text = "GC Studio assembly:";
             // 
             // labelassembly
             // 
             this.labelassembly.AutoSize = true;
             this.labelassembly.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelassembly.ForeColor = System.Drawing.Color.White;
-            this.labelassembly.Location = new System.Drawing.Point(546, 133);
+            this.labelassembly.Location = new System.Drawing.Point(435, 133);
             this.labelassembly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelassembly.Name = "labelassembly";
             this.labelassembly.Size = new System.Drawing.Size(31, 21);
@@ -216,7 +216,7 @@
             this.labelfbas.AutoSize = true;
             this.labelfbas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelfbas.ForeColor = System.Drawing.Color.White;
-            this.labelfbas.Location = new System.Drawing.Point(425, 98);
+            this.labelfbas.Location = new System.Drawing.Point(405, 98);
             this.labelfbas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelfbas.Name = "labelfbas";
             this.labelfbas.Size = new System.Drawing.Size(31, 21);
@@ -231,9 +231,9 @@
             this.label6.Location = new System.Drawing.Point(266, 98);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 21);
+            this.label6.Size = new System.Drawing.Size(135, 21);
             this.label6.TabIndex = 40;
-            this.label6.Text = "FBasic Version:";
+            this.label6.Text = "FBasic Compiler:";
             // 
             // linkLabel4
             // 
