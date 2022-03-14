@@ -805,7 +805,7 @@ namespace GC_Studio
             if ((comboarch.Text == "x64") && (Environment.Is64BitOperatingSystem == false))
             {
                 comboarch.Text = "x86";
-                MessageBox.Show("Your current operating system is 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Your current operating system is a 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             architecture = comboarch.Text;
             SaveConfig();
@@ -826,7 +826,7 @@ namespace GC_Studio
                     try
                     {
                         p.FileName = AppDomain.CurrentDomain.BaseDirectory + "vscode\\code.exe";
-                        p.Arguments = "-n " + Args;
+                        p.Arguments = Args;
                         p.WindowStyle = ProcessWindowStyle.Normal;
                         x = Process.Start(p);
                         Environment.Exit(0);

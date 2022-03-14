@@ -876,8 +876,7 @@ namespace GC_Studio
             this.comboide.FormattingEnabled = true;
             this.comboide.Items.AddRange(new object[] {
             "SynWrite",
-            "GCcode",
-            "Geany"});
+            "GCcode"});
             this.comboide.Location = new System.Drawing.Point(68, 218);
             this.comboide.Margin = new System.Windows.Forms.Padding(2);
             this.comboide.Name = "comboide";

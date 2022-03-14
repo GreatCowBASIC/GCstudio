@@ -31,7 +31,6 @@ C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-win
 C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.dll
 C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.genruntimeconfig.cache
 C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.exe
-C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.dll.config
 C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.deps.json
 C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.runtimeconfig.json
 C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.dll

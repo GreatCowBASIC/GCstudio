@@ -9,7 +9,7 @@ namespace GC_Studio
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Run point for the application.
         /// </summary>
         [STAThread]
         static void Main()
