@@ -124,11 +124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevSRCLocal\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
+      "projectUniqueName": "C:\\DevSRC Local\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
       "projectName": "GCstudio",
-      "projectPath": "C:\\DevSRCLocal\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
+      "projectPath": "C:\\DevSRC Local\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
       "packagesPath": "C:\\Users\\ing.mier\\.nuget\\packages\\",
-      "outputPath": "C:\\DevSRCLocal\\GCstudio\\SRC\\GCstudio\\obj\\",
+      "outputPath": "C:\\DevSRC Local\\GCstudio\\SRC\\GCstudio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ing.mier\\AppData\\Roaming\\NuGet\\NuGet.Config",

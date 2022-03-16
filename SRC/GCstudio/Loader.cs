@@ -187,7 +187,7 @@ namespace GC_Studio
             {
 
                 MessageBox.Show("Update canceled by user.");
-                Environment.Exit(0);
+                EndForm();
             }
             else if (e.Error is object)
             {
@@ -274,11 +274,12 @@ namespace GC_Studio
             {
                 MessageBox.Show("Update canceled by user.");
                 //Environment.Exit(0);
+                EndForm();
             }
             else if (e.Error is object)
             {
                 MessageBox.Show("There was a problem downloading the update.");
-                Environment.Exit(0);
+                EndForm();
             }
             else
             {
@@ -301,7 +302,7 @@ namespace GC_Studio
                         catch
                         {
                             MessageBox.Show("Error starting the update.");
-                            Environment.Exit(0);
+                            EndForm();
                         }
                     }
                 }
@@ -310,7 +311,7 @@ namespace GC_Studio
                 }
 
                 MessageBox.Show("Error starting the update.");
-                Environment.Exit(0);
+                EndForm();
             }
         }
 

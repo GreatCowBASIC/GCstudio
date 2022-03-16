@@ -1,5 +1,4 @@
 C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.exe
-C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.dll.config
 C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.deps.json
 C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.runtimeconfig.json
 C:\DevSRC Local\GCstudio\Build\net6.0-windows\GCstudio.dll

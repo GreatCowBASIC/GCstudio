@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZX9u3rqJtj051x/rovsGiQ0e5/YXXOOSzvxAc+5k4LlNit4n1EWwSNBerlvuDVW+K4PMBO7gpBBSEhLwlf1OqA==",
+  "dgSpecHash": "CBFdoGakq0lzBaG7mnbTk8li+vF0YTRIvHZlfszJgmHkDYG43wB6SydbI0h5/bV+csm+uMVXc1HyLjzoippe/A==",
   "success": true,
-  "projectFilePath": "C:\\DevSRCLocal\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
+  "projectFilePath": "C:\\DevSRC Local\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ing.mier\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ing.mier\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
