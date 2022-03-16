@@ -239,6 +239,24 @@
             }
         },
         {
+            "label": "PICkit3+ GUI",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\PICkit3Plus.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
             "label": "PICInfo",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\PICinfo\\PICInfo.exe",
