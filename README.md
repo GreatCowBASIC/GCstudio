@@ -16,7 +16,7 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 | GCstudio Source/Project | "SRC/" |
 | GCstudio Current Build | "Build/net6.0-windows/" |
 | GCcode Current Build | "Build/net6.0-windows/vscode/" |
-| GCB Extension | "Build/net6.0-windows/vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0/" |
+| GCB Extension | "SRC/MierEngineering.GreatCowBasic-1.0.0/" |
 | Batch files Clean/Push | "@Root" |
 
 

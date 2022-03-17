@@ -930,9 +930,9 @@ namespace GC_Studio
             this.label25.Location = new System.Drawing.Point(63, 120);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(124, 21);
+            this.label25.Size = new System.Drawing.Size(134, 21);
             this.label25.TabIndex = 61;
-            this.label25.Text = "Update Chanel";
+            this.label25.Text = "Update Channel";
             // 
             // panelnewproj
             // 

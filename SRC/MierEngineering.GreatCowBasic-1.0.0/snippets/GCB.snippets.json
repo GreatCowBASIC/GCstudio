@@ -1,0 +1,353 @@
+{
+    "for ... next": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next"
+    },
+    "for ... next step": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step ${StepValue}",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step"
+    },
+    "for ... next step negative": {
+        "prefix": "__for",
+        "body": [
+			"for ${LoopVariable} = ${StartValue} to ${EndValue} step -StepValue",
+			"\t$0",
+			"Next ${LoopVariable}"
+		],
+		"description": "for ... next step negative"
+    },
+    "do ... loop": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... exit ... loop": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"\texit",
+			"\t$0",
+			"loop"
+		],
+		"description": "do ... loop"
+    },
+    "do ... loop while": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop while ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop while"
+    },
+    "do ... loop until": {
+        "prefix": "__do",
+        "body": [
+			"do",
+			"\t$0",
+			"loop until ${Variable} ${Comparison} ${VariableOrNumber}"
+		],
+		"description": "do ... loop until"
+    },
+    "do while ... loop": {
+        "prefix": "__do while",
+        "body": [
+			"do while ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do while ... loop"
+    },
+    "do until ... loop": {
+        "prefix": "__do until",
+        "body": [
+			"do until ${Variable} ${Comparison} ${VariableOrNumber}",
+			"\t$0",
+			"loop"
+		],
+		"description": "do until ... loop"
+    },
+
+    "select case": {
+        "prefix": "__select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case"
+    },
+    "select case comparison": {
+        "prefix": "__select case",
+        "body": [
+			"select case ${Variable}",
+			"\tcase ${Comparison} ${VariableOrNumber}",
+			"\t\t$0",
+			"\tcase ${AnotherVariableOrNumber}, ${YetAnotherVariableOrNumber}",
+			"\t\t$0",
+			"\tcase else",
+			"\t\t$0",
+			"end select"
+		],
+		"description": "select case comparison"
+    },
+
+   "if then": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then"
+    },
+    "if then else": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else"
+    },
+    "if then else if": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else if ${Variable} ${Comparison} ${VariableOrNumber} then",
+			"\t$0",
+			"else",
+			"\t$0",
+			"end if"
+		],
+		"description": "if then else if"
+	},
+	"if then goto": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then goto ${label}"
+		],
+		"description": "if then goto"
+	},
+     "if then gosub": {
+        "prefix": "__if",
+        "body": [
+			"if ${Variable} ${Comparison} ${VariableOrNumber} then gosub ${label}"
+		],
+		"description": "if then gosub"
+    },
+	"Add chip basics": {
+	"prefix": "__chip",
+	"body": [
+	 		"#CHIP ${1:chipname}",
+			 "#OPTION EXPLICIT",
+			 ""
+	 	],
+	 	"description": "Enter chip and frequency"
+	 },
+
+	 "Add interrupt handler": {
+		"prefix": "__oninterrupt",
+		"body": [
+				 "ON INTERRUPT $1 CALL $2",
+				 ""
+			 ],
+			 "description": "Enter chip and frequency"
+		 },
+	"Add sub routine": {
+		"prefix": "__sub",
+		"body": [
+					"Sub ${1:SubroutineName} (  in ${2:passedvariable} as ${3:byte}  )",
+					"",
+					"",
+					"End Sub",
+					""
+
+				],
+				"description": "Create outline sub routine"
+		},
+	"Add Pulseout": {
+		"prefix": "__pulseout",
+		"body": [
+					"PulseOut ${1:Port.Pin}, ${2:delay} ms",
+					""
+
+				],
+				"description": "Add pulseout instruction"
+		},
+	"Add PulseIn": {
+			"prefix": "__pulsein",
+			"body": [
+						"PulseIn ${1:Port.Pin}, ${2:TimeResult_Word}, ${3:ms}",
+						""
+	
+					],
+					"description": "Add PulseIn  Port.pin, TimeResult, ms"
+			},
+	"Add Option Explicit": {
+		"prefix": "__option",
+		"body": [
+					"#OPTION EXPLICIT",
+					""
+
+				],
+				"description": "Add Option Explicit"
+		},
+		"Add Header": {
+			"prefix": "__header",
+			"body": [
+
+				"'''A demonstration program for GCGB and GCB.",
+				"'''--------------------------------------------------------------------------------",
+				"'''This program ${1:add description here}",
+				"'''",
+				"'''",
+				"'''@author    ${2:name}   ",
+				"'''@license   GPL",
+				"'''@version   ${3:version}   ",
+				"'''@date      $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+				"'''********************************************************************************",
+				"",
+				""
+					],
+					"description": "Add Header"
+			},
+			"Add Wait": {
+				"prefix": "__wait",
+				"body": [
+							"Wait ${1:delay} ms",
+							""
+		
+						],
+						"description": "Add millisecond delay"
+			},
+
+			"Add USART support": {
+				"prefix": "__usart setup",
+				"body": [
+							"#DEFINE USART_BAUD_RATE ${1:9600}",
+							"#DEFINE USART_TX_BLOCKING",
+							"#DEFINE USART_DELAY OFF",
+							""
+						],
+						"description": "Add USART1 support"
+			},
+			"Add port layout": {
+				"prefix": "__®portlayout(PortA,B&C)",
+				"body": [
+					"/*",
+					"\t       ------------PORTA---------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTB----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"",
+		
+					"\t       ------------PORTC----------------",
+					"\tBit#:  -7---6---5---4---3---2---1---0---",
+					"\tIO:    ---------------------------------",
+					"\tIO:    ---------------------------------",
+					"*/",
+					""
+				],
+				"description": "Enter a port layout to your code"
+			},
+			
+
+			"Add version control": {
+				"prefix": "__add version control",
+				"body": [
+
+							"\/*",
+							"Include the GCBVersionNumber.cnt to increment versionString and create the build time string called GCBBuildTimeStr.",
+							"versionString a string is created automatically.",
+							"GCBBuildTimeStr is a string that is also created automatically.",
+							"use \"GCBVersionNumber.cnt\" as this will create a local copy of the versionString tracker.",
+							"if you use <GCBVersionNumber.cnt> this is a system wide versionString tracker.",
+							"*\/",
+							"#INCLUDE \"gcbversionnumber.cnt\"",
+							"Dim versionString as String * 40",
+							"versionString = \"Build\"+GCBBuildStr",
+							"versionString = versionString + \"@\"+GCBBuildTimeStr",
+							""
+						],
+						"description": "Add version control"
+				},
+
+				"UNO Template":{
+					"prefix": "__UNO_Template",
+					"body": [
+						"/*",
+						"A demonstration program for GCGB and GCB.",
+				"--------------------------------------------------------------------------------",
+				"This program is for an UNO",
+				"",
+				"",
+				"@author ${1:Author}",
+				"@license GPL",
+				"@version ${2:Version}",
+				"@date $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+				"",
+				
+				" ------------PORTA---------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: ---------------------------------",
+				"IO: ---------------------------------",
+				"",
+				" ------------PORTB----------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: --------LED----------------------",
+				"IO: ---------------------------------",
+				"",
+				" ------------PORTC----------------",
+				"Bit#: -7---6---5---4---3---2---1---0---",
+				"IO: ---------------------------------",
+				"IO: ---------------------------------",
+				"",
+				"*/",
+				"",
+				"",
+				"#CHIP mega328p, 16",
+				"#OPTION EXPLICIT",
+				"",
+				"do",
+				" PulseOut Portb.5, 100 ms",
+				" Wait 900 ms",
+				" ",
+				"loop",
+				""
+			
+				]
+			}
+
+
+
+}
