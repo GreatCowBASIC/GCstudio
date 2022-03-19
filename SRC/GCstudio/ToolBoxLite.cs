@@ -1075,6 +1075,22 @@ namespace GC_Studio
             }
         }
 
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = "explorer.exe";
+                p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "fassoc.exe";
+                p.WindowStyle = ProcessWindowStyle.Normal;
+                x = Process.Start(p);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when launching the File Association Tool");
+            }
+        }
     }
 
 

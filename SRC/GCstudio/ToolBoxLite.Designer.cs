@@ -106,6 +106,7 @@ namespace GC_Studio
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -635,6 +636,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button10);
             this.panelconfig.Controls.Add(this.labelarch);
             this.panelconfig.Controls.Add(this.label29);
             this.panelconfig.Controls.Add(this.comboarch);
@@ -1224,6 +1226,18 @@ namespace GC_Studio
             this.textBox1.TabIndex = 16;
             this.textBox1.Text = "GCB Project";
             // 
+            // button10
+            // 
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(96, 614);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(201, 48);
+            this.button10.TabIndex = 77;
+            this.button10.Text = "Set File Associations";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
             // ToolBoxLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -1240,9 +1254,9 @@ namespace GC_Studio
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonclone);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelconfig);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panelnewproj);
-            this.Controls.Add(this.panelconfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1319, 985);
             this.Name = "ToolBoxLite";
@@ -1347,5 +1361,6 @@ namespace GC_Studio
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboarch;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button10;
     }
 }
