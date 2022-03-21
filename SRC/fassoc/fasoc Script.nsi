@@ -4,6 +4,11 @@
 ############################################################################################
 
 ######################################################################
+# Includes
+
+!include "LogicLib.nsh"
+
+######################################################################
 # Installer Configuration
 
 !define APP_NAME "GC Studio"
@@ -19,7 +24,6 @@
 !define REG_CLASSES "HKCR"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
 !define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
-
 ######################################################################
 # Bynary Information
 
@@ -46,6 +50,16 @@ InstallDir "$EXEDIR"
 ######################################################################
 # Write Reg Keys
 Section -Icons_Reg
+
+#Add Path
+; Check if the path entry already exists and write result to $0
+nsExec::Exec 'echo %PATH% | find "$INSTDIR\vscode\bin"'
+Pop $0   ; gets result code
+
+${If} $0 = 0
+    nsExec::Exec 'setx PATH %PATH%;$INSTDIR\vscode\bin'
+${EndIf}
+
 
 #File Associations
 WriteRegStr ${REG_CLASSES} ".gcb" "" "GCB File"
