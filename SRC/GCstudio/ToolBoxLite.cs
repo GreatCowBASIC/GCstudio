@@ -1083,7 +1083,7 @@ namespace GC_Studio
             {
                 p.FileName = "explorer.exe";
                 p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "fassoc.exe";
-                p.WindowStyle = ProcessWindowStyle.Normal;
+                p.WindowStyle = ProcessWindowStyle.Maximized;
                 x = Process.Start(p);
             }
             catch

@@ -21,7 +21,7 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
             for (var i = 0; i < document.lineCount; i++) {
                 var line = document.lineAt(i);
-                var regex = new RegExp("(?:#chip\\s+)(\\S+)","i");
+                var regex = new RegExp("(?:#chip\\s+)(\\w+)","i");
                 var remregex = new RegExp("(?:[';]|rem).*#chip","i");
                 var startremblockregex = new RegExp("[/][*]","i");
                 var endremblockregex = new RegExp("[*][/]","i");
