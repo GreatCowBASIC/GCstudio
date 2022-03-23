@@ -16,7 +16,7 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 | GCstudio Source/Project | "SRC/" |
 | GCstudio Current Build | "Build/net6.0-windows/" |
 | GCcode Current Build | "Build/net6.0-windows/vscode/" |
-| GCB Extension | "SRC/MierEngineering.GreatCowBasic-1.0.0/" |
+| GCB Extension Source | "SRC/MierEngineering.GreatCowBasic-1.0.0/" |
 | Batch files Clean/Push | "@Root" |
 
 
@@ -42,17 +42,17 @@ Win7 SP1**  x86/x64 to Win11 x64.
 # For Pull Requests:
 
 * Remember to always run "_Clean.bat" batch file before commit your work.
-* You can clean and push current build to "C:\GCB@Syn" for testing whit "_Push to GCB@Syn.bat" (all contents of "C:\GCB@Syn" will be overwritten)
+* You can clean and push current build to "C:\GCstudio" for testing whit "_Push to GCstudio.bat" (all contents of "C:\GCstudio" will be overwritten)
 * You can run GCstudio directly from Build directory to modify the project files of the repo, then push to GCB@Syn for testing.
 
-This repository uses Git LFS from GitHub https://git-lfs.github.com/ for *.exe files; if you are going to commit exe files you need to install and then run this command:
+This repository uses [Git LFS](https://git-lfs.github.com/) from GitHub for *.exe files; if you are going to commit exe files you need to install it and then run this command one time:
 
     git lfs install
 
 
 # License
-GCstudio is released under GPL-3.0 License
+GCstudio is released under [GPL-3.0 License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LICENSE)
 
-GCcode is released under MIT License and is based on the work of vscode from Microsoft and the vscodium project:
+GCcode is released under [MIT License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LicenseGCcode/LICENSE) and is based on the work of vscode from Microsoft and the vscodium project:
 - https://github.com/microsoft/vscode/
 - https://github.com/VSCodium/vscodium/
