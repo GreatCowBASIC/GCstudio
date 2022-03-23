@@ -548,7 +548,7 @@ namespace GC_Studio
 
         private void buttonwitout_Click(object sender, EventArgs e)
         {
-            LaunchIDE("", IDE);
+            LaunchIDE("-n", IDE);
         }
 
         private void button7_MouseHover(object sender, EventArgs e)
