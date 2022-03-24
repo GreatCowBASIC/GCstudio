@@ -24,6 +24,7 @@ namespace GC_Studio
         string ReleaseChanel = "mainstream";
         decimal AppVer;
         decimal ManifestVer;
+        decimal ManifestMinVer;
         string ManifestPKG;
         string ManifestChecksum;
         string ManifestTitle;
@@ -203,31 +204,39 @@ namespace GC_Studio
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();
                 ManifestNotes = dbs.ReadData();
+                dbs.ReadData();
+                ManifestMinVer = decimal.Parse(dbs.ReadData());
                 dbs.CloseRead();
-            //    try
-            //    {
-            //        System.IO.File.Delete("cvs.nfo");
-            //    }
-            //    catch
-            //    {
-            //    }
-
-                if (ManifestVer > AppVer)
+                //    try
+                //    {
+                //        System.IO.File.Delete("cvs.nfo");
+                //    }
+                //    catch
+                //    {
+                //    }
+                if (AppVer >= ManifestMinVer)
                 {
-                    if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+                    if (ManifestVer > AppVer)
                     {
-                        try
+                        if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
                         {
-                            downloading = true;   
-                            //BtnExit.Enabled = false;
-                            Version.Visible = false;
-                            ProgressUpdate.Visible = true;
-                            WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
-                            WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
-                            WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
+                            try
+                            {
+                                downloading = true;
+                                //BtnExit.Enabled = false;
+                                Version.Visible = false;
+                                ProgressUpdate.Visible = true;
+                                WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
+                                WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
+                                WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
+                            }
+                            catch
+                            {
+                            }
                         }
-                        catch
+                        else
                         {
+                            EndForm();
                         }
                     }
                     else
@@ -237,8 +246,10 @@ namespace GC_Studio
                 }
                 else
                 {
+                    MessageBox.Show("A new update is available, but the current installed version is too old to update, please download and install the current version of GC Studio.", "Unsupported GC Studio Version",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     EndForm();
                 }
+
             }
         }
 
