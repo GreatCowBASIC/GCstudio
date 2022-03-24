@@ -865,6 +865,7 @@ namespace GC_Studio
             this.comboupdate.Items.AddRange(new object[] {
             "mainstream",
             "mainstream without demos",
+            "dev preview",
             "no updates"});
             this.comboupdate.Location = new System.Drawing.Point(97, 242);
             this.comboupdate.Name = "comboupdate";
