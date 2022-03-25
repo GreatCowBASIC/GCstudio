@@ -33,6 +33,7 @@ namespace GC_Studio
         string[] arguments;
         bool continueflag = false;
         bool downloading = false;
+        bool forceupdate = false;
         System.Net.WebClient WebClientCVS = new System.Net.WebClient();
         System.Net.WebClient WebClientPKG = new System.Net.WebClient();
         Thread EnvVarThread = new Thread(new ThreadStart(Loader.SetEnvVar));
@@ -62,10 +63,23 @@ namespace GC_Studio
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
-                if (arguments[1] == "/pkp")
+
+                switch (arguments[1])
                 {
-                    this.Close();
+                    case "/pkp":
+                        this.Close();
+                        break;
+
+                    case "/forceupdate":
+                        forceupdate = true;
+                        break;
+
+
+                    default:
+
+                        break;
                 }
+
             }
 
                 //  ApplicationTitle.Text = Assembly.GetEntryAssembly().GetName().Name;
@@ -216,7 +230,7 @@ namespace GC_Studio
                 //    }
                 if (AppVer >= ManifestMinVer)
                 {
-                    if (ManifestVer > AppVer)
+                    if (ManifestVer > AppVer || forceupdate)
                     {
                         if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
                         {
