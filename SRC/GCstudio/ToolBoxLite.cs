@@ -31,9 +31,10 @@ namespace GC_Studio
         string[] RecentDir = new string[10];
         int RecentN = 0;
         ListViewItem[] RecentItem = new ListViewItem[10];
-      
 
-
+        //set focus function
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SetForegroundWindow(IntPtr hwnd);
 
         public ToolBoxLite()
         {
@@ -829,6 +830,7 @@ namespace GC_Studio
                         p.Arguments = Args;
                         p.WindowStyle = ProcessWindowStyle.Normal;
                         x = Process.Start(p);
+                        SetForegroundWindow(x.MainWindowHandle);
                         Environment.Exit(0);
                         break;
                     }
@@ -847,6 +849,7 @@ namespace GC_Studio
                     p.Arguments = Args;
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
+                    SetForegroundWindow(x.MainWindowHandle);
                     Environment.Exit(0);
                     break;
                     }
@@ -864,6 +867,7 @@ namespace GC_Studio
                     p.Arguments = Args;
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
+                    SetForegroundWindow(x.MainWindowHandle);
                     Environment.Exit(0);
                     break;
                     }
