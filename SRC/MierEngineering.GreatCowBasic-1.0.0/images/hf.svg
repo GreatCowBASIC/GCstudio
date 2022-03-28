@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="44px" height="44px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 7.65 7.58"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" class="str1" style="fill-rule:nonzero" font-style="normal" font-weight="700">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial Negrita"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="F" horiz-adv-x="611" d="M73.0281 0l0 716.273 492.153 0 0 -121.084 -347.093 0 0 -170.032 300.087 0 0 -121.031 -300.087 0 0 -304.126 -145.059 0z"/>
+   <glyph unicode="H" horiz-adv-x="722" d="M73.0281 0l0 716.273 145.059 0 0 -282.092 282.092 0 0 282.092 145.059 0 0 -716.273 -145.059 0 0 313.097 -282.092 0 0 -313.097 -145.059 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .str1 {stroke-width:39.98;stroke-miterlimit:22.9256}
+    .str0 {stroke:#C5C5C5;stroke-width:0.34;stroke-miterlimit:22.9256}
+    .str2 {stroke:#C5C5C5;stroke-width:0.15;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+    .fil1 {fill:#C5C5C5}
+    .fnt0 {font-weight:bold;font-size:3.87px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="0.17" y="0.17" width="7.3" height="7.24"/>
+  <line class="fil0 str0" x1="7.47" y1="3.79" x2="0.17" y2= "3.79" />
+  <g transform="matrix(0.819692 0 0 1 -15.3849 -30.5446)">
+   <text x="22" y="33.86"  class="fil1 str2 fnt0">H</text>
+  </g>
+  <g transform="matrix(0.819692 0 0 1 -15.2129 -26.8276)">
+   <text x="22" y="33.86"  class="fil1 str2 fnt0">F</text>
+  </g>
+ </g>
+</svg>

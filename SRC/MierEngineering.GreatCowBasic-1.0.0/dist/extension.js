@@ -67,6 +67,7 @@ function activate(context) {
         ["MenuBar.outdentLines", "editor.action.outdentLines"],
         ["MenuBar.openSettings", "workbench.action.openSettings"],
         ["MenuBar.toggleWordWrap", "editor.action.toggleWordWrap"],
+        ["MenuBar.taskMenu", "workbench.action.tasks.runTask"],
     ];
     let disposableCommandsArray = [];
     // The command has been defined in the package.json file
@@ -78,6 +79,34 @@ function activate(context) {
         }));
     });
     // Step: else add complex command separately
+    // Make Hex and Flash
+    let disposablehexflash = vscode_1.commands.registerCommand("MenuBar.hexflash", () => {
+        var args = "Make HEX and Flash [F5]";
+        vscode_1.commands
+            .executeCommand("workbench.action.tasks.runTask", args)
+            .then(function () { });
+    });
+    // Make Hex
+    let disposablehex = vscode_1.commands.registerCommand("MenuBar.hex", () => {
+        var args = "Make HEX [F6]";
+        vscode_1.commands
+            .executeCommand("workbench.action.tasks.runTask", args)
+            .then(function () { });
+    });
+    // Make ASM
+    let disposableasm = vscode_1.commands.registerCommand("MenuBar.asm", () => {
+        var args = "Make ASM [F7]";
+        vscode_1.commands
+            .executeCommand("workbench.action.tasks.runTask", args)
+            .then(function () { });
+    });
+    // Make Flash
+    let disposableflash = vscode_1.commands.registerCommand("MenuBar.flash", () => {
+        var args = "Flash Previous";
+        vscode_1.commands
+            .executeCommand("workbench.action.tasks.runTask", args)
+            .then(function () { });
+    });
     let disposableBeautify = vscode_1.commands.registerCommand("MenuBar.beautify", () => {
         let editor = vscode_1.window.activeTextEditor;
         if (!editor) {
@@ -110,16 +139,6 @@ function activate(context) {
                 .then(function () { });
         }
     });
-    // see opened files list
-    let disposableFileList = vscode_1.commands.registerCommand("MenuBar.openFilesList", () => {
-        let editor = vscode_1.window.activeTextEditor;
-        if (!editor || !editor.viewColumn) {
-            return; // No open text editor
-        }
-        vscode_1.commands
-            .executeCommand("workbench.action.showAllEditorsByMostRecentlyUsed")
-            .then(function () { });
-    });
     let disposableSwitch = vscode_1.commands.registerCommand("MenuBar.switchHeaderSource", () => {
         if (hasCpp) {
             vscode_1.commands
@@ -135,7 +154,7 @@ function activate(context) {
         context.subscriptions.push(i);
     });
     // Adding 2) to a list of disposables which are disposed when this extension is deactivated
-    context.subscriptions.push(disposableFileList);
+    // context.subscriptions.push(disposableFileList);
     context.subscriptions.push(disposableBeautify);
     context.subscriptions.push(disposableFormatWith);
     context.subscriptions.push(disposableSwitch);

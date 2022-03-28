@@ -20,7 +20,51 @@
 
 	"activationEvents": [
 		"onLanguage:GCB",
-		"onLanguage:FBasic"
+		"onLanguage:FBasic",
+		"onCommand:MenuBar.hexflash",
+		"onCommand:MenuBar.hex",
+		"onCommand:MenuBar.asm",
+		"onCommand:MenuBar.flash",
+		"onCommand:MenuBar.navigateBack",
+		"onCommand:MenuBar.navigateForward",
+		"onCommand:MenuBar.switchHeaderSource",
+		"onCommand:MenuBar.save",
+		"onCommand:MenuBar.beautify",
+		"onCommand:MenuBar.toggleRenderWhitespace",
+		"onCommand:MenuBar.taskMenu",
+		"onCommand:MenuBar.toggleTerminal",
+		"onCommand:MenuBar.toggleActivityBar",
+		"onCommand:MenuBar.quickOpen",
+		"onCommand:MenuBar.findReplace",
+		"onCommand:MenuBar.undo",
+		"onCommand:MenuBar.redo",
+		"onCommand:MenuBar.commentLine",
+		"onCommand:MenuBar.saveAll",
+		"onCommand:MenuBar.formatWith",
+		"onCommand:MenuBar.openFile",
+		"onCommand:MenuBar.newFile",
+		"onCommand:MenuBar.goToDefinition",
+		"onCommand:MenuBar.cut",
+		"onCommand:MenuBar.copy",
+		"onCommand:MenuBar.paste",
+		"onCommand:MenuBar.compareWithSaved",
+		"onCommand:MenuBar.showCommands",
+		"onCommand:MenuBar.startDebugging",
+		"onCommand:MenuBar.indentLines",
+		"onCommand:MenuBar.outdentLines",
+		"onCommand:MenuBar.openSettings",
+		"onCommand:MenuBar.toggleWordWrap",
+		"onCommand:MenuBar.userButton10",
+		"onCommand:MenuBar.userButton01",
+		"onCommand:MenuBar.userButton02",
+		"onCommand:MenuBar.userButton03",
+		"onCommand:MenuBar.userButton04",
+		"onCommand:MenuBar.userButton05",
+		"onCommand:MenuBar.userButton06",
+		"onCommand:MenuBar.userButton07",
+		"onCommand:MenuBar.userButton08",
+		"onCommand:MenuBar.userButton09"
+	
 	],
 
 	"contributes": {
@@ -100,9 +144,940 @@
 
 
 			
-		}
+		},
 
+		"configuration": [
+			{
+			  "title": "GCB Extension Configuration",
+			  "properties": {
+				"MenuBar.taskMenu": {
+					"title": "Show task menu",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Show task menu'"
+				  },
+				  "MenuBar.hexflash": {
+					"title": "Make Hex and Flash",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make Hex and Flash'"
+				  },
+				  "MenuBar.hex": {
+					"title": "Make Hex",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make Hex'"
+				  },
+				  "MenuBar.asm": {
+					"title": "Make ASM",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make ASM'"
+				  },
+				  "MenuBar.flash": {
+					"title": "Flash previous",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Flash previous'"
+				  },
 
+				"MenuBar.save": {
+				  "title": "Save active file",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Save file'"
+				},
+				"MenuBar.navigateBack": {
+				  "title": "Navigate back",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Navigate back'"
+				},
+				"MenuBar.navigateForward": {
+				  "title": "Navigate forward",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Navigate forward'"
+				},
+				"MenuBar.switchHeaderSource": {
+				  "title": "Switch header source",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Switch header/source'"
+				},
+				"MenuBar.beautify": {
+				  "title": "Beautify selection/file",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Beautify/Format selection or file'"
+				},
+				"MenuBar.toggleRenderWhitespace": {
+				  "title": "Toggle render whitespace",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Toggle render whitespace'"
+				},
+				"MenuBar.toggleTerminal": {
+				  "title": "Toggle terminal",
+				  "type": "boolean",
+				  "default": true,
+				  "description": "show icon for 'Toggle terminal'"
+				},
+				"MenuBar.toggleActivityBar": {
+				  "title": "Toggle activity bar",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Toggle activity bar'"
+				},
+				"MenuBar.quickOpen": {
+				  "title": "Quick open",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for Go to File, 'Quick Open'"
+				},
+				"MenuBar.findReplace": {
+				  "title": "Find replace",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Find/Replace in active file'"
+				},
+				"MenuBar.undo": {
+				  "title": "Undo",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Undo'"
+				},
+				"MenuBar.redo": {
+				  "title": "Redo",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Redo'"
+				},
+				"MenuBar.commentLine": {
+				  "title": "Toggle line comment",
+				  "type": "boolean",
+				  "default": true,
+				  "description": "show icon for 'Toggle line comment'"
+				},
+				"MenuBar.saveAll": {
+				  "title": "Save all",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Save all'"
+				},
+				"MenuBar.formatWith": {
+				  "title": "Format selection/file with",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Format selection/file with...'"
+				},
+				"MenuBar.openFile": {
+				  "title": "Open file",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Open File'"
+				},
+				"MenuBar.newFile": {
+				  "title": "New file",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'New File'"
+				},
+				"MenuBar.goToDefinition": {
+				  "title": "Go to definition",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Go to definition'"
+				},
+				"MenuBar.cut": {
+				  "title": "Cut",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Cut'"
+				},
+				"MenuBar.copy": {
+				  "title": "Copy",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Copy'"
+				},
+				"MenuBar.paste": {
+				  "title": "Paste",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Paste'"
+				},
+				"MenuBar.compareWithSaved": {
+				  "title": "Compare with saved",
+				  "type": "boolean",
+				  "default": true,
+				  "description": "show icon for 'Compare active file with saved'"
+				},
+				"MenuBar.showCommands": {
+				  "title": "Open command pallet",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Open command pallet / Show all commands'"
+				},
+				"MenuBar.startDebugging": {
+				  "title": "Start debugging",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Start debugging'"
+				},
+				"MenuBar.indentLines": {
+				  "title": "Indent lines",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Indent Lines'"
+				},
+				"MenuBar.outdentLines": {
+				  "title": "Outdent lines",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Outdent Lines'"
+				},
+				"MenuBar.openSettings": {
+				  "title": "Open settings",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Open settings'"
+				},
+				"MenuBar.toggleWordWrap": {
+				  "title": "Toggle word wrap",
+				  "type": "boolean",
+				  "default": false,
+				  "description": "show icon for 'Toggle word wrap'"
+				},
+				"MenuBar.userButton01Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 1'; _icon is shown if set_"
+				},
+				"MenuBar.userButton02Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 2'; _icon is shown if set_"
+				},
+				"MenuBar.userButton03Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 3'; _icon is shown if set_"
+				},
+				"MenuBar.userButton04Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 4'; _icon is shown if set_"
+				},
+				"MenuBar.userButton05Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 5'; _icon is shown if set_"
+				},
+				"MenuBar.userButton06Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 6'; _icon is shown if set_"
+				},
+				"MenuBar.userButton07Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 7'; _icon is shown if set_"
+				},
+				"MenuBar.userButton08Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 8'; _icon is shown if set_"
+				},
+				"MenuBar.userButton09Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 9'; _icon is shown if set_"
+				},
+				"MenuBar.userButton10Command": {
+				  "title": "command",
+				  "type": "string",
+				  "default": null,
+				  "markdownDescription": "command executed with 'user action 0'; _icon is shown if set_"
+				}
+			  }
+			}
+		  ],
+		  "commands": [
+			{
+				"command": "MenuBar.hexflash",
+				"title": "Make Hex and Flash",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/hf_light.svg",
+				  "dark": "images/hf.svg"
+				}
+			},
+			{
+				"command": "MenuBar.hex",
+				"title": "Make Hex",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/h_light.svg",
+				  "dark": "images/h.svg"
+				}
+			},
+			{
+				"command": "MenuBar.asm",
+				"title": "Make ASM",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/a_light.svg",
+				  "dark": "images/a.svg"
+				}
+			},
+			{
+				"command": "MenuBar.flash",
+				"title": "Flash previous",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/f_light.svg",
+				  "dark": "images/f.svg"
+				}
+			},
+			{
+			  "command": "MenuBar.navigateBack",
+			  "title": "Navigate back",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/triangle-left_light.svg",
+				"dark": "images/triangle-left.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.navigateForward",
+			  "title": "Navigate forward",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/triangle-right_light.svg",
+				"dark": "images/triangle-right.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.switchHeaderSource",
+			  "title": "Switch Header/Source",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/switch_light.svg",
+				"dark": "images/switch.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.save",
+			  "title": "Save",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/save_light.svg",
+				"dark": "images/save.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.beautify",
+			  "title": "Beautify",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/format_light.svg",
+				"dark": "images/format.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.toggleRenderWhitespace",
+			  "title": "Toggle render whitespace",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/whitespace_light.svg",
+				"dark": "images/whitespace.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.taskMenu",
+			  "title": "Show task menu",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/list_light.svg",
+				"dark": "images/list.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.toggleTerminal",
+			  "title": "Toggle terminal",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/terminal_light.svg",
+				"dark": "images/terminal.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.toggleActivityBar",
+			  "title": "Toggle activity bar",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/activitybar_light.svg",
+				"dark": "images/activitybar.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.quickOpen",
+			  "title": "Quick open",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/files-search_light.svg",
+				"dark": "images/files-search.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.findReplace",
+			  "title": "Find replace",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/find_light.svg",
+				"dark": "images/find.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.undo",
+			  "title": "Undo",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/undo_light.svg",
+				"dark": "images/undo.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.redo",
+			  "title": "Redo",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/redo_light.svg",
+				"dark": "images/redo.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.commentLine",
+			  "title": "Toggle line comment",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/commentLine_light.svg",
+				"dark": "images/commentLine.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.saveAll",
+			  "title": "Save all",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/saveAll_light.svg",
+				"dark": "images/saveAll.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.formatWith",
+			  "title": "Format document with..",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/formatWith_light.svg",
+				"dark": "images/formatWith.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.openFile",
+			  "title": "Open file",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/openFile_light.svg",
+				"dark": "images/openFile.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.newFile",
+			  "title": "New file",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/newFile_light.svg",
+				"dark": "images/newFile.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.goToDefinition",
+			  "title": "Go to definition",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/goToDefinition_light.svg",
+				"dark": "images/goToDefinition.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.cut",
+			  "title": "Cut",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/cut_light.svg",
+				"dark": "images/cut.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.copy",
+			  "title": "Copy",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/copy_light.svg",
+				"dark": "images/copy.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.paste",
+			  "title": "Paste",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/paste_light.svg",
+				"dark": "images/paste.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.compareWithSaved",
+			  "title": "Compare with saved",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/compareWithSaved_light.svg",
+				"dark": "images/compareWithSaved.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.showCommands",
+			  "title": "Open command pallet",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/commands_light.svg",
+				"dark": "images/commands.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.startDebugging",
+			  "title": "Start debugging",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/debug_light.svg",
+				"dark": "images/debug.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.indentLines",
+			  "title": "Indent lines",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/indentLines_light.svg",
+				"dark": "images/indentLines.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.outdentLines",
+			  "title": "Outdent lines",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/outdentLines_light.svg",
+				"dark": "images/outdentLines.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.openSettings",
+			  "title": "open settings",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/openSettings_light.svg",
+				"dark": "images/openSettings.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.toggleWordWrap",
+			  "title": "Toggle word wrap",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/wordWrap_light.svg",
+				"dark": "images/wordWrap.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton01",
+			  "title": "user action 1",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton01_light.svg",
+				"dark": "images/userButton01.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton02",
+			  "title": "user action 2",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton02_light.svg",
+				"dark": "images/userButton02.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton03",
+			  "title": "user action 3",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton03_light.svg",
+				"dark": "images/userButton03.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton04",
+			  "title": "user action 4",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton04_light.svg",
+				"dark": "images/userButton04.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton05",
+			  "title": "user action 5",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton05_light.svg",
+				"dark": "images/userButton05.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton06",
+			  "title": "user action 6",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton06_light.svg",
+				"dark": "images/userButton06.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton07",
+			  "title": "user action 7",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton07_light.svg",
+				"dark": "images/userButton07.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton08",
+			  "title": "user action 8",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton08_light.svg",
+				"dark": "images/userButton08.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton09",
+			  "title": "user action 9",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton09_light.svg",
+				"dark": "images/userButton09.svg"
+			  }
+			},
+			{
+			  "command": "MenuBar.userButton10",
+			  "title": "user action 0",
+			  "category": "MenuBar",
+			  "icon": {
+				"light": "images/userButton10_light.svg",
+				"dark": "images/userButton10.svg"
+			  }
+			}
+		  ],
+		  "keybindings": [
+			{
+			  "command": "MenuBar.userButton01",
+			  "key": "ctrl+alt+1",
+			  "mac": "shift+cmd+1"
+			},
+			{
+			  "command": "MenuBar.userButton02",
+			  "key": "ctrl+alt+2",
+			  "mac": "shift+cmd+2"
+			},
+			{
+			  "command": "MenuBar.userButton03",
+			  "key": "ctrl+alt+3",
+			  "mac": "shift+cmd+3"
+			},
+			{
+			  "command": "MenuBar.userButton04",
+			  "key": "ctrl+alt+4",
+			  "mac": "shift+cmd+4"
+			},
+			{
+			  "command": "MenuBar.userButton05",
+			  "key": "ctrl+alt+5",
+			  "mac": "shift+cmd+5"
+			},
+			{
+			  "command": "MenuBar.userButton06",
+			  "key": "ctrl+alt+6",
+			  "mac": "shift+cmd+6"
+			},
+			{
+			  "command": "MenuBar.userButton07",
+			  "key": "ctrl+alt+7",
+			  "mac": "shift+cmd+7"
+			},
+			{
+			  "command": "MenuBar.userButton08",
+			  "key": "ctrl+alt+8",
+			  "mac": "shift+cmd+8"
+			},
+			{
+			  "command": "MenuBar.userButton09",
+			  "key": "ctrl+alt+9",
+			  "mac": "shift+cmd+9"
+			},
+			{
+			  "command": "MenuBar.userButton10",
+			  "key": "ctrl+alt+0",
+			  "mac": "shift+cmd+0"
+			}
+		  ],
+		  "menus": {
+			"editor/title": [
+			  {
+				"when": "editorTextFocus && config.MenuBar.switchHeaderSource",
+				"command": "MenuBar.switchHeaderSource",
+				"group": "navigation@1"
+			  },
+			  {
+				"when": "config.MenuBar.navigateBack",
+				"command": "MenuBar.navigateBack",
+				"group": "navigation@2"
+			  },
+			  {
+				"when": "config.MenuBar.navigateForward",
+				"command": "MenuBar.navigateForward",
+				"group": "navigation@3"
+			  },
+			  {
+				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.save",
+				"command": "MenuBar.save",
+				"group": "navigation@4"
+			  },
+			  {
+				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.beautify",
+				"command": "MenuBar.beautify",
+				"group": "navigation@5"
+			  },
+			  {
+				"when": "config.MenuBar.toggleRenderWhitespace",
+				"command": "MenuBar.toggleRenderWhitespace",
+				"group": "navigation@6"
+			  },
+			  {
+				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.taskMenu",
+				"command": "MenuBar.taskMenu",
+				"group": "navigation@7"
+			  },
+			  {
+				"when": "config.MenuBar.toggleTerminal",
+				"command": "MenuBar.toggleTerminal",
+				"group": "navigation@8"
+			  },
+			  {
+				"when": "config.MenuBar.toggleActivityBar",
+				"command": "MenuBar.toggleActivityBar",
+				"group": "navigation@9"
+			  },
+			  {
+				"when": "config.MenuBar.quickOpen",
+				"command": "MenuBar.quickOpen",
+				"group": "navigation@10"
+			  },
+			  {
+				"when": "config.MenuBar.findReplace",
+				"command": "MenuBar.findReplace",
+				"group": "navigation@11"
+			  },
+			  {
+				"when": "textInputFocus && !editorReadonly && config.MenuBar.undo",
+				"command": "MenuBar.undo",
+				"group": "navigation@12"
+			  },
+			  {
+				"when": "textInputFocus && !editorReadonly && config.MenuBar.redo",
+				"command": "MenuBar.redo",
+				"group": "navigation@13"
+			  },
+			  {
+				"when": "!editorReadonly && config.MenuBar.commentLine",
+				"command": "MenuBar.commentLine",
+				"group": "navigation@14"
+			  },
+			  {
+				"when": "config.MenuBar.saveAll",
+				"command": "MenuBar.saveAll",
+				"group": "navigation@15"
+			  },
+			  {
+				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.formatWith",
+				"command": "MenuBar.formatWith",
+				"group": "navigation@16"
+			  },
+			  {
+				"when": "config.MenuBar.openFile",
+				"command": "MenuBar.openFile",
+				"group": "navigation@17"
+			  },
+			  {
+				"when": "config.MenuBar.newFile",
+				"command": "MenuBar.newFile",
+				"group": "navigation@18"
+			  },
+			  {
+				"when": "config.MenuBar.goToDefinition && editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor",
+				"command": "MenuBar.goToDefinition",
+				"group": "navigation@19"
+			  },
+			  {
+				"when": "config.MenuBar.cut",
+				"command": "MenuBar.cut",
+				"group": "navigation@20"
+			  },
+			  {
+				"when": "config.MenuBar.copy",
+				"command": "MenuBar.copy",
+				"group": "navigation@21"
+			  },
+			  {
+				"when": "config.MenuBar.paste",
+				"command": "MenuBar.paste",
+				"group": "navigation@22"
+			  },
+			  {
+				"when": "config.MenuBar.compareWithSaved",
+				"command": "MenuBar.compareWithSaved",
+				"group": "navigation@23"
+			  },
+			  {
+				"when": "config.MenuBar.showCommands",
+				"command": "MenuBar.showCommands",
+				"group": "navigation@24"
+			  },
+			  {
+				"when": "config.MenuBar.startDebugging && debuggersAvailable && !inDebugMode",
+				"command": "MenuBar.startDebugging",
+				"group": "navigation@25"
+			  },
+			  {
+				"when": "config.MenuBar.indentLines",
+				"command": "MenuBar.indentLines",
+				"group": "navigation@26"
+			  },
+			  {
+				"when": "config.MenuBar.outdentLines",
+				"command": "MenuBar.outdentLines",
+				"group": "navigation@27"
+			  },
+			  {
+				"when": "config.MenuBar.openSettings",
+				"command": "MenuBar.openSettings",
+				"group": "navigation@28"
+			  },
+			  {
+				"when": "config.MenuBar.openSettings",
+				"command": "MenuBar.openSettings",
+				"group": "navigation@28"
+			  },
+			  {
+				"when": "config.MenuBar.toggleWordWrap",
+				"command": "MenuBar.toggleWordWrap",
+				"group": "navigation@29"
+			  },
+			  {
+				"when": "config.MenuBar.hexflash",
+				"command": "MenuBar.hexflash",
+				"group": "navigation@30"
+			  },
+			  {
+				"when": "config.MenuBar.hex",
+				"command": "MenuBar.hex",
+				"group": "navigation@31"
+			  },
+			  {
+				"when": "config.MenuBar.asm",
+				"command": "MenuBar.asm",
+				"group": "navigation@32"
+			  },
+			  {
+				"when": "config.MenuBar.flash",
+				"command": "MenuBar.flash",
+				"group": "navigation@33"
+			  },
+			  {
+				"when": "config.MenuBar.userButton01Command",
+				"command": "MenuBar.userButton01",
+				"group": "navigation@34"
+			  },
+			  {
+				"when": "config.MenuBar.userButton02Command",
+				"command": "MenuBar.userButton02",
+				"group": "navigation@35"
+			  },
+			  {
+				"when": "config.MenuBar.userButton03Command",
+				"command": "MenuBar.userButton03",
+				"group": "navigation@36"
+			  },
+			  {
+				"when": "config.MenuBar.userButton04Command",
+				"command": "MenuBar.userButton04",
+				"group": "navigation@37"
+			  },
+			  {
+				"when": "config.MenuBar.userButton05Command",
+				"command": "MenuBar.userButton05",
+				"group": "navigation@38"
+			  },
+			  {
+				"when": "config.MenuBar.userButton06Command",
+				"command": "MenuBar.userButton06",
+				"group": "navigation@39"
+			  },
+			  {
+				"when": "config.MenuBar.userButton07Command",
+				"command": "MenuBar.userButton07",
+				"group": "navigation@40"
+			  },
+			  {
+				"when": "config.MenuBar.userButton08Command",
+				"command": "MenuBar.userButton08",
+				"group": "navigation@41"
+			  },
+			  {
+				"when": "config.MenuBar.userButton09Command",
+				"command": "MenuBar.userButton09",
+				"group": "navigation@42"
+			  },
+			  {
+				"when": "config.MenuBar.userButton10Command",
+				"command": "MenuBar.userButton10",
+				"group": "navigation@43"
+			  }
+			]
+		  }
+		
 	},
 
 
@@ -117,14 +1092,21 @@
 
 	
 	"scripts": {
-		"vscode:prepublish": "npm run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p . -w --outDir out",
-		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	}
+		"package": "vsce package"
+	  },
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/node": "^15.0.2",
+		"@types/vscode": "^1.56.0",
+		"@typescript-eslint/eslint-plugin": "^4.23.0",
+		"@typescript-eslint/parser": "^4.23.0",
+		"eslint": "^7.26.0",
+		"glob": "^7.1.7",
+		"typescript": "^4.2.4",
+		"vsce": "^1.88.0"
+	  }
 }

@@ -21,13 +21,17 @@
 	"activationEvents": [
 		"onLanguage:GCB",
 		"onLanguage:FBasic",
+		"onCommand:MenuBar.hexflash",
+		"onCommand:MenuBar.hex",
+		"onCommand:MenuBar.asm",
+		"onCommand:MenuBar.flash",
 		"onCommand:MenuBar.navigateBack",
 		"onCommand:MenuBar.navigateForward",
 		"onCommand:MenuBar.switchHeaderSource",
 		"onCommand:MenuBar.save",
 		"onCommand:MenuBar.beautify",
 		"onCommand:MenuBar.toggleRenderWhitespace",
-		"onCommand:MenuBar.openFilesList",
+		"onCommand:MenuBar.taskMenu",
 		"onCommand:MenuBar.toggleTerminal",
 		"onCommand:MenuBar.toggleActivityBar",
 		"onCommand:MenuBar.quickOpen",
@@ -146,6 +150,37 @@
 			{
 			  "title": "GCB Extension Configuration",
 			  "properties": {
+				"MenuBar.taskMenu": {
+					"title": "Show task menu",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Show task menu'"
+				  },
+				  "MenuBar.hexflash": {
+					"title": "Make Hex and Flash",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make Hex and Flash'"
+				  },
+				  "MenuBar.hex": {
+					"title": "Make Hex",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make Hex'"
+				  },
+				  "MenuBar.asm": {
+					"title": "Make ASM",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Make ASM'"
+				  },
+				  "MenuBar.flash": {
+					"title": "Flash previous",
+					"type": "boolean",
+					"default": true,
+					"description": "show icon for 'Flash previous'"
+				  },
+
 				"MenuBar.save": {
 				  "title": "Save active file",
 				  "type": "boolean",
@@ -173,7 +208,7 @@
 				"MenuBar.beautify": {
 				  "title": "Beautify selection/file",
 				  "type": "boolean",
-				  "default": true,
+				  "default": false,
 				  "description": "show icon for 'Beautify/Format selection or file'"
 				},
 				"MenuBar.toggleRenderWhitespace": {
@@ -181,12 +216,6 @@
 				  "type": "boolean",
 				  "default": false,
 				  "description": "show icon for 'Toggle render whitespace'"
-				},
-				"MenuBar.openFilesList": {
-				  "title": "show opened files list",
-				  "type": "boolean",
-				  "default": false,
-				  "description": "show icon for 'Opened files list'"
 				},
 				"MenuBar.toggleTerminal": {
 				  "title": "Toggle terminal",
@@ -209,7 +238,7 @@
 				"MenuBar.findReplace": {
 				  "title": "Find replace",
 				  "type": "boolean",
-				  "default": true,
+				  "default": false,
 				  "description": "show icon for 'Find/Replace in active file'"
 				},
 				"MenuBar.undo": {
@@ -299,13 +328,13 @@
 				"MenuBar.indentLines": {
 				  "title": "Indent lines",
 				  "type": "boolean",
-				  "default": true,
+				  "default": false,
 				  "description": "show icon for 'Indent Lines'"
 				},
 				"MenuBar.outdentLines": {
 				  "title": "Outdent lines",
 				  "type": "boolean",
-				  "default": true,
+				  "default": false,
 				  "description": "show icon for 'Outdent Lines'"
 				},
 				"MenuBar.openSettings": {
@@ -385,6 +414,42 @@
 		  ],
 		  "commands": [
 			{
+				"command": "MenuBar.hexflash",
+				"title": "Make Hex and Flash",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/hf_light.svg",
+				  "dark": "images/hf.svg"
+				}
+			},
+			{
+				"command": "MenuBar.hex",
+				"title": "Make Hex",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/h_light.svg",
+				  "dark": "images/h.svg"
+				}
+			},
+			{
+				"command": "MenuBar.asm",
+				"title": "Make ASM",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/a_light.svg",
+				  "dark": "images/a.svg"
+				}
+			},
+			{
+				"command": "MenuBar.flash",
+				"title": "Flash previous",
+				"category": "MenuBar",
+				"icon": {
+				  "light": "images/f_light.svg",
+				  "dark": "images/f.svg"
+				}
+			},
+			{
 			  "command": "MenuBar.navigateBack",
 			  "title": "Navigate back",
 			  "category": "MenuBar",
@@ -439,8 +504,8 @@
 			  }
 			},
 			{
-			  "command": "MenuBar.openFilesList",
-			  "title": "Show opened files list",
+			  "command": "MenuBar.taskMenu",
+			  "title": "Show task menu",
 			  "category": "MenuBar",
 			  "icon": {
 				"light": "images/list_light.svg",
@@ -821,8 +886,8 @@
 				"group": "navigation@6"
 			  },
 			  {
-				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.openFilesList",
-				"command": "MenuBar.openFilesList",
+				"when": "!isInDiffEditor && !markdownPreviewFocus && config.MenuBar.taskMenu",
+				"command": "MenuBar.taskMenu",
 				"group": "navigation@7"
 			  },
 			  {
@@ -856,7 +921,7 @@
 				"group": "navigation@13"
 			  },
 			  {
-				"when": "editorTextFocus && !editorReadonly && config.MenuBar.commentLine",
+				"when": "!editorReadonly && config.MenuBar.commentLine",
 				"command": "MenuBar.commentLine",
 				"group": "navigation@14"
 			  },
@@ -941,54 +1006,74 @@
 				"group": "navigation@29"
 			  },
 			  {
+				"when": "config.MenuBar.hexflash",
+				"command": "MenuBar.hexflash",
+				"group": "navigation@30"
+			  },
+			  {
+				"when": "config.MenuBar.hex",
+				"command": "MenuBar.hex",
+				"group": "navigation@31"
+			  },
+			  {
+				"when": "config.MenuBar.asm",
+				"command": "MenuBar.asm",
+				"group": "navigation@32"
+			  },
+			  {
+				"when": "config.MenuBar.flash",
+				"command": "MenuBar.flash",
+				"group": "navigation@33"
+			  },
+			  {
 				"when": "config.MenuBar.userButton01Command",
 				"command": "MenuBar.userButton01",
-				"group": "navigation@30"
+				"group": "navigation@34"
 			  },
 			  {
 				"when": "config.MenuBar.userButton02Command",
 				"command": "MenuBar.userButton02",
-				"group": "navigation@31"
+				"group": "navigation@35"
 			  },
 			  {
 				"when": "config.MenuBar.userButton03Command",
 				"command": "MenuBar.userButton03",
-				"group": "navigation@32"
+				"group": "navigation@36"
 			  },
 			  {
 				"when": "config.MenuBar.userButton04Command",
 				"command": "MenuBar.userButton04",
-				"group": "navigation@33"
+				"group": "navigation@37"
 			  },
 			  {
 				"when": "config.MenuBar.userButton05Command",
 				"command": "MenuBar.userButton05",
-				"group": "navigation@34"
+				"group": "navigation@38"
 			  },
 			  {
 				"when": "config.MenuBar.userButton06Command",
 				"command": "MenuBar.userButton06",
-				"group": "navigation@35"
+				"group": "navigation@39"
 			  },
 			  {
 				"when": "config.MenuBar.userButton07Command",
 				"command": "MenuBar.userButton07",
-				"group": "navigation@36"
+				"group": "navigation@40"
 			  },
 			  {
 				"when": "config.MenuBar.userButton08Command",
 				"command": "MenuBar.userButton08",
-				"group": "navigation@37"
+				"group": "navigation@41"
 			  },
 			  {
 				"when": "config.MenuBar.userButton09Command",
 				"command": "MenuBar.userButton09",
-				"group": "navigation@38"
+				"group": "navigation@42"
 			  },
 			  {
 				"when": "config.MenuBar.userButton10Command",
 				"command": "MenuBar.userButton10",
-				"group": "navigation@39"
+				"group": "navigation@43"
 			  }
 			]
 		  }
