@@ -25,6 +25,8 @@ Win7 SP1**  x86/x64 to Win11 x64.
 
 **Service Pack 1 whit [KB4474419](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4474419), [KB2999226](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2999226).
 
+Minimum resolution of 1024x768
+
 ### Prerequisites:
 [.Net 6.0 - x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.2-windows-x86-installer)
 
