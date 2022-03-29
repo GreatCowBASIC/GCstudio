@@ -127,7 +127,7 @@ namespace GC_Studio
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1306, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(1038, 68);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -141,7 +141,7 @@ namespace GC_Studio
             this.BtnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMini.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnMini.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnMini.Location = new System.Drawing.Point(1160, -3);
+            this.BtnMini.Location = new System.Drawing.Point(892, -3);
             this.BtnMini.Name = "BtnMini";
             this.BtnMini.Size = new System.Drawing.Size(71, 68);
             this.BtnMini.TabIndex = 12;
@@ -158,7 +158,7 @@ namespace GC_Studio
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExit.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnExit.Location = new System.Drawing.Point(1230, -3);
+            this.BtnExit.Location = new System.Drawing.Point(962, -3);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(71, 68);
             this.BtnExit.TabIndex = 11;
@@ -175,7 +175,7 @@ namespace GC_Studio
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(1090, -3);
+            this.button1.Location = new System.Drawing.Point(822, -3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 68);
             this.button1.TabIndex = 13;
@@ -211,7 +211,7 @@ namespace GC_Studio
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(614, 213);
+            this.label3.Location = new System.Drawing.Point(343, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 31);
             this.label3.TabIndex = 16;
@@ -238,7 +238,7 @@ namespace GC_Studio
             this.buttonclone.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonclone.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonclone.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonclone.Location = new System.Drawing.Point(643, 1487);
+            this.buttonclone.Location = new System.Drawing.Point(375, 1487);
             this.buttonclone.Name = "buttonclone";
             this.buttonclone.Size = new System.Drawing.Size(573, 172);
             this.buttonclone.TabIndex = 19;
@@ -258,7 +258,7 @@ namespace GC_Studio
             this.buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonwitout.Location = new System.Drawing.Point(757, 832);
+            this.buttonwitout.Location = new System.Drawing.Point(486, 832);
             this.buttonwitout.Name = "buttonwitout";
             this.buttonwitout.Size = new System.Drawing.Size(301, 50);
             this.buttonwitout.TabIndex = 24;
@@ -279,7 +279,7 @@ namespace GC_Studio
             this.buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonbug.Location = new System.Drawing.Point(1003, 935);
+            this.buttonbug.Location = new System.Drawing.Point(732, 905);
             this.buttonbug.Name = "buttonbug";
             this.buttonbug.Size = new System.Drawing.Size(301, 50);
             this.buttonbug.TabIndex = 25;
@@ -295,7 +295,7 @@ namespace GC_Studio
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(757, 1572);
+            this.label6.Location = new System.Drawing.Point(489, 1572);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(441, 72);
             this.label6.TabIndex = 27;
@@ -311,7 +311,7 @@ namespace GC_Studio
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(754, 1513);
+            this.label5.Location = new System.Drawing.Point(486, 1513);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(223, 31);
             this.label5.TabIndex = 26;
@@ -325,7 +325,7 @@ namespace GC_Studio
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(656, 1500);
+            this.pictureBox2.Location = new System.Drawing.Point(388, 1500);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(93, 107);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -340,7 +340,7 @@ namespace GC_Studio
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(620, 307);
+            this.pictureBox3.Location = new System.Drawing.Point(349, 307);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(93, 107);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -356,7 +356,7 @@ namespace GC_Studio
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(720, 378);
+            this.label13.Location = new System.Drawing.Point(449, 378);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(441, 72);
             this.label13.TabIndex = 37;
@@ -372,7 +372,7 @@ namespace GC_Studio
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(719, 318);
+            this.label14.Location = new System.Drawing.Point(448, 318);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(257, 31);
             this.label14.TabIndex = 36;
@@ -392,7 +392,7 @@ namespace GC_Studio
             this.buttonopensol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonopensol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonopensol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonopensol.Location = new System.Drawing.Point(609, 290);
+            this.buttonopensol.Location = new System.Drawing.Point(338, 290);
             this.buttonopensol.Name = "buttonopensol";
             this.buttonopensol.Size = new System.Drawing.Size(573, 172);
             this.buttonopensol.TabIndex = 35;
@@ -406,7 +406,7 @@ namespace GC_Studio
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(620, 485);
+            this.pictureBox4.Location = new System.Drawing.Point(349, 485);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(93, 107);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,7 +422,7 @@ namespace GC_Studio
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(720, 560);
+            this.label15.Location = new System.Drawing.Point(449, 560);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(441, 72);
             this.label15.TabIndex = 41;
@@ -438,7 +438,7 @@ namespace GC_Studio
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(719, 498);
+            this.label16.Location = new System.Drawing.Point(448, 498);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(231, 31);
             this.label16.TabIndex = 40;
@@ -458,7 +458,7 @@ namespace GC_Studio
             this.buttonopenfol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonopenfol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonopenfol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonopenfol.Location = new System.Drawing.Point(609, 472);
+            this.buttonopenfol.Location = new System.Drawing.Point(338, 472);
             this.buttonopenfol.Name = "buttonopenfol";
             this.buttonopenfol.Size = new System.Drawing.Size(573, 172);
             this.buttonopenfol.TabIndex = 39;
@@ -472,7 +472,7 @@ namespace GC_Studio
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(620, 665);
+            this.pictureBox5.Location = new System.Drawing.Point(349, 665);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(93, 107);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -488,7 +488,7 @@ namespace GC_Studio
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label17.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(720, 738);
+            this.label17.Location = new System.Drawing.Point(449, 738);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(441, 72);
             this.label17.TabIndex = 45;
@@ -504,7 +504,7 @@ namespace GC_Studio
             this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
             this.label18.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(719, 678);
+            this.label18.Location = new System.Drawing.Point(448, 678);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(251, 31);
             this.label18.TabIndex = 44;
@@ -524,7 +524,7 @@ namespace GC_Studio
             this.buttonnew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonnew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonnew.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonnew.Location = new System.Drawing.Point(609, 652);
+            this.buttonnew.Location = new System.Drawing.Point(338, 652);
             this.buttonnew.Name = "buttonnew";
             this.buttonnew.Size = new System.Drawing.Size(573, 172);
             this.buttonnew.TabIndex = 43;
@@ -537,7 +537,7 @@ namespace GC_Studio
             // 
             this.pictureconf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureconf.Image = ((System.Drawing.Image)(resources.GetObject("pictureconf.Image")));
-            this.pictureconf.Location = new System.Drawing.Point(1021, -2);
+            this.pictureconf.Location = new System.Drawing.Point(753, -2);
             this.pictureconf.Name = "pictureconf";
             this.pictureconf.Size = new System.Drawing.Size(61, 68);
             this.pictureconf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -571,7 +571,7 @@ namespace GC_Studio
             this.panelmain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmain.Location = new System.Drawing.Point(0, 0);
             this.panelmain.Name = "panelmain";
-            this.panelmain.Size = new System.Drawing.Size(1306, 988);
+            this.panelmain.Size = new System.Drawing.Size(1038, 958);
             this.panelmain.TabIndex = 48;
             // 
             // linkLabelclear
@@ -582,7 +582,7 @@ namespace GC_Studio
             this.linkLabelclear.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabelclear.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabelclear.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.linkLabelclear.Location = new System.Drawing.Point(374, 222);
+            this.linkLabelclear.Location = new System.Drawing.Point(238, 219);
             this.linkLabelclear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelclear.Name = "linkLabelclear";
             this.linkLabelclear.Size = new System.Drawing.Size(93, 25);
@@ -607,7 +607,7 @@ namespace GC_Studio
             this.listViewRecent.MultiSelect = false;
             this.listViewRecent.Name = "listViewRecent";
             this.listViewRecent.ShowItemToolTips = true;
-            this.listViewRecent.Size = new System.Drawing.Size(494, 547);
+            this.listViewRecent.Size = new System.Drawing.Size(223, 517);
             this.listViewRecent.TabIndex = 48;
             this.listViewRecent.UseCompatibleStateImageBehavior = false;
             this.listViewRecent.View = System.Windows.Forms.View.List;
@@ -625,7 +625,7 @@ namespace GC_Studio
             this.buttonabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonabout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonabout.ForeColor = System.Drawing.Color.White;
-            this.buttonabout.Location = new System.Drawing.Point(20, 917);
+            this.buttonabout.Location = new System.Drawing.Point(20, 886);
             this.buttonabout.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.buttonabout.Name = "buttonabout";
             this.buttonabout.Size = new System.Drawing.Size(109, 50);
@@ -656,7 +656,7 @@ namespace GC_Studio
             this.panelconfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelconfig.Location = new System.Drawing.Point(0, 0);
             this.panelconfig.Name = "panelconfig";
-            this.panelconfig.Size = new System.Drawing.Size(1306, 988);
+            this.panelconfig.Size = new System.Drawing.Size(1038, 958);
             this.panelconfig.TabIndex = 49;
             this.panelconfig.Visible = false;
             // 
@@ -743,7 +743,7 @@ namespace GC_Studio
             this.buttongcbext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongcbext.Location = new System.Drawing.Point(620, 463);
+            this.buttongcbext.Location = new System.Drawing.Point(349, 463);
             this.buttongcbext.Name = "buttongcbext";
             this.buttongcbext.Size = new System.Drawing.Size(301, 50);
             this.buttongcbext.TabIndex = 71;
@@ -765,7 +765,7 @@ namespace GC_Studio
             this.buttongccode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongccode.Location = new System.Drawing.Point(620, 407);
+            this.buttongccode.Location = new System.Drawing.Point(349, 407);
             this.buttongccode.Name = "buttongccode";
             this.buttongccode.Size = new System.Drawing.Size(301, 50);
             this.buttongccode.TabIndex = 70;
@@ -787,7 +787,7 @@ namespace GC_Studio
             this.buttongstools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongstools.Location = new System.Drawing.Point(620, 348);
+            this.buttongstools.Location = new System.Drawing.Point(349, 348);
             this.buttongstools.Name = "buttongstools";
             this.buttongstools.Size = new System.Drawing.Size(301, 50);
             this.buttongstools.TabIndex = 69;
@@ -809,7 +809,7 @@ namespace GC_Studio
             this.buttoncompiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttoncompiler.Location = new System.Drawing.Point(620, 290);
+            this.buttoncompiler.Location = new System.Drawing.Point(349, 290);
             this.buttoncompiler.Name = "buttoncompiler";
             this.buttoncompiler.Size = new System.Drawing.Size(301, 50);
             this.buttoncompiler.TabIndex = 68;
@@ -825,7 +825,7 @@ namespace GC_Studio
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(609, 88);
+            this.label4.Location = new System.Drawing.Point(338, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(507, 152);
             this.label4.TabIndex = 67;
@@ -836,7 +836,7 @@ namespace GC_Studio
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(1194, 925);
+            this.button9.Location = new System.Drawing.Point(923, 895);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(96, 48);
             this.button9.TabIndex = 60;
@@ -934,7 +934,7 @@ namespace GC_Studio
             this.panelnewproj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelnewproj.Location = new System.Drawing.Point(0, 0);
             this.panelnewproj.Name = "panelnewproj";
-            this.panelnewproj.Size = new System.Drawing.Size(1306, 988);
+            this.panelnewproj.Size = new System.Drawing.Size(1038, 958);
             this.panelnewproj.TabIndex = 51;
             this.panelnewproj.Visible = false;
             // 
@@ -943,7 +943,7 @@ namespace GC_Studio
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(1197, 925);
+            this.button8.Location = new System.Drawing.Point(926, 895);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(96, 48);
             this.button8.TabIndex = 59;
@@ -1246,7 +1246,7 @@ namespace GC_Studio
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(1306, 988);
+            this.ClientSize = new System.Drawing.Size(1038, 958);
             this.ControlBox = false;
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnMini);
@@ -1261,7 +1261,7 @@ namespace GC_Studio
             this.Controls.Add(this.panelnewproj);
             this.Controls.Add(this.panelconfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1316, 980);
+            this.MinimumSize = new System.Drawing.Size(1060, 980);
             this.Name = "ToolBoxLite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Main_Load);
