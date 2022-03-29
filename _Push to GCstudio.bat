@@ -6,6 +6,7 @@ del *.config
 del cvs.nfo
 del mrf.dat
 del mrd.dat
+del lstsz.dat
 cd vscode
 cd data
 del argv.json
