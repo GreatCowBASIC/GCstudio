@@ -30,6 +30,8 @@ namespace GC_Studio
         string[] RecentName = new string[10];
         string[] RecentDir = new string[10];
         int RecentN = 0;
+        int sizeW;
+        int sizeH;
         ListViewItem[] RecentItem = new ListViewItem[10];
 
         //set focus function
@@ -164,9 +166,34 @@ namespace GC_Studio
 
                         LaunchIDE(ideargs, IDE);
                         break;
-
                 }
+
+
+               
+
             }
+
+            //window size
+            if (File.Exists("lstsz.dat"))
+            {
+                try
+                {
+                    dbs.LoadRead("lstsz.dat");
+                    sizeW = int.Parse(dbs.ReadData());
+                    sizeH = int.Parse(dbs.ReadData());
+                    dbs.CloseRead();
+                }
+                catch { MessageBox.Show("Error loading last size"); }
+            }
+            else
+            {
+              
+                    sizeW = 1200;
+                    sizeH = 1010;
+                    SaveLastSize();
+
+            }
+            this.Size = new Size(sizeW, sizeH);
 
             //first run
             if (File.Exists("mrf.dat") == false)
@@ -190,9 +217,20 @@ namespace GC_Studio
                 }
             }
 
+        }
 
-
-
+        /// save last size
+        /// 
+        private void SaveLastSize()
+        {
+            try
+            {
+                dbs.LoadWrite("lstsz.dat");
+                dbs.RecordData(sizeW.ToString());
+                dbs.RecordData(sizeH.ToString());
+                dbs.CloseWrite();
+            }
+            catch { MessageBox.Show("Error saving last size"); }
         }
 
         /// <summary>
@@ -406,6 +444,9 @@ namespace GC_Studio
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
+            sizeW = this.Size.Width;
+            sizeH = this.Size.Height;
+            SaveLastSize();
             Environment.Exit(0);
         }
 
@@ -831,6 +872,9 @@ namespace GC_Studio
                         p.WindowStyle = ProcessWindowStyle.Normal;
                         x = Process.Start(p);
                         SetForegroundWindow(x.MainWindowHandle);
+                        sizeW = this.Size.Width;
+                        sizeH = this.Size.Height;
+                        SaveLastSize();
                         Environment.Exit(0);
                         break;
                     }
@@ -850,7 +894,10 @@ namespace GC_Studio
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
                     SetForegroundWindow(x.MainWindowHandle);
-                    Environment.Exit(0);
+                        sizeW = this.Size.Width;
+                        sizeH = this.Size.Height;
+                        SaveLastSize();
+                        Environment.Exit(0);
                     break;
                     }
                     catch
@@ -868,7 +915,10 @@ namespace GC_Studio
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
                     SetForegroundWindow(x.MainWindowHandle);
-                    Environment.Exit(0);
+                        sizeW = this.Size.Width;
+                        sizeH = this.Size.Height;
+                        SaveLastSize();
+                        Environment.Exit(0);
                     break;
                     }
                     catch
