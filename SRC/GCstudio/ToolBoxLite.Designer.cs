@@ -743,7 +743,7 @@ namespace GC_Studio
             this.buttongcbext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongcbext.Location = new System.Drawing.Point(349, 463);
+            this.buttongcbext.Location = new System.Drawing.Point(382, 463);
             this.buttongcbext.Name = "buttongcbext";
             this.buttongcbext.Size = new System.Drawing.Size(301, 50);
             this.buttongcbext.TabIndex = 71;
@@ -765,7 +765,7 @@ namespace GC_Studio
             this.buttongccode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongccode.Location = new System.Drawing.Point(349, 407);
+            this.buttongccode.Location = new System.Drawing.Point(382, 407);
             this.buttongccode.Name = "buttongccode";
             this.buttongccode.Size = new System.Drawing.Size(301, 50);
             this.buttongccode.TabIndex = 70;
@@ -787,7 +787,7 @@ namespace GC_Studio
             this.buttongstools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongstools.Location = new System.Drawing.Point(349, 348);
+            this.buttongstools.Location = new System.Drawing.Point(382, 348);
             this.buttongstools.Name = "buttongstools";
             this.buttongstools.Size = new System.Drawing.Size(301, 50);
             this.buttongstools.TabIndex = 69;
@@ -809,7 +809,7 @@ namespace GC_Studio
             this.buttoncompiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttoncompiler.Location = new System.Drawing.Point(349, 290);
+            this.buttoncompiler.Location = new System.Drawing.Point(382, 290);
             this.buttoncompiler.Name = "buttoncompiler";
             this.buttoncompiler.Size = new System.Drawing.Size(301, 50);
             this.buttoncompiler.TabIndex = 68;
