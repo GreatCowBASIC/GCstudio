@@ -8,6 +8,7 @@ using System.Text;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
@@ -32,6 +33,8 @@ namespace GC_Studio
         int RecentN = 0;
         int sizeW;
         int sizeH;
+        Int32 locx;
+        Int32 locy;
         ListViewItem[] RecentItem = new ListViewItem[10];
 
         //set focus function
@@ -181,19 +184,35 @@ namespace GC_Studio
                     dbs.LoadRead("lstsz.dat");
                     sizeW = int.Parse(dbs.ReadData());
                     sizeH = int.Parse(dbs.ReadData());
-                    dbs.CloseRead();
+                    try
+                    {
+                        locx = Int32.Parse(dbs.ReadData());
+                        locy = Int32.Parse(dbs.ReadData());
+                        this.Location = new Point(locx, locy);
+                    }
+                    catch { }
+                    dbs.CloseRead();                   
                 }
-                catch { MessageBox.Show("Error loading last size"); }
+                catch
+                {
+
+                    MessageBox.Show("Error loading last size");
+                }
+
             }
             else
             {
               
                     sizeW = 1200;
                     sizeH = 1010;
+                    locx = this.Location.X;
+                    locy = this.Location.Y;
                     SaveLastSize();
+                
 
             }
             this.Size = new Size(sizeW, sizeH);
+            
 
             //first run
             if (File.Exists("mrf.dat") == false)
@@ -228,6 +247,8 @@ namespace GC_Studio
                 dbs.LoadWrite("lstsz.dat");
                 dbs.RecordData(sizeW.ToString());
                 dbs.RecordData(sizeH.ToString());
+                dbs.RecordData(locx.ToString());
+                dbs.RecordData(locy.ToString());
                 dbs.CloseWrite();
             }
             catch { MessageBox.Show("Error saving last size"); }
@@ -446,6 +467,8 @@ namespace GC_Studio
         {
             sizeW = this.Size.Width;
             sizeH = this.Size.Height;
+            locx = this.Location.X;
+            locy = this.Location.Y;
             SaveLastSize();
             Environment.Exit(0);
         }
@@ -874,6 +897,8 @@ namespace GC_Studio
                         SetForegroundWindow(x.MainWindowHandle);
                         sizeW = this.Size.Width;
                         sizeH = this.Size.Height;
+                        locx = this.Location.X;
+                        locy = this.Location.Y;
                         SaveLastSize();
                         Environment.Exit(0);
                         break;
@@ -896,6 +921,8 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         sizeW = this.Size.Width;
                         sizeH = this.Size.Height;
+                        locx = this.Location.X;
+                        locy = this.Location.Y;
                         SaveLastSize();
                         Environment.Exit(0);
                     break;
@@ -917,6 +944,8 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         sizeW = this.Size.Width;
                         sizeH = this.Size.Height;
+                        locx = this.Location.X;
+                        locy = this.Location.Y;
                         SaveLastSize();
                         Environment.Exit(0);
                     break;
