@@ -33,6 +33,7 @@ namespace GC_Studio
         int RecentN = 0;
         int sizeW;
         int sizeH;
+        bool maximized = false;
         Int32 locx;
         Int32 locy;
         ListViewItem[] RecentItem = new ListViewItem[10];
@@ -188,6 +189,7 @@ namespace GC_Studio
                     {
                         locx = Int32.Parse(dbs.ReadData());
                         locy = Int32.Parse(dbs.ReadData());
+                        maximized = bool.Parse(dbs.ReadData());
                         this.Location = new Point(locx, locy);
                     }
                     catch { }
@@ -207,12 +209,17 @@ namespace GC_Studio
                     sizeH = 1010;
                     locx = this.Location.X;
                     locy = this.Location.Y;
+                    maximized = false;
                     SaveLastSize();
                 
 
             }
             this.Size = new Size(sizeW, sizeH);
-            
+            if (maximized)
+            {
+                MaxBounds();
+                this.WindowState = FormWindowState.Maximized;
+            }
 
             //first run
             if (File.Exists("mrf.dat") == false)
@@ -249,6 +256,7 @@ namespace GC_Studio
                 dbs.RecordData(sizeH.ToString());
                 dbs.RecordData(locx.ToString());
                 dbs.RecordData(locy.ToString());
+                dbs.RecordData(maximized.ToString());
                 dbs.CloseWrite();
             }
             catch { MessageBox.Show("Error saving last size"); }
@@ -465,10 +473,19 @@ namespace GC_Studio
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            sizeW = this.Size.Width;
-            sizeH = this.Size.Height;
-            locx = this.Location.X;
-            locy = this.Location.Y;
+            
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                maximized = true;
+            }
+            else
+            {
+                maximized = false;
+                sizeW = this.Size.Width;
+                sizeH = this.Size.Height;
+                locx = this.Location.X;
+                locy = this.Location.Y;
+            }
             SaveLastSize();
             Environment.Exit(0);
         }
@@ -895,10 +912,18 @@ namespace GC_Studio
                         p.WindowStyle = ProcessWindowStyle.Normal;
                         x = Process.Start(p);
                         SetForegroundWindow(x.MainWindowHandle);
-                        sizeW = this.Size.Width;
-                        sizeH = this.Size.Height;
-                        locx = this.Location.X;
-                        locy = this.Location.Y;
+                        if (this.WindowState == FormWindowState.Maximized)
+                        {
+                            maximized = true;
+                        }
+                        else
+                        {
+                            maximized = false;
+                            sizeW = this.Size.Width;
+                            sizeH = this.Size.Height;
+                            locx = this.Location.X;
+                            locy = this.Location.Y;
+                        }
                         SaveLastSize();
                         Environment.Exit(0);
                         break;
@@ -919,10 +944,18 @@ namespace GC_Studio
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
                     SetForegroundWindow(x.MainWindowHandle);
-                        sizeW = this.Size.Width;
-                        sizeH = this.Size.Height;
-                        locx = this.Location.X;
-                        locy = this.Location.Y;
+                        if (this.WindowState == FormWindowState.Maximized)
+                        {
+                            maximized = true;
+                        }
+                        else
+                        {
+                            maximized = false;
+                            sizeW = this.Size.Width;
+                            sizeH = this.Size.Height;
+                            locx = this.Location.X;
+                            locy = this.Location.Y;
+                        }
                         SaveLastSize();
                         Environment.Exit(0);
                     break;
@@ -942,10 +975,18 @@ namespace GC_Studio
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     x = Process.Start(p);
                     SetForegroundWindow(x.MainWindowHandle);
-                        sizeW = this.Size.Width;
-                        sizeH = this.Size.Height;
-                        locx = this.Location.X;
-                        locy = this.Location.Y;
+                        if (this.WindowState == FormWindowState.Maximized)
+                        {
+                            maximized = true;
+                        }
+                        else
+                        {
+                            maximized = false;
+                            sizeW = this.Size.Width;
+                            sizeH = this.Size.Height;
+                            locx = this.Location.X;
+                            locy = this.Location.Y;
+                        }
                         SaveLastSize();
                         Environment.Exit(0);
                     break;
