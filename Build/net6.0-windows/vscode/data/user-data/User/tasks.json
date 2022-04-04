@@ -349,9 +349,27 @@
         {
             "label": "CLC Designer Tool v4",
             "type": "process",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\version4_0\\CLCDesignerTool.exe",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\version_v4\\CLCDesignerTool.exe",
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "View Demos",
+            "type": "shell",
+            "command": "code ${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\"
             },
             "problemMatcher": [],
             "group": {
