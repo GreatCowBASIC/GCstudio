@@ -151,6 +151,21 @@ namespace GC_Studio
 
                         break;
 
+                    case "/resetsize":
+                        if (File.Exists("lstsz.dat"))
+                        {
+                            try
+                            {
+                                File.Delete("lstsz.dat");
+                            }
+                            catch
+                            {
+
+                            }
+                        }
+
+                        break;
+
 
                     default:
                         this.Visible = false;
@@ -205,8 +220,10 @@ namespace GC_Studio
             else
             {
               
-                    sizeW = 1200;
-                    sizeH = 1010;
+                    sizeW = 1028;
+                    sizeH = 681;
+                    this.Size = new Size(sizeW, sizeH);
+                    this.CenterToScreen();
                     locx = this.Location.X;
                     locy = this.Location.Y;
                     maximized = false;
