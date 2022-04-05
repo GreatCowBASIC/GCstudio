@@ -367,7 +367,7 @@
         {
             "label": "View Demos",
             "type": "shell",
-            "command": "code ${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\",
+            "command": "${env:GCBASIC_INSTALL_PATH}vscode\\code.exe ${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\",
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\"
             },
