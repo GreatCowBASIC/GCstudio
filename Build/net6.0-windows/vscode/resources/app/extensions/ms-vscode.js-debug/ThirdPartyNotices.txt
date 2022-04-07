@@ -2028,7 +2028,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-axios 0.22.0 - MIT
+axios 0.25.0 - MIT
 https://axios-http.com/
 
 Copyright (c) 2014-present Matt Zabriskie
@@ -3735,7 +3735,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-follow-redirects 1.14.7 - MIT
+follow-redirects 1.14.9 - MIT
 https://github.com/follow-redirects/follow-redirects
 
 Copyright 2014-present Olivier Lalonde <olalonde@gmail.com> , James Talmage <james@talmage.io> , Ruben Verborgh
@@ -8398,10 +8398,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-tas-client 0.1.26 - MIT
+tas-client 0.1.30 - MIT
 
 
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation
 
 MIT License
 
@@ -8983,10 +8983,10 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 
 ---------------------------------------------------------
 
-vscode-tas-client 0.1.27 - MIT
+vscode-tas-client 0.1.31 - MIT
 
 
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation
 
 MIT License
 

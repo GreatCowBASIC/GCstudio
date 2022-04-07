@@ -27,11 +27,10 @@
   "licenseFileName": "LICENSE.txt",
   "reportIssueUrl": "",
   "urlProtocol": "GCcode",
-  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-webview.net/insider/93a2a2fa12dd3ae0629eec01c05a28cb60ac1c4b/out/vs/workbench/contrib/webview/browser/pre/",
-  "extensionAllowedProposedApi": ["ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "GitHub.remotehub", "GitHub.remotehub-insiders", "ms-vscode.cpptools", "ms-azuretools.vscode-docker", "visualstudioexptteam.vscodeintellicode", "GitHub.codespaces", "GitHub.vscode-pull-request-github-insiders", "GitHub.vscode-pull-request-github", "Microsoft.vscode-nmake-tools", "ms-ai-tools.notebook-renderers", "ms-dotnettools.dotnet-interactive-vscode", "ms-python.gather", "ms-python.python", "ms-toolsai.jupyter", "ms-toolsai.vscode-ai", "ms-toolsai.vscode-ai-remote", "ms-vscode-remote.remote-containers-nightly", "ms-vscode-remote.remote-containers", "ms-vscode-remote.remote-ssh-edit-nightly", "ms-vscode-remote.remote-ssh-edit", "ms-vscode-remote.remote-ssh-nightly", "ms-vscode-remote.remote-ssh", "ms-vscode-remote.remote-wsl-nightly", "ms-vscode-remote.remote-wsl", "ms-vscode-remote.remote-wsl-recommender", "ms-vscode-remote.vscode-remote-extensionpack-nightly", "ms-vscode-remote.vscode-remote-extensionpack", "ms-vscode.azure-account", "ms-vscode.azure-sphere-tools-ui", "ms-vscode.azure-sphere-tools", "ms-vscode.github-browser", "ms-vscode.github-richnav", "ms-vscode.js-debug-nightly", "ms-vscode.js-debug", "ms-vscode.lsif-browser", "ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "ms-vscode.vscode-selfhost-test-provider", "ms-vsliveshare.cloudenv-explorer", "ms-vsliveshare.cloudenv", "ms-vsliveshare.vsliveshare", "ms-vsonline.vsonline", "dbaeumer.vscode-eslint"],
+  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-webview.net/insider/181b43c0e2949e36ecb623d8cc6de29d4fa2bae8/out/vs/workbench/contrib/webview/browser/pre/",
   "builtInExtensions": [{
     "name": "ms-vscode.references-view",
-    "version": "0.0.85",
+    "version": "0.0.86",
     "repo": "https://github.com/microsoft/vscode-references-view",
     "metadata": {
       "id": "dc489f46-520d-4556-ae85-1f9eab3c412d",
@@ -45,7 +44,7 @@
     }
   }, {
     "name": "ms-vscode.js-debug-companion",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "repo": "https://github.com/microsoft/vscode-js-debug-companion",
     "metadata": {
       "id": "99cb0b7f-7354-4278-b8da-6cc79972169d",
@@ -59,7 +58,7 @@
     }
   }, {
     "name": "ms-vscode.js-debug",
-    "version": "1.65.0",
+    "version": "1.66.1",
     "repo": "https://github.com/microsoft/vscode-js-debug",
     "metadata": {
       "id": "25629058-ddac-4e17-abba-74678e126c5d",
@@ -73,7 +72,7 @@
     }
   }, {
     "name": "ms-vscode.vscode-js-profile-table",
-    "version": "0.0.18",
+    "version": "1.0.0",
     "repo": "https://github.com/microsoft/vscode-js-profile-visualizer",
     "metadata": {
       "id": "7e52b41b-71ad-457b-ab7e-0620f1fc4feb",
@@ -104,14 +103,15 @@
     "itemUrl": "https://open-vsx.org/vscode/item"
   },
   "linkProtectionTrustedDomains": ["https://open-vsx.org"],
-  "commit": "b5205cc8eb4fbaa726835538cd82372cc0222d43",
-  "date": "2022-03-04T09:13:01.928Z",
+  "extensionAllowedProposedApi": ["ms-vscode.cpptools", "ms-azuretools.vscode-docker", "visualstudioexptteam.vscodeintellicode", "GitHub.codespaces", "GitHub.vscode-pull-request-github-insiders", "GitHub.vscode-pull-request-github", "Microsoft.vscode-nmake-tools", "ms-ai-tools.notebook-renderers", "ms-dotnettools.dotnet-interactive-vscode", "ms-python.gather", "ms-python.python", "ms-toolsai.jupyter", "ms-toolsai.vscode-ai", "ms-toolsai.vscode-ai-remote", "ms-vscode-remote.remote-containers-nightly", "ms-vscode-remote.remote-containers", "ms-vscode-remote.remote-ssh-edit-nightly", "ms-vscode-remote.remote-ssh-edit", "ms-vscode-remote.remote-ssh-nightly", "ms-vscode-remote.remote-ssh", "ms-vscode-remote.remote-wsl-nightly", "ms-vscode-remote.remote-wsl", "ms-vscode-remote.remote-wsl-recommender", "ms-vscode-remote.vscode-remote-extensionpack-nightly", "ms-vscode-remote.vscode-remote-extensionpack", "ms-vscode.azure-account", "ms-vscode.azure-sphere-tools-ui", "ms-vscode.azure-sphere-tools", "ms-vscode.github-browser", "ms-vscode.github-richnav", "ms-vscode.js-debug-nightly", "ms-vscode.js-debug", "ms-vscode.lsif-browser", "ms-vscode.vscode-js-profile-flame", "ms-vscode.vscode-js-profile-table", "ms-vscode.vscode-selfhost-test-provider", "ms-vsliveshare.cloudenv-explorer", "ms-vsliveshare.cloudenv", "ms-vsliveshare.vsliveshare", "ms-vsonline.vsonline", "dbaeumer.vscode-eslint"],
+  "commit": "e18005f0f1b33c29e81d732535d8c0e47cafb0b5",
+  "date": "2022-03-31T09:57:20.551Z",
   "checksums": {
-    "vs/base/parts/sandbox/electron-browser/preload.js": "ZigynOS6crqTpOv1TseBVA",
-    "vs/workbench/workbench.desktop.main.js": "829SWgg/zuTGEGgyPfhHMw",
-    "vs/workbench/workbench.desktop.main.css": "9eafW2Tgy8GYkQa4oaccJw",
-    "vs/workbench/api/node/extensionHostProcess.js": "X0gDZq7oSpJ17A+2KplqLQ",
+    "vs/base/parts/sandbox/electron-browser/preload.js": "LR72v+1Obw6P486Y147rhA",
+    "vs/workbench/workbench.desktop.main.js": "s5JtrPX1s8WgIHgWUQWs5g",
+    "vs/workbench/workbench.desktop.main.css": "RCan4PWt1TQTGo3Yl2isKA",
+    "vs/workbench/api/node/extensionHostProcess.js": "7zXjB3zvIKk8Xxph3vTa+A",
     "vs/code/electron-browser/workbench/workbench.html": "l8jPIdODqyMeav5sZa3tNQ",
-    "vs/code/electron-browser/workbench/workbench.js": "4LWczVW0A33yK8pIAUq8cA"
+    "vs/code/electron-browser/workbench/workbench.js": "qOSxIYUKsHkR5bbUCLBw9g"
   }
 }
