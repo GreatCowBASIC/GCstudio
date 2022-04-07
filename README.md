@@ -23,7 +23,7 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 ### OS Support
 Win7 SP1**  x86/x64 to Win11 x64.
 
-**Service Pack 1 whit [KB4474419](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4474419), [KB2999226](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2999226).
+**Service Pack 1 with [KB4474419](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4474419), [KB2999226](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2999226).
 
 Minimum resolution of 1024x768
 
@@ -44,7 +44,7 @@ Minimum resolution of 1024x768
 # For Pull Requests:
 
 * Remember to always run "_Clean.bat" batch file before commit your work.
-* You can clean and push current build to "C:\GCstudio" for testing whit "_Push to GCstudio.bat" (all contents of "C:\GCstudio" will be overwritten)
+* You can clean and push current build to "C:\GCstudio" for testing with "_Push to GCstudio.bat" (all contents of "C:\GCstudio" will be overwritten)
 * You can run GCstudio directly from Build directory to modify the project files of the repo, then push to GCB@Syn for testing.
 
 This repository uses [Git LFS](https://git-lfs.github.com/) from GitHub for *.exe files; if you are going to commit exe files you need to install it and then run this command one time:
