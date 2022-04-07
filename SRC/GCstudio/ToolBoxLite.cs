@@ -103,6 +103,64 @@ namespace GC_Studio
 
             CompilerArchitecture();
             
+            
+
+            //window size
+            if (File.Exists("lstsz.dat"))
+            {
+                try
+                {
+                    dbs.LoadRead("lstsz.dat");
+                    sizeW = int.Parse(dbs.ReadData());
+                    sizeH = int.Parse(dbs.ReadData());
+                    try
+                    {
+                        locx = Int32.Parse(dbs.ReadData());
+                        locy = Int32.Parse(dbs.ReadData());
+                        maximized = bool.Parse(dbs.ReadData());
+                        this.Location = new Point(locx, locy);
+                    }
+                    catch { }
+                    dbs.CloseRead();                   
+                }
+                catch
+                {
+
+                    MessageBox.Show("Error loading last size");
+                }
+
+            }
+            else
+            {
+              
+                    sizeW = 1028;
+                    sizeH = 681;
+                    this.Size = new Size(sizeW, sizeH);
+                    this.CenterToScreen();
+                    locx = this.Location.X;
+                    locy = this.Location.Y;
+                    maximized = false;
+                    SaveLastSize();               
+
+            }
+            this.Size = new Size(sizeW, sizeH);
+            if (maximized)
+            {
+                MaxBounds();
+                this.WindowState = FormWindowState.Maximized;
+            }
+
+            //first run
+            if (File.Exists("mrf.dat") == false)
+            {
+                LoadRecent();
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+            }
+            else
+            {
+                LoadRecent();
+            }
+
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
@@ -126,7 +184,7 @@ namespace GC_Studio
 
                             addrecent(Path.GetFileName(arguments[2]), arguments[2]);
                         }
-                     
+
                         LaunchIDE(ideargs, "SynWrite");
                         break;
 
@@ -169,7 +227,7 @@ namespace GC_Studio
 
                     default:
                         this.Visible = false;
-                        for (int i= 1; i < arguments.Length; i++ )
+                        for (int i = 1; i < arguments.Length; i++)
                         {
                             if (i == arguments.Length - 1)
                             {
@@ -188,65 +246,6 @@ namespace GC_Studio
                 }
 
 
-               
-
-            }
-
-            //window size
-            if (File.Exists("lstsz.dat"))
-            {
-                try
-                {
-                    dbs.LoadRead("lstsz.dat");
-                    sizeW = int.Parse(dbs.ReadData());
-                    sizeH = int.Parse(dbs.ReadData());
-                    try
-                    {
-                        locx = Int32.Parse(dbs.ReadData());
-                        locy = Int32.Parse(dbs.ReadData());
-                        maximized = bool.Parse(dbs.ReadData());
-                        this.Location = new Point(locx, locy);
-                    }
-                    catch { }
-                    dbs.CloseRead();                   
-                }
-                catch
-                {
-
-                    MessageBox.Show("Error loading last size");
-                }
-
-            }
-            else
-            {
-              
-                    sizeW = 1028;
-                    sizeH = 681;
-                    this.Size = new Size(sizeW, sizeH);
-                    this.CenterToScreen();
-                    locx = this.Location.X;
-                    locy = this.Location.Y;
-                    maximized = false;
-                    SaveLastSize();
-                
-
-            }
-            this.Size = new Size(sizeW, sizeH);
-            if (maximized)
-            {
-                MaxBounds();
-                this.WindowState = FormWindowState.Maximized;
-            }
-
-            //first run
-            if (File.Exists("mrf.dat") == false)
-            {
-                LoadRecent();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
-            }
-            else
-            {
-                LoadRecent();
             }
 
 
