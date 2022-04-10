@@ -25,6 +25,7 @@ function activate(context) {
             }
         });
     }
+    vscode_1.commands.executeCommand("extension.enableHoverconverter");
     console.log("extension is now active!");
     // rest of code
     // Step: If simple commands then add to this array

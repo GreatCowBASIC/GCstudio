@@ -40,6 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
       });
     }
   
+    commands.executeCommand("extension.enableHoverconverter")
     console.log("extension is now active!");
   
   
