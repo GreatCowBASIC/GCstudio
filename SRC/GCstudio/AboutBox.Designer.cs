@@ -108,13 +108,13 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel1.Location = new System.Drawing.Point(37, 158);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(253, 31);
+            this.linkLabel1.Size = new System.Drawing.Size(240, 31);
             this.linkLabel1.TabIndex = 32;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Acknowledgements";
@@ -124,13 +124,13 @@
             // 
             this.linkLabel2.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel2.Location = new System.Drawing.Point(37, 215);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(102, 31);
+            this.linkLabel2.Size = new System.Drawing.Size(98, 31);
             this.linkLabel2.TabIndex = 33;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "License";
@@ -140,13 +140,13 @@
             // 
             this.linkLabel3.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel3.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel3.Location = new System.Drawing.Point(37, 272);
             this.linkLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(113, 31);
+            this.linkLabel3.Size = new System.Drawing.Size(108, 31);
             this.linkLabel3.TabIndex = 34;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Readme";
@@ -233,13 +233,13 @@
             // 
             this.linkLabel4.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel4.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel4.Location = new System.Drawing.Point(37, 330);
             this.linkLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(208, 31);
+            this.linkLabel4.Size = new System.Drawing.Size(198, 31);
             this.linkLabel4.TabIndex = 42;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Full Change Log";
@@ -249,13 +249,13 @@
             // 
             this.linkLabel5.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel5.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel5.Location = new System.Drawing.Point(37, 387);
             this.linkLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(139, 31);
+            this.linkLabel5.Size = new System.Drawing.Size(131, 31);
             this.linkLabel5.TabIndex = 43;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Road Map";
@@ -265,13 +265,13 @@
             // 
             this.linkLabel6.ActiveLinkColor = System.Drawing.Color.White;
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel6.LinkColor = System.Drawing.Color.CornflowerBlue;
             this.linkLabel6.Location = new System.Drawing.Point(37, 445);
             this.linkLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(173, 31);
+            this.linkLabel6.Size = new System.Drawing.Size(164, 31);
             this.linkLabel6.TabIndex = 44;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "Report a Bug";

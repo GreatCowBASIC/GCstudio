@@ -63,6 +63,7 @@ namespace GC_Studio
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.buttonabout = new System.Windows.Forms.Button();
             this.panelconfig = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.labelarch = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -256,7 +257,7 @@ namespace GC_Studio
             this.buttonwitout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonwitout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.buttonwitout.Location = new System.Drawing.Point(486, 832);
             this.buttonwitout.Name = "buttonwitout";
@@ -277,7 +278,7 @@ namespace GC_Studio
             this.buttonbug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonbug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.buttonbug.Location = new System.Drawing.Point(732, 905);
             this.buttonbug.Name = "buttonbug";
@@ -600,7 +601,7 @@ namespace GC_Studio
             this.listViewRecent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewRecent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listViewRecent.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listViewRecent.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listViewRecent.ForeColor = System.Drawing.Color.DimGray;
             this.listViewRecent.Location = new System.Drawing.Point(70, 307);
             this.listViewRecent.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
@@ -636,6 +637,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button11);
             this.panelconfig.Controls.Add(this.button10);
             this.panelconfig.Controls.Add(this.labelarch);
             this.panelconfig.Controls.Add(this.label29);
@@ -660,13 +662,25 @@ namespace GC_Studio
             this.panelconfig.TabIndex = 49;
             this.panelconfig.Visible = false;
             // 
+            // button11
+            // 
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Location = new System.Drawing.Point(96, 706);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(201, 60);
+            this.button11.TabIndex = 78;
+            this.button11.Text = "Reset Programmer Preferences";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // button10
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Location = new System.Drawing.Point(96, 613);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(201, 48);
+            this.button10.Size = new System.Drawing.Size(201, 60);
             this.button10.TabIndex = 77;
             this.button10.Text = "Set File Associations";
             this.button10.UseVisualStyleBackColor = true;
@@ -675,22 +689,22 @@ namespace GC_Studio
             // labelarch
             // 
             this.labelarch.AutoSize = true;
-            this.labelarch.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelarch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelarch.ForeColor = System.Drawing.Color.White;
-            this.labelarch.Location = new System.Drawing.Point(377, 540);
+            this.labelarch.Location = new System.Drawing.Point(313, 540);
             this.labelarch.Name = "labelarch";
-            this.labelarch.Size = new System.Drawing.Size(44, 31);
+            this.labelarch.Size = new System.Drawing.Size(34, 24);
             this.labelarch.TabIndex = 76;
             this.labelarch.Text = "---";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label29.ForeColor = System.Drawing.Color.White;
             this.label29.Location = new System.Drawing.Point(90, 540);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(296, 31);
+            this.label29.Size = new System.Drawing.Size(220, 24);
             this.label29.TabIndex = 75;
             this.label29.Text = "Current OS Architecture:";
             // 
@@ -724,9 +738,9 @@ namespace GC_Studio
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(96, 708);
+            this.button7.Location = new System.Drawing.Point(96, 802);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(201, 48);
+            this.button7.Size = new System.Drawing.Size(201, 60);
             this.button7.TabIndex = 72;
             this.button7.Text = "Clone PICKitPlus Tool";
             this.button7.UseVisualStyleBackColor = true;
@@ -1365,5 +1379,6 @@ namespace GC_Studio
         private System.Windows.Forms.ComboBox comboarch;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }

@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
@@ -34,8 +28,8 @@ namespace GC_Studio
         bool continueflag = false;
         bool downloading = false;
         bool forceupdate = false;
-        System.Net.WebClient WebClientCVS = new System.Net.WebClient();
-        System.Net.WebClient WebClientPKG = new System.Net.WebClient();
+        System.Net.WebClient WebClientCVS = new();
+        System.Net.WebClient WebClientPKG = new();
         Thread EnvVarThread = new Thread(new ThreadStart(Loader.SetEnvVar));
 
 
@@ -366,7 +360,7 @@ namespace GC_Studio
         {
             if (downloading == false)
             {
-                Environment.Exit(0);
+                EndForm();
             }
             else
             {
