@@ -413,6 +413,7 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var remregex = new RegExp("(?:[';]|rem).*dim","i");
                 var startremblockregex = new RegExp("[/][*]","i");
                 var endremblockregex = new RegExp("[*][/]","i");
+                var varsregex = new RegExp("(?:\\s*)(\\w+)","gi")
                 if (startremblockregex.test(line.text))
                 {
                     remblock = true;
@@ -424,13 +425,15 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
                 if (!remregex.test(line.text) && !remblock)
                 {
-                    if (regex.test(line.text)) {                  
-                        var symname = regex.exec(line.text);
+                    if (regex.test(line.text)) {
+                        var symnames = line.text.match(varsregex);
+                        for (let i = 1; i < symnames!.length-2; i++) {
                         symbols.push({
-                            name: symname![1],
-                            kind: vscode.SymbolKind.Variable,
-                            location: new vscode.Location(document.uri, line.range)
+                        name: symnames![i],
+                        kind: vscode.SymbolKind.Variable,
+                        location: new vscode.Location(document.uri, line.range)
                         });
+                        }
                     }
                 }
             }

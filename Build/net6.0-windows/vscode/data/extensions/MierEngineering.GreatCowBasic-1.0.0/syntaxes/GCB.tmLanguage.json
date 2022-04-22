@@ -133,7 +133,7 @@
 			"patterns": [
 				{
 					"name": "variable.GCB",
-					"match": "(?i)(?:dim\\s+)(\\S+)",
+					"match": "(?i)(?:dim\\s+)(.+)(?=\\s+as\\s+)",
 					"comment": "This find declared variables and higligth the dim and name, if you want to disable, add DIM on Keywords repo"
 				},
 				{
