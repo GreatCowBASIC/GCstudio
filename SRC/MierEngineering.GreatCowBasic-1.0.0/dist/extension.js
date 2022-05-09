@@ -298,6 +298,7 @@ class GCBDocumentSymbolProvider {
                 var startremblockregex = new RegExp("[/][*]", "i");
                 var endremblockregex = new RegExp("[*][/]", "i");
                 var varsregex = new RegExp("(?:\\s*)([^,\\s]+)", "gi");
+                var vardefine = new RegExp("(as)", "gi");
                 if (startremblockregex.test(line.text)) {
                     remblock = true;
                 }
@@ -307,12 +308,17 @@ class GCBDocumentSymbolProvider {
                 if (!remregex.test(line.text) && !remblock) {
                     if (regex.test(line.text)) {
                         var symnames = line.text.match(varsregex);
-                        for (let i = 1; i < symnames.length - 2; i++) {
-                            symbols.push({
-                                name: symnames[i],
-                                kind: vscode.SymbolKind.Variable,
-                                location: new vscode.Location(document.uri, line.range)
-                            });
+                        for (let i = 1; i < symnames.length; i++) {
+                            if (!vardefine.test(symnames[i])) {
+                                symbols.push({
+                                    name: symnames[i],
+                                    kind: vscode.SymbolKind.Variable,
+                                    location: new vscode.Location(document.uri, line.range)
+                                });
+                            }
+                            else {
+                                i = symnames.length;
+                            }
                         }
                     }
                 }
