@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GCB Studio")]
-[assembly: AssemblyCopyright("Copyright © 2007 - 2021")]
+[assembly: AssemblyCopyright("Copyright © 2007 - 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión
 // utilizando el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.21.0")]
-[assembly: AssemblyFileVersion("0.0.21.0")]
+[assembly: AssemblyVersion("0.24.0.72")]
+[assembly: AssemblyFileVersion("0.24.0.72")]
