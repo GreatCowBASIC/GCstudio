@@ -232,7 +232,7 @@ Copyright 2019
 human-signals 2.1.0 - Apache-2.0
 https://git.io/JeluP
 
-Copyright 2019
+Copyright 2019 ehmicky <ehmicky@gmail.com>
 
                                  Apache License
                            Version 2.0, January 2004
@@ -752,7 +752,7 @@ SOFTWARE.
 
 ---------------------------------------------------------
 
-dotenv 14.2.0 - BSD-2-Clause
+dotenv 16.0.0 - BSD-2-Clause
 https://github.com/motdotla/dotenv#readme
 
 Copyright (c) 2015, Scott Motte
@@ -865,7 +865,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 source-map 0.5.7 - BSD-3-Clause
 https://github.com/mozilla/source-map
 
-Copyright 2011 The Closure Compiler
+Copyright 2011 The Closure Compiler Authors
 Copyright 2011 Mozilla Foundation and contributors
 Copyright 2014 Mozilla Foundation and contributors
 Copyright 2009-2011 Mozilla Foundation and contributors
@@ -908,7 +908,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 source-map 0.6.1 - BSD-3-Clause
 https://github.com/mozilla/source-map
 
-Copyright 2011 The Closure Compiler
+Copyright 2011 The Closure Compiler Authors
 Copyright 2011 Mozilla Foundation and contributors
 Copyright 2014 Mozilla Foundation and contributors
 Copyright 2009-2011 Mozilla Foundation and contributors
@@ -951,7 +951,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 source-map 0.8.0-beta.0 - BSD-3-Clause
 https://github.com/mozilla/source-map
 
-Copyright 2011 The Closure Compiler
+Copyright 2011 The Closure Compiler Authors
 Copyright 2011 Mozilla Foundation and contributors
 Copyright 2014 Mozilla Foundation and contributors
 Copyright 2009-2011 Mozilla Foundation and contributors
@@ -995,7 +995,7 @@ fs.realpath 1.0.0 - ISC
 https://github.com/isaacs/fs.realpath#readme
 
 Copyright (c) Isaac Z. Schlueter and Contributors
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 The ISC License
 
@@ -1107,7 +1107,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 glob-parent 6.0.2 - ISC
 https://github.com/gulpjs/glob-parent#readme
 
-Copyright (c) 2015, 2019 Elan Shanker
+Copyright (c) 2015, 2019 Elan Shanker, 2021 Blaine Bublitz <blaine.bublitz@gmail.com> , Eric Schoffstall <yo@contra.io> and other contributors
 
 The ISC License
 
@@ -1130,7 +1130,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ---------------------------------------------------------
 
-graceful-fs 4.2.1 - ISC
+graceful-fs 4.2.9 - ISC
 https://github.com/isaacs/node-graceful-fs#readme
 
 Copyright (c) Isaac Z. Schlueter, Ben Noordhuis, and Contributors
@@ -1382,7 +1382,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 signal-exit 3.0.3 - ISC
 https://github.com/tapjs/signal-exit
 
-Copyright (c) 2015
+Copyright (c) 2015, Contributors
 
 The ISC License
 
@@ -1681,10 +1681,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-@types/node 17.0.10 - MIT
+@types/node 17.0.23 - MIT
 https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node
 
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation
 
 MIT License
 
@@ -1754,6 +1754,7 @@ Copyright (c) Microsoft Corporation.
 acorn 8.7.0 - MIT
 https://github.com/acornjs/acorn
 
+Copyright (c) 2012-2020 by various contributors
 
 MIT License
 
@@ -1869,9 +1870,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 array-unique 0.3.2 - MIT
 https://github.com/jonschlinkert/array-unique
 
+Copyright (c) 2014-2015, Jon Schlinkert
 Copyright (c) 2014-2016, Jon Schlinkert
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -1903,8 +1904,8 @@ THE SOFTWARE.
 arr-flatten 1.1.0 - MIT
 https://github.com/jonschlinkert/arr-flatten
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -1936,7 +1937,7 @@ THE SOFTWARE.
 arr-union 3.1.0 - MIT
 https://github.com/jonschlinkert/arr-union
 
-Copyright (c) 2014-2016, Jon Schlinkert.
+Copyright (c) 2014-2016, Jon Schlinkert
 Copyright (c) 2016 Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
@@ -1970,7 +1971,7 @@ assign-symbols 1.0.0 - MIT
 https://github.com/jonschlinkert/assign-symbols
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -2031,6 +2032,7 @@ THE SOFTWARE.
 axios 0.25.0 - MIT
 https://axios-http.com/
 
+(c) 2022 by Matt Zabriskie
 Copyright (c) 2014-present Matt Zabriskie
 
 Copyright (c) 2014-present Matt Zabriskie
@@ -2373,8 +2375,8 @@ SOFTWARE.
 cache-base 1.0.1 - MIT
 https://github.com/jonschlinkert/cache-base
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -2425,8 +2427,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 class-utils 0.3.6 - MIT
 https://github.com/jonschlinkert/class-utils
 
-Copyright (c) 2015, 2017-2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017-2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -2491,8 +2493,8 @@ SOFTWARE.
 collection-visit 1.0.0 - MIT
 https://github.com/jonschlinkert/collection-visit
 
-Copyright (c) 2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -2521,7 +2523,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-color 4.2.0 - MIT
+color 4.2.1 - MIT
 https://github.com/Qix-/color#readme
 
 Copyright (c) 2012 Heather Arthur
@@ -2556,7 +2558,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 color-convert 1.9.3 - MIT
 https://github.com/Qix-/color-convert#readme
 
-Copyright (c) 2011-2016, Heather Arthur and Josh Junon.
+Copyright (c) 2011-2016, Heather Arthur and Josh Junon
 Copyright (c) 2011-2016 Heather Arthur <fayearthur@gmail.com>
 
 Copyright (c) 2011-2016 Heather Arthur <fayearthur@gmail.com>
@@ -2589,7 +2591,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 color-convert 2.0.1 - MIT
 https://github.com/Qix-/color-convert#readme
 
-Copyright (c) 2011-2016, Heather Arthur and Josh Junon.
+Copyright (c) 2011-2016, Heather Arthur and Josh Junon
 Copyright (c) 2011-2016 Heather Arthur <fayearthur@gmail.com>
 
 Copyright (c) 2011-2016 Heather Arthur <fayearthur@gmail.com>
@@ -2753,7 +2755,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 copy-descriptor 0.1.1 - MIT
 https://github.com/jonschlinkert/copy-descriptor
 
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 Copyright (c) 2015-2016, Jon Schlinkert
 
 The MIT License (MIT)
@@ -2786,7 +2788,7 @@ THE SOFTWARE.
 core-util-is 1.0.2 - MIT
 https://github.com/isaacs/core-util-is#readme
 
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 Copyright Node.js contributors. All rights reserved.
 
@@ -2957,29 +2959,29 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---------------------------------------------------------
 
-debug 4.3.1 - MIT
-https://github.com/visionmedia/debug#readme
+debug 4.3.3 - MIT
+https://github.com/debug-js/debug#readme
 
-Copyright (c) 2014 TJ Holowaychuk <tj@vision-media.ca>
 Copyright (c) 2014-2017 TJ Holowaychuk <tj@vision-media.ca>
 
 (The MIT License)
 
-Copyright (c) 2014 TJ Holowaychuk <tj@vision-media.ca>
+Copyright (c) 2014-2017 TJ Holowaychuk <tj@vision-media.ca>
+Copyright (c) 2018-2021 Josh Junon
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
-and associated documentation files (the 'Software'), to deal in the Software without restriction, 
-including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the 'Software'), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
 and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
 subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial 
+The above copyright notice and this permission notice shall be included in all copies or substantial
 portions of the Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
-LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
@@ -3143,7 +3145,7 @@ define-property 0.2.5 - MIT
 https://github.com/jonschlinkert/define-property
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -3175,8 +3177,8 @@ THE SOFTWARE.
 define-property 1.0.0 - MIT
 https://github.com/jonschlinkert/define-property
 
-Copyright (c) 2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3208,8 +3210,8 @@ THE SOFTWARE.
 define-property 2.0.2 - MIT
 https://github.com/jonschlinkert/define-property
 
-Copyright (c) 2015-2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3507,7 +3509,7 @@ extend-shallow 2.0.1 - MIT
 https://github.com/jonschlinkert/extend-shallow
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2014-2015, Jon Schlinkert.
+Copyright (c) 2014-2015, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -3539,8 +3541,8 @@ THE SOFTWARE.
 extend-shallow 3.0.2 - MIT
 https://github.com/jonschlinkert/extend-shallow
 
-Copyright (c) 2014-2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3606,8 +3608,8 @@ fill-range 4.0.0 - MIT
 https://github.com/jonschlinkert/fill-range
 
 Copyright (c) 2014-2017, Jon Schlinkert
-Copyright (c) 2014-2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3639,8 +3641,8 @@ THE SOFTWARE.
 fill-range 7.0.1 - MIT
 https://github.com/jonschlinkert/fill-range
 
-Copyright (c) 2014-present, Jon Schlinkert.
-Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-present, Jon Schlinkert
+Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3767,8 +3769,8 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 for-in 1.0.2 - MIT
 https://github.com/jonschlinkert/for-in
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3840,8 +3842,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 get-value 2.0.6 - MIT
 https://github.com/jonschlinkert/get-value
 
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2014-2016, Jon Schlinkert.
+Copyright (c) 2014-2015, Jon Schlinkert
+Copyright (c) 2014-2016, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -3945,8 +3947,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 has-value 0.3.1 - MIT
 https://github.com/jonschlinkert/has-value
 
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3978,8 +3980,8 @@ THE SOFTWARE.
 has-value 1.0.0 - MIT
 https://github.com/jonschlinkert/has-value
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4011,9 +4013,9 @@ THE SOFTWARE.
 has-values 0.1.4 - MIT
 https://github.com/jonschlinkert/has-values
 
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, Jon Schlinkert
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4046,8 +4048,8 @@ has-values 1.0.0 - MIT
 https://github.com/jonschlinkert/has-values
 
 Copyright (c) 2014-2017, Jon Schlinkert
-Copyright (c) 2014-2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4180,7 +4182,7 @@ THE SOFTWARE.
 is-accessor-descriptor 0.1.6 - MIT
 https://github.com/jonschlinkert/is-accessor-descriptor
 
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 Copyright (c) 2015 Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
@@ -4213,8 +4215,8 @@ THE SOFTWARE.
 is-accessor-descriptor 1.0.0 - MIT
 https://github.com/jonschlinkert/is-accessor-descriptor
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4330,7 +4332,7 @@ is-buffer 1.1.6 - MIT
 https://github.com/feross/is-buffer#readme
 
 Copyright (c) Feross Aboukhadijeh
-Copyright (c) Feross Aboukhadijeh (http://feross.org).
+Copyright (c) Feross Aboukhadijeh (http://feross.org)
 
 The MIT License (MIT)
 
@@ -4362,7 +4364,7 @@ THE SOFTWARE.
 is-data-descriptor 0.1.4 - MIT
 https://github.com/jonschlinkert/is-data-descriptor
 
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 Copyright (c) 2015 Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
@@ -4395,8 +4397,8 @@ THE SOFTWARE.
 is-data-descriptor 1.0.0 - MIT
 https://github.com/jonschlinkert/is-data-descriptor
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4428,8 +4430,8 @@ THE SOFTWARE.
 is-descriptor 0.1.6 - MIT
 https://github.com/jonschlinkert/is-descriptor
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4460,8 +4462,8 @@ THE SOFTWARE.
 is-descriptor 1.0.2 - MIT
 https://github.com/jonschlinkert/is-descriptor
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4493,7 +4495,7 @@ is-extendable 0.1.1 - MIT
 https://github.com/jonschlinkert/is-extendable
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -4525,8 +4527,8 @@ THE SOFTWARE.
 is-extendable 1.0.1 - MIT
 https://github.com/jonschlinkert/is-extendable
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4557,8 +4559,8 @@ THE SOFTWARE.
 is-extglob 2.1.1 - MIT
 https://github.com/jonschlinkert/is-extglob
 
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4590,45 +4592,12 @@ THE SOFTWARE.
 is-glob 3.1.0 - MIT
 https://github.com/jonschlinkert/is-glob
 
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
 Copyright (c) 2014-2016, Jon Schlinkert.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-
----------------------------------------------------------
-
----------------------------------------------------------
-
-is-glob 4.0.1 - MIT
-https://github.com/micromatch/is-glob
-
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert).
-
-The MIT License (MIT)
-
-Copyright (c) 2014-2017, Jon Schlinkert.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4656,8 +4625,8 @@ THE SOFTWARE.
 is-glob 4.0.3 - MIT
 https://github.com/micromatch/is-glob
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4722,9 +4691,9 @@ SOFTWARE.
 is-number 3.0.0 - MIT
 https://github.com/jonschlinkert/is-number
 
+Copyright (c) 2014-2015, Jon Schlinkert
 Copyright (c) 2014-2016, Jon Schlinkert
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4756,8 +4725,8 @@ THE SOFTWARE.
 is-number 7.0.0 - MIT
 https://github.com/jonschlinkert/is-number
 
-Copyright (c) 2014-present, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-present, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4855,8 +4824,8 @@ THE SOFTWARE.
 is-plain-object 2.0.4 - MIT
 https://github.com/jonschlinkert/is-plain-object
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4994,8 +4963,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 is-windows 1.0.2 - MIT
 https://github.com/jonschlinkert/is-windows
 
-Copyright (c) 2015-2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5062,7 +5031,7 @@ https://github.com/microsoft/node-jsonc-parser#readme
 
 Copyright (c) Microsoft
 Copyright 2018, Microsoft
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation
 
 The MIT License (MIT)
 
@@ -5206,7 +5175,7 @@ kind-of 3.2.2 - MIT
 https://github.com/jonschlinkert/kind-of
 
 Copyright (c) 2014-2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5239,7 +5208,7 @@ kind-of 4.0.0 - MIT
 https://github.com/jonschlinkert/kind-of
 
 Copyright (c) 2014-2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5271,8 +5240,8 @@ THE SOFTWARE.
 kind-of 5.1.0 - MIT
 https://github.com/jonschlinkert/kind-of
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5304,7 +5273,8 @@ THE SOFTWARE.
 kind-of 6.0.3 - MIT
 https://github.com/jonschlinkert/kind-of
 
-Copyright (c) 2014-2017, Jon Schlinkert.
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2020, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5565,9 +5535,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 map-cache 0.2.2 - MIT
 https://github.com/jonschlinkert/map-cache
 
-Copyright (c) 2015, Jon Schlinkert.
-Copyright (c) 2015-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, Jon Schlinkert
+Copyright (c) 2015-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5600,7 +5570,7 @@ map-visit 1.0.0 - MIT
 https://github.com/jonschlinkert/map-visit
 
 Copyright (c) 2015-2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5661,10 +5631,11 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-micromatch 4.0.4 - MIT
+micromatch 4.0.5 - MIT
 https://github.com/micromatch/micromatch
 
-Copyright (c) 2014-present, Jon Schlinkert.
+Copyright (c) 2014-present, Jon Schlinkert
+Copyright (c) 2022, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5758,8 +5729,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 mixin-deep 1.3.2 - MIT
 https://github.com/jonschlinkert/mixin-deep
 
-Copyright (c) 2014-2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -5994,7 +5965,7 @@ THE SOFTWARE.
 object-copy 0.1.0 - MIT
 https://github.com/jonschlinkert/object-copy
 
-Copyright (c) 2016, Jon Schlinkert.
+Copyright (c) 2016, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -6026,8 +5997,8 @@ THE SOFTWARE.
 object-visit 1.0.1 - MIT
 https://github.com/jonschlinkert/object-visit
 
-Copyright (c) 2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -6262,7 +6233,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 path-dirname 1.0.2 - MIT
 https://github.com/es128/path-dirname#readme
 
-Copyright (c) Elan Shanker and Node.js contributors.
+Copyright (c) Elan Shanker and Node.js contributors
 
 
 The MIT License (MIT)
@@ -6497,44 +6468,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-picomatch 2.3.0 - MIT
-https://github.com/micromatch/picomatch
-
-Copyright (c) 2017-present, Jon Schlinkert.
-Copyright (c) 2017-present, Jon Schlinkert (https://github.com/jonschlinkert).
-
-The MIT License (MIT)
-
-Copyright (c) 2017-present, Jon Schlinkert.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-
----------------------------------------------------------
-
----------------------------------------------------------
-
 picomatch 2.3.1 - MIT
 https://github.com/micromatch/picomatch
 
-Copyright (c) 2017-present, Jon Schlinkert.
-Copyright (c) 2017-present, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017-present, Jon Schlinkert
+Copyright (c) 2017-present, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -6818,10 +6756,125 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-preact 10.6.4 - MIT
+preact 10.6.6 - MIT
 https://preactjs.com/
 
 Copyright (c) 2015-present Jason Miller
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Jason Miller
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Jason Miller
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Jason Miller
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Jason Miller
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Jason Miller
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
 The MIT License (MIT)
 
@@ -7170,7 +7223,7 @@ IN THE SOFTWARE.
 readable-stream 2.3.7 - MIT
 https://github.com/nodejs/readable-stream#readme
 
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 Node.js is licensed for use as follows:
 
@@ -7228,7 +7281,7 @@ IN THE SOFTWARE.
 readable-stream 3.6.0 - MIT
 https://github.com/nodejs/readable-stream#readme
 
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 Node.js is licensed for use as follows:
 
@@ -7286,8 +7339,8 @@ IN THE SOFTWARE.
 regex-not 1.0.2 - MIT
 https://github.com/jonschlinkert/regex-not
 
-Copyright (c) 2016, 2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2016, 2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -7352,9 +7405,9 @@ THE SOFTWARE.
 repeat-string 1.6.1 - MIT
 https://github.com/jonschlinkert/repeat-string
 
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (http://github.com/jonschlinkert).
+Copyright (c) 2014-2015, Jon Schlinkert
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (http://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -7641,8 +7694,8 @@ set-value 2.0.1 - MIT
 https://github.com/jonschlinkert/set-value
 
 Copyright (c) 2014-2017, Jon Schlinkert
-Copyright (c) 2014-2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -7880,7 +7933,7 @@ snapdragon-node 2.1.1 - MIT
 https://github.com/jonschlinkert/snapdragon-node
 
 Copyright (c) 2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -7913,7 +7966,7 @@ snapdragon-util 3.0.1 - MIT
 https://github.com/jonschlinkert/snapdragon-util
 
 Copyright (c) 2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8046,8 +8099,8 @@ THE SOFTWARE.
 split-string 3.1.0 - MIT
 https://github.com/jonschlinkert/split-string
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8079,7 +8132,7 @@ THE SOFTWARE.
 static-extend 0.1.2 - MIT
 https://github.com/jonschlinkert/static-extend
 
-Copyright (c) 2016, Jon Schlinkert.
+Copyright (c) 2016, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -8143,7 +8196,7 @@ THE SOFTWARE.
 string_decoder 1.1.1 - MIT
 https://github.com/nodejs/string_decoder
 
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 Node.js is licensed for use as follows:
 
@@ -8202,7 +8255,7 @@ IN THE SOFTWARE.
 string_decoder 1.3.0 - MIT
 https://github.com/nodejs/string_decoder
 
-Copyright Joyent, Inc. and other Node contributors.
+Copyright Joyent, Inc. and other Node contributors
 
 Node.js is licensed for use as follows:
 
@@ -8528,8 +8581,8 @@ to-object-path 0.3.0 - MIT
 https://github.com/jonschlinkert/to-object-path
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2015, Jon Schlinkert.
-Copyright (c) 2015-2016, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
+Copyright (c) 2015-2016, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -8561,8 +8614,8 @@ THE SOFTWARE.
 to-regex 3.0.2 - MIT
 https://github.com/jonschlinkert/to-regex
 
-Copyright (c) 2016-2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2016-2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8595,8 +8648,8 @@ to-regex-range 2.1.1 - MIT
 https://github.com/micromatch/to-regex-range
 
 Copyright (c) 2015-2017, Jon Schlinkert
-Copyright (c) 2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8628,8 +8681,8 @@ THE SOFTWARE.
 to-regex-range 5.0.1 - MIT
 https://github.com/micromatch/to-regex-range
 
-Copyright (c) 2015-present, Jon Schlinkert.
-Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-present, Jon Schlinkert
+Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8727,7 +8780,7 @@ union-value 1.0.1 - MIT
 https://github.com/jonschlinkert/union-value
 
 Copyright (c) 2015-2017, Jon Schlinkert
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -8790,8 +8843,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 unset-value 1.0.0 - MIT
 https://github.com/jonschlinkert/unset-value
 
-Copyright (c) 2015, 2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015, 2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -9035,7 +9088,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-ws 8.4.2 - MIT
+ws 8.5.0 - MIT
 https://github.com/websockets/ws
 
 Copyright (c) 2011 Einar Otto Stangvik <einaros@gmail.com>

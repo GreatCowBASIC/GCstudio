@@ -232,7 +232,7 @@ Copyright 2019
 human-signals 2.1.0 - Apache-2.0
 https://git.io/JeluP
 
-Copyright 2019
+Copyright 2019 ehmicky <ehmicky@gmail.com>
 
                                  Apache License
                            Version 2.0, January 2004
@@ -496,7 +496,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 signal-exit 3.0.3 - ISC
 https://github.com/tapjs/signal-exit
 
-Copyright (c) 2015
+Copyright (c) 2015, Contributors
 
 The ISC License
 

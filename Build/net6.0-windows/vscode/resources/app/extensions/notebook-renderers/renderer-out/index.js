@@ -1256,6 +1256,11 @@ function truncatedArrayOfString(id, outputs, linesLimit, container) {
 }
 
 // extensions/notebook-renderers/src/index.ts
+function clearContainer(container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
 function renderImage(outputInfo, element) {
   const blob = new Blob([outputInfo.data()], {type: outputInfo.mime});
   const src = URL.createObjectURL(blob);
@@ -1300,6 +1305,7 @@ var domEval = (container) => {
   }
 };
 function renderHTML(outputInfo, container) {
+  clearContainer(container);
   const htmlContent = outputInfo.text();
   const element = document.createElement("div");
   const trustedHtml = ttPolicy?.createHTML(htmlContent) ?? htmlContent;
@@ -1316,7 +1322,7 @@ function renderJavascript(outputInfo, container) {
   container.appendChild(element);
   domEval(element);
 }
-function renderError(outputInfo, container) {
+function renderError(outputInfo, container, ctx) {
   const element = document.createElement("div");
   container.appendChild(element);
   let err;
@@ -1330,7 +1336,9 @@ function renderError(outputInfo, container) {
     const stack = document.createElement("pre");
     stack.classList.add("traceback");
     stack.style.margin = "8px 0";
-    stack.appendChild(handleANSIOutput(err.stack));
+    const element2 = document.createElement("span");
+    truncatedArrayOfString(outputInfo.id, [err.stack ?? ""], ctx.settings.lineLimit, element2);
+    stack.appendChild(element2);
     container.appendChild(stack);
   } else {
     const header = document.createElement("div");
@@ -1353,7 +1361,7 @@ function renderStream(outputInfo, container, error, ctx) {
     if (outputElement && outputElement.getAttribute("output-mime-type") === outputInfo.mime) {
       const text2 = outputInfo.text();
       const element2 = document.createElement("span");
-      truncatedArrayOfString(outputInfo.id, [text2], 30, element2);
+      truncatedArrayOfString(outputInfo.id, [text2], ctx.settings.lineLimit, element2);
       outputElement.appendChild(element2);
       return;
     }
@@ -1372,6 +1380,7 @@ function renderStream(outputInfo, container, error, ctx) {
   }
 }
 function renderText(outputInfo, container, ctx) {
+  clearContainer(container);
   const contentNode = document.createElement("div");
   contentNode.classList.add("output-plaintext");
   const text = outputInfo.text();
@@ -1384,8 +1393,9 @@ var activate = (ctx) => {
   const style = document.createElement("style");
   style.textContent = `
 	.output-plaintext,
-	.output-stream {
-		line-height: 22px;
+	.output-stream,
+	.traceback {
+		line-height: var(--notebook-cell-output-line-height);
 		font-family: var(--notebook-cell-output-font-family);
 		white-space: pre-wrap;
 		word-wrap: break-word;
@@ -1396,20 +1406,27 @@ var activate = (ctx) => {
 		-ms-user-select: text;
 		cursor: auto;
 	}
+	span.output-stream {
+		display: inline-block;
+	}
 	.output-plaintext .code-bold,
-	.output-stream .code-bold {
+	.output-stream .code-bold,
+	.traceback .code-bold {
 		font-weight: bold;
 	}
 	.output-plaintext .code-italic,
-	.output-stream .code-italic {
+	.output-stream .code-italic,
+	.traceback .code-italic {
 		font-style: italic;
 	}
 	.output-plaintext .code-strike-through,
-	.output-stream .code-strike-through {
+	.output-stream .code-strike-through,
+	.traceback .code-strike-through {
 		text-decoration: line-through;
 	}
 	.output-plaintext .code-underline,
-	.output-stream .code-underline {
+	.output-stream .code-underline,
+	.traceback .code-underline {
 		text-decoration: underline;
 	}
 	`;
@@ -1445,7 +1462,7 @@ var activate = (ctx) => {
           break;
         case "application/vnd.code.notebook.error":
           {
-            renderError(outputInfo, element);
+            renderError(outputInfo, element, latestContext);
           }
           break;
         case "application/vnd.code.notebook.stdout":

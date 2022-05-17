@@ -102,10 +102,11 @@ namespace GC_Studio
 
         private void AboutBox_Load(object sender, EventArgs e)
         {
+
             try
             {
-                dbs.LoadRead("GreatCowBasic\\Documentation\\acknowledgements.txt");
-                textBoxDescription.Text = dbs.ReadAll();
+                dbs.LoadRead("CurrentVersion.nfo");
+                labelver.Text = dbs.ReadData();
                 dbs.CloseRead();
             }
             catch
@@ -116,7 +117,7 @@ namespace GC_Studio
             try
             {
                 dbs.LoadRead("GreatCowBasic\\version.txt");
-                labelver.Text = dbs.ReadData();
+                labelcomp.Text = dbs.ReadData();
                 dbs.CloseRead();
             }
             catch
@@ -124,6 +125,16 @@ namespace GC_Studio
                 MessageBox.Show("Error when loading an about file.");
             }
 
+            try
+            {
+                dbs.LoadRead("vscode\\version.txt");
+                labelgccode.Text = dbs.ReadData();
+                dbs.CloseRead();
+            }
+            catch
+            {
+                MessageBox.Show("Error when loading an about file.");
+            }
 
             try
             {
@@ -145,6 +156,7 @@ namespace GC_Studio
                 dbs.LoadRead("GreatCowBasic\\Documentation\\acknowledgements.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
+                textBoxDescription.Visible = true;
             }
             catch
             {
@@ -159,6 +171,7 @@ namespace GC_Studio
                 dbs.LoadRead("GreatCowBasic\\Documentation\\license.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
+                textBoxDescription.Visible = true;
             }
             catch
             {
@@ -173,6 +186,7 @@ namespace GC_Studio
                 dbs.LoadRead("GreatCowBasic\\Documentation\\readme.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
+                textBoxDescription.Visible = true;
             }
             catch
             {
@@ -193,6 +207,28 @@ namespace GC_Studio
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("explorer", "https://www.gcbasic.com/bugtracking/bug_report_page.php");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            if (textBoxDescription.Visible) 
+            {
+                textBoxDescription.Visible = false;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer", "https://www.gcbasic.com");
         }
     }
 }
