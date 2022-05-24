@@ -29,10 +29,6 @@ C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-win
 C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.CopyComplete
 C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.dll
 C:\Users\ing.mier\Desktop\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.genruntimeconfig.cache
-C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.exe
-C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.deps.json
-C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.runtimeconfig.json
-C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.dll
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.AssemblyReference.cache
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.AboutBox.resources
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.Loader.resources
@@ -41,6 +37,10 @@ C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GC_Studio.ToolBoxL
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.GenerateResource.cache
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.GeneratedMSBuildEditorConfig.editorconfig
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.CoreCompileInputs.cache
+C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.exe
+C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.deps.json
+C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.runtimeconfig.json
+C:\DevSRCLocal\GCstudio\Build\net6.0-windows\GCstudio.dll
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.csproj.CopyComplete
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.dll
 C:\DevSRCLocal\GCstudio\SRC\GCstudio\obj\Build\net6.0-windows\GCstudio.genruntimeconfig.cache

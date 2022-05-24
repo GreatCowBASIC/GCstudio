@@ -60,7 +60,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::GC_Studio.Properties.Resources.GCstudio;
             this.pictureBox1.Location = new System.Drawing.Point(0, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(686, 400);

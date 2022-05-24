@@ -63,9 +63,9 @@ namespace GC_Studio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _0_3IFEy_hfoIpgFjBl {
+        internal static System.Drawing.Bitmap GCstudio {
             get {
-                object obj = ResourceManager.GetObject("0 3IFEy-hfoIpgFjBl", resourceCulture);
+                object obj = ResourceManager.GetObject("GCstudio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
