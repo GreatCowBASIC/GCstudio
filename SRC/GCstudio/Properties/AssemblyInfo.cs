@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("GCB Studio")]
+[assembly: AssemblyTitle("GC Studio")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GCB Studio")]
+[assembly: AssemblyProduct("GC Studio")]
 [assembly: AssemblyCopyright("Copyright © 2007 - 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión
 // utilizando el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.24.0.72")]
-[assembly: AssemblyFileVersion("0.24.0.72")]
+[assembly: AssemblyVersion("0.25.0.73")]
+[assembly: AssemblyFileVersion("0.25.0.73")]
