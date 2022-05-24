@@ -54,4 +54,7 @@
       <HintPath>..\..\packages\DBS Engine 4.0\DBSEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
 </Project>
