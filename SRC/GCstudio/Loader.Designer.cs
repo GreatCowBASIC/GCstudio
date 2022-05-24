@@ -83,12 +83,12 @@ namespace GC_Studio
             this.ApplicationTitle.BackColor = System.Drawing.Color.Transparent;
             this.ApplicationTitle.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ApplicationTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ApplicationTitle.Location = new System.Drawing.Point(704, 191);
+            this.ApplicationTitle.Location = new System.Drawing.Point(685, 100);
             this.ApplicationTitle.Name = "ApplicationTitle";
-            this.ApplicationTitle.Size = new System.Drawing.Size(302, 242);
+            this.ApplicationTitle.Size = new System.Drawing.Size(334, 400);
             this.ApplicationTitle.TabIndex = 13;
             this.ApplicationTitle.Text = "GC Studio";
-            this.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BtnMini
             // 
@@ -135,7 +135,7 @@ namespace GC_Studio
             this.PictureBox1.Location = new System.Drawing.Point(0, 100);
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(686, 400);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox1.TabIndex = 11;
             this.PictureBox1.TabStop = false;
             // 
@@ -159,7 +159,6 @@ namespace GC_Studio
             this.Load += new System.EventHandler(this.Loader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
