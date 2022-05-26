@@ -8,77 +8,42 @@
 '''@date       [todo]
 '''********************************************************************************
 
-'''----- includes
-  #include <>
-
-
-
-'''----- Konfiguration/Configuration
-  #chip
-  #config
+'''----- Includes
 
 
 
 
+'''----- Configuration/Konfiguration
 
 
 
 
-'''----- Definieren Sie die Hardwareeinstellungen / Define Hardware settings
+'''----- Define Hardware settings/Definieren Sie die Hardwareeinstellungen
 
 
 
 
+'''----- Variables/Variablen
 
 
 
 
-
-
-
-'''----- Variablen/Variables.
-
+'''----- Interrupts/Unterbrechen
 
 
 
 
-
-
-
-'''----- unterbrechen/Interrupts.
-
+'''----- Main body of program/Hauptteil des Programms
 
 
 
 
-
-
-
-'''----- Hauptteil des Programms./ Main body of program.
-
-
-
-  Do
-
-  Loop
-
-  end
+'''----- Subroutines/Unterroutinen
 
 
 
 
-
-'''----- Unterroutinen/Subroutines.
-
+'''----- Lookup Tables/Nachschlagetabellen
 
 
 
-
-
-
-'''----- Lookup Tables.
-
-
-
-
-end
