@@ -687,52 +687,59 @@ namespace GC_Studio
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
+            if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                dbs.LoadWrite("mrd.dat");
-                dbs.RecordData(textBox2.Text);
-                dbs.CloseWrite();
-            }
-            catch
-            {
-                MessageBox.Show("Error saving recent directory");
-            }
-
-            try
-            {
-                ProcessStartInfo p = new ProcessStartInfo();
-                p.FileName = "minidump.exe";
-                p.Arguments = "x \"GCBprog.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
-                p.WindowStyle = ProcessWindowStyle.Hidden;
-                p.CreateNoWindow = true;
-                Process x = Process.Start(p);
-                x.WaitForExit();
-            }
-            catch
-            {
-                MessageBox.Show("Error creating project.");
-            }
-                        
-            if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
-            {
-                switch (IDE)
+                try
                 {
-                    case "GCcode":
-                        addrecent(textBox1.Text,textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
-                        
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
-                        break;
-
-                    case "SynWrite":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
-                        
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
-                        break;
-
-                    case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
-                        break;
+                    dbs.LoadWrite("mrd.dat");
+                    dbs.RecordData(textBox2.Text);
+                    dbs.CloseWrite();
                 }
+                catch
+                {
+                    MessageBox.Show("Error saving recent directory");
+                }
+
+                try
+                {
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    p.FileName = "minidump.exe";
+                    p.Arguments = "x \"GCBprog.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
+                    p.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.CreateNoWindow = true;
+                    Process x = Process.Start(p);
+                    x.WaitForExit();
+                }
+                catch
+                {
+                    MessageBox.Show("Error creating project.");
+                }
+
+                if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
+                {
+                    switch (IDE)
+                    {
+                        case "GCcode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                            break;
+
+                        case "SynWrite":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                            break;
+
+                        case "Geany":
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
 
@@ -740,7 +747,9 @@ namespace GC_Studio
 
         private void button5_Click(object sender, EventArgs e)
         {
-            try
+            if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
+            { 
+                try
             {
                 dbs.LoadWrite("mrd.dat");
                 dbs.RecordData(textBox2.Text);
@@ -787,11 +796,18 @@ namespace GC_Studio
                         break;
                 }
             }
+            }
+            else
+            {
+                MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
+            {
+                try
             {
                 dbs.LoadWrite("mrd.dat");
                 dbs.RecordData(textBox2.Text);
@@ -839,12 +855,18 @@ namespace GC_Studio
                         break;
                 }
             }
+            }
+            else
+            {
+                MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            {
-                try
+                if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
+                {
+                    try
                 {
                     dbs.LoadWrite("mrd.dat");
                     dbs.RecordData(textBox2.Text);
@@ -873,8 +895,13 @@ namespace GC_Studio
                     
                         LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", IDE);
                     }
-                    }
-            }
+                }
+                else
+                {
+                    MessageBox.Show("A file of the same name already exists on the location, please use a valid project name.", "File already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+        }
 
         private void button9_Click(object sender, EventArgs e)
         {
