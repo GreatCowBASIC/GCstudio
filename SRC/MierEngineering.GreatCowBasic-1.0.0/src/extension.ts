@@ -1,6 +1,16 @@
 'use strict';
 import * as vscode from 'vscode';
+import * as data from './IntelliSenseGCB.json';
 
+var accessors : string[] = [];
+for(let i=0; i<data.classes.length; i++)
+{
+	let val : string = data.classes[i].accessor!
+	if(val !== undefined && val.length > 0 && val.toLowerCase() != "unknown")
+	{
+		accessors.push(val)
+	}
+}
 
 
 // The module 'vscode' contains the VS Code extensibility API
@@ -29,6 +39,111 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(
         {language: "GCB"}, new GCBDocumentSymbolProvider()
     ));
+
+    //Completion Provider
+let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB', {
+
+		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+
+			let items = [];
+
+			for(let i=0; i<data.commands.length; i++)
+			{
+				const isModifierProp = (data.commands[i].prefix == "GCB_Commands");
+				let values = data.commands[i].values;
+				for(let a=0; a<values.length; a++)
+				{
+					let item = new vscode.CompletionItem(values[a].name,vscode.CompletionItemKind.Method);
+					if(isModifierProp)
+					{
+						item.documentation = "";
+						if(values[a].funcdesc !== undefined)
+						{
+							item.documentation += values[a].funcdesc + "\n---\n";
+						}
+						else
+						{
+							item.documentation += "No Description\n---\n";
+						}
+						item.documentation += "function: " + values[a].description + "()\n";
+						item.documentation += "value: " + values[a].value;
+						item.detail = values[a].description + "()";
+					}
+					else
+					{
+						item.documentation = values[a].description;
+						item.detail = "value:" + values[a].value;
+					}
+					
+					items.push(item);
+				}
+			}
+			return items;
+		}
+	});
+
+	const completionprovider2 = vscode.languages.registerCompletionItemProvider(
+		'GCB',
+		{
+			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+
+				// get all text until the `position` and check if it reads `console.`
+				// and if so then complete if `log`, `warn`, and `error`
+				let linePrefix = document.lineAt(position).text.substr(0, position.character);
+
+				let items : vscode.CompletionItem[] = [];
+				let hasFoundAccessor = false;
+				for(let a=0; a<accessors.length && !hasFoundAccessor; a++)
+				{
+					if (linePrefix.endsWith(accessors[a] + " "))
+					{
+						hasFoundAccessor=  true;
+						let hasFoundClass = false;
+						for(let b=0; b<data.classes.length && !hasFoundClass; b++)
+						{
+							if(data.classes[b].accessor == accessors[a])
+							{
+								hasFoundClass = true;
+								let funcs = data.classes[b].funcs;
+								
+								for(let func in funcs)
+								{
+									let item = new vscode.CompletionItem(func, vscode.CompletionItemKind.Variable);
+									let f = funcs[func];
+									let signature = funcs[func].signature;
+									if(signature !== undefined)
+									{
+										item.detail = signature;
+									}
+
+									let description = funcs[func].description;
+									if(description !== undefined)
+									{
+										item.documentation = description;
+									}
+									else
+									{
+										item.documentation = "No Description"
+									}
+
+									items.push(item)
+								}
+							}
+						}
+					}
+				}
+
+				if(hasFoundAccessor)
+				{
+					return items;
+				}
+
+				return undefined;
+			}
+		},
+		' ' // triggered whenever a ' ' is being typed
+	);
+  context.subscriptions.push(completionprovider1, completionprovider2);
 
     //Menu Bar
     if (!init) {
@@ -654,7 +769,6 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 // Integrated Menu Bar
 
 
-
 // local functions for user-defined button execution follow, based on
 // https://github.com/ppatotski/vscode-commandbar/ Copyright 2018 Petr Patotski
 
@@ -687,12 +801,12 @@ function executeNext(action: String, palettes: String[], index: number) {
 }
 
 const resolveVariablesFunctions = {
-  env: (name) => process.env[name.toUpperCase()],
+  env: (name: string) => process.env[name.toUpperCase()],
   cwd: () => process.cwd(),
   workspaceRoot: () => getWorkspaceFolder(),
   workspaceFolder: () => getWorkspaceFolder(),
-  workspaceRootFolderName: () => basename(getWorkspaceFolder()),
-  workspaceFolderBasename: () => basename(getWorkspaceFolder()),
+  workspaceRootFolderName: () => basename(getWorkspaceFolder()!),
+  workspaceFolderBasename: () => basename(getWorkspaceFolder()!),
   lineNumber: () => window.activeTextEditor?.selection.active.line,
   selectedText: () =>
     window.activeTextEditor?.document.getText(

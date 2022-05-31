@@ -1,0 +1,61 @@
+{
+    "classes": [
+        {
+            "title": "TestClass",
+            "description": "just a test class",
+            "funcs": {
+                "HelloWorld": {
+                    "signature": "HelloWorld()",
+                    "description": "says hello to the world"
+                },
+                "GCBcommand": {
+                    "signature": "GCBcommand()",
+                    "description": "does nothing"
+                }
+            },
+            "extends": "",
+            "accessor": "test"
+        },
+        {
+            "title": "Chips",
+            "description": "This class contains all supported chips",
+            "funcs": {
+                "18f4550": {
+                    "signature": "18f4550, frequency",
+                    "description": "PIC 18F4550 great chip"
+                },
+                "16f628a": {
+                    "signature": "16f628a, frequency",
+                    "description": "PIC 16f628a classic chip"
+                },
+                "18f45k50": {
+                    "signature": "18f45k50, frequency",
+                    "description": "PIC 18F45k50 awesome chip"
+                }
+            },
+            "extends": "",
+            "accessor": "#chip"
+        }
+    ],
+    "commands": [
+        {
+            "title": "GCB Commands",
+            "prefix": "GCB_Commands",
+            "description": "General GCB Commands",
+            "values": [
+                {
+                    "name": "#chip",
+                    "value": "12",
+                    "description": "Defines the chip part to use.",
+                    "funcdesc": "Chip"
+                },
+                {
+                    "name": "test",
+                    "value": "12",
+                    "description": "just a test command :)",
+                    "funcdesc": "Chip"
+                }
+            ]
+        }
+    ]
+}

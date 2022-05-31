@@ -3,10 +3,11 @@
     "module": "commonjs",
     "target": "es6",
     "outDir": "dist",
-    "noImplicitAny": false,
     "lib": ["es6"],
     "sourceMap": true,
     "rootDir": "src",
+    "resolveJsonModule": true,
+    "suppressImplicitAnyIndexErrors": true,
     /* Strict Type-Checking Option */
     "strict": true /* enable all strict type-checking options */
     /* Additional Checks */
