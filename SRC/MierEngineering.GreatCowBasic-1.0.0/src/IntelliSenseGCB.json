@@ -1,22 +1,252 @@
 {
   "classes": [
     {
-      "title": "TestClass",
-      "description": "just a test class",
+      "title": "Variable Types",
+      "description": "Common and advanced variable types, acceced by AS",
       "funcs": {
-        "HelloWorld": {
-          "signature": "HelloWorld()",
-          "description": "says hello to the world"
+        "Bit": {
+          "signature": "Dim MyVar as Bit",
+          "description": "A bit (0 or 1)"
         },
-        "GCBcommand": {
-          "signature": "GCBcommand()",
-          "description": "does nothing"
+        "Byte": {
+          "signature": "Dim MyVar as Byte",
+          "description": "A whole number between 0 and 255"
+        },
+        "Word": {
+          "signature": "Dim MyVar as Word",
+          "description": "A whole number between 0 and 65535"
+        },
+
+        "Integer": {
+          "signature": "Dim MyVar as Integer",
+          "description": "A whole number between -32768 and 32767"
+        },
+        "Long": {
+          "signature": "Dim MyVar as Long",
+          "description": "A whole number between 0 and 2^32 (4.29 billion)"
+        },
+        "": {
+          "String": "Dim MyVar as String",
+          "description": "A series of letters, numbers and symbols"
+        },
+        "LongINT": {
+          "signature": "Dim MyVar as LongINT",
+          "description": "A list of whole numbers between - (2 ^ 63) and 2 ^ 63 - 1"
+        },
+        "uLongINT": {
+          "signature": "Dim MyVar as uLongINT",
+          "description": "A whole number between 0 and 2 ^ 64 - 1"
+        },
+        "Single": {
+          "signature": "Dim MyVar as Single",
+          "description": "A numeric floating point values that range from -3.4x10 ^ 38 and +3.4x10 ^ 38 with up to seven significant digits"
+        },
+        "Double": {
+          "signature": "Dim MyVar as Double",
+          "description": "A numeric floating point values that range from -1.7x10 ^ 308 and +1.7x10 ^ 308 with up to 15 significant digits"
         }
       },
       "extends": "",
-      "accessor": "test"
+      "accessor": "as"
       
     },
+    {
+      "title": "Exit Types",
+      "description": "This class contains all Exit Types",
+      "funcs": {
+        "Sub": {
+          "signature": "Exit Sub",
+          "description": "The program exit the current subroutine, Applies to Subroutines"
+        },
+        "Function": {
+          "signature": "Exit Function",
+          "description": "The program exit the current function, Applies to Functions"
+        },
+        "Do": {
+          "signature": "Exit Do",
+          "description": "The program exit the current Do-Loop, Applies to Do-Loops"
+        },
+        "For": {
+          "signature": "Exit For",
+          "description": "The program exit the current For-Next, Applies to For-Next Loops"
+        },
+        "Repeat": {
+          "signature": "Exit Repeat",
+          "description": "The program exit the current Repeat-Loop, Applies to Repeat-Loop"
+        }
+      },
+      "extends": "",
+      "accessor": "exit"
+         
+    },
+
+    {
+      "title": "Default Includes",
+      "description": "This class contains the default includes",
+      "funcs": {
+        "<3pi.h>": {
+          "signature": "#include <3pi.h>",
+          "description": "Subroutines to allow the Polulu 3pi robot to work with Great Cow BASIC."
+        },
+        "<47xxx?eeram.h>": {
+          "signature": "#include <47xxx?eeram.h>",
+          "description": "Library for Microchip EERAM - (74XXX)"
+        },
+        "<ADAFruit_mini_colorTFT_joystick_featherwing.h>": {
+          "signature": "#include <ADAFruit_mini_colorTFT_joystick_featherwing.h>",
+          "description": "ADAFruit_mini_colorTFT_joystick  routines for the GCBASIC compiler"
+        },
+        "<ads7843.h>": {
+          "signature": "#include <ads7843.h>",
+          "description": "ADS7843 routines for the GCBASIC compiler"
+        },
+        "<alps-ec11.h>": {
+          "signature": "#include <alps-ec11.h>",
+          "description": "encoder routines for ALPS mechanical rotary encoder EC11B/ EC11E/ EC11G/ EC11J"
+        },
+        "<ams_5600.h>": {
+          "signature": "#include <ams_5600.h>",
+          "description": "AMS 5600 class for Great Cow BASIC"
+        },
+        "<bme280.h>": {
+          "signature": "#include <bme280.h>",
+          "description": "Bosch BME280/BMP280  routines for Great Cow BASIC. This is a library for the BME280 humidity, temperature & pressure sensor."
+        },
+        "<canbus.h>": {
+          "signature": "#include <canbus.h>",
+          "description": "CanBus MCP2515 routines for the GCBASIC compiler"
+        },
+        "<chipino.h>": {
+          "signature": "#include <chipino.h>",
+          "description": "CHIPINO I/O Header File"
+        }
+
+
+      },
+      "extends": "",
+      "accessor": "#include"
+         
+    },
+
+    {
+      "title": "SPI Modes",
+      "description": "This class contains all SPI Modes",
+      "funcs": {
+        "(MasterSlow)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller."
+        },
+        "(Master)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller."
+        },
+        "(MasterFast)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller."
+        },
+        "(Slave)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller."
+        },
+        "(SlaveSS)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Slave mode, with the Slave Select pin enabled."
+        },
+
+
+        "(MasterSlow, SPI_CPOL_0 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+        },
+        "(Master, SPI_CPOL_0 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+        },
+        "(MasterFast, SPI_CPOL_0 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+        },
+        "(Slave, SPI_CPOL_0 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 0"
+        },
+        "(SlaveSS, SPI_CPOL_0 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 0 & SPI_CPHA = 0"
+        },
+
+
+        "(MasterSlow, SPI_CPOL_0 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+        },
+        "(Master, SPI_CPOL_0 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+        },
+        "(MasterFast, SPI_CPOL_0 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+        },
+        "(Slave, SPI_CPOL_0 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 0 & SPI_CPHA = 1"
+        },
+        "(SlaveSS, SPI_CPOL_0 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 0 & SPI_CPHA = 1"
+        },
+
+
+        "(MasterSlow, SPI_CPOL_1 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+        },
+        "(Master, SPI_CPOL_1 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+        },
+        "(MasterFast, SPI_CPOL_1 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+        },
+        "(Slave, SPI_CPOL_1 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 0"
+        },
+        "(SlaveSS, SPI_CPOL_1 + SPI_CPHA_0)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 1 & SPI_CPHA = 0"
+        },
+
+
+        "(MasterSlow, SPI_CPOL_1 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+        },
+        "(Master, SPI_CPOL_1 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/16 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+        },
+        "(MasterFast, SPI_CPOL_1 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/4 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+        },
+        "(Slave, SPI_CPOL_1 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Master mode, SPI clock is 1/64 of the frequency of the microcontroller. SPI_CPOL = 1 & SPI_CPHA = 1"
+        },
+        "(SlaveSS, SPI_CPOL_1 + SPI_CPHA_1)": {
+          "signature": "SPIMode (Mode)",
+          "description": "Slave mode, with the Slave Select pin enabled. SPI_CPOL = 1 & SPI_CPHA = 1"
+        }
+
+      },
+      "extends": "",
+      "accessor": "spimode"
+         
+    },
+
     {
       "title": "Chips",
       "description": "This class contains all supported chips",
@@ -50,15 +280,51 @@
       "values": [
         {
           "name": "#chip",
-          "value": "12",
-          "description": "Defines the chip part to use.",
-          "funcdesc": "Chip"
+          "value": "",
+          "description": "#chip model, frequency",
+          "funcdesc": "The #chip directive is used to specify the chip model and frequency that Great Cow BASIC will use. The model is the specific microcontroller - examples are \"16F819\". The frequency is the frequency of the chip in MHz, and is required for the delay and PWM routines. The following constants simplify setting specific frequencies. 31k, 32.768K, 125k, 250k or 500k. Any of these constant can be used. As shown in the example below. If frequency is not present the compiler will select a frequency default frequency that should work for the microcontroller."    
         },
         {
-          "name": "test",
-          "value": "12",
-          "description": "just a test command :)",
-          "funcdesc": "Chip"
+          "name": "as",
+          "value": "",
+          "description": "Defines a Variable Type",
+          "funcdesc": ""
+        },
+        {
+          "name": "dim",
+          "value": "",
+          "description": "Dim variable[, variable2 [, variable3]] [As type] [Alias othervar [, othervar2]]",
+          "funcdesc": "Available on all microcontrollers. The Dim variable command is used to instruct Great Cow BASIC to allocate variables or to create alternate names for existing variables (using Alias) or to create variables at a specific memory location (using At)."                
+        },
+        {
+          "name": "#include",
+          "value": "",
+          "description": "#include filename",
+          "funcdesc": "#include tells Great Cow BASIC to open up another file, read all of the subroutines and constants from it, and then copy them into the current program."                
+        },
+        {
+          "name": "SPIMode",
+          "value": "",
+          "description": "SPIMode ( Mode [, SPIClockMode])",
+          "funcdesc": "Mode sets the mode of the SPI module within the microcontroller. These are the possible SPI Modes: \n\nMasterSlow| Master mode, SPI clock is 1/64 of the frequency of the microcontroller.\nMaster| Master mode, SPI clock is 1/16 of the frequency of the microcontroller.\nMasterFast| Master mode, SPI clock is 1/4 of the frequency of the microcontroller.\nSlave| Slave mode.\nSlaveSS| Slave mode, with the Slave Select pin enabled.\n\nSPIClockMode is an optional parameter to set the mode of the SPI clock mode. This optional parameter sets both the clock polarity and clock edge.\n\n0| SPI_CPOL = 0 & SPI_CPHA = 0\n1| SPI_CPOL = 0 & SPI_CPHA = 1\n2| SPI_CPOL = 1 & SPI_CPHA = 0\n3| SPI_CPOL = 1 & SPI_CPHA = 1\n"                
+        },
+        {
+          "name": "SPITransfer",
+          "value": "",
+          "description": "SPIMode tx, rx",
+          "funcdesc": "Available on Microchip PIC microcontrollers with Hardware SPI modules. \n This command simultaneously sends and receives a byte of data using the SPI protocol. It behaves differently depending on whether the microcontroller has been set to act as a master or a slave. When operating as a master, SPITransfer will initiate a transfer. The data in tx will be sent to the slave, whilst the byte that is buffered in the slave will be read into rx. In slave mode, the SPITransfer command will pause the program until a transfer is initiated by the master. At this point, it will send the data in tx whilst reading the transmission from the master into the rx variable."                
+        },
+        {
+          "name": "FastHWSPITransfer",
+          "value": "",
+          "description": "FastHWSPITransfer tx",
+          "funcdesc": "Available on Microchip PIC microcontrollers with Hardware SPI modules.\nThis command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."                
+        },
+        {
+          "name": "Exit",
+          "value": "",
+          "description": "This command will make the program exit the routine it is currently in, as it would if it came to the end of the routine. Applies to Subroutines, Functions, For-Next loops, Do-Loop loops and Repeat loops.",
+          "funcdesc": "Exit Sub | Exit Function | Exit Do | Exit For | Exit Repeat"
         }
       ]
     }

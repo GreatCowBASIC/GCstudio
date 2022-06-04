@@ -49,12 +49,12 @@ let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB',
 
 			for(let i=0; i<data.commands.length; i++)
 			{
-				const isModifierProp = (data.commands[i].prefix == "GCB_Commands");
+				const IsGCBcommand = (data.commands[i].prefix == "GCB_Commands");
 				let values = data.commands[i].values;
 				for(let a=0; a<values.length; a++)
 				{
 					let item = new vscode.CompletionItem(values[a].name,vscode.CompletionItemKind.Method);
-					if(isModifierProp)
+					if(IsGCBcommand)
 					{
 						item.documentation = "";
 						if(values[a].funcdesc !== undefined)
@@ -65,9 +65,9 @@ let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB',
 						{
 							item.documentation += "No Description\n---\n";
 						}
-						item.documentation += "function: " + values[a].description + "()\n";
+						item.documentation += "function: " + values[a].description + "\n";
 						item.documentation += "value: " + values[a].value;
-						item.detail = values[a].description + "()";
+						item.detail = values[a].description;
 					}
 					else
 					{
@@ -95,7 +95,7 @@ let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB',
 				let hasFoundAccessor = false;
 				for(let a=0; a<accessors.length && !hasFoundAccessor; a++)
 				{
-					if (linePrefix.endsWith(accessors[a] + " "))
+					if (linePrefix.toLowerCase().endsWith(accessors[a] + " "))
 					{
 						hasFoundAccessor=  true;
 						let hasFoundClass = false;
