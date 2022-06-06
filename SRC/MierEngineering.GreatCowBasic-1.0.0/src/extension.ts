@@ -40,8 +40,8 @@ export function activate(context: vscode.ExtensionContext) {
         {language: "GCB"}, new GCBDocumentSymbolProvider()
     ));
 
-    //Completion Provider
-let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB', {
+    //Completion Provider aka IntelliSense
+let completionproviderCommands = vscode.languages.registerCompletionItemProvider('GCB', {
 
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
 
@@ -82,7 +82,52 @@ let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB',
 		}
 	});
 
-	const completionprovider2 = vscode.languages.registerCompletionItemProvider(
+  let completionproviderDirectives = vscode.languages.registerCompletionItemProvider('GCB', {
+
+		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext) {
+			let linePrefix = document.lineAt(position).text.substr(0, position.character);
+			let items = [];
+      if (linePrefix.toLowerCase().endsWith("#"))
+      {
+			for(let i=0; i<data.directives.length; i++)
+			{
+				const IsGCBdirective = (data.directives[i].prefix == "GCB_Directives");
+				let values = data.directives[i].values;
+				for(let a=0; a<values.length; a++)
+				{
+					let item = new vscode.CompletionItem(values[a].name,vscode.CompletionItemKind.Property);
+					if(IsGCBdirective)
+					{
+						item.documentation = "";
+						if(values[a].funcdesc !== undefined)
+						{
+							item.documentation += values[a].funcdesc + "\n---\n";
+						}
+						else
+						{
+							item.documentation += "No Description\n---\n";
+						}
+						item.documentation += "function: " + values[a].description + "\n";
+						item.documentation += "value: " + values[a].value;
+						item.detail = values[a].description;
+					}
+					else
+					{
+						item.documentation = values[a].description;
+						item.detail = "value:" + values[a].value;
+					}
+					
+					items.push(item);
+				}
+			}
+			return items;
+      }
+		}
+	},
+  	'#' // triggered whenever a '#' is being typed
+  );
+
+	const completionproviderClasses = vscode.languages.registerCompletionItemProvider(
 		'GCB',
 		{
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
@@ -143,7 +188,7 @@ let completionprovider1 = vscode.languages.registerCompletionItemProvider('GCB',
 		},
 		' ' // triggered whenever a ' ' is being typed
 	);
-  context.subscriptions.push(completionprovider1, completionprovider2);
+  context.subscriptions.push(completionproviderCommands, completionproviderDirectives, completionproviderClasses);
 
     //Menu Bar
     if (!init) {

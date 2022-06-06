@@ -115,10 +115,408 @@
                 "<chipino.h>": {
                     "signature": "#include <chipino.h>",
                     "description": "CHIPINO I/O Header File"
+                },
+                "<dht.h>": {
+                    "signature": "#include <dht.h>",
+                    "description": "This include file will let you easily exploit the DHT11 or DHT22 relative humidity/temperature sensors"
+                },
+                "<ds18b20.h>": {
+                    "signature": "#include <ds18b20.h>",
+                    "description": "DS18b20 temperature sensor routines for the GCBASIC compiler"
+                },
+                "<ds18b20mulltiport.h>": {
+                    "signature": "#include <ds18b20mulltiport.h>",
+                    "description": "Supports a multiport DS18B20 reads."
+                },
+                "<ds18s20.h>": {
+                    "signature": "#include <ds18s20.h>",
+                    "description": "DS18s20 routines for the Great Cow BASIC compiler"
+                },
+                "<ds1307.h>": {
+                    "signature": "#include <ds1307.h>",
+                    "description": "Software DS1307 routines for the GCBASIC compiler"
+                },
+                "<ds1337.h>": {
+                    "signature": "#include <ds1337.h>",
+                    "description": "Library for reading/writing to Microchip DS1337 RTC for the GCBASIC compiler"
+                },
+                "<ds1672.h>": {
+                    "signature": "#include <ds1672.h>",
+                    "description": "Library for reading/writing to Microchip DS1672 RTC for the GCBASIC compiler"
+                },
+                "<ds2482.h>": {
+                    "signature": "#include <ds2482.h>",
+                    "description": "DS2482 routines for the GCBASIC compiler"
+                },
+                "<ds3231.h>": {
+                    "signature": "#include <ds3231.h>",
+                    "description": "Library for reading/writing to Microchip DS3231 RTC for the GCBASIC compiler"
+                },
+                "<duemilanove.h>": {
+                    "signature": "#include <duemilanove.h>",
+                    "description": "Library to allow the Arduino Duemilanove (mega328) to work with GCBASIC"
+                },
+                "<emc1001.h>": {
+                    "signature": "#include <emc1001.h>",
+                    "description": " EMC1001 routines for the GCBASIC compiler"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
+                },
+                "<chipino.h>": {
+                    "signature": "#include <chipino.h>",
+                    "description": "CHIPINO I/O Header File"
                 }
             },
             "extends": "",
             "accessor": "#include"
+        },
+        {
+            "title": "Global Defines",
+            "description": "This class contains all global #define Types",
+            "funcs": {
+                "AD_Delay": {
+                    "signature": "#define AD_Delay 20 us",
+                    "description": "The constant AD_Delay controls is the acquisition delay. This can be changed by adding the following constant.",
+                    "value": "20 us"
+                },
+                "ADSpeed": {
+                    "signature": "#define ADSpeed 128",
+                    "description": "ADSpeed controls the source of the clock for the ADC module. It varies from one chip to another. InternalClock is a Microchip PIC microcontroller only option that will drive the ADC from an internal RC oscillator.",
+                    "value": "128"
+                }
+            },
+            "extends": "",
+            "accessor": "#define"
         },
         {
             "title": "SPI Modes",
@@ -249,18 +647,45 @@
             "accessor": "#chip"
         }
     ],
+    "directives": [
+        {
+            "title": "GCB Directives",
+            "prefix": "GCB_Directives",
+            "description": "General GCB Directives",
+            "values": [
+                {
+                    "name": "chip",
+                    "value": "",
+                    "description": "#chip model, frequency",
+                    "funcdesc": "The #chip directive is used to specify the chip model and frequency that Great Cow BASIC will use. The model is the specific microcontroller - examples are \"16F819\". The frequency is the frequency of the chip in MHz, and is required for the delay and PWM routines. The following constants simplify setting specific frequencies. 31k, 32.768K, 125k, 250k or 500k. Any of these constant can be used. As shown in the example below. If frequency is not present the compiler will select a frequency default frequency that should work for the microcontroller."
+                },
+                {
+                    "name": "define",
+                    "value": "",
+                    "description": "#config option1, option2, ... , optionN",
+                    "funcdesc": "#define will search through the program for Find, and replace it with the value given for Replace.\nThe compiler replaces a constant with the value, it then searches the line for constants again and will make any more replacements needed. It will do this up to 100 times on a line, then it will stop replacing and show an error. The limitation of 100 iteractions is to prevent something like \"#define Const_A Const_B\" and then \"#define Const_B Const_A\" from causing an infinite loop in the compiler."
+                },
+                {
+                    "name": "config",
+                    "value": "",
+                    "description": "#chip model, frequency",
+                    "funcdesc": "The #config directive is used to specify configuration options for the chip.\nThere is a detailed explanation of #config in the Configuration section of help."
+                },
+                {
+                    "name": "include",
+                    "value": "",
+                    "description": "#include filename",
+                    "funcdesc": "#include tells Great Cow BASIC to open up another file, read all of the subroutines and constants from it, and then copy them into the current program."
+                }
+            ]
+        }
+    ],
     "commands": [
         {
             "title": "GCB Commands",
             "prefix": "GCB_Commands",
             "description": "General GCB Commands",
             "values": [
-                {
-                    "name": "#chip",
-                    "value": "",
-                    "description": "#chip model, frequency",
-                    "funcdesc": "The #chip directive is used to specify the chip model and frequency that Great Cow BASIC will use. The model is the specific microcontroller - examples are \"16F819\". The frequency is the frequency of the chip in MHz, and is required for the delay and PWM routines. The following constants simplify setting specific frequencies. 31k, 32.768K, 125k, 250k or 500k. Any of these constant can be used. As shown in the example below. If frequency is not present the compiler will select a frequency default frequency that should work for the microcontroller."
-                },
                 {
                     "name": "as",
                     "value": "",
@@ -272,12 +697,6 @@
                     "value": "",
                     "description": "Dim variable[, variable2 [, variable3]] [As type] [Alias othervar [, othervar2]]",
                     "funcdesc": "Available on all microcontrollers. The Dim variable command is used to instruct Great Cow BASIC to allocate variables or to create alternate names for existing variables (using Alias) or to create variables at a specific memory location (using At)."
-                },
-                {
-                    "name": "#include",
-                    "value": "",
-                    "description": "#include filename",
-                    "funcdesc": "#include tells Great Cow BASIC to open up another file, read all of the subroutines and constants from it, and then copy them into the current program."
                 },
                 {
                     "name": "SPIMode",
