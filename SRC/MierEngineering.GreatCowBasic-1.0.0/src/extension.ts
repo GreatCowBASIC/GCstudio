@@ -65,14 +65,14 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 						{
 							item.documentation += "No Description\n---\n";
 						}
-						item.documentation += "function: " + values[a].description + "\n";
-						item.documentation += "value: " + values[a].value;
+						item.documentation += "Function: " + values[a].description + "\n";
+						item.documentation += "Availability: " + values[a].available;
 						item.detail = values[a].description;
 					}
 					else
 					{
 						item.documentation = values[a].description;
-						item.detail = "value:" + values[a].value;
+						item.detail = "Availability:" + values[a].available;
 					}
 					
 					items.push(item);
@@ -107,14 +107,14 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 						{
 							item.documentation += "No Description\n---\n";
 						}
-						item.documentation += "function: " + values[a].description + "\n";
-						item.documentation += "value: " + values[a].value;
+						item.documentation += "Directive: " + values[a].description + "\n";
+						item.documentation += "Availability: " + values[a].available;
 						item.detail = values[a].description;
 					}
 					else
 					{
 						item.documentation = values[a].description;
-						item.detail = "value:" + values[a].value;
+						item.detail = "Availability:" + values[a].available;
 					}
 					
 					items.push(item);
@@ -164,14 +164,21 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 									let description = funcs[func].description;
 									if(description !== undefined)
 									{
-										item.documentation = description;
+										item.documentation += description;
 									}
 									else
 									{
-										item.documentation = "No Description"
+										item.documentation += "No Description";
 									}
 
-									items.push(item)
+
+									let defvalue = funcs[func].value;
+									if(description !== undefined)
+									{
+										item.documentation += "\n---\nDefault Value: " + defvalue;
+									}
+					             
+									items.push(item);
 								}
 							}
 						}
