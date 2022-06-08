@@ -6,7 +6,7 @@ const data = require("./IntelliSenseGCB.json");
 var accessors = [];
 for (let i = 0; i < data.classes.length; i++) {
     let val = data.classes[i].accessor;
-    if (val !== undefined && val.length > 0 && val.toLowerCase() != "unknown") {
+    if (val !== undefined && val.length > 0 && val.toLowerCase() !== "unknown") {
         accessors.push(val);
     }
 }
@@ -28,11 +28,11 @@ function activate(context) {
         provideCompletionItems(document, position, token, context) {
             let items = [];
             for (let i = 0; i < data.commands.length; i++) {
-                const IsGCBcommand = (data.commands[i].prefix == "GCB_Commands");
+                const isCommand = (data.commands[i].prefix === "GCB_Commands");
                 let values = data.commands[i].values;
                 for (let a = 0; a < values.length; a++) {
                     let item = new vscode.CompletionItem(values[a].name, vscode.CompletionItemKind.Method);
-                    if (IsGCBcommand) {
+                    if (isCommand) {
                         item.documentation = "";
                         if (values[a].funcdesc !== undefined) {
                             item.documentation += values[a].funcdesc + "\n---\n";
@@ -60,11 +60,11 @@ function activate(context) {
             let items = [];
             if (linePrefix.toLowerCase().endsWith("#")) {
                 for (let i = 0; i < data.directives.length; i++) {
-                    const IsGCBdirective = (data.directives[i].prefix == "GCB_Directives");
+                    const isDirective = (data.directives[i].prefix === "GCB_Directives");
                     let values = data.directives[i].values;
                     for (let a = 0; a < values.length; a++) {
                         let item = new vscode.CompletionItem(values[a].name, vscode.CompletionItemKind.Property);
-                        if (IsGCBdirective) {
+                        if (isDirective) {
                             item.documentation = "";
                             if (values[a].funcdesc !== undefined) {
                                 item.documentation += values[a].funcdesc + "\n---\n";
@@ -73,12 +73,10 @@ function activate(context) {
                                 item.documentation += "No Description\n---\n";
                             }
                             item.documentation += "Directive: " + values[a].description + "\n";
-                            item.documentation += "Availability: " + values[a].available;
                             item.detail = values[a].description;
                         }
                         else {
                             item.documentation = values[a].description;
-                            item.detail = "Availability:" + values[a].available;
                         }
                         items.push(item);
                     }
@@ -100,7 +98,7 @@ function activate(context) {
                     hasFoundAccessor = true;
                     let hasFoundClass = false;
                     for (let b = 0; b < data.classes.length && !hasFoundClass; b++) {
-                        if (data.classes[b].accessor == accessors[a]) {
+                        if (data.classes[b].accessor === accessors[a]) {
                             hasFoundClass = true;
                             let funcs = data.classes[b].funcs;
                             for (let func in funcs) {
@@ -112,13 +110,13 @@ function activate(context) {
                                 }
                                 let description = funcs[func].description;
                                 if (description !== undefined) {
-                                    item.documentation += description;
+                                    item.documentation = description;
                                 }
                                 else {
-                                    item.documentation += "No Description";
+                                    item.documentation = "No Description";
                                 }
                                 let defvalue = funcs[func].value;
-                                if (description !== undefined) {
+                                if (defvalue !== undefined) {
                                     item.documentation += "\n---\nDefault Value: " + defvalue;
                                 }
                                 items.push(item);

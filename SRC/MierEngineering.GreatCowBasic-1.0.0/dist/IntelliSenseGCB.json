@@ -160,341 +160,329 @@
                     "signature": "#include <emc1001.h>",
                     "description": " EMC1001 routines for the GCBASIC compiler"
                 },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
-                },
-                "<chipino.h>": {
-                    "signature": "#include <chipino.h>",
-                    "description": "CHIPINO I/O Header File"
+                "<EPD_EPD2in13D.h>": {
+                    "signature": "#include <EPD_EPD2in13D.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<EPD_EPD7in5.h>": {
+                    "signature": "#include <EPD_EPD7in5.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<eracer.h>": {
+                    "signature": "#include <eracer.h>",
+                    "description": "Subroutines to allow the eLabtronics eRacer robot to work with Great Cow BASIC"
+                },
+                "<fram.h>": {
+                    "signature": "#include <fram.h>",
+                    "description": "A library for a Ramtron I2C FRAM serial memory"
+                },
+                "<getuserid.h>": {
+                    "signature": "#include <getuserid.h>",
+                    "description": "MicroChip PIC specific to read GetUserID routines for Great Cow BASIC"
+                },
+                "<glcd.h>": {
+                    "signature": "#include <glcd.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_hx8347.h>": {
+                    "signature": "#include <glcd_hx8347.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ili9326.h>": {
+                    "signature": "#include <glcd_ili9326.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ili9340.h>": {
+                    "signature": "#include <glcd_ili9340.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ili9341.h>": {
+                    "signature": "#include <glcd_ili9341.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ili9481.h>": {
+                    "signature": "#include <glcd_ili9481.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ili9486l.h>": {
+                    "signature": "#include <glcd_ili9486l.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_imagesandfonts_addin3.h>": {
+                    "signature": "#include <glcd_imagesandfonts_addin3.h>",
+                    "description": "Graphical LCD Image and addtional Fonts routines for the GCBASIC compiler"
+                },
+                "<glcd_ks0108.h>": {
+                    "signature": "#include <glcd_ks0108.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_nextion.h>": {
+                    "signature": "#include <glcd_nextion.h>",
+                    "description": " Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_nt7108c.h>": {
+                    "signature": "#include <glcd_nt7108c.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_pcd8544.h>": {
+                    "signature": "#include <glcd_pcd8544.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_sh1106.h>": {
+                    "signature": "#include <glcd_sh1106.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ssd1289.h>": {
+                    "signature": "#include <glcd_ssd1289.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ssd1306.h>": {
+                    "signature": "#include <glcd_ssd1306.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ssd1306_twin.h>": {
+                    "signature": "#include <glcd_ssd1306_twin.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ssd1331.h>": {
+                    "signature": "#include <glcd_ssd1331.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_ssd1351.h>": {
+                    "signature": "#include <glcd_ssd1351.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_st7735.h>": {
+                    "signature": "#include <glcd_st7735.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_st7735r.h>": {
+                    "signature": "#include <glcd_st7735r.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_st7789.h>": {
+                    "signature": "#include <glcd_st7789.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_st7920.h>": {
+                    "signature": "#include <glcd_st7920.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_t6963.h>": {
+                    "signature": "#include <glcd_t6963.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_uc1601.h>": {
+                    "signature": "#include <glcd_uc1601.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_uc8230.h>": {
+                    "signature": "#include <glcd_uc8230.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<glcd_xxxxxx.h>": {
+                    "signature": "#include <glcd_xxxxxx.h>",
+                    "description": "Graphical LCD routines for the GCBASIC compiler"
+                },
+                "<heflash_superceded.h>": {
+                    "signature": "#include <heflash_superceded.h>",
+                    "description": "GCB Library for reading/writing to High Endurance Flash Memory"
+                },
+                "<hmc5883l.h>": {
+                    "signature": "#include <hmc5883l.h>",
+                    "description": "HMC5883 routines for the GCBASIC compiler"
+                },
+                "<hwi2c_isr_handler.h>": {
+                    "signature": "#include <hwi2c_isr_handler.h>",
+                    "description": "A Hardware I2C ISR Handler for GCGB and GCB"
+                },
+                "<hwi2c_isr_handlerkmode.h>": {
+                    "signature": "#include <hwi2c_isr_handlerkmode.h>",
+                    "description": "A Hardware I2C ISR Handler for GCGB and GCB"
+                },
+                "<hwi2c_messageinterface.h>": {
+                    "signature": "#include <hwi2c_messageinterface.h>",
+                    "description": "An I2C Message Handler for GCGB and GCB"
+                },
+                "<hwi2c_messageinterfacekmode.h>": {
+                    "signature": "#include <hwi2c_messageinterfacekmode.h>",
+                    "description": "An I2C Message Handler for GCGB and GCB"
+                },
+                "<i2ceeprom.h>": {
+                    "signature": "#include <i2ceeprom.h>",
+                    "description": "Software I2C routines for the GCBASIC compiler"
+                },
+                "<lcd2serialredirect.h>": {
+                    "signature": "#include <lcd2serialredirect.h>",
+                    "description": " A redirector for LCD to a Serial Terminal"
+                },
+                "<lego.h>": {
+                    "signature": "#include <lego.h>",
+                    "description": "Lego Mindstorms interface routines for the GCBASIC compiler"
+                },
+                "<lego-pf.h>": {
+                    "signature": "#include <lego-pf.h>",
+                    "description": "Lego Power Functions IR interface routines for the GCBASIC compiler"
+                },
+                "<LGT8F328P.h>": {
+                    "signature": "#include <LGT8F328P.h>",
+                    "description": " Library to allow the Arduino Duemilanove (mega328) to work with GCBASIC"
+                },
+                "<lgt8fx8p.h>": {
+                    "signature": "#include <lgt8fx8p.h>",
+                    "description": "Library to allow the Arduino Duemilanove (mega328) to work with GCBASIC"
+                },
+                "<maths.h>": {
+                    "signature": "#include <maths.h>",
+                    "description": "Maths outines for the GCBASIC compiler"
+                },
+                "<max848xdigitalpot.h>": {
+                    "signature": "#include <max848xdigitalpot.h>",
+                    "description": "This program is for the Digital potentiometer 2.7 to 5.5V 7-bit linear digital potentiometer with SPI interface."
+                },
+                "<max6675.h>": {
+                    "signature": "#include <max6675.h>",
+                    "description": "k-type thermocouple to digital converter."
+                },
+                "<max7219_ledmatrix_driver.h>": {
+                    "signature": "#include <max7219_ledmatrix_driver.h>",
+                    "description": "Graphical Max7219 GLCD routines for the GCBASIC compiler"
+                },
+                "<mcp4xxxdigitalpot.h>": {
+                    "signature": "#include <mcp4xxxdigitalpot.h>",
+                    "description": "This program is for the Digital potentiometer 2.7 to 5.5V 7-bit linear digital potentiometer with SPI interface."
+                },
+                "<mcp7940n.h>": {
+                    "signature": "#include <mcp7940n.h>",
+                    "description": "Library for reading/writing to Microchip MCP7940N RTC for the GCBASIC compiler"
+                },
+                "<mcp23008.h>": {
+                    "signature": "#include <mcp23008.h>",
+                    "description": "Library for MCP23008 8bit IO Expander"
+                },
+                "<mcp23017.h>": {
+                    "signature": "#include <mcp23017.h>",
+                    "description": "MCP23017 Library for Great Cow BASIC Compiler"
+                },
+                "<mega2560.h>": {
+                    "signature": "#include <mega2560.h>",
+                    "description": "Library to allow the Arduino mega2560 to work with GCBASIC"
+                },
+                "<microchiprtcc.h>": {
+                    "signature": "#include <microchiprtcc.h>",
+                    "description": "Library for reading/writing to Microchip DS1337 RTC for the GCBASIC compiler"
+                },
+                "<millis.h>": {
+                    "signature": "#include <millis.h>",
+                    "description": "millis() function for Great Cow BASIC"
+                },
+                "<mtask.h>": {
+                    "signature": "#include <cmtask.h>",
+                    "description": "18F Multi tasking routines for the GCBASIC compiler"
+                },
+                "<mylcd.h>": {
+                    "signature": "#include <mylcd.h>",
+                    "description": "Liquid Crystal Display routines for Great Cow BASIC"
+                },
+                "<nunchuck.h>": {
+                    "signature": "#include <nunchuck.h>",
+                    "description": "A driver for GCGB and GCB"
+                },
+                "<cpca9685.h>": {
+                    "signature": "#include <pca9685.h>",
+                    "description": "PCA9685 routines for the GCBASIC compiler"
+                },
+                "<PCF85X3.h>": {
+                    "signature": "#include <PCF85X3.h>",
+                    "description": "Software PCF85x3 routines for the GCBASIC compiler"
+                },
+                "<pcf8574.h>": {
+                    "signature": "#include <pcf8574.h>",
+                    "description": "A suppport program  for GCGB and GCB"
+                },
+                "<sd.h>": {
+                    "signature": "#include <sd.h>",
+                    "description": "SD card routines for the GCBASIC compilere"
+                },
+                "<smt_timers.h>": {
+                    "signature": "#include <smt_timers.h>",
+                    "description": "PIC Signal Measurment Timer (SMT) routines for the GCBASIC compiler"
+                },
+                "<softserial.h>": {
+                    "signature": "#include <softserial.h>",
+                    "description": "MicroChip specific to support Software Serial for Great Cow BASIC"
+                },
+                "<softserialch1.h>": {
+                    "signature": "#include <softserialch1.h>",
+                    "description": "MicroChip specific to support Software Serial for Great Cow BASIC"
+                },
+                "<softserialch2.h>": {
+                    "signature": "#include <softserialch2.h>",
+                    "description": "MicroChip specific to support Software Serial for Great Cow BASIC"
+                },
+                "<softserialch3.h>": {
+                    "signature": "#include <softserialch3.h>",
+                    "description": "MicroChip specific to support Software Serial for Great Cow BASIC"
+                },
+                "<songplay.h>": {
+                    "signature": "#include <songplay.h>",
+                    "description": "Song playing routines for the GCBASIC compiler"
+                },
+                "<sonyremote.h>": {
+                    "signature": "#include <sonyremote.h>",
+                    "description": "Sony IR Remote Control Library for Great Cow Basic"
+                },
+                "<srf02.h>": {
+                    "signature": "#include <srf02.h>",
+                    "description": "Ultrasonic distance sensor routines for the GCBASIC compiler"
+                },
+                "<srf04.h>": {
+                    "signature": "#include <srf04.h>",
+                    "description": "Ultrasonic distance sensor routines for the GCBASIC compiler"
+                },
+                "<tea5767.h>": {
+                    "signature": "#include <tea5767.h>",
+                    "description": "TEA5767 routines for the GCBASIC compiler"
+                },
+                "<tm1637.h>": {
+                    "signature": "#include <tm1637.h>",
+                    "description": "7 Segment LED display routines using the TM1637  for Great Cow BASIC"
+                },
+                "<tm1637_6d.h>": {
+                    "signature": "#include <tm1637_6d.h>",
+                    "description": "Routines for 6 digit 7 Segment LED display RobotDyne module (and clones) using the TM1637 for Great Cow BASIC"
+                },
+                "<tm1637a.h>": {
+                    "signature": "#include <tm1637a.h>",
+                    "description": "7 Segment LED display routines using the TM1637  for Great Cow BASIC"
+                },
+                "<trig2places.h>": {
+                    "signature": "#include <trig2places.h>",
+                    "description": "Trigonometric Functions for Great Cow Basice"
+                },
+                "<trig3places.h>": {
+                    "signature": "#include <trig3places.h>",
+                    "description": "Trigonometric Functions for Great Cow Basice"
+                },
+                "<trig4places.h>": {
+                    "signature": "#include <trig4places.h>",
+                    "description": "Trigonometric Functions for Great Cow Basice"
+                },
+                "<uno_mega328p.h>": {
+                    "signature": "#include <uno_mega328p.h>",
+                    "description": " Library to allow the Arduino Duemilanove (mega328) to work with GCBASIC"
+                },
+                "<usb.h>": {
+                    "signature": "#include <usb.h>",
+                    "description": "USB routines for the GCBASIC compiler"
+                },
+                "<utils.h>": {
+                    "signature": "#include <utils.h>",
+                    "description": ""
+                },
+                "<xpt2046.h>": {
+                    "signature": "#include <xpt2046.h>",
+                    "description": "XPT2046 routines for the GCBASIC compiler"
                 }
             },
             "extends": "",
@@ -630,18 +618,1266 @@
             "title": "Chips",
             "description": "This class contains all supported chips",
             "funcs": {
-                "18f4550": {
-                    "signature": "18f4550, frequency",
-                    "description": "PIC 18F4550 great chip"
-                },
-                "16f628a": {
-                    "signature": "16f628a, frequency",
-                    "description": "PIC 16f628a classic chip"
-                },
-                "18f45k50": {
-                    "signature": "18f45k50, frequency",
-                    "description": "PIC 18F45k50 awesome chip"
-                }
+                "10f200": {},
+                "10f202": {},
+                "10f204": {},
+                "10f206": {},
+                "10f220": {},
+                "10f222": {},
+                "10f320": {},
+                "10f322": {},
+                "10lf320": {},
+                "10lf322": {},
+                "12c508": {},
+                "12c508a": {},
+                "12c509": {},
+                "12c509a": {},
+                "12c671": {},
+                "12c672": {},
+                "12ce518": {},
+                "12ce519": {},
+                "12ce673": {},
+                "12ce674": {},
+                "12cr509a": {},
+                "12f508": {},
+                "12f509": {},
+                "12f510": {},
+                "12f519": {},
+                "12f520": {},
+                "12f529t39a": {},
+                "12f529t48a": {},
+                "12f609": {},
+                "12f615": {},
+                "12f617": {},
+                "12f629": {},
+                "12f635": {},
+                "12f675": {},
+                "12f683": {},
+                "12f752": {},
+                "12f1501": {},
+                "12f1571": {},
+                "12f1572": {},
+                "12f1612": {},
+                "12f1822": {},
+                "12f1840": {},
+                "12hv609": {},
+                "12hv615": {},
+                "12hv752": {},
+                "12lf1501": {},
+                "12lf1552": {},
+                "12lf1571": {},
+                "12lf1572": {},
+                "12lf1612": {},
+                "12lf1822": {},
+                "12lf1840": {},
+                "12lf1840t39a": {},
+                "12lf1840t48a": {},
+                "16c52": {},
+                "16c54": {},
+                "16c54a": {},
+                "16c54b": {},
+                "16c54c": {},
+                "16c55": {},
+                "16c55a": {},
+                "16c56": {},
+                "16c56a": {},
+                "16c57": {},
+                "16c57c": {},
+                "16c58a": {},
+                "16c58b": {},
+                "16c61": {},
+                "16c62": {},
+                "16c62a": {},
+                "16c62b": {},
+                "16c63": {},
+                "16c63a": {},
+                "16c64": {},
+                "16c64a": {},
+                "16c65": {},
+                "16c65a": {},
+                "16c65b": {},
+                "16c66": {},
+                "16c67": {},
+                "16c71": {},
+                "16c72": {},
+                "16c72a": {},
+                "16c73": {},
+                "16c73a": {},
+                "16c73b": {},
+                "16c74": {},
+                "16c74a": {},
+                "16c74b": {},
+                "16c76": {},
+                "16c77": {},
+                "16c84": {},
+                "16c432": {},
+                "16c433": {},
+                "16c505": {},
+                "16c554": {},
+                "16c557": {},
+                "16c558": {},
+                "16c620": {},
+                "16c620a": {},
+                "16c621": {},
+                "16c621a": {},
+                "16c622": {},
+                "16c622a": {},
+                "16c642": {},
+                "16c662": {},
+                "16c710": {},
+                "16c711": {},
+                "16c712": {},
+                "16c715": {},
+                "16c716": {},
+                "16c717": {},
+                "16c745": {},
+                "16c765": {},
+                "16c770": {},
+                "16c771": {},
+                "16c773": {},
+                "16c774": {},
+                "16c781": {},
+                "16c782": {},
+                "16c923": {},
+                "16c924": {},
+                "16c925": {},
+                "16c926": {},
+                "16ce623": {},
+                "16ce624": {},
+                "16ce625": {},
+                "16cr54": {},
+                "16cr54a": {},
+                "16cr54b": {},
+                "16cr54c": {},
+                "16cr56a": {},
+                "16cr57a": {},
+                "16cr57b": {},
+                "16cr57c": {},
+                "16cr58a": {},
+                "16cr58b": {},
+                "16cr62": {},
+                "16cr63": {},
+                "16cr64": {},
+                "16cr65": {},
+                "16cr72": {},
+                "16cr73": {},
+                "16cr74": {},
+                "16cr76": {},
+                "16cr77": {},
+                "16cr83": {},
+                "16cr84": {},
+                "16cr620a": {},
+                "16cr926": {},
+                "16f54": {},
+                "16f57": {},
+                "16f59": {},
+                "16f72": {},
+                "16f73": {},
+                "16f74": {},
+                "16f76": {},
+                "16f77": {},
+                "16f83": {},
+                "16f84": {},
+                "16f84a": {},
+                "16f87": {},
+                "16f88": {},
+                "16f505": {},
+                "16f506": {},
+                "16f526": {},
+                "16f527": {},
+                "16f570": {},
+                "16f610": {},
+                "16f616": {},
+                "16f627": {},
+                "16f627a": {},
+                "16f628": {},
+                "16f628a": {},
+                "16f630": {},
+                "16f631": {},
+                "16f636": {},
+                "16f639": {},
+                "16f648a": {},
+                "16f676": {},
+                "16f677": {},
+                "16f684": {},
+                "16f685": {},
+                "16f687": {},
+                "16f688": {},
+                "16f689": {},
+                "16f690": {},
+                "16f707": {},
+                "16f716": {},
+                "16f720": {},
+                "16f721": {},
+                "16f722": {},
+                "16f722a": {},
+                "16f723": {},
+                "16f723a": {},
+                "16f724": {},
+                "16f726": {},
+                "16f727": {},
+                "16f737": {},
+                "16f747": {},
+                "16f753": {},
+                "16f767": {},
+                "16f777": {},
+                "16f785": {},
+                "16f818": {},
+                "16f819": {},
+                "16f870": {},
+                "16f871": {},
+                "16f872": {},
+                "16f873": {},
+                "16f873a": {},
+                "16f874": {},
+                "16f874a": {},
+                "16f876": {},
+                "16f876a": {},
+                "16f877": {},
+                "16f877a": {},
+                "16f882": {},
+                "16f883": {},
+                "16f884": {},
+                "16f886": {},
+                "16f887": {},
+                "16f913": {},
+                "16f914": {},
+                "16f916": {},
+                "16f917": {},
+                "16f946": {},
+                "16f1454": {},
+                "16f1455": {},
+                "16f1458": {},
+                "16f1459": {},
+                "16f1503": {},
+                "16f1507": {},
+                "16f1508": {},
+                "16f1509": {},
+                "16f1512": {},
+                "16f1513": {},
+                "16f1516": {},
+                "16f1517": {},
+                "16f1518": {},
+                "16f1519": {},
+                "16f1526": {},
+                "16f1527": {},
+                "16f1574": {},
+                "16f1575": {},
+                "16f1578": {},
+                "16f1579": {},
+                "16f1613": {},
+                "16f1614": {},
+                "16f1615": {},
+                "16f1618": {},
+                "16f1619": {},
+                "16f1703": {},
+                "16f1704": {},
+                "16f1705": {},
+                "16f1707": {},
+                "16f1708": {},
+                "16f1709": {},
+                "16f1713": {},
+                "16f1716": {},
+                "16f1717": {},
+                "16f1718": {},
+                "16f1719": {},
+                "16f1764": {},
+                "16f1765": {},
+                "16f1768": {},
+                "16f1769": {},
+                "16f1773": {},
+                "16f1776": {},
+                "16f1777": {},
+                "16f1778": {},
+                "16f1779": {},
+                "16f1782": {},
+                "16f1783": {},
+                "16f1784": {},
+                "16f1786": {},
+                "16f1787": {},
+                "16f1788": {},
+                "16f1789": {},
+                "16f1823": {},
+                "16f1824": {},
+                "16f1825": {},
+                "16f1826": {},
+                "16f1827": {},
+                "16f1828": {},
+                "16f1829": {},
+                "16f1829lin": {},
+                "16f1847": {},
+                "16f1933": {},
+                "16f1934": {},
+                "16f1936": {},
+                "16f1937": {},
+                "16f1938": {},
+                "16f1939": {},
+                "16f1946": {},
+                "16f1947": {},
+                "16f15213": {},
+                "16f15214": {},
+                "16f15223": {},
+                "16f15224": {},
+                "16f15225": {},
+                "16f15243": {},
+                "16f15244": {},
+                "16f15245": {},
+                "16f15254": {},
+                "16f15255": {},
+                "16f15256": {},
+                "16f15274": {},
+                "16f15275": {},
+                "16f15276": {},
+                "16f15313": {},
+                "16f15323": {},
+                "16f15324": {},
+                "16f15325": {},
+                "16f15344": {},
+                "16f15345": {},
+                "16f15354": {},
+                "16f15355": {},
+                "16f15356": {},
+                "16f15375": {},
+                "16f15376": {},
+                "16f15385": {},
+                "16f15386": {},
+                "16f18313": {},
+                "16f18323": {},
+                "16f18324": {},
+                "16f18325": {},
+                "16f18326": {},
+                "16f18344": {},
+                "16f18345": {},
+                "16f18346": {},
+                "16f18424": {},
+                "16f18425": {},
+                "16f18426": {},
+                "16f18444": {},
+                "16f18445": {},
+                "16f18446": {},
+                "16f18455": {},
+                "16f18456": {},
+                "16f18854": {},
+                "16f18855": {},
+                "16f18856": {},
+                "16f18857": {},
+                "16f18875": {},
+                "16f18876": {},
+                "16f18877": {},
+                "16f19155": {},
+                "16f19156": {},
+                "16f19175": {},
+                "16f19176": {},
+                "16f19185": {},
+                "16f19186": {},
+                "16f19195": {},
+                "16f19196": {},
+                "16f19197": {},
+                "16hv540": {},
+                "16hv610": {},
+                "16hv616": {},
+                "16hv753": {},
+                "16hv785": {},
+                "16lf73": {},
+                "16lf74": {},
+                "16lf76": {},
+                "16lf77": {},
+                "16lf83": {},
+                "16lf84": {},
+                "16lf84a": {},
+                "16lf87": {},
+                "16lf88": {},
+                "16lf627": {},
+                "16lf627a": {},
+                "16lf628": {},
+                "16lf628a": {},
+                "16lf648a": {},
+                "16lf707": {},
+                "16lf720": {},
+                "16lf721": {},
+                "16lf722": {},
+                "16lf722a": {},
+                "16lf723": {},
+                "16lf723a": {},
+                "16lf724": {},
+                "16lf726": {},
+                "16lf727": {},
+                "16lf747": {},
+                "16lf767": {},
+                "16lf777": {},
+                "16lf818": {},
+                "16lf819": {},
+                "16lf870": {},
+                "16lf871": {},
+                "16lf872": {},
+                "16lf873": {},
+                "16lf873a": {},
+                "16lf874": {},
+                "16lf874a": {},
+                "16lf876": {},
+                "16lf876a": {},
+                "16lf877": {},
+                "16lf877a": {},
+                "16lf1454": {},
+                "16lf1455": {},
+                "16lf1458": {},
+                "16lf1459": {},
+                "16lf1503": {},
+                "16lf1507": {},
+                "16lf1508": {},
+                "16lf1509": {},
+                "16lf1512": {},
+                "16lf1513": {},
+                "16lf1516": {},
+                "16lf1517": {},
+                "16lf1518": {},
+                "16lf1519": {},
+                "16lf1526": {},
+                "16lf1527": {},
+                "16lf1554": {},
+                "16lf1559": {},
+                "16lf1566": {},
+                "16lf1567": {},
+                "16lf1574": {},
+                "16lf1575": {},
+                "16lf1578": {},
+                "16lf1579": {},
+                "16lf1613": {},
+                "16lf1614": {},
+                "16lf1615": {},
+                "16lf1618": {},
+                "16lf1619": {},
+                "16lf1703": {},
+                "16lf1704": {},
+                "16lf1705": {},
+                "16lf1707": {},
+                "16lf1708": {},
+                "16lf1709": {},
+                "16lf1713": {},
+                "16lf1716": {},
+                "16lf1717": {},
+                "16lf1718": {},
+                "16lf1719": {},
+                "16lf1764": {},
+                "16lf1765": {},
+                "16lf1768": {},
+                "16lf1769": {},
+                "16lf1773": {},
+                "16lf1776": {},
+                "16lf1777": {},
+                "16lf1778": {},
+                "16lf1779": {},
+                "16lf1782": {},
+                "16lf1783": {},
+                "16lf1784": {},
+                "16lf1786": {},
+                "16lf1787": {},
+                "16lf1788": {},
+                "16lf1789": {},
+                "16lf1823": {},
+                "16lf1824": {},
+                "16lf1824t39a": {},
+                "16lf1825": {},
+                "16lf1826": {},
+                "16lf1827": {},
+                "16lf1828": {},
+                "16lf1829": {},
+                "16lf1847": {},
+                "16lf1902": {},
+                "16lf1903": {},
+                "16lf1904": {},
+                "16lf1906": {},
+                "16lf1907": {},
+                "16lf1933": {},
+                "16lf1934": {},
+                "16lf1936": {},
+                "16lf1937": {},
+                "16lf1938": {},
+                "16lf1939": {},
+                "16lf1946": {},
+                "16lf1947": {},
+                "16lf15313": {},
+                "16lf15323": {},
+                "16lf15324": {},
+                "16lf15325": {},
+                "16lf15344": {},
+                "16lf15345": {},
+                "16lf15354": {},
+                "16lf15355": {},
+                "16lf15356": {},
+                "16lf15375": {},
+                "16lf15376": {},
+                "16lf15385": {},
+                "16lf15386": {},
+                "16lf18313": {},
+                "16lf18323": {},
+                "16lf18324": {},
+                "16lf18325": {},
+                "16lf18326": {},
+                "16lf18344": {},
+                "16lf18345": {},
+                "16lf18346": {},
+                "16lf18424": {},
+                "16lf18425": {},
+                "16lf18426": {},
+                "16lf18444": {},
+                "16lf18445": {},
+                "16lf18446": {},
+                "16lf18455": {},
+                "16lf18456": {},
+                "16lf18854": {},
+                "16lf18855": {},
+                "16lf18856": {},
+                "16lf18857": {},
+                "16lf18875": {},
+                "16lf18876": {},
+                "16lf18877": {},
+                "16lf19155": {},
+                "16lf19156": {},
+                "16lf19175": {},
+                "16lf19176": {},
+                "16lf19185": {},
+                "16lf19186": {},
+                "16lf19195": {},
+                "16lf19196": {},
+                "16lf19197": {},
+                "18c242": {},
+                "18c252": {},
+                "18c442": {},
+                "18c452": {},
+                "18c601": {},
+                "18c658": {},
+                "18c801": {},
+                "18c858": {},
+                "18f04q40": {},
+                "18f04q41": {},
+                "18f05q40": {},
+                "18f05q41": {},
+                "18f06q40": {},
+                "18f06q41": {},
+                "18f13k22": {},
+                "18f13k50": {},
+                "18f14k22": {},
+                "18f14k22lin": {},
+                "18f14k50": {},
+                "18f14q40": {},
+                "18f14q41": {},
+                "18f15q40": {},
+                "18f15q41": {},
+                "18f16q40": {},
+                "18f16q41": {},
+                "18f23k20": {},
+                "18f23k22": {},
+                "18f24j10": {},
+                "18f24j11": {},
+                "18f24j50": {},
+                "18f24k20": {},
+                "18f24k22": {},
+                "18f24k40": {},
+                "18f24k42": {},
+                "18f24k50": {},
+                "18f24q10": {},
+                "18f25j10": {},
+                "18f25j11": {},
+                "18f25j50": {},
+                "18f25k20": {},
+                "18f25k22": {},
+                "18f25k40": {},
+                "18f25k42": {},
+                "18f25k50": {},
+                "18f25k80": {},
+                "18f25k83": {},
+                "18f25q10": {},
+                "18f25q43": {},
+                "18f26j11": {},
+                "18f26j13": {},
+                "18f26j50": {},
+                "18f26j53": {},
+                "18f26k20": {},
+                "18f26k22": {},
+                "18f26k40": {},
+                "18f26k42": {},
+                "18f26k80": {},
+                "18f26k83": {},
+                "18f26q10": {},
+                "18f26q43": {},
+                "18f26q83": {},
+                "18f26q84": {},
+                "18f27j13": {},
+                "18f27j53": {},
+                "18f27k40": {},
+                "18f27k42": {},
+                "18f27q10": {},
+                "18f27q43": {},
+                "18f27q83": {},
+                "18f27q84": {},
+                "18f43k20": {},
+                "18f43k22": {},
+                "18f44j10": {},
+                "18f44j11": {},
+                "18f44j50": {},
+                "18f44k20": {},
+                "18f44k22": {},
+                "18f45j10": {},
+                "18f45j11": {},
+                "18f45j50": {},
+                "18f45k20": {},
+                "18f45k22": {},
+                "18f45k40": {},
+                "18f45k42": {},
+                "18f45k50": {},
+                "18f45k80": {},
+                "18f45q10": {},
+                "18f45q43": {},
+                "18f46j11": {},
+                "18f46j13": {},
+                "18f46j50": {},
+                "18f46j53": {},
+                "18f46k20": {},
+                "18f46k22": {},
+                "18f46k40": {},
+                "18f46k42": {},
+                "18f46k80": {},
+                "18f46q10": {},
+                "18f46q43": {},
+                "18f46q83": {},
+                "18f46q84": {},
+                "18f47j13": {},
+                "18f47j53": {},
+                "18f47k40": {},
+                "18f47k42": {},
+                "18f47q10": {},
+                "18f47q43": {},
+                "18f47q83": {},
+                "18f47q84": {},
+                "18f55k42": {},
+                "18f55q43": {},
+                "18f56k42": {},
+                "18f56q43": {},
+                "18f56q83": {},
+                "18f56q84": {},
+                "18f57k42": {},
+                "18f57q43": {},
+                "18f57q83": {},
+                "18f57q84": {},
+                "18f63j11": {},
+                "18f63j90": {},
+                "18f64j11": {},
+                "18f64j90": {},
+                "18f65j10": {},
+                "18f65j11": {},
+                "18f65j15": {},
+                "18f65j50": {},
+                "18f65j90": {},
+                "18f65j94": {},
+                "18f65k22": {},
+                "18f65k40": {},
+                "18f65k80": {},
+                "18f65k90": {},
+                "18f66j10": {},
+                "18f66j11": {},
+                "18f66j15": {},
+                "18f66j16": {},
+                "18f66j50": {},
+                "18f66j55": {},
+                "18f66j60": {},
+                "18f66j65": {},
+                "18f66j90": {},
+                "18f66j93": {},
+                "18f66j94": {},
+                "18f66j99": {},
+                "18f66k22": {},
+                "18f66k40": {},
+                "18f66k80": {},
+                "18f66k90": {},
+                "18f67j10": {},
+                "18f67j11": {},
+                "18f67j50": {},
+                "18f67j60": {},
+                "18f67j90": {},
+                "18f67j93": {},
+                "18f67j94": {},
+                "18f67k22": {},
+                "18f67k40": {},
+                "18f67k90": {},
+                "18f83j11": {},
+                "18f83j90": {},
+                "18f84j11": {},
+                "18f84j90": {},
+                "18f85j10": {},
+                "18f85j11": {},
+                "18f85j15": {},
+                "18f85j50": {},
+                "18f85j90": {},
+                "18f85j94": {},
+                "18f85k22": {},
+                "18f85k90": {},
+                "18f86j10": {},
+                "18f86j11": {},
+                "18f86j15": {},
+                "18f86j16": {},
+                "18f86j50": {},
+                "18f86j55": {},
+                "18f86j60": {},
+                "18f86j65": {},
+                "18f86j72": {},
+                "18f86j90": {},
+                "18f86j93": {},
+                "18f86j94": {},
+                "18f86j99": {},
+                "18f86k22": {},
+                "18f86k90": {},
+                "18f87j10": {},
+                "18f87j11": {},
+                "18f87j50": {},
+                "18f87j60": {},
+                "18f87j72": {},
+                "18f87j90": {},
+                "18f87j93": {},
+                "18f87j94": {},
+                "18f87k22": {},
+                "18f87k90": {},
+                "18f95j94": {},
+                "18f96j60": {},
+                "18f96j65": {},
+                "18f96j72": {},
+                "18f96j94": {},
+                "18f96j99": {},
+                "18f97j60": {},
+                "18f97j72": {},
+                "18f97j94": {},
+                "18f242": {},
+                "18f248": {},
+                "18f252": {},
+                "18f258": {},
+                "18f442": {},
+                "18f448": {},
+                "18f452": {},
+                "18f458": {},
+                "18f1220": {},
+                "18f1230": {},
+                "18f1320": {},
+                "18f1330": {},
+                "18f2220": {},
+                "18f2221": {},
+                "18f2320": {},
+                "18f2321": {},
+                "18f2331": {},
+                "18f2410": {},
+                "18f2420": {},
+                "18f2423": {},
+                "18f2431": {},
+                "18f2439": {},
+                "18f2450": {},
+                "18f2455": {},
+                "18f2458": {},
+                "18f2480": {},
+                "18f2510": {},
+                "18f2515": {},
+                "18f2520": {},
+                "18f2523": {},
+                "18f2525": {},
+                "18f2539": {},
+                "18f2550": {},
+                "18f2553": {},
+                "18f2580": {},
+                "18f2585": {},
+                "18f2610": {},
+                "18f2620": {},
+                "18f2680": {},
+                "18f2682": {},
+                "18f2685": {},
+                "18f4220": {},
+                "18f4221": {},
+                "18f4320": {},
+                "18f4321": {},
+                "18f4331": {},
+                "18f4410": {},
+                "18f4420": {},
+                "18f4423": {},
+                "18f4431": {},
+                "18f4439": {},
+                "18f4450": {},
+                "18f4455": {},
+                "18f4458": {},
+                "18f4480": {},
+                "18f4510": {},
+                "18f4515": {},
+                "18f4520": {},
+                "18f4523": {},
+                "18f4525": {},
+                "18f4539": {},
+                "18f4550": {},
+                "18f4553": {},
+                "18f4580": {},
+                "18f4585": {},
+                "18f4610": {},
+                "18f4620": {},
+                "18f4680": {},
+                "18f4682": {},
+                "18f4685": {},
+                "18f6310": {},
+                "18f6390": {},
+                "18f6393": {},
+                "18f6410": {},
+                "18f6490": {},
+                "18f6493": {},
+                "18f6520": {},
+                "18f6525": {},
+                "18f6527": {},
+                "18f6585": {},
+                "18f6620": {},
+                "18f6621": {},
+                "18f6622": {},
+                "18f6627": {},
+                "18f6628": {},
+                "18f6680": {},
+                "18f6720": {},
+                "18f6722": {},
+                "18f6723": {},
+                "18f8310": {},
+                "18f8390": {},
+                "18f8393": {},
+                "18f8410": {},
+                "18f8490": {},
+                "18f8493": {},
+                "18f8520": {},
+                "18f8525": {},
+                "18f8527": {},
+                "18f8585": {},
+                "18f8620": {},
+                "18f8621": {},
+                "18f8622": {},
+                "18f8627": {},
+                "18f8628": {},
+                "18f8680": {},
+                "18f8720": {},
+                "18f8722": {},
+                "18f8723": {},
+                "18lf13k22": {},
+                "18lf13k50": {},
+                "18lf14k22": {},
+                "18lf14k50": {},
+                "18lf23k22": {},
+                "18lf24j10": {},
+                "18lf24j11": {},
+                "18lf24j50": {},
+                "18lf24k22": {},
+                "18lf24k40": {},
+                "18lf24k42": {},
+                "18lf24k50": {},
+                "18lf25j10": {},
+                "18lf25j11": {},
+                "18lf25j50": {},
+                "18lf25k22": {},
+                "18lf25k40": {},
+                "18lf25k42": {},
+                "18lf25k50": {},
+                "18lf25k80": {},
+                "18lf25k83": {},
+                "18lf26j11": {},
+                "18lf26j13": {},
+                "18lf26j50": {},
+                "18lf26j53": {},
+                "18lf26k22": {},
+                "18lf26k40": {},
+                "18lf26k42": {},
+                "18lf26k80": {},
+                "18lf26k83": {},
+                "18lf27j13": {},
+                "18lf27j53": {},
+                "18lf27k40": {},
+                "18lf27k42": {},
+                "18lf43k22": {},
+                "18lf44j10": {},
+                "18lf44j11": {},
+                "18lf44j50": {},
+                "18lf44k22": {},
+                "18lf45j10": {},
+                "18lf45j11": {},
+                "18lf45j50": {},
+                "18lf45k22": {},
+                "18lf45k40": {},
+                "18lf45k42": {},
+                "18lf45k50": {},
+                "18lf45k80": {},
+                "18lf46j11": {},
+                "18lf46j13": {},
+                "18lf46j50": {},
+                "18lf46j53": {},
+                "18lf46k22": {},
+                "18lf46k40": {},
+                "18lf46k42": {},
+                "18lf46k80": {},
+                "18lf47j13": {},
+                "18lf47j53": {},
+                "18lf47k40": {},
+                "18lf47k42": {},
+                "18lf55k42": {},
+                "18lf56k42": {},
+                "18lf57k42": {},
+                "18lf65k40": {},
+                "18lf65k80": {},
+                "18lf66k40": {},
+                "18lf66k80": {},
+                "18lf67k40": {},
+                "18lf242": {},
+                "18lf248": {},
+                "18lf252": {},
+                "18lf258": {},
+                "18lf442": {},
+                "18lf448": {},
+                "18lf452": {},
+                "18lf458": {},
+                "18lf1220": {},
+                "18lf1230": {},
+                "18lf1320": {},
+                "18lf1330": {},
+                "18lf2220": {},
+                "18lf2221": {},
+                "18lf2320": {},
+                "18lf2321": {},
+                "18lf2331": {},
+                "18lf2410": {},
+                "18lf2420": {},
+                "18lf2423": {},
+                "18lf2431": {},
+                "18lf2439": {},
+                "18lf2450": {},
+                "18lf2455": {},
+                "18lf2458": {},
+                "18lf2480": {},
+                "18lf2510": {},
+                "18lf2515": {},
+                "18lf2520": {},
+                "18lf2523": {},
+                "18lf2525": {},
+                "18lf2539": {},
+                "18lf2550": {},
+                "18lf2553": {},
+                "18lf2580": {},
+                "18lf2585": {},
+                "18lf2610": {},
+                "18lf2620": {},
+                "18lf2680": {},
+                "18lf2682": {},
+                "18lf2685": {},
+                "18lf4220": {},
+                "18lf4221": {},
+                "18lf4320": {},
+                "18lf4321": {},
+                "18lf4331": {},
+                "18lf4410": {},
+                "18lf4420": {},
+                "18lf4423": {},
+                "18lf4431": {},
+                "18lf4439": {},
+                "18lf4450": {},
+                "18lf4455": {},
+                "18lf4458": {},
+                "18lf4480": {},
+                "18lf4510": {},
+                "18lf4515": {},
+                "18lf4520": {},
+                "18lf4523": {},
+                "18lf4525": {},
+                "18lf4539": {},
+                "18lf4550": {},
+                "18lf4553": {},
+                "18lf4580": {},
+                "18lf4585": {},
+                "18lf4610": {},
+                "18lf4620": {},
+                "18lf4680": {},
+                "18lf4682": {},
+                "18lf4685": {},
+                "18lf6310": {},
+                "18lf6390": {},
+                "18lf6393": {},
+                "18lf6410": {},
+                "18lf6490": {},
+                "18lf6493": {},
+                "18lf6520": {},
+                "18lf6525": {},
+                "18lf6527": {},
+                "18lf6585": {},
+                "18lf6620": {},
+                "18lf6621": {},
+                "18lf6622": {},
+                "18lf6627": {},
+                "18lf6628": {},
+                "18lf6680": {},
+                "18lf6720": {},
+                "18lf6722": {},
+                "18lf6723": {},
+                "18lf8310": {},
+                "18lf8390": {},
+                "18lf8393": {},
+                "18lf8410": {},
+                "18lf8490": {},
+                "18lf8493": {},
+                "18lf8520": {},
+                "18lf8525": {},
+                "18lf8527": {},
+                "18lf8585": {},
+                "18lf8620": {},
+                "18lf8621": {},
+                "18lf8622": {},
+                "18lf8627": {},
+                "18lf8628": {},
+                "18lf8680": {},
+                "18lf8720": {},
+                "18lf8722": {},
+                "18lf8723": {},
+                "18macro": {},
+                "86rf401": {},
+                "90can32": {},
+                "90can64": {},
+                "90can128": {},
+                "90pwm1": {},
+                "90pwm2": {},
+                "90pwm2b": {},
+                "90pwm3": {},
+                "90pwm3b": {},
+                "90pwm81": {},
+                "90pwm161": {},
+                "90pwm216": {},
+                "90pwm316": {},
+                "90s1200": {},
+                "90s2313": {},
+                "90s2323": {},
+                "90s2343": {},
+                "90s4414": {},
+                "90s4433": {},
+                "90s4434": {},
+                "90s8515": {},
+                "90s8535": {},
+                "90usb82": {},
+                "90usb162": {},
+                "90usb646": {},
+                "90usb647": {},
+                "90usb1286": {},
+                "90usb1287": {},
+                "LGT8F328P": {},
+                "LGT8F328P-0": {},
+                "LGT8F328P-1": {},
+                "LGT8F328P-2": {},
+                "LGT8F328P-4": {},
+                "LGT8F328P-8": {},
+                "mcp19110": {},
+                "mcp19111": {},
+                "mcp19114": {},
+                "mcp19115": {},
+                "mcp19116": {},
+                "mcp19117": {},
+                "mcp19118": {},
+                "mcp19119": {},
+                "mcp19120": {},
+                "mcp19121": {},
+                "mcp19122": {},
+                "mcp19123": {},
+                "mcp19124": {},
+                "mcp19125": {},
+                "mcp19126": {},
+                "mcp19128": {},
+                "mcp19132": {},
+                "mcp19133": {},
+                "mcp19214": {},
+                "mcp19215": {},
+                "mcp19625": {},
+                "mcp25020": {},
+                "mcp25025": {},
+                "mcp25050": {},
+                "mcp25055": {},
+                "mcv08a": {},
+                "mcv14a": {},
+                "mcv18a": {},
+                "mcv18e": {},
+                "mcv20usb": {},
+                "mcv28a": {},
+                "mcv201b": {},
+                "mcv202b": {},
+                "mcv282b": {},
+                "mcv283b": {},
+                "mcv442b": {},
+                "mcv443b": {},
+                "mega8": {},
+                "mega8a": {},
+                "mega8hva": {},
+                "mega8u2": {},
+                "mega16": {},
+                "mega16a": {},
+                "mega16hva": {},
+                "mega16hvb": {},
+                "mega16hvbrevb": {},
+                "mega16m1": {},
+                "mega16u2": {},
+                "mega16u4": {},
+                "mega32": {},
+                "mega32a": {},
+                "mega32c1": {},
+                "mega32hvb": {},
+                "mega32hvbrevb": {},
+                "mega32m1": {},
+                "mega32u2": {},
+                "mega32u4": {},
+                "mega32u6": {},
+                "mega48": {},
+                "mega48a": {},
+                "mega48p": {},
+                "mega48pa": {},
+                "mega48pb": {},
+                "mega64": {},
+                "mega64a": {},
+                "mega64c1": {},
+                "mega64hve2": {},
+                "mega64m1": {},
+                "mega64rfr2": {},
+                "mega88": {},
+                "mega88a": {},
+                "mega88p": {},
+                "mega88pa": {},
+                "mega88pb": {},
+                "mega103": {},
+                "mega128": {},
+                "mega128a": {},
+                "mega128rfa1": {},
+                "mega128rfr2": {},
+                "mega161": {},
+                "mega162": {},
+                "mega163": {},
+                "mega164a": {},
+                "mega164p": {},
+                "mega164pa": {},
+                "mega165": {},
+                "mega165a": {},
+                "mega165p": {},
+                "mega165pa": {},
+                "mega168": {},
+                "mega168a": {},
+                "mega168p": {},
+                "mega168pa": {},
+                "mega168pb": {},
+                "mega169": {},
+                "mega169a": {},
+                "mega169p": {},
+                "mega169pa": {},
+                "mega256rfr2": {},
+                "mega323": {},
+                "mega324a": {},
+                "mega324p": {},
+                "mega324pa": {},
+                "mega325": {},
+                "mega325a": {},
+                "mega325p": {},
+                "mega325pa": {},
+                "mega328": {},
+                "mega328p": {},
+                "mega328pb": {},
+                "mega329": {},
+                "mega329a": {},
+                "mega329p": {},
+                "mega329pa": {},
+                "mega406": {},
+                "mega640": {},
+                "mega644": {},
+                "mega644a": {},
+                "mega644p": {},
+                "mega644pa": {},
+                "mega644rfr2": {},
+                "mega645": {},
+                "mega645a": {},
+                "mega645p": {},
+                "mega649": {},
+                "mega649a": {},
+                "mega649p": {},
+                "mega1280": {},
+                "mega1281": {},
+                "mega1284": {},
+                "mega1284p": {},
+                "mega1284rfr2": {},
+                "mega2560": {},
+                "mega2561": {},
+                "mega2564rfr2": {},
+                "mega3250": {},
+                "mega3250a": {},
+                "mega3250p": {},
+                "mega3250pa": {},
+                "mega3290": {},
+                "mega3290a": {},
+                "mega3290p": {},
+                "mega3290pa": {},
+                "mega6450": {},
+                "mega6450a": {},
+                "mega6450p": {},
+                "mega6490": {},
+                "mega6490a": {},
+                "mega6490p": {},
+                "mega8515": {},
+                "mega8535": {},
+                "ps500": {},
+                "ps810": {},
+                "rf509af": {},
+                "rf509ag": {},
+                "rf675f": {},
+                "rf675h": {},
+                "rf675k": {},
+                "tiny4": {},
+                "tiny5": {},
+                "tiny9": {},
+                "tiny10": {},
+                "tiny11": {},
+                "tiny12": {},
+                "tiny13": {},
+                "tiny13a": {},
+                "tiny15": {},
+                "tiny20": {},
+                "tiny22": {},
+                "tiny24": {},
+                "tiny24a": {},
+                "tiny25": {},
+                "tiny26": {},
+                "tiny28": {},
+                "tiny40": {},
+                "tiny43u": {},
+                "tiny44": {},
+                "tiny44a": {},
+                "tiny45": {},
+                "tiny48": {},
+                "tiny84": {},
+                "tiny84a": {},
+                "tiny85": {},
+                "tiny87": {},
+                "tiny88": {},
+                "tiny102": {},
+                "tiny104": {},
+                "tiny167": {},
+                "tiny204": {},
+                "tiny212": {},
+                "tiny261": {},
+                "tiny261a": {},
+                "tiny402": {},
+                "tiny404": {},
+                "tiny406": {},
+                "tiny414": {},
+                "tiny441": {},
+                "tiny461": {},
+                "tiny461a": {},
+                "tiny806": {},
+                "tiny814": {},
+                "tiny828": {},
+                "tiny841": {},
+                "tiny861": {},
+                "tiny861a": {},
+                "tiny1604": {},
+                "tiny1616": {},
+                "tiny1617": {},
+                "tiny1634": {},
+                "tiny2313": {},
+                "tiny2313a": {},
+                "tiny3216": {},
+                "tiny3217": {},
+                "tiny4313": {}
             },
             "extends": "",
             "accessor": "#chip"
@@ -655,27 +1891,103 @@
             "values": [
                 {
                     "name": "chip",
-                    "available": "",
                     "description": "#chip model, frequency",
                     "funcdesc": "The #chip directive is used to specify the chip model and frequency that Great Cow BASIC will use. The model is the specific microcontroller - examples are \"16F819\". The frequency is the frequency of the chip in MHz, and is required for the delay and PWM routines. The following constants simplify setting specific frequencies. 31k, 32.768K, 125k, 250k or 500k. Any of these constant can be used. As shown in the example below. If frequency is not present the compiler will select a frequency default frequency that should work for the microcontroller."
                 },
                 {
                     "name": "define",
-                    "available": "",
-                    "description": "#config option1, option2, ... , optionN",
+                    "description": "#define Find Replace",
                     "funcdesc": "#define will search through the program for Find, and replace it with the value given for Replace.\nThe compiler replaces a constant with the value, it then searches the line for constants again and will make any more replacements needed. It will do this up to 100 times on a line, then it will stop replacing and show an error. The limitation of 100 iteractions is to prevent something like \"#define Const_A Const_B\" and then \"#define Const_B Const_A\" from causing an infinite loop in the compiler."
                 },
                 {
                     "name": "config",
-                    "available": "",
-                    "description": "#chip model, frequency",
+                    "description": "#config option1, option2, ... , optionN",
                     "funcdesc": "The #config directive is used to specify configuration options for the chip.\nThere is a detailed explanation of #config in the Configuration section of help."
                 },
                 {
                     "name": "include",
-                    "available": "",
                     "description": "#include filename",
                     "funcdesc": "#include tells Great Cow BASIC to open up another file, read all of the subroutines and constants from it, and then copy them into the current program."
+                },
+                {
+                    "name": "asmraw",
+                    "description": "#asmraw [label]",
+                    "funcdesc": "The #asmraw directive is used to specify the assembly that Great Cow BASIC will use.\nAnything following this directive will be inserted into ASM source file with no changes other than trimming spaces - no replacement of constants."
+                },
+                {
+                    "name": "if",
+                    "description": "#if Condition",
+                    "funcdesc": "The #if directive is used to prevent a section of code from compiling unless Condition is true.\nCondition has the same syntax as the condition in a normal Great Cow BASIC if command. The only difference is that it uses constants instead of variables and does not use \"then\"."
+                },
+                {
+                    "name": "endif",
+                    "description": "#endif",
+                    "funcdesc": "The #endif directive is used to end #if, #ifdef and #ifndef directives."
+                },
+                {
+                    "name": "ifdef",
+                    "description": "#ifdef Constant | Constant Value | Var(VariableName)",
+                    "funcdesc": "The #chip directive is used to specify the chip model and frequency that Great Cow BASIC will use. The model is the specific microcontroller - examples are \"16F819\". The frequency is the frequency of the chip in MHz, and is required for the delay and PWM routines. The following constants simplify setting specific frequencies. 31k, 32.768K, 125k, 250k or 500k. Any of these constant can be used. As shown in the example below. If frequency is not present the compiler will select a frequency default frequency that should work for the microcontroller."
+                },
+                {
+                    "name": "ifndef",
+                    "description": "#ifndef Constant | Constant Value | Var(VariableName)",
+                    "funcdesc": "The #ifndef directive is used to selectively enable sections of code. It is the opposite of the #ifdef directive - it will delete code in cases where #ifdef would leave it, and will leave code where #ifdef would delete it."
+                },
+                {
+                    "name": "script",
+                    "description": "#script",
+                    "funcdesc": "The #script block is used to create small sections of code which Great Cow BASIC runs during compilation. A detail explanation and example are included in the Scripts article."
+                },
+                {
+                    "name": "endscript",
+                    "description": "#endscript",
+                    "funcdesc": "The #endscript directive is used to end #script directive."
+                },
+                {
+                    "name": "startup",
+                    "description": "#startup SubName  [priority]",
+                    "funcdesc": "#startup is used in include files to automatically insert initialization routines. If a define or subroutine from the file is used in the program, then the specified subroutine will be called.\n\nThe priority to #startup support the setting of the priority of the subroutines for all the libraries in a project.\n\nSubroutines will be called in order from smallest to largest priority number.\n\nInitSys has priority 80, lowlevel communication routines have the priority of 90\n\nAll other subroutines defaults to 100."
+                },
+                {
+                    "name": "option Explicit",
+                    "description": "#option explicit",
+                    "funcdesc": "This option ensures that all variables are dimensioned in the user program. The scope is the user code only and no other code space like .h or include files.\n\n#option explicit requires all variables,including bytes, in the user program to be defined.\n\nVariables can be defined and not used within your user program. Unused variables will not allocate memory."
+                },
+                {
+                    "name": "option NoConfig",
+                    "description": "#option NoConfig",
+                    "funcdesc": "This option will prevent the generated assembler from generating _Config items.\n#option NoConfig is used when using a bootloader"
+                },
+                {
+                    "name": "option Bootloader",
+                    "description": "#option bootloader address",
+                    "funcdesc": "#option bootloader prevents the overwriting of any pre-loaded bootloader code, vectors, etc. below the specified address. The Great Cow BASIC code will start at specified address.\n\nA bootloader is a program that stays in the microcontroller and communicates with the PC, typically through the serial interface. The bootloader receives a user program from the PC and writes it in the flash memory, then launches this program in execution. Bootloaders can only be used with those microcontrollers that can write their flash memory through software.\n\nThe bootloader itself must be written into the flash memory with an external programmer.\nIn order for the bootloader to be launched after each reset, a goto bootloader instruction must exist somewhere in the first 4 instructions; There are two types of bootloaders, some that require that the user reallocate the code and others that by themselves reallocate the first 4 instructions of the user program to another location and execute them when the bootloader exits."
+                },
+                {
+                    "name": "option NoContextSave",
+                    "description": "#option NoContextSave",
+                    "funcdesc": "Interrupts can occur at almost any time, and may interrupt another command as it runs. To ensure that the interrupted command can continue properly after the interrupt, some temporary variables (the context) must be saved. Normally Great Cow BASIC will do this automatically, but in some cases it may be necessary to prevent this. If porting some existing assembly code to Great Cow BASIC, or creating a bootloader using Great Cow BASIC that will call another program.\n\nNoContextSave can be used to prevent the context saving code from being added automatically."
+                },
+                {
+                    "name": "option NoLatch",
+                    "description": "#option NoLatch",
+                    "funcdesc": "This option disables PORTx to LATx redirection."
+                },
+                {
+                    "name": "option REQUIRED",
+                    "description": "#option REQUIRED PIC|AVR CONSTANT \"Message string\"",
+                    "funcdesc": "This option ensure that the specific CONSTANT exists within a library to ensure a specific capability is available with the microcontroller."
+                },
+                {
+                    "name": "option Volatile",
+                    "description": "#option Volatile `bit`",
+                    "funcdesc": "This option ensure port setting are glitch-free."
+                },
+                {
+                    "name": "option ReserveHighProg",
+                    "description": "#option ReserveHighProg [words]",
+                    "funcdesc": "This option reserves program memory to be kept free at the top end of memory.  This useful for HEF/SAF or bootloaders.\n\nThe option provided a reservation for the memory region that is normally assumed to be available to the compiler for the application code storage. In order to avoid any possible conflict (overlapping code and data usage), it is important to reserve the devices pecific memory range by using the compiler option (shown above) in the project configuration.\n\nUsing the #option ReserveHighProg [words] exposes the constant `ChipReserveHighProg in the user program."
                 }
             ]
         }
@@ -687,40 +1999,178 @@
             "description": "General GCB Commands",
             "values": [
                 {
-                    "name": "as",
-                    "available": "",
-                    "description": "Defines a Variable Type",
-                    "funcdesc": ""
+                    "name": "As",
+                    "available": "All Microcontrollers",
+                    "description": "Dim variable As type",
+                    "funcdesc": "Defines a Variable Type"
                 },
                 {
-                    "name": "dim",
-                    "available": "",
+                    "name": "Dim",
+                    "available": "All Microcontrollers",
                     "description": "Dim variable[, variable2 [, variable3]] [As type] [Alias othervar [, othervar2]]",
-                    "funcdesc": "Available on all microcontrollers. The Dim variable command is used to instruct Great Cow BASIC to allocate variables or to create alternate names for existing variables (using Alias) or to create variables at a specific memory location (using At)."
+                    "funcdesc": "The Dim variable command is used to instruct Great Cow BASIC to allocate variables or to create alternate names for existing variables (using Alias) or to create variables at a specific memory location (using At)."
                 },
                 {
                     "name": "SPIMode",
-                    "available": "",
+                    "available": "Microchip PIC",
                     "description": "SPIMode ( Mode [, SPIClockMode])",
                     "funcdesc": "Mode sets the mode of the SPI module within the microcontroller. These are the possible SPI Modes: \n\nMasterSlow| Master mode, SPI clock is 1/64 of the frequency of the microcontroller.\nMaster| Master mode, SPI clock is 1/16 of the frequency of the microcontroller.\nMasterFast| Master mode, SPI clock is 1/4 of the frequency of the microcontroller.\nSlave| Slave mode.\nSlaveSS| Slave mode, with the Slave Select pin enabled.\n\nSPIClockMode is an optional parameter to set the mode of the SPI clock mode. This optional parameter sets both the clock polarity and clock edge.\n\n0| SPI_CPOL = 0 & SPI_CPHA = 0\n1| SPI_CPOL = 0 & SPI_CPHA = 1\n2| SPI_CPOL = 1 & SPI_CPHA = 0\n3| SPI_CPOL = 1 & SPI_CPHA = 1\n"
                 },
                 {
                     "name": "SPITransfer",
-                    "available": "",
+                    "available": "Microchip PIC",
                     "description": "SPIMode tx, rx",
-                    "funcdesc": "Available on Microchip PIC microcontrollers with Hardware SPI modules. \n This command simultaneously sends and receives a byte of data using the SPI protocol. It behaves differently depending on whether the microcontroller has been set to act as a master or a slave. When operating as a master, SPITransfer will initiate a transfer. The data in tx will be sent to the slave, whilst the byte that is buffered in the slave will be read into rx. In slave mode, the SPITransfer command will pause the program until a transfer is initiated by the master. At this point, it will send the data in tx whilst reading the transmission from the master into the rx variable."
+                    "funcdesc": "This command simultaneously sends and receives a byte of data using the SPI protocol. It behaves differently depending on whether the microcontroller has been set to act as a master or a slave. When operating as a master, SPITransfer will initiate a transfer. The data in tx will be sent to the slave, whilst the byte that is buffered in the slave will be read into rx. In slave mode, the SPITransfer command will pause the program until a transfer is initiated by the master. At this point, it will send the data in tx whilst reading the transmission from the master into the rx variable."
                 },
                 {
                     "name": "FastHWSPITransfer",
-                    "available": "",
+                    "available": "Microchip PIC",
                     "description": "FastHWSPITransfer tx",
-                    "funcdesc": "Available on Microchip PIC microcontrollers with Hardware SPI modules.\nThis command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."
+                    "funcdesc": "This command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."
                 },
                 {
                     "name": "Exit",
                     "available": "",
                     "description": "Exit Sub | Exit Function | Exit Do | Exit For | Exit Repeat",
                     "funcdesc": "This command will make the program exit the routine it is currently in, as it would if it came to the end of the routine. Applies to Subroutines, Functions, For-Next loops, Do-Loop loops and Repeat loops."
+                },
+                {
+                    "name": "ReadAD",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = ReadAD( ANX )",
+                    "funcdesc": "ReadAD is a function that can be used to read the built-in analog to digital converter that many microcontroller chips include.  port should be specified as AN0, AN1, AN2, etc., up to the number of analog inputs available on the chip that is in use.  Those familiar with Atmel AVR microcontrollers can also refer to the ports as ADC0, ADC1, etc.  Refer to the datasheet for the microcontroller chip to find the number of ports available.  (Note: it’s perfectly acceptable to use ANx on AVR, or ADCx on the microcontroller)"
+                },
+                {
+                    "name": "ReadAD10",
+                    "available": "All Microcontrollers",
+                    "description": "word_variable = ReadAD10( ANX )",
+                    "funcdesc": "ReadAD10 is a function that can be used to read the built-in analog to digital converter that many microcontroller chips include.  The port should be specified as AN0, AN1, AN2, etc., up to the number of analog inputs available on the chip that is in use.  Those familiar with Atmel AVR microcontrollers can also refer to the ports as ADC0, ADC1, etc.  Refer to the datasheet for the microcontroller chip to find the number of ports available.  (Note: it’s perfectly acceptable to use ANx on AVR, or ADCx on the microcontroller.)"
+                },
+                {
+                    "name": "ReadAD12",
+                    "available": "All Microcontrollers",
+                    "description": "user_variable = ReadAD12( ANX )",
+                    "funcdesc": "ReadAD12 is a function that can be used to read the built-in analog to digital converter that many microcontroller chips include.  Port should be specified as AN0, AN1, AN2, etc., up to the number of analog inputs available on the chip that is in use.  Those familiar with Atmel AVR microcontrollers can also refer to the ports as ADC0, ADC1, etc.  Refer to the datasheet for the microcontroller chip to find the number of ports available.  (Note: it’s perfectly acceptable to use ANx on AVR, or ADCx on the microcontroller.)"
+                },
+                {
+                    "name": "FnLSL",
+                    "available": "All Microcontrollers",
+                    "description": "BitsOut = FnLSL(BitsIn, NumBits)",
+                    "funcdesc": "FnLSL (Logical Shift Left) will perform a Bitwise left shift. FnLSL will return BitsIn shifted NumBits to the left, it is equivalent to the 'C' operation:\n\nBitsOut = BitsIn << NumBits"
+                },
+                {
+                    "name": "FnLSR",
+                    "available": "All Microcontrollers",
+                    "description": "BitsOut = FnLSR(BitsIn, NumBits)",
+                    "funcdesc": "FnLSR (Logical Shift Right) will perform a Bitwise right shift. FnLSR will return BitsIn shifted NumBits to the right, it is equivalent to the 'C' operation:\n\nBitsOut = BitsIn >> NumBits"
+                },
+                {
+                    "name": "SetWith",
+                    "available": "All Microcontrollers",
+                    "description": "SetWith(TargetBit, Source)",
+                    "funcdesc": "SetWith is an extended version of SET, it allows a Bit Field to be set or cleared by evaluating the content of Source. SetWith should always be used when TargetBit is an I/O Bit and Source is a Function, in order to avoid the possibility of I/O jitter.\nSource may be a variable and of type: Bit, Byte, Word or Long, a Constant, an expression or a Function.\nIt will SET TargetBit to 1 if Source evaluates to anything other than zero. TargetBit will always be a 1 or a 0 regardless of the variable type of TargetBit."
+                },
+                {
+                    "name": "EPRead",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "EPRead location, store",
+                    "funcdesc": "EPRead is used to read information from the EEPROM data storage that many microcontroller chips are equipped with. location represents the location to read data from, and varies from one chip to another. store is the variable in which to store the data after it has been read from EEPROM."
+                },
+                {
+                    "name": "EPWrite",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "EPWrite location, data",
+                    "funcdesc": "EPWrite is used to write information to the EEPROM data storage, so that it can be accessed later by a programmer on the PC, or by the EPRead command. location represents the location to read data from, and varies from one chip to another. data is the data that is to be written to the EEPROM, and can be a value or a variable."
+                },
+                {
+                    "name": "HEFRead",
+                    "available": "Microchip PIC",
+                    "description": "HEFRead ( location, data )",
+                    "funcdesc": "HEFRead is used to read information, byte values, from HEFM, so that it can be accessed for use in a user program.\nlocation represents the location or relative address to read. The location will range from location 0 to HEF_BYTES - 1, or for all practical purposes 0-127 since all PIC Microcontrollers with HEF support 128 bytes of HEF Memory. HEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of HEF Memory.\ndata is the data that is to be read from the HEFM data storage area.\nThis can be a byte value or a byte variable.\nThis method reads data from HEFM given the specific relative location.\nThis method is similar to the EPRead method for EEPROM."
+                },
+                {
+                    "name": "HEFReadWord",
+                    "available": "Microchip PIC",
+                    "description": "HEFReadWord ( location, data_word_variable )",
+                    "funcdesc": "HEFReadWord is used to read information, word values, from HEFM so that it can be accessed for use in a user program.\nlocation represents the location or relative address to read. The location will range from location 0 to HEF_BYTES - 1, or for all practical purposes 0-127 since all PIC Microcontrollers with HEF support 128 bytes of HEF Memory. HEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of HEF Memory.\ndata is the data that is to be read from the HEFM data storage.\nThis must be a word variable.\nThis method reads data from HEFM given the specific relative location."
+                },
+                {
+                    "name": "HEFWrite",
+                    "available": "Microchip PIC",
+                    "description": "HEFWrite ( location, data )",
+                    "funcdesc": "HEFWrite is used to write information, byte values, to HEFM so that it can be accessed later for use in a user program.\nlocation represents the location or relative address to write. The location will range from location 0 to HEF_BYTES - 1, or for all practical purposes 0-127 since all PIC Microcontrollers with HEF support 128 bytes of HEF Memory. HEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of HEF Memory.\ndata is the data that is to be written to the HEFM location.\nThis can be a byte value or a byte variable.\nThis method writes information to the HEFM given the specific location. This method is similar to the EPWrite method for EEPROM."
+                },
+                {
+                    "name": "HEFWriteWord",
+                    "available": "Microchip PIC",
+                    "description": "HEFWriteWord ( location, data_word_value )",
+                    "funcdesc": "HEFWriteWord is used to write information, word values, to HEFM, so that it can be accessed in a user program via the HEFReadWord command.\nlocation presents the location or relative address to write write. A data Word requires 2 HEF Locations, therefore the location will range from 0 to 126 in steps of 2.\ndata is the data that is to be written to the HEFM location.This can be a word value or a word variable.\nThis method writes information to the HEFM given the specific location in the HEFM data storage . This method is similar to the methods for EEPROM but this method supports Word values."
+                },
+                {
+                    "name": "HEFReadBlock",
+                    "available": "Microchip PIC",
+                    "description": "HEFReadBlock ( block_number,  buffer(), [, num_bytes] )",
+                    "funcdesc": "HEFReadBlock is used to read information from the HEFM data storage into the buffer.Once the buffer is populated it can be accessed for use within a user program.\n\nThe parameters are as follows:\n\nblock_number represents the block to be written to.The block_number parameter is used to calculate the physical memory location(s) that are updated.\nbuffer() represents an array or string.The buffer will be used as the data target for the block read operation.The buffer is handled as a buffer of bytes values.In most cases the buffer should be the same size as a row/block of HEFM.For most PIC Microcontrollers this will be 32 bytes.For PIC microcontrollers with 2KW or less of Flash Program Memory this will be 16 Bytes.Once data is read into the buffer from HEFM, the user program must handle the data as Byte, Word or String values, as appropriate.\nnum_bytes is an optional parameter, and can be used to specify number of bytes to read from HEFM, starting at the first location in the selected HEFM block.This parameter is not normally required as the default is set to the Great Cow BASIC constant HEF_ROWSIZE_BYTES."
+                },
+                {
+                    "name": "HEFWriteBlock",
+                    "available": "Microchip PIC",
+                    "description": "HEFWriteBlock ( block_number,  buffer(), [, num_bytes] )",
+                    "funcdesc": "HEFWriteBlock is used to write information from a user buffer to HEFM. Once the block is written it can be accessed for use within a user program.\n\nThe parameters are as follows:\n\nblock_number represents the block to be written to.The block_number parameter is used to calculate the physical memory location(s) that are updated.\nbuffer() represents an array or string. The buffer will be used as the data source that is written to the HEFM block. The buffer is handled as a buffer of bytes values. In most cases the buffer should be the same size as a row/block of HEFM. For most PIC Microcontrollers this will be 32 bytes. For PIC microcontrollers with 2KW or less of Flash Program Memory this will be 16 Bytes. Best practice is to size the buffer using the HEF_ROWSIZE_BYTES constant. If the size of the buffer exceeds the device specific HEF_ROWSIZE_BYTES, the excess data will not be handled and the buffer will be truncated at the HEF_ROWSIZE_BYTES limit.\nnum_bytes is an optional parameter, and can be used to specify number of bytes to write to HEFM, starting at the first location in the selected HEFM block. This parameter is not normally required as the default is set to the Great Cow BASIC constant HEF_ROWSIZE_BYTES."
+                },
+                {
+                    "name": "HEFEraseBlock",
+                    "available": "Microchip PIC",
+                    "description": "HEFEraseBlock ( block_number )",
+                    "funcdesc": "HEFEraseBlock is used to erase all data locations within the HEFM block. HEFM data within the HEFM block to the erase state value of the device. This Value is 0xFF and will read 0x3FFF if the entire 14bit program memory word is displayed. Use Caution. Once the HEFM block is erased, the HEFM data is gone forever and cannot be recovered unless it was previpusly saved.\n\nThe single parameter is as follows:\n\nblock_number represents the block to be erased.The block_number parameter is used to calculate the physical memory location(s) that are updated."
+                },
+                {
+                    "name": "PFMRead",
+                    "available": "Microchip PIC",
+                    "description": "PFMRead (location, store)",
+                    "funcdesc": "PFMRead reads information from the program memory on chips that support this feature. location is a word variable, and store can be a byte of word.\nThe largest value possible for location depends on the amount of program memory on the Microchip PIC microcontroller.\nThis is an advanced command which should only be used by advanced developers."
+                },
+                {
+                    "name": "PFMWrite",
+                    "available": "Microchip PIC",
+                    "description": "PFMWrite (location, value)",
+                    "funcdesc": "PFMWrite writes information to the program memory on chips that support this feature. location is a word variable, and store can be a byte of word.\nThe largest value possible for location depends on the amount of program memory on the microcontroller.\nThis is an advanced command which should only be used by advanced developers."
+                },
+                {
+                    "name": "ProgramErase",
+                    "available": "Microchip PIC",
+                    "description": "ProgramErase (location)",
+                    "funcdesc": "ProgramErase erases information from the program memory on chips that support this feature. The largest value possible for location depends on the amount of program memory on the Microchip PIC microcontroller, which is given on the datasheet.\nThis command must be called before writing to a block of memory. It is slow in comparison to other Great Cow BASIC commands. Note that it erases memory in 32-byte blocks - see the relevant Microchip PIC microcontroller datasheet for more information.\nThis is an advanced command which should only be used by advanced developers. Care must be taken with this command, as it can easily erase the program that is running on the microcontroller."
+                },
+                {
+                    "name": "ProgramRead",
+                    "available": "Microchip PIC",
+                    "description": "ProgramRead (location, store)",
+                    "funcdesc": "ProgramRead reads information from the program memory on chips that support this feature. location and store are both word variables, meaning that they can store values over 255.\nThe largest value possible for location depends on the amount of program memory on the Microchip PIC microcontroller, which is given on the datasheet. store is 14 bits wide, and thus can store values up to 16383.\nThis is an advanced command which should only be used by advanced developers."
+                },
+                {
+                    "name": "ProgramWrite",
+                    "available": "Microchip PIC",
+                    "description": "ProgramWrite (location, value)",
+                    "funcdesc": "ProgramWrite writes information to the program memory on chips that support this feature. location and value are both word variables.\nThe largest value possible for location depends on the amount of program memory on the microcontroller , which is given on the datasheet. value is 14 bits wide, and thus can store values up to 16383.\nThis is an advanced command which should only be used by advanced developers. ProgramErase must be used to clear a block of memory BEFORE ProgramWrite is called."
+                },
+                {
+                    "name": "SAFRead",
+                    "available": "Microchip PIC",
+                    "description": "SAFRead ( location, data )",
+                    "funcdesc": "SAFRead is used to read information, byte values, from SAFM, so that it can be accessed for use in a user program.\nlocation represents the location or relative address to read. The location will range from location 0 to SAF_BYTES - 1. This cab be from 0-127 or 0-255m depending upon the specific device. HEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of SAF Memory.\ndata is the data that is to be read from the SAFM data storage area. This can be a byte value or a byte variable.\nThis method reads data from SAFM given the specific relative location.\nThis method is similar to the EPRead method for EEPROM."
+                },
+                {
+                    "name": "SAFReadWord",
+                    "available": "Microchip PIC",
+                    "description": "SAFReadWord ( location, data_word_variable )",
+                    "funcdesc": "SAFReadWord is used to read information, word values, from SAFM so that it can be accessed for use in a user program.\nlocation represents the location or relative address to read. The location will range from 0 to SAF_BYTES -1.  Each data Word requires 2 SAF\nLocations, therefore the location will range from either 0 to 254 or 0 to 126 (in steps of 2), depending upon the device.\ndata is the word data that is to be read from the SAFM location. This must be a word variable.\nThis method reads word information from SAFM given the relative location in SAFM."
+                },
+                {
+                    "name": "SAFWrite",
+                    "available": "Microchip PIC",
+                    "description": "SAFWrite ( location, data )",
+                    "funcdesc": "SAFWrite is used to write information, byte values, to SAFM so that it can be accessed later for use in a user program.\nlocation represents the location or relative address to write.\nThe location will range from location 0 to SAF_BYTES - 1, or for all practical purposes 0-255 since all PIC Microcontrollers with SAFM support 256 bytes of SAF Memory.\nHEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of SAF Memory.\ndata is the data that is to be written to the SAFM location. This can be a byte value or a byte variable.\nThis method writes information to SAFM given the specific location. This method is similar to the EPWrite method for EEPROM."
                 }
             ]
         }

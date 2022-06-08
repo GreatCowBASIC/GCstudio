@@ -5,10 +5,10 @@ import * as data from './IntelliSenseGCB.json';
 var accessors : string[] = [];
 for(let i=0; i<data.classes.length; i++)
 {
-	let val : string = data.classes[i].accessor!
-	if(val !== undefined && val.length > 0 && val.toLowerCase() != "unknown")
+	let val : string = data.classes[i].accessor!;
+	if(val !== undefined && val.length > 0 && val.toLowerCase() !== "unknown")
 	{
-		accessors.push(val)
+		accessors.push(val);
 	}
 }
 
@@ -49,12 +49,12 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 
 			for(let i=0; i<data.commands.length; i++)
 			{
-				const IsGCBcommand = (data.commands[i].prefix == "GCB_Commands");
+				const isCommand = (data.commands[i].prefix === "GCB_Commands");
 				let values = data.commands[i].values;
 				for(let a=0; a<values.length; a++)
 				{
 					let item = new vscode.CompletionItem(values[a].name,vscode.CompletionItemKind.Method);
-					if(IsGCBcommand)
+					if(isCommand)
 					{
 						item.documentation = "";
 						if(values[a].funcdesc !== undefined)
@@ -91,12 +91,12 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
       {
 			for(let i=0; i<data.directives.length; i++)
 			{
-				const IsGCBdirective = (data.directives[i].prefix == "GCB_Directives");
+				const isDirective = (data.directives[i].prefix === "GCB_Directives");
 				let values = data.directives[i].values;
 				for(let a=0; a<values.length; a++)
 				{
 					let item = new vscode.CompletionItem(values[a].name,vscode.CompletionItemKind.Property);
-					if(IsGCBdirective)
+					if(isDirective)
 					{
 						item.documentation = "";
 						if(values[a].funcdesc !== undefined)
@@ -108,13 +108,11 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 							item.documentation += "No Description\n---\n";
 						}
 						item.documentation += "Directive: " + values[a].description + "\n";
-						item.documentation += "Availability: " + values[a].available;
 						item.detail = values[a].description;
 					}
 					else
 					{
 						item.documentation = values[a].description;
-						item.detail = "Availability:" + values[a].available;
 					}
 					
 					items.push(item);
@@ -146,7 +144,7 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 						let hasFoundClass = false;
 						for(let b=0; b<data.classes.length && !hasFoundClass; b++)
 						{
-							if(data.classes[b].accessor == accessors[a])
+							if(data.classes[b].accessor === accessors[a])
 							{
 								hasFoundClass = true;
 								let funcs = data.classes[b].funcs;
@@ -164,16 +162,16 @@ let completionproviderCommands = vscode.languages.registerCompletionItemProvider
 									let description = funcs[func].description;
 									if(description !== undefined)
 									{
-										item.documentation += description;
+										item.documentation = description;
 									}
 									else
 									{
-										item.documentation += "No Description";
+										item.documentation = "No Description";
 									}
 
 
 									let defvalue = funcs[func].value;
-									if(description !== undefined)
+									if(defvalue !== undefined)
 									{
 										item.documentation += "\n---\nDefault Value: " + defvalue;
 									}
@@ -580,8 +578,8 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 var remregex = new RegExp("(?:[';]|rem|//).*dim","i");
                 var startremblockregex = new RegExp("[/][*]","i");
                 var endremblockregex = new RegExp("[*][/]","i");
-                var varsregex = new RegExp("(?:\\s*)([^,\\s]+)","gi")
-                var vardefine = new RegExp("(as)","gi")
+                var varsregex = new RegExp("(?:\\s*)([^,\\s]+)","gi");
+                var vardefine = new RegExp("(as)","gi");
                 if (startremblockregex.test(line.text))
                 {
                     remblock = true;
@@ -606,7 +604,7 @@ class GCBDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                         }
                         else
                         {
-                          i = symnames!.length
+                          i = symnames!.length;
                         }
                         }
                     }
