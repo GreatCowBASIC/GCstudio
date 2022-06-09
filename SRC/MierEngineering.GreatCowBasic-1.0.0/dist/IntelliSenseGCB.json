@@ -2029,12 +2029,6 @@
                     "funcdesc": "This command only sends a byte of data using the SPI protocol. This command only supports master mode.\nAs a master, FastHWSPITransfer will initiate a transfer. The data in tx will be sent to the slave."
                 },
                 {
-                    "name": "Exit",
-                    "available": "",
-                    "description": "Exit Sub | Exit Function | Exit Do | Exit For | Exit Repeat",
-                    "funcdesc": "This command will make the program exit the routine it is currently in, as it would if it came to the end of the routine. Applies to Subroutines, Functions, For-Next loops, Do-Loop loops and Repeat loops."
-                },
-                {
                     "name": "ReadAD",
                     "available": "All Microcontrollers",
                     "description": "byte_variable = ReadAD( ANX )",
@@ -2171,6 +2165,684 @@
                     "available": "Microchip PIC",
                     "description": "SAFWrite ( location, data )",
                     "funcdesc": "SAFWrite is used to write information, byte values, to SAFM so that it can be accessed later for use in a user program.\nlocation represents the location or relative address to write.\nThe location will range from location 0 to SAF_BYTES - 1, or for all practical purposes 0-255 since all PIC Microcontrollers with SAFM support 256 bytes of SAF Memory.\nHEF_BYTES is a Great Cow BASIC constant that represents the number of bytes of SAF Memory.\ndata is the data that is to be written to the SAFM location. This can be a byte value or a byte variable.\nThis method writes information to SAFM given the specific location. This method is similar to the EPWrite method for EEPROM."
+                },
+                {
+                    "name": "SAFWriteWord",
+                    "available": "Microchip PIC",
+                    "description": "SAFWriteWord ( location, data_word_value )",
+                    "funcdesc": "SAFWriteWord is used to write information, word values, to the SAFM data storage, so that it can be accessed later by a programmer on a Personal, or by the SAFRead commands.\n\nlocation presents the location or relative address to write. The location will range from 0 to SAF_BYTES -1.\nEach data Word requires 2 SAF Locations, therefore the location will range from either 0 to 254 or 0 to 126 (in steps of 2), depending upon the device.\n\ndata is the data that is to be written to the SAFM location. This can be a word value or a word variable.\n\nThis method writes information to SAFM given the specific location in SAFM.\nThis method is similar to the methods for EEPROM, but supports Word values."
+                },
+                {
+                    "name": "SAFReadBlock",
+                    "available": "Microchip PIC",
+                    "description": "SAFReadBlock ( block_number,  buffer(), [,  num_bytes] )",
+                    "funcdesc": "HEFReadBlock is used to read information from the HEFM data storage into the buffer. Once the buffer is populated it can be accessed for use within a user program.\n\nThe parameters are as follows:\n\nblock_number represents the block to be written to. The block_number parameter is used to calculate the physical memory location(s) that are updated.\n\nbuffer() represents an array or string. The buffer will be used as the data target for the block read operation. The buffer is handled as a buffer of bytes values. In most cases the buffer should be the same size as a row/block of SAFM. For most PIC Microcontrollers with SAFM this will be 32 bytes.\n\nnum_bytes is an optional parameter, and can be used to specify number of bytes to read from SAFM, starting at the first location in the selected SAFM block. This parameter is not normally required as the default is set to the Great Cow BASIC constant SAF_ROWSIZE_BYTES."
+                },
+                {
+                    "name": "SAFWriteBlock",
+                    "available": "Microchip PIC",
+                    "description": "SAFWriteBlock ( block_number,  buffer(), [, num_bytes] )",
+                    "funcdesc": "SAFWriteBlock is used to write information from a user buffer to SAFM. Once the block is written it can be accessed for use within a user program\n\nThe parameters are as follows:\n\nblock_number represents the block to be written to. The block_number parameter is used to calculate the physical memory location(s) that are updated.\n\nbuffer() represents an array or string. The buffer will be used as the data source that is written to the SAFM block. The buffer is handled as a buffer of bytes values. In most cases the buffer should be the same size as a row/block of SAFM. For most PIC Microcontrollers this will be 32 bytes.\nBest practice is to size the buffer using the SAF_ROWSIZE_BYTES constant.\nIf the size of the buffer exceeds the device specific SAF_ROWSIZE_BYTES, the excess data will not be handled and the buffer will be truncated at the SAF_ROWSIZE_BYTES limit.\n\nnum_bytes is an optional parameter, and can be used to specify the number of bytes to write to HEFM, starting at the first location in the selected HEFM block. This parameter is not normally required as the default is set to the Great Cow BASIC constant HEF_ROWSIZE_BYTES."
+                },
+                {
+                    "name": "SAFEraseBlock",
+                    "available": "Microchip PIC",
+                    "description": "SAFEraseBlock ( block_number )",
+                    "funcdesc": "SAFEraseBlock is used to erase all data locations within the SAFM block.\nHEFM data within the HEFM block to the erase state value of the device.\nThis Value is 0xFF for each location and will read 0xFFFF if the program memory word is displayed. Use Caution. Once the SAFM block is erased, the SAFEM data is gone forever and cannot be recovered unless it was previpusly saved.\n\nThe single parameter is as follows:\n\nblock_number represents the block to be erased. The block_number parameter is used to calculate the physical memory location(s) that are updated."
+                },
+                {
+                    "name": "SRAMRead",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "SRAMRead location, store",
+                    "funcdesc": "SRAMRead is the method, a function or a subroutine, used to read information from the SRAM data storage.\n\nlocation represents the location to read data from.\n\nstore is the variable in which to store the data after it has been read from SRAM."
+                },
+                {
+                    "name": "SRAMWrite",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "SRAMWrite location, data",
+                    "funcdesc": "SRAMWrite is the method used to write information to the SRAM data storage, so that it can be accessed by the SRAMRead command.\n\nlocation represents the location to read data from, and this location will vary from one application/solution to another.\n\ndata is the data that is to be written to the SRAM, a byte value or a byte variable."
+                },
+                {
+                    "name": "Do",
+                    "available": "All Microcontrollers",
+                    "description": "Do [{While | Until} condition]",
+                    "funcdesc": "The Do command will cause the code between the Do and the Loop to run repeatedly while condition is true or until condition is true, depending on whether While or Until has been specified.\n\nNote that the While or Until and the condition can only be specified once, or not at all. If they are not specified, then the code will repeat endlessly.\n\nOptionally, you can specify a condition to EXIT the Do-Loop immediately."
+                },
+                {
+                    "name": "End",
+                    "available": "All Microcontrollers",
+                    "description": "End",
+                    "funcdesc": "When the End command is used, the program will immediately stop running.\nThere are very few cases where this command is needed - generally, the program should be an endless loop."
+                },
+                {
+                    "name": "Exit",
+                    "available": "All Microcontrollers",
+                    "description": "Exit Sub | Exit Function | Exit Do | Exit For | Exit Repeat",
+                    "funcdesc": "This command will make the program exit the routine it is currently in, as it would if it came to the end of the routine.\n\nApplies to Subroutines, Functions, For-Next loops, Do-Loop loops and Repeat loops."
+                },
+                {
+                    "name": "For",
+                    "available": "All Microcontrollers",
+                    "description": "For counter = start To end [Step increment]",
+                    "funcdesc": "The For command is ideal for situations where a piece of code needs to be run a set number of times, and where it is necessary to keep track of how many times the code has run. When the For command is first executed, counter is set to start. Then, each successive time the program loops, increment is added to counter, until counter is equal to end. Then, the program continues beyond the Next.\n\nStep and increment are optionals. If Step is not specified, Great Cow BASIC will increment counter by 1 each time the code is run.\n\nincrement can be a positive or negative constant or an integer.\n\nThe Exit For is optional and can be used to exit the loop upon a specific condition."
+                },
+                {
+                    "name": "Gosub",
+                    "available": "All Microcontrollers",
+                    "description": "Gosub label",
+                    "funcdesc": "The GoSub command is used to jump to a label as a subroutine, in a similar way to Goto. The difference is that Return can then be used to return to the line of code after the Goto."
+                },
+                {
+                    "name": "Goto",
+                    "available": "All Microcontrollers",
+                    "description": "Goto label",
+                    "funcdesc": "The Goto command will make the microcontroller jump to the line specified, and continue running the program from there. The Goto command is mainly useful for exiting out of loops - if you need to create an infinite loop, use the Do command instead.\n\nBe careful how you use Goto. If used too much, it can make programs very hard to read.\n\nTo define a label, put the name of the label alone on a line, with just a colon (:) after it."
+                },
+                {
+                    "name": "If",
+                    "available": "All Microcontrollers",
+                    "description": "If condition Then command",
+                    "funcdesc": "The If command is the most common command used to make decisions. If condition is true, then command (short) or program code (long) will be run. If it is false, then the microcontroller will skip to the code located on the next line (short) or after the End If (long form).\n\nIf Else is used, then the condition between If and Else will run if the condition is true, and the code between Else and End If will run if the condition is false.\n\nIf Else if is used, then the condition after the Else if will run if the condition is true."
+                },
+                {
+                    "name": "IndCall",
+                    "available": "All Microcontrollers",
+                    "description": "IndCall Address",
+                    "funcdesc": "IndCall provides a basic implementation of function pointers. Address is the program memory location of the subroutine that is to be called. There are two ways to specify this - either by providing a direct reference to the subroutine using the @ operator, or by specifying a word variable that contains the address.\n\nThis command is useful for callbacks. For example, a particular subroutine might read bytes from a serial connection, but different actions may need to be taken at different times. A different subroutine could be created for each action, and then the subroutine for the appropriate action could be passed to the serial connection reading routine each time it is called."
+                },
+                {
+                    "name": "Pause",
+                    "available": "All Microcontrollers",
+                    "description": "Pause time_ms",
+                    "funcdesc": "The Pause command will cause the program to pause for a specified time in milliseconds. The only unit of time permitted is milliseconds.\n\nPlease use the wait command to use other units of time."
+                },
+                {
+                    "name": "Repeat",
+                    "available": "All Microcontrollers",
+                    "description": "Repeat times",
+                    "funcdesc": "The Repeat command is ideal for situations where a piece of code needs to be run a set number of times. It uses less memory and runs faster than the For command, and should be used wherever it is not necessary to count how many times the code has run.\n\nOptionally, you can specify a condition to Exit the Repeat-Loop immediately.\n\nRepeat has a maximum repeat value of 65535."
+                },
+                {
+                    "name": "Select Case",
+                    "available": "All Microcontrollers",
+                    "description": "Select Case var",
+                    "funcdesc": "The Select Case control structure is used to select and run a particular section of code, based on the value of var. If var equals value1 then code1 will be run. Once code1 has run, the chip will jump to the End Select command and continue running the program. If none of the other conditions are true, then the code under the Case Else section will be run.\n\nCase var TO var is a range of values. If the value is within the range the code section will be executed.\n\nCase Else is optional, and the program will function correctly without it.\n\nIf there is only one line of code after the Case, the code may look neater if the line is placed after the Case. This is shown below in the example, for cases 3, 4 and 5.\n\nIt is important to note that only one section of code will be run when using Select Case.\n\nThere are two examples shown below."
+                },
+                {
+                    "name": "Wait",
+                    "available": "All Microcontrollers",
+                    "description": "Wait time units",
+                    "funcdesc": "The Wait command will cause the program to wait for either a specified amount of time (such as 1 second), or while/until a condition is true."
+                },
+                {
+                    "name": "FVRInitialize",
+                    "available": "All Microcontrollers",
+                    "description": "FVRInitialize ( FVR_OFF | FVR_1x | FVR_2x | FVR_4x  )",
+                    "funcdesc": "The method is a subroutine that sets the state of the FVR.\n\nFVR_Off =  Fixed Voltage Reference is set to OFF\n\nFVR_1x  =  Fixed Voltage Reference is set to 1.024v\n\nFVR_2x  =  Fixed Voltage Reference is set to 2.048v\n\nFVR_4x  =  Fixed Voltage Reference is set to 4.096v"
+                },
+                {
+                    "name": "FVRIsOutputReady",
+                    "available": "All Microcontrollers",
+                    "description": "user_var = FVRIsOutputReady()",
+                    "funcdesc": "The method is a function that returns the state of the FVR.   The returned value can be assigned to a variable to used as function.\n\nThe method returns 0 or 1.   As follows:\n\n0 = Fixed Voltage Reference output is not ready or not enabled\n\n1 = Fixed Voltage Reference output is ready for use"
+                },
+                {
+                    "name": "IntOff",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "IntOff",
+                    "funcdesc": "IntOff is used to disable interrupts on the microcontroller. It should be used at the start of code which is timing-sensitive, and which would not function correctly if paused and restarted.\n\nIt is essential that IntOn is used to turn interrupts on again after the timing-sensitive code has finished running. If not, no interrupts will be handled.\n\nIt is recommended that IntOff be placed before all code that is timing sensitive, in case interrupts are implemented later.\n\nIntOff will be removed from the assembler if no interrupts are used."
+                },
+                {
+                    "name": "IntOn",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "IntOn",
+                    "funcdesc": "IntOn is used to enable interrupts on the microcontroller after IntOff has disabled them. It should be used at the end of code which is timing-sensitive.\n\nIntOn will be removed from the assembler if no interrupts are used."
+                },
+                {
+                    "name": "On Interrupt",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "On Interrupt event Call handler",
+                    "funcdesc": "On Interrupt will add code to call the subroutine handler whenever the interrupt event occurs. When Call is specified, Great Cow BASIC will enable the interrupt, and call the interrupt handler when it occurs. When Ignore is specified, Great Cow BASIC will disable the interrupt handler and prevent it from being called when the event occurs. If the event occurs while the handler is disabled, then the handler will be called as soon as it is re-enabled. The only way to prevent this from happening is to manually clear the flag bit for the interrupt."
+                },
+                {
+                    "name": "KeypadData",
+                    "available": "All Microcontrollers",
+                    "description": "var = KeypadData",
+                    "funcdesc": "This function will return a value corresponding to the key that is pressed on the keypad. Note that if two or more keys are pressed, then only one value will be returned."
+                },
+                {
+                    "name": "KeypadRaw",
+                    "available": "All Microcontrollers",
+                    "description": "largevar = KeypadRaw",
+                    "funcdesc": "This function will return a 16 bit value, in which each bit corresponds to a key on the keypad. If the key is pressed its bit will hold 1, and if it is released its bit will contain a 0."
+                },
+                {
+                    "name": "ST7920GLCDClearGraphics",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GLCDClearGraphics",
+                    "funcdesc": "This command clears the GCLD display."
+                },
+                {
+                    "name": "ST7920GLCDDisableGraphics",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GLCDDisableGraphics",
+                    "funcdesc": "This command sets the GCLD display controller to text mode."
+                },
+                {
+                    "name": "ST7920GLCDEnableGraphics",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GLCDEnableGraphics",
+                    "funcdesc": "This command sets the GCLD display controller to text mode."
+                },
+                {
+                    "name": "ST7920GraphicTest",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GraphicTest",
+                    "funcdesc": "This command tests the graphics functionality of the GLCD display."
+                },
+                {
+                    "name": "ST7920LineHs",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920LineHs ( Xpos, Ypos, XLength, Style)",
+                    "funcdesc": "This command draws a line with a specific style. The style is based on the bits value of the byte passed to the routine."
+                },
+                {
+                    "name": "ST7920Locate",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920Locate ( Xpos, Ypos)",
+                    "funcdesc": "This command locates the pixel at the specific X and Y location of the text screen. Subsequent printing to the GLCD will place a character to the GLCD controller on the specified row and column. Due to the design of the ST7920 controller (to accomodate Mandarin and Cyrillic), you must place the text on the column according to the numbers above the diagram below."
+                },
+                {
+                    "name": "ST7920Tile",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920Tile ( word variable )",
+                    "funcdesc": "This command tiles the screen with the word value provided."
+                },
+                {
+                    "name": "ST7920lineh",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920lineh ( Xpos, Ypos, xUnitsStyle, )",
+                    "funcdesc": "This command draws a horizontal line with the specific style. The style can be ON or OFF. Default is ON.\n\nThis is called by the GLCD common routines."
+                },
+                {
+                    "name": "ST7920linev",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920linev ( Xpos, Ypos, xUnitsStyle, )",
+                    "funcdesc": "This command draws a vertical line with the specific style. The style can be ON or OFF. Default is ON\n\nThis is called by the GLCD common routines."
+                },
+                {
+                    "name": "ST7920GLCDReadByte",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = ST7920GLCDReadByte",
+                    "funcdesc": "This function return the word value (16 bits) of the GLCD display for the current XY position.\n\nThis is called by the GLCD common routines.\n\nSee the data sheet for more information."
+                },
+                {
+                    "name": "ST7920GWriteCommand",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GWriteCommand ( byte_variable)",
+                    "funcdesc": "This command writes a command to the controller.\n\nSee the data sheet for more information."
+                },
+                {
+                    "name": "ST7920GWriteData",
+                    "available": "All Microcontrollers",
+                    "description": "ST7920GWriteData ( byte_variable)",
+                    "funcdesc": "This command writes data to the controller.\n\nSee the data sheet for more information."
+                },
+                {
+                    "name": "ST7920gReaddata",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = ST7920gReaddata",
+                    "funcdesc": "This function return the word value (16 bits) of the GLCD display for the current XY position.\n\nSee the data sheet for more information."
+                },
+                {
+                    "name": "Box",
+                    "available": "All Microcontrollers",
+                    "description": "Box(LineX1,LineY1, LineX2, LineY2 [, LineColour ] )",
+                    "funcdesc": "Draws a box on a graphic LCD from the upper corner of pixel position X1, Y1 location to pixel position X2,Y2 location.\n\nLineColour can be specified. Typical the value is 0 or 1 for GLCDForeGround and GLCDBackGround respectively."
+                },
+                {
+                    "name": "Circle",
+                    "available": "All Microcontrollers",
+                    "description": "Circle(XPixelPosition, YPixelPosition, Radius [ [,Optional LineColour] [,Optional Rounding] ] )",
+                    "funcdesc": "Draws a circle on a GLCD at XPixelPosition, YPixelPosition with a specific Radius.\n\nThe constant GLCD_PROTECTOVERRUN can be added to prevent circles from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "Ellipse",
+                    "available": "All Microcontrollers",
+                    "description": "Ellipse(XPixelPosition, YPixelPosition, XRadius, YRadius [,Optional LineColour] )",
+                    "funcdesc": "Draws a Ellipse on a GLCD at XPixelPosition, YPixelPosition with a specific vertex of XRadius and YRadius.\nThe constant\nGLCD_PROTECTOVERRUN can be added to prevent Ellipses from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "FilledBox",
+                    "available": "All Microcontrollers",
+                    "description": "FilledBox(LineX1,LineY1, LineX2, LineY2, Optional LineColour = 1)e",
+                    "funcdesc": "Draws a filled box on a graphic LCD from the upper corner of pixel X1, Y1 location to pixel X2,Y2 location."
+                },
+                {
+                    "name": "FilledCircle",
+                    "available": "All Microcontrollers",
+                    "description": "FilledCircle(XPixelPosition, YPixelPosition, Radius [,Optional LineColour] )",
+                    "funcdesc": "Draws a circle on a GLCD at XPixelPosition, YPixelPosition with a specific Radius. "
+                },
+                {
+                    "name": "FilledEllipse",
+                    "available": "All Microcontrollers",
+                    "description": "FilledEllipse(XPixelPosition, YPixelPosition, XRadius, YRadius [,Optional LineColour] )",
+                    "funcdesc": "XPixelPosition, YPixelPosition with a specific vertex of XRadius and YRadius.\n\nThe constant GLCD_PROTECTOVERRUN can be added to prevent FilledEllipses from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "FilledEllipse",
+                    "available": "All Microcontrollers",
+                    "description": "FilledEllipse(XPixelPosition, YPixelPosition, XRadius, YRadius [,Optional LineColour] )",
+                    "funcdesc": "Draws a FilledEllipse on a GLCD at XPixelPosition, YPixelPosition with a specific vertex of XRadius and YRadius.\n\nThe constant GLCD_PROTECTOVERRUN can be added to prevent FilledEllipses from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "FilledTriangle",
+                    "available": "All Microcontrollers",
+                    "description": "FilledTriangle( XPixelPosition1, YPixelPosition1, XPixelPosition2, YPixelPosition2, XPixelPosition3, YPixelPosition3 [,Optional LineColour] )",
+                    "funcdesc": "Draws a FilledTriangle on a GLCD at XPixelPositionN, YPixelPositionN.\n\nThe constant\nGLCD_PROTECTOVERRUN can be added to prevent FilledTriangles from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "GLCDCLS",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDCLS [GLCDBackground]",
+                    "funcdesc": "Clears the screen of a Graphic LCD. This command is supported by all GLCD displays.\n\nFor colour GLCD displays only. The optional parameter can be used to clear the screen to a specific colour. Using this additional parameter will also change the GLCDBackground colour to this same colour.\n\nSpecific to the ST7920 GLCD devices. This command supports the clearing the GLCD to either text mode or graphics mode."
+                },
+                {
+                    "name": "GLCDDisplay",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDDisplay Off | On",
+                    "funcdesc": "Places the GLCD in sleep mode or enables the GLCD for normal operations."
+                },
+                {
+                    "name": "GLCDDrawString",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDDrawString(CharLocX, CharLocY, String [, Optional Colour] )",
+                    "funcdesc": "Displays an ASCII character at a specified X and Y location.\nOn a 128x64 Graphic LCD :\nX = 1 to 128\nY = 1 to 64"
+                },
+                {
+                    "name": "GLCDPrint",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDPrint(PrintLocX, PrintLocY, PrintData_Byte [, Optional Colour] )",
+                    "funcdesc": "Prints data values (byte, word, long or string) at a specified location on the GLCD screen."
+                },
+                {
+                    "name": "GLCDPrintLargeFont",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDPrintLargeFont( PrintLocX, PrintLocY, PrintData_String [, Optional Colour] )",
+                    "funcdesc": "Prints data values (byte, word, long or string) at a specified location on the GLCD screen."
+                },
+                {
+                    "name": "GLCDPrintWithSize",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDPrintWithSize(PrintLocX, PrintLocY, PrintData_Byte , FontSize [, Color ] )",
+                    "funcdesc": "Prints data values (byte, word, long or string) at a specified location on the GLCD screen with a specific font size."
+                },
+                {
+                    "name": "GLCDLocateString",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDLocateString(PrintLocX, PrintLocY )",
+                    "funcdesc": "Moves the GLCD string pointer to the specified location on the GLCD screen.\nPrintLocX is the X corrdinate location for the data\nPrintLocY is the Y coordinate location for the data\n\nFor the purpose of this command. The screen addressing is the first line equates to the parameter 1, the second line equates to the paramter 2 etc."
+                },
+                {
+                    "name": "GLCDPrintString",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDPrintString( String )",
+                    "funcdesc": "Prints string character(s) at a current XY location on the GLCD screen.\n\nWhere String is a String or String variable of the data to display\n\nThis command will NOT move the to start of the next line after the string has been displayed"
+                },
+                {
+                    "name": "GLCDPrintStringLn",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDPrintStringLn( String )",
+                    "funcdesc": "Prints string character(s) at a current XY location on the GLCD screen.\n\nWhere String is a String or String variable of the data to display\n\nThis command will move to the start of the next line after the string has been displayed"
+                },
+                {
+                    "name": "GLCDROTATE",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDROTATE LANDSCOPE | PORTRAIT_REV | LANDSCAPE_REV  | PORTRAIT",
+                    "funcdesc": "Rotate the GLCD display to a relative position.\n\nGLCD rotation needs to be supported by the GLCD chipset. NOT all GLCD chipset support these commands."
+                },
+                {
+                    "name": "GLCDReadByte",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = GLCDReadByte",
+                    "funcdesc": "Reads a byte of data from the Graphic LCD memory"
+                },
+                {
+                    "name": "GLCDTimeDelay",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDTime",
+                    "funcdesc": "This will call the delay routine that delays data transmissions. By default this is set to 20, which equate to 20 us. GLCDTimeDelay default of 20us is for 32Mhz support. The can be reduced for slower chip speeds by change the constant ST7920WriteDelay."
+                },
+                {
+                    "name": "GLCDTransaction",
+                    "available": "All Microcontrollers",
+                    "description": "GLCD_Open_PageTransaction",
+                    "funcdesc": "To make the operation of GLCD seamless - specific library supports GLCDTransaction.   GLCDTransaction automatically manages the methods to update the GLCD display via a RAM memory buffer, where this buffer can be small relative to the size of the total number of GLCD pixels.\n\nThe process of GLCDtransaction sends GLCD commands to the GLCD display on a page and page basis.\nEach page is the size of the buffer and for a large GLCD display the number of pages may be equivilent to the numbers of pixels high (height).\n\nGLCDTransaction simplies the operation by ensure the buffer is setup correctly, handles the GLCD appropiately, handles the sending of the buffer and then close out the update to the display."
+                },
+                {
+                    "name": "GLCDWriteByte",
+                    "available": "All Microcontrollers",
+                    "description": "GLCDWriteByte (LCDByte)",
+                    "funcdesc": "Writes a byte of data to the Graphic LCD memory"
+                },
+                {
+                    "name": "Line",
+                    "available": "All Microcontrollers",
+                    "description": "Line(LineX1,LineY1, LineX2, LineY2, Optional LineColour = 1)",
+                    "funcdesc": "Draws a line on a GLCD from pixel X1, Y1 location to pixel X2,Y2 location."
+                },
+                {
+                    "name": "Hyperbole",
+                    "available": "All Microcontrollers",
+                    "description": "Hyperbole (x,  y,  a_axis,  b_axis,  type, ModeStop, optional LineColour=GLCDForeground)",
+                    "funcdesc": "Draws on a GLCD an hyperbole with equation (x/(a)2-(y/(b)2=1, centered at pixel positions (x, y) with axis a and b.\n\nThe hyperbole can be aligned either along the x axis or along the y axis.\n\nBoth cases a_axis>=b:axis and a_axis<b_axis are accepted.\n\nThe hyperbole is an unbounded curve made by four branches\n\nDrawing hyperbole on the screen can be stopped by following two different criteria: - a branch has reached a border of the display - all branches have reached the display border\n\nFor an hyperbole centered on the display these criteria are equivalent"
+                },
+                {
+                    "name": "Parabola",
+                    "available": "All Microcontrollers",
+                    "description": "Parabola (x,  y,  p_factor,  type, modestop, optional LineColour=GLCDForeground)",
+                    "funcdesc": "Draws on a GLCD a parabola with equation y^2=2*p_factor*x, centered at pixel positions (x, y) .\n\nThe parabola is an unbounded curve.\n\nThe parabola can be alined either along the x axis or along the y axis.\n\nDrawing parabola on the screen can be constrained by following two different criteria: - a branch has reached a border of the display. - both branches have reached the display border."
+                },
+                {
+                    "name": "PSet",
+                    "available": "All Microcontrollers",
+                    "description": "PSet(XPosition, YPosition, GLCDState)",
+                    "funcdesc": "Sets or Clears a Pixel at the specified XPosition, YPosition. Use GLCDState set to 1 to set the pixel and a 0 clears the pixel."
+                },
+                {
+                    "name": "Triangle",
+                    "available": "All Microcontrollers",
+                    "description": "Triangle(XPixelPosition1, YPixelPosition1, XPixelPosition2, YPixelPosition2, XPixelPosition3, YPixelPosition3 [,Optional LineColour] )",
+                    "funcdesc": "Draws a Triangle on a GLCD at XPixelPositionN, YPixelPositionN.\nThe constant\nGLCD_PROTECTOVERRUN can be added to prevent Triangles from re-drawing at the screen edges. Ensure the GLCD_Width and GLCD_HEIGHT constants are set correctly when using this additional constant."
+                },
+                {
+                    "name": "ADS7843_Init",
+                    "available": "All Microcontrollers",
+                    "description": "ADS7843_Init",
+                    "funcdesc": "The ADS7843 device is a 12-bit sampling Analog-to-Digital Converter (ADC) with a synchronous serial interface and low on resistance switches for driving touch screens.\n\nThe Great Cow Basic driver is integrated with the SDD1289 GLCD driver. To use the ADS7843 driver the following is required to added to the Great Cow BASIC source file.\n\nADS7843_Init is required to initialise the touch screen. This is mandated.\n\nADS7843_GetXY this sub-routine returns the X and Y coordinates of touched point.\n\nADS7843_SetPrecision this sub-routine sets the level of precision of the touch screen."
+                },
+                {
+                    "name": "CLS",
+                    "available": "All Microcontrollers",
+                    "description": "CLS",
+                    "funcdesc": "The CLS command clears the contents of the LCD, and returns the cursor to the top left corner of the screen"
+                },
+                {
+                    "name": "Get",
+                    "available": "All Microcontrollers",
+                    "description": "var = Get(Line, Column)",
+                    "funcdesc": "The Get function reads the ASCII character code at a given location on the LCD."
+                },
+                {
+                    "name": "LCDBacklight",
+                    "available": "All Microcontrollers",
+                    "description": "LCDBacklight ( On | Off )",
+                    "funcdesc": "Sets the LCD backlight on or off\n\nDo not connect the LCD backlight directly to the microcontroller! Always refer to the datasheet for the correct method to drive the LCD backlight.\n\nFor 0, 4, 8, 404 LCD types you must define the controlling port.pin for the LCD backlight."
+                },
+                {
+                    "name": "LCDCreateChar",
+                    "available": "All Microcontrollers",
+                    "description": "LCDCreateChar char, chardata()",
+                    "funcdesc": "The LCDCreateChar command is used to send a custom character to the LCD.\n\nEach character on the LCD is made up from an 8 row by 5 column (5x8) matrix of pixels. The data to be sent to the LCD is composed of an 8 element array, where each element corresponds to a row. Inside each element, the 5 lowest bits make up the data for the corresponding row. When a bit is set a dot will be drawn at the matching location; when it is cleared, no dot will appear.\n\nAn array of more than 8 elements may be used, but only the first 8 will be read.\n\nchar is the ASCII value of the character to create. ASCII codes 0 through 7 are usually used to store custom characters.\nchardata() is an array containing the data for the character."
+                },
+                {
+                    "name": "LCDCreateGraph",
+                    "available": "All Microcontrollers",
+                    "description": "LCDCreateGraph value",
+                    "funcdesc": "The LCDCreateGraph command will create a graph like character which can then be displayed on the LCD"
+                },
+                {
+                    "name": "LCDCMD",
+                    "available": "All Microcontrollers",
+                    "description": "LCDCMD value",
+                    "funcdesc": "This command set LCD specific instructions to the LCD display."
+                },
+                {
+                    "name": "LCDCursor",
+                    "available": "All Microcontrollers",
+                    "description": "LCDCursor value",
+                    "funcdesc": "The LCDCursor command will accept the following parameters:\n\nLCDON, LCDOFF, CURSORON, CURSOROFF, FLASHON, FLASHOFF\n\nFLASH, and ON/OFF have been retained for backward compatibility with older releases of GCB.\n\nLCDON will turn on (restore) the LCD display.\nLCDOFF will turn off (hide) the LCD display.\nCURSORON will turn on the cursor.\nCURSOROFF will turn off the cursor.\nFLASHON will flash the cursor.\nFLASHOFF will stop flashing the cursor"
+                },
+                {
+                    "name": "LCDHex",
+                    "available": "All Microcontrollers",
+                    "description": "LCDHex value",
+                    "funcdesc": "The LCDHex will display the byte value as a 1 or 2 character HEX string.\n\nvalue is a byte value from 0 to 255.\n\nLeadingZeroActive is a constant or byte value of 2."
+                },
+                {
+                    "name": "LCDHome",
+                    "available": "All Microcontrollers",
+                    "description": "LCDHome",
+                    "funcdesc": "The LCDHome command will return the cursor to home position.\n\nThe currentcontents of the LCD screen will be retained."
+                },
+                {
+                    "name": "LCDDisplayOn",
+                    "available": "All Microcontrollers",
+                    "description": "LCDDisplayOn",
+                    "funcdesc": "Will turn on (restore) the LCD display"
+                },
+                {
+                    "name": "LCDDisplayOff",
+                    "available": "All Microcontrollers",
+                    "description": "LCDDisplayOff",
+                    "funcdesc": "Will turn off (hide) the LCD display."
+                },
+                {
+                    "name": "LCDSpace",
+                    "available": "All Microcontrollers",
+                    "description": "LCDSpace value",
+                    "funcdesc": "The LCDSpace command will print the required number of spaces on the LCD display\n\nvalue is a byte value from 1 to 255. Where the value is the number of spaces required."
+                },
+                {
+                    "name": "LCDWriteChar",
+                    "available": "All Microcontrollers",
+                    "description": "LCDWriteChar char",
+                    "funcdesc": "The LCDWriteChar command will show the specified character on the LCD, at the current cursor position.\n\nchar is the ASCII value of the character to show. On most LCDs, characters 0 through 7 are user defined, and can be set using the LCDCreateChar command."
+                },
+                {
+                    "name": "Locate",
+                    "available": "All Microcontrollers",
+                    "description": "Locate Line, Column",
+                    "funcdesc": "The Locate command is used to move the cursor on the LCD to the given location.\n\nLine is line number on the LCD display. A byte value from 0 to 255.\n\nColumn is column number on the LCD display. A byte value from 0 to 255."
+                },
+                {
+                    "name": "Print",
+                    "available": "All Microcontrollers",
+                    "description": "Print string",
+                    "funcdesc": "The Print command will show the contents of a variable on the LCD. It can display string, word, byte, long or integer variables."
+                },
+                {
+                    "name": "Put",
+                    "available": "All Microcontrollers",
+                    "description": "Put Line, Column, Character",
+                    "funcdesc": "The Put command writes the given ASCII character code to the current location on the LCD.\n\nLine is line number on the LCD display. A byte value from 0 to 255.\n\nColumn is column number on the LCD display. A byte value from 0 to 255.\n\nCharacter is the requried ASCII code. A byte value from 0 to 255."
+                },
+                {
+                    "name": "PWMOut",
+                    "available": "All Microcontrollers",
+                    "description": "PWMOut channel, duty cycle, cycles",
+                    "funcdesc": "channel sets the channel that the PWM is to be generated on. This must have been defined previously by setting the constants PWM_Out1\n\nPWM_Out2, PWM_Out3 or PWM_Out4. The maximum number of channels available is 4.\n\nduty cycle specifies the PWM duty cycle, and ranges from 0 to 255. 255 corresponds to 100%, 127 to 50%, 63 to 25%, and so on.\n\ncycles is used to set the amount of PWM pulses to supply. This is useful for situations in which a pulse of a specific length is required."
+                },
+                {
+                    "name": "HPWMUpdate",
+                    "available": "All Microcontrollers",
+                    "description": "HPWMUpdate ( channel, duty_cycle )",
+                    "funcdesc": "This command only supports the previously called HPWM CCP command, or, if you have set more than one HPWM CCP channel then to use the command you must have set the channel to the same frequency.\n\nThe command only supports the CCP module of the Microchip PIC microcontroller to generate a PWM waveform at the previously defined frequency and timer source.\n\nchannel is 1, 2, 3, 4 or 5. These corresponds to the CCP1 through to CCP5 respectively. The channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 255 where 255 is 100% duty cycle"
+                },
+                {
+                    "name": "HPWMOff",
+                    "available": "All Microcontrollers",
+                    "description": "HPWMOff ( channel )   'selectively turn off the CCP channel",
+                    "funcdesc": "This command will disable the output of the CCP1/PWM module on the Microchip PIC chip."
+                },
+                {
+                    "name": "HPWMUpdate",
+                    "available": "Microchip PIC",
+                    "description": "HPWMUpdate ( channel, duty_cycle )",
+                    "funcdesc": "This command only supports the previously called HPWM 10 Bit command, or, if you have set more than one HPWM 10 Bit PWM channel then to use the command you must have set the channel to the same frequency.\n\nThe command only supports the hardware PWM module of the Microchip PIC microcontroller to generate a PWM waveform at the previously defined frequency and timer source.\n\nchannel is 1, 2, 3, 4, 5, 6, 7 or 8. These corresponds to the HPWM1 through to HPWM8 respectively. The channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 1023 where 1023 is 100% duty cycle."
+                },
+                {
+                    "name": "HPWMOff",
+                    "available": "All Microcontrollers",
+                    "description": "HPWMOff ( channel, PWMHardware )",
+                    "funcdesc": "This command will disable the output of the PWM module on the Microchip PIC chip.\n\nPWMHardware is a Great Cow BASIC defined constant not a user vaariable."
+                },
+                {
+                    "name": "HPWM 16 Bit",
+                    "available": "All Microcontrollers",
+                    "description": "HPWM16 channel, frequency, duty cycle",
+                    "funcdesc": "This command sets up the hardware PWM module of the Microchip PIC microcontroller to generate a PWM waveform of the given frequency and duty cycle. Once this command is called, the PWM will be emitted until HPWM16Off method is called.\n\nchannel is 1, 2, 3.. 12. These corresponds to the 16-bit PWM channel respectively.\nThe 16-bit PWM channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nfrequency sets the frequency of the PWM output. It is measured in KHz. The maximum value allowed is 0xFFFF. The minimum value varies depending on the clock speed. 1 KHz is the minimum on chips 16 MHz or under and 2 Khz is the lowest possible on 20 MHz chips. In situations that do not require a specific PWM frequency, the PWM frequency should equal approximately 1 five-hundredth the clock speed of the microcontroller (ie 40 Khz on a 20 MHz chip, 16 KHz on an 8 MHz chip). This gives the best duty cycle resolution possible.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 0xFFFF where 0xFFFF is 100% duty cycle. This should be a WORD value."
+                },
+                {
+                    "name": "PWMOn",
+                    "available": "All Microcontrollers",
+                    "description": "PWMOn",
+                    "funcdesc": "Only available on Microchip PIC microcontrollers with Capture/Compare/PWM module CCP1.\n\nThis command does not operate on any other CCP channel."
+                },
+                {
+                    "name": "PWMOff",
+                    "available": "All Microcontrollers",
+                    "description": "PWMOff",
+                    "funcdesc": "This command will disable the output of the CCP1/PWM module on the Microchip PIC chip."
+                },
+                {
+                    "name": "HPWM AVR OCRnx",
+                    "available": "Atmel AVR",
+                    "description": "HPWM channel, frequency, duty cycle",
+                    "funcdesc": "The HPWM command sets up the hardware PWM module of the Atmel AVR microcontrollers to generate a PWM waveform of the given frequency and duty cycle. Once this command is called, the PWM will be emitted until the duty cycle parameter is written to zero.\n\nIf the need is just one particular frequency and duty cycle, one should use PWMOn and the constants PWM_Freq and PWM_Duty instead. PWMOn for the AVR is uniquely assigned to the OC0B pin, or channel 2. PWMOff will only shutdown the AVR HPWM channel 2.\n\nchannel described as 1, 2, 3,…​16 correspond to the pins OCR0A, OCR0B…​.OCR5C as detailed in the channel constant table. Channel 1 and channel 6 are not available.\n\nfrequency sets the frequency of the PWM output measured in Khz. The maximum value allowed is 255 KHz. In situations that do not require a specific PWM frequency, the PWM frequency should equal approximately 4 times the clock speed (GCB chipMHz) of the microcontroller (ie 63 KHz on a 16 MHz chip, 32 KHz on 8 MHz, 4 Khz on 1 MHz). This gives the best duty cycle resolution possible. Alternate frequencies with good duty cycle resolution are 1Khz, and 4Khz with chipMhz values of 16 and 8 respectively.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 255 where 255 is 100% duty cycle. The AVR fast PWM mode has a small spike at the extreme setting of 0x00, on most devices, with each period register rollover. By using the HPWM command, and writing 0x00 to the duty cycle parameter, the PWM signal will shutdown completely and avoid the spike. The PWM signal can then be restarted again with a new HPWM command."
+                },
+                {
+                    "name": "Random",
+                    "available": "All Microcontrollers",
+                    "description": "var = Random",
+                    "funcdesc": "The Random function will generate a pseudo-random number between 0 and 255 inclusive.\n\nThe numbers generated by Random will follow the same sequence every time, until Randomize is used."
+                },
+                {
+                    "name": "Randomize",
+                    "available": "All Microcontrollers",
+                    "description": "Randomize",
+                    "funcdesc": "Randomize is used to seed the pseudo random number generator, so that it will produce a different sequence of numbers each time it is used."
+                },
+                {
+                    "name": "DisplayValue",
+                    "available": "All Microcontrollers",
+                    "description": "DisplayValue (display, data, dot)",
+                    "funcdesc": "This command will display the given value on a seven segment LED display.\n\ndisplay is the number of the display to use. Up to 4 digits.\n\ndata is the value between 0 and F to be shown.\n\ndot is an optional parameter. When it is 1 then the decimal point for that digit is turned on.\n\nThe command also support HEX characters in the range between 0x00 and 0x0F (0 to 15). See example two below for usage."
+                },
+                {
+                    "name": "DisplayChar",
+                    "available": "All Microcontrollers",
+                    "description": "DisplayChar (display, character, dot)",
+                    "funcdesc": "This command will display the given ASCII character on a seven segment LED display.\n\ndisplay is the number of the display to use. Up to 4 digits.\n\ncharacter is the ASCII character to be shown.\n\ndot is an optional parameter. When it is 1 then the decimal point for that digit is turned on.\n\nThis example below is a Common Cathode configuration."
+                },
+                {
+                    "name": "DisplaySegment",
+                    "available": "All Microcontrollers",
+                    "description": "DisplayValue (display, data)",
+                    "funcdesc": "This command will display the given value on a seven segment LED display.\n\ndisplay is the number of the display to use. Up to 4 digits.\n\ndata is the value between 0 and 255. Where data is the representation of the segments to be set."
+                },
+                {
+                    "name": "TMWrite4Dig",
+                    "available": "All Microcontrollers",
+                    "description": "TMWrite4Dig (dig1, dig2, dig3, dig4  [, Brightness ],  Colon ]  ] )",
+                    "funcdesc": "TM1637 - Command defines each digit (left to right) as 0 to 9 OR 0x00 to 0x0F (15). Additionally 0x10 (16) is a blank, 0x11 (17) is a minus sign, 0x12 (18) is a degree sign, 0x13 (19) is a bracket and 0x14 (20) is a question mark.\n\nBrightness set the brightness (8-15). Colon turns the colon (only on digit 2) to off (0) or on (1)."
+                },
+                {
+                    "name": "TM_Bright",
+                    "available": "All Microcontrollers",
+                    "description": "TM_Bright = Brightness",
+                    "funcdesc": "TM1637 - Brightness sets the brightness for the display with a range of 8 to 15.\nDefault to 15.   "
+                },
+                {
+                    "name": "TMDec",
+                    "available": "All Microcontrollers",
+                    "description": "TMDec  Value [, Options ]",
+                    "funcdesc": "TM1637 - Value is a word value.   Only values from 0 to 9999 can be displayed, values greater than 9999 will be displayed"
+                },
+                {
+                    "name": "TMHex",
+                    "available": "All Microcontrollers",
+                    "description": "TMHex  Value",
+                    "funcdesc": "TM1637 - Value is a word value.   Only values from from 0x0000 to 0xFFFF can be displayed. Non-hex values will be displayed as greater than 9999 will be displayed ??."
+                },
+                {
+                    "name": "TMWriteChar",
+                    "available": "All Microcontrollers",
+                    "description": "TMWriteChar ( TMaddr, TMchar )",
+                    "funcdesc": "TM1637 - TMaddr is 0 , 1 , 2 , 3 (display left to right) TMchar is a letter from A to Z (default alphabet) or from a to z Siekoo alphabet by Alexander Fakoo, more info at: http://en.fakoo.de/siekoo.html. You can insert the special characters (blank, -, ) and/or ?)."
+                },
+                {
+                    "name": "TMWrite6Dig",
+                    "available": "All Microcontrollers",
+                    "description": "TMWrite6Dig (dig1, dig2, dig3, dig4, dig5, dig6, Brightness,  Point)",
+                    "funcdesc": "TM1637 - Command defines each digit (left to right) as 0 to 9 or 0x00 to 0x0F (15). Additionally 0x10 (16) is a blank, 0x11 (17) is a minus sign, 0x12 (18) is a degree sign, 0x13 (19) is a bracket and 0x14 (20) is a question mark.\n\nBrightness set the brightness (8-15). Colon turns the colon (only on digit 2) to off (0) or on (1)."
+                },
+                {
+                    "name": "ReadDigitalTemp",
+                    "available": "All Microcontrollers",
+                    "description": "ReadDigitalTemp",
+                    "funcdesc": "Return the value of the sensor in two global variables. The following two lines must be included in the Great Cow BASIC source file.\n#include <DS18B20.h>\n#define DQ PortC.3 ; change port configuration as required\n\nThis method returns whole part of the sensor value in the byte variable DSint, the method also returns decimal part of the sensor value in the byte variable DSdec."
+                },
+                {
+                    "name": "ReadTemp",
+                    "available": "All Microcontrollers",
+                    "description": "byte_var = ReadTemp",
+                    "funcdesc": "ReadTemp reads the sensor and stores in output variable. The conversion takes up to 750ms. Readtemp carries out a full 12 bit conversion and then rounds the result to the nearest full degree Celsius.\n\nTo read the full 12 bit value of the sensor use the readtemp12 command.\n\nThe temperature is read back in whole degree steps, and the sensor operates from -55 to + 125 degrees Celsius. Note that bit 7 is 0 for positive temperature values and 1 for negative values (ie negative values will appear as 128 + numeric value).\n\nNote the Readtemp command does not work with the older DS1820 or DS18S20 as they have a different internal resolution. This command is not designed to be used with parasitically powered DS18B20 sensors, the 5V pin of the sensor must be connected."
+                },
+                {
+                    "name": "ReadTemp12",
+                    "available": "All Microcontrollers",
+                    "description": "byte_var = ReadTemp12",
+                    "funcdesc": "Reads sensor and stores in output variable. The conversion takes up to 750ms. Readtemp12 carries out a full 12 bit conversion.\n\nThis command is for advanced users only. For standard \n'whole degree\n' data use the Readtemp command.\n\nThe temperature is read back as the raw 12 bit data into a word variable (0.0625 degree resolution). The user must interpret the data through mathematical manipulation. See the DS18B20 datasheet for more information on the 12 bit temperature/data information construct.\n\nThe function readtemp12 does not work with the older DS1820 or DS18S20 as they have a different internal resolution. This command is not designed to be used with parasitically powered DS18B20 sensors, the 5V pin of the sensor must be connected."
+                },
+                {
+                    "name": "DS18B20SetResolution",
+                    "available": "All Microcontrollers",
+                    "description": "DS18B20SetResolution ( [DS18B20SetResolution_CONTSTANT] )",
+                    "funcdesc": "Set the DS18B20 operating resolution.   The configuration register of the DS18B20 allows the user to set the resolution of the temperature-to-digital conversion to 9, 10, 11, or 12 bits.    This method set the operating resolution to either 9, 10, 11, or 12 bits.\n\nCalling the method with no parameter will set the operating resolution of the DS18B20 to 12 bits. See example 3 below."
+                },
+                {
+                    "name": "InitSer",
+                    "available": "All Microcontrollers",
+                    "description": "InitSer channel, rate, start, data, stop, parity, invert",
+                    "funcdesc": "This command will set up the serial communications. The parameters are as follows:\n\nchannel is 1, 2 or 3, and refers to the I/O ports that are used for communication.\n\nrate is the bit rate, which is given by the letter r and then the desiredrate in bps. Acceptable units are r300, r600, r1200, r2400, r4800, r9600 and r19200.\n\nstart gives the number of start bits, which is usually 1. To make the microcontroller wait for the start bit before proceeding with the receive, add 128 to start. (Note: it may be desirable to use the WaitForStart constant here.)\n\ndata tells the program how many data bits are to be sent or received. In most situations t his is 8, but it can range between 1 and 8, inclusive.\n\nstop is the number of stop bits. If start bit 7 is on, then this number will be ignored.\n\nparity refers to a system of error checking used by many devices. It can be odd (in which there must always be an odd number of high bits), even (where the number of high bits must always be even), or none (for systems that do not use parity).\n\ninvert can be either \"normal\" or \"invert\". If it in \"invert\", then high bits will be changed to low, and low to high"
+                },
+                {
+                    "name": "SerSend",
+                    "available": "All Microcontrollers",
+                    "description": "SerSend channel, data",
+                    "funcdesc": "This command will send a byte given by data using the RS232 channel referred to as channel according to the rules set using InitSer."
+                },
+                {
+                    "name": "SerReceive",
+                    "available": "All Microcontrollers",
+                    "description": "SerReceive channel, output",
+                    "funcdesc": "This command will read a byte from the RS232 channel given by channel according to the rules set using InitSer, and store the received byte in the variable output."
+                },
+                {
+                    "name": "SerPrint",
+                    "available": "All Microcontrollers",
+                    "description": "SerPrint channel, value",
+                    "funcdesc": "SerPrint is used to send a value over the serial connection. value can be a string, integer, long, word or byte.\n\nchannel is the serial connection to send data through (1 | 2 |3 ).\n\nSerPrint will not send any new line characters. If the chip is sending to a terminal, these commands should follow SerPrint."
+                },
+                {
+                    "name": "SerNSend",
+                    "available": "All Microcontrollers",
+                    "description": "Ser1Send data",
+                    "funcdesc": "This command will send a byte given by data using the channel referred to as Ser1.. , Ser2… , Ser3… according to the rules set by the related defines."
+                },
+                {
+                    "name": "SerNReceive",
+                    "available": "All Microcontrollers",
+                    "description": "bytevar = Ser1Receive",
+                    "funcdesc": "This function will read a byte using the channel referred to as Ser1.. , Ser2, Ser3. according to the rules set by the related defines. The received byte is stored in the variable bytevar. By default the function waits for the startbit impulse edge before executing the following commands. See the sample files how to realize timeout-functionality or interrupt-driven receiving."
+                },
+                {
+                    "name": "HSerGetNum",
+                    "available": "All Microcontrollers",
+                    "description": "HSerGetNum myNum",
+                    "funcdesc": "This command will read a multi digit number received as ascii chars followed by a CR from an external serial source using a hardware serial module. The command checks that only numbers are input disregarding other characters while waiting for the ending <CR>. It can be used only as a subroutine."
                 }
             ]
         }
