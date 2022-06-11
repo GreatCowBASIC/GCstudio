@@ -4,17 +4,15 @@
 # ---------------------------------------------------------------------------------------------
 builtin autoload -Uz add-zsh-hook
 
-# Now that the init script is running, unset ZDOTDIR to ensure ~/.zlogout runs as expected as well
-# as prevent problems that may occur if the user's init scripts depend on ZDOTDIR not being set.
-builtin unset ZDOTDIR
-
 # This variable allows the shell to both detect that VS Code's shell integration is enabled as well
 # as disable it by unsetting the variable.
 VSCODE_SHELL_INTEGRATION=1
 
-
-if [[ $options[norcs] = off  && -f ~/.zshrc ]]; then
-	. ~/.zshrc
+if [[ $options[norcs] = off  && -f $USER_ZDOTDIR/.zshrc ]]; then
+	VSCODE_ZDOTDIR=$ZDOTDIR
+	ZDOTDIR=$USER_ZDOTDIR
+	. $USER_ZDOTDIR/.zshrc
+	ZDOTDIR=$VSCODE_ZDOTDIR
 fi
 
 # Shell integration was disabled by the shell, exit without warning assuming either the shell has
@@ -23,6 +21,7 @@ if [ -z "$VSCODE_SHELL_INTEGRATION" ]; then
 	builtin return
 fi
 
+__vsc_initialized="0"
 __vsc_in_command_execution="1"
 __vsc_last_history_id=0
 
@@ -60,11 +59,14 @@ __vsc_right_prompt_end() {
 
 __vsc_command_complete() {
 	builtin local __vsc_history_id=$(builtin history | tail -n1 | awk '{print $1;}')
-	if [[ "$__vsc_history_id" == "$__vsc_last_history_id" ]]; then
-		builtin printf "\033]633;D\007"
-	else
-		builtin printf "\033]633;D;%s\007" "$__vsc_status"
-		__vsc_last_history_id=$__vsc_history_id
+	# Don't write the command complete sequence for the first prompt without an associated command
+	if [[ "$__vsc_initialized" == "1" ]]; then
+		if [[ "$__vsc_history_id" == "$__vsc_last_history_id" ]]; then
+			builtin printf "\033]633;D\007"
+		else
+			builtin printf "\033]633;D;%s\007" "$__vsc_status"
+			__vsc_last_history_id=$__vsc_history_id
+		fi
 	fi
 	__vsc_update_cwd
 }
@@ -101,15 +103,9 @@ __vsc_preexec() {
 	if [ -n "$RPROMPT" ]; then
 		RPROMPT="$__vsc_prior_rprompt"
 	fi
+	__vsc_initialized="1"
 	__vsc_in_command_execution="1"
 	__vsc_command_output_start
 }
 add-zsh-hook precmd __vsc_precmd
 add-zsh-hook preexec __vsc_preexec
-
-# Show the welcome message
-if [ -z "${VSCODE_SHELL_HIDE_WELCOME-}" ]; then
-	builtin echo "\033[1;32mShell integration activated\033[0m"
-else
-	VSCODE_SHELL_HIDE_WELCOME=""
-fi

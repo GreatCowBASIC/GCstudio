@@ -2,6 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = require("vscode");
+const data = require("./IntelliSenseGCB.json");
+var accessors = [];
+for (let i = 0; i < data.classes.length; i++) {
+    let val = data.classes[i].accessor;
+    if (val !== undefined && val.length > 0 && val.toLowerCase() !== "unknown") {
+        accessors.push(val);
+    }
+}
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 // let fs = require("fs");
@@ -15,6 +23,116 @@ const extensionId = "gcb";
 function activate(context) {
     //Symbol Provider
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider({ language: "GCB" }, new GCBDocumentSymbolProvider()));
+    //Completion Provider aka IntelliSense
+    let completionproviderCommands = vscode.languages.registerCompletionItemProvider('GCB', {
+        provideCompletionItems(document, position, token, context) {
+            let items = [];
+            for (let i = 0; i < data.commands.length; i++) {
+                const isCommand = (data.commands[i].prefix === "GCB_Commands");
+                let values = data.commands[i].values;
+                for (let a = 0; a < values.length; a++) {
+                    let item = new vscode.CompletionItem(values[a].name, vscode.CompletionItemKind.Method);
+                    if (isCommand) {
+                        item.documentation = "";
+                        if (values[a].funcdesc !== undefined) {
+                            item.documentation += values[a].funcdesc + "\n---\n";
+                        }
+                        else {
+                            item.documentation += "No Description\n---\n";
+                        }
+                        item.documentation += "Function: " + values[a].description + "\n";
+                        item.documentation += "Availability: " + values[a].available;
+                        item.detail = values[a].description;
+                    }
+                    else {
+                        item.documentation = values[a].description;
+                        item.detail = "Availability:" + values[a].available;
+                    }
+                    items.push(item);
+                }
+            }
+            return items;
+        }
+    });
+    let completionproviderDirectives = vscode.languages.registerCompletionItemProvider('GCB', {
+        provideCompletionItems(document, position, token, context) {
+            let linePrefix = document.lineAt(position).text.substr(0, position.character);
+            let items = [];
+            if (linePrefix.toLowerCase().endsWith("#")) {
+                for (let i = 0; i < data.directives.length; i++) {
+                    const isDirective = (data.directives[i].prefix === "GCB_Directives");
+                    let values = data.directives[i].values;
+                    for (let a = 0; a < values.length; a++) {
+                        let item = new vscode.CompletionItem(values[a].name, vscode.CompletionItemKind.Property);
+                        if (isDirective) {
+                            item.documentation = "";
+                            if (values[a].funcdesc !== undefined) {
+                                item.documentation += values[a].funcdesc + "\n---\n";
+                            }
+                            else {
+                                item.documentation += "No Description\n---\n";
+                            }
+                            item.documentation += "Directive: " + values[a].description + "\n";
+                            item.detail = values[a].description;
+                        }
+                        else {
+                            item.documentation = values[a].description;
+                        }
+                        items.push(item);
+                    }
+                }
+                return items;
+            }
+        }
+    }, '#' // triggered whenever a '#' is being typed
+    );
+    const completionproviderClasses = vscode.languages.registerCompletionItemProvider('GCB', {
+        provideCompletionItems(document, position) {
+            // get all text until the `position` and check if it reads `console.`
+            // and if so then complete if `log`, `warn`, and `error`
+            let linePrefix = document.lineAt(position).text.substr(0, position.character);
+            let items = [];
+            let hasFoundAccessor = false;
+            for (let a = 0; a < accessors.length && !hasFoundAccessor; a++) {
+                if (linePrefix.toLowerCase().endsWith(accessors[a] + " ")) {
+                    hasFoundAccessor = true;
+                    let hasFoundClass = false;
+                    for (let b = 0; b < data.classes.length && !hasFoundClass; b++) {
+                        if (data.classes[b].accessor === accessors[a]) {
+                            hasFoundClass = true;
+                            let funcs = data.classes[b].funcs;
+                            for (let func in funcs) {
+                                let item = new vscode.CompletionItem(func, vscode.CompletionItemKind.Variable);
+                                let f = funcs[func];
+                                let signature = funcs[func].signature;
+                                if (signature !== undefined) {
+                                    item.detail = signature;
+                                }
+                                let description = funcs[func].description;
+                                if (description !== undefined) {
+                                    item.documentation = description;
+                                }
+                                else {
+                                    item.documentation = "No Description";
+                                }
+                                let defvalue = funcs[func].value;
+                                if (defvalue !== undefined) {
+                                    item.documentation += "\n---\nDefault Value: " + defvalue;
+                                }
+                                items.push(item);
+                            }
+                        }
+                    }
+                }
+            }
+            if (hasFoundAccessor) {
+                return items;
+            }
+            return undefined;
+        }
+    }, ' ' // triggered whenever a ' ' is being typed
+    );
+    context.subscriptions.push(completionproviderCommands, completionproviderDirectives, completionproviderClasses);
     //Menu Bar
     if (!init) {
         init = true;

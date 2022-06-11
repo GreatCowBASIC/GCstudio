@@ -9,8 +9,8 @@
   "serverGreeting": [],
   "serverLicense": [],
   "serverLicensePrompt": "",
-  "serverApplicationName": "code-server-oss",
-  "serverDataFolderName": ".vscode-server-oss",
+  "serverApplicationName": "gccode-server",
+  "serverDataFolderName": ".gccode-server",
   "win32DirName": "GCcode",
   "win32NameVersion": "GCcode",
   "win32RegValueName": "GCcode",
@@ -20,29 +20,15 @@
   "win32UserAppId": "{{C6065F05-9603-4FC4-8101-B9781A25D88E}",
   "win32x64UserAppId": "{{2E1F05D1-C245-4562-81EE-28188DB6FD17}",
   "win32arm64UserAppId": "{{3AEBF0C8-F733-4AD4-BADE-FDB816D53D7B}",
-  "win32AppUserModelId": "Microsoft.VSCodium",
+  "win32AppUserModelId": "Microsoft.GCcode",
   "win32ShellNameShort": "Code",
   "darwinBundleIdentifier": "com.visualstudio.code.oss",
   "linuxIconName": "GCcode",
   "licenseFileName": "LICENSE.txt",
   "reportIssueUrl": "",
   "urlProtocol": "GCcode",
-  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/181b43c0e2949e36ecb623d8cc6de29d4fa2bae8/out/vs/workbench/contrib/webview/browser/pre/",
+  "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/3c8520fab514b9f56070214496b26ff68d1b1cb5/out/vs/workbench/contrib/webview/browser/pre/",
   "builtInExtensions": [{
-    "name": "ms-vscode.references-view",
-    "version": "0.0.89",
-    "repo": "https://github.com/microsoft/vscode-references-view",
-    "metadata": {
-      "id": "dc489f46-520d-4556-ae85-1f9eab3c412d",
-      "publisherId": {
-        "publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
-        "publisherName": "ms-vscode",
-        "displayName": "Microsoft",
-        "flags": "verified"
-      },
-      "publisherDisplayName": "Microsoft"
-    }
-  }, {
     "name": "ms-vscode.js-debug-companion",
     "version": "1.0.18",
     "repo": "https://github.com/microsoft/vscode-js-debug-companion",
@@ -58,7 +44,7 @@
     }
   }, {
     "name": "ms-vscode.js-debug",
-    "version": "1.67.2",
+    "version": "1.68.0",
     "repo": "https://github.com/microsoft/vscode-js-debug",
     "metadata": {
       "id": "25629058-ddac-4e17-abba-74678e126c5d",
@@ -72,7 +58,7 @@
     }
   }, {
     "name": "ms-vscode.vscode-js-profile-table",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "repo": "https://github.com/microsoft/vscode-js-profile-visualizer",
     "metadata": {
       "id": "7e52b41b-71ad-457b-ab7e-0620f1fc4feb",
@@ -281,14 +267,14 @@
       "default": false
     }
   },
-  "commit": "da15b6fd3ef856477bf6f4fb29ba1b7af717770d",
-  "date": "2022-05-14T17:16:09.175Z",
+  "commit": "4af164ea3a06f701fe3e89a2bcbb421d2026b68f",
+  "date": "2022-06-09T21:53:21.406Z",
   "checksums": {
-    "vs/base/parts/sandbox/electron-browser/preload.js": "HtQjPD9WWr55fSvt/4OAMw",
-    "vs/workbench/workbench.desktop.main.js": "Kr07Txba/VuoQ/cZk4VpzQ",
-    "vs/workbench/workbench.desktop.main.css": "BjAnKiuhvxZjhkPHmdvzkA",
-    "vs/workbench/api/node/extensionHostProcess.js": "oh0A9aQTKvMiRkbmbdj1Zg",
+    "vs/base/parts/sandbox/electron-browser/preload.js": "C2a+0+FOBzUNDiGGphvAVg",
+    "vs/workbench/workbench.desktop.main.js": "qJMQIbQ721KBw+H/00VXNQ",
+    "vs/workbench/workbench.desktop.main.css": "yHyEGHrrUDm5607qZvV4nw",
+    "vs/workbench/api/node/extensionHostProcess.js": "ueeBYHsGJWra9CSWXXViKg",
     "vs/code/electron-browser/workbench/workbench.html": "l8jPIdODqyMeav5sZa3tNQ",
-    "vs/code/electron-browser/workbench/workbench.js": "teSYp9dwZinOYfjmvtEgrA"
+    "vs/code/electron-browser/workbench/workbench.js": "+i35BfD8xnY/cWv6nvbn7Q"
   }
 }

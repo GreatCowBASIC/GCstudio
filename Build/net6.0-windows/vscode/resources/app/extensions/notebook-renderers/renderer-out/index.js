@@ -1236,7 +1236,7 @@ function generateViewMoreElement(outputId) {
   return container;
 }
 function truncatedArrayOfString(id, outputs, linesLimit, container) {
-  let buffer = outputs.join("\n").split(/\r|\n|\r\n/g);
+  let buffer = outputs.join("\n").split(/\r\n|\r|\n/g);
   let lineCount = buffer.length;
   if (lineCount < linesLimit) {
     const spanElement = handleANSIOutput(buffer.slice(0, linesLimit).join("\n"));

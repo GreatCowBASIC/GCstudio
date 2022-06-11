@@ -20,7 +20,7 @@ required to debug changes to any libraries licensed under the GNU Lesser General
 human-signals 1.1.1 - Apache-2.0
 https://git.io/JeluP
 
-Copyright 2019
+Copyright 2019 ehmicky <ehmicky@gmail.com>
 
                                  Apache License
                            Version 2.0, January 2004
@@ -1534,10 +1534,10 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ---------------------------------------------------------
 
-@c4312/chromehash 0.2.0 - MIT
+@c4312/chromehash 0.3.0 - MIT
 https://github.com/connor4312/chromehash#readme
 
-Copyright 2015 The Chromium Authors.
+Copyright 2015 The Chromium Authors
 
 Copyright 2015 The Chromium Authors. All rights reserved.
 
@@ -1723,6 +1723,38 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 https://github.com/microsoft/vscode-js-debug-browsers#readme
 
 Copyright (c) Microsoft Corporation.
+
+    MIT License
+
+    Copyright (c) Microsoft Corporation.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE
+
+
+---------------------------------------------------------
+
+---------------------------------------------------------
+
+@vscode/win32-app-container-tokens 0.1.0 - MIT
+
+
+Copyright (c) Microsoft Corporation
 
     MIT License
 
@@ -2029,10 +2061,9 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-axios 0.25.0 - MIT
+axios 0.26.1 - MIT
 https://axios-http.com/
 
-(c) 2022 by Matt Zabriskie
 Copyright (c) 2014-present Matt Zabriskie
 
 Copyright (c) 2014-present Matt Zabriskie
@@ -3737,7 +3768,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------
 
-follow-redirects 1.14.9 - MIT
+follow-redirects 1.15.0 - MIT
 https://github.com/follow-redirects/follow-redirects
 
 Copyright 2014-present Olivier Lalonde <olalonde@gmail.com> , James Talmage <james@talmage.io> , Ruben Verborgh
@@ -5850,6 +5881,52 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+---------------------------------------------------------
+
+---------------------------------------------------------
+
+node-addon-api 1.7.2 - MIT
+https://github.com/nodejs/node-addon-api
+
+Copyright (c) 2017
+
+The MIT License (MIT)
+=====================
+
+Copyright (c) 2017 Node.js API collaborators
+-----------------------------------
+
+*Node.js API collaborators listed at <https://github.com/nodejs/node-addon-api#collaborators>*
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---------------------------------------------------------
+
+---------------------------------------------------------
+
+node-addon-api 4.3.0 - MIT
+https://github.com/nodejs/node-addon-api
+
+Copyright (c) 2017
+
+The MIT License (MIT)
+=====================
+
+Copyright (c) 2017 Node.js API collaborators
+-----------------------------------
+
+*Node.js API collaborators listed at <https://github.com/nodejs/node-addon-api#collaborators>*
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---------------------------------------------------------
 
@@ -8451,7 +8528,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-tas-client 0.1.30 - MIT
+tas-client 0.1.40 - MIT
 
 
 Copyright (c) Microsoft Corporation
@@ -9036,7 +9113,7 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 
 ---------------------------------------------------------
 
-vscode-tas-client 0.1.31 - MIT
+vscode-tas-client 0.1.42 - MIT
 
 
 Copyright (c) Microsoft Corporation
