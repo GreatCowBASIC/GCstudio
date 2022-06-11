@@ -104,6 +104,10 @@
           "signature": "End Sub",
           "description": "Finish the current Sub, Applies to Subroutines"
         },
+        "Macro": {
+          "signature": "End Macro",
+          "description": "Finish the current Macro, Applies to Macros"
+        },
         "Function": {
           "signature": "End Function",
           "description": "Finish the current Function, Applies to Functions"
@@ -111,6 +115,35 @@
       },
       "extends": "",
       "accessor": "end"
+         
+    },
+
+    {
+      "title": "FVRInitialize Types",
+      "description": "This class contains all FVRInitialize Types",
+      "funcs": {
+        "(FVR_OFF)": {
+          "signature": "FVRInitialize (FVR_OFF)",
+          "description": "Fixed Voltage Reference is set to OFF"
+        },
+        "(FVR_1X)": {
+          "signature": "FVRInitialize (FVR_1X)",
+          "description": "Fixed Voltage Reference is set to 1.024v"
+        },
+
+        "(FVR_2X)": {
+          "signature": "FVRInitialize (FVR_2X)",
+          "description": "Fixed Voltage Reference is set to 2.048v"
+        },
+
+        "(FVR_4X)": {
+          "signature": "FVRInitialize (FVR_4X)",
+          "description": "Fixed Voltage Reference is set to 4.096v"
+        }
+
+      },
+      "extends": "",
+      "accessor": "fvrinitialize"
          
     },
 
@@ -146,6 +179,38 @@
       },
       "extends": "",
       "accessor": "lcdbacklight"
+         
+    },
+
+    {
+      "title": "GLCD Display",
+      "description": "This class contains all GLCD Display modes",
+      "funcs": {
+        "(On)": {
+          "signature": "GLCDDisplay (On)"
+        },
+        "(Off)": {
+          "signature": "GLCDDisplay (Off)"
+        }
+      },
+      "extends": "",
+      "accessor": "glcddisplay"
+         
+    },
+
+    {
+      "title": "HI2CMode Modes",
+      "description": "This class contains all HI2CMode modes",
+      "funcs": {
+        "(Master)": {
+          "signature": "HI2CMode (Master)"
+        },
+        "(Slave)": {
+          "signature": "HI2CMode (Slave)"
+        }
+      },
+      "extends": "",
+      "accessor": "hi2cmode"
          
     },
 
@@ -4184,6 +4249,12 @@
           "available": "All Microcontrollers",
           "description": "LOCKPSS",
           "funcdesc": "Peripheral Pin Select (PPS) has an operation mode in which all input and output selections can be prevented to stop inadvertent changes.\n\nPPS selections are locked by setting by the use of the LockPPS command.\n\nUsing this command will ensure the special sequence of Microchip assembler is handled correctly."
+        },
+        {
+          "name": "Macro",
+          "available": "All Microcontrollers",
+          "description": "Macro MacroName (var1, var2, varN)",
+          "funcdesc": "Macros are similar to subroutines. But during compilation, everything is inserted inline. This may increase the code size slightly, but it also reduces stack usage.\n\nParameters are handled in a similar way to how constants are handled, so there is a lot more freedom when passing things in to a macro. (Unlike subs or functions, where everything must be stored in a variable.)"
         }
 
       ]
