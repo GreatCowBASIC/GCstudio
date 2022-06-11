@@ -77,6 +77,601 @@
             "accessor": "exit"
         },
         {
+            "title": "End Types",
+            "description": "This class contains all End Types",
+            "funcs": {
+                "If": {
+                    "signature": "End If",
+                    "description": "Finish the current If, Applies to If"
+                },
+                "Select": {
+                    "signature": "End Select",
+                    "description": "Finish the current Select Case, Applies to Select Case"
+                },
+                "Repeat": {
+                    "signature": "End Repeat",
+                    "description": "Finish the current Repeat, Applies to Repeat"
+                },
+                "Table": {
+                    "signature": "End Table",
+                    "description": "Finish the current Table, Applies to Tables"
+                },
+                "Sub": {
+                    "signature": "End Sub",
+                    "description": "Finish the current Sub, Applies to Subroutines"
+                },
+                "Function": {
+                    "signature": "End Function",
+                    "description": "Finish the current Function, Applies to Functions"
+                }
+            },
+            "extends": "",
+            "accessor": "end"
+        },
+        {
+            "title": "Do Types",
+            "description": "This class contains all Do Types",
+            "funcs": {
+                "While": {
+                    "signature": "Do While"
+                },
+                "Until": {
+                    "signature": "Do Until"
+                },
+                "Forever": {
+                    "signature": "Do Forever"
+                }
+            },
+            "extends": "",
+            "accessor": "do"
+        },
+        {
+            "title": "LCD BackLight",
+            "description": "This class contains all LCD BackLight modes",
+            "funcs": {
+                "(On)": {
+                    "signature": "LCDBacklight (On)"
+                },
+                "(Off)": {
+                    "signature": "LCDBacklight (Off)"
+                }
+            },
+            "extends": "",
+            "accessor": "lcdbacklight"
+        },
+        {
+            "title": "Interrupt Events",
+            "description": "This class contains all Interrupt Events",
+            "funcs": {
+                "ADCReady": {
+                    "signature": "Microchip&AVR",
+                    "description": "The analog/digital converter has finished a conversion"
+                },
+                "BatteryFail": {
+                    "signature": "AVR",
+                    "description": "The battery has failed in some way. This is only implemented on the ATmega406"
+                },
+                "CANActivity": {
+                    "signature": "Microchip",
+                    "description": "CAN bus activity is taking place"
+                },
+                "CANBadMessage": {
+                    "signature": "Microchip",
+                    "description": "A bad CAN message has been received"
+                },
+                "CANError": {
+                    "signature": "Microchip&AVR",
+                    "description": "Some CAN error has occured"
+                },
+                "CANHighWatermark": {
+                    "signature": "Microchip",
+                    "description": "CAN high watermark reached"
+                },
+                "CANRx0Ready": {
+                    "signature": "Microchip",
+                    "description": "New message present in buffer 0"
+                },
+                "CANRx1Ready": {
+                    "signature": "Microchip",
+                    "description": "New message present in buffer 1"
+                },
+                "CANRx2Ready": {
+                    "signature": "Microchip",
+                    "description": "New message present in buffer 2"
+                },
+                "CANRxReady": {
+                    "signature": "Microchip",
+                    "description": "New message present"
+                },
+                "CANTransferComplete": {
+                    "signature": "AVR",
+                    "description": "Transfer of data has been completed"
+                },
+                "CANTx0Ready": {
+                    "signature": "Microchip",
+                    "description": "Buffer 0 has been sent"
+                },
+                "CANTx1Ready": {
+                    "signature": "Microchip",
+                    "description": "Buffer 1 has been sent"
+                },
+                "CANTx2Ready": {
+                    "signature": "Microchip",
+                    "description": "Buffer 2 has been sent"
+                },
+                "CANTxReady": {
+                    "signature": "Microchip",
+                    "description": "Sending has completed"
+                },
+                "CCADCAccReady": {
+                    "signature": "AVR",
+                    "description": "CC ADC accumulate conversion finished (ATmega406 only)"
+                },
+                "CCADCReady": {
+                    "signature": "AVR",
+                    "description": "CC ADC instantaneous conversion finished (ATmega406 only)"
+                },
+                "CCADCRegular": {
+                    "signature": "AVR",
+                    "description": "CC ADC regular conversion finished (ATmega406 only)"
+                },
+                "CCP1": {
+                    "signature": "Microchip",
+                    "description": "The CCP1 module has captured an event"
+                },
+                "CCP2": {
+                    "signature": "Microchip",
+                    "description": "The CCP2 module has captured an event"
+                },
+                "CCP3": {
+                    "signature": "Microchip",
+                    "description": "The CCP3 module has captured an event"
+                },
+                "CCP4": {
+                    "signature": "Microchip",
+                    "description": "The CCP4 module has captured an event"
+                },
+                "CCP5": {
+                    "signature": "Microchip",
+                    "description": "The CCP5 module has captured an event"
+                },
+                "Comp0Change": {
+                    "signature": "Microchip&AVR",
+                    "description": "The output of comparator 0 has changed"
+                },
+                "Comp1Change": {
+                    "signature": "Microchip&AVR",
+                    "description": "The output of comparator 1 has changed"
+                },
+                "Comp2Change": {
+                    "signature": "Microchip&AVR",
+                    "description": "The output of comparator 2 has changed"
+                },
+                "Crypto": {
+                    "signature": "Microchip",
+                    "description": "The KEELOQ module has generated an interrupt"
+                },
+                "EEPROMReady": {
+                    "signature": "Microchip&AVR",
+                    "description": "An EEPROM write has finished"
+                },
+                "Ethernet": {
+                    "signature": "Microchip",
+                    "description": "The Ethernet module has generated an interrupt. This must be dealt within the handler."
+                },
+                "ExtInt0": {
+                    "signature": "Microchip&AVR",
+                    "description": "External Interrupt pin 0 has been detected"
+                },
+                "ExtInt1": {
+                    "signature": "Microchip&AVR",
+                    "description": "External Interrupt pin 1 has been detected"
+                },
+                "ExtInt2": {
+                    "signature": "Microchip&AVR",
+                    "description": "External Interrupt pin 2 has been detected"
+                },
+                "ExtInt3": {
+                    "signature": "Microchip&AVR",
+                    "description": "External Interrupt pin 3 has been detected"
+                },
+                "ExtInt4": {
+                    "signature": "AVR",
+                    "description": "External Interrupt pin 4 has been detected"
+                },
+                "ExtInt5": {
+                    "signature": "AVR",
+                    "description": "External Interrupt pin 5 has been detected"
+                },
+                "ExtInt6": {
+                    "signature": "AVR",
+                    "description": "External Interrupt pin 6 has been detected"
+                },
+                "ExtInt7": {
+                    "signature": "AVR",
+                    "description": "External Interrupt pin 7 has been detected"
+                },
+                "GPIOChange": {
+                    "signature": "Microchip",
+                    "description": "The pins on port GPIO have changed"
+                },
+                "LCDReady": {
+                    "signature": "Microchip&AVR",
+                    "description": "The LCD is about to draw a segment"
+                },
+                "LPWU": {
+                    "signature": "Microchip",
+                    "description": "The Low Power Wake Up has been detected"
+                },
+                "OscillatorFail": {
+                    "signature": "Microchip",
+                    "description": "The external oscillator has failed, and the microcontroller is running from an internal oscillator."
+                },
+                "PinChange": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT pin has changed"
+                },
+                "PinChange0": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT0 pin has changed"
+                },
+                "PinChange1": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT1 pin has changed"
+                },
+                "PinChange2": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT2 pin has changed"
+                },
+                "PinChange3": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT3 pin has changed"
+                },
+                "PinChange4": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT4 pin has changed"
+                },
+                "PinChange5": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT5 pin has changed"
+                },
+                "PinChange6": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT6 pin has changed"
+                },
+                "PinChange7": {
+                    "signature": "AVR",
+                    "description": "Logic level of PCINT7 pin has changed"
+                },
+                "PMPReady": {
+                    "signature": "Microchip",
+                    "description": "A Parallel Master Port read or write has finished"
+                },
+                "PORTChange": {
+                    "signature": "Microchip",
+                    "description": "The pins on ports ABCEDEF have changed. This is generic port change interrupt. You must inspect the source to ensure you are handlign the correct interrupt."
+                },
+                "PORTAChange": {
+                    "signature": "Microchip",
+                    "description": "The pins on port A have changed"
+                },
+                "PORTABChange": {
+                    "signature": "Microchip",
+                    "description": "The pins on port A and/or B have changed"
+                },
+                "PORTBChange": {
+                    "signature": "Microchip&AVR",
+                    "description": "The pins on port B have changed"
+                },
+                "PSC0Capture": {
+                    "signature": "AVR",
+                    "description": "The counter for Power Stage Controller 0 matches the value in a compare register, the value of the counter has been captured, or a synchronisation error has occurred"
+                },
+                "PSC0EndCycle": {
+                    "signature": "AVR",
+                    "description": "Power Stage Controller 0 has reached the end of its cycle"
+                },
+                "PSC1Capture": {
+                    "signature": "AVR",
+                    "description": "The counter for Power Stage Controller 1 matches the value in a compare register, the value of the counter has been captured, or a synchronisation error has occurred"
+                },
+                "PSC1EndCycle": {
+                    "signature": "AVR",
+                    "description": "Power Stage Controller 1 has reached the end of its cycle"
+                },
+                "PSC2Capture": {
+                    "signature": "AVR",
+                    "description": "The counter for Power Stage Controller 2 matches the value in a compare register, the value of the counter has been captured, or a synchronisation error has occurred"
+                },
+                "PSC2EndCycle": {
+                    "signature": "AVR",
+                    "description": "Power Stage Controller 2 has reached the end of its cycle"
+                },
+                "PSPReady": {
+                    "signature": "Microchip",
+                    "description": "A Parallel Slave Port read or write has finished"
+                },
+                "PWMTimeBase": {
+                    "signature": "Microchip",
+                    "description": "The PWM time base matches the PWM Time Base Period register (PTPER)"
+                },
+                "SPIReady": {
+                    "signature": "AVR",
+                    "description": "The SPI module has finished the previous transfer"
+                },
+                "SPMReady": {
+                    "signature": "AVR",
+                    "description": "A write to program memory by the spm instruction has finished"
+                },
+                "SPPReady": {
+                    "signature": "Microchip",
+                    "description": "A SPP read or write has finished"
+                },
+                "SSP1Collision": {
+                    "signature": "Microchip",
+                    "description": "SSP1 has detected a bus collision"
+                },
+                "SSP1Ready": {
+                    "signature": "Microchip",
+                    "description": "The SSP/SSP1/MSSP1 module has finished sending or receiving"
+                },
+                "SSP2Collision": {
+                    "signature": "Microchip",
+                    "description": "SSP2 has detected a bus collision"
+                },
+                "SSP2Ready": {
+                    "signature": "Microchip",
+                    "description": "The SSP2/MSSP2 module has finished sending or receiving"
+                },
+                "Timer0Capture": {
+                    "signature": "AVR",
+                    "description": "An input event on the pin ICP0 has caused the value of Timer 0 to be captured in the ICR0 register"
+                },
+                "Timer0Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 0 matches the Timer 0 output compare register A (OCR0A)"
+                },
+                "Timer0Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 0 matches the Timer 0 output compare register B (OCR0B)"
+                },
+                "Timer0Overflow": {
+                    "signature": "Microchip&AVR",
+                    "description": "Timer 0 has overflowed"
+                },
+                "Timer1Capture": {
+                    "signature": "AVR",
+                    "description": "An input event on the pin ICP1 has caused the value of Timer 1 to be captured in the ICR1 register"
+                },
+                "Timer1Error": {
+                    "signature": "AVR",
+                    "description": "The Timer 1 Fault Protection unit has been detected by an input on the INT0 pin"
+                },
+                "Timer1Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 1 matches the Timer 1 output compare register A (OCR1A) "
+                },
+                "Timer1Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 1 matches the Timer 1 output compare register B (OCR1B)"
+                },
+                "Timer1Match3": {
+                    "signature": "AVR",
+                    "description": "Timer 1 matches the Timer 1 output compare register C (OCR1C)"
+                },
+                "Timer1Match4": {
+                    "signature": "AVR",
+                    "description": "Timer 1 matches the Timer 1 output compare register D (OCR1D)"
+                },
+                "Timer1Overflow": {
+                    "signature": "Microchip&AVR",
+                    "description": "Timer 1 has overflowed"
+                },
+                "Timer2Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 2 matches the Timer 2 output compare register (PR2)"
+                },
+                "Timer2Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 2 matches the Timer 2 output compare register A (OCR2A)"
+                },
+                "Timer2Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 2 matches the Timer 2 output compare register B (OCR2B)"
+                },
+                "Timer2Overflow": {
+                    "signature": "AVR",
+                    "description": "Timer 2 has overflowed"
+                },
+                "Timer3Capture": {
+                    "signature": "AVR",
+                    "description": "An input event on the pin ICP3 has caused the value of Timer 3 to be captured in the ICR3 register"
+                },
+                "Timer3Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 3 matches the Timer 3 output compare register A (OCR3A)"
+                },
+                "Timer3Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 3 matches the Timer 3 output compare register B (OCR3B)"
+                },
+                "Timer3Match3": {
+                    "signature": "AVR",
+                    "description": "Timer 3 matches the Timer 3 output compare register C (OCR3C)"
+                },
+                "Timer3Overflow": {
+                    "signature": "Microchip&AVR",
+                    "description": "Timer 3 has overflowed"
+                },
+                "Timer4Capture": {
+                    "signature": "AVR",
+                    "description": "An input event on the pin ICP4 has caused the value of Timer 4 to be captured in the ICR4 register"
+                },
+                "Timer4Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 4 matches the Timer 4 output compare register (PR4)"
+                },
+                "Timer4Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 4 matches the Timer 4 output compare register A (OCR4A)"
+                },
+                "Timer4Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 4 matches the Timer 4 output compare register B (OCR4B)"
+                },
+                "Timer4Match3": {
+                    "signature": "AVR",
+                    "description": "Timer 4 matches the Timer 4 output compare register C (OCR4C)"
+                },
+                "Timer4Overflow": {
+                    "signature": "AVR",
+                    "description": "Timer 4 has overflowed"
+                },
+                "Timer5CAP1": {
+                    "signature": "Microchip",
+                    "description": "An input on the CAP1 pin has caused the value of Timer 5 to be captured in CAP1BUF"
+                },
+                "Timer5CAP2": {
+                    "signature": "Microchip",
+                    "description": "An input on the CAP2 pin has caused the value of Timer 5 to be captured in CAP2BUF"
+                },
+                "Timer5CAP3": {
+                    "signature": "Microchip",
+                    "description": "An input on the CAP3 pin has caused the value of Timer 5 to be captured in CAP3BUF"
+                },
+                "Timer5Capture": {
+                    "signature": "AVR",
+                    "description": "An input event on the pin ICP5 has caused the value of Timer 5 to be captured in the ICR5 register"
+                },
+                "Timer5Match1": {
+                    "signature": "AVR",
+                    "description": "Timer 5 matches the Timer 5 output compare register A (OCR5A)"
+                },
+                "Timer5Match2": {
+                    "signature": "AVR",
+                    "description": "Timer 5 matches the Timer 5 output compare register B (OCR5B)"
+                },
+                "Timer5Match3": {
+                    "signature": "AVR",
+                    "description": "Timer 5 matches the Timer 5 output compare register C (OCR5C)"
+                },
+                "Timer5Overflow": {
+                    "signature": "Microchip&AVR",
+                    "description": "Timer 5 has overflowed"
+                },
+                "Timer6Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 6 matches the Timer 6 output compare register (PR6)"
+                },
+                "Timer7Overflow": {
+                    "signature": "Microchip",
+                    "description": "Timer 7 has overflowed"
+                },
+                "Timer8Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 8 matches the Timer 8 output compare register (PR8)"
+                },
+                "Timer10Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 10 matches the Timer 10 output compare register (PR10)"
+                },
+                "Timer12Match": {
+                    "signature": "Microchip",
+                    "description": "Timer 12 matches the Timer 12 output compare register (PR12)"
+                },
+                "TWIConnect": {
+                    "signature": "Microchip&AVR",
+                    "description": "The Atmel AVR has been connected to or disconnected from the TWI (I2C) bus"
+                },
+                "TWIReady": {
+                    "signature": "Microchip&AVR",
+                    "description": "The TWI has finished the previous transmission and is ready to send or receive more data"
+                },
+                "UsartRX1Ready": {
+                    "signature": "Microchip&AVR",
+                    "description": "UART/USART 1 has received data"
+                },
+                "UsartRX2Ready": {
+                    "signature": "Microchip&AVR",
+                    "description": "UART/USART 2 has received data"
+                },
+                "UsartRX3Ready": {
+                    "signature": "AVR",
+                    "description": "UART/USART 3 has received data"
+                },
+                "UsartRX4Ready": {
+                    "signature": "AVR",
+                    "description": "UART/USART 4 has received data"
+                },
+                "UsartTX1Ready": {
+                    "signature": "Microchip&AVR",
+                    "description": "UART/USART 1 is ready to send data"
+                },
+                "UsartTX1Sent": {
+                    "signature": "AVR",
+                    "description": "UART/USART 1 has finished sending data"
+                },
+                "UsartTX2Ready": {
+                    "signature": "Microchip&AVR",
+                    "description": "UART/USART 2 is ready to send data"
+                },
+                "UsartTX2Sent": {
+                    "signature": "AVR",
+                    "description": "UART/USART 2 has finished sending data"
+                },
+                "UsartTX3Ready": {
+                    "signature": "AVR",
+                    "description": "UART/USART 3 is ready to send data"
+                },
+                "UsartTX3Sent": {
+                    "signature": "AVR",
+                    "description": "UART/USART 3 has finished sending data"
+                },
+                "UsartTX4Ready": {
+                    "signature": "AVR",
+                    "description": "UART/USART 4 is ready to send data"
+                },
+                "UsartTX4Sent": {
+                    "signature": "AVR",
+                    "description": "UART/USART 4 has finished sending data"
+                },
+                "USBEndpoint": {
+                    "signature": "AVR",
+                    "description": "A USB endpoint has generated an interrupt"
+                },
+                "USB": {
+                    "signature": "Microchip&AVR",
+                    "description": "The USB module has generated an interrupt. This must be dealt with in the handler."
+                },
+                "USIOverflow": {
+                    "signature": "AVR",
+                    "description": "The USI counter has overflowed from 15 to 0"
+                },
+                "USIStart": {
+                    "signature": "AVR",
+                    "description": "The USI module has detected a start condition"
+                },
+                "VoltageFail": {
+                    "signature": "Microchip",
+                    "description": "The input voltage has dropped too low"
+                },
+                "VoltageRegulator": {
+                    "signature": "AVR",
+                    "description": "An interrupt has been generated by the voltage regulator (ATmega16HVA only)"
+                },
+                "WakeUp": {
+                    "signature": "AVR",
+                    "description": "The Wake-Up timer has overflowed"
+                },
+                "WDT": {
+                    "signature": "AVR",
+                    "description": "An interrupt has been generated by the Watchdog Timer"
+                }
+            },
+            "extends": "",
+            "accessor": "on interrupt"
+        },
+        {
             "title": "Default Includes",
             "description": "This class contains the default includes",
             "funcs": {
@@ -2011,6 +2606,30 @@
                     "funcdesc": "The Dim variable command is used to instruct Great Cow BASIC to allocate variables or to create alternate names for existing variables (using Alias) or to create variables at a specific memory location (using At)."
                 },
                 {
+                    "name": "ReadTable",
+                    "available": "All Microcontrollers",
+                    "description": "ReadTable TableName, Item, Output",
+                    "funcdesc": "The ReadTable command is used to read information from lookup tables. TableName is the name of the table that is to be read, Item is the line of the table to read, and Output is the variable to write the retrieved value in to."
+                },
+                {
+                    "name": "Table",
+                    "available": "All Microcontrollers",
+                    "description": "Table TableName as [Byte | Word | Integer | Long ]",
+                    "funcdesc": "A lookup table is a list of values that are stored in the memory of the microcontroller, which then can be accessed using the ReadTable command."
+                },
+                {
+                    "name": "Sub",
+                    "available": "All Microcontrollers",
+                    "description": "sub SubName(Var1, Var2, varEtc)",
+                    "funcdesc": "A subroutine is a small program inside of the main program. Subroutines are typically used when a task needs to be repeated several times in different parts of the main program."
+                },
+                {
+                    "name": "Function",
+                    "available": "All Microcontrollers",
+                    "description": "Function FuncName",
+                    "funcdesc": "Functions are a special type of subroutine that can return a value. This means that when the name of the function is used in the place of a variable, Great Cow BASIC will call the function, get a value from it, and then put the value into the line of code in the place of the variable.\n\nFunctions may also have parameters - these are treated in exactly the same way as parameters for subroutines. The only exception is that brackets are required around any parameters when calling a function."
+                },
+                {
                     "name": "SPIMode",
                     "available": "Microchip PIC",
                     "description": "SPIMode ( Mode [, SPIClockMode])",
@@ -2209,6 +2828,12 @@
                     "funcdesc": "The Do command will cause the code between the Do and the Loop to run repeatedly while condition is true or until condition is true, depending on whether While or Until has been specified.\n\nNote that the While or Until and the condition can only be specified once, or not at all. If they are not specified, then the code will repeat endlessly.\n\nOptionally, you can specify a condition to EXIT the Do-Loop immediately."
                 },
                 {
+                    "name": "Loop",
+                    "available": "All Microcontrollers",
+                    "description": "Loop",
+                    "funcdesc": "Finish the current do loop"
+                },
+                {
                     "name": "End",
                     "available": "All Microcontrollers",
                     "description": "End",
@@ -2227,6 +2852,12 @@
                     "funcdesc": "The For command is ideal for situations where a piece of code needs to be run a set number of times, and where it is necessary to keep track of how many times the code has run. When the For command is first executed, counter is set to start. Then, each successive time the program loops, increment is added to counter, until counter is equal to end. Then, the program continues beyond the Next.\n\nStep and increment are optionals. If Step is not specified, Great Cow BASIC will increment counter by 1 each time the code is run.\n\nincrement can be a positive or negative constant or an integer.\n\nThe Exit For is optional and can be used to exit the loop upon a specific condition."
                 },
                 {
+                    "name": "Next",
+                    "available": "All Microcontrollers",
+                    "description": "Next",
+                    "funcdesc": "Finish the current For"
+                },
+                {
                     "name": "Gosub",
                     "available": "All Microcontrollers",
                     "description": "Gosub label",
@@ -2240,6 +2871,18 @@
                 },
                 {
                     "name": "If",
+                    "available": "All Microcontrollers",
+                    "description": "If condition Then command",
+                    "funcdesc": "The If command is the most common command used to make decisions. If condition is true, then command (short) or program code (long) will be run. If it is false, then the microcontroller will skip to the code located on the next line (short) or after the End If (long form).\n\nIf Else is used, then the condition between If and Else will run if the condition is true, and the code between Else and End If will run if the condition is false.\n\nIf Else if is used, then the condition after the Else if will run if the condition is true."
+                },
+                {
+                    "name": "Else",
+                    "available": "All Microcontrollers",
+                    "description": "Else",
+                    "funcdesc": "The If command is the most common command used to make decisions. If condition is true, then command (short) or program code (long) will be run. If it is false, then the microcontroller will skip to the code located on the next line (short) or after the End If (long form).\n\nIf Else is used, then the condition between If and Else will run if the condition is true, and the code between Else and End If will run if the condition is false.\n\nIf Else if is used, then the condition after the Else if will run if the condition is true."
+                },
+                {
+                    "name": "Then",
                     "available": "All Microcontrollers",
                     "description": "If condition Then command",
                     "funcdesc": "The If command is the most common command used to make decisions. If condition is true, then command (short) or program code (long) will be run. If it is false, then the microcontroller will skip to the code located on the next line (short) or after the End If (long form).\n\nIf Else is used, then the condition between If and Else will run if the condition is true, and the code between Else and End If will run if the condition is false.\n\nIf Else if is used, then the condition after the Else if will run if the condition is true."
@@ -2300,6 +2943,18 @@
                 },
                 {
                     "name": "On Interrupt",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "On Interrupt event Call handler",
+                    "funcdesc": "On Interrupt will add code to call the subroutine handler whenever the interrupt event occurs. When Call is specified, Great Cow BASIC will enable the interrupt, and call the interrupt handler when it occurs. When Ignore is specified, Great Cow BASIC will disable the interrupt handler and prevent it from being called when the event occurs. If the event occurs while the handler is disabled, then the handler will be called as soon as it is re-enabled. The only way to prevent this from happening is to manually clear the flag bit for the interrupt."
+                },
+                {
+                    "name": "Call",
+                    "available": "Microchip PIC|Atmel AVR",
+                    "description": "On Interrupt event Call handler",
+                    "funcdesc": "On Interrupt will add code to call the subroutine handler whenever the interrupt event occurs. When Call is specified, Great Cow BASIC will enable the interrupt, and call the interrupt handler when it occurs. When Ignore is specified, Great Cow BASIC will disable the interrupt handler and prevent it from being called when the event occurs. If the event occurs while the handler is disabled, then the handler will be called as soon as it is re-enabled. The only way to prevent this from happening is to manually clear the flag bit for the interrupt."
+                },
+                {
+                    "name": "Ignore",
                     "available": "Microchip PIC|Atmel AVR",
                     "description": "On Interrupt event Call handler",
                     "funcdesc": "On Interrupt will add code to call the subroutine handler whenever the interrupt event occurs. When Call is specified, Great Cow BASIC will enable the interrupt, and call the interrupt handler when it occurs. When Ignore is specified, Great Cow BASIC will disable the interrupt handler and prevent it from being called when the event occurs. If the event occurs while the handler is disabled, then the handler will be called as soon as it is re-enabled. The only way to prevent this from happening is to manually clear the flag bit for the interrupt."
@@ -2509,15 +3164,21 @@
                     "funcdesc": "Reads a byte of data from the Graphic LCD memory"
                 },
                 {
-                    "name": "GLCDTimeDelay",
+                    "name": "GLCDTime",
                     "available": "All Microcontrollers",
                     "description": "GLCDTime",
                     "funcdesc": "This will call the delay routine that delays data transmissions. By default this is set to 20, which equate to 20 us. GLCDTimeDelay default of 20us is for 32Mhz support. The can be reduced for slower chip speeds by change the constant ST7920WriteDelay."
                 },
                 {
-                    "name": "GLCDTransaction",
+                    "name": "GLCD_Open_PageTransaction",
                     "available": "All Microcontrollers",
                     "description": "GLCD_Open_PageTransaction",
+                    "funcdesc": "To make the operation of GLCD seamless - specific library supports GLCDTransaction.   GLCDTransaction automatically manages the methods to update the GLCD display via a RAM memory buffer, where this buffer can be small relative to the size of the total number of GLCD pixels.\n\nThe process of GLCDtransaction sends GLCD commands to the GLCD display on a page and page basis.\nEach page is the size of the buffer and for a large GLCD display the number of pages may be equivilent to the numbers of pixels high (height).\n\nGLCDTransaction simplies the operation by ensure the buffer is setup correctly, handles the GLCD appropiately, handles the sending of the buffer and then close out the update to the display."
+                },
+                {
+                    "name": "GLCD_Close_PageTransaction",
+                    "available": "All Microcontrollers",
+                    "description": "GLCD_Close_PageTransaction",
                     "funcdesc": "To make the operation of GLCD seamless - specific library supports GLCDTransaction.   GLCDTransaction automatically manages the methods to update the GLCD display via a RAM memory buffer, where this buffer can be small relative to the size of the total number of GLCD pixels.\n\nThe process of GLCDtransaction sends GLCD commands to the GLCD display on a page and page basis.\nEach page is the size of the buffer and for a large GLCD display the number of pages may be equivilent to the numbers of pixels high (height).\n\nGLCDTransaction simplies the operation by ensure the buffer is setup correctly, handles the GLCD appropiately, handles the sending of the buffer and then close out the update to the display."
                 },
                 {
@@ -2666,18 +3327,6 @@
                 },
                 {
                     "name": "HPWMUpdate",
-                    "available": "All Microcontrollers",
-                    "description": "HPWMUpdate ( channel, duty_cycle )",
-                    "funcdesc": "This command only supports the previously called HPWM CCP command, or, if you have set more than one HPWM CCP channel then to use the command you must have set the channel to the same frequency.\n\nThe command only supports the CCP module of the Microchip PIC microcontroller to generate a PWM waveform at the previously defined frequency and timer source.\n\nchannel is 1, 2, 3, 4 or 5. These corresponds to the CCP1 through to CCP5 respectively. The channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 255 where 255 is 100% duty cycle"
-                },
-                {
-                    "name": "HPWMOff",
-                    "available": "All Microcontrollers",
-                    "description": "HPWMOff ( channel )   'selectively turn off the CCP channel",
-                    "funcdesc": "This command will disable the output of the CCP1/PWM module on the Microchip PIC chip."
-                },
-                {
-                    "name": "HPWMUpdate",
                     "available": "Microchip PIC",
                     "description": "HPWMUpdate ( channel, duty_cycle )",
                     "funcdesc": "This command only supports the previously called HPWM 10 Bit command, or, if you have set more than one HPWM 10 Bit PWM channel then to use the command you must have set the channel to the same frequency.\n\nThe command only supports the hardware PWM module of the Microchip PIC microcontroller to generate a PWM waveform at the previously defined frequency and timer source.\n\nchannel is 1, 2, 3, 4, 5, 6, 7 or 8. These corresponds to the HPWM1 through to HPWM8 respectively. The channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 1023 where 1023 is 100% duty cycle."
@@ -2689,7 +3338,7 @@
                     "funcdesc": "This command will disable the output of the PWM module on the Microchip PIC chip.\n\nPWMHardware is a Great Cow BASIC defined constant not a user vaariable."
                 },
                 {
-                    "name": "HPWM 16 Bit",
+                    "name": "HPWM16",
                     "available": "All Microcontrollers",
                     "description": "HPWM16 channel, frequency, duty cycle",
                     "funcdesc": "This command sets up the hardware PWM module of the Microchip PIC microcontroller to generate a PWM waveform of the given frequency and duty cycle. Once this command is called, the PWM will be emitted until HPWM16Off method is called.\n\nchannel is 1, 2, 3.. 12. These corresponds to the 16-bit PWM channel respectively.\nThe 16-bit PWM channel MUST be supported by the microcontroller. Check the microcontroller specific datasheet for the available channel.\n\nfrequency sets the frequency of the PWM output. It is measured in KHz. The maximum value allowed is 0xFFFF. The minimum value varies depending on the clock speed. 1 KHz is the minimum on chips 16 MHz or under and 2 Khz is the lowest possible on 20 MHz chips. In situations that do not require a specific PWM frequency, the PWM frequency should equal approximately 1 five-hundredth the clock speed of the microcontroller (ie 40 Khz on a 20 MHz chip, 16 KHz on an 8 MHz chip). This gives the best duty cycle resolution possible.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 0xFFFF where 0xFFFF is 100% duty cycle. This should be a WORD value."
@@ -2701,13 +3350,7 @@
                     "funcdesc": "Only available on Microchip PIC microcontrollers with Capture/Compare/PWM module CCP1.\n\nThis command does not operate on any other CCP channel."
                 },
                 {
-                    "name": "PWMOff",
-                    "available": "All Microcontrollers",
-                    "description": "PWMOff",
-                    "funcdesc": "This command will disable the output of the CCP1/PWM module on the Microchip PIC chip."
-                },
-                {
-                    "name": "HPWM AVR OCRnx",
+                    "name": "HPWM",
                     "available": "Atmel AVR",
                     "description": "HPWM channel, frequency, duty cycle",
                     "funcdesc": "The HPWM command sets up the hardware PWM module of the Atmel AVR microcontrollers to generate a PWM waveform of the given frequency and duty cycle. Once this command is called, the PWM will be emitted until the duty cycle parameter is written to zero.\n\nIf the need is just one particular frequency and duty cycle, one should use PWMOn and the constants PWM_Freq and PWM_Duty instead. PWMOn for the AVR is uniquely assigned to the OC0B pin, or channel 2. PWMOff will only shutdown the AVR HPWM channel 2.\n\nchannel described as 1, 2, 3,…​16 correspond to the pins OCR0A, OCR0B…​.OCR5C as detailed in the channel constant table. Channel 1 and channel 6 are not available.\n\nfrequency sets the frequency of the PWM output measured in Khz. The maximum value allowed is 255 KHz. In situations that do not require a specific PWM frequency, the PWM frequency should equal approximately 4 times the clock speed (GCB chipMHz) of the microcontroller (ie 63 KHz on a 16 MHz chip, 32 KHz on 8 MHz, 4 Khz on 1 MHz). This gives the best duty cycle resolution possible. Alternate frequencies with good duty cycle resolution are 1Khz, and 4Khz with chipMhz values of 16 and 8 respectively.\n\nduty cycle specifies the desired duty cycle of the PWM signal, and ranges from 0 to 255 where 255 is 100% duty cycle. The AVR fast PWM mode has a small spike at the extreme setting of 0x00, on most devices, with each period register rollover. By using the HPWM command, and writing 0x00 to the duty cycle parameter, the PWM signal will shutdown completely and avoid the spike. The PWM signal can then be restarted again with a new HPWM command."
@@ -2739,7 +3382,7 @@
                 {
                     "name": "DisplaySegment",
                     "available": "All Microcontrollers",
-                    "description": "DisplayValue (display, data)",
+                    "description": "DisplaySegment (display, data)",
                     "funcdesc": "This command will display the given value on a seven segment LED display.\n\ndisplay is the number of the display to use. Up to 4 digits.\n\ndata is the value between 0 and 255. Where data is the representation of the segments to be set."
                 },
                 {
@@ -2827,15 +3470,57 @@
                     "funcdesc": "SerPrint is used to send a value over the serial connection. value can be a string, integer, long, word or byte.\n\nchannel is the serial connection to send data through (1 | 2 |3 ).\n\nSerPrint will not send any new line characters. If the chip is sending to a terminal, these commands should follow SerPrint."
                 },
                 {
-                    "name": "SerNSend",
+                    "name": "Ser1Send",
                     "available": "All Microcontrollers",
                     "description": "Ser1Send data",
                     "funcdesc": "This command will send a byte given by data using the channel referred to as Ser1.. , Ser2… , Ser3… according to the rules set by the related defines."
                 },
                 {
-                    "name": "SerNReceive",
+                    "name": "Ser2Send",
+                    "available": "All Microcontrollers",
+                    "description": "Ser2Send data",
+                    "funcdesc": "This command will send a byte given by data using the channel referred to as Ser1.. , Ser2… , Ser3… according to the rules set by the related defines."
+                },
+                {
+                    "name": "Ser3Send",
+                    "available": "All Microcontrollers",
+                    "description": "Ser3Send data",
+                    "funcdesc": "This command will send a byte given by data using the channel referred to as Ser1.. , Ser2… , Ser3… according to the rules set by the related defines."
+                },
+                {
+                    "name": "Ser1Print",
+                    "available": "All Microcontrollers",
+                    "description": "Ser1Print value",
+                    "funcdesc": "This command will send a value using the channel referred to as Ser1, Ser2, Ser3. according to the rules set by the related defines. value can be a string, integer, long, word or byte."
+                },
+                {
+                    "name": "Ser2Print",
+                    "available": "All Microcontrollers",
+                    "description": "Ser1Print value",
+                    "funcdesc": "This command will send a value using the channel referred to as Ser1, Ser2, Ser3. according to the rules set by the related defines. value can be a string, integer, long, word or byte."
+                },
+                {
+                    "name": "Ser3Print",
+                    "available": "All Microcontrollers",
+                    "description": "Ser1Print value",
+                    "funcdesc": "This command will send a value using the channel referred to as Ser1, Ser2, Ser3. according to the rules set by the related defines. value can be a string, integer, long, word or byte."
+                },
+                {
+                    "name": "Ser1Receive",
                     "available": "All Microcontrollers",
                     "description": "bytevar = Ser1Receive",
+                    "funcdesc": "This function will read a byte using the channel referred to as Ser1.. , Ser2, Ser3. according to the rules set by the related defines. The received byte is stored in the variable bytevar. By default the function waits for the startbit impulse edge before executing the following commands. See the sample files how to realize timeout-functionality or interrupt-driven receiving."
+                },
+                {
+                    "name": "Ser2Receive",
+                    "available": "All Microcontrollers",
+                    "description": "bytevar = Ser2Receive",
+                    "funcdesc": "This function will read a byte using the channel referred to as Ser1.. , Ser2, Ser3. according to the rules set by the related defines. The received byte is stored in the variable bytevar. By default the function waits for the startbit impulse edge before executing the following commands. See the sample files how to realize timeout-functionality or interrupt-driven receiving."
+                },
+                {
+                    "name": "Ser3Receive",
+                    "available": "All Microcontrollers",
+                    "description": "bytevar = Ser3Receive",
                     "funcdesc": "This function will read a byte using the channel referred to as Ser1.. , Ser2, Ser3. according to the rules set by the related defines. The received byte is stored in the variable bytevar. By default the function waits for the startbit impulse edge before executing the following commands. See the sample files how to realize timeout-functionality or interrupt-driven receiving."
                 },
                 {
@@ -2843,6 +3528,624 @@
                     "available": "All Microcontrollers",
                     "description": "HSerGetNum myNum",
                     "funcdesc": "This command will read a multi digit number received as ascii chars followed by a CR from an external serial source using a hardware serial module. The command checks that only numbers are input disregarding other characters while waiting for the ending <CR>. It can be used only as a subroutine."
+                },
+                {
+                    "name": "HSerGetString",
+                    "available": "All Microcontrollers",
+                    "description": "HSerGetString myString",
+                    "funcdesc": "This command will read a multi character string received as ascii input to the hardware serial module followed by a CR from an external serial source. It can be used only as a subroutine. Variable type is string and the routine checks for numbers,letters, and puctuation."
+                },
+                {
+                    "name": "HSerPrint",
+                    "available": "All Microcontrollers",
+                    "description": "HSerPrint user_value",
+                    "funcdesc": "HSerPrint is used to send a value over the serial connection. user_value can be a string, integer, long, word or byte. HSerPrint is very similar to Print. The data will be sent out the hardware serial module.\n\nHSerPrint will not send any new line characters. If the chip is sending to a terminal, these commands should follow every HSerPrint :\n\nHSerPrint 13\n\nHSerPrint 10"
+                },
+                {
+                    "name": "HSerPrintStringCRLF",
+                    "available": "All Microcontrollers",
+                    "description": "DHSerPrintStringCRLF user_string",
+                    "funcdesc": "HSerPrintStringCRLF is used to send a string over the serial connection. The parameter can only be a string. HSerPrintStringCRLF is very similar to HserPrint but HserPrint can handle all types of variables.\n\nThe data will be sent out the hardware serial module."
+                },
+                {
+                    "name": "HSerReceive",
+                    "available": "All Microcontrollers",
+                    "description": "HSerReceive (user_byte_variable)",
+                    "funcdesc": "This command will read a byte from the hardware RS232 module. It can be used either as a subroutine or as a function. If used as a subroutine, a variable must be supplied to store the received value in. If used as a function, it will return the received value.\n\nThe subroutine HSerReceive can get a byte from any comport but must set the comport number immediately before the call. If ”#define USART_BLOCKING” is defined then the HserReceive waits in a loop until it receives a byte. If” #define USART_BLOCKING” is NOT defined then HserReceive returns the new byte that was received OR returns 255 because of “DefaultUsartReturnValue = 255” was defined. This is good because it don’t hold up your program from executing other commands and your can check it for new data priodically."
+                },
+                {
+                    "name": "HSerReceiveFrom",
+                    "available": "All Microcontrollers",
+                    "description": "user_byte = HSerReceiveFrom",
+                    "funcdesc": "This command will read a byte from the hardware RS232 module. It can be only be used as a function. It will return the received value."
+                },
+                {
+                    "name": "HSerSend",
+                    "available": "All Microcontrollers",
+                    "description": "HSerSend user_byte",
+                    "funcdesc": "This command will send a byte given by user_byte using the hardware RS232 module"
+                },
+                {
+                    "name": "HserPrintByteCRLF",
+                    "available": "All Microcontrollers",
+                    "description": "HserPrintByteCRLF  user_data",
+                    "funcdesc": "This command will send a byte given by user_data using the hardware USART module and then send the ASCII codes 13 and 10. ASCII codes 13 and 10 equate to a carriage return and line feed."
+                },
+                {
+                    "name": "HserPrintCRLF",
+                    "available": "All Microcontrollers",
+                    "description": "HserPrintCRLF [optional BYTE]",
+                    "funcdesc": "This command will send ASCII codes 13 and 10 only using the hardware RS232 module. ASCII codes 13 and 10 equate to a carriage return and line feed.\n\nOptionally, you can add a parameter. The number will determine the number of ASCII codes 13 and 10 set to the hardware RS232 module.\n\nAlso you can choose the comport with second optional parameter if it is not the default comport 1. If there is no first optional parameter then you must have atleast acomma before it to indicate this is the second parameter."
+                },
+                {
+                    "name": "InKey",
+                    "available": "All Microcontrollers",
+                    "description": "output = InKey",
+                    "funcdesc": "The InKey function will read the last pressed key from a PS/2 keyboard, and return an ASCII value corresponding to the key. If no key is pressed, then InKey will return 0.\n\nIt will also monitor Caps Lock, Num Lock and Scroll Lock keys, and update the status LEDs as appropriate."
+                },
+                {
+                    "name": "PS2SetKBLeds",
+                    "available": "All Microcontrollers",
+                    "description": "PS2SetKBLeds (LedStatus)",
+                    "funcdesc": "This routine will turn the status LEDs on a keyboard on or off. LedStatus is a variable, of which the lower 3 bits correspond to the 3 LEDs. Bit 0 is for Scroll Lock, bit 1 controls Num Lock and bit 2 controls Caps Lock.\n\nNote that this routine does not alter the status variables within the INKEY routine - so even if the Caps Lock LED is turned on, Caps Lock will stay off."
+                },
+                {
+                    "name": "PS2ReadByte",
+                    "available": "All Microcontrollers",
+                    "description": "output = PS2ReadByte",
+                    "funcdesc": "PS2ReadByte will read a byte from the PS/2 bus. It will return the byte, or 0 if no data was returned by the PS/2 device.\n\nThe PS/2 bus will normally be held in the inhibit state. PS2ReadByte will uninhibit the bus for 25 ms. If a response is received, it will be read. Then, the bus will be placed back in the inhibit state."
+                },
+                {
+                    "name": "PS2WriteByte",
+                    "available": "All Microcontrollers",
+                    "description": "PS2WriteByte user_data",
+                    "funcdesc": "PS2WriteByte will send a byte to a PS/2 device. Once the byte has been written, the PS/2 bus will be placed in the inhibit state."
+                },
+                {
+                    "name": "I2CAckPollState",
+                    "available": "All Microcontrollers",
+                    "description": "<test condition> I2CAckPollState",
+                    "funcdesc": "Should only be used when I2C routines are operating in Master mode, this command will return the last state of the acknowledge response from a specific I2C device on the I2C bus.\n\nI2CACKPOLL sets the state of variable I2CAckPollState.\nI2CAckPollState can only read - it cannot be set."
+                },
+                {
+                    "name": "I2CAckpoll",
+                    "available": "All Microcontrollers",
+                    "description": "I2CAckpoll ( I2C_device_address )",
+                    "funcdesc": "Should only be used when I2C routines are operating in Master mode, this command will look for a specific I2C device on the I2C bus.\n\nThis sets a global variable I2CAckPollState that can be inspected in your calling routine."
+                },
+                {
+                    "name": "I2CReceive",
+                    "available": "All Microcontrollers",
+                    "description": "I2CReceive data",
+                    "funcdesc": "The I2CReceive command will send data through the I2C connection. If ack is TRUE, or no value is given for ack, then I2CReceive will send an ack.\n\nIf in master mode, I2CReceive will read the data immediately.\n\nIf in slave mode, I2CReceive will wait for the master to send the data before reading. When the method I2CReceive is used in Slave mode the global variable I2CMatch will be set to true when the received value is equal to the constant I2C_ADDRESS."
+                },
+                {
+                    "name": "I2CReset",
+                    "available": "All Microcontrollers",
+                    "description": "I2CReset",
+                    "funcdesc": "This will attempt a reset of the I2C by changing the state of the I2C bus."
+                },
+                {
+                    "name": "I2CRestart",
+                    "available": "All Microcontrollers",
+                    "description": "I2CRestart",
+                    "funcdesc": "If the I2C routines are operating in Master mode, this command will send a start and restart condition in a single command."
+                },
+                {
+                    "name": "I2CSend",
+                    "available": "All Microcontrollers",
+                    "description": "I2CSend data",
+                    "funcdesc": "The I2CSend command will send data through the I2C connection. If ack is TRUE, or no value is given for ack, then I2CSend will wait for an Ack from the receiver before continuing. If in master mode, I2CSend will send the data immediately. If in slave mode, I2CSend will wait for the master to request the data before sending."
+                },
+                {
+                    "name": "I2CStart",
+                    "available": "All Microcontrollers",
+                    "description": "I2CStart",
+                    "funcdesc": "If the I2C routines are operating in Master mode, this command will send a start condition. If routines are in Slave mode, it will pause the program until a start condition is sent by the master. It should be placed at the start of every I2C transmission.\n\nIf interrupt handling is enabled, this command will disable it."
+                },
+                {
+                    "name": "I2CStartoccurred",
+                    "available": "All Microcontrollers",
+                    "description": "I2CStartoccurred",
+                    "funcdesc": "If the I2C routine IS operating in Slave mode, this function will check if a start condition has occurred since the last run of this function. 'Only used in slave mode"
+                },
+                {
+                    "name": "I2CStop",
+                    "available": "All Microcontrollers",
+                    "description": "I2CStop",
+                    "funcdesc": "When in Master mode, this command will send an I2C stop condition, and re-enable interrupts if I2CStart disabled them. In Slave mode, it will re- enable interrupts.\n\nI2CStop should be called at the end of every I2C transmission."
+                },
+                {
+                    "name": "HI2CAckPollState",
+                    "available": "All Microcontrollers",
+                    "description": "<test condition[s]> HI2CAckPollState",
+                    "funcdesc": "Should only be used when I2C routines are operating in Master mode, this command will return the last state of the acknowledge response from a specific I2C device on the I2C bus.\n\nHI2CSend sets the state of variable HI2CAckPollState.\n\nHI2CAckPollState can only read - it cannot be set."
+                },
+                {
+                    "name": "HI2CReceive",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CReceive data",
+                    "funcdesc": "The HI2CReceive command will send data through the I2C connection. If ack is TRUE, or no value is given for ack, then HI2CReceive will send an ack to the I2C bus.\n\nIf in master mode, HI2CReceive will read the data immediately. If in slave mode, HI2CReceive will wait for the master to send the data before reading."
+                },
+                {
+                    "name": "HI2CRestart",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CRestart",
+                    "funcdesc": "If the HI2C routines are operating in Master mode, this command will send a start and restart condition in a single command."
+                },
+                {
+                    "name": "HI2CSend",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CSend data",
+                    "funcdesc": "The HI2CSend command will send data through the I2C connection. If in master mode, HI2CSend will send the data immediately. If in slave mode, HI2CSend will wait for the master to request the data before sending."
+                },
+                {
+                    "name": "HI2CStart",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CStart",
+                    "funcdesc": "If the HI2C routines are operating in Master mode, this command will send a start condition. If routines are in Slave mode, it will pause the program until a start condition is sent by the master. It should be placed at the start of every I2C transmission."
+                },
+                {
+                    "name": "HI2CStartOccurred",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CStartOccurred",
+                    "funcdesc": "Check if a start condition has occurred since the last run of this function\n\nOnly used in slave mode."
+                },
+                {
+                    "name": "HI2CMode",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CMode Master | Slave",
+                    "funcdesc": "Sets the microcontroller to either a Master device or a Slave device.\n\nOnly used in slave mode"
+                },
+                {
+                    "name": "HI2CSetAddress",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CSetAddress address_number",
+                    "funcdesc": "Sets the microcontroller address number in Slave mode.\n\nOnly used in slave mode."
+                },
+                {
+                    "name": "HI2CStop",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CStop",
+                    "funcdesc": "HI2CStop should be called at the end of every I2C transmission."
+                },
+                {
+                    "name": "HI2CStopped",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CStopped",
+                    "funcdesc": "In Slave mode only. Check if start condition received since last used of HI2CStopped."
+                },
+                {
+                    "name": "HI2CWaitMSSP",
+                    "available": "All Microcontrollers",
+                    "description": "HI2CWaitMSSP",
+                    "funcdesc": "The methods sets the global byte variable HI2CWaitMSSPTimeout to 255 ( or True ) if the MSSP module has timeout during operations.\n\nHI2CWaitMSSPTimeout can tested for the status of the I2C bus."
+                },
+                {
+                    "name": "Tone",
+                    "available": "All Microcontrollers",
+                    "description": "Tone Frequency, Duration",
+                    "funcdesc": "This command will produce the specified tone for the specified duration. Frequency is measured in Hz, and Duration is in 10 ms units.\n\nPlease note that this command may not produce the exact frequency specified. While it is accurate enough for error beeps and small pieces of monophonic music, it should not be used for anything that requires a highly precise frequency."
+                },
+                {
+                    "name": "ShortTone",
+                    "available": "All Microcontrollers",
+                    "description": "ShortTone Frequency, Duration",
+                    "funcdesc": "This command will produce the specified tone for the specified duration. Frequency is measured in units of 10 Hz, and Duration is in 1 ms units. Please note that this command may not produce the exact frequency specified. While it is accurate enough for error beeps and small pieces of monophonic music, it should not be used for anything that requires a highly precise frequency."
+                },
+                {
+                    "name": "Play",
+                    "available": "All Microcontrollers",
+                    "description": "Play SoundPlayDataString",
+                    "funcdesc": "This command will plays a QBASIC sequence of notes. The SoundPlayDataString is a string representing a musical note or notes to play where Notes are A to G."
+                },
+                {
+                    "name": "PlayRTTTL",
+                    "available": "All Microcontrollers",
+                    "description": "PlayRTTTL SoundPlayRTTTLDataString",
+                    "funcdesc": "This command will play a sequence of notes in the Nokia RTTTL string format.\n\nThe SoundPlayRTTTLDataString is a string representing a musical note or notes to play where Notes are A to G. This format and information below is credited to WikiPedia, see here. To be recognized by ringtone programs, an RTTTL/Nokring format ringtone must contain three specific elements: name, settings, and notes."
+                },
+                {
+                    "name": "ClearTimer",
+                    "available": "All Microcontrollers",
+                    "description": "ClearTimer TimerNo",
+                    "funcdesc": "ClearTimer is used to clear the specified timer to a value of 0.\n\nCleartimer can be used on-the-fly if desired, so there is no requirement to stop the timer first"
+                },
+                {
+                    "name": "InitTimer0",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer0 source, prescaler",
+                    "funcdesc": "InitTimer0 will set up timer 0.\n\nWhen the timer overflows from 255 to 0, a Timer0Overflow interrupt will be generated. This can be used in conjunction with On Interrupt to run a section of code when the overflow occurs."
+                },
+                {
+                    "name": "InitTimer1",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer1 source, prescaler",
+                    "funcdesc": "InitTimer1 will set up timer 1.\n\nWhen the timer overflows an interrupt event will be generated. This interrupt event can be used in conjunction with On Interrupt to run a section of code when the interrupt event occurs."
+                },
+                {
+                    "name": "InitTimer2",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer2 prescaler",
+                    "funcdesc": "This the most common method to initialise a Microchip microcontroller timer.  With this method the timer has only one possible clock source, this mandated by the microcontrollers architecture, and that clock source is the System Clock/4 also known as FOSC/4. \n\nThe second method is much more flexible in term of the clock source.  Microcontrollers that support this second method enable you to select different clock sources and to select more prescale values."
+                },
+                {
+                    "name": "InitTimer3",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer3 source, prescaler",
+                    "funcdesc": "InitTimer3 will set up timer 3\n\nWhen the timer overflows an interrupt event will be generated. This interrupt event can be used in conjunction with On Interrupt to run a section of code when the interrupt event occurs."
+                },
+                {
+                    "name": "InitTimer4",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer4 prescaler, postscaler",
+                    "funcdesc": "This the most common method to initialise a Microchip microcontroller timer.  With this method the timer has only one possible clock source, this mandated by the microcontrollers architecture, and that clock source is the System Clock/4 also known as FOSC/4. \n\nThe second method is much more flexible in term of the clock source.  Microcontrollers that support this second method enable you to select different clock sources and to select more prescale values."
+                },
+                {
+                    "name": "InitTimer5",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer5 source, prescaler",
+                    "funcdesc": "InitTimer5 will set up timer 5.\n\nWhen the timer overflows an interrupt event will be generated. This interrupt event can be used in conjunction with On Interrupt to run a section of code when the interrupt event occurs. "
+                },
+                {
+                    "name": "InitTimer6",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer6 prescaler, postscaler",
+                    "funcdesc": "This the most common method to initialise a Microchip microcontroller timer.  With this method the timer has only one possible clock source, this mandated by the microcontrollers architecture, and that clock source is the System Clock/4 also known as FOSC/4.\n\nThe second method is much more flexible in term of the clock source.  Microcontrollers that support this second method enable you to select different clock sources and to select more prescale values."
+                },
+                {
+                    "name": "InitTimer7",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer7 source, prescaler",
+                    "funcdesc": "InitTimer7 will set up timer 7.\n\nWhen the timer overflows an interrupt event will be generated. This interrupt event can be used in conjunction with On Interrupt to run a section of code when the interrupt event occurs. "
+                },
+                {
+                    "name": "InitTimer8",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer8 prescaler, postscalere",
+                    "funcdesc": "This the most common method to initialise a Microchip microcontroller timer.  With this method the timer has only one possible clock source, this mandated by the microcontrollers architecture, and that clock source is the System Clock/4 also known as FOSC/4.\n\nThe second method is much more flexible in term of the clock source.  Microcontrollers that support this second method enable you to select different clock sources and to select more prescale values."
+                },
+                {
+                    "name": "InitTimer10",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer10 prescaler, postscaler",
+                    "funcdesc": "Defines a Variable Type"
+                },
+                {
+                    "name": "InitTimer12",
+                    "available": "All Microcontrollers",
+                    "description": "InitTimer12 prescaler, postscaler",
+                    "funcdesc": "Defines a Variable Type"
+                },
+                {
+                    "name": "Settimer",
+                    "available": "All Microcontrollers",
+                    "description": "Settimer timernumber, byte_value",
+                    "funcdesc": "Settimer will set the value of the specified timer with either byte value or a word value. 8-bit timers use a byte value. 16-bit timers use a word value.\n\nSettimer can be used on-the-fly, so there is no requirement to stop the timer first.\n\nRefer to the datasheet for timer specific information."
+                },
+                {
+                    "name": "StartTimer",
+                    "available": "All Microcontrollers",
+                    "description": "StartTimer TimerNo",
+                    "funcdesc": "Please refer to the datasheet to determine if Timer 0 on specific Microchip PIC microcontroller can be started and stopped with starttimer and stoptimer. If the Microchip PIC microcontroller has a register named \"T0CON\" then it supports stoptimer and starttimer.\nOn Microchip PIC 18(L)Fxxx microcontrollers Timer 0 can be started with starttimer.\nOn Microchip PIC baseline and midrange microcontrollers starttimer (and stoptimer) has no effect upon Timer 0."
+                },
+                {
+                    "name": "StopTimer",
+                    "available": "All Microcontrollers",
+                    "description": "StopTimer TimerNo",
+                    "funcdesc": "Defines a Variable Type"
+                },
+                {
+                    "name": "BcdToDec",
+                    "available": "All Microcontrollers",
+                    "description": "BcdToDec ( ByteVariable )",
+                    "funcdesc": "Converts numbers from Binary Coded Decimal format to decimal.\n\nYou can add this function. Just add this to your Great Cow BASIC program and then call it when you need it."
+                },
+                {
+                    "name": "DecToBcd",
+                    "available": "All Microcontrollers",
+                    "description": "DecToBcd( ByteVariable )",
+                    "funcdesc": "Converts numbers from Decimal to Binary Coded Decimal format. Support Bytes only.\n\nYou can add this function. Just add this to your Great Cow BASIC program and then call it when you need it"
+                },
+                {
+                    "name": "Rotate",
+                    "available": "All Microcontrollers",
+                    "description": "Rotate variable {Left | Right} [Simple]",
+                    "funcdesc": "The Rotate command will rotate variable one bit in a specified direction. The bit shifted will be placed in the Carry bit of the Status register (STATUS.C). STATUS.C acts as a ninth bit of the variable that is being rotated.\n\nvariable supports Bytes, Word and Long variables.\n\nWhen a variable is rotated right, the bit in the STATUS.C location is placed into the MSB of the variable being rotated, and the LSB of the variable is placed into STATUS.C location.\n\nWhen rotated left the opposite occurs. The MSB of the variable is shifted to the STATUS.C bit and the LSB of the variable will contain what was previously in the STATUS.C bit location."
+                },
+                {
+                    "name": "Set",
+                    "available": "All Microcontrollers",
+                    "description": "Set variable.bit {On | Off}",
+                    "funcdesc": "The purpose of the Set command is to turn individuals bits on and off.\n\nThe Set command is most useful for controlling output ports, but can also be used to set variables.\n\nOften when controlling output ports, Set is used in conjunction with constants. This makes it easier to adapt the program for a new circuit later."
+                },
+                {
+                    "name": "SWAP4",
+                    "available": "All Microcontrollers",
+                    "description": "SWAP4( VariableA)",
+                    "funcdesc": "A function that swaps (or exchanges) nibbles (or the 8 bits of a byte in nibbles)."
+                },
+                {
+                    "name": "SWAP",
+                    "available": "All Microcontrollers",
+                    "description": "SWAP( VariableA, VariableB)",
+                    "funcdesc": "A function that swaps (or exchanges) one byte or word for another. SWAP support the use of byte and word variables."
+                },
+                {
+                    "name": "ASC",
+                    "available": "All Microcontrollers",
+                    "description": "bytevar= ASC(string, [position] )",
+                    "funcdesc": "ASC returns the character code of a particular character in the string. If the string is an ANSI string, the returned value will be in the range of 0 to 255. This function DOES NOT support UNICODE.\n\nThe optional position parameter determines which character is to be checked. The first character is one, the second two, etc. If the position parameter is missing, the first character is presumed.\n\nCHR is the natural complement of ASC. CHR produces a one-character string corresponding to its ASCII"
+                },
+                {
+                    "name": "ByteToBin",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = ByteToBin(bytevar)",
+                    "funcdesc": "The ByteToBin function creates a string of a ANSI (8-byte) characters. The function converts a number to a string consisting of ones and zeros that represents the binary value."
+                },
+                {
+                    "name": "CHR",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = CHR(bytevar)",
+                    "funcdesc": "DThe CHR function creates a string of a ANSI (1-byte) character.\n\nASC is the natural complement of CHR."
+                },
+                {
+                    "name": "Fill",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar =  Fill ( byte_value_of_the_new_length , pad_character )",
+                    "funcdesc": "The Fill function is used to create string to a specific length that is of a specific character.\n\nThe length of the string is specified by the first parameter. The character used to pad the string is specified by the second parameter, this parameter is optional as the \" \"(space) character is assumed.\n\nA typical use is to fill a string to be displayed on an LCD or serial terminal"
+                },
+                {
+                    "name": "Hex",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = Hex(number)",
+                    "funcdesc": "The Hex function will convert a number into hexadecimal format. The input number should be a byte variable, or a fixed number between 0 and 255 inclusive. After running the function, the string variable stringvar will contain a 2 digit hexadecimal number."
+                },
+                {
+                    "name": "Instr",
+                    "available": "All Microcontrollers",
+                    "description": "location = Instr(source, find)",
+                    "funcdesc": "The Instr function will search one string to find the location of another string within it. source is the string to search inside, and find is the string to find. The function will return the location of find within source, or 0 if source does not contain find."
+                },
+                {
+                    "name": "LCase",
+                    "available": "All Microcontrollers",
+                    "description": "output = LCase(source)",
+                    "funcdesc": "The LCase function will convert all of the letters in the string source to lower case, and return the result."
+                },
+                {
+                    "name": "Left",
+                    "available": "All Microcontrollers",
+                    "description": "output = Left(source, count)",
+                    "funcdesc": "The Left function will extract the leftmost count characters from the input string source, and return them in a new string."
+                },
+                {
+                    "name": "LeftPad",
+                    "available": "All Microcontrollers",
+                    "description": "LeftPad(string_variable,byte_value_of_the_new_length,pad_character)",
+                    "funcdesc": "The LeftPad function is used to create string to a specific length that is extended with a specific character to the left hand side of the string.\n\nThe length of the string is specified by the second parameter.\n\nThe character used to pad the string is specified by the third parameter.\n\nA typical use is to pad a string to be displayed on a serial terminal or LCD."
+                },
+                {
+                    "name": "Len",
+                    "available": "All Microcontrollers",
+                    "description": "output= Len( string )",
+                    "funcdesc": "The Len function returns an byte value which is the length of a phrase or a sentence, including the empty spaces. The format is:\n\ntarget_byte_variable = Len(\"Phrase\")\n\nor another example. This code will loop through the for-next loop 12 times as determined by the length of the string:\n\ncreate a test string of 12 characters\ndim teststring as string * 12\n\nteststring = \"0123456789AB\"\nfor loopthrustring = 1 to len(teststring)\nhserprint mid(teststring, loopthrustring , 1)\nnext"
+                },
+                {
+                    "name": "LTRIM",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = LTRIM(stringvar)",
+                    "funcdesc": "The Ltrim function will trim the 7-bit ASCII space character (value 32) from the LEFT hand side of a string.\n\nUse Ltrim on text that you have received from another source that may have irregular spacing at the left hand end of the string."
+                },
+                {
+                    "name": "Mid",
+                    "available": "All Microcontrollers",
+                    "description": "output = Mid(source, start[, count])",
+                    "funcdesc": "The Mid function returns a string variable containing a specified number of characters from a source string.\n\nsource is the variable to extract from. If source is a zero length string - a zero length string is returned equating to \"\".\nstart is the position of the first character to extract. If start is greater than the number of characters in string, Mid returns a zero-length string equating to \"\".\ncount is the number of characters to extract. If count is not specified, all characters from start to the end of the source string will be returned."
+                },
+                {
+                    "name": "Pad",
+                    "available": "All Microcontrollers",
+                    "description": "Dout_string = Pad",
+                    "funcdesc": "The Pad function is used to create string to a specific length that is extended with a specific character.\n\nThe length of the string is specified by the second parameter. The character used to pad the string is specified by the third parameter.\n\nA typical use is to pad a string to be displayed on a LCD display."
+                },
+                {
+                    "name": "Right",
+                    "available": "All Microcontrollers",
+                    "description": "output = Right(source, count)",
+                    "funcdesc": "Defines a Variable Type"
+                },
+                {
+                    "name": "Rtrim",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = Rtrim(stringvar)",
+                    "funcdesc": "The Rtrim function will trim the 7-bit ASCII space character (value 32) from the RIGHT hand side of a string.\n\nUse Rtrim on text that you have received from another source that may have irregular spacing at the right hand end of the string."
+                },
+                {
+                    "name": "Str",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = Str(number)",
+                    "funcdesc": "The Str function will convert a number into a string. number can be any byte or word variable, or a fixed number between 0 and 65535 inclusive.  For Long numbers use Str32 and for Integer numbers use StrInteger.\n\nThe string variable stringvar will contain the same number, represented as a string.  The length of the string returned is 5, 10 or 6 characters for Byte & Word, Long and Integer respectively.\n\nThis function is especially useful if a number needs to added to the end of a string, or if a custom data sending routine has been created but only supports the output of string variables."
+                },
+                {
+                    "name": "Trim",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = Trim(stringvar)",
+                    "funcdesc": "The Trim function will trim the 7-bit ASCII space character (value 32) from text.\n\nTrim removes all spaces from text except for single spaces between words. Use Trim on text that you have received from another source that may have irregular spacing at the left or right hand ends of the string"
+                },
+                {
+                    "name": "UCase",
+                    "available": "All Microcontrollers",
+                    "description": "output = UCase(source)",
+                    "funcdesc": "The UCase function will convert all of the letters in the string source to upper case, and return the result."
+                },
+                {
+                    "name": "Val",
+                    "available": "All Microcontrollers",
+                    "description": "var = Val(string)",
+                    "funcdesc": "The Val function will extract a number from a string variable, and store it in a word variable. One potential use is reading numbers that are sent in ASCII format over a serial connection.\n\nThe Val32 function will extract a long number from a string variable, and store it in a long variable."
+                },
+                {
+                    "name": "IntegerToBin",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = IntegerToBin(integervar)",
+                    "funcdesc": "The IntegerToBin function creates a string of a ANSI (signed 15 digit string ) characters. The function converts a number to a string consisting of ones and zeros that represents the binary value."
+                },
+                {
+                    "name": "LongToBin",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = LongToBin(longvar)",
+                    "funcdesc": "The LongToBin function creates a string of a ANSI (32) characters. The function converts a number to a string consisting of ones and zeros that represents the binary value."
+                },
+                {
+                    "name": "WordToBin",
+                    "available": "All Microcontrollers",
+                    "description": "stringvar = WordToBin(bytevar)",
+                    "funcdesc": "The WordToBin function creates a string of a ANSI (8-byte) characters. The function converts a number to a string consisting of ones and zeros that represents the binary value."
+                },
+                {
+                    "name": "Dir",
+                    "available": "All Microcontrollers",
+                    "description": "Dir port.bit {In | Out}",
+                    "funcdesc": "The Dir command is used to set the direction of the ports of the microcontroller chip. The individual form sets the direction of one pin at a time, whereas the entire port form will set all bits in a port.\n\nIn the individual form, specify the port and bit (ie. PORTB.4), then the direction, which is either In or Out.\n\nThe entire port form is similiar to the TRIS instruction offered by some Microchip PIC microcontrollers. To use it, give the name of the port (i.e. PORTA), and then a byte is to be written into the TRIS variable. This form of the command is for those who are familiar with the Microchip PIC microcontrollers internal architecture.\n\nNote: Entire port form will work differently on Atmel AVR microcontrollers when a value other than IN or OUT is used. Atmel AVR microcontrollers use 0 to indicate in and 1 to indicate out, whereas Microchip PIC microcontrollers use 0 for out and 1 for in. When IN and OUT are used there are no compatibility issues."
+                },
+                {
+                    "name": "GetUserID",
+                    "available": "Microchip PIC",
+                    "description": "UserIDRegister  = GetUserID(Index)",
+                    "funcdesc": "Reads the memory location and returns the ID for a specific microcontroller.\n\nIf the microcontroller does not support GetUSerID then the following message will be issued during compilation Warning: GetUserID not supported by this microcontroller."
+                },
+                {
+                    "name": "Pot",
+                    "available": "All Microcontrollers",
+                    "description": "Pot pin, output",
+                    "funcdesc": "Pot makes it possible to measure an analog resistance with a digital port, with the addition of a small capacitor.\n\nThe command works by using the microcontroller pin to discharge the capacitor, then measuring the time taken for the capacitor to charge again through the resistor.\n\nThe value for the capacitor must be adjusted depending on the size of the variable resistor. The charging time needs to be approximately 2.5 ms when the resistor is at its maximum value. For a typical 50 k potentiometer or LDR, a 50 nf capacitor is required.\n\nThis command should be used carefully. Each time it is inserted, 20 words of program memory are used on the chip, which as a rough guide is more than 15 times the size of the Set command.\npin is the port connected to the circuit. The direction of the pin will be dealt with by the Pot command.\noutput is the name of the variable that will receive the value."
+                },
+                {
+                    "name": "PulseOut",
+                    "available": "All Microcontrollers",
+                    "description": "PulseOut pin, time units",
+                    "funcdesc": "The PulseOut command will set the specified pin high, wait for the specified amount of time, and then set the pin low again. The pin is specified in the same way as it is for the Set command, and the time is the same as for the Wait command."
+                },
+                {
+                    "name": "PulseOutInv",
+                    "available": "All Microcontrollers",
+                    "description": "PulseOutInv pin, time units",
+                    "funcdesc": "The PulseOutInv command will set the specified pin low, wait for the specified amount of time, and then set the pin high. The pin is specified in the same way as it is for the Set command, and the time is the same as for the Wait command."
+                },
+                {
+                    "name": "PulseIn",
+                    "available": "All Microcontrollers",
+                    "description": "PulseIn pin, user_variable, time units",
+                    "funcdesc": "The PulseIn command will monitor the specified pin when the pin is high, and then measure the high time. It will store the time in the user variable. The user variable must be a WORD if returned units are expected to be > 255 (Example: Pulse is 500 ms).\n\nPulseIn is not recommended for accurate measurement of microsecond pulses."
+                },
+                {
+                    "name": "PulseInInv",
+                    "available": "All Microcontrollers",
+                    "description": "PulseInInv pin, user_variable, time units",
+                    "funcdesc": "The PulseIn command will monitor the specified pin when the pin is high, and then measure the high time. It will store the time in the user variable. The user variable must be a WORD if returned units are expected to be > 255 (Example: Pulse is 500 ms).\n\nPulseIn is not recommended for accurate measurement of microsecond pulses."
+                },
+                {
+                    "name": "Peek",
+                    "available": "All Microcontrollers",
+                    "description": "OutputVariable = Peek (location)",
+                    "funcdesc": "The Peek function is used to read information from the on-chip RAM of the microcontroller.\n\nlocation is a word variable that gives the address to read. The exact range of valid values varies from chip to chip.\n\nThis command should not normally be used, as it will make the porting of code to another chip very difficult."
+                },
+                {
+                    "name": "Poke",
+                    "available": "All Microcontrollers",
+                    "description": "Poke(location, value)",
+                    "funcdesc": "The Poke command is used to write information to the on-chip RAM of the microcontroller.\n\nlocation is a word variable that gives the address to write. The exact range of valid values varies from chip to chip. value is the data to write to the location.\n\nThis command should not normally be used, as it will make the porting of code to another chip very difficult."
+                },
+                {
+                    "name": "Abs",
+                    "available": "All Microcontrollers",
+                    "description": "integer_variable = Abs( integer_variable )",
+                    "funcdesc": "The Abs function will compute the absolute value of a integer number therefore in the range of −32767 to +32767."
+                },
+                {
+                    "name": "Average",
+                    "available": "All Microcontrollers",
+                    "description": "integer_variable = Average",
+                    "funcdesc": "A function that returns the average of two numbers. This only supports byte variables.\n\nProvides a very fast way to calculate the average of two 8 bit numbers."
+                },
+                {
+                    "name": "Difference",
+                    "available": "All Microcontrollers",
+                    "description": "Difference ( word_variable1 , word_variable2 )",
+                    "funcdesc": "A function that returns the difference between of two numbers. This only supports byte or word variables."
+                },
+                {
+                    "name": "Log2",
+                    "available": "All Microcontrollers",
+                    "description": "returned_word_variable = Log2 ( word_value )",
+                    "funcdesc": "The Log2 command will return the base-2 logarithm, to 2 decimal places.\n\nThe values returned are fixed-point numbers, with two decimal places assumed on the right. or if you prefer, think of the values as being scaled up by 100."
+                },
+                {
+                    "name": "Loge",
+                    "available": "All Microcontrollers",
+                    "description": "returned_word_variable = Loge ( word_value )",
+                    "funcdesc": "The Loge command will return the base-e logarithm, to 2 decimal places.\n\nThe values returned are fixed-point numbers, with two decimal places assumed on the right. or if you prefer, think of the values as being scaled up by 100."
+                },
+                {
+                    "name": "Log10",
+                    "available": "All Microcontrollers",
+                    "description": "returned_word_variable = Log10 (word_value)",
+                    "funcdesc": "The Log10 command will return the base-10 logarithm, to 2 decimal places.\n\nThe values returned are fixed-point numbers, with two decimal places assumed on the right. or if you prefer, think of the values as being scaled up by 100."
+                },
+                {
+                    "name": "Power",
+                    "available": "All Microcontrollers",
+                    "description": "power( base, exponent )",
+                    "funcdesc": "This function raises a base to an exponent, i.e, power(base,exponent). Calculation powers will become large, in terms of long numbers, you must ensure the program manage numbers remain within range of the defined variables.\n\nThe base and exponent are Byte sized numbers in this method.\nThe returned result is a Long.\nNon-negative numbers are assumed throughout."
+                },
+                {
+                    "name": "Scale",
+                    "available": "All Microcontrollers",
+                    "description": "integer_variable = Scale (value_word , fromLow_integer , fromHigh_integer , toLow_integer , toHigh_integer [, calibration_integer] )",
+                    "funcdesc": "Scales, re-maps, a number from one range to another.   That is, a value of fromLow would gets scaled to toLow, a value of fromHigh to toHigh, values in-between to values in-between, etc.\n\nThe method does not constrain values to within the integer range returned, because out-of-range values are sometimes intended and useful.\n\nNote that the \"lower bounds\" of either range may be larger or smaller than the \"upper bounds\" so the scale() method may be used to reverse a range of numbers"
+                },
+                {
+                    "name": "sqrt",
+                    "available": "All Microcontrollers",
+                    "description": "word_variable = sqrt ( word )",
+                    "funcdesc": "A square root routine for Great Cow BASIC. The function only involves bit shifting, addition and subtraction, which makes it fast and efficient.\n\nThis method required a word variable as the input and a word variable as the output. The method will handle arguments of up to 4294."
+                },
+                {
+                    "name": "sin",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = sin( word_variable )",
+                    "funcdesc": "Great Cow BASIC supports Three Primary Trigonometric Functions\n\nGreat Cow BASIC supports the following functions, sin(x), cos(x), tan(x), where x is a signed integer representing an angle measured in a whole number of degrees. The output values are also integers, represented as fixed point decimal fractions."
+                },
+                {
+                    "name": "cos",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = cos( word_variable )",
+                    "funcdesc": "Great Cow BASIC supports Three Primary Trigonometric Functions\n\nGreat Cow BASIC supports the following functions, sin(x), cos(x), tan(x), where x is a signed integer representing an angle measured in a whole number of degrees. The output values are also integers, represented as fixed point decimal fractions."
+                },
+                {
+                    "name": "tan",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = tan( word_variable )",
+                    "funcdesc": "Great Cow BASIC supports Three Primary Trigonometric Functions\n\nGreat Cow BASIC supports the following functions, sin(x), cos(x), tan(x), where x is a signed integer representing an angle measured in a whole number of degrees. The output values are also integers, represented as fixed point decimal fractions."
+                },
+                {
+                    "name": "atan",
+                    "available": "All Microcontrollers",
+                    "description": "byte_variable = atan (x_vector,y_vector)",
+                    "funcdesc": "Great Cow BASIC supports the following functions ATan( x, y) where x and y are the vectors. The function returns a word representing the angle measured in a whole number of degrees.\n\nThe function also returns a global variable NegFlag with returns the quadrant of the angle."
+                },
+                {
+                    "name": "UNLOCKPPS",
+                    "available": "All Microcontrollers",
+                    "description": "UNLOCKPPS",
+                    "funcdesc": "Peripheral Pin Select (PPS) has an operation mode in which all input and output selections can be prevented to stop inadvertent changes.\n\nPPS selections are unlocked by setting by the use of the UnLockPPS command.\n\nUsing this command will ensure the special sequence of Microchip assembler is handled correctly."
+                },
+                {
+                    "name": "LOCKPSS",
+                    "available": "All Microcontrollers",
+                    "description": "LOCKPSS",
+                    "funcdesc": "Peripheral Pin Select (PPS) has an operation mode in which all input and output selections can be prevented to stop inadvertent changes.\n\nPPS selections are locked by setting by the use of the LockPPS command.\n\nUsing this command will ensure the special sequence of Microchip assembler is handled correctly."
                 }
             ]
         }
