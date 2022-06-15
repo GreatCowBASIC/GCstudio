@@ -1435,6 +1435,201 @@
             "accessor": "#define"
         },
         {
+            "title": "ADSPEED Types",
+            "description": "This class contains all ADSPEED Types",
+            "funcs": {
+                "HighSpeed": {},
+                "MediumSpeed": {},
+                "LowSpeed": {}
+            },
+            "extends": "",
+            "accessor": "adspeed"
+        },
+        {
+            "title": "HI2C_BAUD_RATE Types",
+            "description": "This class contains all HI2C_BAUD_RATE Types",
+            "funcs": {
+                "50": {},
+                "100": {},
+                "125": {},
+                "400": {},
+                "1000": {},
+                "3200": {}
+            },
+            "extends": "",
+            "accessor": "hi2c_baud_rate"
+        },
+        {
+            "title": "I2C_Mode Types",
+            "description": "This class contains all I2C_Mode Types",
+            "funcs": {
+                "Master": {},
+                "Slave": {}
+            },
+            "extends": "",
+            "accessor": "i2c_mode"
+        },
+        {
+            "title": "LCD_IO Types",
+            "description": "This class contains all LCD_IO Types",
+            "funcs": {
+                "0": {
+                    "signature": "LCD_IO",
+                    "description": "No configuration is required directly by this method. The LCD routines must be provided with other subroutines which will handle the communication. This is useful for communicating with LCDs connected through RS232 or I2C. \n\nThis is an advanced method of driving an LCD"
+                },
+                "1": {
+                    "signature": "LCD_IO",
+                    "description": "Uses a combined data and clock line. This mode is used when the LCD is connected through a shift register 74HC595"
+                },
+                "2": {
+                    "signature": "LCD_IO",
+                    "description": "Uses separated Data and Clock lines. This mode is used when the LCD is connected through a 74LS174 shift register IC"
+                },
+                "3": {
+                    "signature": "LCD_IO",
+                    "description": "DB, CB, EB are connected to the microcontroller as the Data, Clock and Enable Bits."
+                },
+                "4": {
+                    "signature": "LCD_IO",
+                    "description": "R/W, RS, Enable and the highest 4 data lines (DB4 through DB7) are connected to the microcontroller. The use of the R/W line is optional."
+                },
+                "8": {
+                    "signature": "LCD_IO",
+                    "description": "R/W, RS, Enable and all 8 data lines. The data lines must all be connected to the same I/O port, in sequential order. For example, DB0 to PORTB.0, DB1 to PORTB.1 and so on, with`DB7` going to PORTB.7."
+                },
+                "10": {
+                    "signature": "LCD_IO",
+                    "description": "The LCD is controlled via I2C. A type 10 LCD 12C adapter. Set LCD_IO to 10 for the YwRobot LCD1602 IIC V1 or the Sainsmart LCD_PIC I2C adapter"
+                },
+                "12": {
+                    "signature": "LCD_IO",
+                    "description": "The LCD is controlled via I2C. A type 12 LCD 12C adapter. Set LCD_IO to `12`for the Ywmjkdz I2C adapter with a potentiometer (variable resistance) bent over top of chip."
+                },
+                "107": {
+                    "signature": "LCD_IO",
+                    "description": "The LCD is controlled via serial. Set LCD_IO to 107 or K107"
+                }
+            },
+            "extends": "",
+            "accessor": "lcd_io"
+        },
+        {
+            "title": "LCD_SPEED Types",
+            "description": "This class contains all LCD_SPEED Types",
+            "funcs": {
+                "Optimal": {},
+                "Fast": {},
+                "Medium": {},
+                "Slow": {}
+            },
+            "extends": "",
+            "accessor": "lcd_speed"
+        },
+        {
+            "title": "USART_BAUD_RATE Types",
+            "description": "This class contains all USART_BAUD_RATE Types",
+            "funcs": {
+                "75": {},
+                "110": {},
+                "134": {},
+                "150": {},
+                "300": {},
+                "600": {},
+                "1200": {},
+                "1800": {},
+                "2400": {},
+                "4800": {},
+                "7200": {},
+                "9600": {},
+                "14400": {},
+                "19200": {},
+                "38400": {},
+                "57600": {},
+                "115200": {},
+                "128000": {}
+            },
+            "extends": "",
+            "accessor": "usart_baud_rate"
+        },
+        {
+            "title": "USART2_BAUD_RATE Types",
+            "description": "This class contains all USART2_BAUD_RATE Types",
+            "funcs": {
+                "75": {},
+                "110": {},
+                "134": {},
+                "150": {},
+                "300": {},
+                "600": {},
+                "1200": {},
+                "1800": {},
+                "2400": {},
+                "4800": {},
+                "7200": {},
+                "9600": {},
+                "14400": {},
+                "19200": {},
+                "38400": {},
+                "57600": {},
+                "115200": {},
+                "128000": {}
+            },
+            "extends": "",
+            "accessor": "usart2_baud_rate"
+        },
+        {
+            "title": "USART3_BAUD_RATE Types",
+            "description": "This class contains all USART3_BAUD_RATE Types",
+            "funcs": {
+                "75": {},
+                "110": {},
+                "134": {},
+                "150": {},
+                "300": {},
+                "600": {},
+                "1200": {},
+                "1800": {},
+                "2400": {},
+                "4800": {},
+                "7200": {},
+                "9600": {},
+                "14400": {},
+                "19200": {},
+                "38400": {},
+                "57600": {},
+                "115200": {},
+                "128000": {}
+            },
+            "extends": "",
+            "accessor": "usart3_baud_rate"
+        },
+        {
+            "title": "USART4_BAUD_RATE Types",
+            "description": "This class contains all USART4_BAUD_RATE Types",
+            "funcs": {
+                "75": {},
+                "110": {},
+                "134": {},
+                "150": {},
+                "300": {},
+                "600": {},
+                "1200": {},
+                "1800": {},
+                "2400": {},
+                "4800": {},
+                "7200": {},
+                "9600": {},
+                "14400": {},
+                "19200": {},
+                "38400": {},
+                "57600": {},
+                "115200": {},
+                "128000": {}
+            },
+            "extends": "",
+            "accessor": "usart4_baud_rate"
+        },
+        {
             "title": "SPI Modes",
             "description": "This class contains all SPI Modes",
             "funcs": {
