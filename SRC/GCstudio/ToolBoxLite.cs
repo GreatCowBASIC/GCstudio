@@ -6,7 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
-
+using System.Reflection;
 
 namespace GC_Studio
 {
@@ -16,7 +16,7 @@ namespace GC_Studio
 
         DBS dbs = new DBS();
         string ReleaseChanel = "mainstream";
-        decimal AppVer;
+      
         string IDE = "GCcode";
         string[] arguments;
         string ideargs = "";
@@ -72,19 +72,22 @@ namespace GC_Studio
         private void Main_Load(object sender, EventArgs e)
         {
             MaxBounds();
- 
-            try
-            {
-                dbs.LoadRead("CurrentVersion.nfo");
-                AppVer = decimal.Parse(dbs.ReadData());
-                dbs.CloseRead();
-            }
-            catch
-            {
-                MessageBox.Show("Error reading current version manifest.");
-                Environment.Exit(0);
-            }
-            ver.Text = AppVer.ToString();
+
+            //         try
+            //         {
+            //             dbs.LoadRead("CurrentVersion.nfo");
+            //             AppVer = decimal.Parse(dbs.ReadData());
+            //             dbs.CloseRead();
+            //         }
+            //         catch
+            //         {
+            //            MessageBox.Show("Error reading current version manifest.");
+            //             Environment.Exit(0);
+            //         }
+            //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
+            
+
+            ver.Text = Loader.AppVer.ToString();
 
             LoadConfig();
 
@@ -214,7 +217,7 @@ namespace GC_Studio
                         maximized = false;
                         SaveLastSize();
 
-                        break;
+                        break;             
 
 
                     default:
@@ -248,6 +251,25 @@ namespace GC_Studio
                     RecentItem[i] = listViewRecent.Items.Add(RecentName[i]);
                     RecentItem[i].Text = RecentName[i];
                     RecentItem[i].ToolTipText = RecentDir[i];
+                }
+            }
+
+            //post updater
+            if (File.Exists("post.dat"))
+            {
+                try
+                {
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    p.FileName = "postupdate.exe";
+                    p.Arguments = "/S";
+                    p.WindowStyle = ProcessWindowStyle.Normal;
+                    Process x = Process.Start(p);
+                    File.Delete("post.dat");
+                }
+                catch
+                {
+                    MessageBox.Show("Error starting the post updater.");
+                    Environment.Exit(0);
                 }
             }
 
@@ -1270,6 +1292,11 @@ namespace GC_Studio
             {
                 MessageBox.Show("Error while reseting programmer preferences.");
             }
+        }
+
+        private void panelmain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
