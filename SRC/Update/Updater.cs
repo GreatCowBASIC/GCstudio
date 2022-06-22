@@ -11,7 +11,7 @@ namespace Update
     public partial class Updater : Form
     {
         DBS dbs = new DBS();
-        decimal ManifestVer;
+        double ManifestVer = 0;
         string ManifestPKG;
         string ManifestChecksum;
         string ManifestTitle;
@@ -41,7 +41,7 @@ namespace Update
             if (File.Exists("cvs.nfo"))
             {
                 dbs.LoadRead("cvs.nfo");
-                ManifestVer = decimal.Parse(dbs.ReadData());
+                double.TryParse(dbs.ReadData(), out ManifestVer);
                 ManifestPKG = dbs.ReadData();
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();

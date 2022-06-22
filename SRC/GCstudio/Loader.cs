@@ -16,9 +16,9 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.0228;
-        double ManifestVer;
-        double ManifestMinVer;
+        public const double AppVer = 99.02281;
+        double ManifestVer = 0;
+        double ManifestMinVer = 0;
         string ManifestPKG;
         string ManifestChecksum;
         string ManifestTitle;
@@ -207,13 +207,13 @@ namespace GC_Studio
             {
 
                 dbs.LoadRead("cvs.nfo");
-                ManifestVer = double.Parse(dbs.ReadData());
+                double.TryParse(dbs.ReadData(), out ManifestVer);
                 ManifestPKG = dbs.ReadData();
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();
                 ManifestNotes = dbs.ReadData();
                 dbs.ReadData();
-                ManifestMinVer = double.Parse(dbs.ReadData());
+                double.TryParse(dbs.ReadData(), out ManifestMinVer);
                 dbs.CloseRead();
                 //    try
                 //    {
