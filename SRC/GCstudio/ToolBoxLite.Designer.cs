@@ -63,6 +63,7 @@ namespace GC_Studio
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.buttonabout = new System.Windows.Forms.Button();
             this.panelconfig = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.labelarch = new System.Windows.Forms.Label();
@@ -574,7 +575,6 @@ namespace GC_Studio
             this.panelmain.Name = "panelmain";
             this.panelmain.Size = new System.Drawing.Size(1038, 958);
             this.panelmain.TabIndex = 48;
-            this.panelmain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmain_Paint);
             // 
             // linkLabelclear
             // 
@@ -638,6 +638,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button12);
             this.panelconfig.Controls.Add(this.button11);
             this.panelconfig.Controls.Add(this.button10);
             this.panelconfig.Controls.Add(this.labelarch);
@@ -663,11 +664,23 @@ namespace GC_Studio
             this.panelconfig.TabIndex = 49;
             this.panelconfig.Visible = false;
             // 
+            // button12
+            // 
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(97, 863);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(201, 60);
+            this.button12.TabIndex = 79;
+            this.button12.Text = "Force Update";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // button11
             // 
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(96, 706);
+            this.button11.Location = new System.Drawing.Point(96, 686);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(201, 60);
             this.button11.TabIndex = 78;
@@ -679,7 +692,7 @@ namespace GC_Studio
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(96, 613);
+            this.button10.Location = new System.Drawing.Point(96, 601);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(201, 60);
             this.button10.TabIndex = 77;
@@ -739,7 +752,7 @@ namespace GC_Studio
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(96, 802);
+            this.button7.Location = new System.Drawing.Point(96, 773);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(201, 60);
             this.button7.TabIndex = 72;
@@ -1402,5 +1415,6 @@ namespace GC_Studio
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
