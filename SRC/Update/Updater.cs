@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.IO;
 using DBSEngine;
@@ -20,9 +22,10 @@ namespace Update
         {
             InitializeComponent();
         }
-
+ 
         private void Updater_Load(object sender, EventArgs e)
         {
+            RoundCorners(this);
             InitialDelay.Enabled = true;
         }
 
@@ -91,7 +94,7 @@ namespace Update
             {
                 ProcessStartInfo p = new ProcessStartInfo();
                 p.FileName = AppExe;
-                // p.Arguments = "";
+                //p.Arguments = "";
                 p.WindowStyle = ProcessWindowStyle.Normal;
                 Process x = Process.Start(p);
                 Environment.Exit(0);
@@ -106,5 +109,35 @@ namespace Update
 
         }
 
+        public void RoundCorners(Form form)
+        {
+            form.FormBorderStyle = FormBorderStyle.None;
+
+            var DGP = new GraphicsPath();
+            DGP.StartFigure();
+            // top left corner
+            DGP.AddArc(new Rectangle(0, 0, 40, 40), 180, 90);
+            DGP.AddLine(40, 0, form.Width - 40, 0);
+
+            // top right corner
+            DGP.AddArc(new Rectangle(form.Width - 40, 0, 40, 40), -90, 90);
+            DGP.AddLine(form.Width, 40, form.Width, form.Height - 40);
+
+            // buttom right corner
+            DGP.AddArc(new Rectangle(form.Width - 40, form.Height - 40, 40, 40), 0, 90);
+            DGP.AddLine(form.Width - 40, form.Height, 40, form.Height);
+
+            // buttom left corner
+            DGP.AddArc(new Rectangle(0, form.Height - 40, 40, 40), 90, 90);
+            DGP.CloseFigure();
+            form.Region = new Region(DGP);
+        }
+
+        private void Updater_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
+
+
 }
