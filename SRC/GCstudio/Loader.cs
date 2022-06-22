@@ -16,9 +16,9 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        decimal AppVer;
-        decimal ManifestVer;
-        decimal ManifestMinVer;
+        public const double AppVer = 99.0228;
+        double ManifestVer;
+        double ManifestMinVer;
         string ManifestPKG;
         string ManifestChecksum;
         string ManifestTitle;
@@ -78,17 +78,17 @@ namespace GC_Studio
 
                 //  ApplicationTitle.Text = Assembly.GetEntryAssembly().GetName().Name;
                 //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
-                try
-            {
-                dbs.LoadRead("CurrentVersion.nfo");
-                AppVer = decimal.Parse(dbs.ReadData());
-                dbs.CloseRead();
-            }
-            catch
-            {
-                MessageBox.Show("Error reading current version manifest.");
-                Environment.Exit(0);
-            }
+ //               try
+ //           {
+ //               dbs.LoadRead("CurrentVersion.nfo");
+ //               AppVer = decimal.Parse(dbs.ReadData());
+ //               dbs.CloseRead();
+ //           }
+ //           catch
+ //           {
+ //               MessageBox.Show("Error reading current version manifest.");
+ //               Environment.Exit(0);
+ //           }
             Version.Text = "Version " + AppVer;
             Copyright.Text = ((AssemblyCopyrightAttribute)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright;
 
@@ -207,13 +207,13 @@ namespace GC_Studio
             {
 
                 dbs.LoadRead("cvs.nfo");
-                ManifestVer = decimal.Parse(dbs.ReadData());
+                ManifestVer = double.Parse(dbs.ReadData());
                 ManifestPKG = dbs.ReadData();
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();
                 ManifestNotes = dbs.ReadData();
                 dbs.ReadData();
-                ManifestMinVer = decimal.Parse(dbs.ReadData());
+                ManifestMinVer = double.Parse(dbs.ReadData());
                 dbs.CloseRead();
                 //    try
                 //    {

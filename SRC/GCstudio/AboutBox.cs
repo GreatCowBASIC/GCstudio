@@ -15,7 +15,6 @@ namespace GC_Studio
             InitializeComponent();
             
             labelassembly.Text = AssemblyVersion;
-   
 
 
         }
@@ -103,16 +102,8 @@ namespace GC_Studio
         private void AboutBox_Load(object sender, EventArgs e)
         {
 
-            try
-            {
-                dbs.LoadRead("CurrentVersion.nfo");
-                labelver.Text = dbs.ReadData();
-                dbs.CloseRead();
-            }
-            catch
-            {
-                MessageBox.Show("Error when loading an about file.");
-            }
+
+                            labelver.Text = Loader.AppVer.ToString();
 
             try
             {
