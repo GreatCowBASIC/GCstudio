@@ -1294,9 +1294,24 @@ namespace GC_Studio
             }
         }
 
-        private void panelmain_Paint(object sender, PaintEventArgs e)
-        {
 
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = "gcstudio.exe";
+                p.Arguments = "/forceupdate";
+                p.WindowStyle = ProcessWindowStyle.Normal;
+                x = Process.Start(p);
+                Environment.Exit(0);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when launching the Force Update");
+            }
         }
     }
 
