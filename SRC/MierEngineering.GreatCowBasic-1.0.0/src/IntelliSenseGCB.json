@@ -1456,7 +1456,11 @@
           "PS2_DELAY": {
           "signature": "PS/2", 
           "description": "This constant can be set to a delay, such as 10 ms. If set, a delay will be added at the end of every byte sent or received."
-           }
+           },
+           "STOPCOMPILERERRORHANDLER": {
+           "signature": "RaiseCompilerError", 
+           "description": "The RaiseCompilerError handler can be stopped using the constant STOPCOMPILERERRORHANDLER."
+            }
           
       },
       "extends": "",
@@ -4755,6 +4759,12 @@
           "available": "All Microcontrollers",
           "description": "Macro MacroName (var1, var2, varN)",
           "funcdesc": "Macros are similar to subroutines. But during compilation, everything is inserted inline. This may increase the code size slightly, but it also reduces stack usage.\n\nParameters are handled in a similar way to how constants are handled, so there is a lot more freedom when passing things in to a macro. (Unlike subs or functions, where everything must be stored in a variable.)"
+        },
+        {
+          "name": "RaiseCompilerError",
+          "available": "All Microcontrollers",
+          "description": "RaiseCompilerError \"string message\"",
+          "funcdesc": "From build 1131 the compiler now supports raising a compiler error message.\n\nThe method uses the RaiseCompilerError method to pass an error message to the assembler process (not the compilation process - the user will not know this).\n\nAn example from USART.H/INITUSART subroutine is shown below.  This example tests for the existence of one of the three supported baud rate constants.  If none of the constants exist and the constant (in this example) STOPCOMPILERERRORHANDLER does not exist the RaiseCompilerError with the string will be passed to the assembler for error processing.   This permits the inspect of the user program with appropriate messages to inform the user.\n\n....\n#IFNDEF ONEOF(USART_BAUD_RATE,USART1_BAUD_RATE,USART2_BAUD_RATE) THEN\n'Look for one of the baud rates CONSTANTS\n#IFNDEF STOPCOMPILERERRORHANDLER\nRaiseCompilerError \"USART not setup correctly. No baud rate specified - please correct USART setup\"\n#ENDIF\n#ENDIF\n....\n\n\n The RaiseCompilerError handler can be stopped using the constant STOPCOMPILERERRORHANDLER as shown above."
         }
 
       ]
