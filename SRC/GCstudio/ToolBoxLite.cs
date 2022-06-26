@@ -1210,7 +1210,7 @@ namespace GC_Studio
                     }
                     catch 
                     {
-                        MessageBox.Show("Error selecting compiler architecture.");
+                    
                     }
                     break;
 
@@ -1221,7 +1221,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                        MessageBox.Show("Error selecting compiler architecture.");
+                     
                     }
 
                     break;
@@ -1233,7 +1233,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                        MessageBox.Show("Error selecting compiler architecture.");
+                     
                     }
 
                     break;
@@ -1256,7 +1256,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                        MessageBox.Show("Error selecting compiler architecture.");
+                     
                     }
 
                     break;
