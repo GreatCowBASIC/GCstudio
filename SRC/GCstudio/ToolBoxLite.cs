@@ -147,17 +147,8 @@ namespace GC_Studio
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            //first run
-            if (File.Exists("mrf.dat") == false)
-            {
-                LoadRecent();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
-            }
-            else
-            {
-                LoadRecent();
-            }
 
+            //CLI Commands
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
@@ -244,16 +235,6 @@ namespace GC_Studio
             }
 
 
-            for (int i = 0; i < 10; i++)
-            {
-                if (RecentDir[i] != "")
-                {
-                    RecentItem[i] = listViewRecent.Items.Add(RecentName[i]);
-                    RecentItem[i].Text = RecentName[i];
-                    RecentItem[i].ToolTipText = RecentDir[i];
-                }
-            }
-
             //post updater
             if (File.Exists("post.dat"))
             {
@@ -270,6 +251,27 @@ namespace GC_Studio
                 {
                     MessageBox.Show("Error starting the post updater.");
                     Environment.Exit(0);
+                }
+            }
+
+            //first run
+            if (File.Exists("mrf.dat") == false)
+            {
+                LoadRecent();
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+            }
+            else
+            {
+                LoadRecent();
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (RecentDir[i] != "")
+                {
+                    RecentItem[i] = listViewRecent.Items.Add(RecentName[i]);
+                    RecentItem[i].Text = RecentName[i];
+                    RecentItem[i].ToolTipText = RecentDir[i];
                 }
             }
 
