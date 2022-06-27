@@ -1,0 +1,200 @@
+{
+	"name": "All-Autocomplete",
+	"displayName": "All Autocomplete",
+	"description": "Create autocomplete items from open files in VSCode.",
+	"version": "0.0.23",
+	"publisher": "Atishay-Jain",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.40.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"autocomplete",
+		"all autocomplete",
+		"intellisense",
+		"intellisense from open files",
+		"code completion"
+	],
+	"galleryBanner": {
+		"color": "#5F889E",
+		"theme": "light"
+	},
+	"bugs": {
+		"url": "https://github.com/atishay/vscode-allautocomplete/issues"
+	},
+	"homepage": "https://github.com/atishay/vscode-allautocomplete",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atishay/vscode-allautocomplete.git"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"icon": "images/icon.png",
+	"contributes": {
+		"commands": [
+			{
+				"command": "AllAutocomplete.cycleDocuments",
+				"title": "Cycle Open Editors",
+				"category": "All Autocomplete"
+			},
+			{
+				"command": "AllAutocomplete.toggleCurrentFile",
+				"title": "Toggle Suggestions From The Current File",
+				"category": "All Autocomplete"
+			}
+		],
+		"configurationDefaults": {
+			"[markdown]": {
+				"editor.quickSuggestions": true
+			},
+			"[yaml]": {
+				"editor.quickSuggestions": true
+			},
+			"[plaintext]": {
+				"editor.quickSuggestions": true
+			}
+		},
+		"configuration": {
+			"title": "All Autocomplete",
+			"properties": {
+				"AllAutocomplete.languageWhitespace": {
+					"type": "object",
+					"description": "Language specific settings for the whitespace splitter",
+					"default": {
+						"ruby": "[^\\w\\-_\\$:\\u0080-\\uFFFF]+",
+						"javascript": "[^\\w_\\$\\u0080-\\uFFFF]+",
+						"javascriptreact": "[^\\w_\\-\\$\\@\\u0080-\\uFFFF]+",
+						"typescript": "[^\\w_\\-\\$\\@\\u0080-\\uFFFF]+",
+						"php": "[^\\w_\\$\\u0080-\\uFFFF]+",
+						"css": "[^\\w\\-_\\$\\u0080-\\uFFFF]+",
+						"scss": "[^\\w\\-_\\$\\@\\u0080-\\uFFFF]+",
+						"html": "[^\\w\\-_\\$\\u0080-\\uFFFF]+",
+						"python": "[^\\w\\-_\\u0080-\\uFFFF]+",
+						"elm": "[^\\w\\-_\\u0080-\\uFFFF]+",
+						"cpp": "[^\\w_\\u0080-\\uFFFF]+",
+						"csv": "[^\\w_\\u0080-\\uFFFF \\:]+"
+					}
+				},
+				"AllAutocomplete.languageSpecialCharacters": {
+					"type": "object",
+					"description": "Language specific special characters that can be a part of autocompletion(that can fit with all strings)",
+					"default": {
+						"css": "^[\\.#]",
+						"scss": "^[\\.#]",
+						"csv": "^[\\: ]"
+					}
+				},
+				"AllAutocomplete.minWordLength": {
+					"type": "number",
+					"default": 3,
+					"description": "All Autocomplete: Minimum word length to keep in autocomplete list."
+				},
+				"AllAutocomplete.maxLines": {
+					"type": "number",
+					"default": 9999,
+					"description": "All Autocomplete: Maximum number of lines to read from a file."
+				},
+				"AllAutocomplete.maxItemsInSingleList": {
+					"type": "number",
+					"default": 999,
+					"description": "All Autocomplete: Maximum number of items sent for autocomplete in a single API call."
+				},
+				"AllAutocomplete.whitespace": {
+					"type": "string",
+					"default": "[^\\w\\-_\\$\\u0080-\\uFFFF]+",
+					"description": "All Autocomplete: Regex to use for splitting whitespace"
+				},
+				"AllAutocomplete.disableNumberHandling": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable special handling for "
+				},
+				"AllAutocomplete.cycleOpenDocumentsOnLaunch": {
+					"type": "boolean",
+					"default": false,
+					"description": "Cycles through open documents on launch to enable autocomplete to include those documents on restore. (VSCode Issue#15178)"
+				},
+				"AllAutocomplete.showCurrentDocument": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show results from the current document in the autocomplete results(Disable to improve performance)."
+				},
+				"AllAutocomplete.showOpenDocuments": {
+					"type": "boolean",
+					"default": false,
+					"description": "Show results from the other open document in the autocomplete results(Disable to have results only from the current document if showCurrentDocument is true)."
+				},
+				"AllAutocomplete.ignoredWords": {
+					"type": "string",
+					"default": "",
+					"description": "Words to ignore(separated by AllAutocomplete.whitespace) from autocomplete."
+				},
+				"AllAutocomplete.updateOnlyOnSave": {
+					"type": "boolean",
+					"default": false,
+					"description": "Do not update the autocomplete list unless the document is saved."
+				},
+				"AllAutocomplete.excludeFiles": {
+					"type": "string",
+					"default": "**/*.+(git|rendered)",
+					"description": "Glob pattern for files to exclude from autocomplete search."
+				},
+				"AllAutocomplete.wordListFiles": {
+					"type": "array",
+					"default": [],
+					"description": "List of files to initialize the word list from. These files behave as if they are always open. Expects an absolute path. Can work with relative path if the workspace contains a single folder."
+				},
+				"AllAutocomplete.nonContributingLanguages": {
+					"type": "array",
+					"default": [],
+					"description": "List of languages that do not supply word lists but can consume words from All Autocomplete."
+				},
+				"AllAutocomplete.nonContributingToSelfLanguages": {
+					"type": "array",
+					"default": [],
+					"description": "List of languages that do not supply word lists to the files of the same language but can consume words from All Autocomplete as well as supply word lists to other files."
+				},
+				"AllAutocomplete.dontContributeToSelf": {
+					"type": "boolean",
+					"default": false,
+					"description": "Forces all languages to not show up words from the same language. This removes All AutoComplete for the same language files. Useful if relying on the language server and need to use all autocomplete only across languages. Equivalent to putting all languages in AllAutocomplete.nonContributingToSelfLanguages"
+				}
+			}
+		}
+	},
+	"main": "./dist/extension",
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"compile": "webpack --mode none",
+		"watch": "webpack --mode none --watch"
+	},
+	"dependencies": {
+		"triejs": "0.1.5",
+		"minimatch": "3.0.4"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.0.4",
+		"ts-loader": "^5.3.3",
+		"mocha": "^6.1.4",
+		"tslint": "^5.17.0",
+		"typescript": "^3.5.1",
+		"@types/vscode": "^1.40.0",
+		"webpack": "^4.29.3",
+		"webpack-cli": "^3.2.3"
+	},
+	"__metadata": {
+		"id": "55c9a325-d650-4ab2-a952-3f3c6faba089",
+		"publisherId": "366818c6-00cf-4682-821a-f16ea083ff17",
+		"publisherDisplayName": null,
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1654328452021
+	}
+}

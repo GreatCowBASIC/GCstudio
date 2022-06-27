@@ -1,0 +1,105 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+f5",
+        "command": "-workbench.action.debug.stop",
+        "when": "inDebugMode && !focusedSessionIsAttach"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "-workbench.action.debug.run",
+        "when": "debuggersAvailable && debugState != 'initializing'"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "-debug.openView",
+        "when": "!debuggersAvailable"
+    },
+    {
+        "key": "f5",
+        "command": "-debug.openView",
+        "when": "!debuggersAvailable"
+    },
+    {
+        "key": "ctrl+shift+f4",
+        "command": "workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "f2",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "f1",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Make HEX and Flash [F5]",
+        "when": "resourceExtname == .gcb"
+    },
+    {
+        "key": "f6",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Make HEX [F6]",
+        "when": "resourceExtname == .gcb"
+    },
+    {
+        "key": "f7",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Make ASM [F7]",
+        "when": "resourceExtname == .gcb"
+    },
+    {
+        "key": "shift+f7",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Open ASM [Shift+F7]",
+        "when": "resourceExtname == .gcb"
+    }, 
+    {
+        "key": "f1",
+        "command": "workbench.action.tasks.runTask",
+        "args": "GCB-Help [F1]",
+   
+    },
+    {
+        "key": "f8",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Push Library to Include Dir [F8]",
+        "when": "resourceExtname == .h"
+    },
+    {
+        "key": "f9",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Serial Terminal [F9]",
+        "when": "resourceExtname == .gcb"
+    },
+    {
+        "key": "f4",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "workbench.action.tasks.build"
+    },
+]

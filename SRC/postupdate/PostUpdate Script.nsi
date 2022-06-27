@@ -6,7 +6,6 @@
 ######################################################################
 # Includes
 
-!include "LogicLib.nsh"
 
 ######################################################################
 # Installer Configuration
@@ -44,13 +43,14 @@ RequestExecutionLevel user
 
 ######################################################################
 # Main program, Post Update Files
+Icon ".\res\GCstudio.ico"
 Section -MainProgram
 ${INSTALL_TYPE}
 SetOverwrite ifnewer
 
 #Post
 SetOutPath "$INSTDIR"
-File /r ".\extra\*"
+File /r ".\post\*"
 
 SectionEnd
 

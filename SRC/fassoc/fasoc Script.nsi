@@ -45,6 +45,7 @@ BrandingText "${APP_NAME}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
 InstallDir "$EXEDIR"
+Icon ".\res\GCstudio.ico"
 
 
 ######################################################################

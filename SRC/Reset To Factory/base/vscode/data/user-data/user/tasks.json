@@ -1,0 +1,402 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Make HEX and Flash [F5]",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\useini.bat \"${file}\"",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "relative",
+                        "${fileDirname}"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                }
+            ],
+            "group": "build",
+            "presentation": {
+                "clear": true,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "Make HEX [F6]",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makehex.bat \"${file}\"",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "relative",
+                        "${fileDirname}"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                }
+            ],
+            "group": "build",
+            "presentation": {
+                "clear": true,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "Make ASM [F7]",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makeasm.bat \"${file}\"",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+            },
+            "problemMatcher": [
+                {
+                    "owner": "gcb",
+                    "source": "gcb",
+                    "fileLocation": [
+                        "relative",
+                        "${fileDirname}"
+                    ],
+                    "pattern": [
+                        {
+                            "severity": 3,
+                            "file": 1,
+                            "line": 2,
+                            "message": 4,
+                            "regexp": "^(.*)\\s+\\((\\d+)\\):\\s+(Warning|Error):\\s+(.+)$"
+                        }
+                    ]
+                }
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            "label": "Open ASM [Shift+F7]",
+            "type": "shell",
+            "command": "${execPath}",
+            "args": [
+                "-r",
+                "${fileDirname}\\${fileBasenameNoExtension}.ASM"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Open S",
+            "type": "shell",
+            "command": "${execPath}",
+            "args": [
+                "-r",
+                "${fileDirname}\\${fileBasenameNoExtension}.S"
+            ],
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "Flash Previous",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\foini.bat \"${file}\"",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true
+            }
+        },
+        {
+            "label": "Push Library to Include Dir [F8]",
+            "type": "shell",
+            "command": "Copy-Item '${file}' '${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\Include\\'",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Edit Programmer Preferences",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\Programmer Editor.exe",
+            "args": [
+                "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\use.INI"
+            ],
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\greatcowbasic\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "GCB-Help [F1]",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\CallCHM.exe",
+            "args": [
+                "${command:extension.commandvariable.selectedText}"
+            ],
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "AVRdude GUI",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\AVRDude\\avrdudess.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\AVRDude\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "PICkit2+ GUI",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\PICkit2Plus.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "PICkit3+ GUI",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\PICkit3Plus.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\PICKitPlus\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "PICInfo",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\PICinfo\\PICInfo.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "Simply Serial",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\SimplySerial\\ss.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\SimplySerial\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always",
+                "close": false
+            }
+        },
+        {
+            "label": "Serial Terminal [F9]",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\Terminal\\terminal.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\Terminal\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "PPS Tool",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\PPSTool\\pps tool.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\PPSTool\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "CLC Designer Tool v3",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\version3_0_0_4\\CLCDesignerTool.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "CLC Designer Tool v4",
+            "type": "process",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\version_v4\\CLCDesignerTool.exe",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\CLCDesigner\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "View Demos",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}vscode\\code.exe ${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "silent",
+                "close": true
+            }
+        },
+        {
+            "label": "GCB Compiler Version",
+            "type": "shell",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.exe /version",
+            "options": {
+                "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true
+            }
+        }
+    ]
+}

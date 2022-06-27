@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021.5 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="44px" height="44px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 33.47 33.2"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="700">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial Negrita"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="722" d="M718.1 0l-156.195 0 -61.8428 163.012 -287.214 0 -59.4931 -163.012 -153.355 0 278.022 716.086 153.2 0 286.879 -716.086zm-265.033 284.038l-99.5166 265.033 -96.6763 -265.033 196.193 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#C5C5C5;stroke-width:1.5;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+    .fil1 {fill:#C5C5C5}
+    .fnt0 {font-weight:bold;font-size:34.42px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="0.75" y="0.75" width="31.97" height="31.69"/>
+  <g transform="matrix(0.819692 0 0 1 -11.0634 -119.085)">
+   <text x="22" y="147.85"  class="fil1 fnt0">A</text>
+  </g>
+ </g>
+</svg>
