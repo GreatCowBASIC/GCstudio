@@ -109,6 +109,7 @@ namespace GC_Studio
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -638,6 +639,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button13);
             this.panelconfig.Controls.Add(this.button12);
             this.panelconfig.Controls.Add(this.button11);
             this.panelconfig.Controls.Add(this.button10);
@@ -1290,6 +1292,18 @@ namespace GC_Studio
             this.textBox1.TabIndex = 16;
             this.textBox1.Text = "GCB Project";
             // 
+            // button13
+            // 
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(338, 603);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(201, 60);
+            this.button13.TabIndex = 80;
+            this.button13.Text = "Reset GC Studio to Factory Settings";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // ToolBoxLite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -1416,5 +1430,6 @@ namespace GC_Studio
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
