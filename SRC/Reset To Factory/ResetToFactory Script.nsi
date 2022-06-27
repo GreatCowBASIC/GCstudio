@@ -50,7 +50,8 @@ SetOverwrite on
 #Clear
 RMDir /r "$INSTDIR\vscode\data"
 Delete "$INSTDIR\mrf.dat"
-
+Delete "$INSTDIR\mrd.dat"
+Delete "$INSTDIR\lstsz.dat"
 #Reset
 SetOutPath "$INSTDIR"
 File /r ".\base\*"

@@ -1315,6 +1315,28 @@ namespace GC_Studio
                 MessageBox.Show("An error occurred when launching the Force Update");
             }
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to reset GC Studio to factory settings? This will clear all IDE user configurations, reset programmer preferences, remove all installed extensions and set GC Studio to its default settings.","Reset To Factory Settings.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                ProcessStartInfo p = new ProcessStartInfo();
+                Process x;
+                try
+                {
+                    p.FileName = "ResetToFactory.exe";
+                    p.Arguments = "";
+                    p.WindowStyle = ProcessWindowStyle.Maximized;
+                    x = Process.Start(p);
+                    Environment.Exit(0);
+                }
+                catch
+                {
+                    MessageBox.Show("An error occurred when launching the Reset To Factory Tool");
+                }
+            }
+        }
     }
 
 
