@@ -245,7 +245,11 @@ namespace GC_Studio
                     p.Arguments = "/S";
                     p.WindowStyle = ProcessWindowStyle.Normal;
                     Process x = Process.Start(p);
-                    File.Delete("post.dat");
+                    try
+                    {
+                        File.Delete("post.dat");
+                    }
+                    catch { }
                 }
                 catch
                 {

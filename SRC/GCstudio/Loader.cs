@@ -16,7 +16,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.0230;
+        public const double AppVer = 99.02301;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -65,6 +65,12 @@ namespace GC_Studio
                         break;
 
                     case "/forceupdate":
+                        try
+                        {
+                            File.Delete("post.dat");
+                        }
+                        catch { }
+
                         forceupdate = true;
                         break;
 
@@ -226,25 +232,33 @@ namespace GC_Studio
                 {
                     if (ManifestVer > AppVer || forceupdate)
                     {
-                        if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+                        if (File.Exists("post.dat"))
                         {
-                            try
-                            {
-                                downloading = true;
-                                //BtnExit.Enabled = false;
-                                Version.Visible = false;
-                                ProgressUpdate.Visible = true;
-                                WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
-                                WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
-                                WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
-                            }
-                            catch
-                            {
-                            }
+                            MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            EndForm();
                         }
                         else
                         {
-                            EndForm();
+                            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+                            {
+                                try
+                                {
+                                    downloading = true;
+                                    //BtnExit.Enabled = false;
+                                    Version.Visible = false;
+                                    ProgressUpdate.Visible = true;
+                                    WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
+                                    WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
+                                    WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
+                                }
+                                catch
+                                {
+                                }
+                            }
+                            else
+                            {
+                                EndForm();
+                            }
                         }
                     }
                     else
