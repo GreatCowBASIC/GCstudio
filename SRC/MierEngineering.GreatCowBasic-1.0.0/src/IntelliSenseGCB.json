@@ -25,8 +25,8 @@
           "signature": "Dim MyVar as Long",
           "description": "A whole number between 0 and 2^32 (4.29 billion)"
         },
-        "": {
-          "String": "Dim MyVar as String",
+        "String": {
+          "signature": "Dim MyVar as String",
           "description": "A series of letters, numbers and symbols"
         },
         "LongINT": {
