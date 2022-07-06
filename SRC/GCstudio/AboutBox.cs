@@ -118,6 +118,17 @@ namespace GC_Studio
 
             try
             {
+                dbs.LoadRead("toolchainversion.txt");
+                labeltoolchain.Text = dbs.ReadData();
+                dbs.CloseRead();
+            }
+            catch
+            {
+                MessageBox.Show("Error when loading an about file.");
+            }
+
+            try
+            {
                 dbs.LoadRead("vscode\\version.txt");
                 labelgccode.Text = dbs.ReadData();
                 dbs.CloseRead();

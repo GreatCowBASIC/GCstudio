@@ -51,6 +51,8 @@
             this.labelgccode = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labeltoolchain = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -349,6 +351,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.labeltoolchain);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.labelcomp);
             this.groupBox1.Controls.Add(this.label4);
@@ -360,10 +364,32 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(733, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 216);
+            this.groupBox1.Size = new System.Drawing.Size(464, 252);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modules:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(27, 192);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 24);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "Tool Chain Build:";
+            // 
+            // labeltoolchain
+            // 
+            this.labeltoolchain.AutoSize = true;
+            this.labeltoolchain.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labeltoolchain.ForeColor = System.Drawing.Color.White;
+            this.labeltoolchain.Location = new System.Drawing.Point(245, 192);
+            this.labeltoolchain.Name = "labeltoolchain";
+            this.labeltoolchain.Size = new System.Drawing.Size(34, 24);
+            this.labeltoolchain.TabIndex = 50;
+            this.labeltoolchain.Text = "---";
             // 
             // label5
             // 
@@ -469,5 +495,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labeltoolchain;
     }
 }
