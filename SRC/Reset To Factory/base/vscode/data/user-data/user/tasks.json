@@ -6,7 +6,10 @@
         {
             "label": "Make HEX and Flash [F5]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\useini.bat \"${file}\"",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\useini.bat",
+            "args": [
+                "\"${file}\""
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -38,7 +41,10 @@
         {
             "label": "Make HEX [F6]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makehex.bat \"${file}\"",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makehex.bat",
+                "args": [
+                    "\"${file}\""
+                ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -48,7 +54,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "relative",
-                        "${fileDirname}"
+                        "'${fileDirname}'"
                     ],
                     "pattern": [
                         {
@@ -70,7 +76,10 @@
         {
             "label": "Make ASM [F7]",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makeasm.bat \"${file}\"",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makeasm.bat",
+                "args": [
+                    "\"${file}\""
+                ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -108,7 +117,7 @@
             "command": "${execPath}",
             "args": [
                 "-r",
-                "${fileDirname}\\${fileBasenameNoExtension}.ASM"
+                "'${fileDirname}\\${fileBasenameNoExtension}.ASM'"
             ],
             "presentation": {
                 "echo": true,
@@ -124,7 +133,7 @@
             "command": "${execPath}",
             "args": [
                 "-r",
-                "${fileDirname}\\${fileBasenameNoExtension}.S"
+                "'${fileDirname}\\${fileBasenameNoExtension}.S'"
             ],
             "presentation": {
                 "clear": true,
@@ -135,7 +144,10 @@
         {
             "label": "Flash Previous",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\foini.bat \"${file}\"",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\foini.bat",
+                "args": [
+                    "\"${file}\""
+                ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -367,7 +379,10 @@
         {
             "label": "View Demos",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}vscode\\code.exe ${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\",
+            "command": "${execPath}",
+            "args": [
+                "${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\"
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}GreatCowBASIC\\demos\\"
             },
@@ -385,7 +400,10 @@
         {
             "label": "GCB Compiler Version",
             "type": "shell",
-            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.exe /version",
+            "command": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\GCBASIC.exe",
+            "args": [
+                "/version"
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },

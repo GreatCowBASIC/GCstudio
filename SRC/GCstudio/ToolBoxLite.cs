@@ -1275,9 +1275,11 @@ namespace GC_Studio
             Process x;
             try
             {
-                p.FileName = "explorer.exe";
-                p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "fassoc.exe";
+                p.FileName = "fassoc.exe";
+                p.Arguments = "";
                 p.WindowStyle = ProcessWindowStyle.Maximized;
+                p.Verb = "runas";
+                p.UseShellExecute = true;
                 x = Process.Start(p);
             }
             catch
