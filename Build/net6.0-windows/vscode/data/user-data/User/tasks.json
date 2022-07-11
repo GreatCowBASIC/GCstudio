@@ -397,6 +397,19 @@
             "presentation": {
                 "clear": true
             }
+        },
+        {
+            "label": "Clean Solution",
+            "type": "shell",
+            "command": "Remove-Item ${fileDirname}\\* -Include *.hex,*.lst,*.html,*.asm,*.s]",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
