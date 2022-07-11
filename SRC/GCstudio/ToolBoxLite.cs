@@ -1324,6 +1324,15 @@ namespace GC_Studio
         {
             if (MessageBox.Show("Do you really want to reset GC Studio to factory settings? This will clear all IDE user configurations, reset programmer preferences, remove all installed extensions and set GC Studio to its default settings.","Reset To Factory Settings.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                try
+                {
+                    File.Copy("use_in_master\\use.ini", "GreatCowBasic\\use.ini", true);
+           
+                }
+                catch
+                {
+                    MessageBox.Show("Error while reseting programmer preferences.");
+                }
 
                 ProcessStartInfo p = new ProcessStartInfo();
                 Process x;
