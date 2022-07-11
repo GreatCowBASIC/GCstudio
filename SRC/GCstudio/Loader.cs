@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading;
 using System.Windows.Forms;
+using System.Security.Principal;
 using System.IO;
 using DBSEngine;
 
@@ -55,6 +56,57 @@ namespace GC_Studio
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
             arguments = Environment.GetCommandLineArgs();
+
+            if (!this.IsElevated)
+            {
+                try
+                {
+                    dbs.LoadWrite("access.dat");
+                    dbs.RecordData("access");
+                    dbs.CloseWrite();
+                    dbs.DeleteFile("access.dat");
+                }
+                catch
+                {
+                    this.Visible = false;
+                    try
+                    { dbs.CloseWrite(); }
+                    catch { }
+
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    Process x;
+                    try
+                    {
+                        string args;
+                        if (arguments.Length > 1)
+                        {
+                            args = "";
+                            for (int i = 1; i < arguments.Length; i++)
+                            {
+                                args += "\"" + arguments[i] + "\"";
+                            }
+                        }
+                        else
+                        {
+                            args = "";
+                        }
+                        p.FileName = "gcstudio.exe";
+                        p.Arguments = args;
+                        p.WindowStyle = ProcessWindowStyle.Normal;
+                        p.Verb = "runas";
+                        p.UseShellExecute = true;
+                        x = Process.Start(p);
+                        Environment.Exit(0);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("An error occurred when launching GC Studio Elevated.");
+                        Environment.Exit(0);
+                    }
+
+                }
+            }
+
             if (arguments.Length > 1)
             {
 
@@ -409,7 +461,16 @@ namespace GC_Studio
             form.Region = new Region(DGP);
         }
 
-        
+        public bool IsElevated
+        {
+            get
+            {
+                return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
+
 
     }
+
+
 }
