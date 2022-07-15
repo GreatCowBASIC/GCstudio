@@ -17,7 +17,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.02313;
+        public const double AppVer = 99.0232;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -100,7 +100,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                        MessageBox.Show("An error occurred when launching GC Studio Elevated.");
+                        MessageBox.Show("The current Install Path doesnt have write rights, this requires GC Studio to run Elevated.");
                         Environment.Exit(0);
                     }
 
