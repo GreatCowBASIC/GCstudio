@@ -902,7 +902,7 @@ function linkify(text, splitLines, workspaceFolder) {
 
 // extensions/notebook-renderers/src/ansi.ts
 function handleANSIOutput(text) {
-  let workspaceFolder = void 0;
+  const workspaceFolder = void 0;
   const root = document.createElement("span");
   const textLength = text.length;
   let styleNames = [];
@@ -1223,7 +1223,7 @@ function generateViewMoreElement(outputId) {
   first.textContent = "Output exceeds the ";
   const second = document.createElement("a");
   second.textContent = "size limit";
-  second.href = `command:workbench.action.openSettings?["notebook.output.textLineLimit"]`;
+  second.href = `command:workbench.action.openSettings?%5B%22notebook.output.textLineLimit%22%5D`;
   const third = document.createElement("span");
   third.textContent = ". Open the full output data";
   const forth = document.createElement("a");
@@ -1236,8 +1236,8 @@ function generateViewMoreElement(outputId) {
   return container;
 }
 function truncatedArrayOfString(id, outputs, linesLimit, container) {
-  let buffer = outputs.join("\n").split(/\r\n|\r|\n/g);
-  let lineCount = buffer.length;
+  const buffer = outputs.join("\n").split(/\r\n|\r|\n/g);
+  const lineCount = buffer.length;
   if (lineCount < linesLimit) {
     const spanElement = handleANSIOutput(buffer.slice(0, linesLimit).join("\n"));
     container.appendChild(spanElement);

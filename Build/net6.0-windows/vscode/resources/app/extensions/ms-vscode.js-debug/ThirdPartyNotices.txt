@@ -444,10 +444,10 @@ Copyright 2019 ehmicky <ehmicky@gmail.com>
 reflect-metadata 0.1.13 - Apache-2.0
 http://rbuckton.github.io/reflect-metadata
 
-Copyright (c) Microsoft.
+Copyright (c) Microsoft
 Copyright (c) 2016 Brian Terlson
 Copyright (c) 2015 Nicolas Bevacqua
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation
 
 Apache License
 
@@ -792,7 +792,7 @@ https://github.com/estools/estraverse
 Copyright (c) 2014 Yusuke Suzuki <utatane.tea@gmail.com>
 Copyright (c) 2012 Ariya Hidayat <ariya.hidayat@gmail.com>
 Copyright (c) 2012-2013 Yusuke Suzuki <utatane.tea@gmail.com>
-Copyright (c) 2012-2016 Yusuke Suzuki (http://github.com/Constellation)
+Copyright (c) 2012-2016 Yusuke Suzuki (http://github.com/Constellation) (twitter Constellation (http://twitter.com/Constellation)) and other contributors
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -2126,8 +2126,8 @@ SOFTWARE.
 base 0.11.2 - MIT
 https://github.com/node-base/base
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -2212,8 +2212,8 @@ SOFTWARE.
 braces 2.3.2 - MIT
 https://github.com/micromatch/braces
 
-Copyright (c) 2014-2018, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2018, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -2245,8 +2245,8 @@ THE SOFTWARE.
 braces 3.0.2 - MIT
 https://github.com/micromatch/braces
 
-Copyright (c) 2014-2018, Jon Schlinkert.
-Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2018, Jon Schlinkert
+Copyright (c) 2019, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -3934,7 +3934,7 @@ SOFTWARE.
 
 ---------------------------------------------------------
 
-got 11.8.2 - MIT
+got 11.8.5 - MIT
 https://github.com/sindresorhus/got#readme
 
 Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
@@ -4789,9 +4789,9 @@ THE SOFTWARE.
 isobject 2.1.0 - MIT
 https://github.com/jonschlinkert/isobject
 
-Copyright (c) 2014-2015, Jon Schlinkert.
-Copyright (c) 2014-2016, Jon Schlinkert.
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2015, Jon Schlinkert
+Copyright (c) 2014-2016, Jon Schlinkert
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -4823,8 +4823,8 @@ THE SOFTWARE.
 isobject 3.0.1 - MIT
 https://github.com/jonschlinkert/isobject
 
-Copyright (c) 2014-2017, Jon Schlinkert.
-Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2014-2017, Jon Schlinkert
+Copyright (c) 2017, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -6246,7 +6246,7 @@ pascalcase 0.1.1 - MIT
 https://github.com/jonschlinkert/pascalcase
 
 Copyright (c) 2015 Jon Schlinkert
-Copyright (c) 2015, Jon Schlinkert.
+Copyright (c) 2015, Jon Schlinkert
 
 The MIT License (MIT)
 
@@ -7975,9 +7975,9 @@ THE SOFTWARE.
 snapdragon 0.8.2 - MIT
 https://github.com/jonschlinkert/snapdragon
 
-Copyright (c) 2015-2016, Jon Schlinkert.
+Copyright (c) 2015-2016, Jon Schlinkert
 Copyright (c) 2012 TJ Holowaychuk <tj@vision-media.ca>
-Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2016, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -9019,9 +9019,9 @@ THE SOFTWARE.
 use 3.1.1 - MIT
 https://github.com/jonschlinkert/use
 
-Copyright (c) 2015-2017, Jon Schlinkert.
-Copyright (c) 2015-present, Jon Schlinkert.
-Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert).
+Copyright (c) 2015-2017, Jon Schlinkert
+Copyright (c) 2015-present, Jon Schlinkert
+Copyright (c) 2018, Jon Schlinkert (https://github.com/jonschlinkert)
 
 The MIT License (MIT)
 
@@ -9231,7 +9231,7 @@ THE SOFTWARE.
 xtend 4.0.2 - MIT
 https://github.com/Raynos/xtend
 
-Copyright (c) 2012-2014 Raynos.
+Copyright (c) 2012-2014 Raynos
 
 The MIT License (MIT)
 Copyright (c) 2012-2014 Raynos.

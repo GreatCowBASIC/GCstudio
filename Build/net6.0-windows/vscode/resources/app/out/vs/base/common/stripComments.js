@@ -1,6 +1,6 @@
-"use strict";(function(){function n(u,f,l,p){const r=/("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\/\*[^\/\*]*(?:(?:\*|\/)[^\/\*]*)*?\*\/)|(\/{2,}.*?(?:(?:\r?\n)|$))/g;function o(c){return c.replace(r,function(i,d,m,s,e){if(s)return"";if(e){const t=e.length;return e[t-1]===`
-`?e[t-2]==="\r"?`\r
+"use strict";(function(){function n(f,l,p,d){const o=/("[^"\\]*(?:\\.[^"\\]*)*")|('[^'\\]*(?:\\.[^'\\]*)*')|(\/\*[^\/\*]*(?:(?:\*|\/)[^\/\*]*)*?\*\/)|(\/{2,}.*?(?:(?:\r?\n)|$))|(,\s*[}\]])/g;function s(i){return i.replace(o,function(t,m,g,u,e,c){if(u)return"";if(e){const r=e.length;return e[r-1]===`
+`?e[r-2]==="\r"?`\r
 `:`
-`:""}else return i})}return{stripComments:o}}typeof define=="function"?define([],function(){return n()}):typeof module=="object"&&typeof module.exports=="object"?module.exports=n():console.trace("strip comments defined in UNKNOWN context (neither requirejs or commonjs)")})();
+`:""}else return c?t.substring(1):t})}return{stripComments:s}}typeof define=="function"?define([],function(){return n()}):typeof module=="object"&&typeof module.exports=="object"?module.exports=n():console.trace("strip comments defined in UNKNOWN context (neither requirejs or commonjs)")})();
 
-//# sourceMappingURL=https://ticino.blob.core.windows.net/sourcemaps/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/core/vs\base\common\stripComments.js.map
+//# sourceMappingURL=https://ticino.blob.core.windows.net/sourcemaps/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/core/vs\base\common\stripComments.js.map
