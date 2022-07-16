@@ -33,6 +33,7 @@
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <PlatformTarget>x86</PlatformTarget>
     <BaseOutputPath>..\..\</BaseOutputPath>
+    <Company>Mier Engineering</Company>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|AnyCPU'">
     <Optimize>True</Optimize>
