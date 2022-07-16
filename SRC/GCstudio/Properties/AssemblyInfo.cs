@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GC Studio")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Mier Engineering")]
 [assembly: AssemblyProduct("GC Studio")]
-[assembly: AssemblyCopyright("Copyright © 2007 - 2022")]
+[assembly: AssemblyCopyright("Copyright Mier Engineering © 2007 - 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión
 // utilizando el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("00.32.0.109")]
-[assembly: AssemblyFileVersion("00.32.0.109")]
+[assembly: AssemblyVersion("00.321.0.110")]
+[assembly: AssemblyFileVersion("00.321.0.110")]
