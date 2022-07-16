@@ -42,9 +42,9 @@
             "label": "Make HEX [F6]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makehex.bat",
-                "args": [
-                    "\"${file}\""
-                ],
+            "args": [
+                "\"${file}\""
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -54,7 +54,7 @@
                     "source": "gcb",
                     "fileLocation": [
                         "relative",
-                        "'${fileDirname}'"
+                        "${fileDirname}"
                     ],
                     "pattern": [
                         {
@@ -77,9 +77,9 @@
             "label": "Make ASM [F7]",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\makeasm.bat",
-                "args": [
-                    "\"${file}\""
-                ],
+            "args": [
+                "\"${file}\""
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
@@ -145,9 +145,9 @@
             "label": "Flash Previous",
             "type": "shell",
             "command": "${env:GCBASIC_INSTALL_PATH}\\G+Stools\\foini.bat",
-                "args": [
-                    "\"${file}\""
-                ],
+            "args": [
+                "\"${file}\""
+            ],
             "options": {
                 "cwd": "${env:GCBASIC_INSTALL_PATH}\\GreatCowBasic\\"
             },
