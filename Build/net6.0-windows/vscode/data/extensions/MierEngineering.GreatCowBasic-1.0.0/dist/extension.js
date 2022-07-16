@@ -416,7 +416,7 @@ class GCBDocumentSymbolProvider {
                 var startremblockregex = new RegExp("[/][*]", "i");
                 var endremblockregex = new RegExp("[*][/]", "i");
                 var varsregex = new RegExp("(?:\\s*)([^,\\s]+)", "gi");
-                var vardefine = new RegExp("(as)", "gi");
+                var vardefine = new RegExp("(as|;|rem|'|//)", "gi");
                 if (startremblockregex.test(line.text)) {
                     remblock = true;
                 }

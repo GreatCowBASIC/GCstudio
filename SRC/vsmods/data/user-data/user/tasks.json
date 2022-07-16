@@ -34,6 +34,7 @@
             ],
             "group": "build",
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "revealProblems": "onProblem"
             }
@@ -69,6 +70,7 @@
             ],
             "group": "build",
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "revealProblems": "onProblem"
             }
@@ -107,6 +109,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "revealProblems": "onProblem"
             }
@@ -136,6 +139,7 @@
                 "'${fileDirname}\\${fileBasenameNoExtension}.S'"
             ],
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -156,6 +160,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true
             }
         },
@@ -170,6 +175,10 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true
             }
         },
         {
@@ -188,6 +197,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -209,6 +219,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -227,6 +238,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -245,6 +257,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -263,6 +276,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -281,6 +295,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -299,6 +314,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "always",
                 "close": false
@@ -317,6 +333,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -335,6 +352,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -353,6 +371,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -371,6 +390,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -392,6 +412,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true,
                 "reveal": "silent",
                 "close": true
@@ -413,6 +434,7 @@
                 "isDefault": true
             },
             "presentation": {
+                "showReuseMessage": false,
                 "clear": true
             }
         },
@@ -427,6 +449,10 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "showReuseMessage": false,
+                "clear": true
             }
         }
     ]
