@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
 using System.Reflection;
+using System.Globalization;
 
 namespace GC_Studio
 {
@@ -31,6 +32,8 @@ namespace GC_Studio
         Int32 locx;
         Int32 locy;
         ListViewItem[] RecentItem = new ListViewItem[10];
+        NumberStyles Style = NumberStyles.AllowDecimalPoint;
+        CultureInfo Provider = new CultureInfo("en-US");
 
         //set focus function
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -108,12 +111,12 @@ namespace GC_Studio
                 try
                 {
                     dbs.LoadRead("lstsz.dat");
-                    sizeW = int.Parse(dbs.ReadData());
-                    sizeH = int.Parse(dbs.ReadData());
+                    sizeW = int.Parse(dbs.ReadData(),Style, Provider);
+                    sizeH = int.Parse(dbs.ReadData(), Style, Provider);
                     try
                     {
-                        locx = Int32.Parse(dbs.ReadData());
-                        locy = Int32.Parse(dbs.ReadData());
+                        locx = Int32.Parse(dbs.ReadData(), Style, Provider);
+                        locy = Int32.Parse(dbs.ReadData(), Style, Provider);
                         maximized = bool.Parse(dbs.ReadData());
                         this.Location = new Point(locx, locy);
                     }
@@ -376,7 +379,7 @@ namespace GC_Studio
             {
 
                 dbs.LoadRead("mrf.dat");
-                RecentN =int.Parse(dbs.ReadData());
+                RecentN =int.Parse(dbs.ReadData(), Style, Provider);
                 RecentName[0] = dbs.ReadData();
                 RecentDir[0] = dbs.ReadData();
                 RecentName[1] = dbs.ReadData();
