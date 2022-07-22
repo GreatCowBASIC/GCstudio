@@ -6,6 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Threading;
 using System.Windows.Forms;
 using System.Security.Principal;
+using System.Globalization;
 using System.IO;
 using DBSEngine;
 
@@ -17,7 +18,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.02321;
+        public const double AppVer = 99.02322;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -26,6 +27,9 @@ namespace GC_Studio
         string ManifestNotes;
         string UpdateChecksum;
         string[] arguments;
+        NumberStyles Style = NumberStyles.AllowDecimalPoint;
+        CultureInfo Provider = new CultureInfo("en-US");
+        
         bool continueflag = false;
         bool downloading = false;
         bool forceupdate = false;
@@ -265,13 +269,13 @@ namespace GC_Studio
             {
 
                 dbs.LoadRead("cvs.nfo");
-                double.TryParse(dbs.ReadData(), out ManifestVer);
+                double.TryParse(dbs.ReadData(),Style,Provider,out ManifestVer);
                 ManifestPKG = dbs.ReadData();
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();
                 ManifestNotes = dbs.ReadData();
                 dbs.ReadData();
-                double.TryParse(dbs.ReadData(), out ManifestMinVer);
+                double.TryParse(dbs.ReadData(),Style, Provider, out ManifestMinVer);
                 dbs.CloseRead();
                 //    try
                 //    {
