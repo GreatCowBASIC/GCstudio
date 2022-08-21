@@ -265,7 +265,7 @@ namespace GC_Studio
             if (File.Exists("mrf.dat") == false)
             {
                 LoadRecent();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\thisisusefullistoftoolsfortheide.txt\"", "GCcode");
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this is useful list of tools for the ide.txt\"", "GCcode");
             }
             else
             {
