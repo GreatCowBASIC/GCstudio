@@ -42,7 +42,8 @@ namespace GC_Studio
         public ToolBoxLite()
         {
             InitializeComponent();
-        
+            Application.EnableVisualStyles();
+
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
