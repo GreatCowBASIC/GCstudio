@@ -1356,6 +1356,28 @@ namespace GC_Studio
                 }
             }
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Programmer Editor.exe";
+                p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\use.INI";
+                p.WindowStyle = ProcessWindowStyle.Maximized;
+                x = Process.Start(p);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when launching the PrefsEditor Tool");
+            }
+        }
+
+        private void panelmain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

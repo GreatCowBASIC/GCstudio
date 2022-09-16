@@ -63,6 +63,7 @@ namespace GC_Studio
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.buttonabout = new System.Windows.Forms.Button();
             this.panelconfig = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -576,6 +577,7 @@ namespace GC_Studio
             this.panelmain.Name = "panelmain";
             this.panelmain.Size = new System.Drawing.Size(1044, 963);
             this.panelmain.TabIndex = 48;
+            this.panelmain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmain_Paint);
             // 
             // linkLabelclear
             // 
@@ -639,6 +641,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.button14);
             this.panelconfig.Controls.Add(this.button13);
             this.panelconfig.Controls.Add(this.button12);
             this.panelconfig.Controls.Add(this.button11);
@@ -665,6 +668,18 @@ namespace GC_Studio
             this.panelconfig.Size = new System.Drawing.Size(1044, 963);
             this.panelconfig.TabIndex = 49;
             this.panelconfig.Visible = false;
+            // 
+            // button14
+            // 
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(339, 687);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(201, 72);
+            this.button14.TabIndex = 81;
+            this.button14.Text = "Edit Programmer Preferences";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -1431,5 +1446,6 @@ namespace GC_Studio
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }
