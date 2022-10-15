@@ -923,6 +923,7 @@ namespace GC_Studio
             "mainstream",
             "mainstream without demos",
             "dev preview",
+            "compiler only",
             "no updates"});
             this.comboupdate.Location = new System.Drawing.Point(97, 242);
             this.comboupdate.Name = "comboupdate";
