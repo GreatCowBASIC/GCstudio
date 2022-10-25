@@ -18,7 +18,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.0235;
+        public const double AppVer = 99.02351;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;

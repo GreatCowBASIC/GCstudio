@@ -8,6 +8,7 @@ using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
 using System.Reflection;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace GC_Studio
 {
@@ -17,7 +18,7 @@ namespace GC_Studio
 
         DBS dbs = new DBS();
         string ReleaseChanel = "mainstream";
-      
+        ConfigSchema Config = new ConfigSchema();
         string IDE = "GCcode";
         string[] arguments;
         string ideargs = "";
@@ -38,7 +39,7 @@ namespace GC_Studio
         //set focus function
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern int SetForegroundWindow(IntPtr hwnd);
-
+        
         public ToolBoxLite()
         {
             InitializeComponent();
@@ -364,6 +365,23 @@ namespace GC_Studio
             {
                 MessageBox.Show("Error saving config.");
             }
+
+
+            Config.ReleaseChanel = ReleaseChanel;
+            Config.IDE = IDE;
+            Config.architecture = architecture;
+            Config.sizeW = sizeW;
+            Config.sizeH = sizeH;
+            Config.locx = locx;
+            Config.locy = locy;
+            Config.maximized = maximized;
+
+            dbs.LoadWrite("testconfig.json");
+            dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
+            dbs.CloseWrite();
+
+
+
         }
 
 
