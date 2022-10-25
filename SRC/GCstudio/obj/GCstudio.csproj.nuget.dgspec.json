@@ -44,9 +44,9 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
-            "System.Data.DataSetExtensions": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
