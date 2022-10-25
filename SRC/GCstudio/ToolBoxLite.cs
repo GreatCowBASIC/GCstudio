@@ -9,6 +9,7 @@ using DBSEngine;
 using System.Reflection;
 using System.Globalization;
 using Newtonsoft.Json;
+using static GC_Studio.ConfigSchema;
 
 namespace GC_Studio
 {
@@ -367,15 +368,15 @@ namespace GC_Studio
             }
 
 
-            Config.ReleaseChanel = ReleaseChanel;
-            Config.IDE = IDE;
-            Config.architecture = architecture;
-            Config.sizeW = sizeW;
-            Config.sizeH = sizeH;
-            Config.locx = locx;
-            Config.locy = locy;
-            Config.maximized = maximized;
-
+            Config.GCstudio.ReleaseChanel = ReleaseChanel;
+            Config.GCstudio.IDE = IDE;
+            Config.GCstudio.Architecture = architecture;
+            Config.Window.sizeW = sizeW;
+            Config.Window.sizeH = sizeH;
+            Config.Window.locx = locx;
+            Config.Window.locy = locy;
+            Config.Window.maximized = maximized;
+           
             dbs.LoadWrite("testconfig.json");
             dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
             dbs.CloseWrite();

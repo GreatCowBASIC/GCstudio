@@ -2,18 +2,29 @@
 
 namespace GC_Studio
 {
-    class ConfigSchema
+    public class ConfigSchema
     {
 
-        public string ReleaseChanel { get; set; }
-        public string IDE { get; set; }
-        public string architecture { get; set; }
-        public int sizeW { get; set; }
-        public int sizeH { get; set; }
-        public Int32 locx { get; set; }
-        public Int32 locy { get; set; }
-        public bool maximized { get; set; }
+        public GCstudioConfig GCstudio = new GCstudioConfig();
+        public WindowConfig Window = new WindowConfig(); 
 
+        public class WindowConfig
+        {
+
+            public int sizeW { get; set; }
+            public int sizeH { get; set; }
+            public Int32 locx { get; set; }
+            public Int32 locy { get; set; }
+            public bool maximized { get; set; }
+        }
+
+        public class GCstudioConfig
+        {
+            public string ReleaseChanel { get; set; }
+            public string IDE { get; set; }
+            public string Architecture { get; set; }
+
+        }
 
     }
 }
