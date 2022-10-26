@@ -18,21 +18,14 @@ namespace GC_Studio
 
 
         DBS dbs = new DBS();
-        string ReleaseChanel = "mainstream";
+
         ConfigSchema Config = new ConfigSchema();
-        string IDE = "GCcode";
-        string[] arguments;
+         string[] arguments;
         string ideargs = "";
-        string architecture = "Auto";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
         string[] RecentName = new string[10];
         string[] RecentDir = new string[10];
         int RecentN = 0;
-        int sizeW;
-        int sizeH;
-        bool maximized = false;
-        Int32 locx;
-        Int32 locy;
         ListViewItem[] RecentItem = new ListViewItem[10];
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
@@ -91,40 +84,41 @@ namespace GC_Studio
             //             Environment.Exit(0);
             //         }
             //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
-            
+
 
             ver.Text = Loader.AppVer.ToString();
 
             LoadConfig();
 
 
-           
-            comboupdate.Text = ReleaseChanel;
-            comboide.Text = IDE;
-            comboarch.Text = architecture;    
+
+            comboupdate.Text = Config.GCstudio.ReleaseChanel;
+            comboide.Text = Config.GCstudio.IDE;
+            comboarch.Text = Config.GCstudio.Architecture;
 
 
             CompilerArchitecture();
-            
-            
 
-            //window size
+
+
+            //window size old file
             if (File.Exists("lstsz.dat"))
             {
                 try
                 {
                     dbs.LoadRead("lstsz.dat");
-                    sizeW = int.Parse(dbs.ReadData(),Style, Provider);
-                    sizeH = int.Parse(dbs.ReadData(), Style, Provider);
+                    Config.Window.sizeW = int.Parse(dbs.ReadData(), Style, Provider);
+                    Config.Window.sizeH = int.Parse(dbs.ReadData(), Style, Provider);
                     try
                     {
-                        locx = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        locy = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        maximized = bool.Parse(dbs.ReadData());
-                        this.Location = new Point(locx, locy);
+                        Config.Window.locx = Int32.Parse(dbs.ReadData(), Style, Provider);
+                        Config.Window.locy = Int32.Parse(dbs.ReadData(), Style, Provider);
+                        Config.Window.maximized = bool.Parse(dbs.ReadData());
+                        this.Location = new Point(Config.Window.locx, Config.Window.locy);
                     }
                     catch { }
-                    dbs.CloseRead();                   
+                    dbs.CloseRead();
+                    dbs.DeleteFile("lstsz.dat");
                 }
                 catch
                 {
@@ -133,26 +127,14 @@ namespace GC_Studio
                 }
 
             }
-            else
-            {
-              
-                    sizeW = 1028;
-                    sizeH = 681;
-                    this.Size = new Size(sizeW, sizeH);
-                    this.CenterToScreen();
-                    locx = this.Location.X;
-                    locy = this.Location.Y;
-                    maximized = false;
-                    SaveLastSize();               
-
-            }
-            this.Size = new Size(sizeW, sizeH);
-            if (maximized)
+            
+            this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
+            if (Config.Window.maximized)
             {
                 MaxBounds();
                 this.WindowState = FormWindowState.Maximized;
             }
-
+            
 
             //CLI Commands
             arguments = Environment.GetCommandLineArgs();
@@ -205,14 +187,7 @@ namespace GC_Studio
 
                     case "/resetsize":
 
-                        sizeW = 1028;
-                        sizeH = 681;
-                        this.Size = new Size(sizeW, sizeH);
-                        this.CenterToScreen();
-                        locx = this.Location.X;
-                        locy = this.Location.Y;
-                        maximized = false;
-                        SaveLastSize();
+                        ResetSize();
 
                         break;             
 
@@ -233,7 +208,7 @@ namespace GC_Studio
 
                         addrecent(Path.GetFileName(arguments[1]), arguments[1]);
 
-                        LaunchIDE(ideargs, IDE);
+                        LaunchIDE(ideargs, Config.GCstudio.IDE);
                         break;
                 }
 
@@ -287,23 +262,20 @@ namespace GC_Studio
 
         }
 
-        /// save last size
+        /// Reset size
         /// 
-        private void SaveLastSize()
+        private void ResetSize()
         {
-            try
-            {
-                dbs.LoadWrite("lstsz.dat");
-                dbs.RecordData(sizeW.ToString());
-                dbs.RecordData(sizeH.ToString());
-                dbs.RecordData(locx.ToString());
-                dbs.RecordData(locy.ToString());
-                dbs.RecordData(maximized.ToString());
-                dbs.CloseWrite();
-            }
-            catch { MessageBox.Show("Error saving last size"); }
+            Config.Window.sizeW = 1028;
+            Config.Window.sizeH = 681;
+            this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
+            this.CenterToScreen();
+            Config.Window.locx = this.Location.X;
+            Config.Window.locy = this.Location.Y;
+            Config.Window.maximized = false;
+            SaveConfig();
         }
-
+        
         /// <summary>
         /// Load the configuration of the app 
         /// </summary>
@@ -311,38 +283,29 @@ namespace GC_Studio
         {
             try
             { 
-            //Load App Config
+            //Load old App Config and save new
             if (File.Exists("config.ini"))
             {
                 dbs.LoadRead("config.ini");
-                ReleaseChanel = dbs.ReadData();
-                IDE = dbs.ReadData();
-                architecture = dbs.ReadData();
+                Config.GCstudio.ReleaseChanel = dbs.ReadData();
+                Config.GCstudio.IDE = dbs.ReadData();
+                Config.GCstudio.Architecture = dbs.ReadData();
                 dbs.CloseRead();
+                SaveConfig();
+                dbs.DeleteFile("config.ini");
             }
             else
-            //default App Config
+            //load app config
             {
-                dbs.LoadWrite("config.ini");
-                dbs.RecordData("mainstream");
-                dbs.RecordData("GCcode");
-                dbs.RecordData("Auto");
-                dbs.RecordData("END");
-                dbs.CloseWrite();
-            }
+                    dbs.LoadRead("GCstudio.config.json");
+                    Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                    dbs.CloseRead();
+                }
             }
             catch
             {
                 MessageBox.Show("Error loading config.");
             }
-
-            //Compat whit older config files
-            if (architecture == "END")
-            {
-                architecture = "Auto";
-                SaveConfig();
-            }
-
 
         }
 
@@ -353,35 +316,17 @@ namespace GC_Studio
             private void SaveConfig()
         {
             try
-            { 
-            //save current config
-            dbs.LoadWrite("config.ini");
-            dbs.RecordData(ReleaseChanel);
-            dbs.RecordData(IDE);
-            dbs.RecordData(architecture);
-            dbs.RecordData("END");
-            dbs.CloseWrite();
+            {
+                //save current config
+                dbs.LoadWrite("GCstudio.config.json");
+                dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
+                dbs.CloseWrite();
             }
             catch
             {
                 MessageBox.Show("Error saving config.");
             }
-
-
-            Config.GCstudio.ReleaseChanel = ReleaseChanel;
-            Config.GCstudio.IDE = IDE;
-            Config.GCstudio.Architecture = architecture;
-            Config.Window.sizeW = sizeW;
-            Config.Window.sizeH = sizeH;
-            Config.Window.locx = locx;
-            Config.Window.locy = locy;
-            Config.Window.maximized = maximized;
            
-            dbs.LoadWrite("testconfig.json");
-            dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
-            dbs.CloseWrite();
-
-
 
         }
 
@@ -535,17 +480,17 @@ namespace GC_Studio
             
             if (this.WindowState == FormWindowState.Maximized)
             {
-                maximized = true;
+               Config.Window.maximized = true;
             }
             else
             {
-                maximized = false;
-                sizeW = this.Size.Width;
-                sizeH = this.Size.Height;
-                locx = this.Location.X;
-                locy = this.Location.Y;
+                Config.Window.maximized = false;
+                Config.Window.sizeW = this.Size.Width;
+                Config.Window.sizeH = this.Size.Height;
+                Config.Window.locx = this.Location.X;
+                Config.Window.locy = this.Location.Y;
             }
-            SaveLastSize();
+            SaveConfig();
             Environment.Exit(0);
         }
 
@@ -613,7 +558,7 @@ namespace GC_Studio
             {
                 addrecent(openFileDialog.SafeFileName, openFileDialog.FileName);
 
-                LaunchIDE("\"" + openFileDialog.FileName + "\"", IDE);
+                LaunchIDE("\"" + openFileDialog.FileName + "\"", Config.GCstudio.IDE);
             }
         }
 
@@ -641,7 +586,7 @@ namespace GC_Studio
             {
                 addrecent(folderBrowserDialog.SelectedPath.Split(Path.DirectorySeparatorChar).Last(), folderBrowserDialog.SelectedPath);
 
-                LaunchIDE("\"" + folderBrowserDialog.SelectedPath + "\"", IDE);
+                LaunchIDE("\"" + folderBrowserDialog.SelectedPath + "\"", Config.GCstudio.IDE);
 
             }
 
@@ -689,13 +634,13 @@ namespace GC_Studio
 
         private void buttonwitout_Click(object sender, EventArgs e)
         {
-            if (IDE == "GCcode")
+            if (Config.GCstudio.IDE == "GCcode")
             {
-                LaunchIDE("-n", IDE);
+                LaunchIDE("-n", Config.GCstudio.IDE);
             }
             else
             {
-                LaunchIDE("", IDE);
+                LaunchIDE("", Config.GCstudio.IDE);
             }
         }
 
@@ -768,22 +713,22 @@ namespace GC_Studio
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
                 {
-                    switch (IDE)
+                    switch (Config.GCstudio.IDE)
                     {
                         case "GCcode":
                             addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
 
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                             break;
 
                         case "SynWrite":
                             addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
 
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                             break;
 
                         case "Geany":
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                             break;
                     }
                 }
@@ -828,22 +773,22 @@ namespace GC_Studio
 
             if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
             {
-                switch (IDE)
+                switch (Config.GCstudio.IDE)
                 {
                     case "GCcode":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
 
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "SynWrite":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                         break;
                 }
             }
@@ -887,22 +832,22 @@ namespace GC_Studio
 
             if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
             {
-                switch (IDE)
+                switch (Config.GCstudio.IDE)
                 {
                     case "GCcode":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "SynWrite":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                         break;
                 }
             }
@@ -944,7 +889,7 @@ namespace GC_Studio
                     {
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + ".gcb");
                     
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", Config.GCstudio.IDE);
                     }
                 }
                 else
@@ -965,13 +910,13 @@ namespace GC_Studio
 
         private void comboupdate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ReleaseChanel = comboupdate.Text;
+            Config.GCstudio.ReleaseChanel = comboupdate.Text;
             SaveConfig();
         }
 
         private void comboide_SelectedIndexChanged(object sender, EventArgs e)
         {
-           IDE=comboide.Text;
+            Config.GCstudio.IDE =comboide.Text;
             SaveConfig();
         }
 
@@ -982,7 +927,7 @@ namespace GC_Studio
                 comboarch.Text = "x86";
                 MessageBox.Show("Your current operating system is a 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            architecture = comboarch.Text;
+            Config.GCstudio.Architecture = comboarch.Text;
             SaveConfig();
             CompilerArchitecture();
         }
@@ -1007,17 +952,17 @@ namespace GC_Studio
                         SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                         break;
                     }
@@ -1039,17 +984,17 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                     break;
                     }
@@ -1070,17 +1015,17 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                     break;
                     }
@@ -1165,7 +1110,7 @@ namespace GC_Studio
 
         private void listViewRecent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LaunchIDE("\"" + listViewRecent.SelectedItems[0].ToolTipText + "\"", IDE);
+            LaunchIDE("\"" + listViewRecent.SelectedItems[0].ToolTipText + "\"", Config.GCstudio.IDE);
         }
 
         private void linkLabelclear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1223,7 +1168,7 @@ namespace GC_Studio
                 labelarch.Text = "x86";
             }
 
-            switch (architecture)
+            switch (Config.GCstudio.Architecture)
             {
                 case "Auto":
                     try
