@@ -20,7 +20,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
 
         ConfigSchema Config = new ConfigSchema();
-         string[] arguments;
+        string[] arguments;
         string ideargs = "";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
         string[] RecentName = new string[10];
@@ -90,12 +90,9 @@ namespace GC_Studio
 
             LoadConfig();
 
-
-
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
             comboarch.Text = Config.GCstudio.Architecture;
-
 
             CompilerArchitecture();
 
@@ -129,6 +126,9 @@ namespace GC_Studio
             }
             
             this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
+
+            this.Location = new Point(Config.Window.locx, Config.Window.locy);
+  
             if (Config.Window.maximized)
             {
                 MaxBounds();
@@ -171,17 +171,7 @@ namespace GC_Studio
                         break;
 
                     case "/firststart":
-                        if (File.Exists("mrf.dat"))
-                        {
-                            try
-                            {
-                                File.Delete("mrf.dat");
-                            }
-                            catch
-                            {
-
-                            }
-                        }
+                        Config.GCstudio.Firstrun = true;
 
                         break;
 
@@ -240,15 +230,14 @@ namespace GC_Studio
             }
 
             //first run
-            if (File.Exists("mrf.dat") == false)
+            if (Config.GCstudio.Firstrun)
             {
-                LoadRecent();
+                ResetSize();
+                Config.GCstudio.Firstrun = false;
+                SaveConfig();
                 LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this is useful list of tools for the ide.txt\"", "GCcode");
             }
-            else
-            {
-                LoadRecent();
-            }
+            
 
             for (int i = 0; i < 10; i++)
             {
@@ -290,6 +279,7 @@ namespace GC_Studio
                 Config.GCstudio.ReleaseChanel = dbs.ReadData();
                 Config.GCstudio.IDE = dbs.ReadData();
                 Config.GCstudio.Architecture = dbs.ReadData();
+                Config.GCstudio.Firstrun = false;
                 dbs.CloseRead();
                 SaveConfig();
                 dbs.DeleteFile("config.ini");
