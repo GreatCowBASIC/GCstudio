@@ -23,6 +23,7 @@ namespace GC_Studio
             public string ReleaseChanel { get; set; }
             public string IDE { get; set; }
             public string Architecture { get; set; }
+            public bool Firstrun { get; set; }
 
         }
 
