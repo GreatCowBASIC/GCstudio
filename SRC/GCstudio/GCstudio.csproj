@@ -45,17 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GCstudio.ico" />
+    <Content Include="Resources\GCstudio.gif" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DBSEngine">
       <HintPath>..\..\packages\DBS Engine 4.0\DBSEngine.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

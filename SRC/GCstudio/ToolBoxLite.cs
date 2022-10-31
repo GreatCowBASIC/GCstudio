@@ -6,8 +6,9 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
-using System.Reflection;
 using System.Globalization;
+using Newtonsoft.Json;
+
 
 namespace GC_Studio
 {
@@ -16,21 +17,11 @@ namespace GC_Studio
 
 
         DBS dbs = new DBS();
-        string ReleaseChanel = "mainstream";
-      
-        string IDE = "GCcode";
+        RecentFile RecentFiles = new RecentFile();
+        ConfigSchema Config = new ConfigSchema();
         string[] arguments;
         string ideargs = "";
-        string architecture = "Auto";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
-        string[] RecentName = new string[10];
-        string[] RecentDir = new string[10];
-        int RecentN = 0;
-        int sizeW;
-        int sizeH;
-        bool maximized = false;
-        Int32 locx;
-        Int32 locy;
         ListViewItem[] RecentItem = new ListViewItem[10];
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
@@ -38,7 +29,7 @@ namespace GC_Studio
         //set focus function
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern int SetForegroundWindow(IntPtr hwnd);
-
+        
         public ToolBoxLite()
         {
             InitializeComponent();
@@ -89,40 +80,39 @@ namespace GC_Studio
             //             Environment.Exit(0);
             //         }
             //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
-            
+
 
             ver.Text = Loader.AppVer.ToString();
 
             LoadConfig();
+            LoadRecent();
 
-
-           
-            comboupdate.Text = ReleaseChanel;
-            comboide.Text = IDE;
-            comboarch.Text = architecture;    
-
+            comboupdate.Text = Config.GCstudio.ReleaseChanel;
+            comboide.Text = Config.GCstudio.IDE;
+            comboarch.Text = Config.GCstudio.Architecture;
 
             CompilerArchitecture();
-            
-            
 
-            //window size
+
+
+            //window size old file
             if (File.Exists("lstsz.dat"))
             {
                 try
                 {
                     dbs.LoadRead("lstsz.dat");
-                    sizeW = int.Parse(dbs.ReadData(),Style, Provider);
-                    sizeH = int.Parse(dbs.ReadData(), Style, Provider);
+                    Config.Window.sizeW = int.Parse(dbs.ReadData(), Style, Provider);
+                    Config.Window.sizeH = int.Parse(dbs.ReadData(), Style, Provider);
                     try
                     {
-                        locx = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        locy = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        maximized = bool.Parse(dbs.ReadData());
-                        this.Location = new Point(locx, locy);
+                        Config.Window.locx = Int32.Parse(dbs.ReadData(), Style, Provider);
+                        Config.Window.locy = Int32.Parse(dbs.ReadData(), Style, Provider);
+                        Config.Window.maximized = bool.Parse(dbs.ReadData());
+                        this.Location = new Point(Config.Window.locx, Config.Window.locy);
                     }
                     catch { }
-                    dbs.CloseRead();                   
+                    dbs.CloseRead();
+                    File.Delete("lstsz.dat");
                 }
                 catch
                 {
@@ -131,26 +121,17 @@ namespace GC_Studio
                 }
 
             }
-            else
-            {
-              
-                    sizeW = 1028;
-                    sizeH = 681;
-                    this.Size = new Size(sizeW, sizeH);
-                    this.CenterToScreen();
-                    locx = this.Location.X;
-                    locy = this.Location.Y;
-                    maximized = false;
-                    SaveLastSize();               
+            
+            this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
 
-            }
-            this.Size = new Size(sizeW, sizeH);
-            if (maximized)
+            this.Location = new Point(Config.Window.locx, Config.Window.locy);
+  
+            if (Config.Window.maximized)
             {
                 MaxBounds();
                 this.WindowState = FormWindowState.Maximized;
             }
-
+            
 
             //CLI Commands
             arguments = Environment.GetCommandLineArgs();
@@ -187,30 +168,13 @@ namespace GC_Studio
                         break;
 
                     case "/firststart":
-                        if (File.Exists("mrf.dat"))
-                        {
-                            try
-                            {
-                                File.Delete("mrf.dat");
-                            }
-                            catch
-                            {
-
-                            }
-                        }
+                        Config.GCstudio.Firstrun = true;
 
                         break;
 
                     case "/resetsize":
 
-                        sizeW = 1028;
-                        sizeH = 681;
-                        this.Size = new Size(sizeW, sizeH);
-                        this.CenterToScreen();
-                        locx = this.Location.X;
-                        locy = this.Location.Y;
-                        maximized = false;
-                        SaveLastSize();
+                        ResetSize();
 
                         break;             
 
@@ -231,7 +195,7 @@ namespace GC_Studio
 
                         addrecent(Path.GetFileName(arguments[1]), arguments[1]);
 
-                        LaunchIDE(ideargs, IDE);
+                        LaunchIDE(ideargs, Config.GCstudio.IDE);
                         break;
                 }
 
@@ -263,84 +227,75 @@ namespace GC_Studio
             }
 
             //first run
-            if (File.Exists("mrf.dat") == false)
+            if (Config.GCstudio.Firstrun)
             {
-                LoadRecent();
+                ResetSize();
+                Config.GCstudio.Firstrun = false;
+                SaveConfig();
                 LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this is useful list of tools for the ide.txt\"", "GCcode");
             }
-            else
-            {
-                LoadRecent();
-            }
+            
 
             for (int i = 0; i < 10; i++)
             {
-                if (RecentDir[i] != "")
+                if (RecentFiles.RecentDir[i] != "")
                 {
-                    RecentItem[i] = listViewRecent.Items.Add(RecentName[i]);
-                    RecentItem[i].Text = RecentName[i];
-                    RecentItem[i].ToolTipText = RecentDir[i];
+                    RecentItem[i] = listViewRecent.Items.Add(RecentFiles.RecentName[i]);
+                    RecentItem[i].Text = RecentFiles.RecentName[i];
+                    RecentItem[i].ToolTipText = RecentFiles.RecentDir[i];
                 }
             }
 
         }
 
-        /// save last size
+        /// Reset size
         /// 
-        private void SaveLastSize()
+        private void ResetSize()
         {
-            try
-            {
-                dbs.LoadWrite("lstsz.dat");
-                dbs.RecordData(sizeW.ToString());
-                dbs.RecordData(sizeH.ToString());
-                dbs.RecordData(locx.ToString());
-                dbs.RecordData(locy.ToString());
-                dbs.RecordData(maximized.ToString());
-                dbs.CloseWrite();
-            }
-            catch { MessageBox.Show("Error saving last size"); }
+            Config.Window.sizeW = 1028;
+            Config.Window.sizeH = 681;
+            this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
+            this.CenterToScreen();
+            Config.Window.locx = this.Location.X;
+            Config.Window.locy = this.Location.Y;
+            Config.Window.maximized = false;
+            SaveConfig();
         }
-
+        
         /// <summary>
         /// Load the configuration of the app 
         /// </summary>
         private void LoadConfig()
         {
             try
-            { 
-            //Load App Config
-            if (File.Exists("config.ini"))
             {
-                dbs.LoadRead("config.ini");
-                ReleaseChanel = dbs.ReadData();
-                IDE = dbs.ReadData();
-                architecture = dbs.ReadData();
-                dbs.CloseRead();
-            }
-            else
-            //default App Config
-            {
-                dbs.LoadWrite("config.ini");
-                dbs.RecordData("mainstream");
-                dbs.RecordData("GCcode");
-                dbs.RecordData("Auto");
-                dbs.RecordData("END");
-                dbs.CloseWrite();
-            }
+                //Load old App Config and save new
+                if (File.Exists("config.ini"))
+                {
+                    dbs.LoadRead("config.ini");
+                    Config.GCstudio.ReleaseChanel = dbs.ReadData();
+                    Config.GCstudio.IDE = dbs.ReadData();
+                    Config.GCstudio.Architecture = dbs.ReadData();
+                    Config.GCstudio.Firstrun = false;
+                    dbs.CloseRead();
+                    SaveConfig();
+                    File.Delete("config.ini");
+                }
+                else
+                //load app config
+                {
+                    if (File.Exists("GCstudio.config.json"))
+                    {
+                        dbs.LoadRead("GCstudio.config.json");
+                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                        dbs.CloseRead();
+                    }
+                }
             }
             catch
             {
                 MessageBox.Show("Error loading config.");
             }
-
-            //Compat whit older config files
-            if (architecture == "END")
-            {
-                architecture = "Auto";
-                SaveConfig();
-            }
-
 
         }
 
@@ -351,19 +306,18 @@ namespace GC_Studio
             private void SaveConfig()
         {
             try
-            { 
-            //save current config
-            dbs.LoadWrite("config.ini");
-            dbs.RecordData(ReleaseChanel);
-            dbs.RecordData(IDE);
-            dbs.RecordData(architecture);
-            dbs.RecordData("END");
-            dbs.CloseWrite();
+            {
+                //save current config
+                dbs.LoadWrite("GCstudio.config.json");
+                dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
+                dbs.CloseWrite();
             }
             catch
             {
                 MessageBox.Show("Error saving config.");
             }
+           
+
         }
 
 
@@ -374,63 +328,19 @@ namespace GC_Studio
         private void LoadRecent()
         {
             try
-            { 
-            //Load recent list
-            if (File.Exists("mrf.dat"))
+            {
+                if (File.Exists("mrf.dat"))
+                {
+                    File.Delete("mrf.dat");
+                }
+                    //Load recent list
+                    if (File.Exists("GCstudio.mrf.json"))
             {
 
-                dbs.LoadRead("mrf.dat");
-                RecentN =int.Parse(dbs.ReadData(), Style, Provider);
-                RecentName[0] = dbs.ReadData();
-                RecentDir[0] = dbs.ReadData();
-                RecentName[1] = dbs.ReadData();
-                RecentDir[1] = dbs.ReadData();
-                RecentName[2] = dbs.ReadData();
-                RecentDir[2] = dbs.ReadData();
-                RecentName[3] = dbs.ReadData();
-                RecentDir[3] = dbs.ReadData();
-                RecentName[4] = dbs.ReadData();
-                RecentDir[4] = dbs.ReadData();
-                RecentName[5] = dbs.ReadData();
-                RecentDir[5] = dbs.ReadData();
-                RecentName[6] = dbs.ReadData();
-                RecentDir[6] = dbs.ReadData();
-                RecentName[7] = dbs.ReadData();
-                RecentDir[7] = dbs.ReadData();
-                RecentName[8] = dbs.ReadData();
-                RecentDir[8] = dbs.ReadData();
-                RecentName[9] = dbs.ReadData();
-                RecentDir[9] = dbs.ReadData();
+                dbs.LoadRead("GCstudio.mrf.json");
+                RecentFiles = JsonConvert.DeserializeObject<RecentFile>(dbs.ReadAll());
                 dbs.CloseRead();
 
-            }
-            else
-            //write empty recent list
-            {
-                dbs.LoadWrite("mrf.dat");
-                dbs.RecordData("0");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("END");
-                dbs.CloseWrite();
             }
             }
             catch
@@ -446,32 +356,11 @@ namespace GC_Studio
         private void SaveRecent()
         { 
            
-           try
-           {
-            dbs.LoadWrite("mrf.dat");
-            dbs.RecordData(RecentN.ToString());
-            dbs.RecordData(RecentName[0]);
-            dbs.RecordData(RecentDir[0]);
-            dbs.RecordData(RecentName[1]);
-            dbs.RecordData(RecentDir[1]);
-            dbs.RecordData(RecentName[2]);
-            dbs.RecordData(RecentDir[2]);
-            dbs.RecordData(RecentName[3]);
-            dbs.RecordData(RecentDir[3]);
-            dbs.RecordData(RecentName[4]);
-            dbs.RecordData(RecentDir[4]);
-            dbs.RecordData(RecentName[5]);
-            dbs.RecordData(RecentDir[5]);
-            dbs.RecordData(RecentName[6]);
-            dbs.RecordData(RecentDir[6]);
-            dbs.RecordData(RecentName[7]);
-            dbs.RecordData(RecentDir[7]);
-            dbs.RecordData(RecentName[8]);
-            dbs.RecordData(RecentDir[8]);
-            dbs.RecordData(RecentName[9]);
-            dbs.RecordData(RecentDir[9]);
-            dbs.RecordData("END");
-            dbs.CloseWrite();
+            try
+            {
+                dbs.LoadWrite("GCstudio.mrf.json");
+                dbs.RecordData(JsonConvert.SerializeObject(RecentFiles, Formatting.Indented));
+                dbs.CloseWrite();
             }
             catch
             {
@@ -487,24 +376,24 @@ namespace GC_Studio
         {
             try
             {
-                if (RecentDir[RecentN - 1] != FullPath)
+                if (RecentFiles.RecentDir[RecentFiles.RecentN - 1] != FullPath)
                 {
 
-                    RecentName[RecentN] = FileName;
-                    RecentDir[RecentN] = FullPath;
-                    RecentN++;
-                    if (RecentN > 9)
-                    { RecentN = 0; }
+                    RecentFiles.RecentName[RecentFiles.RecentN] = FileName;
+                    RecentFiles.RecentDir[RecentFiles.RecentN] = FullPath;
+                    RecentFiles.RecentN++;
+                    if (RecentFiles.RecentN > 9)
+                    { RecentFiles.RecentN = 0; }
                     SaveRecent();
                 }
             }
             catch
             {
-                RecentName[RecentN] = FileName;
-                RecentDir[RecentN] = FullPath;
-                RecentN++;
-                if (RecentN > 9)
-                { RecentN = 0; }
+                RecentFiles.RecentName[RecentFiles.RecentN] = FileName;
+                RecentFiles.RecentDir[RecentFiles.RecentN] = FullPath;
+                RecentFiles.RecentN++;
+                if (RecentFiles.RecentN > 9)
+                { RecentFiles.RecentN = 0; }
                 SaveRecent();
             }
 
@@ -516,17 +405,17 @@ namespace GC_Studio
             
             if (this.WindowState == FormWindowState.Maximized)
             {
-                maximized = true;
+               Config.Window.maximized = true;
             }
             else
             {
-                maximized = false;
-                sizeW = this.Size.Width;
-                sizeH = this.Size.Height;
-                locx = this.Location.X;
-                locy = this.Location.Y;
+                Config.Window.maximized = false;
+                Config.Window.sizeW = this.Size.Width;
+                Config.Window.sizeH = this.Size.Height;
+                Config.Window.locx = this.Location.X;
+                Config.Window.locy = this.Location.Y;
             }
-            SaveLastSize();
+            SaveConfig();
             Environment.Exit(0);
         }
 
@@ -594,7 +483,7 @@ namespace GC_Studio
             {
                 addrecent(openFileDialog.SafeFileName, openFileDialog.FileName);
 
-                LaunchIDE("\"" + openFileDialog.FileName + "\"", IDE);
+                LaunchIDE("\"" + openFileDialog.FileName + "\"", Config.GCstudio.IDE);
             }
         }
 
@@ -622,7 +511,7 @@ namespace GC_Studio
             {
                 addrecent(folderBrowserDialog.SelectedPath.Split(Path.DirectorySeparatorChar).Last(), folderBrowserDialog.SelectedPath);
 
-                LaunchIDE("\"" + folderBrowserDialog.SelectedPath + "\"", IDE);
+                LaunchIDE("\"" + folderBrowserDialog.SelectedPath + "\"", Config.GCstudio.IDE);
 
             }
 
@@ -647,13 +536,7 @@ namespace GC_Studio
 
         private void buttonnew_Click(object sender, EventArgs e)
         {
-            if (File.Exists("mrd.dat"))
-            {
-                dbs.LoadRead("mrd.dat");
-                textBox2.Text = dbs.ReadData();
-                dbs.CloseRead();
-            }
-
+            textBox2.Text = Config.GCstudio.LastDirectory;
             panelmain.Visible=false;
             panelnewproj.Visible=true;
         }
@@ -670,13 +553,13 @@ namespace GC_Studio
 
         private void buttonwitout_Click(object sender, EventArgs e)
         {
-            if (IDE == "GCcode")
+            if (Config.GCstudio.IDE == "GCcode")
             {
-                LaunchIDE("-n", IDE);
+                LaunchIDE("-n", Config.GCstudio.IDE);
             }
             else
             {
-                LaunchIDE("", IDE);
+                LaunchIDE("", Config.GCstudio.IDE);
             }
         }
 
@@ -721,17 +604,11 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-                {
-                    dbs.LoadWrite("mrd.dat");
-                    dbs.RecordData(textBox2.Text);
-                    dbs.CloseWrite();
-                }
-                catch
-                {
-                    MessageBox.Show("Error saving recent directory");
-                }
-
+                
+                    
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();    
+                
                 try
                 {
                     ProcessStartInfo p = new ProcessStartInfo();
@@ -749,22 +626,22 @@ namespace GC_Studio
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
                 {
-                    switch (IDE)
+                    switch (Config.GCstudio.IDE)
                     {
                         case "GCcode":
                             addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
 
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                             break;
 
                         case "SynWrite":
                             addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
 
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                             break;
 
                         case "Geany":
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                             break;
                     }
                 }
@@ -780,19 +657,11 @@ namespace GC_Studio
         private void button5_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
-            { 
-                try
             {
-                dbs.LoadWrite("mrd.dat");
-                dbs.RecordData(textBox2.Text);
-                dbs.CloseWrite();
-            }
-            catch
-            {
-                MessageBox.Show("Error saving recent directory");
-            }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
-            try
+                try
             { 
             ProcessStartInfo p = new ProcessStartInfo();
             p.FileName = "minidump.exe";
@@ -809,22 +678,22 @@ namespace GC_Studio
 
             if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
             {
-                switch (IDE)
+                switch (Config.GCstudio.IDE)
                 {
                     case "GCcode":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
 
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "SynWrite":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                         break;
                 }
             }
@@ -839,18 +708,10 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-            {
-                dbs.LoadWrite("mrd.dat");
-                dbs.RecordData(textBox2.Text);
-                dbs.CloseWrite();
-            }
-            catch
-            {
-                MessageBox.Show("Error saving recent directory");
-            }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
-            try
+                try
             { 
             ProcessStartInfo p = new ProcessStartInfo();
             p.FileName = "minidump.exe";
@@ -868,22 +729,22 @@ namespace GC_Studio
 
             if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
             {
-                switch (IDE)
+                switch (Config.GCstudio.IDE)
                 {
                     case "GCcode":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "SynWrite":
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
                         
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
 
                     case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                         break;
                 }
             }
@@ -898,16 +759,8 @@ namespace GC_Studio
         {
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
                 {
-                    try
-                {
-                    dbs.LoadWrite("mrd.dat");
-                    dbs.RecordData(textBox2.Text);
-                    dbs.CloseWrite();
-                }
-                catch
-                {
-                    MessageBox.Show("Error saving recent directory");
-                }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
 
                 try
@@ -925,7 +778,7 @@ namespace GC_Studio
                     {
                         addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + ".gcb");
                     
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", IDE);
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", Config.GCstudio.IDE);
                     }
                 }
                 else
@@ -946,13 +799,13 @@ namespace GC_Studio
 
         private void comboupdate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ReleaseChanel = comboupdate.Text;
+            Config.GCstudio.ReleaseChanel = comboupdate.Text;
             SaveConfig();
         }
 
         private void comboide_SelectedIndexChanged(object sender, EventArgs e)
         {
-           IDE=comboide.Text;
+            Config.GCstudio.IDE =comboide.Text;
             SaveConfig();
         }
 
@@ -963,7 +816,7 @@ namespace GC_Studio
                 comboarch.Text = "x86";
                 MessageBox.Show("Your current operating system is a 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            architecture = comboarch.Text;
+            Config.GCstudio.Architecture = comboarch.Text;
             SaveConfig();
             CompilerArchitecture();
         }
@@ -988,17 +841,17 @@ namespace GC_Studio
                         SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                         break;
                     }
@@ -1020,17 +873,17 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                     break;
                     }
@@ -1051,17 +904,17 @@ namespace GC_Studio
                     SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
-                            maximized = true;
+                            Config.Window.maximized = true;
                         }
                         else
                         {
-                            maximized = false;
-                            sizeW = this.Size.Width;
-                            sizeH = this.Size.Height;
-                            locx = this.Location.X;
-                            locy = this.Location.Y;
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
                         }
-                        SaveLastSize();
+                        SaveConfig();
                         Environment.Exit(0);
                     break;
                     }
@@ -1146,16 +999,17 @@ namespace GC_Studio
 
         private void listViewRecent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LaunchIDE("\"" + listViewRecent.SelectedItems[0].ToolTipText + "\"", IDE);
+            LaunchIDE("\"" + listViewRecent.SelectedItems[0].ToolTipText + "\"", Config.GCstudio.IDE);
         }
 
         private void linkLabelclear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
-            { 
-            File.Delete("mrf.dat");
-            LoadRecent();
-            LoadRecent();
+            {
+                if (File.Exists("GCstudio.mrf.json"))
+                {
+                    File.Delete("GCstudio.mrf.json");
+                }
             listViewRecent.Items.Clear();
             }
             catch
@@ -1204,7 +1058,7 @@ namespace GC_Studio
                 labelarch.Text = "x86";
             }
 
-            switch (architecture)
+            switch (Config.GCstudio.Architecture)
             {
                 case "Auto":
                     try
