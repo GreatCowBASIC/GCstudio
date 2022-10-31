@@ -1,0 +1,16 @@
+{
+  "GCstudio": {
+    "ReleaseChanel": "mainstream",
+    "IDE": "GCcode",
+    "Architecture": "Auto",
+    "Firstrun": true,
+    "LastDirectory": null
+  },
+  "Window": {
+    "sizeW": 1028,
+    "sizeH": 681,
+    "locx": 0,
+    "locy": 0,
+    "maximized": false
+  }
+}
