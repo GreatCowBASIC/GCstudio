@@ -18,14 +18,11 @@ namespace GC_Studio
 
 
         DBS dbs = new DBS();
-
+        RecentFile RecentFiles = new RecentFile();
         ConfigSchema Config = new ConfigSchema();
         string[] arguments;
         string ideargs = "";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
-        string[] RecentName = new string[10];
-        string[] RecentDir = new string[10];
-        int RecentN = 0;
         ListViewItem[] RecentItem = new ListViewItem[10];
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
@@ -89,6 +86,7 @@ namespace GC_Studio
             ver.Text = Loader.AppVer.ToString();
 
             LoadConfig();
+            LoadRecent();
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
@@ -115,7 +113,7 @@ namespace GC_Studio
                     }
                     catch { }
                     dbs.CloseRead();
-                    dbs.DeleteFile("lstsz.dat");
+                    File.Delete("lstsz.dat");
                 }
                 catch
                 {
@@ -241,11 +239,11 @@ namespace GC_Studio
 
             for (int i = 0; i < 10; i++)
             {
-                if (RecentDir[i] != "")
+                if (RecentFiles.RecentDir[i] != "")
                 {
-                    RecentItem[i] = listViewRecent.Items.Add(RecentName[i]);
-                    RecentItem[i].Text = RecentName[i];
-                    RecentItem[i].ToolTipText = RecentDir[i];
+                    RecentItem[i] = listViewRecent.Items.Add(RecentFiles.RecentName[i]);
+                    RecentItem[i].Text = RecentFiles.RecentName[i];
+                    RecentItem[i].ToolTipText = RecentFiles.RecentDir[i];
                 }
             }
 
@@ -282,7 +280,7 @@ namespace GC_Studio
                 Config.GCstudio.Firstrun = false;
                 dbs.CloseRead();
                 SaveConfig();
-                dbs.DeleteFile("config.ini");
+                File.Delete("config.ini");
             }
             else
             //load app config
@@ -328,63 +326,19 @@ namespace GC_Studio
         private void LoadRecent()
         {
             try
-            { 
-            //Load recent list
-            if (File.Exists("mrf.dat"))
+            {
+                if (File.Exists("mrf.dat"))
+                {
+                    File.Delete("mrf.dat");
+                }
+                    //Load recent list
+                    if (File.Exists("GCstudio.mrf.json"))
             {
 
-                dbs.LoadRead("mrf.dat");
-                RecentN =int.Parse(dbs.ReadData(), Style, Provider);
-                RecentName[0] = dbs.ReadData();
-                RecentDir[0] = dbs.ReadData();
-                RecentName[1] = dbs.ReadData();
-                RecentDir[1] = dbs.ReadData();
-                RecentName[2] = dbs.ReadData();
-                RecentDir[2] = dbs.ReadData();
-                RecentName[3] = dbs.ReadData();
-                RecentDir[3] = dbs.ReadData();
-                RecentName[4] = dbs.ReadData();
-                RecentDir[4] = dbs.ReadData();
-                RecentName[5] = dbs.ReadData();
-                RecentDir[5] = dbs.ReadData();
-                RecentName[6] = dbs.ReadData();
-                RecentDir[6] = dbs.ReadData();
-                RecentName[7] = dbs.ReadData();
-                RecentDir[7] = dbs.ReadData();
-                RecentName[8] = dbs.ReadData();
-                RecentDir[8] = dbs.ReadData();
-                RecentName[9] = dbs.ReadData();
-                RecentDir[9] = dbs.ReadData();
+                dbs.LoadRead("GCstudio.mrf.json");
+                RecentFiles = JsonConvert.DeserializeObject<RecentFile>(dbs.ReadAll());
                 dbs.CloseRead();
 
-            }
-            else
-            //write empty recent list
-            {
-                dbs.LoadWrite("mrf.dat");
-                dbs.RecordData("0");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("");
-                dbs.RecordData("END");
-                dbs.CloseWrite();
             }
             }
             catch
@@ -400,32 +354,11 @@ namespace GC_Studio
         private void SaveRecent()
         { 
            
-           try
-           {
-            dbs.LoadWrite("mrf.dat");
-            dbs.RecordData(RecentN.ToString());
-            dbs.RecordData(RecentName[0]);
-            dbs.RecordData(RecentDir[0]);
-            dbs.RecordData(RecentName[1]);
-            dbs.RecordData(RecentDir[1]);
-            dbs.RecordData(RecentName[2]);
-            dbs.RecordData(RecentDir[2]);
-            dbs.RecordData(RecentName[3]);
-            dbs.RecordData(RecentDir[3]);
-            dbs.RecordData(RecentName[4]);
-            dbs.RecordData(RecentDir[4]);
-            dbs.RecordData(RecentName[5]);
-            dbs.RecordData(RecentDir[5]);
-            dbs.RecordData(RecentName[6]);
-            dbs.RecordData(RecentDir[6]);
-            dbs.RecordData(RecentName[7]);
-            dbs.RecordData(RecentDir[7]);
-            dbs.RecordData(RecentName[8]);
-            dbs.RecordData(RecentDir[8]);
-            dbs.RecordData(RecentName[9]);
-            dbs.RecordData(RecentDir[9]);
-            dbs.RecordData("END");
-            dbs.CloseWrite();
+            try
+            {
+                dbs.LoadWrite("GCstudio.mrf.json");
+                dbs.RecordData(JsonConvert.SerializeObject(RecentFiles, Formatting.Indented));
+                dbs.CloseWrite();
             }
             catch
             {
@@ -441,24 +374,24 @@ namespace GC_Studio
         {
             try
             {
-                if (RecentDir[RecentN - 1] != FullPath)
+                if (RecentFiles.RecentDir[RecentFiles.RecentN - 1] != FullPath)
                 {
 
-                    RecentName[RecentN] = FileName;
-                    RecentDir[RecentN] = FullPath;
-                    RecentN++;
-                    if (RecentN > 9)
-                    { RecentN = 0; }
+                    RecentFiles.RecentName[RecentFiles.RecentN] = FileName;
+                    RecentFiles.RecentDir[RecentFiles.RecentN] = FullPath;
+                    RecentFiles.RecentN++;
+                    if (RecentFiles.RecentN > 9)
+                    { RecentFiles.RecentN = 0; }
                     SaveRecent();
                 }
             }
             catch
             {
-                RecentName[RecentN] = FileName;
-                RecentDir[RecentN] = FullPath;
-                RecentN++;
-                if (RecentN > 9)
-                { RecentN = 0; }
+                RecentFiles.RecentName[RecentFiles.RecentN] = FileName;
+                RecentFiles.RecentDir[RecentFiles.RecentN] = FullPath;
+                RecentFiles.RecentN++;
+                if (RecentFiles.RecentN > 9)
+                { RecentFiles.RecentN = 0; }
                 SaveRecent();
             }
 
@@ -601,13 +534,7 @@ namespace GC_Studio
 
         private void buttonnew_Click(object sender, EventArgs e)
         {
-            if (File.Exists("mrd.dat"))
-            {
-                dbs.LoadRead("mrd.dat");
-                textBox2.Text = dbs.ReadData();
-                dbs.CloseRead();
-            }
-
+            textBox2.Text = Config.GCstudio.LastDirectory;
             panelmain.Visible=false;
             panelnewproj.Visible=true;
         }
@@ -675,17 +602,11 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-                {
-                    dbs.LoadWrite("mrd.dat");
-                    dbs.RecordData(textBox2.Text);
-                    dbs.CloseWrite();
-                }
-                catch
-                {
-                    MessageBox.Show("Error saving recent directory");
-                }
-
+                
+                    
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();    
+                
                 try
                 {
                     ProcessStartInfo p = new ProcessStartInfo();
@@ -734,19 +655,11 @@ namespace GC_Studio
         private void button5_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
-            { 
-                try
             {
-                dbs.LoadWrite("mrd.dat");
-                dbs.RecordData(textBox2.Text);
-                dbs.CloseWrite();
-            }
-            catch
-            {
-                MessageBox.Show("Error saving recent directory");
-            }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
-            try
+                try
             { 
             ProcessStartInfo p = new ProcessStartInfo();
             p.FileName = "minidump.exe";
@@ -793,18 +706,10 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-            {
-                dbs.LoadWrite("mrd.dat");
-                dbs.RecordData(textBox2.Text);
-                dbs.CloseWrite();
-            }
-            catch
-            {
-                MessageBox.Show("Error saving recent directory");
-            }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
-            try
+                try
             { 
             ProcessStartInfo p = new ProcessStartInfo();
             p.FileName = "minidump.exe";
@@ -852,16 +757,8 @@ namespace GC_Studio
         {
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
                 {
-                    try
-                {
-                    dbs.LoadWrite("mrd.dat");
-                    dbs.RecordData(textBox2.Text);
-                    dbs.CloseWrite();
-                }
-                catch
-                {
-                    MessageBox.Show("Error saving recent directory");
-                }
+                Config.GCstudio.LastDirectory = textBox2.Text;
+                SaveConfig();
 
 
                 try
@@ -1106,10 +1003,11 @@ namespace GC_Studio
         private void linkLabelclear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
-            { 
-            File.Delete("mrf.dat");
-            LoadRecent();
-            LoadRecent();
+            {
+                if (File.Exists("GCstudio.mrf.json"))
+                {
+                    File.Delete("GCstudio.mrf.json");
+                }
             listViewRecent.Items.Clear();
             }
             catch

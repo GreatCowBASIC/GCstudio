@@ -69,7 +69,7 @@ namespace GC_Studio
                     dbs.LoadWrite("access.dat");
                     dbs.RecordData("access");
                     dbs.CloseWrite();
-                    dbs.DeleteFile("access.dat");
+                    File.Delete("access.dat");
                 }
                 catch
                 {

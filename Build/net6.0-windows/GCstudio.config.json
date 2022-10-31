@@ -3,7 +3,8 @@
     "ReleaseChanel": "mainstream",
     "IDE": "GCcode",
     "Architecture": "Auto",
-    "Firstrun": true
+    "Firstrun": true,
+    "LastDirectory": null
   },
   "Window": {
     "sizeW": 1028,

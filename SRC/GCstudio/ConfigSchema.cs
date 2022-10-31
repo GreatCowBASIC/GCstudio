@@ -24,7 +24,7 @@ namespace GC_Studio
             public string IDE { get; set; }
             public string Architecture { get; set; }
             public bool Firstrun { get; set; }
-
+            public string LastDirectory { get; set; }
         }
 
     }
