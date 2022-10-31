@@ -6,10 +6,9 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DBSEngine;
-using System.Reflection;
 using System.Globalization;
 using Newtonsoft.Json;
-using static GC_Studio.ConfigSchema;
+
 
 namespace GC_Studio
 {
@@ -269,25 +268,28 @@ namespace GC_Studio
         private void LoadConfig()
         {
             try
-            { 
-            //Load old App Config and save new
-            if (File.Exists("config.ini"))
             {
-                dbs.LoadRead("config.ini");
-                Config.GCstudio.ReleaseChanel = dbs.ReadData();
-                Config.GCstudio.IDE = dbs.ReadData();
-                Config.GCstudio.Architecture = dbs.ReadData();
-                Config.GCstudio.Firstrun = false;
-                dbs.CloseRead();
-                SaveConfig();
-                File.Delete("config.ini");
-            }
-            else
-            //load app config
-            {
-                    dbs.LoadRead("GCstudio.config.json");
-                    Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                //Load old App Config and save new
+                if (File.Exists("config.ini"))
+                {
+                    dbs.LoadRead("config.ini");
+                    Config.GCstudio.ReleaseChanel = dbs.ReadData();
+                    Config.GCstudio.IDE = dbs.ReadData();
+                    Config.GCstudio.Architecture = dbs.ReadData();
+                    Config.GCstudio.Firstrun = false;
                     dbs.CloseRead();
+                    SaveConfig();
+                    File.Delete("config.ini");
+                }
+                else
+                //load app config
+                {
+                    if (File.Exists("GCstudio.config.json"))
+                    {
+                        dbs.LoadRead("GCstudio.config.json");
+                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                        dbs.CloseRead();
+                    }
                 }
             }
             catch

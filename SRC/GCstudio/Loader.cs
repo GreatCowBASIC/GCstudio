@@ -201,9 +201,12 @@ namespace GC_Studio
                     else
                     //load app config
                     {
-                        dbs.LoadRead("GCstudio.config.json");
-                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
-                        dbs.CloseRead();
+                        if (File.Exists("GCstudio.config.json"))
+                        {
+                            dbs.LoadRead("GCstudio.config.json");
+                            Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                            dbs.CloseRead();
+                        }
                     }
                 }
                 catch
