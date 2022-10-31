@@ -1026,7 +1026,7 @@ namespace GC_Studio
 
         private void pkptool()
         {
-            MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory whit a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory with a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
             folderBrowserDialog.ShowDialog();
             if (File.Exists(folderBrowserDialog.SelectedPath + "\\PICkit2Plus.exe"))
             {
