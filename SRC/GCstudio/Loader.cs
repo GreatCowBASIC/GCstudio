@@ -9,6 +9,7 @@ using System.Security.Principal;
 using System.Globalization;
 using System.IO;
 using DBSEngine;
+using Newtonsoft.Json;
 
 
 namespace GC_Studio
@@ -16,9 +17,9 @@ namespace GC_Studio
     public partial class Loader : Form
     {
         DBS dbs = new DBS();
+        ConfigSchema Config = new ConfigSchema();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        string ReleaseChanel = "mainstream";
-        public const double AppVer = 99.02351;
+        public const double AppVer = 99.02352;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -68,7 +69,7 @@ namespace GC_Studio
                     dbs.LoadWrite("access.dat");
                     dbs.RecordData("access");
                     dbs.CloseWrite();
-                    dbs.DeleteFile("access.dat");
+                    File.Delete("access.dat");
                 }
                 catch
                 {
@@ -187,22 +188,33 @@ namespace GC_Studio
         /// </summary>
         private void LoadConfig()
         {
-            //Load App Config
-            if (File.Exists("config.ini"))
-            {
 
-                dbs.LoadRead("config.ini");
-                ReleaseChanel = dbs.ReadData();
-                dbs.CloseRead();
-            }
-            //else
-            //default App Config
-            //{
-            //    dbs.LoadWrite("config.ini");
-            //    dbs.RecordData("mainstream");
-            //    dbs.RecordData("END");
-            //    dbs.CloseWrite();
-            //}
+                try
+                {
+                    //Load old App Config
+                    if (File.Exists("config.ini"))
+                    {
+                    dbs.LoadRead("config.ini");
+                    Config.GCstudio.ReleaseChanel = dbs.ReadData();
+                    dbs.CloseRead();
+                }
+                    else
+                    //load app config
+                    {
+                        if (File.Exists("GCstudio.config.json"))
+                        {
+                            dbs.LoadRead("GCstudio.config.json");
+                            Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                            dbs.CloseRead();
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error loading config.");
+                }
+
+            
 
         }
 
@@ -237,7 +249,7 @@ namespace GC_Studio
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
                 WebClientCVS.DownloadFileCompleted += OnCVSDownloadCompleted;
-                WebClientCVS.DownloadFileAsync(new Uri(ReleasePath + "cvs" + ReleaseChanel + ".nfo"), "cvs.nfo");
+                WebClientCVS.DownloadFileAsync(new Uri(ReleasePath + "cvs" + Config.GCstudio.ReleaseChanel + ".nfo"), "cvs.nfo");
             }
             else
             {

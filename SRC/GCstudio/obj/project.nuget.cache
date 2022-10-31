@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aa8H5euhj3e9Yjy6Kx+4YQi7t81S/Sd+sfBDPfqO0DKVOBQXd7RCp48LZl9fk2wLYcv2tlc3af51NTUMsMFYTw==",
+  "dgSpecHash": "Fz+0fE3fx6HcM56J2gRfHSEKE+kKaYdF3ZYzieqF6VtUr7UiOV9dO8QlaZFEQcIl08LadIgSJIM1fPa0TMXUCA==",
   "success": true,
   "projectFilePath": "C:\\DevSRCLocal\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ing.mier\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\ing.mier\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
+    "C:\\Users\\ing.mier\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
