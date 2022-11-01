@@ -58,3 +58,9 @@ GCstudio is released under [MIT License](https://github.com/GreatCowBASIC/GCstud
 GCcode is released under [MIT License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LicenseGCcode/LICENSE) and is based on the work of vscode from Microsoft and the vscodium project:
 - https://github.com/microsoft/vscode/
 - https://github.com/VSCodium/vscodium/
+
+----
+# Conduct
+
+Great Cow Basic and GC Studio projects adopt the [GCB Open Source Code of Conduct](https://github.com/GreatCowBASIC/GCstudio/blob/master/CODE_OF_CONDUCT.md).
+
