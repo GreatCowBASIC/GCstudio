@@ -53,7 +53,7 @@ This repository uses [Git LFS](https://git-lfs.github.com/) from GitHub for *.ex
 
 
 # License
-GCstudio is released under [GPL-3.0 License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LICENSE)
+GCstudio is released under [MIT License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LICENSE)
 
 GCcode is released under [MIT License](https://github.com/GreatCowBASIC/GCstudio/blob/master/LicenseGCcode/LICENSE) and is based on the work of vscode from Microsoft and the vscodium project:
 - https://github.com/microsoft/vscode/
