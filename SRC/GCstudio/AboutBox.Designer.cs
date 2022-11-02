@@ -418,11 +418,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.DarkGray;
-            this.label10.Location = new System.Drawing.Point(616, 692);
+            this.label10.Location = new System.Drawing.Point(546, 692);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(445, 24);
+            this.label10.Size = new System.Drawing.Size(592, 24);
             this.label10.TabIndex = 53;
-            this.label10.Text = "for Microchip PIC and Atmel AVR microcontrollers.";
+            this.label10.Text = "For Microchip PIC, Atmel AVR and LogicGreen LGT microcontrollers.";
             // 
             // AboutBox
             // 
