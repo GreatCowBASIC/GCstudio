@@ -640,6 +640,13 @@ namespace GC_Studio
                             LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                             break;
 
+                        case "GCgraphical":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
+                            break;
+
+
                         case "Geany":
                             LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                             break;
@@ -692,7 +699,14 @@ namespace GC_Studio
                         LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
 
-                    case "Geany":
+                    case "GCgraphical":
+                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
+                        break;
+
+
+                        case "Geany":
                         LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
                         break;
                 }
@@ -742,6 +756,13 @@ namespace GC_Studio
                         
                         LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
                         break;
+
+                    case "GCgraphical":
+                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+
+                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
+                        break;
+
 
                     case "Geany":
                         LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
@@ -892,6 +913,38 @@ namespace GC_Studio
                         MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "SynWrite\\Syn.exe");
                         break;
                     }
+
+                case "GCgraphical":
+
+                    try
+                    {
+                        p.FileName = AppDomain.CurrentDomain.BaseDirectory + "GreatCowBASIC\\great cow graphical basic.exe";
+                        p.Arguments = Args;
+                        p.WindowStyle = ProcessWindowStyle.Normal;
+                        x = Process.Start(p);
+                        SetForegroundWindow(x.MainWindowHandle);
+                        if (this.WindowState == FormWindowState.Maximized)
+                        {
+                            Config.Window.maximized = true;
+                        }
+                        else
+                        {
+                            Config.Window.maximized = false;
+                            Config.Window.sizeW = this.Size.Width;
+                            Config.Window.sizeH = this.Size.Height;
+                            Config.Window.locx = this.Location.X;
+                            Config.Window.locy = this.Location.Y;
+                        }
+                        SaveConfig();
+                        Environment.Exit(0);
+                        break;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBASIC\\great cow graphical basic.exe");
+                        break;
+                    }
+
 
 
                 case "Geany":
