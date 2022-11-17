@@ -908,6 +908,7 @@ namespace GC_Studio
             this.comboide.Items.AddRange(new object[] {
             "SynWrite",
             "GCcode",
+            "GCgraphical",
             "Geany"});
             this.comboide.Location = new System.Drawing.Point(97, 363);
             this.comboide.Name = "comboide";
