@@ -52,6 +52,12 @@ SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
 File /r ".\post\*"
 
+#Prereq Net7
+SetOutPath "$INSTDIR"
+File /r ".\Redist\Net7x86.exe"
+ExecWait "$INSTDIR\Net7x86.exe /install /quiet /norestart /log Log\Net7.log"
+Delete "$INSTDIR\Net7x86.exe"
+
 SectionEnd
 
 
