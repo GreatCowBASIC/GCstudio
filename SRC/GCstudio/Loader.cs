@@ -139,19 +139,6 @@ namespace GC_Studio
 
             }
 
-                //  ApplicationTitle.Text = Assembly.GetEntryAssembly().GetName().Name;
-                //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
- //               try
- //           {
- //               dbs.LoadRead("CurrentVersion.nfo");
- //               AppVer = decimal.Parse(dbs.ReadData());
- //               dbs.CloseRead();
- //           }
- //           catch
- //           {
- //               MessageBox.Show("Error reading current version manifest.");
- //               Environment.Exit(0);
- //           }
             Version.Text = "Version " + AppVer;
             Copyright.Text = ((AssemblyCopyrightAttribute)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright;
 
@@ -212,9 +199,7 @@ namespace GC_Studio
                 catch
                 {
                     MessageBox.Show("Error loading config.");
-                }
-
-            
+                }      
 
         }
 
@@ -289,13 +274,7 @@ namespace GC_Studio
                 dbs.ReadData();
                 double.TryParse(dbs.ReadData(),Style, Provider, out ManifestMinVer);
                 dbs.CloseRead();
-                //    try
-                //    {
-                //        System.IO.File.Delete("cvs.nfo");
-                //    }
-                //    catch
-                //    {
-                //    }
+
                 if (AppVer >= ManifestMinVer)
                 {
                     if (ManifestVer > AppVer || forceupdate)
@@ -358,8 +337,6 @@ namespace GC_Studio
                 ProgressUpdate.Value = percentage + 1;
             }
             ProgressUpdate.Value = percentage;
-            // sizelbl.Text = totalsize & "Mb."
-            // downloadedlbl.Text = downloadedbytes & "Mb."
             Copyright.Text = "Downloading Update. " + percentage + " %";
         }
 

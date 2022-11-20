@@ -68,20 +68,6 @@ namespace GC_Studio
         {
             MaxBounds();
 
-            //         try
-            //         {
-            //             dbs.LoadRead("CurrentVersion.nfo");
-            //             AppVer = decimal.Parse(dbs.ReadData());
-            //             dbs.CloseRead();
-            //         }
-            //         catch
-            //         {
-            //            MessageBox.Show("Error reading current version manifest.");
-            //             Environment.Exit(0);
-            //         }
-            //AppVer = decimal.Parse(Assembly.GetEntryAssembly().GetName().Version.Major.ToString() + "." + Assembly.GetEntryAssembly().GetName().Version.Minor.ToString());
-
-
             ver.Text = Loader.AppVer.ToString();
 
             LoadConfig();
@@ -232,7 +218,7 @@ namespace GC_Studio
                 ResetSize();
                 Config.GCstudio.Firstrun = false;
                 SaveConfig();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this is useful list of tools for the ide.txt\"", "GCcode");
+                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
             }
             
 
