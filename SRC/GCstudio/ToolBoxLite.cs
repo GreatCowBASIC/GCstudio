@@ -1,13 +1,13 @@
-﻿using System;
-using System.Drawing;
-using System.Linq;
-using System.Diagnostics;
-using System.IO;
-using System.Windows.Forms;
+﻿using DBSEngine;
 using Microsoft.VisualBasic.FileIO;
-using DBSEngine;
-using System.Globalization;
 using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 
 namespace GC_Studio
@@ -26,10 +26,14 @@ namespace GC_Studio
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
 
-        //set focus function
+        /// <summary>
+        /// set focus function
+        /// </summary>
+        /// <param name="hwnd"></param>
+        /// <returns></returns>
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern int SetForegroundWindow(IntPtr hwnd);
-        
+
         public ToolBoxLite()
         {
             InitializeComponent();
@@ -51,7 +55,7 @@ namespace GC_Studio
             if (e.Button == MouseButtons.Left)
             {
                 // Release the mouse capture started by the mouse down.
-                
+
                 sender.Capture = false; //select control
 
                 // Create and send a WM_NCLBUTTONDOWN message.
@@ -107,19 +111,19 @@ namespace GC_Studio
                 }
 
             }
-            
+
             this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
 
             this.Location = new Point(Config.Window.locx, Config.Window.locy);
-  
+
             if (Config.Window.maximized)
             {
                 MaxBounds();
                 this.WindowState = FormWindowState.Maximized;
             }
-            
 
-            //CLI Commands
+
+            ///CLI Commands
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
@@ -162,7 +166,7 @@ namespace GC_Studio
 
                         ResetSize();
 
-                        break;             
+                        break;
 
 
                     default:
@@ -189,7 +193,7 @@ namespace GC_Studio
             }
 
 
-            //post updater
+            ///post updater
             if (File.Exists("post.dat"))
             {
                 try
@@ -212,7 +216,7 @@ namespace GC_Studio
                 }
             }
 
-            //first run
+            ///first run
             if (Config.GCstudio.Firstrun)
             {
                 ResetSize();
@@ -220,7 +224,7 @@ namespace GC_Studio
                 SaveConfig();
                 LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
             }
-            
+
 
             for (int i = 0; i < 10; i++)
             {
@@ -234,8 +238,9 @@ namespace GC_Studio
 
         }
 
+        /// <summary>
         /// Reset size
-        /// 
+        /// </summary>
         private void ResetSize()
         {
             Config.Window.sizeW = 1028;
@@ -247,7 +252,7 @@ namespace GC_Studio
             Config.Window.maximized = false;
             SaveConfig();
         }
-        
+
         /// <summary>
         /// Load the configuration of the app 
         /// </summary>
@@ -286,10 +291,10 @@ namespace GC_Studio
         }
 
 
-            /// <summary>
-            /// Save configuration of the app 
-            /// </summary>
-            private void SaveConfig()
+        /// <summary>
+        /// Save configuration of the app 
+        /// </summary>
+        private void SaveConfig()
         {
             try
             {
@@ -302,7 +307,7 @@ namespace GC_Studio
             {
                 MessageBox.Show("Error saving config.");
             }
-           
+
 
         }
 
@@ -319,15 +324,15 @@ namespace GC_Studio
                 {
                     File.Delete("mrf.dat");
                 }
-                    //Load recent list
-                    if (File.Exists("GCstudio.mrf.json"))
-            {
+                //Load recent list
+                if (File.Exists("GCstudio.mrf.json"))
+                {
 
-                dbs.LoadRead("GCstudio.mrf.json");
-                RecentFiles = JsonConvert.DeserializeObject<RecentFile>(dbs.ReadAll());
-                dbs.CloseRead();
+                    dbs.LoadRead("GCstudio.mrf.json");
+                    RecentFiles = JsonConvert.DeserializeObject<RecentFile>(dbs.ReadAll());
+                    dbs.CloseRead();
 
-            }
+                }
             }
             catch
             {
@@ -340,8 +345,8 @@ namespace GC_Studio
         /// Save recent list
         /// </summary>
         private void SaveRecent()
-        { 
-           
+        {
+
             try
             {
                 dbs.LoadWrite("GCstudio.mrf.json");
@@ -358,7 +363,7 @@ namespace GC_Studio
         /// <summary>
         /// Add file to recent list 
         /// </summary>
-        private void addrecent(string FileName,string FullPath)
+        private void addrecent(string FileName, string FullPath)
         {
             try
             {
@@ -384,14 +389,14 @@ namespace GC_Studio
             }
 
         }
-    
+
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            
+
             if (this.WindowState == FormWindowState.Maximized)
             {
-               Config.Window.maximized = true;
+                Config.Window.maximized = true;
             }
             else
             {
@@ -412,7 +417,7 @@ namespace GC_Studio
 
         private void BtnMini_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Maximized)
+            if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
             }
@@ -501,7 +506,7 @@ namespace GC_Studio
 
             }
 
-           
+
         }
 
         private void buttonnew_MouseHover(object sender, EventArgs e)
@@ -523,8 +528,8 @@ namespace GC_Studio
         private void buttonnew_Click(object sender, EventArgs e)
         {
             textBox2.Text = Config.GCstudio.LastDirectory;
-            panelmain.Visible=false;
-            panelnewproj.Visible=true;
+            panelmain.Visible = false;
+            panelnewproj.Visible = true;
         }
 
         private void buttonwitout_MouseHover(object sender, EventArgs e)
@@ -562,14 +567,14 @@ namespace GC_Studio
         private void button7_Click(object sender, EventArgs e)
         {
             Process.Start("explorer", BugTracking);
-         
+
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            panelmain.Visible=false;
-            panelnewproj.Visible=false;
-            panelconfig.Visible=true;
+            panelmain.Visible = false;
+            panelnewproj.Visible = false;
+            panelconfig.Visible = true;
 
         }
 
@@ -583,18 +588,18 @@ namespace GC_Studio
         {
             panelnewproj.Visible = false;
             panelmain.Visible = true;
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                
-                    
+
+
                 Config.GCstudio.LastDirectory = textBox2.Text;
-                SaveConfig();    
-                
+                SaveConfig();
+
                 try
                 {
                     ProcessStartInfo p = new ProcessStartInfo();
@@ -655,48 +660,48 @@ namespace GC_Studio
                 SaveConfig();
 
                 try
-            { 
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = "minidump.exe";
-            p.Arguments = "x \"GCBLib.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-                p.CreateNoWindow = true;
-                Process x = Process.Start(p);
-            x.WaitForExit();
-            }
-            catch
-            {
-                MessageBox.Show("Error creating project.");
-            }
-
-            if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
-            {
-                switch (Config.GCstudio.IDE)
                 {
-                    case "GCcode":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    p.FileName = "minidump.exe";
+                    p.Arguments = "x \"GCBLib.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
+                    p.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.CreateNoWindow = true;
+                    Process x = Process.Start(p);
+                    x.WaitForExit();
+                }
+                catch
+                {
+                    MessageBox.Show("Error creating project.");
+                }
 
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
-                        break;
+                if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
+                {
+                    switch (Config.GCstudio.IDE)
+                    {
+                        case "GCcode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
 
-                    case "SynWrite":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
-                        
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
-                        break;
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
+                            break;
 
-                    case "GCgraphical":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+                        case "SynWrite":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
 
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
-                        break;
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
+                            break;
+
+                        case "GCgraphical":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
+                            break;
 
 
                         case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
-                        break;
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
+                            break;
+                    }
                 }
-            }
             }
             else
             {
@@ -712,49 +717,49 @@ namespace GC_Studio
                 SaveConfig();
 
                 try
-            { 
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = "minidump.exe";
-            p.Arguments = "x \"FBasicProg.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-                p.CreateNoWindow = true;
-                Process x = Process.Start(p);
-            x.WaitForExit();
-            }
-            catch
-            {
-                MessageBox.Show("Error creating project.");
-            }
-
-
-            if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
-            {
-                switch (Config.GCstudio.IDE)
                 {
-                    case "GCcode":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
-                        
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
-                        break;
-
-                    case "SynWrite":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
-                        
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
-                        break;
-
-                    case "GCgraphical":
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
-
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
-                        break;
-
-
-                    case "Geany":
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
-                        break;
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    p.FileName = "minidump.exe";
+                    p.Arguments = "x \"FBasicProg.tpl\" -o\"" + textBox2.Text + "\\" + textBox1.Text + "\" * -r -y";
+                    p.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.CreateNoWindow = true;
+                    Process x = Process.Start(p);
+                    x.WaitForExit();
                 }
-            }
+                catch
+                {
+                    MessageBox.Show("Error creating project.");
+                }
+
+
+                if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
+                {
+                    switch (Config.GCstudio.IDE)
+                    {
+                        case "GCcode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
+                            break;
+
+                        case "SynWrite":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\SynWrite Project.synw-proj" + "\"", Config.GCstudio.IDE);
+                            break;
+
+                        case "GCgraphical":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\main.gcb");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\main.gcb" + "\"", Config.GCstudio.IDE);
+                            break;
+
+
+                        case "Geany":
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
+                            break;
+                    }
+                }
             }
             else
             {
@@ -764,8 +769,8 @@ namespace GC_Studio
 
         private void button6_Click(object sender, EventArgs e)
         {
-                if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
-                {
+            if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
+            {
                 Config.GCstudio.LastDirectory = textBox2.Text;
                 SaveConfig();
 
@@ -774,7 +779,7 @@ namespace GC_Studio
                 {
                     File.Copy("GCBFile.tpl", textBox2.Text + "\\" + textBox1.Text + ".gcb");
                 }
-            
+
                 catch
                 {
                     MessageBox.Show("Error creating project.");
@@ -782,22 +787,22 @@ namespace GC_Studio
 
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == true)
-                    {
-                        addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + ".gcb");
-                    
-                        LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", Config.GCstudio.IDE);
-                    }
-                }
-                else
                 {
-                    MessageBox.Show("A file of the same name already exists on the location, please use a valid project name.", "File already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + ".gcb");
+
+                    LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + ".gcb\"", Config.GCstudio.IDE);
                 }
+            }
+            else
+            {
+                MessageBox.Show("A file of the same name already exists on the location, please use a valid project name.", "File already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            
+
             //panelclone.Visible=false;
             panelnewproj.Visible = false;
             panelconfig.Visible = false;
@@ -812,7 +817,7 @@ namespace GC_Studio
 
         private void comboide_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.GCstudio.IDE =comboide.Text;
+            Config.GCstudio.IDE = comboide.Text;
             SaveConfig();
         }
 
@@ -874,10 +879,10 @@ namespace GC_Studio
                     try
                     {
                         p.FileName = AppDomain.CurrentDomain.BaseDirectory + "SynWrite\\Syn.exe";
-                    p.Arguments = Args;
-                    p.WindowStyle = ProcessWindowStyle.Normal;
-                    x = Process.Start(p);
-                    SetForegroundWindow(x.MainWindowHandle);
+                        p.Arguments = Args;
+                        p.WindowStyle = ProcessWindowStyle.Normal;
+                        x = Process.Start(p);
+                        SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
                             Config.Window.maximized = true;
@@ -892,7 +897,7 @@ namespace GC_Studio
                         }
                         SaveConfig();
                         Environment.Exit(0);
-                    break;
+                        break;
                     }
                     catch
                     {
@@ -937,10 +942,10 @@ namespace GC_Studio
                     try
                     {
                         p.FileName = AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe";
-                    p.Arguments = Args;
-                    p.WindowStyle = ProcessWindowStyle.Normal;
-                    x = Process.Start(p);
-                    SetForegroundWindow(x.MainWindowHandle);
+                        p.Arguments = Args;
+                        p.WindowStyle = ProcessWindowStyle.Normal;
+                        x = Process.Start(p);
+                        SetForegroundWindow(x.MainWindowHandle);
                         if (this.WindowState == FormWindowState.Maximized)
                         {
                             Config.Window.maximized = true;
@@ -955,7 +960,7 @@ namespace GC_Studio
                         }
                         SaveConfig();
                         Environment.Exit(0);
-                    break;
+                        break;
                     }
                     catch
                     {
@@ -1012,7 +1017,7 @@ namespace GC_Studio
 
         private void buttoncompiler_Click(object sender, EventArgs e)
         {
-            LaunchIDE("\"" +  AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\0pen VS Project.code-workspace" + "\"", "GCcode");
+            LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\0pen VS Project.code-workspace" + "\"", "GCcode");
         }
 
         private void buttongstools_Click(object sender, EventArgs e)
@@ -1049,7 +1054,7 @@ namespace GC_Studio
                 {
                     File.Delete("GCstudio.mrf.json");
                 }
-            listViewRecent.Items.Clear();
+                listViewRecent.Items.Clear();
             }
             catch
             {
@@ -1111,9 +1116,9 @@ namespace GC_Studio
                             File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
                         }
                     }
-                    catch 
+                    catch
                     {
-                    
+
                     }
                     break;
 
@@ -1124,7 +1129,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                     
+
                     }
 
                     break;
@@ -1136,7 +1141,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                     
+
                     }
 
                     break;
@@ -1159,7 +1164,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                     
+
                     }
 
                     break;
@@ -1221,12 +1226,12 @@ namespace GC_Studio
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to reset GC Studio to factory settings? This will clear all IDE user configurations, reset programmer preferences, remove all installed extensions and set GC Studio to its default settings.","Reset To Factory Settings.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you really want to reset GC Studio to factory settings? This will clear all IDE user configurations, reset programmer preferences, remove all installed extensions and set GC Studio to its default settings.", "Reset To Factory Settings.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     File.Copy("use_in_master\\use.ini", "GreatCowBasic\\use.ini", true);
-           
+
                 }
                 catch
                 {
