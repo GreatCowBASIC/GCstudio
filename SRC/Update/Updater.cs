@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DBSEngine;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
 using System.IO;
-using DBSEngine;
+using System.Windows.Forms;
 
 namespace Update
 {
@@ -22,7 +22,7 @@ namespace Update
         {
             InitializeComponent();
         }
- 
+
         private void Updater_Load(object sender, EventArgs e)
         {
             RoundCorners(this);

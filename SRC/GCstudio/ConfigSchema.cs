@@ -6,7 +6,7 @@ namespace GC_Studio
     {
 
         public GCstudioConfig GCstudio = new GCstudioConfig();
-        public WindowConfig Window = new WindowConfig(); 
+        public WindowConfig Window = new WindowConfig();
 
         public class WindowConfig
         {

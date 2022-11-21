@@ -1,15 +1,15 @@
-﻿using System;
-using System.Reflection;
+﻿using DBSEngine;
+using Newtonsoft.Json;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Threading;
-using System.Windows.Forms;
-using System.Security.Principal;
 using System.Globalization;
 using System.IO;
-using DBSEngine;
-using Newtonsoft.Json;
+using System.Reflection;
+using System.Security.Principal;
+using System.Threading;
+using System.Windows.Forms;
 
 
 namespace GC_Studio
@@ -30,7 +30,7 @@ namespace GC_Studio
         string[] arguments;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
-        
+
         bool continueflag = false;
         bool downloading = false;
         bool forceupdate = false;
@@ -176,30 +176,30 @@ namespace GC_Studio
         private void LoadConfig()
         {
 
-                try
+            try
+            {
+                //Load old App Config
+                if (File.Exists("config.ini"))
                 {
-                    //Load old App Config
-                    if (File.Exists("config.ini"))
-                    {
                     dbs.LoadRead("config.ini");
                     Config.GCstudio.ReleaseChanel = dbs.ReadData();
                     dbs.CloseRead();
                 }
-                    else
-                    //load app config
+                else
+                //load app config
+                {
+                    if (File.Exists("GCstudio.config.json"))
                     {
-                        if (File.Exists("GCstudio.config.json"))
-                        {
-                            dbs.LoadRead("GCstudio.config.json");
-                            Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
-                            dbs.CloseRead();
-                        }
+                        dbs.LoadRead("GCstudio.config.json");
+                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
+                        dbs.CloseRead();
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("Error loading config.");
-                }      
+            }
+            catch
+            {
+                MessageBox.Show("Error loading config.");
+            }
 
         }
 
@@ -266,13 +266,13 @@ namespace GC_Studio
             {
 
                 dbs.LoadRead("cvs.nfo");
-                double.TryParse(dbs.ReadData(),Style,Provider,out ManifestVer);
+                double.TryParse(dbs.ReadData(), Style, Provider, out ManifestVer);
                 ManifestPKG = dbs.ReadData();
                 ManifestChecksum = dbs.ReadData();
                 ManifestTitle = dbs.ReadData();
                 ManifestNotes = dbs.ReadData();
                 dbs.ReadData();
-                double.TryParse(dbs.ReadData(),Style, Provider, out ManifestMinVer);
+                double.TryParse(dbs.ReadData(), Style, Provider, out ManifestMinVer);
                 dbs.CloseRead();
 
                 if (AppVer >= ManifestMinVer)
@@ -281,7 +281,7 @@ namespace GC_Studio
                     {
                         if (File.Exists("post.dat"))
                         {
-                            MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             EndForm();
                         }
                         else
@@ -315,7 +315,7 @@ namespace GC_Studio
                 }
                 else
                 {
-                    MessageBox.Show("A new update is available, but the current installed version is too old to update, please download and install the current version of GC Studio.", "Unsupported GC Studio Version",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("A new update is available, but the current installed version is too old to update, please download and install the current version of GC Studio.", "Unsupported GC Studio Version", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EndForm();
                 }
 
@@ -425,7 +425,7 @@ namespace GC_Studio
             {
                 EndForm();
                 WebClientPKG.CancelAsync();
-                
+
             }
         }
 

@@ -1,19 +1,19 @@
-﻿using System;
+﻿using DBSEngine;
+using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
-using DBSEngine;
 
 namespace GC_Studio
 {
     partial class AboutBox : Form
     {
-        DBS dbs=new DBS();
+        DBS dbs = new DBS();
         public AboutBox()
         {
 
             InitializeComponent();
-            
+
             labelassembly.Text = AssemblyVersion;
 
 
@@ -103,7 +103,7 @@ namespace GC_Studio
         {
 
 
-                            labelver.Text = Loader.AppVer.ToString();
+            labelver.Text = Loader.AppVer.ToString();
 
             try
             {
@@ -218,7 +218,7 @@ namespace GC_Studio
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (textBoxDescription.Visible) 
+            if (textBoxDescription.Visible)
             {
                 textBoxDescription.Visible = false;
             }
