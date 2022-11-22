@@ -1,0 +1,15 @@
+C:\DevSRCLocal\GCB\GCstudio\Build\net7.0-windows\GCstudio.exe
+C:\DevSRCLocal\GCB\GCstudio\Build\net7.0-windows\GCstudio.deps.json
+C:\DevSRCLocal\GCB\GCstudio\Build\net7.0-windows\GCstudio.runtimeconfig.json
+C:\DevSRCLocal\GCB\GCstudio\Build\net7.0-windows\GCstudio.dll
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.AssemblyReference.cache
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GC_Studio.AboutBox.resources
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GC_Studio.Loader.resources
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GC_Studio.Properties.Resources.resources
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GC_Studio.ToolBoxLite.resources
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.GenerateResource.cache
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.GeneratedMSBuildEditorConfig.editorconfig
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.CoreCompileInputs.cache
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.CopyComplete
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.dll
+C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.genruntimeconfig.cache

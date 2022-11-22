@@ -15,7 +15,6 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 | --- | --- |
 | GCstudio Source/Project | "SRC/" |
 | GCstudio Current Build | "Build/net6.0-windows/" |
-| Batch files Clean | "@Root" |
 
 
 ### OS Support
@@ -26,7 +25,7 @@ Win7 SP1**  x86/x64 to Win11 x64.
 Minimum resolution of 1024x768
 
 ### Prerequisites:
-[.Net 6.0 - x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.2-windows-x86-installer)
+[.Net 7.0 - x86](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-7.0.0-windows-x86-installer)
 
 [optional] [GIT](https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-64-bit.exe)
 
@@ -37,13 +36,6 @@ Minimum resolution of 1024x768
 - [Road Map](https://www.gcbasic.com/bugtracking/roadmap_page.php)
 
 ### If you found a bug, please [report it here!](https://www.gcbasic.com/bugtracking/bug_report_page.php)
-
-
-# For Pull Requests:
-
-* Remember to always run "_Clean.bat" batch file before commit your work.
-* You can clean and push current build to "C:\GCstudio" for testing with "_Push to GCstudio.bat" (all contents of "C:\GCstudio" will be overwritten)
-
 
 
 # License
