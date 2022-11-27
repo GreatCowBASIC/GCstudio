@@ -221,6 +221,21 @@ namespace GC_Studio
             {
                 ResetSize();
                 Config.GCstudio.Firstrun = false;
+                ProcessStartInfo p = new ProcessStartInfo();
+                Process x;
+                try
+                {
+                    p.FileName = AppDomain.CurrentDomain.BaseDirectory + "G+Stools\\IDE.exe";
+                    p.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                    p.Arguments = "";
+                    p.WindowStyle = ProcessWindowStyle.Normal;
+                    x = Process.Start(p);
+                    x.WaitForExit();
+                }
+                catch
+                {
+                    MessageBox.Show("An error occurred when configuring synwrite");
+                }
                 if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
                 {
                     Config.GCstudio.IDE = "SynWrite";
