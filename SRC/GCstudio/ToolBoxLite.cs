@@ -79,7 +79,7 @@ namespace GC_Studio
 
             if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
             {
-                comboide.Items.Remove(1);
+                comboide.Items.Remove("GCcode");
 
                 if (Config.GCstudio.IDE == "GCcode")
                 {
