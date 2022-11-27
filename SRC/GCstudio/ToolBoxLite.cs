@@ -77,6 +77,16 @@ namespace GC_Studio
             LoadConfig();
             LoadRecent();
 
+            if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
+            {
+                comboide.Items.Remove(1);
+
+                if (Config.GCstudio.IDE == "GCcode")
+                {
+                    Config.GCstudio.IDE = "SynWrite";
+                }
+            }
+
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
             comboarch.Text = Config.GCstudio.Architecture;
