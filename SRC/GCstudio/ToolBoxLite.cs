@@ -1288,41 +1288,7 @@ namespace GC_Studio
 
         }
 
-        private void button15_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo p = new ProcessStartInfo();
-            Process x;
-            try
-            {
-                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Download_Demos.bat";
-                p.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\";
-                p.Arguments = "";
-                p.WindowStyle = ProcessWindowStyle.Normal;
-                x = Process.Start(p);
-            }
-            catch
-            {
-                MessageBox.Show("An error occurred when launching the Script");
-            }
-        }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo p = new ProcessStartInfo();
-            Process x;
-            try
-            {
-                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Update_Demos.bat";
-                p.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\";
-                p.Arguments = "";
-                p.WindowStyle = ProcessWindowStyle.Normal;
-                x = Process.Start(p);
-            }
-            catch
-            {
-                MessageBox.Show("An error occurred when launching the Script");
-            }
-        }
     }
     }
 
