@@ -226,12 +226,12 @@ namespace GC_Studio
                 {
                     Config.GCstudio.IDE = "SynWrite";
                     SaveConfig();
-                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\first_sample\\first-start-sample.gcb\"", "SynWrite");
+                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\demos\\first-start-sample.gcb\"", "SynWrite");
                 }
                 else
                 {
                     SaveConfig();
-                    LaunchIDE("\".\\GreatCowBasic\\first_sample\\first-start-sample.gcb\" \".\\GreatCowBasic\\first_sample\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+                    LaunchIDE("\".\\GreatCowBasic\\demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
                 }
             }
 
