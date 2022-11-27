@@ -95,6 +95,18 @@ WriteRegStr ${REG_CLASSES} ".code-workspace" "" "GCB Project"
 WriteRegStr ${REG_CLASSES} "GCB Project\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
 WriteRegStr ${REG_CLASSES} "GCB Project\Defaulticon" "" "$INSTDIR\FileIcons\project.ico,0"
 
+WriteRegStr ${REG_CLASSES} ".nsi" "" "NSIS Script"
+WriteRegStr ${REG_CLASSES} "NSIS Script\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "NSIS Script\Defaulticon" "" "$INSTDIR\FileIcons\nsis.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".ps1" "" "PWSH Script"
+WriteRegStr ${REG_CLASSES} "PWSH Script\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "PWSH Script\Defaulticon" "" "$INSTDIR\FileIcons\pwsh.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".psm1" "" "PWSH Script Module"
+WriteRegStr ${REG_CLASSES} "PWSH Script Module\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "PWSH Script Module\Defaulticon" "" "$INSTDIR\FileIcons\pwsh.ico,0"
+
 
 #Windows Context Menu
 #shell
