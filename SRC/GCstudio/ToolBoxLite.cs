@@ -221,8 +221,17 @@ namespace GC_Studio
             {
                 ResetSize();
                 Config.GCstudio.Firstrun = false;
-                SaveConfig();
-                LaunchIDE("\".\\GreatCowBasic\\Demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\Demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+                if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
+                {
+                    Config.GCstudio.IDE = "SynWrite";
+                    SaveConfig();
+                    LaunchIDE("\".\\GreatCowBasic\\first_sample\\first-start-sample.gcb\"", "SynWrite");
+                }
+                else
+                {
+                    SaveConfig();
+                    LaunchIDE("\".\\GreatCowBasic\\first_sample\\first-start-sample.gcb\" \".\\GreatCowBasic\\first_sample\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+                }
             }
 
 
@@ -235,6 +244,7 @@ namespace GC_Studio
                     RecentItem[i].ToolTipText = RecentFiles.RecentDir[i];
                 }
             }
+      
 
         }
 
@@ -1276,7 +1286,44 @@ namespace GC_Studio
         {
 
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Download_Demos.bat";
+                p.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\";
+                p.Arguments = "";
+                p.WindowStyle = ProcessWindowStyle.Normal;
+                x = Process.Start(p);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when launching the Script");
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Update_Demos.bat";
+                p.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\";
+                p.Arguments = "";
+                p.WindowStyle = ProcessWindowStyle.Normal;
+                x = Process.Start(p);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred when launching the Script");
+            }
+        }
+    }
     }
 
 
-}
+
