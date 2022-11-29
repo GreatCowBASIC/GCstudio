@@ -178,6 +178,15 @@ namespace GC_Studio
 
                         break;
 
+                    case "/settings":
+
+                        panelmain.Visible = false;
+                        panelnewproj.Visible = false;
+                        panelconfig.Visible = true;
+                        button9.Visible = false;
+
+                        break;
+
 
                     default:
                         this.Visible = false;

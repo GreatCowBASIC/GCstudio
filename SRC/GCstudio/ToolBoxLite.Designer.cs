@@ -1336,9 +1336,9 @@ namespace GC_Studio
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonclone);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panelconfig);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panelnewproj);
+            this.Controls.Add(this.panelconfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1055, 970);
             this.Name = "ToolBoxLite";
