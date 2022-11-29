@@ -121,6 +121,10 @@ namespace GC_Studio
                         this.Close();
                         break;
 
+                    case "/settings":
+                        this.Close();
+                        break;
+
                     case "/forceupdate":
                         try
                         {

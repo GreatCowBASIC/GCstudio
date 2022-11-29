@@ -184,6 +184,7 @@ namespace GC_Studio
                         panelnewproj.Visible = false;
                         panelconfig.Visible = true;
                         button9.Visible = false;
+                        button12.Visible = false;
 
                         break;
 
