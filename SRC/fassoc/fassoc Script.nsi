@@ -53,13 +53,7 @@ Icon ".\res\GCstudio.ico"
 Section -Icons_Reg
 
 #Add Path
-; Check if the path entry already exists and write result to $0
-nsExec::Exec 'echo %PATH% | find "$INSTDIR\vscode\bin"'
-Pop $0   ; gets result code
-
-${If} $0 = 0
-    nsExec::Exec 'setx PATH %PATH%;$INSTDIR\vscode\bin'
-${EndIf}
+EnVar::AddValue "Path" "$INSTDIR\vscode\bin"
 
 
 #File Associations
