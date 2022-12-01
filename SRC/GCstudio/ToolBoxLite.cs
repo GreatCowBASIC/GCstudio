@@ -188,6 +188,14 @@ namespace GC_Studio
 
                         break;
 
+                    case "/about":
+
+                        Form about = new GC_Studio.AboutBox();
+                        about.ShowDialog();
+                        this.Close();
+
+                        break;
+
 
                     default:
                         this.Visible = false;
