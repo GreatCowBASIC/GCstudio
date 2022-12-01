@@ -51,6 +51,8 @@
             this.labelgccode = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.labelinstall = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labeltoolchain = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -351,6 +353,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.labelinstall);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.labeltoolchain);
             this.groupBox1.Controls.Add(this.label2);
@@ -364,10 +368,32 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(733, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 252);
+            this.groupBox1.Size = new System.Drawing.Size(464, 283);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modules:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(27, 227);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(194, 24);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "Installation Directory:";
+            // 
+            // labelinstall
+            // 
+            this.labelinstall.AutoSize = true;
+            this.labelinstall.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelinstall.ForeColor = System.Drawing.Color.White;
+            this.labelinstall.Location = new System.Drawing.Point(245, 227);
+            this.labelinstall.Name = "labelinstall";
+            this.labelinstall.Size = new System.Drawing.Size(34, 24);
+            this.labelinstall.TabIndex = 52;
+            this.labelinstall.Text = "---";
             // 
             // label11
             // 
@@ -497,5 +523,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labeltoolchain;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelinstall;
     }
 }

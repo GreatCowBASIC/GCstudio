@@ -104,6 +104,7 @@ namespace GC_Studio
 
 
             labelver.Text = Loader.AppVer.ToString();
+            labelinstall.Text = AppDomain.CurrentDomain.BaseDirectory;
 
             try
             {
