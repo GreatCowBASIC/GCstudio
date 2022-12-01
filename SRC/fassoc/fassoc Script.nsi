@@ -53,7 +53,8 @@ Icon ".\res\GCstudio.ico"
 Section -Icons_Reg
 
 #Add Path
-EnVar::AddValue "Path" "$INSTDIR\vscode\bin"
+EnVar::SetHKCU
+EnVar::AddValue "Path" "$INSTDIR\vscode\bin;"
 
 
 #File Associations
