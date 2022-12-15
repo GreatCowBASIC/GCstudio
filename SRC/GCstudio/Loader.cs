@@ -19,7 +19,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         ConfigSchema Config = new ConfigSchema();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.0005;
+        public const double AppVer = 1.00051;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -117,19 +117,19 @@ namespace GC_Studio
 
                 switch (arguments[1])
                 {
-                    case "/pkp":
+                    case "/pkp" or "-p" or "--pkp":
                         this.Close();
                         break;
 
-                    case "/settings":
+                    case "/settings" or "-s" or "--settings":
                         this.Close();
                         break;
 
-                    case "/about":
+                    case "/about" or "-a" or "--about":
                         this.Close();
                         break;
 
-                    case "/forceupdate":
+                    case "/forceupdate" or "-f" or "--forceupdate":
                         try
                         {
                             File.Delete("post.dat");
