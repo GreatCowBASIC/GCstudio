@@ -139,7 +139,7 @@ namespace GC_Studio
             {
                 switch (arguments[1])
                 {
-                    case "/syn":
+                    case "/syn" or "-syn" or "--syn":
                         this.Visible = false;
                         if (arguments.Length > 2)
                         {
@@ -161,24 +161,24 @@ namespace GC_Studio
                         LaunchIDE(ideargs, "SynWrite");
                         break;
 
-                    case "/pkp":
+                    case "/pkp" or "-p" or "--pkp":
                         this.Visible = false;
                         pkptool();
                         Environment.Exit(0);
                         break;
 
-                    case "/firststart":
+                    case "/firststart" or "-fs" or "--firststart":
                         Config.GCstudio.Firstrun = true;
 
                         break;
 
-                    case "/resetsize":
+                    case "/resetsize" or "-rs" or "--resetsize":
 
                         ResetSize();
 
                         break;
 
-                    case "/settings":
+                    case "/settings" or "-s" or "--settings":
 
                         panelmain.Visible = false;
                         panelnewproj.Visible = false;
@@ -188,7 +188,7 @@ namespace GC_Studio
 
                         break;
 
-                    case "/about":
+                    case "/about" or "-a" or "--about":
 
                         Form about = new GC_Studio.AboutBox();
                         about.ShowDialog();
