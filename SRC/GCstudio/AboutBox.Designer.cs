@@ -197,7 +197,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(300, 31);
             this.label3.TabIndex = 37;
-            this.label3.Text = "Copyright © 2007 - 2022";
+            this.label3.Text = "Copyright © 2007 - 2023";
             // 
             // label4
             // 
