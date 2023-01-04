@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // La información general de un ensamblado se controla mediante el siguiente 
@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mier Engineering")]
 [assembly: AssemblyProduct("GC Studio")]
-[assembly: AssemblyCopyright("Copyright © 2007 - 2022")]
+[assembly: AssemblyCopyright("Copyright © 2007 - 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión
 // utilizando el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.00.062.181")]
-[assembly: AssemblyFileVersion("1.00.062.181")]
+[assembly: AssemblyVersion("1.00.07.183")]
+[assembly: AssemblyFileVersion("1.00.07.183")]
