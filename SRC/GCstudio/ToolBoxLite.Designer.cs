@@ -63,6 +63,8 @@ namespace GC_Studio
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.buttonabout = new System.Windows.Forms.Button();
             this.panelconfig = new System.Windows.Forms.Panel();
+            this.combomode = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -641,6 +643,8 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            this.panelconfig.Controls.Add(this.combomode);
+            this.panelconfig.Controls.Add(this.label7);
             this.panelconfig.Controls.Add(this.button14);
             this.panelconfig.Controls.Add(this.button13);
             this.panelconfig.Controls.Add(this.button12);
@@ -669,11 +673,35 @@ namespace GC_Studio
             this.panelconfig.TabIndex = 49;
             this.panelconfig.Visible = false;
             // 
+            // combomode
+            // 
+            this.combomode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combomode.FormattingEnabled = true;
+            this.combomode.Items.AddRange(new object[] {
+            "Modern",
+            "Legacy"});
+            this.combomode.Location = new System.Drawing.Point(97, 626);
+            this.combomode.Name = "combomode";
+            this.combomode.Size = new System.Drawing.Size(263, 33);
+            this.combomode.TabIndex = 83;
+            this.combomode.SelectedIndexChanged += new System.EventHandler(this.combomode_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(90, 585);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(203, 31);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "GC Studio Mode";
+            // 
             // button14
             // 
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(339, 687);
+            this.button14.Location = new System.Drawing.Point(340, 785);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(201, 72);
             this.button14.TabIndex = 81;
@@ -685,7 +713,7 @@ namespace GC_Studio
             // 
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(339, 603);
+            this.button13.Location = new System.Drawing.Point(340, 701);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(201, 72);
             this.button13.TabIndex = 80;
@@ -697,7 +725,7 @@ namespace GC_Studio
             // 
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(97, 863);
+            this.button12.Location = new System.Drawing.Point(340, 870);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(201, 72);
             this.button12.TabIndex = 79;
@@ -709,7 +737,7 @@ namespace GC_Studio
             // 
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(96, 687);
+            this.button11.Location = new System.Drawing.Point(97, 785);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(201, 72);
             this.button11.TabIndex = 78;
@@ -721,7 +749,7 @@ namespace GC_Studio
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(96, 602);
+            this.button10.Location = new System.Drawing.Point(97, 700);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(201, 72);
             this.button10.TabIndex = 77;
@@ -781,7 +809,7 @@ namespace GC_Studio
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(96, 773);
+            this.button7.Location = new System.Drawing.Point(97, 871);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(201, 72);
             this.button7.TabIndex = 72;
@@ -1336,9 +1364,9 @@ namespace GC_Studio
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonclone);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelconfig);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.panelnewproj);
-            this.Controls.Add(this.panelconfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1055, 970);
             this.Name = "ToolBoxLite";
@@ -1448,5 +1476,7 @@ namespace GC_Studio
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ComboBox combomode;
+        private System.Windows.Forms.Label label7;
     }
 }
