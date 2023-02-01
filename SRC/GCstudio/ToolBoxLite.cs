@@ -257,10 +257,8 @@ namespace GC_Studio
             }
             else
             {
-                if (Config.GCstudio.Legacymode)
+                if (Config.GCstudio.Legacymode && !Config.GCstudio.Firstrun)
             {
-                // this.Visible = false;
-
                 LaunchIDE(ideargs, "SynWrite");
             }
             }
@@ -1368,7 +1366,7 @@ namespace GC_Studio
             {
                 if (Config.GCstudio.Legacymode == false)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure that you want to change to legacy mode? This will change the behavior of GC studio to open SynWrite directly at launch and you may need to access to these settings from SynWrite User Interface.", "Change to Legacy Mode", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Are you sure that you want to change to legacy mode? This will change the behavior of GC studio to open SynWrite directly at launch and you may need to access these settings from the SynWrite User Interface.", "Change to Legacy Mode", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         comboide.Enabled = false;
