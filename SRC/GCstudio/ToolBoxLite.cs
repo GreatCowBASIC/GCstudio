@@ -89,7 +89,20 @@ namespace GC_Studio
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
+            if (Config.GCstudio.Legacymode)
+            {
+                comboide.Enabled= false;
+            }
             comboarch.Text = Config.GCstudio.Architecture;
+            if (Config.GCstudio.Legacymode)
+            {
+                combomode.Text = "Legacy";
+            }
+            else
+            {
+                combomode.Text = "Modern";
+            }
+
 
             CompilerArchitecture();
 
@@ -130,6 +143,29 @@ namespace GC_Studio
             {
                 MaxBounds();
                 this.WindowState = FormWindowState.Maximized;
+            }
+
+            ///post updater
+            if (File.Exists("post.dat"))
+            {
+                try
+                {
+                    ProcessStartInfo p = new ProcessStartInfo();
+                    p.FileName = "postupdate.exe";
+                    p.Arguments = "/S";
+                    p.WindowStyle = ProcessWindowStyle.Normal;
+                    Process x = Process.Start(p);
+                    try
+                    {
+                        File.Delete("post.dat");
+                    }
+                    catch { }
+                }
+                catch
+                {
+                    MessageBox.Show("Error starting the post updater.");
+                    Environment.Exit(0);
+                }
             }
 
 
@@ -219,37 +255,32 @@ namespace GC_Studio
 
 
             }
-
-
-            ///post updater
-            if (File.Exists("post.dat"))
+            else
             {
-                try
-                {
-                    ProcessStartInfo p = new ProcessStartInfo();
-                    p.FileName = "postupdate.exe";
-                    p.Arguments = "/S";
-                    p.WindowStyle = ProcessWindowStyle.Normal;
-                    Process x = Process.Start(p);
-                    try
-                    {
-                        File.Delete("post.dat");
-                    }
-                    catch { }
-                }
-                catch
-                {
-                    MessageBox.Show("Error starting the post updater.");
-                    Environment.Exit(0);
-                }
+                if (Config.GCstudio.Legacymode && !Config.GCstudio.Firstrun)
+            {
+                LaunchIDE(ideargs, "SynWrite");
             }
+            }
+
+
+
+
 
             ///first run
             if (Config.GCstudio.Firstrun)
             {
                 ResetSize();
                 Config.GCstudio.Firstrun = false;
-                
+                if (Config.GCstudio.Legacymode)
+                {
+                    Config.GCstudio.IDE = "SynWrite";
+                    Config.GCstudio.ReleaseChanel = "compiler only";
+                    Config.GCstudio.IDE = "SynWrite";
+                    SaveConfig();
+                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\demos\\first-start-sample.gcb\"", "SynWrite");
+                }
+                else
                 if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
                 {
                     Config.GCstudio.IDE = "SynWrite";
@@ -262,6 +293,7 @@ namespace GC_Studio
                     LaunchIDE("\".\\GreatCowBasic\\demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
                 }
             }
+
 
 
             for (int i = 0; i < 10; i++)
@@ -1316,7 +1348,38 @@ namespace GC_Studio
 
         }
 
+        private void combomode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combomode.Text == "Modern")
+            {
+                if (Config.GCstudio.Legacymode == true)
+                {
+                    comboide.Enabled = true;
+                    Config.GCstudio.Legacymode = false;
+                    Config.GCstudio.IDE = "GCcode";
+                    Config.GCstudio.ReleaseChanel = "mainstream";
+                    comboupdate.Text = Config.GCstudio.ReleaseChanel;
+                    comboide.Text = Config.GCstudio.IDE;
+                }
+            }
+            else
+            {
+                if (Config.GCstudio.Legacymode == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure that you want to change to legacy mode? This will change the behavior of GC studio to open SynWrite directly at launch and you may need to access these settings from the SynWrite User Interface.", "Change to Legacy Mode", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        comboide.Enabled = false;
+                        Config.GCstudio.Legacymode = true;
+                        Config.GCstudio.IDE = "SynWrite";
+                        Config.GCstudio.ReleaseChanel = "compiler only";
+                            comboupdate.Text = Config.GCstudio.ReleaseChanel;
+                            comboide.Text = Config.GCstudio.IDE;
+                    }
+                }
 
+            }
+        }
     }
     }
 
