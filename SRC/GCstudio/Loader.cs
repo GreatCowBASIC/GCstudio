@@ -19,7 +19,7 @@ namespace GC_Studio
         DBS dbs = new DBS();
         ConfigSchema Config = new ConfigSchema();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.0011;
+        public const double AppVer = 1.0012;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
