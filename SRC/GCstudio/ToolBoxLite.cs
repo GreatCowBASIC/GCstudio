@@ -79,12 +79,14 @@ namespace GC_Studio
 
             if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
             {
-                comboide.Items.Remove("GCcode");
-
-                if (Config.GCstudio.IDE == "GCcode")
+                comboupdate.Items.Add("mainstream win7");
+                if (Config.GCstudio.ReleaseChanel == "mainstream")
                 {
-                    Config.GCstudio.IDE = "SynWrite";
+                    Config.GCstudio.ReleaseChanel = "mainstream win7";
+                    SaveConfig();
+                    button12_Click(this,null);
                 }
+                
             }
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
