@@ -26,6 +26,14 @@ namespace Update
         private void Updater_Load(object sender, EventArgs e)
         {
             RoundCorners(this);
+            foreach (var process in Process.GetProcessesByName("Code"))
+            {
+                process.Kill();
+            }
+            foreach (var process in Process.GetProcessesByName("GCstudio"))
+            {
+                process.Kill();
+            }
             InitialDelay.Enabled = true;
         }
 
