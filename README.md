@@ -14,7 +14,7 @@ This project is brought to you by: Evan R. Venn and Angel Mier.
 | Description | Directory |
 | --- | --- |
 | GCstudio Source/Project | "SRC/" |
-| GCstudio Current Build | "Build/net6.0-windows/" |
+| GCstudio Current Build | "Build/net7.0-windows/" |
 
 
 ### OS Support
