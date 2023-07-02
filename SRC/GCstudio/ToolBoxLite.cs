@@ -92,29 +92,43 @@ namespace GC_Studio
             /// Code for name change on compiler directory
             /// 
 
-            try
-            {
+
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
                 {
-                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
                     
+                    if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
+                    {
+                        try
+                        {
+                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    try
+                    {
+                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
+                    }
+                    catch
+                    {
+                    }
                 }
                 
-            }
-            catch
-            {
-            }
-
-            try
-            {
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
                 {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
+                    try
+                    {
+                        Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
+                    }
+                    catch
+                    {
+                    }
                 }
-            }
-            catch 
-            {
-            }
+
+            
+
+
 
 
             ///
