@@ -89,6 +89,52 @@ namespace GC_Studio
                 
             }
 
+            /// Code for name change on compiler directory
+            /// 
+
+
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
+                {
+                    
+                    if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
+                    {
+                        try
+                        {
+                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    try
+                    {
+                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
+                    }
+                    catch
+                    {
+                    }
+                }
+                
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
+                {
+                    try
+                    {
+                        Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
+                    }
+                    catch
+                    {
+                    }
+                }
+
+            
+
+
+
+
+            ///
+
+
+
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
             if (Config.GCstudio.Legacymode)
@@ -280,19 +326,19 @@ namespace GC_Studio
                     Config.GCstudio.ReleaseChanel = "compiler only";
                     Config.GCstudio.IDE = "SynWrite";
                     SaveConfig();
-                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\demos\\first-start-sample.gcb\"", "SynWrite");
+                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\demos\\first-start-sample.gcb\"", "SynWrite");
                 }
                 else
                 if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
                 {
                     Config.GCstudio.IDE = "SynWrite";
                     SaveConfig();
-                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\demos\\first-start-sample.gcb\"", "SynWrite");
+                    LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\demos\\first-start-sample.gcb\"", "SynWrite");
                 }
                 else
                 {
                     SaveConfig();
-                    LaunchIDE("\".\\GreatCowBasic\\demos\\first-start-sample.gcb\" \".\\GreatCowBasic\\demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
+                    LaunchIDE("\".\\gcbasic\\demos\\first-start-sample.gcb\" \".\\gcbasic\\demos\\this_is_useful_list_of_tools_for_the_ide.txt\"", "GCcode");
                 }
             }
 
@@ -982,7 +1028,7 @@ namespace GC_Studio
 
                     try
                     {
-                        p.FileName = AppDomain.CurrentDomain.BaseDirectory + "GreatCowBASIC\\great cow graphical basic.exe";
+                        p.FileName = AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\great cow graphical basic.exe";
                         p.Arguments = Args;
                         p.WindowStyle = ProcessWindowStyle.Normal;
                         x = Process.Start(p);
@@ -1005,7 +1051,7 @@ namespace GC_Studio
                     }
                     catch
                     {
-                        MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBASIC\\great cow graphical basic.exe");
+                        MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\great cow graphical basic.exe");
                         break;
                     }
 
@@ -1090,7 +1136,7 @@ namespace GC_Studio
 
         private void buttoncompiler_Click(object sender, EventArgs e)
         {
-            LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic\\0pen VS Project.code-workspace" + "\"", "GCcode");
+            LaunchIDE("\"" + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\0pen VS Project.code-workspace" + "\"", "GCcode");
         }
 
         private void buttongstools_Click(object sender, EventArgs e)
@@ -1182,11 +1228,11 @@ namespace GC_Studio
                     {
                         if (Environment.Is64BitOperatingSystem)
                         {
-                            File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                            File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                         }
                         else
                         {
-                            File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                            File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                         }
                     }
                     catch
@@ -1198,7 +1244,7 @@ namespace GC_Studio
                 case "x86":
                     try
                     {
-                        File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                     }
                     catch
                     {
@@ -1210,7 +1256,7 @@ namespace GC_Studio
                 case "x64":
                     try
                     {
-                        File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                        File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                     }
                     catch
                     {
@@ -1228,11 +1274,11 @@ namespace GC_Studio
                     {
                         if (Environment.Is64BitOperatingSystem)
                         {
-                            File.Copy("GreatCowBasic\\gcbasic64.exe", "GreatCowBasic\\gcbasic.exe", true);
+                            File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                         }
                         else
                         {
-                            File.Copy("GreatCowBasic\\gcbasic32.exe", "GreatCowBasic\\gcbasic.exe", true);
+                            File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                         }
                     }
                     catch
@@ -1267,7 +1313,7 @@ namespace GC_Studio
         {
             try
             {
-                File.Copy("use_in_master\\use.ini", "GreatCowBasic\\use.ini", true);
+                File.Copy("use_in_master\\use.ini", "gcbasic\\use.ini", true);
                 MessageBox.Show("The Programmer Preferences has been reset successfully.", "Reset Programmer Preferences", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -1303,7 +1349,7 @@ namespace GC_Studio
             {
                 try
                 {
-                    File.Copy("use_in_master\\use.ini", "GreatCowBasic\\use.ini", true);
+                    File.Copy("use_in_master\\use.ini", "gcbasic\\use.ini", true);
 
                 }
                 catch
@@ -1334,8 +1380,8 @@ namespace GC_Studio
             Process x;
             try
             {
-                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\Programmer Editor.exe";
-                p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "greatcowbasic\\use.INI";
+                p.FileName = AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\Programmer Editor.exe";
+                p.Arguments = AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\use.INI";
                 p.WindowStyle = ProcessWindowStyle.Maximized;
                 x = Process.Start(p);
             }

@@ -108,7 +108,7 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadRead("GreatCowBasic\\version.txt");
+                dbs.LoadRead("gcbasic\\version.txt");
                 labelcomp.Text = dbs.ReadData();
                 dbs.CloseRead();
             }
@@ -156,7 +156,7 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("GreatCowBasic\\Documentation\\acknowledgements.txt");
+                dbs.LoadRead("gcbasic\\Documentation\\acknowledgements.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
                 textBoxDescription.Visible = true;
@@ -171,7 +171,7 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("GreatCowBasic\\Documentation\\license.txt");
+                dbs.LoadRead("gcbasic\\Documentation\\license.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
                 textBoxDescription.Visible = true;
@@ -186,7 +186,7 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("GreatCowBasic\\Documentation\\readme.txt");
+                dbs.LoadRead("gcbasic\\Documentation\\readme.txt");
                 textBoxDescription.Text = dbs.ReadAll();
                 dbs.CloseRead();
                 textBoxDescription.Visible = true;
