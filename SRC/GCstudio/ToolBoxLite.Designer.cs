@@ -30,1443 +30,1413 @@ namespace GC_Studio
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBoxLite));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnMini = new System.Windows.Forms.Button();
-            this.BtnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ver = new System.Windows.Forms.Label();
-            this.buttonclone = new System.Windows.Forms.Button();
-            this.buttonwitout = new System.Windows.Forms.Button();
-            this.buttonbug = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.buttonopensol = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonopenfol = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.buttonnew = new System.Windows.Forms.Button();
-            this.pictureconf = new System.Windows.Forms.PictureBox();
-            this.panelmain = new System.Windows.Forms.Panel();
-            this.linkLabelclear = new System.Windows.Forms.LinkLabel();
-            this.listViewRecent = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.buttonabout = new System.Windows.Forms.Button();
-            this.panelconfig = new System.Windows.Forms.Panel();
-            this.combomode = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.labelarch = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.comboarch = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.buttongcbext = new System.Windows.Forms.Button();
-            this.buttongccode = new System.Windows.Forms.Button();
-            this.buttongstools = new System.Windows.Forms.Button();
-            this.buttoncompiler = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboide = new System.Windows.Forms.ComboBox();
-            this.comboupdate = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panelnewproj = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureconf)).BeginInit();
-            this.panelmain.SuspendLayout();
-            this.panelconfig.SuspendLayout();
-            this.panelnewproj.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.SuspendLayout();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            BtnMini = new System.Windows.Forms.Button();
+            BtnExit = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            ver = new System.Windows.Forms.Label();
+            buttonclone = new System.Windows.Forms.Button();
+            buttonwitout = new System.Windows.Forms.Button();
+            buttonbug = new System.Windows.Forms.Button();
+            label6 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            label13 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
+            buttonopensol = new System.Windows.Forms.Button();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            label15 = new System.Windows.Forms.Label();
+            label16 = new System.Windows.Forms.Label();
+            buttonopenfol = new System.Windows.Forms.Button();
+            pictureBox5 = new System.Windows.Forms.PictureBox();
+            label17 = new System.Windows.Forms.Label();
+            label18 = new System.Windows.Forms.Label();
+            buttonnew = new System.Windows.Forms.Button();
+            pictureconf = new System.Windows.Forms.PictureBox();
+            panelmain = new System.Windows.Forms.Panel();
+            linkLabelclear = new System.Windows.Forms.LinkLabel();
+            listViewRecent = new System.Windows.Forms.ListView();
+            columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            buttonabout = new System.Windows.Forms.Button();
+            panelconfig = new System.Windows.Forms.Panel();
+            combomode = new System.Windows.Forms.ComboBox();
+            label7 = new System.Windows.Forms.Label();
+            button14 = new System.Windows.Forms.Button();
+            button13 = new System.Windows.Forms.Button();
+            button12 = new System.Windows.Forms.Button();
+            button11 = new System.Windows.Forms.Button();
+            button10 = new System.Windows.Forms.Button();
+            labelarch = new System.Windows.Forms.Label();
+            label29 = new System.Windows.Forms.Label();
+            comboarch = new System.Windows.Forms.ComboBox();
+            label28 = new System.Windows.Forms.Label();
+            button7 = new System.Windows.Forms.Button();
+            buttongcbext = new System.Windows.Forms.Button();
+            buttongccode = new System.Windows.Forms.Button();
+            buttongstools = new System.Windows.Forms.Button();
+            buttoncompiler = new System.Windows.Forms.Button();
+            label4 = new System.Windows.Forms.Label();
+            button9 = new System.Windows.Forms.Button();
+            comboide = new System.Windows.Forms.ComboBox();
+            comboupdate = new System.Windows.Forms.ComboBox();
+            label27 = new System.Windows.Forms.Label();
+            label26 = new System.Windows.Forms.Label();
+            label25 = new System.Windows.Forms.Label();
+            panelnewproj = new System.Windows.Forms.Panel();
+            button8 = new System.Windows.Forms.Button();
+            label23 = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
+            label24 = new System.Windows.Forms.Label();
+            pictureBox7 = new System.Windows.Forms.PictureBox();
+            pictureBox8 = new System.Windows.Forms.PictureBox();
+            pictureBox10 = new System.Windows.Forms.PictureBox();
+            label19 = new System.Windows.Forms.Label();
+            label20 = new System.Windows.Forms.Label();
+            button6 = new System.Windows.Forms.Button();
+            label21 = new System.Windows.Forms.Label();
+            button3 = new System.Windows.Forms.Button();
+            label22 = new System.Windows.Forms.Label();
+            pictureBox9 = new System.Windows.Forms.PictureBox();
+            button4 = new System.Windows.Forms.Button();
+            button5 = new System.Windows.Forms.Button();
+            label10 = new System.Windows.Forms.Label();
+            button2 = new System.Windows.Forms.Button();
+            label9 = new System.Windows.Forms.Label();
+            textBox2 = new System.Windows.Forms.TextBox();
+            label8 = new System.Windows.Forms.Label();
+            textBox1 = new System.Windows.Forms.TextBox();
+            openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureconf).BeginInit();
+            panelmain.SuspendLayout();
+            panelconfig.SuspendLayout();
+            panelnewproj.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(731, 41);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(731, 41);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
             // 
             // BtnMini
             // 
-            this.BtnMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnMini.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.BtnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.BtnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMini.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnMini.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnMini.Location = new System.Drawing.Point(624, -2);
-            this.BtnMini.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnMini.Name = "BtnMini";
-            this.BtnMini.Size = new System.Drawing.Size(50, 41);
-            this.BtnMini.TabIndex = 12;
-            this.BtnMini.Text = "₪";
-            this.BtnMini.UseVisualStyleBackColor = false;
-            this.BtnMini.Click += new System.EventHandler(this.BtnMini_Click);
+            BtnMini.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            BtnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            BtnMini.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            BtnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            BtnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BtnMini.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            BtnMini.ForeColor = System.Drawing.Color.WhiteSmoke;
+            BtnMini.Location = new System.Drawing.Point(624, -2);
+            BtnMini.Margin = new System.Windows.Forms.Padding(2);
+            BtnMini.Name = "BtnMini";
+            BtnMini.Size = new System.Drawing.Size(50, 41);
+            BtnMini.TabIndex = 12;
+            BtnMini.Text = "₪";
+            BtnMini.UseVisualStyleBackColor = false;
+            BtnMini.Click += BtnMini_Click;
             // 
             // BtnExit
             // 
-            this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExit.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnExit.Location = new System.Drawing.Point(673, -2);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(50, 41);
-            this.BtnExit.TabIndex = 11;
-            this.BtnExit.Text = "X";
-            this.BtnExit.UseVisualStyleBackColor = false;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            BtnExit.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            BtnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BtnExit.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            BtnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            BtnExit.Location = new System.Drawing.Point(673, -2);
+            BtnExit.Margin = new System.Windows.Forms.Padding(2);
+            BtnExit.Name = "BtnExit";
+            BtnExit.Size = new System.Drawing.Size(50, 41);
+            BtnExit.TabIndex = 11;
+            BtnExit.Text = "X";
+            BtnExit.UseVisualStyleBackColor = false;
+            BtnExit.Click += BtnExit_Click;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(575, -2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 41);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "―";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            button1.Location = new System.Drawing.Point(575, -2);
+            button1.Margin = new System.Windows.Forms.Padding(2);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(50, 41);
+            button1.TabIndex = 13;
+            button1.Text = "―";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(50, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 39);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "GC Studio";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(50, 43);
+            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(160, 39);
+            label1.TabIndex = 14;
+            label1.Text = "GC Studio";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(54, 128);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 21);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Open Recent";
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.ForeColor = System.Drawing.Color.White;
+            label2.Location = new System.Drawing.Point(54, 128);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(109, 21);
+            label2.TabIndex = 15;
+            label2.Text = "Open Recent";
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(244, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 21);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Get Started";
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.ForeColor = System.Drawing.Color.White;
+            label3.Location = new System.Drawing.Point(244, 128);
+            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(97, 21);
+            label3.TabIndex = 16;
+            label3.Text = "Get Started";
             // 
             // ver
             // 
-            this.ver.AutoSize = true;
-            this.ver.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ver.ForeColor = System.Drawing.Color.White;
-            this.ver.Location = new System.Drawing.Point(260, 53);
-            this.ver.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ver.Name = "ver";
-            this.ver.Size = new System.Drawing.Size(0, 30);
-            this.ver.TabIndex = 17;
+            ver.AutoSize = true;
+            ver.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ver.ForeColor = System.Drawing.Color.White;
+            ver.Location = new System.Drawing.Point(260, 53);
+            ver.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            ver.Name = "ver";
+            ver.Size = new System.Drawing.Size(0, 30);
+            ver.TabIndex = 17;
             // 
             // buttonclone
             // 
-            this.buttonclone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonclone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.buttonclone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonclone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonclone.FlatAppearance.BorderSize = 0;
-            this.buttonclone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.buttonclone.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonclone.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonclone.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonclone.Location = new System.Drawing.Point(262, 892);
-            this.buttonclone.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonclone.Name = "buttonclone";
-            this.buttonclone.Size = new System.Drawing.Size(401, 103);
-            this.buttonclone.TabIndex = 19;
-            this.buttonclone.UseVisualStyleBackColor = false;
-            this.buttonclone.Visible = false;
-            this.buttonclone.MouseLeave += new System.EventHandler(this.buttonclone_MouseLeave);
-            this.buttonclone.MouseHover += new System.EventHandler(this.buttonclone_MouseHover);
+            buttonclone.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonclone.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            buttonclone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonclone.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonclone.FlatAppearance.BorderSize = 0;
+            buttonclone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            buttonclone.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            buttonclone.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonclone.ForeColor = System.Drawing.Color.WhiteSmoke;
+            buttonclone.Location = new System.Drawing.Point(262, 892);
+            buttonclone.Margin = new System.Windows.Forms.Padding(2);
+            buttonclone.Name = "buttonclone";
+            buttonclone.Size = new System.Drawing.Size(401, 103);
+            buttonclone.TabIndex = 19;
+            buttonclone.UseVisualStyleBackColor = false;
+            buttonclone.Visible = false;
+            buttonclone.MouseLeave += buttonclone_MouseLeave;
+            buttonclone.MouseHover += buttonclone_MouseHover;
             // 
             // buttonwitout
             // 
-            this.buttonwitout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonwitout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonwitout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonwitout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonwitout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonwitout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonwitout.Location = new System.Drawing.Point(344, 499);
-            this.buttonwitout.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonwitout.Name = "buttonwitout";
-            this.buttonwitout.Size = new System.Drawing.Size(211, 30);
-            this.buttonwitout.TabIndex = 24;
-            this.buttonwitout.Text = "Continue without code ->";
-            this.buttonwitout.UseVisualStyleBackColor = false;
-            this.buttonwitout.Click += new System.EventHandler(this.buttonwitout_Click);
-            this.buttonwitout.MouseLeave += new System.EventHandler(this.buttonwitout_MouseLeave);
-            this.buttonwitout.MouseHover += new System.EventHandler(this.buttonwitout_MouseHover);
+            buttonwitout.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonwitout.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonwitout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttonwitout.Location = new System.Drawing.Point(344, 499);
+            buttonwitout.Margin = new System.Windows.Forms.Padding(2);
+            buttonwitout.Name = "buttonwitout";
+            buttonwitout.Size = new System.Drawing.Size(211, 30);
+            buttonwitout.TabIndex = 24;
+            buttonwitout.Text = "Continue without code ->";
+            buttonwitout.UseVisualStyleBackColor = false;
+            buttonwitout.Click += buttonwitout_Click;
+            buttonwitout.MouseLeave += buttonwitout_MouseLeave;
+            buttonwitout.MouseHover += buttonwitout_MouseHover;
             // 
             // buttonbug
             // 
-            this.buttonbug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonbug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonbug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonbug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonbug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonbug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttonbug.Location = new System.Drawing.Point(516, 546);
-            this.buttonbug.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonbug.Name = "buttonbug";
-            this.buttonbug.Size = new System.Drawing.Size(211, 30);
-            this.buttonbug.TabIndex = 25;
-            this.buttonbug.Text = "Found a Bug? Report It!";
-            this.buttonbug.UseVisualStyleBackColor = false;
-            this.buttonbug.Click += new System.EventHandler(this.button7_Click);
-            this.buttonbug.MouseLeave += new System.EventHandler(this.button7_MouseLeave);
-            this.buttonbug.MouseHover += new System.EventHandler(this.button7_MouseHover);
+            buttonbug.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            buttonbug.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonbug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttonbug.Location = new System.Drawing.Point(516, 546);
+            buttonbug.Margin = new System.Windows.Forms.Padding(2);
+            buttonbug.Name = "buttonbug";
+            buttonbug.Size = new System.Drawing.Size(211, 30);
+            buttonbug.TabIndex = 25;
+            buttonbug.Text = "Found a Bug? Report It!";
+            buttonbug.UseVisualStyleBackColor = false;
+            buttonbug.Click += button7_Click;
+            buttonbug.MouseLeave += button7_MouseLeave;
+            buttonbug.MouseHover += button7_MouseHover;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(342, 943);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(309, 43);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Get code from a repository like GitHub or a local Git server";
-            this.label6.Visible = false;
-            this.label6.MouseLeave += new System.EventHandler(this.buttonclone_MouseLeave);
-            this.label6.MouseHover += new System.EventHandler(this.buttonclone_MouseHover);
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label6.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.ForeColor = System.Drawing.Color.White;
+            label6.Location = new System.Drawing.Point(342, 943);
+            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(309, 43);
+            label6.TabIndex = 27;
+            label6.Text = "Get code from a repository like GitHub or a local Git server";
+            label6.Visible = false;
+            label6.MouseLeave += buttonclone_MouseLeave;
+            label6.MouseHover += buttonclone_MouseHover;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(340, 908);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 21);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Clone a repository";
-            this.label5.Visible = false;
-            this.label5.MouseLeave += new System.EventHandler(this.buttonclone_MouseLeave);
-            this.label5.MouseHover += new System.EventHandler(this.buttonclone_MouseHover);
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(340, 908);
+            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(149, 21);
+            label5.TabIndex = 26;
+            label5.Text = "Clone a repository";
+            label5.Visible = false;
+            label5.MouseLeave += buttonclone_MouseLeave;
+            label5.MouseHover += buttonclone_MouseHover;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(272, 900);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.buttonclone_MouseLeave);
-            this.pictureBox2.MouseHover += new System.EventHandler(this.buttonclone_MouseHover);
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox2.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(272, 900);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(65, 64);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 34;
+            pictureBox2.TabStop = false;
+            pictureBox2.Visible = false;
+            pictureBox2.MouseLeave += buttonclone_MouseLeave;
+            pictureBox2.MouseHover += buttonclone_MouseHover;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(248, 184);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 38;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.buttonopensol_Click);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.buttonopensol_MouseLeave);
-            this.pictureBox3.MouseHover += new System.EventHandler(this.buttonopensol_MouseHover);
+            pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox3.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new System.Drawing.Point(248, 184);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(65, 64);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 38;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += buttonopensol_Click;
+            pictureBox3.MouseLeave += buttonopensol_MouseLeave;
+            pictureBox3.MouseHover += buttonopensol_MouseHover;
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(318, 227);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(309, 43);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Open a local project or file";
-            this.label13.Click += new System.EventHandler(this.buttonopensol_Click);
-            this.label13.MouseLeave += new System.EventHandler(this.buttonopensol_MouseLeave);
-            this.label13.MouseHover += new System.EventHandler(this.buttonopensol_MouseHover);
+            label13.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label13.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label13.ForeColor = System.Drawing.Color.White;
+            label13.Location = new System.Drawing.Point(318, 227);
+            label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(309, 43);
+            label13.TabIndex = 37;
+            label13.Text = "Open a local project or file";
+            label13.Click += buttonopensol_Click;
+            label13.MouseLeave += buttonopensol_MouseLeave;
+            label13.MouseHover += buttonopensol_MouseHover;
             // 
             // label14
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(318, 191);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(173, 21);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "Open a project or file";
-            this.label14.Click += new System.EventHandler(this.buttonopensol_Click);
-            this.label14.MouseLeave += new System.EventHandler(this.buttonopensol_MouseLeave);
-            this.label14.MouseHover += new System.EventHandler(this.buttonopensol_MouseHover);
+            label14.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label14.AutoSize = true;
+            label14.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label14.ForeColor = System.Drawing.Color.White;
+            label14.Location = new System.Drawing.Point(318, 191);
+            label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(173, 21);
+            label14.TabIndex = 36;
+            label14.Text = "Open a project or file";
+            label14.Click += buttonopensol_Click;
+            label14.MouseLeave += buttonopensol_MouseLeave;
+            label14.MouseHover += buttonopensol_MouseHover;
             // 
             // buttonopensol
             // 
-            this.buttonopensol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonopensol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.buttonopensol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonopensol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonopensol.FlatAppearance.BorderSize = 0;
-            this.buttonopensol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.buttonopensol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonopensol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonopensol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonopensol.Location = new System.Drawing.Point(241, 174);
-            this.buttonopensol.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonopensol.Name = "buttonopensol";
-            this.buttonopensol.Size = new System.Drawing.Size(401, 103);
-            this.buttonopensol.TabIndex = 35;
-            this.buttonopensol.UseVisualStyleBackColor = false;
-            this.buttonopensol.Click += new System.EventHandler(this.buttonopensol_Click);
-            this.buttonopensol.MouseLeave += new System.EventHandler(this.buttonopensol_MouseLeave);
-            this.buttonopensol.MouseHover += new System.EventHandler(this.buttonopensol_MouseHover);
+            buttonopensol.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonopensol.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            buttonopensol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonopensol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonopensol.FlatAppearance.BorderSize = 0;
+            buttonopensol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            buttonopensol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            buttonopensol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonopensol.ForeColor = System.Drawing.Color.WhiteSmoke;
+            buttonopensol.Location = new System.Drawing.Point(241, 174);
+            buttonopensol.Margin = new System.Windows.Forms.Padding(2);
+            buttonopensol.Name = "buttonopensol";
+            buttonopensol.Size = new System.Drawing.Size(401, 103);
+            buttonopensol.TabIndex = 35;
+            buttonopensol.UseVisualStyleBackColor = false;
+            buttonopensol.Click += buttonopensol_Click;
+            buttonopensol.MouseLeave += buttonopensol_MouseLeave;
+            buttonopensol.MouseHover += buttonopensol_MouseHover;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(248, 291);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 42;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.buttonopenfol_Click);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.buttonopenfol_MouseLeave);
-            this.pictureBox4.MouseHover += new System.EventHandler(this.buttonopenfol_MouseHover);
+            pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox4.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new System.Drawing.Point(248, 291);
+            pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(65, 64);
+            pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 42;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += buttonopenfol_Click;
+            pictureBox4.MouseLeave += buttonopenfol_MouseLeave;
+            pictureBox4.MouseHover += buttonopenfol_MouseHover;
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(318, 336);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(309, 43);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Open an existing directory on the editor";
-            this.label15.Click += new System.EventHandler(this.buttonopenfol_Click);
-            this.label15.MouseLeave += new System.EventHandler(this.buttonopenfol_MouseLeave);
-            this.label15.MouseHover += new System.EventHandler(this.buttonopenfol_MouseHover);
+            label15.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label15.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label15.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label15.ForeColor = System.Drawing.Color.White;
+            label15.Location = new System.Drawing.Point(318, 336);
+            label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(309, 43);
+            label15.TabIndex = 41;
+            label15.Text = "Open an existing directory on the editor";
+            label15.Click += buttonopenfol_Click;
+            label15.MouseLeave += buttonopenfol_MouseLeave;
+            label15.MouseHover += buttonopenfol_MouseHover;
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(318, 299);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(156, 21);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Open a local folder";
-            this.label16.Click += new System.EventHandler(this.buttonopenfol_Click);
-            this.label16.MouseLeave += new System.EventHandler(this.buttonopenfol_MouseLeave);
-            this.label16.MouseHover += new System.EventHandler(this.buttonopenfol_MouseHover);
+            label16.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label16.AutoSize = true;
+            label16.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label16.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label16.ForeColor = System.Drawing.Color.White;
+            label16.Location = new System.Drawing.Point(318, 299);
+            label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(156, 21);
+            label16.TabIndex = 40;
+            label16.Text = "Open a local folder";
+            label16.Click += buttonopenfol_Click;
+            label16.MouseLeave += buttonopenfol_MouseLeave;
+            label16.MouseHover += buttonopenfol_MouseHover;
             // 
             // buttonopenfol
             // 
-            this.buttonopenfol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonopenfol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.buttonopenfol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonopenfol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonopenfol.FlatAppearance.BorderSize = 0;
-            this.buttonopenfol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.buttonopenfol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonopenfol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonopenfol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonopenfol.Location = new System.Drawing.Point(241, 283);
-            this.buttonopenfol.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonopenfol.Name = "buttonopenfol";
-            this.buttonopenfol.Size = new System.Drawing.Size(401, 103);
-            this.buttonopenfol.TabIndex = 39;
-            this.buttonopenfol.UseVisualStyleBackColor = false;
-            this.buttonopenfol.Click += new System.EventHandler(this.buttonopenfol_Click);
-            this.buttonopenfol.MouseLeave += new System.EventHandler(this.buttonopenfol_MouseLeave);
-            this.buttonopenfol.MouseHover += new System.EventHandler(this.buttonopenfol_MouseHover);
+            buttonopenfol.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonopenfol.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            buttonopenfol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonopenfol.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonopenfol.FlatAppearance.BorderSize = 0;
+            buttonopenfol.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            buttonopenfol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            buttonopenfol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonopenfol.ForeColor = System.Drawing.Color.WhiteSmoke;
+            buttonopenfol.Location = new System.Drawing.Point(241, 283);
+            buttonopenfol.Margin = new System.Windows.Forms.Padding(2);
+            buttonopenfol.Name = "buttonopenfol";
+            buttonopenfol.Size = new System.Drawing.Size(401, 103);
+            buttonopenfol.TabIndex = 39;
+            buttonopenfol.UseVisualStyleBackColor = false;
+            buttonopenfol.Click += buttonopenfol_Click;
+            buttonopenfol.MouseLeave += buttonopenfol_MouseLeave;
+            buttonopenfol.MouseHover += buttonopenfol_MouseHover;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(248, 399);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 46;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.buttonnew_Click);
-            this.pictureBox5.MouseLeave += new System.EventHandler(this.buttonnew_MouseLeave);
-            this.pictureBox5.MouseHover += new System.EventHandler(this.buttonnew_MouseHover);
+            pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox5.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox5.Image = (System.Drawing.Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new System.Drawing.Point(248, 399);
+            pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new System.Drawing.Size(65, 64);
+            pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 46;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += buttonnew_Click;
+            pictureBox5.MouseLeave += buttonnew_MouseLeave;
+            pictureBox5.MouseHover += buttonnew_MouseHover;
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label17.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(318, 443);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(309, 43);
-            this.label17.TabIndex = 45;
-            this.label17.Text = "Choose a project template to get started";
-            this.label17.Click += new System.EventHandler(this.buttonnew_Click);
-            this.label17.MouseLeave += new System.EventHandler(this.buttonnew_MouseLeave);
-            this.label17.MouseHover += new System.EventHandler(this.buttonnew_MouseHover);
+            label17.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label17.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label17.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label17.ForeColor = System.Drawing.Color.White;
+            label17.Location = new System.Drawing.Point(318, 443);
+            label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(309, 43);
+            label17.TabIndex = 45;
+            label17.Text = "Choose a project template to get started";
+            label17.Click += buttonnew_Click;
+            label17.MouseLeave += buttonnew_MouseLeave;
+            label17.MouseHover += buttonnew_MouseHover;
             // 
             // label18
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label18.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(318, 407);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(169, 21);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "Create a new project";
-            this.label18.Click += new System.EventHandler(this.buttonnew_Click);
-            this.label18.MouseLeave += new System.EventHandler(this.buttonnew_MouseLeave);
-            this.label18.MouseHover += new System.EventHandler(this.buttonnew_MouseHover);
+            label18.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label18.AutoSize = true;
+            label18.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label18.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label18.ForeColor = System.Drawing.Color.White;
+            label18.Location = new System.Drawing.Point(318, 407);
+            label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(169, 21);
+            label18.TabIndex = 44;
+            label18.Text = "Create a new project";
+            label18.Click += buttonnew_Click;
+            label18.MouseLeave += buttonnew_MouseLeave;
+            label18.MouseHover += buttonnew_MouseHover;
             // 
             // buttonnew
             // 
-            this.buttonnew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonnew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.buttonnew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonnew.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonnew.FlatAppearance.BorderSize = 0;
-            this.buttonnew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.buttonnew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonnew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonnew.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonnew.Location = new System.Drawing.Point(241, 391);
-            this.buttonnew.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonnew.Name = "buttonnew";
-            this.buttonnew.Size = new System.Drawing.Size(401, 103);
-            this.buttonnew.TabIndex = 43;
-            this.buttonnew.UseVisualStyleBackColor = false;
-            this.buttonnew.Click += new System.EventHandler(this.buttonnew_Click);
-            this.buttonnew.MouseLeave += new System.EventHandler(this.buttonnew_MouseLeave);
-            this.buttonnew.MouseHover += new System.EventHandler(this.buttonnew_MouseHover);
+            buttonnew.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonnew.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            buttonnew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonnew.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonnew.FlatAppearance.BorderSize = 0;
+            buttonnew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            buttonnew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            buttonnew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonnew.ForeColor = System.Drawing.Color.WhiteSmoke;
+            buttonnew.Location = new System.Drawing.Point(241, 391);
+            buttonnew.Margin = new System.Windows.Forms.Padding(2);
+            buttonnew.Name = "buttonnew";
+            buttonnew.Size = new System.Drawing.Size(401, 103);
+            buttonnew.TabIndex = 43;
+            buttonnew.UseVisualStyleBackColor = false;
+            buttonnew.Click += buttonnew_Click;
+            buttonnew.MouseLeave += buttonnew_MouseLeave;
+            buttonnew.MouseHover += buttonnew_MouseHover;
             // 
             // pictureconf
             // 
-            this.pictureconf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureconf.Image = ((System.Drawing.Image)(resources.GetObject("pictureconf.Image")));
-            this.pictureconf.Location = new System.Drawing.Point(527, -1);
-            this.pictureconf.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureconf.Name = "pictureconf";
-            this.pictureconf.Size = new System.Drawing.Size(43, 41);
-            this.pictureconf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureconf.TabIndex = 47;
-            this.pictureconf.TabStop = false;
-            this.pictureconf.Click += new System.EventHandler(this.pictureBox6_Click);
+            pictureconf.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pictureconf.Image = (System.Drawing.Image)resources.GetObject("pictureconf.Image");
+            pictureconf.Location = new System.Drawing.Point(527, -1);
+            pictureconf.Margin = new System.Windows.Forms.Padding(2);
+            pictureconf.Name = "pictureconf";
+            pictureconf.Size = new System.Drawing.Size(43, 41);
+            pictureconf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureconf.TabIndex = 47;
+            pictureconf.TabStop = false;
+            pictureconf.Click += pictureBox6_Click;
             // 
             // panelmain
             // 
-            this.panelmain.Controls.Add(this.linkLabelclear);
-            this.panelmain.Controls.Add(this.listViewRecent);
-            this.panelmain.Controls.Add(this.buttonabout);
-            this.panelmain.Controls.Add(this.label3);
-            this.panelmain.Controls.Add(this.pictureBox5);
-            this.panelmain.Controls.Add(this.ver);
-            this.panelmain.Controls.Add(this.buttonwitout);
-            this.panelmain.Controls.Add(this.label2);
-            this.panelmain.Controls.Add(this.label17);
-            this.panelmain.Controls.Add(this.label1);
-            this.panelmain.Controls.Add(this.buttonbug);
-            this.panelmain.Controls.Add(this.label18);
-            this.panelmain.Controls.Add(this.buttonnew);
-            this.panelmain.Controls.Add(this.pictureBox4);
-            this.panelmain.Controls.Add(this.label15);
-            this.panelmain.Controls.Add(this.label16);
-            this.panelmain.Controls.Add(this.label14);
-            this.panelmain.Controls.Add(this.buttonopenfol);
-            this.panelmain.Controls.Add(this.label13);
-            this.panelmain.Controls.Add(this.pictureBox3);
-            this.panelmain.Controls.Add(this.buttonopensol);
-            this.panelmain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelmain.Location = new System.Drawing.Point(0, 0);
-            this.panelmain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelmain.Name = "panelmain";
-            this.panelmain.Size = new System.Drawing.Size(731, 578);
-            this.panelmain.TabIndex = 48;
-            this.panelmain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmain_Paint);
+            panelmain.Controls.Add(linkLabelclear);
+            panelmain.Controls.Add(listViewRecent);
+            panelmain.Controls.Add(buttonabout);
+            panelmain.Controls.Add(label3);
+            panelmain.Controls.Add(pictureBox5);
+            panelmain.Controls.Add(ver);
+            panelmain.Controls.Add(buttonwitout);
+            panelmain.Controls.Add(label2);
+            panelmain.Controls.Add(label17);
+            panelmain.Controls.Add(label1);
+            panelmain.Controls.Add(buttonbug);
+            panelmain.Controls.Add(label18);
+            panelmain.Controls.Add(buttonnew);
+            panelmain.Controls.Add(pictureBox4);
+            panelmain.Controls.Add(label15);
+            panelmain.Controls.Add(label16);
+            panelmain.Controls.Add(label14);
+            panelmain.Controls.Add(buttonopenfol);
+            panelmain.Controls.Add(label13);
+            panelmain.Controls.Add(pictureBox3);
+            panelmain.Controls.Add(buttonopensol);
+            panelmain.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelmain.Location = new System.Drawing.Point(0, 0);
+            panelmain.Margin = new System.Windows.Forms.Padding(2);
+            panelmain.Name = "panelmain";
+            panelmain.Size = new System.Drawing.Size(731, 578);
+            panelmain.TabIndex = 48;
+            panelmain.Paint += panelmain_Paint;
             // 
             // linkLabelclear
             // 
-            this.linkLabelclear.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkLabelclear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabelclear.AutoSize = true;
-            this.linkLabelclear.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelclear.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabelclear.LinkColor = System.Drawing.Color.CornflowerBlue;
-            this.linkLabelclear.Location = new System.Drawing.Point(171, 131);
-            this.linkLabelclear.Name = "linkLabelclear";
-            this.linkLabelclear.Size = new System.Drawing.Size(65, 17);
-            this.linkLabelclear.TabIndex = 49;
-            this.linkLabelclear.TabStop = true;
-            this.linkLabelclear.Text = "Clear List";
-            this.linkLabelclear.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelclear_LinkClicked);
+            linkLabelclear.ActiveLinkColor = System.Drawing.Color.White;
+            linkLabelclear.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            linkLabelclear.AutoSize = true;
+            linkLabelclear.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            linkLabelclear.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            linkLabelclear.LinkColor = System.Drawing.Color.CornflowerBlue;
+            linkLabelclear.Location = new System.Drawing.Point(171, 131);
+            linkLabelclear.Name = "linkLabelclear";
+            linkLabelclear.Size = new System.Drawing.Size(65, 17);
+            linkLabelclear.TabIndex = 49;
+            linkLabelclear.TabStop = true;
+            linkLabelclear.Text = "Clear List";
+            linkLabelclear.LinkClicked += linkLabelclear_LinkClicked;
             // 
             // listViewRecent
             // 
-            this.listViewRecent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewRecent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.listViewRecent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewRecent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listViewRecent.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listViewRecent.ForeColor = System.Drawing.Color.DimGray;
-            this.listViewRecent.Location = new System.Drawing.Point(49, 184);
-            this.listViewRecent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listViewRecent.MultiSelect = false;
-            this.listViewRecent.Name = "listViewRecent";
-            this.listViewRecent.ShowItemToolTips = true;
-            this.listViewRecent.Size = new System.Drawing.Size(160, 313);
-            this.listViewRecent.TabIndex = 48;
-            this.listViewRecent.UseCompatibleStateImageBehavior = false;
-            this.listViewRecent.View = System.Windows.Forms.View.List;
-            this.listViewRecent.SelectedIndexChanged += new System.EventHandler(this.listViewRecent_SelectedIndexChanged);
+            listViewRecent.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            listViewRecent.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            listViewRecent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            listViewRecent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1 });
+            listViewRecent.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            listViewRecent.ForeColor = System.Drawing.Color.DimGray;
+            listViewRecent.Location = new System.Drawing.Point(49, 184);
+            listViewRecent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            listViewRecent.MultiSelect = false;
+            listViewRecent.Name = "listViewRecent";
+            listViewRecent.ShowItemToolTips = true;
+            listViewRecent.Size = new System.Drawing.Size(160, 313);
+            listViewRecent.TabIndex = 48;
+            listViewRecent.UseCompatibleStateImageBehavior = false;
+            listViewRecent.View = System.Windows.Forms.View.List;
+            listViewRecent.SelectedIndexChanged += listViewRecent_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Width = 3600;
+            columnHeader1.Width = 3600;
             // 
             // buttonabout
             // 
-            this.buttonabout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonabout.BackColor = System.Drawing.Color.DimGray;
-            this.buttonabout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttonabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonabout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonabout.ForeColor = System.Drawing.Color.White;
-            this.buttonabout.Location = new System.Drawing.Point(14, 535);
-            this.buttonabout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonabout.Name = "buttonabout";
-            this.buttonabout.Size = new System.Drawing.Size(76, 30);
-            this.buttonabout.TabIndex = 47;
-            this.buttonabout.Text = "About";
-            this.buttonabout.UseVisualStyleBackColor = false;
-            this.buttonabout.Click += new System.EventHandler(this.button10_Click);
+            buttonabout.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttonabout.BackColor = System.Drawing.Color.DimGray;
+            buttonabout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonabout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonabout.ForeColor = System.Drawing.Color.White;
+            buttonabout.Location = new System.Drawing.Point(14, 535);
+            buttonabout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            buttonabout.Name = "buttonabout";
+            buttonabout.Size = new System.Drawing.Size(76, 30);
+            buttonabout.TabIndex = 47;
+            buttonabout.Text = "About";
+            buttonabout.UseVisualStyleBackColor = false;
+            buttonabout.Click += button10_Click;
             // 
             // panelconfig
             // 
-            this.panelconfig.Controls.Add(this.combomode);
-            this.panelconfig.Controls.Add(this.label7);
-            this.panelconfig.Controls.Add(this.button14);
-            this.panelconfig.Controls.Add(this.button13);
-            this.panelconfig.Controls.Add(this.button12);
-            this.panelconfig.Controls.Add(this.button11);
-            this.panelconfig.Controls.Add(this.button10);
-            this.panelconfig.Controls.Add(this.labelarch);
-            this.panelconfig.Controls.Add(this.label29);
-            this.panelconfig.Controls.Add(this.comboarch);
-            this.panelconfig.Controls.Add(this.label28);
-            this.panelconfig.Controls.Add(this.button7);
-            this.panelconfig.Controls.Add(this.buttongcbext);
-            this.panelconfig.Controls.Add(this.buttongccode);
-            this.panelconfig.Controls.Add(this.buttongstools);
-            this.panelconfig.Controls.Add(this.buttoncompiler);
-            this.panelconfig.Controls.Add(this.label4);
-            this.panelconfig.Controls.Add(this.button9);
-            this.panelconfig.Controls.Add(this.comboide);
-            this.panelconfig.Controls.Add(this.comboupdate);
-            this.panelconfig.Controls.Add(this.label27);
-            this.panelconfig.Controls.Add(this.label26);
-            this.panelconfig.Controls.Add(this.label25);
-            this.panelconfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelconfig.Location = new System.Drawing.Point(0, 0);
-            this.panelconfig.Margin = new System.Windows.Forms.Padding(2);
-            this.panelconfig.Name = "panelconfig";
-            this.panelconfig.Size = new System.Drawing.Size(731, 578);
-            this.panelconfig.TabIndex = 49;
-            this.panelconfig.Visible = false;
+            panelconfig.Controls.Add(combomode);
+            panelconfig.Controls.Add(label7);
+            panelconfig.Controls.Add(button14);
+            panelconfig.Controls.Add(button13);
+            panelconfig.Controls.Add(button12);
+            panelconfig.Controls.Add(button11);
+            panelconfig.Controls.Add(button10);
+            panelconfig.Controls.Add(labelarch);
+            panelconfig.Controls.Add(label29);
+            panelconfig.Controls.Add(comboarch);
+            panelconfig.Controls.Add(label28);
+            panelconfig.Controls.Add(button7);
+            panelconfig.Controls.Add(buttongcbext);
+            panelconfig.Controls.Add(buttongccode);
+            panelconfig.Controls.Add(buttongstools);
+            panelconfig.Controls.Add(buttoncompiler);
+            panelconfig.Controls.Add(label4);
+            panelconfig.Controls.Add(button9);
+            panelconfig.Controls.Add(comboide);
+            panelconfig.Controls.Add(comboupdate);
+            panelconfig.Controls.Add(label27);
+            panelconfig.Controls.Add(label26);
+            panelconfig.Controls.Add(label25);
+            panelconfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelconfig.Location = new System.Drawing.Point(0, 0);
+            panelconfig.Margin = new System.Windows.Forms.Padding(2);
+            panelconfig.Name = "panelconfig";
+            panelconfig.Size = new System.Drawing.Size(731, 578);
+            panelconfig.TabIndex = 49;
+            panelconfig.Visible = false;
             // 
             // combomode
             // 
-            this.combomode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combomode.FormattingEnabled = true;
-            this.combomode.Items.AddRange(new object[] {
-            "Modern",
-            "Legacy"});
-            this.combomode.Location = new System.Drawing.Point(68, 376);
-            this.combomode.Margin = new System.Windows.Forms.Padding(2);
-            this.combomode.Name = "combomode";
-            this.combomode.Size = new System.Drawing.Size(185, 23);
-            this.combomode.TabIndex = 83;
-            this.combomode.SelectedIndexChanged += new System.EventHandler(this.combomode_SelectedIndexChanged);
+            combomode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            combomode.FormattingEnabled = true;
+            combomode.Items.AddRange(new object[] { "Modern", "Legacy" });
+            combomode.Location = new System.Drawing.Point(68, 376);
+            combomode.Margin = new System.Windows.Forms.Padding(2);
+            combomode.Name = "combomode";
+            combomode.Size = new System.Drawing.Size(185, 23);
+            combomode.TabIndex = 83;
+            combomode.SelectedIndexChanged += combomode_SelectedIndexChanged;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(63, 351);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 21);
-            this.label7.TabIndex = 82;
-            this.label7.Text = "GC Studio Mode";
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.ForeColor = System.Drawing.Color.White;
+            label7.Location = new System.Drawing.Point(63, 351);
+            label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(137, 21);
+            label7.TabIndex = 82;
+            label7.Text = "GC Studio Mode";
             // 
             // button14
             // 
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(238, 471);
-            this.button14.Margin = new System.Windows.Forms.Padding(2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(141, 43);
-            this.button14.TabIndex = 81;
-            this.button14.Text = "Edit Programmer Preferences";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button14.ForeColor = System.Drawing.Color.White;
+            button14.Location = new System.Drawing.Point(238, 471);
+            button14.Margin = new System.Windows.Forms.Padding(2);
+            button14.Name = "button14";
+            button14.Size = new System.Drawing.Size(141, 43);
+            button14.TabIndex = 81;
+            button14.Text = "Edit Programmer Preferences";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button13
             // 
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(238, 421);
-            this.button13.Margin = new System.Windows.Forms.Padding(2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(141, 43);
-            this.button13.TabIndex = 80;
-            this.button13.Text = "Reset GC Studio to Factory Settings";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button13.ForeColor = System.Drawing.Color.White;
+            button13.Location = new System.Drawing.Point(238, 421);
+            button13.Margin = new System.Windows.Forms.Padding(2);
+            button13.Name = "button13";
+            button13.Size = new System.Drawing.Size(141, 43);
+            button13.TabIndex = 80;
+            button13.Text = "Reset GC Studio to Factory Settings";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // button12
             // 
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(238, 522);
-            this.button12.Margin = new System.Windows.Forms.Padding(2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(141, 43);
-            this.button12.TabIndex = 79;
-            this.button12.Text = "Force Update";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button12.ForeColor = System.Drawing.Color.White;
+            button12.Location = new System.Drawing.Point(238, 522);
+            button12.Margin = new System.Windows.Forms.Padding(2);
+            button12.Name = "button12";
+            button12.Size = new System.Drawing.Size(141, 43);
+            button12.TabIndex = 79;
+            button12.Text = "Force Update";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button11
             // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(68, 471);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(141, 43);
-            this.button11.TabIndex = 78;
-            this.button11.Text = "Reset Programmer Preferences";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button11.ForeColor = System.Drawing.Color.White;
+            button11.Location = new System.Drawing.Point(68, 471);
+            button11.Margin = new System.Windows.Forms.Padding(2);
+            button11.Name = "button11";
+            button11.Size = new System.Drawing.Size(141, 43);
+            button11.TabIndex = 78;
+            button11.Text = "Reset Programmer Preferences";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button10
             // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(68, 420);
-            this.button10.Margin = new System.Windows.Forms.Padding(2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(141, 43);
-            this.button10.TabIndex = 77;
-            this.button10.Text = "Set File Associations";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button10.ForeColor = System.Drawing.Color.White;
+            button10.Location = new System.Drawing.Point(68, 420);
+            button10.Margin = new System.Windows.Forms.Padding(2);
+            button10.Name = "button10";
+            button10.Size = new System.Drawing.Size(141, 43);
+            button10.TabIndex = 77;
+            button10.Text = "Set File Associations";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click_1;
             // 
             // labelarch
             // 
-            this.labelarch.AutoSize = true;
-            this.labelarch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelarch.ForeColor = System.Drawing.Color.White;
-            this.labelarch.Location = new System.Drawing.Point(219, 324);
-            this.labelarch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelarch.Name = "labelarch";
-            this.labelarch.Size = new System.Drawing.Size(23, 17);
-            this.labelarch.TabIndex = 76;
-            this.labelarch.Text = "---";
+            labelarch.AutoSize = true;
+            labelarch.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelarch.ForeColor = System.Drawing.Color.White;
+            labelarch.Location = new System.Drawing.Point(219, 324);
+            labelarch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelarch.Name = "labelarch";
+            labelarch.Size = new System.Drawing.Size(23, 17);
+            labelarch.TabIndex = 76;
+            labelarch.Text = "---";
             // 
             // label29
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(63, 324);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(148, 17);
-            this.label29.TabIndex = 75;
-            this.label29.Text = "Current OS Architecture:";
+            label29.AutoSize = true;
+            label29.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label29.ForeColor = System.Drawing.Color.White;
+            label29.Location = new System.Drawing.Point(63, 324);
+            label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(148, 17);
+            label29.TabIndex = 75;
+            label29.Text = "Current OS Architecture:";
             // 
             // comboarch
             // 
-            this.comboarch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboarch.FormattingEnabled = true;
-            this.comboarch.Items.AddRange(new object[] {
-            "Auto",
-            "x86",
-            "x64",
-            "Developer"});
-            this.comboarch.Location = new System.Drawing.Point(68, 292);
-            this.comboarch.Margin = new System.Windows.Forms.Padding(2);
-            this.comboarch.Name = "comboarch";
-            this.comboarch.Size = new System.Drawing.Size(185, 23);
-            this.comboarch.TabIndex = 74;
-            this.comboarch.SelectedIndexChanged += new System.EventHandler(this.comboarch_SelectedIndexChanged);
+            comboarch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboarch.FormattingEnabled = true;
+            comboarch.Items.AddRange(new object[] { "Auto", "x86", "x64", "Developer" });
+            comboarch.Location = new System.Drawing.Point(68, 292);
+            comboarch.Margin = new System.Windows.Forms.Padding(2);
+            comboarch.Name = "comboarch";
+            comboarch.Size = new System.Drawing.Size(185, 23);
+            comboarch.TabIndex = 74;
+            comboarch.SelectedIndexChanged += comboarch_SelectedIndexChanged;
             // 
             // label28
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(63, 267);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(177, 21);
-            this.label28.TabIndex = 73;
-            this.label28.Text = "Compiler Architecture";
+            label28.AutoSize = true;
+            label28.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label28.ForeColor = System.Drawing.Color.White;
+            label28.Location = new System.Drawing.Point(63, 267);
+            label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(177, 21);
+            label28.TabIndex = 73;
+            label28.Text = "Compiler Architecture";
             // 
             // button7
             // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(68, 523);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(141, 43);
-            this.button7.TabIndex = 72;
-            this.button7.Text = "Clone PICKitPlus Tool";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button7.ForeColor = System.Drawing.Color.White;
+            button7.Location = new System.Drawing.Point(68, 523);
+            button7.Margin = new System.Windows.Forms.Padding(2);
+            button7.Name = "button7";
+            button7.Size = new System.Drawing.Size(141, 43);
+            button7.TabIndex = 72;
+            button7.Text = "Clone PICKitPlus Tool";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click_1;
             // 
             // buttongcbext
             // 
-            this.buttongcbext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttongcbext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongcbext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttongcbext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongcbext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongcbext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongcbext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongcbext.Location = new System.Drawing.Point(271, 278);
-            this.buttongcbext.Margin = new System.Windows.Forms.Padding(2);
-            this.buttongcbext.Name = "buttongcbext";
-            this.buttongcbext.Size = new System.Drawing.Size(211, 30);
-            this.buttongcbext.TabIndex = 71;
-            this.buttongcbext.Text = "GC Studio Extension";
-            this.buttongcbext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttongcbext.UseVisualStyleBackColor = false;
-            this.buttongcbext.Click += new System.EventHandler(this.buttongcbext_Click);
-            this.buttongcbext.MouseLeave += new System.EventHandler(this.buttongcbext_MouseLeave);
-            this.buttongcbext.MouseHover += new System.EventHandler(this.buttongcbext_MouseHover);
+            buttongcbext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttongcbext.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttongcbext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttongcbext.Location = new System.Drawing.Point(271, 278);
+            buttongcbext.Margin = new System.Windows.Forms.Padding(2);
+            buttongcbext.Name = "buttongcbext";
+            buttongcbext.Size = new System.Drawing.Size(211, 30);
+            buttongcbext.TabIndex = 71;
+            buttongcbext.Text = "GC Studio Extension";
+            buttongcbext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttongcbext.UseVisualStyleBackColor = false;
+            buttongcbext.Click += buttongcbext_Click;
+            buttongcbext.MouseLeave += buttongcbext_MouseLeave;
+            buttongcbext.MouseHover += buttongcbext_MouseHover;
             // 
             // buttongccode
             // 
-            this.buttongccode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttongccode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongccode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttongccode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongccode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongccode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongccode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongccode.Location = new System.Drawing.Point(271, 244);
-            this.buttongccode.Margin = new System.Windows.Forms.Padding(2);
-            this.buttongccode.Name = "buttongccode";
-            this.buttongccode.Size = new System.Drawing.Size(211, 30);
-            this.buttongccode.TabIndex = 70;
-            this.buttongccode.Text = "GC Code";
-            this.buttongccode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttongccode.UseVisualStyleBackColor = false;
-            this.buttongccode.Click += new System.EventHandler(this.buttongccode_Click);
-            this.buttongccode.MouseLeave += new System.EventHandler(this.buttongccode_MouseLeave);
-            this.buttongccode.MouseHover += new System.EventHandler(this.buttongccode_MouseHover);
+            buttongccode.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttongccode.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttongccode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttongccode.Location = new System.Drawing.Point(271, 244);
+            buttongccode.Margin = new System.Windows.Forms.Padding(2);
+            buttongccode.Name = "buttongccode";
+            buttongccode.Size = new System.Drawing.Size(211, 30);
+            buttongccode.TabIndex = 70;
+            buttongccode.Text = "GC Code";
+            buttongccode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttongccode.UseVisualStyleBackColor = false;
+            buttongccode.Click += buttongccode_Click;
+            buttongccode.MouseLeave += buttongccode_MouseLeave;
+            buttongccode.MouseHover += buttongccode_MouseHover;
             // 
             // buttongstools
             // 
-            this.buttongstools.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttongstools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongstools.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttongstools.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongstools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongstools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttongstools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttongstools.Location = new System.Drawing.Point(271, 209);
-            this.buttongstools.Margin = new System.Windows.Forms.Padding(2);
-            this.buttongstools.Name = "buttongstools";
-            this.buttongstools.Size = new System.Drawing.Size(211, 30);
-            this.buttongstools.TabIndex = 69;
-            this.buttongstools.Text = "G+Stools";
-            this.buttongstools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttongstools.UseVisualStyleBackColor = false;
-            this.buttongstools.Click += new System.EventHandler(this.buttongstools_Click);
-            this.buttongstools.MouseLeave += new System.EventHandler(this.buttongstools_MouseLeave);
-            this.buttongstools.MouseHover += new System.EventHandler(this.buttongstools_MouseHover);
+            buttongstools.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttongstools.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttongstools.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttongstools.Location = new System.Drawing.Point(271, 209);
+            buttongstools.Margin = new System.Windows.Forms.Padding(2);
+            buttongstools.Name = "buttongstools";
+            buttongstools.Size = new System.Drawing.Size(211, 30);
+            buttongstools.TabIndex = 69;
+            buttongstools.Text = "G+Stools";
+            buttongstools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttongstools.UseVisualStyleBackColor = false;
+            buttongstools.Click += buttongstools_Click;
+            buttongstools.MouseLeave += buttongstools_MouseLeave;
+            buttongstools.MouseHover += buttongstools_MouseHover;
             // 
             // buttoncompiler
             // 
-            this.buttoncompiler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttoncompiler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttoncompiler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttoncompiler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttoncompiler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttoncompiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.buttoncompiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.buttoncompiler.Location = new System.Drawing.Point(271, 174);
-            this.buttoncompiler.Margin = new System.Windows.Forms.Padding(2);
-            this.buttoncompiler.Name = "buttoncompiler";
-            this.buttoncompiler.Size = new System.Drawing.Size(211, 30);
-            this.buttoncompiler.TabIndex = 68;
-            this.buttoncompiler.Text = "GCB Compiler";
-            this.buttoncompiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttoncompiler.UseVisualStyleBackColor = false;
-            this.buttoncompiler.Click += new System.EventHandler(this.buttoncompiler_Click);
-            this.buttoncompiler.MouseLeave += new System.EventHandler(this.buttoncompiler_MouseLeave);
-            this.buttoncompiler.MouseHover += new System.EventHandler(this.buttoncompiler_MouseHover);
+            buttoncompiler.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttoncompiler.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttoncompiler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttoncompiler.Location = new System.Drawing.Point(271, 174);
+            buttoncompiler.Margin = new System.Windows.Forms.Padding(2);
+            buttoncompiler.Name = "buttoncompiler";
+            buttoncompiler.Size = new System.Drawing.Size(211, 30);
+            buttoncompiler.TabIndex = 68;
+            buttoncompiler.Text = "GC BASIC Compiler";
+            buttoncompiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttoncompiler.UseVisualStyleBackColor = false;
+            buttoncompiler.Click += buttoncompiler_Click;
+            buttoncompiler.MouseLeave += buttoncompiler_MouseLeave;
+            buttoncompiler.MouseHover += buttoncompiler_MouseHover;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(241, 53);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(355, 91);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "GCB Integrated Development";
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label4.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(241, 53);
+            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(355, 91);
+            label4.TabIndex = 67;
+            label4.Text = "GC Studio Integrated Development";
             // 
             // button9
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(650, 540);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(67, 29);
-            this.button9.TabIndex = 60;
-            this.button9.Text = "Back";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button9.ForeColor = System.Drawing.Color.White;
+            button9.Location = new System.Drawing.Point(650, 540);
+            button9.Margin = new System.Windows.Forms.Padding(2);
+            button9.Name = "button9";
+            button9.Size = new System.Drawing.Size(67, 29);
+            button9.TabIndex = 60;
+            button9.Text = "Back";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // comboide
             // 
-            this.comboide.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboide.FormattingEnabled = true;
-            this.comboide.Items.AddRange(new object[] {
-            "SynWrite",
-            "GCcode",
-            "GCgraphical",
-            "Geany"});
-            this.comboide.Location = new System.Drawing.Point(68, 218);
-            this.comboide.Margin = new System.Windows.Forms.Padding(2);
-            this.comboide.Name = "comboide";
-            this.comboide.Size = new System.Drawing.Size(185, 23);
-            this.comboide.TabIndex = 66;
-            this.comboide.SelectedIndexChanged += new System.EventHandler(this.comboide_SelectedIndexChanged);
+            comboide.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboide.FormattingEnabled = true;
+            comboide.Items.AddRange(new object[] { "SynWrite", "GCcode", "GCgraphical", "Geany" });
+            comboide.Location = new System.Drawing.Point(68, 218);
+            comboide.Margin = new System.Windows.Forms.Padding(2);
+            comboide.Name = "comboide";
+            comboide.Size = new System.Drawing.Size(185, 23);
+            comboide.TabIndex = 66;
+            comboide.SelectedIndexChanged += comboide_SelectedIndexChanged;
             // 
             // comboupdate
             // 
-            this.comboupdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboupdate.FormattingEnabled = true;
-            this.comboupdate.Items.AddRange(new object[] {
-            "mainstream",
-            "dev preview",
-            "compiler only",
-            "no updates"});
-            this.comboupdate.Location = new System.Drawing.Point(68, 145);
-            this.comboupdate.Margin = new System.Windows.Forms.Padding(2);
-            this.comboupdate.Name = "comboupdate";
-            this.comboupdate.Size = new System.Drawing.Size(185, 23);
-            this.comboupdate.TabIndex = 65;
-            this.comboupdate.SelectedIndexChanged += new System.EventHandler(this.comboupdate_SelectedIndexChanged);
+            comboupdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboupdate.FormattingEnabled = true;
+            comboupdate.Items.AddRange(new object[] { "mainstream", "dev preview", "compiler only", "no updates" });
+            comboupdate.Location = new System.Drawing.Point(68, 145);
+            comboupdate.Margin = new System.Windows.Forms.Padding(2);
+            comboupdate.Name = "comboupdate";
+            comboupdate.Size = new System.Drawing.Size(185, 23);
+            comboupdate.TabIndex = 65;
+            comboupdate.SelectedIndexChanged += comboupdate_SelectedIndexChanged;
             // 
             // label27
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(63, 193);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(36, 21);
-            this.label27.TabIndex = 64;
-            this.label27.Text = "IDE";
+            label27.AutoSize = true;
+            label27.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label27.ForeColor = System.Drawing.Color.White;
+            label27.Location = new System.Drawing.Point(63, 193);
+            label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(36, 21);
+            label27.TabIndex = 64;
+            label27.Text = "IDE";
             // 
             // label26
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(59, 53);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(132, 39);
-            this.label26.TabIndex = 62;
-            this.label26.Text = "Settings";
+            label26.AutoSize = true;
+            label26.Font = new System.Drawing.Font("Microsoft YaHei", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label26.ForeColor = System.Drawing.Color.White;
+            label26.Location = new System.Drawing.Point(59, 53);
+            label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(132, 39);
+            label26.TabIndex = 62;
+            label26.Text = "Settings";
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(63, 120);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(134, 21);
-            this.label25.TabIndex = 61;
-            this.label25.Text = "Update Channel";
+            label25.AutoSize = true;
+            label25.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label25.ForeColor = System.Drawing.Color.White;
+            label25.Location = new System.Drawing.Point(63, 120);
+            label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(134, 21);
+            label25.TabIndex = 61;
+            label25.Text = "Update Channel";
             // 
             // panelnewproj
             // 
-            this.panelnewproj.Controls.Add(this.button8);
-            this.panelnewproj.Controls.Add(this.label23);
-            this.panelnewproj.Controls.Add(this.label11);
-            this.panelnewproj.Controls.Add(this.label12);
-            this.panelnewproj.Controls.Add(this.label24);
-            this.panelnewproj.Controls.Add(this.pictureBox7);
-            this.panelnewproj.Controls.Add(this.pictureBox8);
-            this.panelnewproj.Controls.Add(this.pictureBox10);
-            this.panelnewproj.Controls.Add(this.label19);
-            this.panelnewproj.Controls.Add(this.label20);
-            this.panelnewproj.Controls.Add(this.button6);
-            this.panelnewproj.Controls.Add(this.label21);
-            this.panelnewproj.Controls.Add(this.button3);
-            this.panelnewproj.Controls.Add(this.label22);
-            this.panelnewproj.Controls.Add(this.pictureBox9);
-            this.panelnewproj.Controls.Add(this.button4);
-            this.panelnewproj.Controls.Add(this.button5);
-            this.panelnewproj.Controls.Add(this.label10);
-            this.panelnewproj.Controls.Add(this.button2);
-            this.panelnewproj.Controls.Add(this.label9);
-            this.panelnewproj.Controls.Add(this.textBox2);
-            this.panelnewproj.Controls.Add(this.label8);
-            this.panelnewproj.Controls.Add(this.textBox1);
-            this.panelnewproj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelnewproj.Location = new System.Drawing.Point(0, 0);
-            this.panelnewproj.Margin = new System.Windows.Forms.Padding(2);
-            this.panelnewproj.Name = "panelnewproj";
-            this.panelnewproj.Size = new System.Drawing.Size(731, 578);
-            this.panelnewproj.TabIndex = 51;
-            this.panelnewproj.Visible = false;
+            panelnewproj.Controls.Add(button8);
+            panelnewproj.Controls.Add(label23);
+            panelnewproj.Controls.Add(label11);
+            panelnewproj.Controls.Add(label12);
+            panelnewproj.Controls.Add(label24);
+            panelnewproj.Controls.Add(pictureBox7);
+            panelnewproj.Controls.Add(pictureBox8);
+            panelnewproj.Controls.Add(pictureBox10);
+            panelnewproj.Controls.Add(label19);
+            panelnewproj.Controls.Add(label20);
+            panelnewproj.Controls.Add(button6);
+            panelnewproj.Controls.Add(label21);
+            panelnewproj.Controls.Add(button3);
+            panelnewproj.Controls.Add(label22);
+            panelnewproj.Controls.Add(pictureBox9);
+            panelnewproj.Controls.Add(button4);
+            panelnewproj.Controls.Add(button5);
+            panelnewproj.Controls.Add(label10);
+            panelnewproj.Controls.Add(button2);
+            panelnewproj.Controls.Add(label9);
+            panelnewproj.Controls.Add(textBox2);
+            panelnewproj.Controls.Add(label8);
+            panelnewproj.Controls.Add(textBox1);
+            panelnewproj.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelnewproj.Location = new System.Drawing.Point(0, 0);
+            panelnewproj.Margin = new System.Windows.Forms.Padding(2);
+            panelnewproj.Name = "panelnewproj";
+            panelnewproj.Size = new System.Drawing.Size(731, 578);
+            panelnewproj.TabIndex = 51;
+            panelnewproj.Visible = false;
             // 
             // button8
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(652, 540);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(67, 29);
-            this.button8.TabIndex = 59;
-            this.button8.Text = "Back";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            button8.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button8.ForeColor = System.Drawing.Color.White;
+            button8.Location = new System.Drawing.Point(652, 540);
+            button8.Margin = new System.Windows.Forms.Padding(2);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(67, 29);
+            button8.TabIndex = 59;
+            button8.Text = "Back";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label23.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(102, 290);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(318, 21);
-            this.label23.TabIndex = 56;
-            this.label23.Text = "GCB Microcontroller Single File Program";
-            this.label23.Click += new System.EventHandler(this.button6_Click);
+            label23.AutoSize = true;
+            label23.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label23.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label23.ForeColor = System.Drawing.Color.White;
+            label23.Location = new System.Drawing.Point(102, 290);
+            label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label23.Name = "label23";
+            label23.Size = new System.Drawing.Size(318, 21);
+            label23.TabIndex = 56;
+            label23.Text = "GCB Microcontroller Single File Program";
+            label23.Click += button6_Click;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(102, 188);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(294, 21);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "GCB Microcontroller Program Project";
-            this.label11.Click += new System.EventHandler(this.button4_Click);
+            label11.AutoSize = true;
+            label11.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label11.ForeColor = System.Drawing.Color.White;
+            label11.Location = new System.Drawing.Point(102, 188);
+            label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(294, 21);
+            label11.TabIndex = 44;
+            label11.Text = "GCB Microcontroller Program Project";
+            label11.Click += button4_Click;
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(104, 226);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(561, 33);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "A project for 8-bit microcontroller programing that can run on PIC, AVR  and  LGT" +
-    "";
-            this.label12.Click += new System.EventHandler(this.button4_Click);
+            label12.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label12.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label12.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label12.ForeColor = System.Drawing.Color.White;
+            label12.Location = new System.Drawing.Point(104, 226);
+            label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(561, 33);
+            label12.TabIndex = 45;
+            label12.Text = "A project for 8-bit microcontroller programing that can run on PIC, AVR  and  LGT";
+            label12.Click += button4_Click;
             // 
             // label24
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label24.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(104, 326);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(561, 34);
-            this.label24.TabIndex = 57;
-            this.label24.Text = "A file for 8-bit microcontroller programing that can run on PIC, AVR  and  LGT";
-            this.label24.Click += new System.EventHandler(this.button6_Click);
+            label24.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label24.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label24.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label24.ForeColor = System.Drawing.Color.White;
+            label24.Location = new System.Drawing.Point(104, 326);
+            label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(561, 34);
+            label24.TabIndex = 57;
+            label24.Text = "A file for 8-bit microcontroller programing that can run on PIC, AVR  and  LGT";
+            label24.Click += button6_Click;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(32, 479);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 54;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.button3_Click);
+            pictureBox7.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox7.Image = (System.Drawing.Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new System.Drawing.Point(32, 479);
+            pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new System.Drawing.Size(65, 64);
+            pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 54;
+            pictureBox7.TabStop = false;
+            pictureBox7.Click += button3_Click;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(32, 179);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 46;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.button4_Click);
+            pictureBox8.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox8.Image = (System.Drawing.Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new System.Drawing.Point(32, 179);
+            pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new System.Drawing.Size(65, 64);
+            pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 46;
+            pictureBox8.TabStop = false;
+            pictureBox8.Click += button4_Click;
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(32, 281);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 58;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.button6_Click);
+            pictureBox10.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox10.Image = (System.Drawing.Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new System.Drawing.Point(32, 281);
+            pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new System.Drawing.Size(65, 64);
+            pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 58;
+            pictureBox10.TabStop = false;
+            pictureBox10.Click += button6_Click;
             // 
             // label19
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label19.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(104, 524);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(561, 37);
-            this.label19.TabIndex = 53;
-            this.label19.Text = "A project for creating a command-line application that can run on windows x86 and" +
-    " x64 in FreeBasic and QBasic";
-            this.label19.Click += new System.EventHandler(this.button3_Click);
+            label19.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label19.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label19.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label19.ForeColor = System.Drawing.Color.White;
+            label19.Location = new System.Drawing.Point(104, 524);
+            label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(561, 37);
+            label19.TabIndex = 53;
+            label19.Text = "A project for creating a command-line application that can run on windows x86 and x64 in FreeBasic and QBasic";
+            label19.Click += button3_Click;
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label20.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(102, 488);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(217, 21);
-            this.label20.TabIndex = 52;
-            this.label20.Text = "FBasic Console App Project";
-            this.label20.Click += new System.EventHandler(this.button3_Click);
+            label20.AutoSize = true;
+            label20.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label20.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label20.ForeColor = System.Drawing.Color.White;
+            label20.Location = new System.Drawing.Point(102, 488);
+            label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(217, 21);
+            label20.TabIndex = 52;
+            label20.Text = "FBasic Console App Project";
+            label20.Click += button3_Click;
             // 
             // button6
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button6.Location = new System.Drawing.Point(24, 272);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(676, 96);
-            this.button6.TabIndex = 55;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button6.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            button6.Location = new System.Drawing.Point(24, 272);
+            button6.Margin = new System.Windows.Forms.Padding(2);
+            button6.Name = "button6";
+            button6.Size = new System.Drawing.Size(676, 96);
+            button6.TabIndex = 55;
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label21.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(102, 387);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(157, 21);
-            this.label21.TabIndex = 48;
-            this.label21.Text = "GCB Library Project";
-            this.label21.Click += new System.EventHandler(this.button5_Click);
+            label21.AutoSize = true;
+            label21.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label21.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label21.ForeColor = System.Drawing.Color.White;
+            label21.Location = new System.Drawing.Point(102, 387);
+            label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(157, 21);
+            label21.TabIndex = 48;
+            label21.Text = "GCB Library Project";
+            label21.Click += button5_Click;
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(24, 471);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(676, 96);
-            this.button3.TabIndex = 51;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button3.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            button3.Location = new System.Drawing.Point(24, 471);
+            button3.Margin = new System.Windows.Forms.Padding(2);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(676, 96);
+            button3.TabIndex = 51;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label22
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label22.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(104, 423);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(561, 32);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "A project for creating a library with  routines to be used in GCB programs";
-            this.label22.Click += new System.EventHandler(this.button5_Click);
+            label22.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label22.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            label22.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label22.ForeColor = System.Drawing.Color.White;
+            label22.Location = new System.Drawing.Point(104, 423);
+            label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(561, 32);
+            label22.TabIndex = 49;
+            label22.Text = "A project for creating a library with  routines to be used in GCB programs";
+            label22.Click += button5_Click;
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(32, 378);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(65, 64);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 50;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.button5_Click);
+            pictureBox9.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            pictureBox9.Image = (System.Drawing.Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new System.Drawing.Point(32, 378);
+            pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new System.Drawing.Size(65, 64);
+            pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 50;
+            pictureBox9.TabStop = false;
+            pictureBox9.Click += button5_Click;
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Location = new System.Drawing.Point(24, 172);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(676, 96);
-            this.button4.TabIndex = 43;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button4.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            button4.Location = new System.Drawing.Point(24, 172);
+            button4.Margin = new System.Windows.Forms.Padding(2);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(676, 96);
+            button4.TabIndex = 43;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(24, 371);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(676, 96);
-            this.button5.TabIndex = 47;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            button5.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            button5.Location = new System.Drawing.Point(24, 371);
+            button5.Margin = new System.Windows.Forms.Padding(2);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(676, 96);
+            button5.TabIndex = 47;
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(45, 151);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(209, 21);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Select a template to finish";
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.Color.White;
+            label10.Location = new System.Drawing.Point(45, 151);
+            label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(209, 21);
+            label10.TabIndex = 32;
+            label10.Text = "Select a template to finish";
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(634, 110);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 30);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            button2.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(34, 41, 51);
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.ForeColor = System.Drawing.Color.White;
+            button2.Location = new System.Drawing.Point(634, 110);
+            button2.Margin = new System.Windows.Forms.Padding(2);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(31, 30);
+            button2.TabIndex = 31;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(48, 94);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 17);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Location";
+            label9.AutoSize = true;
+            label9.BackColor = System.Drawing.Color.Transparent;
+            label9.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.ForeColor = System.Drawing.Color.White;
+            label9.Location = new System.Drawing.Point(48, 94);
+            label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(57, 17);
+            label9.TabIndex = 30;
+            label9.Text = "Location";
             // 
             // textBox2
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(68, 114);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(562, 29);
-            this.textBox2.TabIndex = 29;
+            textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            textBox2.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBox2.ForeColor = System.Drawing.Color.White;
+            textBox2.Location = new System.Drawing.Point(68, 114);
+            textBox2.Margin = new System.Windows.Forms.Padding(2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new System.Drawing.Size(562, 29);
+            textBox2.TabIndex = 29;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(48, 40);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 17);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Project name";
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label8.ForeColor = System.Drawing.Color.White;
+            label8.Location = new System.Drawing.Point(48, 40);
+            label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(84, 17);
+            label8.TabIndex = 28;
+            label8.Text = "Project name";
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(68, 62);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(562, 29);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "GCB Project";
+            textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            textBox1.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
+            textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBox1.ForeColor = System.Drawing.Color.White;
+            textBox1.Location = new System.Drawing.Point(68, 62);
+            textBox1.Margin = new System.Windows.Forms.Padding(2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(562, 29);
+            textBox1.TabIndex = 16;
+            textBox1.Text = "GCB Project";
             // 
             // ToolBoxLite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(731, 578);
-            this.ControlBox = false;
-            this.Controls.Add(this.BtnExit);
-            this.Controls.Add(this.BtnMini);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureconf);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.buttonclone);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panelmain);
-            this.Controls.Add(this.panelnewproj);
-            this.Controls.Add(this.panelconfig);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(743, 588);
-            this.Name = "ToolBoxLite";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureconf)).EndInit();
-            this.panelmain.ResumeLayout(false);
-            this.panelmain.PerformLayout();
-            this.panelconfig.ResumeLayout(false);
-            this.panelconfig.PerformLayout();
-            this.panelnewproj.ResumeLayout(false);
-            this.panelnewproj.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            ClientSize = new System.Drawing.Size(731, 578);
+            ControlBox = false;
+            Controls.Add(BtnExit);
+            Controls.Add(BtnMini);
+            Controls.Add(button1);
+            Controls.Add(pictureconf);
+            Controls.Add(label5);
+            Controls.Add(pictureBox2);
+            Controls.Add(label6);
+            Controls.Add(buttonclone);
+            Controls.Add(pictureBox1);
+            Controls.Add(panelmain);
+            Controls.Add(panelnewproj);
+            Controls.Add(panelconfig);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(2);
+            MinimumSize = new System.Drawing.Size(743, 588);
+            Name = "ToolBoxLite";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Load += Main_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureconf).EndInit();
+            panelmain.ResumeLayout(false);
+            panelmain.PerformLayout();
+            panelconfig.ResumeLayout(false);
+            panelconfig.PerformLayout();
+            panelnewproj.ResumeLayout(false);
+            panelnewproj.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

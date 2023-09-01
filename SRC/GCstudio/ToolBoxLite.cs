@@ -84,49 +84,49 @@ namespace GC_Studio
                 {
                     Config.GCstudio.ReleaseChanel = "mainstream win7";
                     SaveConfig();
-                    button12_Click(this,null);
+                    button12_Click(this, null);
                 }
-                
+
             }
 
             /// Code for name change on compiler directory
             /// 
 
 
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-                {
-                    
-                    if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
-                    {
-                        try
-                        {
-                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
-                        }
-                        catch
-                        {
-                        }
-                    }
-                    try
-                    {
-                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
-                    }
-                    catch
-                    {
-                    }
-                }
-                
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-                {
-                    try
-                    {
-                        Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
-                    }
-                    catch
-                    {
-                    }
-                }
+            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
+            {
 
-            
+                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
+                {
+                    try
+                    {
+                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
+                    }
+                    catch
+                    {
+                    }
+                }
+                try
+                {
+                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
+                }
+                catch
+                {
+                }
+            }
+
+            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
+            {
+                try
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
+                }
+                catch
+                {
+                }
+            }
+
+
 
 
 
@@ -139,7 +139,7 @@ namespace GC_Studio
             comboide.Text = Config.GCstudio.IDE;
             if (Config.GCstudio.Legacymode)
             {
-                comboide.Enabled= false;
+                comboide.Enabled = false;
             }
             comboarch.Text = Config.GCstudio.Architecture;
             if (Config.GCstudio.Legacymode)
@@ -306,9 +306,9 @@ namespace GC_Studio
             else
             {
                 if (Config.GCstudio.Legacymode && !Config.GCstudio.Firstrun)
-            {
-                LaunchIDE(ideargs, "SynWrite");
-            }
+                {
+                    LaunchIDE(ideargs, "SynWrite");
+                }
             }
 
 
@@ -353,7 +353,7 @@ namespace GC_Studio
                     RecentItem[i].ToolTipText = RecentFiles.RecentDir[i];
                 }
             }
-      
+
 
         }
 
@@ -1421,15 +1421,15 @@ namespace GC_Studio
                         Config.GCstudio.Legacymode = true;
                         Config.GCstudio.IDE = "SynWrite";
                         Config.GCstudio.ReleaseChanel = "compiler only";
-                            comboupdate.Text = Config.GCstudio.ReleaseChanel;
-                            comboide.Text = Config.GCstudio.IDE;
+                        comboupdate.Text = Config.GCstudio.ReleaseChanel;
+                        comboide.Text = Config.GCstudio.IDE;
                     }
                 }
 
             }
         }
     }
-    }
+}
 
 
 
