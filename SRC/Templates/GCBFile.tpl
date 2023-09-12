@@ -1,4 +1,4 @@
-'''GCB Program.
+'''GCBASIC Program.
 '''--------------------------------------------------------------------------------------------------------------------------------
 '''Description:  [todo]
 '''
@@ -13,37 +13,37 @@
 
 
 
-'''----- Configuration/Konfiguration
+'''----- Configuration
 
 
 
 
-'''----- Define Hardware settings/Definieren Sie die Hardwareeinstellungen
+'''----- Define Hardware settings
 
 
 
 
-'''----- Variables/Variablen
+'''----- Variables
 
 
 
 
-'''----- Interrupts/Unterbrechen
+'''----- Interrupts
 
 
 
 
-'''----- Main body of program/Hauptteil des Programms
+'''----- Main body of program
 
 
 
 
-'''----- Subroutines/Unterroutinen
+'''----- Subroutines
 
 
 
 
-'''----- Lookup Tables/Nachschlagetabellen
+'''----- Lookup Tables
 
 
 
