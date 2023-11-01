@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GC_Studio
-build_property.ProjectDir = C:\DevSRCLocal\GCB\GCstudio\SRC\GCstudio\
+build_property.ProjectDir = C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\

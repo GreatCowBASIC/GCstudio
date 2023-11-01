@@ -136,14 +136,13 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevSRCLocal\\GCB\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
+      "projectUniqueName": "C:\\DevSrcLocal\\GCB\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
       "projectName": "GCstudio",
-      "projectPath": "C:\\DevSRCLocal\\GCB\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
+      "projectPath": "C:\\DevSrcLocal\\GCB\\GCstudio\\SRC\\GCstudio\\GCstudio.csproj",
       "packagesPath": "C:\\Users\\ing.mier\\.nuget\\packages\\",
-      "outputPath": "C:\\DevSRCLocal\\GCB\\GCstudio\\SRC\\GCstudio\\obj\\",
+      "outputPath": "C:\\DevSrcLocal\\GCB\\GCstudio\\SRC\\GCstudio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\DevSRCLocal\\NuGet.Config",
         "C:\\Users\\ing.mier\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -152,7 +151,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -199,7 +197,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

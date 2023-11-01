@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Update
-build_property.ProjectDir = C:\DevSRCLocal\GCB\GCstudio\SRC\Update\
+build_property.ProjectDir = C:\DevSrcLocal\GCB\GCstudio\SRC\Update\
