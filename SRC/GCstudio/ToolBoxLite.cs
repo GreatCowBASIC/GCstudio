@@ -22,6 +22,7 @@ namespace GC_Studio
         string[] arguments;
         string ideargs = "";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
+        readonly string DonateLink = "https://paypal.me/gcbasic";
         ListViewItem[] RecentItem = new ListViewItem[10];
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
@@ -150,38 +151,11 @@ namespace GC_Studio
             {
                 combomode.Text = "Modern";
             }
+            comboHide.Text = Config.GCstudio.HideDonate;
 
 
             CompilerArchitecture();
 
-
-
-            //window size old file
-            if (File.Exists("lstsz.dat"))
-            {
-                try
-                {
-                    dbs.LoadRead("lstsz.dat");
-                    Config.Window.sizeW = int.Parse(dbs.ReadData(), Style, Provider);
-                    Config.Window.sizeH = int.Parse(dbs.ReadData(), Style, Provider);
-                    try
-                    {
-                        Config.Window.locx = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        Config.Window.locy = Int32.Parse(dbs.ReadData(), Style, Provider);
-                        Config.Window.maximized = bool.Parse(dbs.ReadData());
-                        this.Location = new Point(Config.Window.locx, Config.Window.locy);
-                    }
-                    catch { }
-                    dbs.CloseRead();
-                    File.Delete("lstsz.dat");
-                }
-                catch
-                {
-
-                    MessageBox.Show("Error loading last size");
-                }
-
-            }
 
             this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
 
@@ -342,6 +316,10 @@ namespace GC_Studio
                 }
             }
 
+            if (Config.GCstudio.HideDonate == "Hide")
+            {
+                buttondonate.Visible = false;
+            }
 
 
             for (int i = 0; i < 10; i++)
@@ -379,28 +357,12 @@ namespace GC_Studio
         {
             try
             {
-                //Load old App Config and save new
-                if (File.Exists("config.ini"))
+                if (File.Exists("GCstudio.config.json"))
                 {
-                    dbs.LoadRead("config.ini");
-                    Config.GCstudio.ReleaseChanel = dbs.ReadData();
-                    Config.GCstudio.IDE = dbs.ReadData();
-                    Config.GCstudio.Architecture = dbs.ReadData();
-                    Config.GCstudio.Firstrun = false;
+                    dbs.LoadRead("GCstudio.config.json");
+                    Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
                     dbs.CloseRead();
-                    SaveConfig();
-                    File.Delete("config.ini");
-                }
-                else
-                //load app config
-                {
-                    if (File.Exists("GCstudio.config.json"))
-                    {
-                        dbs.LoadRead("GCstudio.config.json");
-                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
-                        dbs.CloseRead();
-                    }
-                }
+                } 
             }
             catch
             {
@@ -439,10 +401,6 @@ namespace GC_Studio
         {
             try
             {
-                if (File.Exists("mrf.dat"))
-                {
-                    File.Delete("mrf.dat");
-                }
                 //Load recent list
                 if (File.Exists("GCstudio.mrf.json"))
                 {
@@ -1426,6 +1384,25 @@ namespace GC_Studio
                     }
                 }
 
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer", DonateLink);
+        }
+
+        private void comboHide_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.GCstudio.HideDonate = comboHide.Text;
+            SaveConfig();
+            if (Config.GCstudio.HideDonate == "Hide")
+            {
+                buttondonate.Visible = false;
+            }
+            else 
+            {
+                buttondonate.Visible = true;
             }
         }
     }
