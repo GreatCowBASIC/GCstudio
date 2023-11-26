@@ -35,6 +35,7 @@ namespace GC_Studio
                 Firstrun = true;
                 LastDirectory = null;
                 Legacymode = false;
+                HideDonate = "Show";
             }
             public string ReleaseChanel { get; set; }
             public string IDE { get; set; }
@@ -42,6 +43,7 @@ namespace GC_Studio
             public bool Firstrun { get; set; }
             public string LastDirectory { get; set; }
             public bool Legacymode { get; set; }
+            public string HideDonate { get; set; }
         }
 
     }
