@@ -10,7 +10,7 @@
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "System.Data.DataSetExtensions": "4.5.0",
-          "DBSEngine": "4000.6.0.0"
+          "Ngine": "0.0.1.1"
         },
         "runtime": {
           "Update.dll": {}
@@ -18,11 +18,11 @@
       },
       "Microsoft.CSharp/4.7.0": {},
       "System.Data.DataSetExtensions/4.5.0": {},
-      "DBSEngine/4000.6.0.0": {
+      "Ngine/0.0.1.1": {
         "runtime": {
-          "DBSEngine.dll": {
-            "assemblyVersion": "4000.6.0.0",
-            "fileVersion": "4.0.0.6"
+          "Ngine.dll": {
+            "assemblyVersion": "0.0.1.1",
+            "fileVersion": "0.0.1.1"
           }
         }
       }
@@ -48,7 +48,7 @@
       "path": "system.data.datasetextensions/4.5.0",
       "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
     },
-    "DBSEngine/4000.6.0.0": {
+    "Ngine/0.0.1.1": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
