@@ -1,4 +1,4 @@
-﻿using DBSEngine;
+﻿using Ngine;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -10,7 +10,7 @@ namespace Update
 {
     public partial class Updater : Form
     {
-        DBS dbs = new DBS();
+        DataFileEngine dfe = new DataFileEngine();
         double ManifestVer = 0;
         string ManifestPKG;
         string ManifestChecksum;
@@ -48,14 +48,14 @@ namespace Update
 
             if (File.Exists("cvs.nfo"))
             {
-                dbs.LoadRead("cvs.nfo");
-                double.TryParse(dbs.ReadData(), out ManifestVer);
-                ManifestPKG = dbs.ReadData();
-                ManifestChecksum = dbs.ReadData();
-                ManifestTitle = dbs.ReadData();
-                ManifestNotes = dbs.ReadData();
-                AppExe = dbs.ReadData();
-                dbs.CloseRead();
+                dfe.LoadRead("cvs.nfo");
+                double.TryParse(dfe.ReadData(), out ManifestVer);
+                ManifestPKG = dfe.ReadData();
+                ManifestChecksum = dfe.ReadData();
+                ManifestTitle = dfe.ReadData();
+                ManifestNotes = dfe.ReadData();
+                AppExe = dfe.ReadData();
+                dfe.CloseRead();
             }
             else
             {

@@ -1,6 +1,4 @@
-﻿using DBSEngine;
-using Microsoft.VisualBasic.FileIO;
-using Newtonsoft.Json;
+﻿using Ngine;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 
 
 namespace GC_Studio
@@ -16,7 +15,8 @@ namespace GC_Studio
     {
 
 
-        DBS dbs = new DBS();
+        DataFileEngine dfe = new DataFileEngine();
+        JsonConvert json = new JsonConvert();
         RecentFile RecentFiles = new RecentFile();
         ConfigSchema Config = new ConfigSchema();
         string[] arguments;
@@ -359,9 +359,9 @@ namespace GC_Studio
             {
                 if (File.Exists("GCstudio.config.json"))
                 {
-                    dbs.LoadRead("GCstudio.config.json");
-                    Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
-                    dbs.CloseRead();
+                    dfe.LoadRead("GCstudio.config.json");
+                    Config = json.DeserializeObject<ConfigSchema>(dfe.ReadAll());
+                    dfe.CloseRead();
                 } 
             }
             catch
@@ -380,9 +380,9 @@ namespace GC_Studio
             try
             {
                 //save current config
-                dbs.LoadWrite("GCstudio.config.json");
-                dbs.RecordData(JsonConvert.SerializeObject(Config, Formatting.Indented));
-                dbs.CloseWrite();
+                dfe.LoadWrite("GCstudio.config.json");
+                dfe.RecordData(json.SerializeObject(Config));
+                dfe.CloseWrite();
             }
             catch
             {
@@ -405,9 +405,9 @@ namespace GC_Studio
                 if (File.Exists("GCstudio.mrf.json"))
                 {
 
-                    dbs.LoadRead("GCstudio.mrf.json");
-                    RecentFiles = JsonConvert.DeserializeObject<RecentFile>(dbs.ReadAll());
-                    dbs.CloseRead();
+                    dfe.LoadRead("GCstudio.mrf.json");
+                    RecentFiles = json.DeserializeObject<RecentFile>(dfe.ReadAll());
+                    dfe.CloseRead();
 
                 }
             }
@@ -426,9 +426,9 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadWrite("GCstudio.mrf.json");
-                dbs.RecordData(JsonConvert.SerializeObject(RecentFiles, Formatting.Indented));
-                dbs.CloseWrite();
+                dfe.LoadWrite("GCstudio.mrf.json");
+                dfe.RecordData(json.SerializeObject(RecentFiles));
+                dfe.CloseWrite();
             }
             catch
             {
