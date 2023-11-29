@@ -24,8 +24,8 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DBSEngine">
-      <HintPath>..\..\packages\DBS Engine 4.0\DBSEngine.dll</HintPath>
+    <Reference Include="Ngine">
+      <HintPath>..\..\packages\Ngine\Ngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

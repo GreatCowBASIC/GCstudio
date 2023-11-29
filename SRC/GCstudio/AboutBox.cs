@@ -1,4 +1,4 @@
-﻿using DBSEngine;
+﻿using Ngine;
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -8,7 +8,7 @@ namespace GC_Studio
 {
     partial class AboutBox : Form
     {
-        DBS dbs = new DBS();
+        DataFileEngine dfe = new DataFileEngine();
         public AboutBox()
         {
 
@@ -108,9 +108,9 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadRead("gcbasic\\version.txt");
-                labelcomp.Text = dbs.ReadData();
-                dbs.CloseRead();
+                dfe.LoadRead("gcbasic\\version.txt");
+                labelcomp.Text = dfe.ReadData();
+                dfe.CloseRead();
             }
             catch
             {
@@ -119,9 +119,9 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadRead("toolchainversion.txt");
-                labeltoolchain.Text = dbs.ReadData();
-                dbs.CloseRead();
+                dfe.LoadRead("toolchainversion.txt");
+                labeltoolchain.Text = dfe.ReadData();
+                dfe.CloseRead();
             }
             catch
             {
@@ -130,9 +130,9 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadRead("vscode\\version.txt");
-                labelgccode.Text = dbs.ReadData();
-                dbs.CloseRead();
+                dfe.LoadRead("vscode\\version.txt");
+                labelgccode.Text = dfe.ReadData();
+                dfe.CloseRead();
             }
             catch
             {
@@ -141,9 +141,9 @@ namespace GC_Studio
 
             try
             {
-                dbs.LoadRead("FBasic\\version.txt");
-                labelfbas.Text = dbs.ReadData();
-                dbs.CloseRead();
+                dfe.LoadRead("FBasic\\version.txt");
+                labelfbas.Text = dfe.ReadData();
+                dfe.CloseRead();
             }
             catch
             {
@@ -156,9 +156,9 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("gcbasic\\Documentation\\acknowledgements.txt");
-                textBoxDescription.Text = dbs.ReadAll();
-                dbs.CloseRead();
+                dfe.LoadRead("gcbasic\\Documentation\\acknowledgements.txt");
+                textBoxDescription.Text = dfe.ReadAll();
+                dfe.CloseRead();
                 textBoxDescription.Visible = true;
             }
             catch
@@ -171,9 +171,9 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("gcbasic\\Documentation\\license.txt");
-                textBoxDescription.Text = dbs.ReadAll();
-                dbs.CloseRead();
+                dfe.LoadRead("gcbasic\\Documentation\\license.txt");
+                textBoxDescription.Text = dfe.ReadAll();
+                dfe.CloseRead();
                 textBoxDescription.Visible = true;
             }
             catch
@@ -186,9 +186,9 @@ namespace GC_Studio
         {
             try
             {
-                dbs.LoadRead("gcbasic\\Documentation\\readme.txt");
-                textBoxDescription.Text = dbs.ReadAll();
-                dbs.CloseRead();
+                dfe.LoadRead("gcbasic\\Documentation\\readme.txt");
+                textBoxDescription.Text = dfe.ReadAll();
+                dfe.CloseRead();
                 textBoxDescription.Visible = true;
             }
             catch

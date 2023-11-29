@@ -1,5 +1,4 @@
-﻿using DBSEngine;
-using Newtonsoft.Json;
+﻿using Ngine;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -16,10 +15,11 @@ namespace GC_Studio
 {
     public partial class Loader : Form
     {
-        DBS dbs = new DBS();
+        DataFileEngine dfe = new DataFileEngine();
+        JsonConvert json = new JsonConvert();
         ConfigSchema Config = new ConfigSchema();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.0105;
+        public const double AppVer = 1.01051;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
@@ -66,16 +66,16 @@ namespace GC_Studio
             {
                 try
                 {
-                    dbs.LoadWrite("access.dat");
-                    dbs.RecordData("access");
-                    dbs.CloseWrite();
+                    dfe.LoadWrite("access.dat");
+                    dfe.RecordData("access");
+                    dfe.CloseWrite();
                     File.Delete("access.dat");
                 }
                 catch
                 {
                     this.Visible = false;
                     try
-                    { dbs.CloseWrite(); }
+                    { dfe.CloseWrite(); }
                     catch { }
 
                     ProcessStartInfo p = new ProcessStartInfo();
@@ -189,18 +189,18 @@ namespace GC_Studio
                 //Load old App Config
                 if (File.Exists("config.ini"))
                 {
-                    dbs.LoadRead("config.ini");
-                    Config.GCstudio.ReleaseChanel = dbs.ReadData();
-                    dbs.CloseRead();
+                    dfe.LoadRead("config.ini");
+                    Config.GCstudio.ReleaseChanel = dfe.ReadData();
+                    dfe.CloseRead();
                 }
                 else
                 //load app config
                 {
                     if (File.Exists("GCstudio.config.json"))
                     {
-                        dbs.LoadRead("GCstudio.config.json");
-                        Config = JsonConvert.DeserializeObject<ConfigSchema>(dbs.ReadAll());
-                        dbs.CloseRead();
+                        dfe.LoadRead("GCstudio.config.json");
+                        Config = json.DeserializeObject<ConfigSchema>(dfe.ReadAll());
+                        dfe.CloseRead();
                     }
                 }
             }
@@ -273,15 +273,15 @@ namespace GC_Studio
             else
             {
 
-                dbs.LoadRead("cvs.nfo");
-                double.TryParse(dbs.ReadData(), Style, Provider, out ManifestVer);
-                ManifestPKG = dbs.ReadData();
-                ManifestChecksum = dbs.ReadData();
-                ManifestTitle = dbs.ReadData();
-                ManifestNotes = dbs.ReadData();
-                dbs.ReadData();
-                double.TryParse(dbs.ReadData(), Style, Provider, out ManifestMinVer);
-                dbs.CloseRead();
+                dfe.LoadRead("cvs.nfo");
+                double.TryParse(dfe.ReadData(), Style, Provider, out ManifestVer);
+                ManifestPKG = dfe.ReadData();
+                ManifestChecksum = dfe.ReadData();
+                ManifestTitle = dfe.ReadData();
+                ManifestNotes = dfe.ReadData();
+                dfe.ReadData();
+                double.TryParse(dfe.ReadData(), Style, Provider, out ManifestMinVer);
+                dfe.CloseRead();
 
                 if (AppVer >= ManifestMinVer)
                 {
@@ -371,7 +371,7 @@ namespace GC_Studio
             {
                 try
                 {
-                    UpdateChecksum = dbs.CreateMD5Sum("update.pkg");
+                    UpdateChecksum = dfe.CreateMD5Sum("update.pkg");
                     if (UpdateChecksum == ManifestChecksum)
                     {
 
