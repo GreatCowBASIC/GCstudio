@@ -220,7 +220,7 @@ namespace GC_Studio
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label3.ForeColor = System.Drawing.Color.White;
-            label3.Location = new System.Drawing.Point(349, 213);
+            label3.Location = new System.Drawing.Point(353, 213);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(145, 31);
             label3.TabIndex = 16;
@@ -267,7 +267,7 @@ namespace GC_Studio
             buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
-            buttonwitout.Location = new System.Drawing.Point(491, 832);
+            buttonwitout.Location = new System.Drawing.Point(495, 832);
             buttonwitout.Name = "buttonwitout";
             buttonwitout.Size = new System.Drawing.Size(301, 50);
             buttonwitout.TabIndex = 24;
@@ -288,7 +288,7 @@ namespace GC_Studio
             buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
-            buttonbug.Location = new System.Drawing.Point(737, 910);
+            buttonbug.Location = new System.Drawing.Point(741, 910);
             buttonbug.Name = "buttonbug";
             buttonbug.Size = new System.Drawing.Size(301, 50);
             buttonbug.TabIndex = 25;
@@ -349,7 +349,7 @@ namespace GC_Studio
             pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             pictureBox3.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(354, 307);
+            pictureBox3.Location = new System.Drawing.Point(358, 307);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new System.Drawing.Size(93, 107);
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -365,7 +365,7 @@ namespace GC_Studio
             label13.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label13.ForeColor = System.Drawing.Color.White;
-            label13.Location = new System.Drawing.Point(454, 378);
+            label13.Location = new System.Drawing.Point(458, 378);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(441, 72);
             label13.TabIndex = 37;
@@ -381,7 +381,7 @@ namespace GC_Studio
             label14.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label14.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label14.ForeColor = System.Drawing.Color.White;
-            label14.Location = new System.Drawing.Point(454, 318);
+            label14.Location = new System.Drawing.Point(458, 318);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(257, 31);
             label14.TabIndex = 36;
@@ -401,7 +401,7 @@ namespace GC_Studio
             buttonopensol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             buttonopensol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttonopensol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            buttonopensol.Location = new System.Drawing.Point(344, 290);
+            buttonopensol.Location = new System.Drawing.Point(348, 290);
             buttonopensol.Name = "buttonopensol";
             buttonopensol.Size = new System.Drawing.Size(573, 172);
             buttonopensol.TabIndex = 35;
@@ -415,7 +415,7 @@ namespace GC_Studio
             pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             pictureBox4.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new System.Drawing.Point(354, 485);
+            pictureBox4.Location = new System.Drawing.Point(358, 485);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new System.Drawing.Size(93, 107);
             pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -431,7 +431,7 @@ namespace GC_Studio
             label15.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label15.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label15.ForeColor = System.Drawing.Color.White;
-            label15.Location = new System.Drawing.Point(454, 560);
+            label15.Location = new System.Drawing.Point(458, 560);
             label15.Name = "label15";
             label15.Size = new System.Drawing.Size(441, 72);
             label15.TabIndex = 41;
@@ -447,7 +447,7 @@ namespace GC_Studio
             label16.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label16.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label16.ForeColor = System.Drawing.Color.White;
-            label16.Location = new System.Drawing.Point(454, 498);
+            label16.Location = new System.Drawing.Point(458, 498);
             label16.Name = "label16";
             label16.Size = new System.Drawing.Size(231, 31);
             label16.TabIndex = 40;
@@ -467,7 +467,7 @@ namespace GC_Studio
             buttonopenfol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             buttonopenfol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttonopenfol.ForeColor = System.Drawing.Color.WhiteSmoke;
-            buttonopenfol.Location = new System.Drawing.Point(344, 472);
+            buttonopenfol.Location = new System.Drawing.Point(348, 472);
             buttonopenfol.Name = "buttonopenfol";
             buttonopenfol.Size = new System.Drawing.Size(573, 172);
             buttonopenfol.TabIndex = 39;
@@ -481,7 +481,7 @@ namespace GC_Studio
             pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             pictureBox5.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox5.Image = (System.Drawing.Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new System.Drawing.Point(354, 665);
+            pictureBox5.Location = new System.Drawing.Point(358, 665);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new System.Drawing.Size(93, 107);
             pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -497,7 +497,7 @@ namespace GC_Studio
             label17.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label17.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label17.ForeColor = System.Drawing.Color.White;
-            label17.Location = new System.Drawing.Point(454, 738);
+            label17.Location = new System.Drawing.Point(458, 738);
             label17.Name = "label17";
             label17.Size = new System.Drawing.Size(441, 72);
             label17.TabIndex = 45;
@@ -513,7 +513,7 @@ namespace GC_Studio
             label18.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             label18.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label18.ForeColor = System.Drawing.Color.White;
-            label18.Location = new System.Drawing.Point(454, 678);
+            label18.Location = new System.Drawing.Point(458, 678);
             label18.Name = "label18";
             label18.Size = new System.Drawing.Size(251, 31);
             label18.TabIndex = 44;
@@ -533,7 +533,7 @@ namespace GC_Studio
             buttonnew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             buttonnew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttonnew.ForeColor = System.Drawing.Color.WhiteSmoke;
-            buttonnew.Location = new System.Drawing.Point(344, 652);
+            buttonnew.Location = new System.Drawing.Point(348, 652);
             buttonnew.Name = "buttonnew";
             buttonnew.Size = new System.Drawing.Size(573, 172);
             buttonnew.TabIndex = 43;
@@ -589,14 +589,14 @@ namespace GC_Studio
             // 
             buttondonate.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             buttondonate.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondonate.BackgroundImage = (System.Drawing.Image)resources.GetObject("buttondonate.BackgroundImage");
             buttondonate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             buttondonate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
             buttondonate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
             buttondonate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttondonate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttondonate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            buttondonate.ForeColor = System.Drawing.Color.CornflowerBlue;
-            buttondonate.Location = new System.Drawing.Point(430, 910);
+            buttondonate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttondonate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            buttondonate.Location = new System.Drawing.Point(434, 910);
             buttondonate.Name = "buttondonate";
             buttondonate.Size = new System.Drawing.Size(301, 50);
             buttondonate.TabIndex = 50;
@@ -612,7 +612,7 @@ namespace GC_Studio
             linkLabelclear.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             linkLabelclear.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabelclear.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabelclear.Location = new System.Drawing.Point(244, 218);
+            linkLabelclear.Location = new System.Drawing.Point(248, 218);
             linkLabelclear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabelclear.Name = "linkLabelclear";
             linkLabelclear.Size = new System.Drawing.Size(93, 25);
@@ -634,7 +634,7 @@ namespace GC_Studio
             listViewRecent.MultiSelect = false;
             listViewRecent.Name = "listViewRecent";
             listViewRecent.ShowItemToolTips = true;
-            listViewRecent.Size = new System.Drawing.Size(229, 522);
+            listViewRecent.Size = new System.Drawing.Size(233, 526);
             listViewRecent.TabIndex = 48;
             listViewRecent.UseCompatibleStateImageBehavior = false;
             listViewRecent.View = System.Windows.Forms.View.List;
@@ -652,7 +652,7 @@ namespace GC_Studio
             buttonabout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonabout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttonabout.ForeColor = System.Drawing.Color.White;
-            buttonabout.Location = new System.Drawing.Point(20, 892);
+            buttonabout.Location = new System.Drawing.Point(20, 896);
             buttonabout.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             buttonabout.Name = "buttonabout";
             buttonabout.Size = new System.Drawing.Size(109, 50);

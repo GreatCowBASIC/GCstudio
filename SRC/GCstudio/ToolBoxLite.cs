@@ -362,7 +362,7 @@ namespace GC_Studio
                     dfe.LoadRead("GCstudio.config.json");
                     Config = json.DeserializeObject<ConfigSchema>(dfe.ReadAll());
                     dfe.CloseRead();
-                } 
+                }
             }
             catch
             {
@@ -1400,7 +1400,7 @@ namespace GC_Studio
             {
                 buttondonate.Visible = false;
             }
-            else 
+            else
             {
                 buttondonate.Visible = true;
             }
