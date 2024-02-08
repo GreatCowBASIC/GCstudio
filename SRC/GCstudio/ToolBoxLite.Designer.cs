@@ -602,6 +602,7 @@ namespace GC_Studio
             buttondonate.TabIndex = 50;
             buttondonate.Text = "Donate to the project here...";
             buttondonate.UseVisualStyleBackColor = false;
+            buttondonate.Visible = false;
             buttondonate.Click += button15_Click;
             // 
             // linkLabelclear
@@ -704,6 +705,7 @@ namespace GC_Studio
             comboHide.Name = "comboHide";
             comboHide.Size = new System.Drawing.Size(159, 33);
             comboHide.TabIndex = 85;
+            comboHide.Visible = false;
             comboHide.SelectedIndexChanged += comboHide_SelectedIndexChanged;
             // 
             // label30
@@ -716,6 +718,7 @@ namespace GC_Studio
             label30.Size = new System.Drawing.Size(159, 31);
             label30.TabIndex = 84;
             label30.Text = "Hide Donate";
+            label30.Visible = false;
             // 
             // combomode
             // 
