@@ -90,51 +90,6 @@ namespace GC_Studio
 
             }
 
-            /// Code for name change on compiler directory
-            /// 
-
-
-            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-            {
-
-                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
-                {
-                    try
-                    {
-                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
-                    }
-                    catch
-                    {
-                    }
-                }
-                try
-                {
-                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
-                }
-                catch
-                {
-                }
-            }
-
-            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-            {
-                try
-                {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
-                }
-                catch
-                {
-                }
-            }
-
-
-
-
-
-
-            ///
-
-
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
@@ -1402,7 +1357,7 @@ namespace GC_Studio
             }
             else
             {
-                buttondonate.Visible = true;
+               // buttondonate.Visible = true;
             }
         }
     }
