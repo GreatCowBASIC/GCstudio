@@ -19,7 +19,7 @@ namespace GC_Studio
         JsonConvert json = new JsonConvert();
         ConfigSchema Config = new ConfigSchema();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.01081;
+        public const double AppVer = 1.01082;
         double ManifestVer = 0;
         double ManifestMinVer = 0;
         string ManifestPKG;
