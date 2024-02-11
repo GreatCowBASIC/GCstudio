@@ -602,7 +602,6 @@ namespace GC_Studio
             buttondonate.TabIndex = 50;
             buttondonate.Text = "Donate to the project here...";
             buttondonate.UseVisualStyleBackColor = false;
-            buttondonate.Visible = false;
             buttondonate.Click += button15_Click;
             // 
             // linkLabelclear
