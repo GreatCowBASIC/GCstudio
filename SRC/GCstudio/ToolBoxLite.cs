@@ -1357,7 +1357,7 @@ namespace GC_Studio
             }
             else
             {
-               // buttondonate.Visible = true;
+                buttondonate.Visible = true;
             }
         }
     }
