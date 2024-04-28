@@ -9,8 +9,8 @@ C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.Updater.r
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.csproj.GenerateResource.cache
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.GeneratedMSBuildEditorConfig.editorconfig
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.csproj.CoreCompileInputs.cache
-C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.csproj.CopyComplete
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.dll
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\refint\Update.dll
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.genruntimeconfig.cache
 C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\ref\Update.dll
+C:\DevSrcLocal\GCB\GCstudio\SRC\Update\obj\Build\net7.0-windows\Update.csproj.Up2Date
