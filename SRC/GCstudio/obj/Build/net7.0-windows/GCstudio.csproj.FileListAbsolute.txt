@@ -10,6 +10,6 @@ C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GC_Studio.Tool
 C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.GenerateResource.cache
 C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.GeneratedMSBuildEditorConfig.editorconfig
 C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.CoreCompileInputs.cache
-C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.CopyComplete
 C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.dll
 C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.genruntimeconfig.cache
+C:\DevSrcLocal\GCB\GCstudio\SRC\GCstudio\obj\Build\net7.0-windows\GCstudio.csproj.Up2Date

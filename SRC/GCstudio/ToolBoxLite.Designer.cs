@@ -598,9 +598,9 @@ namespace GC_Studio
             buttondemonstrations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttondemonstrations.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttondemonstrations.ForeColor = System.Drawing.Color.CornflowerBlue;
-            buttondemonstrations.Location = new System.Drawing.Point(188, 891);
+            buttondemonstrations.Location = new System.Drawing.Point(191, 882);
             buttondemonstrations.Name = "buttondemonstrations";
-            buttondemonstrations.Size = new System.Drawing.Size(224, 60);
+            buttondemonstrations.Size = new System.Drawing.Size(224, 81);
             buttondemonstrations.TabIndex = 51;
             buttondemonstrations.Text = "Install or Update the Demonstration Sources";
             buttondemonstrations.UseVisualStyleBackColor = false;
