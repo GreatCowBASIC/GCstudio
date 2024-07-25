@@ -52,6 +52,12 @@ SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
 File /r ".\post\*"
 
+#Prereq Net8
+SetOutPath "$INSTDIR"
+File /r ".\Redist\Net8x86.exe"
+ExecWait "$INSTDIR\Net8x86.exe /install /quiet /norestart /log Log\Net8.log"
+Delete "$INSTDIR\Net8x86.exe"
+
 SectionEnd
 
 
