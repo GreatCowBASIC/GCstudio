@@ -58,6 +58,7 @@ namespace GC_Studio
             buttonnew = new System.Windows.Forms.Button();
             pictureconf = new System.Windows.Forms.PictureBox();
             panelmain = new System.Windows.Forms.Panel();
+            buttondemonstrations = new System.Windows.Forms.Button();
             buttondonate = new System.Windows.Forms.Button();
             linkLabelclear = new System.Windows.Forms.LinkLabel();
             listViewRecent = new System.Windows.Forms.ListView();
@@ -556,6 +557,7 @@ namespace GC_Studio
             // 
             // panelmain
             // 
+            panelmain.Controls.Add(buttondemonstrations);
             panelmain.Controls.Add(buttondonate);
             panelmain.Controls.Add(linkLabelclear);
             panelmain.Controls.Add(listViewRecent);
@@ -585,6 +587,25 @@ namespace GC_Studio
             panelmain.TabIndex = 48;
             panelmain.Paint += panelmain_Paint;
             // 
+            // buttondemonstrations
+            // 
+            buttondemonstrations.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttondemonstrations.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttondemonstrations.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttondemonstrations.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttondemonstrations.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttondemonstrations.Location = new System.Drawing.Point(191, 882);
+            buttondemonstrations.Name = "buttondemonstrations";
+            buttondemonstrations.Size = new System.Drawing.Size(224, 81);
+            buttondemonstrations.TabIndex = 51;
+            buttondemonstrations.Text = "Install or Update the Demonstration Sources";
+            buttondemonstrations.UseVisualStyleBackColor = false;
+            buttondemonstrations.Click += buttondemonstrations_Click;
+            // 
             // buttondonate
             // 
             buttondonate.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
@@ -596,7 +617,7 @@ namespace GC_Studio
             buttondonate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
             buttondonate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttondonate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            buttondonate.Location = new System.Drawing.Point(434, 910);
+            buttondonate.Location = new System.Drawing.Point(458, 910);
             buttondonate.Name = "buttondonate";
             buttondonate.Size = new System.Drawing.Size(301, 50);
             buttondonate.TabIndex = 50;
@@ -704,6 +725,7 @@ namespace GC_Studio
             comboHide.Name = "comboHide";
             comboHide.Size = new System.Drawing.Size(159, 33);
             comboHide.TabIndex = 85;
+            comboHide.Visible = false;
             comboHide.SelectedIndexChanged += comboHide_SelectedIndexChanged;
             // 
             // label30
@@ -716,6 +738,7 @@ namespace GC_Studio
             label30.Size = new System.Drawing.Size(159, 31);
             label30.TabIndex = 84;
             label30.Text = "Hide Donate";
+            label30.Visible = false;
             // 
             // combomode
             // 
@@ -1498,5 +1521,6 @@ namespace GC_Studio
         internal System.Windows.Forms.Button buttondonate;
         private System.Windows.Forms.ComboBox comboHide;
         private System.Windows.Forms.Label label30;
+        internal System.Windows.Forms.Button buttondemonstrations;
     }
 }
