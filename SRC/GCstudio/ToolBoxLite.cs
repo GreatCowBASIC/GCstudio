@@ -16,7 +16,6 @@ namespace GC_Studio
 
 
         DataFileEngine dfe = new DataFileEngine();
-        DataFileEngine debuglog = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         RecentFile RecentFiles = new RecentFile();
         ConfigSchema Config = new ConfigSchema();
@@ -39,17 +38,7 @@ namespace GC_Studio
 
         public ToolBoxLite()
         {
-            try
-            {
-                debuglog.LoadWrite("/Log/GCstudio" + Loader.AppVer.ToString() + ".log");
-            }
-            catch { }
-
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, initializing main pannel...");
-            }
-            catch { }
+            debuglog("GCstudio, initializing main panel...");
 
             InitializeComponent();
             Application.EnableVisualStyles();
@@ -94,12 +83,7 @@ namespace GC_Studio
 
             if (Environment.OSVersion.Version.Major == 6 & Environment.OSVersion.Version.Minor < 2)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, Windows 7 detected, enabling mainstream win7 channel...");
-                }
-                catch { }
-
+                debuglog("GCstudio, Windows 7 detected, enabling mainstream win7 channel...");
 
                 comboupdate.Items.Add("mainstream win7");
                 if (Config.GCstudio.ReleaseChanel == "mainstream")
@@ -117,13 +101,7 @@ namespace GC_Studio
 
             if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
             {
-
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, old GreatCowBasic directory detected, started automatic migration...");
-                }
-                catch { }
-
+                debuglog("GCstudio, old GreatCowBasic directory detected, started automatic migration...");
 
                 if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
                 {
@@ -162,12 +140,7 @@ namespace GC_Studio
 
             ///
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, applying configuration...");
-            }
-            catch { }
-
+            debuglog("GCstudio, applying configuration...");
 
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
@@ -204,12 +177,7 @@ namespace GC_Studio
             ///post updater
             if (File.Exists("post.dat"))
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, postupdate flag detected, launching process...");
-                }
-                catch { }
-
+                debuglog("GCstudio, post update flag detected, launching process...");
 
                 try
                 {
@@ -222,26 +190,14 @@ namespace GC_Studio
                     {
                         File.Delete("post.dat");
                     }
-                    catch 
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, could not clear post update flag...");
-                        }
-                        catch { }
-
-
+                        debuglog("ERROR GCstudio, could not clear post update flag." + " > " + ex.Message + " @ " + ex.StackTrace);
                     }
                 }
-                catch
+                catch (Exception ex2) 
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while launching postupdate process, exiting GCstudio...");
-                        debuglog.CloseWrite();
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, an error occurred while launching post update process, exiting GCstudio." + " > " + ex2.Message + " @ " + ex2.StackTrace);
 
                     MessageBox.Show("Error starting the post updater.");
                     Environment.Exit(0);
@@ -251,22 +207,14 @@ namespace GC_Studio
 
             ///CLI Commands
             ///
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, looking for arguments...");
-            }
-            catch { }
 
+            debuglog("GCstudio, looking for arguments...");
 
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, arguments detected, executing commands...");
-                }
-                catch { }
 
+                debuglog("GCstudio, arguments detected, executing commands...");
 
                 switch (arguments[1])
                 {
@@ -293,13 +241,8 @@ namespace GC_Studio
                         break;
 
                     case "/pkp" or "-p" or "--pkp":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, running pkp tool and exiting...");
-                            debuglog.CloseWrite();
-                        }
-                        catch { }
 
+                        debuglog("GCstudio, running pkp tool and exiting...");
 
                         this.Visible = false;
                         pkptool();
@@ -307,12 +250,7 @@ namespace GC_Studio
                         break;
 
                     case "/firststart" or "-fs" or "--firststart":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, overriding first start");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, overriding first start");
 
                         Config.GCstudio.Firstrun = true;
 
@@ -320,12 +258,7 @@ namespace GC_Studio
 
                     case "/resetsize" or "-rs" or "--resetsize":
 
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, overriding a reset size...");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, overriding a reset size...");
 
                         ResetSize();
 
@@ -333,13 +266,7 @@ namespace GC_Studio
 
                     case "/settings" or "-s" or "--settings":
 
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, overriding config panel view only...");
-                        }
-                        catch { }
-
-
+                        debuglog("GCstudio, overriding config panel view only...");
 
                         panelmain.Visible = false;
                         panelnewproj.Visible = false;
@@ -351,13 +278,7 @@ namespace GC_Studio
 
                     case "/about" or "-a" or "--about":
 
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, overriding about box view only...");
-                        }
-                        catch { }
-
-
+                        debuglog("GCstudio, overriding about box view only...");
 
                         Form about = new GC_Studio.AboutBox();
                         about.ShowDialog();
@@ -368,13 +289,7 @@ namespace GC_Studio
 
                     default:
 
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, parsing arguments to IDE and stay hidden...");
-                        }
-                        catch { }
-
-
+                        debuglog("GCstudio, parsing arguments to IDE and stay hidden...");
 
                         this.Visible = false;
                         for (int i = 1; i < arguments.Length; i++)
@@ -411,15 +326,9 @@ namespace GC_Studio
 
             ///first run
             if (Config.GCstudio.Firstrun)
-
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, first run flag detected, and launching accordingly...");
-                }
-                catch { }
-
-
             {
+                debuglog("GCstudio, first run flag detected, and launching accordingly...");
+
                 ResetSize();
                 Config.GCstudio.Firstrun = false;
                 if (Config.GCstudio.Legacymode)
@@ -446,22 +355,12 @@ namespace GC_Studio
 
             if (Config.GCstudio.HideDonate == "Hide")
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, hidden donate button flag detected, hidding...");
-                }
-                catch { }
-
+                debuglog("GCstudio, hidden donate button flag detected, hiding...");
 
                 buttondonate.Visible = false;
             }
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, populating recent files...");
-            }
-            catch { }
-
+            debuglog("GCstudio, populating recent files...");
 
             for (int i = 0; i < 10; i++)
             {
@@ -481,13 +380,7 @@ namespace GC_Studio
         /// </summary>
         private void ResetSize()
         {
-
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, resseting window size...");
-            }
-            catch { }
-
+            debuglog("GCstudio, resetting window size...");
 
             Config.Window.sizeW = 1028;
             Config.Window.sizeH = 681;
@@ -505,37 +398,23 @@ namespace GC_Studio
         private void LoadConfig()
         {
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, Load configuration started...");
-            }
-            catch { }
-
+            debuglog("GCstudio, Load configuration started...");
 
             try
             {
                 if (File.Exists("GCstudio.config.json"))
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, GCstudio.config.json detected, loading and deserializing...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, GCstudio.config.json detected, loading and deserializing...");
 
                     dfe.LoadRead("GCstudio.config.json");
                     Config = json.DeserializeObject<ConfigSchema>(dfe.ReadAll());
                     dfe.CloseRead();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while loading configuration.");
-                }
-                catch { }
 
+                debuglog("ERROR GCstudio, an error occurred while loading configuration." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("Error loading config.");
             }
@@ -548,35 +427,20 @@ namespace GC_Studio
         /// </summary>
         private void SaveConfig()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, save configuration started...");
-            }
-            catch { }
-
+            debuglog("GCstudio, save configuration started...");
 
             try
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, serializing configuration and saving GCstudio.config.json...");
-                }
-                catch { }
-
+                debuglog("GCstudio, serializing configuration and saving GCstudio.config.json...");
 
                 //save current config
                 dfe.LoadWrite("GCstudio.config.json");
                 dfe.RecordData(json.SerializeObject(Config));
                 dfe.CloseWrite();
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while saving configuration.");
-                }
-                catch { }
-
+                debuglog("ERROR GCstudio, an error occurred while saving configuration." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("Error saving config.");
             }
@@ -591,24 +455,14 @@ namespace GC_Studio
         /// </summary>
         private void LoadRecent()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, Loading recent file list started...");
-            }
-            catch { }
-
+            debuglog("GCstudio, Loading recent file list started...");
 
             try
             {
                 //Load recent list
                 if (File.Exists("GCstudio.mrf.json"))
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, GCstudio.mrf.json detected, loading and deserializing...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, GCstudio.mrf.json detected, loading and deserializing...");
 
                     dfe.LoadRead("GCstudio.mrf.json");
                     RecentFiles = json.DeserializeObject<RecentFile>(dfe.ReadAll());
@@ -616,14 +470,9 @@ namespace GC_Studio
 
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while loading recent file list.");
-                }
-                catch { }
-
+                debuglog("GCstudio, an error occurred while loading recent file list." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("Error loading recent files.");
             }
@@ -635,34 +484,20 @@ namespace GC_Studio
         /// </summary>
         private void SaveRecent()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, save recent file list started...");
-            }
-            catch { }
-
+            debuglog("GCstudio, save recent file list started...");
 
             try
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, serializing and saving GCstudio.mrf.json...");
-                }
-                catch { }
 
+                debuglog("GCstudio, serializing and saving GCstudio.mrf.json...");
 
                 dfe.LoadWrite("GCstudio.mrf.json");
                 dfe.RecordData(json.SerializeObject(RecentFiles));
                 dfe.CloseWrite();
             }
-            catch
+            catch (Exception ex) 
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while saving recent file list.");
-                }
-                catch { }
-
+                debuglog("GCstudio, an error occurred while saving recent file list." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("Error saving recent files.");
             }
@@ -674,12 +509,7 @@ namespace GC_Studio
         /// </summary>
         private void addrecent(string FileName, string FullPath)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, adding file/directory to recent list...");
-            }
-            catch { }
-
+            debuglog("GCstudio, adding file/directory to recent list...");
 
             try
             {
@@ -709,12 +539,7 @@ namespace GC_Studio
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, Exiting GCstudio by user request...");
-            }
-            catch { }
-
+            debuglog("GCstudio, Exiting GCstudio by user request...");
 
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -729,30 +554,19 @@ namespace GC_Studio
                 Config.Window.locy = this.Location.Y;
             }
             SaveConfig();
-            debuglog.CloseWrite();
             Environment.Exit(0);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, minimizing window by user request...");
-            }
-            catch { }
-
+            debuglog("GCstudio, minimizing window by user request...");
 
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void BtnMini_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, executing maximize funtion by user request...");
-            }
-            catch { }
-
+            debuglog("GCstudio, executing maximize function by user request...");
 
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -932,25 +746,14 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, creating new project...");
-                }
-                catch { }
-
-
+                debuglog("GCstudio, creating new project...");
 
                 Config.GCstudio.LastDirectory = textBox2.Text;
                 SaveConfig();
 
                 try
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, expanding project data on new process...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, expanding project data on new process...");
 
                     ProcessStartInfo p = new ProcessStartInfo();
                     p.FileName = "minidump.exe";
@@ -960,26 +763,16 @@ namespace GC_Studio
                     Process x = Process.Start(p);
                     x.WaitForExit();
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an errror ocurred while expanding project data...");
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, an error occurred while expanding project data..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("Error creating project.");
                 }
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, IDE launch requested...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, IDE launch requested...");
 
                     switch (Config.GCstudio.IDE)
                     {
@@ -1010,12 +803,7 @@ namespace GC_Studio
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARING GCstudio, a directory with the same name of the project already exists, warning user...");
-                }
-                catch { }
-
+                debuglog("WARING GCstudio, a directory with the same name of the project already exists, warning user...");
 
                 MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -1027,24 +815,15 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, Creating new project...");
-                }
-                catch { }
-
+                debuglog("GCstudio, Creating new project...");
 
                 Config.GCstudio.LastDirectory = textBox2.Text;
                 SaveConfig();
 
                 try
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, expanding project data on new process...");
-                    }
-                    catch { }
 
+                    debuglog("GCstudio, expanding project data on new process...");
 
                     ProcessStartInfo p = new ProcessStartInfo();
                     p.FileName = "minidump.exe";
@@ -1054,26 +833,16 @@ namespace GC_Studio
                     Process x = Process.Start(p);
                     x.WaitForExit();
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while expanding project data.");
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, an error occurred while expanding project data." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("Error creating project.");
                 }
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, IDE launch requested...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, IDE launch requested...");
 
                     switch (Config.GCstudio.IDE)
                     {
@@ -1104,12 +873,8 @@ namespace GC_Studio
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARING GCstudio, a directory with the same name of the project already exists, warning user...");
-                }
-                catch { }
 
+                debuglog("WARING GCstudio, a directory with the same name of the project already exists, warning user...");
 
                 MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -1119,24 +884,16 @@ namespace GC_Studio
         {
             if (Directory.Exists(textBox2.Text + "\\" + textBox1.Text) == false)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, creating new project...");
-                }
-                catch { }
 
+                debuglog("GCstudio, creating new project...");
 
                 Config.GCstudio.LastDirectory = textBox2.Text;
                 SaveConfig();
 
                 try
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, expanding project data on new process...");
-                    }
-                    catch { }
 
+                    debuglog("GCstudio, expanding project data on new process...");
 
                     ProcessStartInfo p = new ProcessStartInfo();
                     p.FileName = "minidump.exe";
@@ -1146,14 +903,10 @@ namespace GC_Studio
                     Process x = Process.Start(p);
                     x.WaitForExit();
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while expanding project data.");
-                    }
-                    catch { }
 
+                    debuglog("ERROR GCstudio, an error occurred while expanding project data." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("Error creating project.");
                 }
@@ -1161,12 +914,8 @@ namespace GC_Studio
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace") == true)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, IDE launch requested...");
-                    }
-                    catch { }
 
+                    debuglog("GCstudio, IDE launch requested...");
 
                     switch (Config.GCstudio.IDE)
                     {
@@ -1197,12 +946,7 @@ namespace GC_Studio
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARING GCstudio, a directory with the same name of the project already exists, warning user...");
-                }
-                catch { }
-
+                debuglog("WARING GCstudio, a directory with the same name of the project already exists, warning user...");
 
                 MessageBox.Show("A folder of the same name already exists on the location, please use a valid project name.", "Folder already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -1212,12 +956,8 @@ namespace GC_Studio
         {
             if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == false)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, creating new project...");
-                }
-                catch { }
 
+                debuglog("GCstudio, creating new project...");
 
                 Config.GCstudio.LastDirectory = textBox2.Text;
                 SaveConfig();
@@ -1225,24 +965,14 @@ namespace GC_Studio
 
                 try
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, expanding project data...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, expanding project data...");
 
                     File.Copy("GCBFile.tpl", textBox2.Text + "\\" + textBox1.Text + ".gcb");
                 }
 
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while expanding project data...");
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, an error occurred while expanding project data..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("Error creating project.");
                 }
@@ -1250,12 +980,7 @@ namespace GC_Studio
 
                 if (File.Exists(textBox2.Text + "\\" + textBox1.Text + ".gcb") == true)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, IDE launch requested...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, IDE launch requested...");
 
                     addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + ".gcb");
 
@@ -1264,12 +989,7 @@ namespace GC_Studio
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARNING GCstudio, a file of the same name as the project already exist, warning user...");
-                }
-                catch { }
-
+                debuglog("WARNING GCstudio, a file of the same name as the project already exist, warning user...");
 
                 MessageBox.Show("A file of the same name already exists on the location, please use a valid project name.", "File already exists", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -1312,26 +1032,16 @@ namespace GC_Studio
 
         public void LaunchIDE(string Args, string IDE)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, IDE Launch started, selecting the right one...");
-            }
-            catch { }
 
+            debuglog("GCstudio, IDE Launch started, selecting the right one...");
 
             ProcessStartInfo p = new ProcessStartInfo();
             Process x;
             switch (IDE)
             {
                 case "GCcode":
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, launching GCcode...");
-                    }
-                    catch { }
 
-
-
+                    debuglog("GCstudio, launching GCcode...");
 
                     try
                     {
@@ -1356,27 +1066,16 @@ namespace GC_Studio
                         Environment.Exit(0);
                         break;
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while launching GCcode; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "vscode\\code.exe");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, an error occurred while launching GCcode; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "vscode\\code.exe" + " > " + ex.Message + " @ " + ex.StackTrace);
 
                         MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "vscode\\code.exe");
                         break;
                     }
 
                 case "SynWrite":
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, launching SynWrite...");
-                    }
-                    catch { }
-
-
+                    debuglog("GCstudio, launching SynWrite...");
 
                     try
                     {
@@ -1401,26 +1100,16 @@ namespace GC_Studio
                         Environment.Exit(0);
                         break;
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while launching SynWrite; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "SynWrite\\Syn.exe");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, an error occurred while launching SynWrite; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "SynWrite\\Syn.exe" + " > " + ex.Message + " @ " + ex.StackTrace);
 
                         MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "SynWrite\\Syn.exe");
                         break;
                     }
 
                 case "GCgraphical":
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, launching GCgraphical...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, launching GCgraphical...");
 
                     try
                     {
@@ -1445,14 +1134,9 @@ namespace GC_Studio
                         Environment.Exit(0);
                         break;
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while launching GCgraphical; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\great cow graphical basic.exe");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, an error occurred while launching GCgraphical; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\great cow graphical basic.exe" + " > " + ex.Message + " @ " + ex.StackTrace);
 
                         MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\great cow graphical basic.exe");
                         break;
@@ -1461,12 +1145,7 @@ namespace GC_Studio
 
 
                 case "Geany":
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, launching Geany...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, launching Geany...");
 
                     try
                     {
@@ -1491,14 +1170,9 @@ namespace GC_Studio
                         Environment.Exit(0);
                         break;
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while launching Geany; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, an error occurred while launching Geany; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe" + " > " + ex.Message + " @ " + ex.StackTrace);
 
                         MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe");
                         break;
@@ -1584,12 +1258,7 @@ namespace GC_Studio
 
         private void linkLabelclear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, clearing recent file list...");
-            }
-            catch { }
-
+            debuglog("GCstudio, clearing recent file list...");
 
             try
             {
@@ -1599,14 +1268,9 @@ namespace GC_Studio
                 }
                 listViewRecent.Items.Clear();
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while clearing recent file list.");
-                }
-                catch { }
-
+                debuglog("GCstudio, an error occurred while clearing recent file list." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("Error clearing recent list.");
             }
@@ -1620,13 +1284,8 @@ namespace GC_Studio
 
         private void pkptool()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, starting pkp tool...");
-            }
-            catch { }
-
-
+            debuglog("GCstudio, starting pkp tool...");
+        
             MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory with a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
             folderBrowserDialog.ShowDialog();
             if (File.Exists(folderBrowserDialog.SelectedPath + "\\PICkit2Plus.exe"))
@@ -1635,34 +1294,20 @@ namespace GC_Studio
                 {
                     FileSystem.CopyDirectory(folderBrowserDialog.SelectedPath, AppDomain.CurrentDomain.BaseDirectory + "PICKitPlus", UIOption.AllDialogs);
                     MessageBox.Show("PICKitPlus Cloned successfully!", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, pkp tool clone success.");
-                    }
-                    catch { }
 
+                    debuglog("GCstudio, pkp tool clone success.");
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, pkp tool an error ocurred while cloning.");
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, pkp tool an error occurred while cloning." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("An error occurred while cloning.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARNING GCstudio, pickitplus wasn´t found, clone aborted, warning user...");
-                }
-                catch { }
-
+                debuglog("WARNING GCstudio, pickitplus wasn´t found, clone aborted, warning user...");
 
                 MessageBox.Show("PICKitPlus wasn’t found on selected directory, clone aborted.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -1671,42 +1316,22 @@ namespace GC_Studio
 
         private void CompilerArchitecture()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, identifying OS architecture...");
-            }
-            catch { }
-
+            debuglog("GCstudio, identifying OS architecture...");
 
             if (Environment.Is64BitOperatingSystem)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, x64 OS detected.");
-                }
-                catch { }
-
+                debuglog("GCstudio, x64 OS detected.");
 
                 labelarch.Text = "x64";
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, x86 OS detected.");
-                }
-                catch { }
-
+                debuglog("GCstudio, x86 OS detected.");
 
                 labelarch.Text = "x86";
             }
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, selecting compiler...");
-            }
-            catch { }
-
+            debuglog("GCstudio, selecting compiler...");
 
             switch (Config.GCstudio.Architecture)
             {
@@ -1715,35 +1340,21 @@ namespace GC_Studio
                     {
                         if (Environment.Is64BitOperatingSystem)
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, automatic selection enabled, choosing 64bit...");
-                            }
-                            catch { }
-
+                            debuglog("GCstudio, automatic selection enabled, choosing 64bit...");
 
                             File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                         }
                         else
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, automatic selection enabled, choosing 32bit...");
-                            }
-                            catch { }
-
+                            debuglog("GCstudio, automatic selection enabled, choosing 32bit...");
 
                             File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while selecting compiler architecture...");
-                        }
-                        catch { }
 
+                        debuglog("ERROR GCstudio, an error occurred while selecting compiler architecture..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     }
                     break;
@@ -1751,23 +1362,13 @@ namespace GC_Studio
                 case "x86":
                     try
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, manual architecture enabled, selecting 32bit...");
-                        }
-                        catch { }
-
-
+                        debuglog("GCstudio, manual architecture enabled, selecting 32bit...");
+                        
                         File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while selecting compiler architecture...");
-                        }
-                        catch { }
-
+                        debuglog("ERROR GCstudio, an error occurred while selecting compiler architecture..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     }
 
@@ -1776,79 +1377,44 @@ namespace GC_Studio
                 case "x64":
                     try
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, manual architecture enabled, selecting 64bit...");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio, manual architecture enabled, selecting 64bit...");
 
                         File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while selecting compiler architecture...");
-                        }
-                        catch { }
-
+                        debuglog("ERROR GCstudio, an error occurred while selecting compiler architecture..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     }
 
                     break;
 
                 case "Developer":
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, developer override detected, leaving current...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, developer override detected, leaving current...");
 
                     break;
 
                 default:
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, no option detected, forcing auto...");
-                    }
-                    catch { }
-
+                    debuglog("WARNING GCstudio, no option detected, forcing auto...");
 
                     try
                     {
                         if (Environment.Is64BitOperatingSystem)
-                        {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, selecting 64bit...");
-                            }
-                            catch { }
-
+                        { 
+                            debuglog("GCstudio, selecting 64bit...");
 
                             File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
                         }
                         else
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, selecting 32bit...");
-                            }
-                            catch { }
-
+                            debuglog("GCstudio, selecting 32bit...");
 
                             File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, an error ocurred while selecting compiler architecture...");
-                        }
-                        catch { }
-
+                        debuglog("ERROR GCstudio, an error occurred while selecting compiler architecture..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     }
 
@@ -1858,12 +1424,7 @@ namespace GC_Studio
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, starting file association tool...");
-            }
-            catch { }
-
+            debuglog("GCstudio, starting file association tool...");
 
             ProcessStartInfo p = new ProcessStartInfo();
             Process x;
@@ -1876,14 +1437,9 @@ namespace GC_Studio
                 p.UseShellExecute = true;
                 x = Process.Start(p);
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred when launching file association tool.");
-                }
-                catch { }
-
+                debuglog("ERROR GCstudio, an error occurred when launching file association tool." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("An error occurred when launching the File Association Tool");
             }
@@ -1892,28 +1448,18 @@ namespace GC_Studio
         private void button11_Click(object sender, EventArgs e)
         {
             try
-            {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, resseting programmer preferences...");
-                }
-                catch { }
-
+            { 
+                debuglog("GCstudio, resetting programmer preferences...");
 
                 File.Copy("use_in_master\\use.ini", "gcbasic\\use.ini", true);
                 MessageBox.Show("The Programmer Preferences has been reset successfully.", "Reset Programmer Preferences", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while reseting programmer preferences.");
-                }
-                catch { }
+                debuglog("ERROR GCstudio, an error occurred while resetting programmer preferences." + " > " + ex.Message + " @ " + ex.StackTrace);
 
-
-                MessageBox.Show("Error while reseting programmer preferences.");
+                MessageBox.Show("Error while resetting programmer preferences.");
             }
         }
 
@@ -1921,13 +1467,7 @@ namespace GC_Studio
 
         private void button12_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, launching force update...");
-                debuglog.CloseWrite();
-            }
-            catch { }
-
+                debuglog("GCstudio, launching force update...");
 
             ProcessStartInfo p = new ProcessStartInfo();
             Process x;
@@ -1939,8 +1479,9 @@ namespace GC_Studio
                 x = Process.Start(p);
                 Environment.Exit(0);
             }
-            catch
+            catch (Exception ex)
             {
+                debuglog("ERROR GCstudio, an error occurred when launching the force update..." + " > " + ex.Message + " @ " + ex.StackTrace);
                 MessageBox.Show("An error occurred when launching the Force Update");
             }
         }
@@ -1949,43 +1490,24 @@ namespace GC_Studio
         {
             if (MessageBox.Show("Do you really want to reset GC Studio to factory settings? This will clear all IDE user configurations, reset programmer preferences, remove all installed extensions and set GC Studio to its default settings.", "Reset To Factory Settings.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, restore GCstudio factory settings started...");
-                }
-                catch { }
-
+                debuglog("GCstudio, restore GCstudio factory settings started...");
 
                 try
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, reseting programmer preferences...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio, resetting programmer preferences...");
 
                     File.Copy("use_in_master\\use.ini", "gcbasic\\use.ini", true);
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred while reseting programmer preferences.");
-                    }
-                    catch { }
+                    debuglog("ERROR GCstudio, an error occurred while resetting programmer preferences." + " > " + ex.Message + " @ " + ex.StackTrace);
 
-
-                    MessageBox.Show("Error while reseting programmer preferences.");
+                    MessageBox.Show("Error while resetting programmer preferences.");
                 }
 
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, starting reset to factory tool...");
-                }
-                catch { }
 
+                debuglog("GCstudio, starting reset to factory tool...");
 
                 ProcessStartInfo p = new ProcessStartInfo();
                 Process x;
@@ -1997,14 +1519,9 @@ namespace GC_Studio
                     x = Process.Start(p);
                     Environment.Exit(0);
                 }
-                catch
+                catch (Exception ex) 
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred when launching the reset to factory tool.");
-                    }
-                    catch { }
-
+                    debuglog("ERROR GCstudio, an error occurred when launching the reset to factory tool." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                     MessageBox.Show("An error occurred when launching the Reset To Factory Tool");
                 }
@@ -2013,12 +1530,7 @@ namespace GC_Studio
 
         private void button14_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, starting the prefseditor tool...");
-            }
-            catch { }
-
+            debuglog("GCstudio, starting the prefseditor tool...");
 
             ProcessStartInfo p = new ProcessStartInfo();
             Process x;
@@ -2029,14 +1541,9 @@ namespace GC_Studio
                 p.WindowStyle = ProcessWindowStyle.Maximized;
                 x = Process.Start(p);
             }
-            catch
+            catch (Exception ex)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio, an error ocurred when launching the prefseditor tool.");
-                }
-                catch { }
-
+                debuglog("ERROR GCstudio, an error occurred when launching the prefseditor tool." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 MessageBox.Show("An error occurred when launching the PrefsEditor Tool");
             }
@@ -2082,12 +1589,7 @@ namespace GC_Studio
 
         private void button15_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio, opening donate link...");
-            }
-            catch { }
-
+            debuglog("GCstudio, opening donate link...");
 
             Process.Start("explorer", DonateLink);
         }
@@ -2110,6 +1612,24 @@ namespace GC_Studio
         {
             Process.Start("explorer", Demonstrations);
         }
+
+        /// <summary>
+        /// Debug Logger
+        /// </summary>
+        /// <param name="logstr"></param>
+        public void debuglog(string logstr)
+        {
+            DataFileEngine dl = new DataFileEngine();
+            try
+            {
+                dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/GCstudio" + Loader.AppVer.ToString() + ".log", true);
+                dl.RecordData(DateTime.UtcNow.ToString("[yyyy-MM-dd][HH:mm:ss.fff]") + ">>>\t" + logstr);
+                dl.CloseWrite();
+            }
+            catch { }
+        }
+
+
     }
 }
 

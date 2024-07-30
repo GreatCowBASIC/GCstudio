@@ -15,7 +15,7 @@ namespace GC_Studio
 {
     public partial class Loader : Form
     {
-        DataFileEngine debuglog = new DataFileEngine();
+        
         DataFileEngine dfe = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         ConfigSchema Config = new ConfigSchema();
@@ -45,22 +45,15 @@ namespace GC_Studio
         /// </summary>
         public Loader()
         {
-            try
-            {
-                debuglog.LoadWrite("/Log/GCstudio" + AppVer.ToString() + ".log");
-            }
-            catch { }
-
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio started, initializing...");
-            }
-            catch { }
+            debuglog("");
+            debuglog("");
+            debuglog("GCstudio Loader, starting GCstudio, initializing loader...");
 
             InitializeComponent();
             this.Shown += new System.EventHandler(this.Form_Shown);
 
         }
+
 
 
         /// <summary>
@@ -70,13 +63,17 @@ namespace GC_Studio
         /// <param name="e"></param>
         private void Loader_Load(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, setting round corners on splash screen...");
-            }
-            catch { }
+
+            debuglog("GCstudio Loader, setting round corners on splash screen...");
+       
 
             RoundCorners(this);
+
+
+            debuglog("GCstudio Loader, setting current directory: " + AppDomain.CurrentDomain.BaseDirectory);
+
+
+
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
 
@@ -84,11 +81,9 @@ namespace GC_Studio
 
             if (!this.IsElevated)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, testing if can write on install path...");
-                }
-                catch { }
+
+                debuglog("GCstudio Loader, testing if can write on install path...");
+
 
                 try
                 {
@@ -97,24 +92,13 @@ namespace GC_Studio
                     dfe.CloseWrite();
                     File.Delete("access.dat");
 
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Access granted");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio Loader, Access granted");
 
                 }
                 catch
                 {
 
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Access denied, trying to restart as Elevated...");
-                        debuglog.CloseWrite();
-                    }
-                    catch { }
-
+                    debuglog("GCstudio Loader, Access denied, trying to restart as Elevated...");
 
                     this.Visible = false;
                     try
@@ -146,9 +130,10 @@ namespace GC_Studio
                         x = Process.Start(p);
                         Environment.Exit(0);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("The current Install Path doesnt have write rights, this requires GC Studio to run Elevated.");
+                        debuglog("ERROR GCstudio Loader, launching GCstudio elevated failed, exiting." + " > " + ex.Message + " @ " + ex.StackTrace);
+                        MessageBox.Show("The current Install Path doesn't have write rights, this requires GC Studio to run Elevated.");
                         Environment.Exit(0);
                     }
 
@@ -156,64 +141,40 @@ namespace GC_Studio
             }
 
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, looking for arguments...");
-            }
-            catch { }
-
+                debuglog("GCstudio Loader, looking for arguments...");
 
             if (arguments.Length > 1)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, arguments found, first argument:" + arguments[1]);
-                }
-                catch { }
+
+                    debuglog("GCstudio Loader, arguments found, first argument:" + arguments[1]);
 
 
                 switch (arguments[1])
                 {
                     case "/pkp" or "-p" or "--pkp":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, aborting loader process...");
-                            debuglog.CloseWrite();
-                        }
-                        catch { }
+
+                        debuglog("GCstudio Loader, aborting loader process...");
 
                         this.Close();
                         break;
 
                     case "/settings" or "-s" or "--settings":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, aborting loader process...");
-                            debuglog.CloseWrite();
-                        }
-                        catch { }
+
+                        debuglog("GCstudio Loader, aborting loader process...");
 
                         this.Close();
                         break;
 
                     case "/about" or "-a" or "--about":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, aborting loader process...");
-                            debuglog.CloseWrite();
-                        }
-                        catch { }
+
+                        debuglog("GCstudio Loader, aborting loader process...");
 
                         this.Close();
                         break;
 
                     case "/forceupdate" or "-f" or "--forceupdate":
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, getting ready for a Force Update...");
-                        }
-                        catch { }
 
+                        debuglog("GCstudio Loader, getting ready for a Force Update...");
 
                         try
                         {
@@ -232,20 +193,12 @@ namespace GC_Studio
 
             }
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, setting up version number on splash...");
-            }
-            catch { }
+            debuglog("GCstudio Loader, setting up version number on splash...");
 
             Version.Text = "Version " + AppVer;
             Copyright.Text = ((AssemblyCopyrightAttribute)Assembly.GetExecutingAssembly().GetCustomAttribute(typeof(AssemblyCopyrightAttribute))).Copyright;
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Starting thread to update GCBASIC_INSTALL_PATH Environment variable...");
-            }
-            catch { }
+            debuglog("GCstudio Loader, Starting thread to update GCBASIC_INSTALL_PATH Environment variable...");
 
 
             EnvVarThread.Start();
@@ -273,13 +226,8 @@ namespace GC_Studio
             continueflag = true;
             if (MinSplash.Enabled == false)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Closing flag for loader reached continuing to main panel...");
-                    debuglog.CloseWrite();
-                }
-                catch { }
 
+                debuglog("GCstudio Loader, Closing flag for loader reached continuing to main panel...");
 
                 this.Close();
             }
@@ -290,61 +238,17 @@ namespace GC_Studio
         /// </summary>
         private void LoadConfig()
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, loading configuration started...");
-            }
-            catch { }
 
-
+            debuglog("GCstudio Loader, loading configuration started...");
     
-                //Load old App Config
-                if (File.Exists("config.ini"))
-                {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  Old config.ini detected, reading ReleaseChanel from it...");
-                    }
-                    catch { }
 
-                    try
-                    {
-                        dfe.LoadRead("config.ini");
-                        Config.GCstudio.ReleaseChanel = dfe.ReadData();
-                        dfe.CloseRead();
-                    }
-                    catch
-                    {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, Failed to read config.ini, trying to fix...");
-                        }
-                        catch { }
-                        try
-                        {
-                            File.Delete("config.ini");
-                        }
-                        catch
-                        {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, Could not delete config.ini, giving up...");
-                            }
-                            catch { }
-                        }
-
-                }
-                }
-                else
                 //load app config
                 {
-                    if (File.Exists("GCstudio.config.json"))
-                    {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, GCstudio.config.json detected, reading and deserializing it...");
-                    }
-                    catch { }
+                if (File.Exists("GCstudio.config.json"))
+                {
+
+                    debuglog("GCstudio Loader, GCstudio.config.json detected, reading and deserializing it...");
+
 
                     try
                     {
@@ -352,29 +256,28 @@ namespace GC_Studio
                         Config = json.DeserializeObject<ConfigSchema>(dfe.ReadAll());
                         dfe.CloseRead();
                     }
-                    catch
+                    catch (Exception ex1)
                     {
+
+                        debuglog("ERROR GCstudio Loader, failed to read and deserialize GCstudio.config.json." + " > " + ex1.Message + ex1.StackTrace);
+
                         try
                         {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, failed to read and deserialize GCstudio.config.json, trying to fix...");
-                        }
-                        catch { }
-                        try
-                        {
+                            debuglog("GCstudio Loader, trying to fix config file...");
+                            dfe.CloseRead();
                             File.Delete("GCstudio.config.json");
+                            debuglog("GCstudio Loader, fix applied.");
                         }
-                        catch
+                        catch (Exception ex2)
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, Could not delete GCstudio.config.json, giving up...");
-                            }
-                            catch { }
+                            debuglog("ERROR GCstudio Loader, Could not delete GCstudio.config.json, giving up..." + " > " + ex2.Message + " @ " + ex2.StackTrace);
+
                         }
 
                     }
                 }
                 }
+            
             
 
         }
@@ -389,12 +292,7 @@ namespace GC_Studio
         private void Form_Shown(object sender, EventArgs e)
         {
 
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Clearing update cache...");
-            }
-            catch { }
-
+            debuglog("GCstudio Loader, Clearing update cache...");
 
             MinSplash.Enabled = true;
             //Clear Update Cache
@@ -413,33 +311,19 @@ namespace GC_Studio
             LoadConfig();
 
             //Download CVS
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Detecting Network...");
-            }
-            catch { }
 
+            debuglog("GCstudio Loader, Detecting Network...");
 
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Network detected, downloading CVS manifest...");
-                }
-                catch { }
-
+                debuglog("GCstudio Loader, Network detected, downloading CVS manifest...");
 
                 WebClientCVS.DownloadFileCompleted += OnCVSDownloadCompleted;
                 WebClientCVS.DownloadFileAsync(new Uri(ReleasePath + "cvs" + Config.GCstudio.ReleaseChanel + ".nfo"), "cvs.nfo");
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, No network detected, exiting updater...");
-                }
-                catch { }
-
+                debuglog("GCstudio Loader, No network detected, exiting updater...");
 
                 EndForm();
             }
@@ -456,33 +340,22 @@ namespace GC_Studio
         {
             if (e.Cancelled)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, cvs manifest download canceled by user, exiting updater...");
-                }
-                catch { }
+                debuglog("GCstudio Loader, cvs manifest download canceled by user, exiting updater...");
 
                 EndForm();
             }
             else if (e.Error is object)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, an error ocurred while downloading cvs manifest, exiting updater...");
-                }
-                catch { }
 
+                debuglog("ERROR GCstudio Loader, an error ocurred while downloading cvs manifest, exiting updater..." + " > " + e.Error.ToString());
 
                 //Exit by disconnection or lack of CVS 
                 EndForm();
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, cvs manifest downloaded, appending it...");
-                }
-                catch { }
+
+                debuglog("GCstudio Loader, cvs manifest downloaded, appending it...");
 
                 try
                 {
@@ -496,43 +369,24 @@ namespace GC_Studio
                     double.TryParse(dfe.ReadData(), Style, Provider, out ManifestMinVer);
                     dfe.CloseRead();
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, an error ocurred while appending the cvs manifest...");
-                    }
-                    catch { }
 
+                    debuglog("ERROR GCstudio Loader, an error occurred while appending the cvs manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 }
 
                 if (AppVer >= ManifestMinVer)
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, There is no update available...");
-                    }
-                    catch { }
-
+                    debuglog("GCstudio Loader, There is no update available...");
 
                     if (ManifestVer > AppVer || forceupdate)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Starting the Update...");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio Loader, Starting the Update...");
 
                         if (File.Exists("post.dat"))
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARNING GCstudio Loader, Previous update error detected, warning user...");
-                            }
-                            catch { }
-
+                            debuglog("WARNING GCstudio Loader, Previous update error detected, warning user...");
 
                             MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             EndForm();
@@ -541,12 +395,8 @@ namespace GC_Studio
                         {
                             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
                             {
-                                try
-                                {
-                                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Downloading the update package...");
-                                }
-                                catch { }
 
+                                debuglog("GCstudio Loader, Downloading the update package...");
 
                                 try
                                 {
@@ -558,25 +408,16 @@ namespace GC_Studio
                                     WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
                                     WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
                                 }
-                                catch
+                                catch (Exception ex)
                                 {
-                                    try
-                                    {
-                                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, an error ocurred while downloading the update pakage.");
-                                    }
-                                    catch { }
 
+                                    debuglog("ERROR GCstudio Loader, an error occurred while downloading the update pakage." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                                 }
                             }
                             else
                             {
-                                try
-                                {
-                                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Exiting updater...");
-                                }
-                                catch { }
-
+                                debuglog("GCstudio Loader, Exiting updater...");
 
                                 EndForm();
                             }
@@ -584,24 +425,14 @@ namespace GC_Studio
                     }
                     else
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Exiting updater...");
-                        }
-                        catch { }
-
+                        debuglog("GCstudio Loader, Exiting updater...");
 
                         EndForm();
                     }
                 }
                 else
                 {
-                    try
-                    {
-                        debuglog.RecordData(DateTime.Now.ToString() + ">>>  WARNING GCstudio Loader, unsupported version of GCstudio detected, warning user and exiting updater...");
-                    }
-                    catch { }
-
+                    debuglog("WARNING GCstudio Loader, unsupported version of GCstudio detected, warning user and exiting updater...");
 
                     MessageBox.Show("A new update is available, but the current installed version is too old to update, please download and install the current version of GC Studio.", "Unsupported GC Studio Version", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EndForm();
@@ -638,49 +469,28 @@ namespace GC_Studio
             ProgressUpdate.Value = 100;
             if (e.Cancelled)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Update canceled by user, exiting updater...");
-                }
-                catch { }
-
+                debuglog("GCstudio Loader, Update canceled by user, exiting updater...");
 
                 MessageBox.Show("Update canceled by user.");
                 EndForm();
             }
             else if (e.Error is object)
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, an error ocurred while downloading the update package, exiting updater...");
-                }
-                catch { }
-
+                debuglog("ERROR GCstudio Loader, an error occurred while downloading the update package, exiting updater...");
 
                 MessageBox.Show("There was a problem downloading the update.");
                 EndForm();
             }
             else
             {
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, update package download complete, verifying...");
-                }
-                catch { }
-
+                debuglog("GCstudio Loader, update package download complete, verifying...");
 
                 try
                 {
                     UpdateChecksum = dfe.CreateMD5Sum("update.pkg");
                     if (UpdateChecksum == ManifestChecksum)
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, update package checksum match, starting the update process...");
-                        }
-                        catch { }
-
-
+                        debuglog("GCstudio Loader, update package checksum match, starting the update process...");
 
                         try
                         {
@@ -693,12 +503,7 @@ namespace GC_Studio
                         }
                         catch
                         {
-                            try
-                            {
-                                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, an error ocurred while launching the update process, exiting updater...");
-                            }
-                            catch { }
-
+                            debuglog("GCstudio Loader, an error occurred while launching the update process, exiting updater...");
 
                             MessageBox.Show("Error starting the update.");
                             EndForm();
@@ -706,11 +511,7 @@ namespace GC_Studio
                     }
                     else
                     {
-                        try
-                        {
-                            debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, update package checksum missmatch, exiting updater...");
-                        }
-                        catch { }
+                        debuglog("ERROR GCstudio Loader, update package checksum mismatch, exiting updater...");
 
                         EndForm();
 
@@ -719,13 +520,7 @@ namespace GC_Studio
                 catch
                 {
                 }
-
-                try
-                {
-                    debuglog.RecordData(DateTime.Now.ToString() + ">>>  ERROR GCstudio Loader, an error ocurred while verifying the update package, exiting updater...");
-                }
-                catch { }
-
+                debuglog("ERROR GCstudio Loader, an error occurred while verifying the update package, exiting updater...");
 
                 MessageBox.Show("Error starting the update.");
                 EndForm();
@@ -751,24 +546,14 @@ namespace GC_Studio
 
         private void BtnMini_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, minimizing the splash by user request...");
-            }
-            catch { }
-
+            debuglog("GCstudio Loader, minimizing the splash by user request...");
 
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                debuglog.RecordData(DateTime.Now.ToString() + ">>>  GCstudio Loader, Aborting the updater by user request...");
-            }
-            catch { }
-
+            debuglog("GCstudio Loader, Aborting the updater by user request...");
 
             if (downloading == false)
             {
@@ -815,8 +600,25 @@ namespace GC_Studio
             }
         }
 
+        /// <summary>
+        /// Debug Logger
+        /// </summary>
+        /// <param name="logstr"></param>
+        public void debuglog(string logstr)
+        {
+            DataFileEngine dl = new DataFileEngine();
+            try
+            {
+                dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/GCstudio" + Loader.AppVer.ToString() + ".log", true);
+                dl.RecordData(DateTime.UtcNow.ToString("[yyyy-MM-dd][HH:mm:ss.fff]") + ">>>\t" + logstr);
+                dl.CloseWrite();
+            }
+            catch { }
+        }
+
 
     }
+
 
 
 }
