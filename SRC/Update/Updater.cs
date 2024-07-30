@@ -5,12 +5,14 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Update
 {
     public partial class Updater : Form
     {
         DataFileEngine dfe = new DataFileEngine();
+        public const double AppVer = 1.0201;
         double ManifestVer = 0;
         string ManifestPKG;
         string ManifestChecksum;
@@ -20,12 +22,19 @@ namespace Update
 
         public Updater()
         {
+            debuglog("");
+            debuglog("");
+            debuglog("Updater, starting Updater, initializing...");
+
             InitializeComponent();
         }
 
         private void Updater_Load(object sender, EventArgs e)
         {
+            debuglog("Updater, setting round corners on splash...");
             RoundCorners(this);
+
+            debuglog("Updater, looking for process Code and GCstudio, trying to kill...");
             foreach (var process in Process.GetProcessesByName("Code"))
             {
                 process.Kill();
@@ -35,6 +44,7 @@ namespace Update
                 process.Kill();
             }
             InitialDelay.Enabled = true;
+            debuglog("Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
         }
 
         private void InitialDelay_Tick(object sender, EventArgs e)
@@ -45,9 +55,11 @@ namespace Update
 
         private void StartUpdate()
         {
+            debuglog("Updater, starting the update, looking for CVS manifest...");
 
             if (File.Exists("cvs.nfo"))
             {
+                debuglog("Updater, CVS manifest detected, loading it...");
                 dfe.LoadRead("cvs.nfo");
                 double.TryParse(dfe.ReadData(), out ManifestVer);
                 ManifestPKG = dfe.ReadData();
@@ -56,9 +68,15 @@ namespace Update
                 ManifestNotes = dfe.ReadData();
                 AppExe = dfe.ReadData();
                 dfe.CloseRead();
+                debuglog("Updater, ManifestVer= " + ManifestVer);
+                debuglog("Updater, ManifestChecksumr= " + ManifestChecksum);
+                debuglog("Updater, ManifestTitle= " + ManifestTitle);
+                debuglog("Updater, ManifestNotes= " + ManifestNotes);
+                debuglog("Updater, AppExe= " + AppExe);
             }
             else
             {
+                debuglog("WARNING Updater, CVS manifest not found, aborting update...");
                 Environment.Exit(0);
             }
 
@@ -66,6 +84,7 @@ namespace Update
 
             try
             {
+                debuglog("Updater, applying update package...");
                 ProcessStartInfo p = new ProcessStartInfo();
                 p.FileName = "minidump.exe";
                 p.Arguments = "x Update.pkg -y";
@@ -74,32 +93,38 @@ namespace Update
                 Process x = Process.Start(p);
                 x.WaitForExit();
             }
-            catch
+            catch (Exception ex) 
             {
+                debuglog("ERROR Updater, an error occurred while applying the update, aborting update..." + " > " + ex.Message + " @ " + ex.StackTrace);
                 MessageBox.Show("Error applying update.");
                 Environment.Exit(0);
             }
 
             try
             {
+                debuglog("Updater, removing CVS manifest...");
                 System.IO.File.Delete("cvs.nfo");
             }
-            catch
+            catch(Exception ex) 
             {
+                debuglog("ERROR Updater, an error occurred while removing the CVS manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
             try
             {
+                debuglog("Updater, removing update package...");
                 System.IO.File.Delete("update.pkg");
             }
-            catch
+            catch (Exception ex)
             {
+                debuglog("ERROR Updater, an error occurred while removing the update package..." + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
 
 
             try
             {
+                debuglog("Updater, update finished, starting the application...");
                 ProcessStartInfo p = new ProcessStartInfo();
                 p.FileName = AppExe;
                 //p.Arguments = "";
@@ -107,8 +132,9 @@ namespace Update
                 Process x = Process.Start(p);
                 Environment.Exit(0);
             }
-            catch
+            catch (Exception ex)
             {
+                debuglog("ERROR Updater, an error occurred while starting the application..." + " > " + ex.Message + " @ " + ex.StackTrace);
                 MessageBox.Show("Error starting the application.");
                 Environment.Exit(0);
             }
@@ -145,6 +171,25 @@ namespace Update
         {
             e.Cancel = true;
         }
+
+
+        /// <summary>
+        /// Debug Logger
+        /// </summary>
+        /// <param name="logstr"></param>
+        public void debuglog(string logstr)
+        {
+            DataFileEngine dl = new DataFileEngine();
+            try
+            {
+                dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/Updater" + Updater.AppVer.ToString() + ".log", true);
+                dl.RecordData(DateTime.UtcNow.ToString("[yyyy-MM-dd][HH:mm:ss.fff]") + ">>>\t" + logstr);
+                dl.CloseWrite();
+            }
+            catch { }
+        }
+
+
     }
 
 
