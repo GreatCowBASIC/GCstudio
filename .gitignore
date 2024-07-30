@@ -17,23 +17,38 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+SRC/GCstudio/[Dd]ebug/
+SRC/GCstudio/[Dd]ebugPublic/
+SRC/GCstudio/[Rr]elease/
+SRC/GCstudio/[Rr]eleases/
+SRC/GCstudio/x64/
+SRC/GCstudio/x86/
+SRC/GCstudio/[Ww][Ii][Nn]32/
+SRC/GCstudio/[Aa][Rr][Mm]/
+SRC/GCstudio/[Aa][Rr][Mm]64/
+SRC/GCstudio/bld/
+SRC/GCstudio/[Bb]in/
+SRC/GCstudio/[Oo]bj/
+SRC/GCstudio/[Ll]og/
+SRC/GCstudio/[Ll]ogs/
+
+SRC/Update/[Dd]ebug/
+SRC/Update/[Dd]ebugPublic/
+SRC/Update/[Rr]elease/
+SRC/Update/[Rr]eleases/
+SRC/Update/x64/
+SRC/Update/x86/
+SRC/Update/[Ww][Ii][Nn]32/
+SRC/Update/[Aa][Rr][Mm]/
+SRC/Update/[Aa][Rr][Mm]64/
+SRC/Update/bld/
+SRC/Update/[Bb]in/
+SRC/Update/[Oo]bj/
+SRC/Update/[Ll]og/
+SRC/Update/[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-.vs/
+SRC/.vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
