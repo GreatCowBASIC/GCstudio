@@ -23,6 +23,7 @@ namespace GC_Studio
         string[] arguments;
         string ideargs = "";
         readonly string BugTracking = "https://www.gcbasic.com/bugtracking/bug_report_page.php";
+        readonly string Demonstrations = "https://sourceforge.net/projects/gcbasic/files/GCStudio%20-%20Complete%20IDE%20and%20Toolchain%20for%20Windows/GCBdemonstrationsPack.exe/download";
         readonly string DonateLink = "https://paypal.me/gcbasic";
         ListViewItem[] RecentItem = new ListViewItem[10];
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
@@ -2103,6 +2104,11 @@ namespace GC_Studio
             {
                 buttondonate.Visible = true;
             }
+        }
+
+        private void buttondemonstrations_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer", Demonstrations);
         }
     }
 }
