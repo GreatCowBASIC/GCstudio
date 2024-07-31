@@ -255,6 +255,29 @@ namespace GC_Studio
             Process.Start("explorer", "https://www.gcbasic.com");
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            debuglog("INFO GCstudio About, starting GCdebug tool...");
+
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = "GCdebug.exe";
+                p.Arguments = "";
+                p.WindowStyle = ProcessWindowStyle.Maximized;
+                x = Process.Start(p);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio About, an error occurred when launching the GCdebug tool." + " > " + ex.Message + " @ " + ex.StackTrace);
+
+                MessageBox.Show("An error occurred when launching the GCdebug tool");
+            }
+        }
+
+
 
         /// <summary>
         /// Debug Logger
@@ -279,5 +302,6 @@ namespace GC_Studio
             catch { }
         }
 
+        
     }
 }
