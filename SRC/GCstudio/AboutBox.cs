@@ -12,7 +12,7 @@ namespace GC_Studio
         DataFileEngine dfe = new DataFileEngine();
         public AboutBox()
         {
-            debuglog("GCstudio About, initializing main panel...");
+            debuglog("INFO GCstudio About, initializing main panel...");
 
             InitializeComponent();
 
@@ -108,7 +108,7 @@ namespace GC_Studio
             labelver.Text = Loader.AppVer.ToString();
             labelinstall.Text = AppDomain.CurrentDomain.BaseDirectory;
 
-            debuglog("GCstudio About, loading gcbasic version...");
+            debuglog("INFO GCstudio About, loading gcbasic version...");
             try
             {
                 dfe.LoadRead("gcbasic\\version.txt");
@@ -122,7 +122,7 @@ namespace GC_Studio
                 MessageBox.Show("Error when loading an about file.");
             }
 
-            debuglog("GCstudio About, loading toolchain version...");
+            debuglog("INFO GCstudio About, loading toolchain version...");
             try
             {
                 dfe.LoadRead("toolchainversion.txt");
@@ -135,7 +135,7 @@ namespace GC_Studio
                 MessageBox.Show("Error when loading an about file.");
             }
 
-            debuglog("GCstudio About, loading gccode version...");
+            debuglog("INFO GCstudio About, loading gccode version...");
             try
             {
                 dfe.LoadRead("vscode\\version.txt");
@@ -148,7 +148,7 @@ namespace GC_Studio
                 MessageBox.Show("Error when loading an about file.");
             }
 
-            debuglog("GCstudio About, loading fbasic version...");
+            debuglog("INFO GCstudio About, loading fbasic version...");
             try
             {
                 dfe.LoadRead("FBasic\\version.txt");
@@ -165,7 +165,7 @@ namespace GC_Studio
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, loading acknowlewdgements...");
+            debuglog("INFO GCstudio About, loading acknowlewdgements...");
             try
             {
                 dfe.LoadRead("gcbasic\\Documentation\\acknowledgements.txt");
@@ -182,7 +182,7 @@ namespace GC_Studio
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, loading license...");
+            debuglog("INFO GCstudio About, loading license...");
             try
             {
                 dfe.LoadRead("gcbasic\\Documentation\\license.txt");
@@ -199,7 +199,7 @@ namespace GC_Studio
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, loading readme...");
+            debuglog("INFO GCstudio About, loading readme...");
             try
             {
                 dfe.LoadRead("gcbasic\\Documentation\\readme.txt");
@@ -216,19 +216,19 @@ namespace GC_Studio
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, launching changelog in the explorer...");
+            debuglog("INFO GCstudio About, launching changelog in the explorer...");
             Process.Start("explorer", "https://www.gcbasic.com/bugtracking/changelog_page.php");
         }
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, launching roadmap in the explorer...");
+            debuglog("INFO GCstudio About, launching roadmap in the explorer...");
             Process.Start("explorer", "https://www.gcbasic.com/bugtracking/roadmap_page.php");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, launching bugreport in the explorer...");
+            debuglog("INFO GCstudio About, launching bugreport in the explorer...");
             Process.Start("explorer", "https://www.gcbasic.com/bugtracking/bug_report_page.php");
         }
 
@@ -251,7 +251,7 @@ namespace GC_Studio
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("GCstudio About, launching gcbasic.com in the explorer...");
+            debuglog("INFO GCstudio About, launching gcbasic.com in the explorer...");
             Process.Start("explorer", "https://www.gcbasic.com");
         }
 
