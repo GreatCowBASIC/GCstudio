@@ -266,7 +266,14 @@ namespace GC_Studio
             try
             {
                 dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/GCstudio" + Loader.AppVer.ToString() + ".log", true);
-                dl.RecordData(DateTime.UtcNow.ToString("[yyyy-MM-dd][HH:mm:ss.fff]") + ">>>\t" + logstr);
+                if (logstr != null)
+                {
+                    dl.RecordData(DateTime.UtcNow.ToString("[yyyy-MM-ddTHH:mm:ss.fffZ]") + ">>>\t" + logstr);
+                }
+                else
+                {
+                    dl.RecordData("");
+                }
                 dl.CloseWrite();
             }
             catch { }

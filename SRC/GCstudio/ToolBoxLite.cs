@@ -26,7 +26,6 @@ namespace GC_Studio
         readonly string Demonstrations = "https://sourceforge.net/projects/gcbasic/files/GCStudio%20-%20Complete%20IDE%20and%20Toolchain%20for%20Windows/GCBdemonstrationsPack.exe/download";
         readonly string DonateLink = "https://paypal.me/gcbasic";
         ListViewItem[] RecentItem = new ListViewItem[10];
-        NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
 
         /// <summary>
@@ -196,7 +195,7 @@ namespace GC_Studio
                         debuglog("ERROR GCstudio, could not clear post update flag." + " > " + ex.Message + " @ " + ex.StackTrace);
                     }
                 }
-                catch (Exception ex2) 
+                catch (Exception ex2)
                 {
                     debuglog("ERROR GCstudio, an error occurred while launching post update process, exiting GCstudio." + " > " + ex2.Message + " @ " + ex2.StackTrace);
 
@@ -496,7 +495,7 @@ namespace GC_Studio
                 dfe.RecordData(json.SerializeObject(RecentFiles));
                 dfe.CloseWrite();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 debuglog("INFO GCstudio, an error occurred while saving recent file list." + " > " + ex.Message + " @ " + ex.StackTrace);
 
@@ -1050,7 +1049,7 @@ namespace GC_Studio
                         dfe.LoadRead(AppDomain.CurrentDomain.BaseDirectory + "vscode\\version.txt");
                         GCcodeVer = dfe.ReadData();
                         dfe.CloseRead();
-                        debuglog("DEBUG GCstudio, GCcodeVer="+GCcodeVer);
+                        debuglog("DEBUG GCstudio, GCcodeVer=" + GCcodeVer);
                     }
                     catch (Exception ex)
                     {
@@ -1075,7 +1074,7 @@ namespace GC_Studio
                         }
                         SaveConfig();
 
-                        debuglog("INFO GCstudio, starting process and log daemon...");
+                        debuglog("INFO GCstudio, starting GCstudio process and log daemon...");
                         this.ShowInTaskbar = false;
                         this.Hide();
 
@@ -1371,7 +1370,7 @@ namespace GC_Studio
         private void pkptool()
         {
             debuglog("INFO GCstudio, starting pkp tool...");
-        
+
             MessageBox.Show("This tool will clone an existing installation of PICKitPlus on your current GC Studio installation.\r\n\r\nPress Ok and select a directory with a working installation of PICKitPlus to clone.", "PICKitPlus Clone Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
             folderBrowserDialog.ShowDialog();
             if (File.Exists(folderBrowserDialog.SelectedPath + "\\PICkit2Plus.exe"))
@@ -1449,7 +1448,7 @@ namespace GC_Studio
                     try
                     {
                         debuglog("INFO GCstudio, manual architecture enabled, selecting 32bit...");
-                        
+
                         File.Copy("gcbasic\\gcbasic32.exe", "gcbasic\\gcbasic.exe", true);
                     }
                     catch (Exception ex)
@@ -1486,7 +1485,7 @@ namespace GC_Studio
                     try
                     {
                         if (Environment.Is64BitOperatingSystem)
-                        { 
+                        {
                             debuglog("INFO GCstudio, selecting 64bit...");
 
                             File.Copy("gcbasic\\gcbasic64.exe", "gcbasic\\gcbasic.exe", true);
@@ -1534,7 +1533,7 @@ namespace GC_Studio
         private void button11_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 debuglog("INFO GCstudio, resetting programmer preferences...");
 
                 File.Copy("use_in_master\\use.ini", "gcbasic\\use.ini", true);
@@ -1553,7 +1552,7 @@ namespace GC_Studio
 
         private void button12_Click(object sender, EventArgs e)
         {
-                debuglog("INFO GCstudio, launching force update...");
+            debuglog("INFO GCstudio, launching force update...");
 
             ProcessStartInfo p = new ProcessStartInfo();
             Process x;
@@ -1605,7 +1604,7 @@ namespace GC_Studio
                     x = Process.Start(p);
                     Environment.Exit(0);
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     debuglog("ERROR GCstudio, an error occurred when launching the reset to factory tool." + " > " + ex.Message + " @ " + ex.StackTrace);
 
@@ -1678,6 +1677,28 @@ namespace GC_Studio
             debuglog("INFO GCstudio, opening donate link...");
 
             Process.Start("explorer", DonateLink);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            debuglog("INFO GCstudio, starting GCdebug tool...");
+
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = "GCdebug.exe";
+                p.Arguments = "";
+                p.WindowStyle = ProcessWindowStyle.Maximized;
+                x = Process.Start(p);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio, an error occurred when launching the GCdebug tool." + " > " + ex.Message + " @ " + ex.StackTrace);
+
+                MessageBox.Show("An error occurred when launching the GCdebug tool");
+            }
         }
 
         private void comboHide_SelectedIndexChanged(object sender, EventArgs e)

@@ -65,6 +65,7 @@ namespace GC_Studio
             columnHeader1 = new System.Windows.Forms.ColumnHeader();
             buttonabout = new System.Windows.Forms.Button();
             panelconfig = new System.Windows.Forms.Panel();
+            button16 = new System.Windows.Forms.Button();
             comboHide = new System.Windows.Forms.ComboBox();
             label30 = new System.Windows.Forms.Label();
             combomode = new System.Windows.Forms.ComboBox();
@@ -684,6 +685,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            panelconfig.Controls.Add(button16);
             panelconfig.Controls.Add(comboHide);
             panelconfig.Controls.Add(label30);
             panelconfig.Controls.Add(combomode);
@@ -715,6 +717,18 @@ namespace GC_Studio
             panelconfig.Size = new System.Drawing.Size(1044, 963);
             panelconfig.TabIndex = 49;
             panelconfig.Visible = false;
+            // 
+            // button16
+            // 
+            button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button16.ForeColor = System.Drawing.Color.White;
+            button16.Location = new System.Drawing.Point(578, 870);
+            button16.Name = "button16";
+            button16.Size = new System.Drawing.Size(201, 72);
+            button16.TabIndex = 86;
+            button16.Text = "Open GC Studio Debug File Utility";
+            button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
             // 
             // comboHide
             // 
@@ -1405,9 +1419,9 @@ namespace GC_Studio
             Controls.Add(label6);
             Controls.Add(buttonclone);
             Controls.Add(pictureBox1);
+            Controls.Add(panelconfig);
             Controls.Add(panelmain);
             Controls.Add(panelnewproj);
-            Controls.Add(panelconfig);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MinimumSize = new System.Drawing.Size(1052, 965);
             Name = "ToolBoxLite";
@@ -1522,5 +1536,6 @@ namespace GC_Studio
         private System.Windows.Forms.ComboBox comboHide;
         private System.Windows.Forms.Label label30;
         internal System.Windows.Forms.Button buttondemonstrations;
+        private System.Windows.Forms.Button button16;
     }
 }
