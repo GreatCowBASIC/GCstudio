@@ -58,6 +58,7 @@
             label5 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
+            button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            textBoxDescription.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             textBoxDescription.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             textBoxDescription.ForeColor = System.Drawing.Color.White;
             textBoxDescription.Location = new System.Drawing.Point(33, 103);
@@ -450,6 +451,23 @@
             label10.TabIndex = 53;
             label10.Text = "For Microchip PIC, Atmel AVR and LogicGreen LGT microcontrollers.";
             // 
+            // button1
+            // 
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            button1.BackColor = System.Drawing.Color.DimGray;
+            button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button1.ForeColor = System.Drawing.Color.White;
+            button1.Location = new System.Drawing.Point(1007, 430);
+            button1.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(190, 81);
+            button1.TabIndex = 54;
+            button1.Text = "Create a Debug Dump File";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // AboutBox
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -457,6 +475,7 @@
             BackColor = System.Drawing.Color.FromArgb(10, 14, 43);
             ClientSize = new System.Drawing.Size(1257, 972);
             Controls.Add(textBoxDescription);
+            Controls.Add(button1);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label5);
@@ -524,5 +543,6 @@
         private System.Windows.Forms.Label labeltoolchain;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelinstall;
+        private System.Windows.Forms.Button button1;
     }
 }

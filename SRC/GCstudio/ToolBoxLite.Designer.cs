@@ -261,11 +261,11 @@ namespace GC_Studio
             // buttonwitout
             // 
             buttonwitout.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttonwitout.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttonwitout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttonwitout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttonwitout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttonwitout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonwitout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonwitout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonwitout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttonwitout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -282,11 +282,11 @@ namespace GC_Studio
             // buttonbug
             // 
             buttonbug.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            buttonbug.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttonbug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttonbug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttonbug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttonbug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttonbug.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonbug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonbug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttonbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -591,11 +591,11 @@ namespace GC_Studio
             // buttondemonstrations
             // 
             buttondemonstrations.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-            buttondemonstrations.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttondemonstrations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttondemonstrations.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttondemonstrations.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttondemonstrations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttondemonstrations.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttondemonstrations.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttondemonstrations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttondemonstrations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttondemonstrations.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             buttondemonstrations.ForeColor = System.Drawing.Color.CornflowerBlue;
@@ -606,6 +606,8 @@ namespace GC_Studio
             buttondemonstrations.Text = "Install or Update the Demonstration Sources";
             buttondemonstrations.UseVisualStyleBackColor = false;
             buttondemonstrations.Click += buttondemonstrations_Click;
+            buttondemonstrations.MouseLeave += buttondemonstrations_MouseLeave;
+            buttondemonstrations.MouseHover += buttondemonstrations_MouseHover;
             // 
             // buttondonate
             // 
@@ -646,7 +648,7 @@ namespace GC_Studio
             // listViewRecent
             // 
             listViewRecent.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            listViewRecent.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            listViewRecent.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             listViewRecent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             listViewRecent.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1 });
             listViewRecent.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -724,9 +726,9 @@ namespace GC_Studio
             button16.ForeColor = System.Drawing.Color.White;
             button16.Location = new System.Drawing.Point(578, 870);
             button16.Name = "button16";
-            button16.Size = new System.Drawing.Size(201, 72);
+            button16.Size = new System.Drawing.Size(181, 72);
             button16.TabIndex = 86;
-            button16.Text = "Open GC Studio Debug File Utility";
+            button16.Text = "Create a Debug Dump File";
             button16.UseVisualStyleBackColor = true;
             button16.Click += button16_Click;
             // 
@@ -895,17 +897,17 @@ namespace GC_Studio
             // buttongcbext
             // 
             buttongcbext.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttongcbext.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongcbext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttongcbext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongcbext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongcbext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongcbext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongcbext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongcbext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongcbext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongcbext.Location = new System.Drawing.Point(387, 463);
             buttongcbext.Name = "buttongcbext";
-            buttongcbext.Size = new System.Drawing.Size(301, 50);
+            buttongcbext.Size = new System.Drawing.Size(243, 50);
             buttongcbext.TabIndex = 71;
             buttongcbext.Text = "GC Studio Extension";
             buttongcbext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -917,17 +919,17 @@ namespace GC_Studio
             // buttongccode
             // 
             buttongccode.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttongccode.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongccode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttongccode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongccode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongccode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongccode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongccode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongccode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongccode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongccode.Location = new System.Drawing.Point(387, 407);
             buttongccode.Name = "buttongccode";
-            buttongccode.Size = new System.Drawing.Size(301, 50);
+            buttongccode.Size = new System.Drawing.Size(243, 50);
             buttongccode.TabIndex = 70;
             buttongccode.Text = "GC Code";
             buttongccode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -939,17 +941,17 @@ namespace GC_Studio
             // buttongstools
             // 
             buttongstools.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttongstools.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongstools.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttongstools.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongstools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttongstools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttongstools.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongstools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttongstools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttongstools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongstools.Location = new System.Drawing.Point(387, 348);
             buttongstools.Name = "buttongstools";
-            buttongstools.Size = new System.Drawing.Size(301, 50);
+            buttongstools.Size = new System.Drawing.Size(243, 50);
             buttongstools.TabIndex = 69;
             buttongstools.Text = "G+Stools";
             buttongstools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -961,17 +963,17 @@ namespace GC_Studio
             // buttoncompiler
             // 
             buttoncompiler.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttoncompiler.BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttoncompiler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttoncompiler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttoncompiler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
-            buttoncompiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            buttoncompiler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttoncompiler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttoncompiler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             buttoncompiler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttoncompiler.Location = new System.Drawing.Point(387, 290);
             buttoncompiler.Name = "buttoncompiler";
-            buttoncompiler.Size = new System.Drawing.Size(301, 50);
+            buttoncompiler.Size = new System.Drawing.Size(243, 50);
             buttoncompiler.TabIndex = 68;
             buttoncompiler.Text = "GC BASIC Compiler";
             buttoncompiler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1407,7 +1409,7 @@ namespace GC_Studio
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             ClientSize = new System.Drawing.Size(1044, 963);
             ControlBox = false;
             Controls.Add(BtnExit);
@@ -1419,9 +1421,9 @@ namespace GC_Studio
             Controls.Add(label6);
             Controls.Add(buttonclone);
             Controls.Add(pictureBox1);
-            Controls.Add(panelconfig);
             Controls.Add(panelmain);
             Controls.Add(panelnewproj);
+            Controls.Add(panelconfig);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MinimumSize = new System.Drawing.Size(1052, 965);
             Name = "ToolBoxLite";

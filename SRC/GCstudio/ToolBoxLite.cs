@@ -693,6 +693,16 @@ namespace GC_Studio
             buttonwitout.ForeColor = Color.CornflowerBlue;
         }
 
+        private void buttondemonstrations_MouseHover(object sender, EventArgs e)
+        {
+            buttondemonstrations.ForeColor = Color.White;
+        }
+
+        private void buttondemonstrations_MouseLeave(object sender, EventArgs e)
+        {
+            buttondemonstrations.ForeColor = Color.CornflowerBlue;
+        }
+
         private void buttonwitout_Click(object sender, EventArgs e)
         {
             if (Config.GCstudio.IDE == "GCcode")
@@ -1742,6 +1752,7 @@ namespace GC_Studio
             }
             catch { }
         }
+
 
 
     }
