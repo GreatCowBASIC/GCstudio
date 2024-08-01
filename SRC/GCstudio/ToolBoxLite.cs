@@ -1701,6 +1701,7 @@ namespace GC_Studio
                 p.Arguments = "";
                 p.WindowStyle = ProcessWindowStyle.Maximized;
                 x = Process.Start(p);
+                SetForegroundWindow(x.MainWindowHandle);
                 Environment.Exit(0);
             }
             catch (Exception ex)
