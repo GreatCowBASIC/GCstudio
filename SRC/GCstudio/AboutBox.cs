@@ -10,6 +10,9 @@ namespace GC_Studio
     partial class AboutBox : Form
     {
         DataFileEngine dfe = new DataFileEngine();
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int SetForegroundWindow(IntPtr hwnd);
+
         public AboutBox()
         {
             debuglog("INFO GCstudio About, initializing main panel...");
@@ -267,6 +270,7 @@ namespace GC_Studio
                 p.Arguments = "";
                 p.WindowStyle = ProcessWindowStyle.Maximized;
                 x = Process.Start(p);
+                SetForegroundWindow(x.MainWindowHandle);
                 Environment.Exit(0);
             }
             catch (Exception ex)
