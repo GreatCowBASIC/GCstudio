@@ -19,16 +19,11 @@ namespace GC_Studio
         DataFileEngine dfe = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         ConfigSchema Config = new ConfigSchema();
+        UpdateManifest CVS = new UpdateManifest();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
         public const double AppVer = 1.01142;
-        double ManifestVer = 0;
-        double ManifestMinVer = 0;
-        string ManifestPKG;
-        string ManifestChecksum;
-        string ManifestTitle;
-        string ManifestNotes;
-        string UpdateChecksum;
         string[] arguments;
+        string UpdateChecksum = null;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
         CultureInfo Provider = new CultureInfo("en-US");
 
@@ -70,7 +65,7 @@ namespace GC_Studio
             RoundCorners(this);
 
 
-            debuglog("DEBUG GCstudio Loader, setting current directory: " + AppDomain.CurrentDomain.BaseDirectory);
+            debuglog("DEBUG GCstudio Loader, setting current directory=" + AppDomain.CurrentDomain.BaseDirectory);
 
 
 
@@ -146,7 +141,7 @@ namespace GC_Studio
             if (arguments.Length > 1)
             {
 
-                    debuglog("INFO GCstudio Loader, arguments found, first argument:" + arguments[1]);
+                    debuglog("DEBUG GCstudio Loader, arguments found, first argument=" + arguments[1]);
 
 
                 switch (arguments[1])
@@ -304,7 +299,7 @@ namespace GC_Studio
 
             try
             {
-                System.IO.File.Delete("cvs.nfo");
+                System.IO.File.Delete("cvs.json");
             }
             catch { }
             //Configuration load call 
@@ -317,9 +312,10 @@ namespace GC_Studio
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
                 debuglog("INFO GCstudio Loader, Network detected, downloading CVS manifest...");
+                debuglog("DEBUG GCstudio Loader, Config.GCstudio.ReleaseChanel=" + Config.GCstudio.ReleaseChanel);
 
                 WebClientCVS.DownloadFileCompleted += OnCVSDownloadCompleted;
-                WebClientCVS.DownloadFileAsync(new Uri(ReleasePath + "cvs" + Config.GCstudio.ReleaseChanel + ".nfo"), "cvs.nfo");
+                WebClientCVS.DownloadFileAsync(new Uri(ReleasePath + "cvs" + Config.GCstudio.ReleaseChanel + ".json"), "cvs.json");
             }
             else
             {
@@ -355,34 +351,29 @@ namespace GC_Studio
             else
             {
 
-                debuglog("INFO GCstudio Loader, cvs manifest downloaded, appending it...");
+                debuglog("INFO GCstudio Loader, cvs manifest downloaded, loading and deserializing it...");
 
                 try
                 {
-                    dfe.LoadRead("cvs.nfo");
-                    double.TryParse(dfe.ReadData(), Style, Provider, out ManifestVer);
-                    ManifestPKG = dfe.ReadData();
-                    ManifestChecksum = dfe.ReadData();
-                    ManifestTitle = dfe.ReadData();
-                    ManifestNotes = dfe.ReadData();
-                    dfe.ReadData();
-                    double.TryParse(dfe.ReadData(), Style, Provider, out ManifestMinVer);
+                    dfe.LoadRead("cvs.json");
+                    CVS = json.DeserializeObject<UpdateManifest>(dfe.ReadAll());
                     dfe.CloseRead();
                 }
                 catch (Exception ex)
                 {
 
-                    debuglog("ERROR GCstudio Loader, an error occurred while appending the cvs manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
+                    debuglog("ERROR GCstudio Loader, an error occurred while loading and deserializing the cvs manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
 
                 }
 
-                if (AppVer >= ManifestMinVer)
+                if (AppVer >= CVS.UpdateInfo.ManifestMinVer)
                 {
                     debuglog("INFO GCstudio Loader, There is no update available...");
 
-                    if (ManifestVer > AppVer || forceupdate)
+                    if (CVS.UpdateInfo.ManifestVer > AppVer || forceupdate)
                     {
-                        debuglog("INFO GCstudio Loader, Starting the Update...");
+                        debuglog("INFO GCstudio Loader, update available, starting the update...");
+                        debuglog("DEBUG GCstudio Loader, CVS.UpdateInfo.ManifestVer="+ CVS.UpdateInfo.ManifestVer);
 
                         if (File.Exists("post.dat"))
                         {
@@ -406,7 +397,7 @@ namespace GC_Studio
                                     ProgressUpdate.Visible = true;
                                     WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
                                     WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
-                                    WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + ManifestPKG), "update.pkg");
+                                    WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + CVS.UpdateInfo.ManifestPKG), "update.pkg");
                                 }
                                 catch (Exception ex)
                                 {
@@ -433,6 +424,7 @@ namespace GC_Studio
                 else
                 {
                     debuglog("WARNING GCstudio Loader, unsupported version of GCstudio detected, warning user and exiting updater...");
+                    debuglog("DEBUG GCstudio Loader, CVS.UpdateInfo.ManifestMinVer=" + CVS.UpdateInfo.ManifestMinVer);
 
                     MessageBox.Show("A new update is available, but the current installed version is too old to update, please download and install the current version of GC Studio.", "Unsupported GC Studio Version", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EndForm();
@@ -488,7 +480,7 @@ namespace GC_Studio
                 try
                 {
                     UpdateChecksum = dfe.CreateMD5Sum("update.pkg");
-                    if (UpdateChecksum == ManifestChecksum)
+                    if (UpdateChecksum == CVS.UpdateInfo.ManifestChecksum)
                     {
                         debuglog("INFO GCstudio Loader, update package checksum match, starting the update process...");
 
@@ -496,7 +488,7 @@ namespace GC_Studio
                         {
                             ProcessStartInfo p = new ProcessStartInfo();
                             p.FileName = "update.exe";
-                            // p.Arguments = "";
+                            p.Arguments = "-a";
                             p.WindowStyle = ProcessWindowStyle.Normal;
                             Process x = Process.Start(p);
                             Environment.Exit(0);

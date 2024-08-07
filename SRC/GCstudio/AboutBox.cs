@@ -117,7 +117,6 @@ namespace GC_Studio
                 dfe.LoadRead("gcbasic\\version.txt");
                 labelcomp.Text = dfe.ReadData();
                 dfe.CloseRead();
-                debuglog(labelcomp.Text);
             }
             catch (Exception ex)
             {
