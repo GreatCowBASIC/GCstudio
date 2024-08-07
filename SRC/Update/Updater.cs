@@ -12,13 +12,11 @@ namespace Update
     public partial class Updater : Form
     {
         DataFileEngine dfe = new DataFileEngine();
+        JsonConvert json = new JsonConvert();
+        UpdateManifest CVS = new UpdateManifest();
         public const double AppVer = 1.0201;
-        double ManifestVer = 0;
-        string ManifestPKG;
-        string ManifestChecksum;
-        string ManifestTitle;
-        string ManifestNotes;
-        string AppExe;
+        string[] arguments;
+
 
         public Updater()
         {
@@ -27,24 +25,61 @@ namespace Update
             debuglog("INFO Updater, starting Updater, initializing...");
 
             InitializeComponent();
+            this.Visible = false;
         }
 
         private void Updater_Load(object sender, EventArgs e)
         {
+
             debuglog("INFO Updater, setting round corners on splash...");
             RoundCorners(this);
 
-            debuglog("INFO Updater, looking for process Code and GCstudio, trying to kill...");
-            foreach (var process in Process.GetProcessesByName("Code"))
+            arguments = Environment.GetCommandLineArgs();
+
+            debuglog("INFO Updater, looking for arguments...");
+
+            if (arguments.Length > 1)
             {
-                process.Kill();
+
+                debuglog("INFO Updater, arguments found...");
+
+
+                switch (arguments[1])
+                {
+                    case "/apply" or "-a" or "--apply":
+
+                        this.Visible = true;
+
+                        debuglog("INFO Updater, looking for process Code and GCstudio, trying to kill...");
+                        foreach (var process in Process.GetProcessesByName("Code"))
+                        {
+                            process.Kill();
+                        }
+                        foreach (var process in Process.GetProcessesByName("GCstudio"))
+                        {
+                            process.Kill();
+                        }
+                        InitialDelay.Enabled = true;
+                        debuglog("DEBUG Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
+
+                        break;
+
+                    default:
+                        debuglog("ERROR Updater, Unknown argument, Exiting, argument=" + arguments[1]);
+                        Environment.Exit(0);
+                        break;
+                }
             }
-            foreach (var process in Process.GetProcessesByName("GCstudio"))
+            else
             {
-                process.Kill();
+                debuglog("ERROR Updater, no argument detected, exiting");
+                Environment.Exit(0);
             }
-            InitialDelay.Enabled = true;
-            debuglog("DEBUG Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
+
+
+
+
+
         }
 
         private void InitialDelay_Tick(object sender, EventArgs e)
@@ -57,22 +92,19 @@ namespace Update
         {
             debuglog("INFO Updater, starting the update, looking for CVS manifest...");
 
-            if (File.Exists("cvs.nfo"))
+
+            if (File.Exists("cvs.json"))
             {
-                debuglog("INFO Updater, CVS manifest detected, loading it...");
-                dfe.LoadRead("cvs.nfo");
-                double.TryParse(dfe.ReadData(), out ManifestVer);
-                ManifestPKG = dfe.ReadData();
-                ManifestChecksum = dfe.ReadData();
-                ManifestTitle = dfe.ReadData();
-                ManifestNotes = dfe.ReadData();
-                AppExe = dfe.ReadData();
+                debuglog("INFO Updater, CVS manifest detected, loading and deserializing it...");
+                dfe.LoadRead("cvs.json");
+                CVS = json.DeserializeObject<UpdateManifest>(dfe.ReadAll());
                 dfe.CloseRead();
-                debuglog("DEBUG Updater, ManifestVer= " + ManifestVer);
-                debuglog("DEBUG Updater, ManifestChecksumr= " + ManifestChecksum);
-                debuglog("DEBUG Updater, ManifestTitle= " + ManifestTitle);
-                debuglog("DEBUG Updater, ManifestNotes= " + ManifestNotes);
-                debuglog("DEBUG Updater, AppExe= " + AppExe);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestVer=" + CVS.UpdateInfo.ManifestVer);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestMinVer=" + CVS.UpdateInfo.ManifestMinVer);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestChecksumr=" + CVS.UpdateInfo.ManifestChecksum);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestTitle=" + CVS.UpdateInfo.ManifestTitle);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestNotes=" + CVS.UpdateInfo.ManifestNotes);
+                debuglog("DEBUG Updater, CVS.UpdateInfo.AppExe=" + CVS.UpdateInfo.AppExe);
             }
             else
             {
@@ -103,7 +135,7 @@ namespace Update
             try
             {
                 debuglog("INFO Updater, removing CVS manifest...");
-                System.IO.File.Delete("cvs.nfo");
+                System.IO.File.Delete("cvs.json");
             }
             catch(Exception ex) 
             {
@@ -126,7 +158,7 @@ namespace Update
             {
                 debuglog("INFO Updater, update finished, starting the application...");
                 ProcessStartInfo p = new ProcessStartInfo();
-                p.FileName = AppExe;
+                p.FileName = CVS.UpdateInfo.AppExe;
                 //p.Arguments = "";
                 p.WindowStyle = ProcessWindowStyle.Normal;
                 Process x = Process.Start(p);
