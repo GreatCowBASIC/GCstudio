@@ -21,7 +21,7 @@ namespace GC_Studio
         ConfigSchema Config = new ConfigSchema();
         UpdateManifest CVS = new UpdateManifest();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.01144;
+        public const double AppVer = 1.01145;
         string[] arguments;
         string UpdateChecksum = null;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
@@ -127,7 +127,7 @@ namespace GC_Studio
                     }
                     catch (Exception ex)
                     {
-                        debuglog("ERROR GCstudio Loader, launching GCstudio elevated failed, exiting." + " > " + ex.Message + " @ " + ex.StackTrace);
+                        debuglog("CRITICAL GCstudio Loader, launching GCstudio elevated failed, exiting." + " > " + ex.Message + " @ " + ex.StackTrace);
                         MessageBox.Show("The current Install Path doesn't have write rights, this requires GC Studio to run Elevated.");
                         Environment.Exit(0);
                     }
@@ -368,57 +368,39 @@ namespace GC_Studio
 
                 if (AppVer >= CVS.UpdateInfo.ManifestMinVer)
                 {
-                    debuglog("INFO GCstudio Loader, There is no update available...");
 
-                    if (CVS.UpdateInfo.ManifestVer > AppVer || forceupdate)
+
+                    if (CVS.UpdateInfo.ManifestVer > AppVer)
                     {
                         debuglog("INFO GCstudio Loader, update available, starting the update...");
                         debuglog("DEBUG GCstudio Loader, CVS.UpdateInfo.ManifestVer="+ CVS.UpdateInfo.ManifestVer);
-
-                        if (File.Exists("post.dat"))
-                        {
-                            debuglog("WARNING GCstudio Loader, Previous update error detected, warning user...");
-
-                            MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            EndForm();
-                        }
-                        else
-                        {
-                            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
-                            {
-
-                                debuglog("INFO GCstudio Loader, Downloading the update package...");
-
-                                try
-                                {
-                                    downloading = true;
-                                    //BtnExit.Enabled = false;
-                                    Version.Visible = false;
-                                    ProgressUpdate.Visible = true;
-                                    WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
-                                    WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
-                                    WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + CVS.UpdateInfo.ManifestPKG), "update.pkg");
-                                }
-                                catch (Exception ex)
-                                {
-
-                                    debuglog("ERROR GCstudio Loader, an error occurred while downloading the update pakage." + " > " + ex.Message + " @ " + ex.StackTrace);
-
-                                }
-                            }
-                            else
-                            {
-                                debuglog("INFO GCstudio Loader, Exiting updater...");
-
-                                EndForm();
-                            }
-                        }
+                        StartUpdate();
                     }
                     else
                     {
-                        debuglog("INFO GCstudio Loader, Exiting updater...");
+                        if (forceupdate)
+                        {
+                            debuglog("INFO GCstudio Loader, Force Update requested...");
+                            if (CVS.UpdateInfo.ManifestVer >= AppVer)
+                            {
+                                debuglog("INFO GCstudio Loader, update available, starting the update...");
+                                debuglog("DEBUG GCstudio Loader, CVS.UpdateInfo.ManifestVer=" + CVS.UpdateInfo.ManifestVer);
+                                StartUpdate();
+                            }
+                            else
+                            {
+                                debuglog("CRITICAL GCstudio Loader, Downgrade detected, informing user and Exiting...");
+                                MessageBox.Show("A force update was requested, but a Downgrade scenario was detected, wait for a new update available or change channel. Aborting update.", "Version Downgrade Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Environment.Exit(0);
+                            }
+                        }
+                        else
+                        {
+                            debuglog("INFO GCstudio Loader, There is no new update available...");
+                            debuglog("INFO GCstudio Loader, Exiting updater...");
 
-                        EndForm();
+                            EndForm();
+                        }
                     }
                 }
                 else
@@ -430,6 +412,48 @@ namespace GC_Studio
                     EndForm();
                 }
 
+            }
+        }
+
+        private void StartUpdate ()
+        {
+            if (File.Exists("post.dat"))
+            {
+                debuglog("WARNING GCstudio Loader, Previous update error detected, warning user...");
+
+                MessageBox.Show("There was an error while applying the update. Please check that all GC Studio instances are closed, or restart your PC. The update will retry on next launch.", "Oops! something didn’t go as planned.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EndForm();
+            }
+            else
+            {
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
+                {
+
+                    debuglog("INFO GCstudio Loader, Downloading the update package...");
+
+                    try
+                    {
+                        downloading = true;
+                        //BtnExit.Enabled = false;
+                        Version.Visible = false;
+                        ProgressUpdate.Visible = true;
+                        WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
+                        WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
+                        WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + CVS.UpdateInfo.ManifestPKG), "update.pkg");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        debuglog("ERROR GCstudio Loader, an error occurred while downloading the update pakage." + " > " + ex.Message + " @ " + ex.StackTrace);
+
+                    }
+                }
+                else
+                {
+                    debuglog("INFO GCstudio Loader, Exiting updater...");
+
+                    EndForm();
+                }
             }
         }
 

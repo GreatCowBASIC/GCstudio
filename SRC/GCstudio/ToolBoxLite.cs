@@ -197,7 +197,7 @@ namespace GC_Studio
                 }
                 catch (Exception ex2)
                 {
-                    debuglog("ERROR GCstudio, an error occurred while launching post update process, exiting GCstudio." + " > " + ex2.Message + " @ " + ex2.StackTrace);
+                    debuglog("CRITICAL GCstudio, an error occurred while launching post update process, exiting GCstudio." + " > " + ex2.Message + " @ " + ex2.StackTrace);
 
                     MessageBox.Show("Error starting the post updater.");
                     Environment.Exit(0);
