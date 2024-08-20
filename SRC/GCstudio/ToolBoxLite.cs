@@ -161,6 +161,26 @@ namespace GC_Studio
             comboHide.Text = Config.GCstudio.HideDonate;
 
 
+
+            ///Temporal Fix for case sensitive issue on use.ini
+            ///
+            try
+            {
+                debuglog("INFO GCstudio, trying to fix case sensitive issue on use.ini...");
+                string UseIni = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\use.ini");
+                UseIni = UseIni.Replace("-c Arduino", "-c arduino");
+                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\use.ini", UseIni);
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio, an error occurred while trying to fix use.ini" + " > " + ex.Message + " @ " + ex.StackTrace);
+            }
+
+
+
+
+
+
             CompilerArchitecture();
 
 
