@@ -161,8 +161,57 @@ namespace GC_Studio
             comboHide.Text = Config.GCstudio.HideDonate;
 
 
+            ///Temporal Fix: Remove deprecated GCcode extensions
+            ///
+            try
+            {
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-python.python-2023.4.1-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-python.python-2023.4.1-universal", true);
+                }
 
-            ///Temporal Fix for case sensitive issue on use.ini
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal", true);
+                }
+
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal", true);
+                }
+
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal", true);
+                }
+
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal", true);
+                }
+
+                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
+                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal"))
+                {
+                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal", true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio, an error occurred while removing deprecated GCcode extensions" + " > " + ex.Message + " @ " + ex.StackTrace);
+            }
+
+
+
+
+
+            ///Temporal Fix: case sensitive issue on use.ini
             ///
             try
             {
