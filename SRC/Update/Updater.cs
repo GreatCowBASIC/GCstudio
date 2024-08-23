@@ -14,7 +14,7 @@ namespace Update
         DataFileEngine dfe = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         UpdateManifest CVS = new UpdateManifest();
-        public const double AppVer = 1.0202;
+        public const double AppVer = 1.0203;
         string[] arguments;
 
 
