@@ -14,7 +14,7 @@ namespace Update
         DataFileEngine dfe = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         UpdateManifest CVS = new UpdateManifest();
-        public const double AppVer = 1.0201;
+        public const double AppVer = 1.0202;
         string[] arguments;
 
 
@@ -50,17 +50,26 @@ namespace Update
 
                         this.Visible = true;
 
-                        debuglog("INFO Updater, looking for process Code and GCstudio, trying to kill...");
-                        foreach (var process in Process.GetProcessesByName("Code"))
+                        try
                         {
-                            process.Kill();
+                            debuglog("INFO Updater, looking for process Code and GCstudio, trying to kill...");
+                            foreach (var process in Process.GetProcessesByName("Code"))
+                            {
+                                process.Kill();
+                            }
+                            foreach (var process in Process.GetProcessesByName("GCstudio"))
+                            {
+                                process.Kill();
+                            }
+                            InitialDelay.Enabled = true;
+                            debuglog("DEBUG Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
                         }
-                        foreach (var process in Process.GetProcessesByName("GCstudio"))
+                        catch (Exception ex)
                         {
-                            process.Kill();
+                            debuglog("CRITICAL Updater, an error ocurred while killing process, exiting." + " > " + ex.Message + " @ " + ex.StackTrace);
+                            MessageBox.Show("An error ocurred while updating, reboot your system and try again.","Error while updating",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            Environment.Exit(0);
                         }
-                        InitialDelay.Enabled = true;
-                        debuglog("DEBUG Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
 
                         break;
 
@@ -93,25 +102,33 @@ namespace Update
             debuglog("INFO Updater, starting the update, looking for CVS manifest...");
 
 
-            if (File.Exists("cvs.json"))
-            {
-                debuglog("INFO Updater, CVS manifest detected, loading and deserializing it...");
-                dfe.LoadRead("cvs.json");
-                CVS = json.DeserializeObject<UpdateManifest>(dfe.ReadAll());
-                dfe.CloseRead();
-                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestVer=" + CVS.UpdateInfo.ManifestVer);
-                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestMinVer=" + CVS.UpdateInfo.ManifestMinVer);
-                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestChecksumr=" + CVS.UpdateInfo.ManifestChecksum);
-                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestTitle=" + CVS.UpdateInfo.ManifestTitle);
-                debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestNotes=" + CVS.UpdateInfo.ManifestNotes);
-                debuglog("DEBUG Updater, CVS.UpdateInfo.AppExe=" + CVS.UpdateInfo.AppExe);
+            try
+            { 
+                if (File.Exists("cvs.json"))
+                {
+                    debuglog("INFO Updater, CVS manifest detected, loading and deserializing it...");
+                    dfe.LoadRead("cvs.json");
+                    CVS = json.DeserializeObject<UpdateManifest>(dfe.ReadAll());
+                    dfe.CloseRead();
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestVer=" + CVS.UpdateInfo.ManifestVer);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestMinVer=" + CVS.UpdateInfo.ManifestMinVer);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestChecksumr=" + CVS.UpdateInfo.ManifestChecksum);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestTitle=" + CVS.UpdateInfo.ManifestTitle);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestNotes=" + CVS.UpdateInfo.ManifestNotes);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.AppExe=" + CVS.UpdateInfo.AppExe);
+                }
+                else
+                {
+                    debuglog("WARNING Updater, CVS manifest not found, aborting update...");
+                    Environment.Exit(0);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                debuglog("WARNING Updater, CVS manifest not found, aborting update...");
+                debuglog("CRITICAL Updater, an error ocurred while loading the CBS manifest, exiting." + " > " + ex.Message + " @ " + ex.StackTrace);
+                MessageBox.Show("An error ocurred while updating, try again later.", "Error while updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
-
 
 
             try
