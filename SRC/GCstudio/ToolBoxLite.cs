@@ -171,31 +171,26 @@ namespace GC_Studio
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-python.python-2023.4.1-universal", true);
                 }
 
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal"))
                 {
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal", true);
                 }
 
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal"))
                 {
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal", true);
                 }
 
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal"))
                 {
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal", true);
                 }
 
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal"))
                 {
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal", true);
                 }
 
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
                 if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal"))
                 {
                     Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal", true);
