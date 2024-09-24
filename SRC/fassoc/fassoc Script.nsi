@@ -86,6 +86,10 @@ WriteRegStr ${REG_CLASSES} ".json" "" "Json File"
 WriteRegStr ${REG_CLASSES} "Json File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
 WriteRegStr ${REG_CLASSES} "Json File\Defaulticon" "" "$INSTDIR\FileIcons\json.ico,0"
 
+WriteRegStr ${REG_CLASSES} ".dat" "" "Dat File"
+WriteRegStr ${REG_CLASSES} "Dat File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "Dat File\Defaulticon" "" "$INSTDIR\FileIcons\dat.ico,0"
+
 WriteRegStr ${REG_CLASSES} ".code-workspace" "" "GCB Project"
 WriteRegStr ${REG_CLASSES} "GCB Project\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
 WriteRegStr ${REG_CLASSES} "GCB Project\Defaulticon" "" "$INSTDIR\FileIcons\project.ico,0"
