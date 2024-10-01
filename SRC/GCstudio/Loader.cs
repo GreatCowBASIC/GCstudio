@@ -21,7 +21,7 @@ namespace GC_Studio
         ConfigSchema Config = new ConfigSchema();
         UpdateManifest CVS = new UpdateManifest();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.0116;
+        public const double AppVer = 1.0117;
         string[] arguments;
         string UpdateChecksum = null;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
@@ -472,7 +472,7 @@ namespace GC_Studio
                 ProgressUpdate.Value = percentage + 1;
             }
             ProgressUpdate.Value = percentage;
-            Copyright.Text = "Downloading Update. " + percentage + " %";
+            Copyright.Text = "Downloading Update. "  + percentage + " %                       From: v." + AppVer + " To: v." + CVS.UpdateInfo.ManifestVer;
         }
 
         /// <summary>
