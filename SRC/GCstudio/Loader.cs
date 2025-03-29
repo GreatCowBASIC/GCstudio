@@ -21,7 +21,7 @@ namespace GC_Studio
         ConfigSchema Config = new ConfigSchema();
         UpdateManifest CVS = new UpdateManifest();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.0123;
+        public const double AppVer = 1.0124;
         string[] arguments;
         string UpdateChecksum = null;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
