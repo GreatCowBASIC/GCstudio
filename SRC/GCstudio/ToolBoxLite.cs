@@ -1818,8 +1818,11 @@ namespace GC_Studio
             catch { }
         }
 
-
-
+        private void buttonmodules_Click(object sender, EventArgs e)
+        {
+            Form modules = new GC_Studio.Modules();
+            modules.ShowDialog();
+        }
     }
 }
 
