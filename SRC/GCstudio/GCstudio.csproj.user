@@ -17,6 +17,9 @@
     <Compile Update="Loader.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Modules.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ToolBoxLite.cs">
       <SubType>Form</SubType>
     </Compile>
