@@ -208,6 +208,8 @@ namespace GC_Studio
                     p.FileName = "postupdate.exe";
                     p.Arguments = "/S";
                     p.WindowStyle = ProcessWindowStyle.Normal;
+                    p.UseShellExecute = true;
+                    p.Verb = "runas";
                     Process x = Process.Start(p);
                     try
                     {
@@ -1566,29 +1568,6 @@ namespace GC_Studio
             }
         }
 
-        private void button10_Click_1(object sender, EventArgs e)
-        {
-            debuglog("INFO GCstudio, starting file association tool...");
-
-            ProcessStartInfo p = new ProcessStartInfo();
-            Process x;
-            try
-            {
-                p.FileName = "fassoc.exe";
-                p.Arguments = "";
-                p.WindowStyle = ProcessWindowStyle.Maximized;
-                p.Verb = "runas";
-                p.UseShellExecute = true;
-                x = Process.Start(p);
-            }
-            catch (Exception ex)
-            {
-                debuglog("ERROR GCstudio, an error occurred when launching file association tool." + " > " + ex.Message + " @ " + ex.StackTrace);
-
-                MessageBox.Show("An error occurred when launching the File Association Tool");
-            }
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
             try
@@ -1606,7 +1585,6 @@ namespace GC_Studio
                 MessageBox.Show("Error while resetting programmer preferences.");
             }
         }
-
 
 
         private void button12_Click(object sender, EventArgs e)
