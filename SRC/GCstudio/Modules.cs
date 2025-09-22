@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,21 @@ namespace GC_Studio
             InitializeComponent();
         }
 
-        private void buttonRemove_Click(object sender, EventArgs e)
+        private void Modules_Load(object sender, EventArgs e)
         {
+            string ModulesDirectory = AppDomain.CurrentDomain.BaseDirectory + "Modules";
 
-        }
+            if (Directory.Exists(ModulesDirectory))
+            {
+                string[] files = Directory.GetFiles(ModulesDirectory, "*.mpk");
 
-        private void buttonDeploy_Click(object sender, EventArgs e)
-        {
-
+                string[] fileNames = Array.ConvertAll(files, Path.GetFileName);
+                checkedListBoxModules.Items.AddRange(fileNames);
+            }
+            else
+            {
+                MessageBox.Show("Directory not found: " + ModulesDirectory);
+            }
         }
     }
 }
