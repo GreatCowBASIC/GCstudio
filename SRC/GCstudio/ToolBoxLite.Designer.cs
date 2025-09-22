@@ -58,6 +58,7 @@ namespace GC_Studio
             buttonnew = new System.Windows.Forms.Button();
             pictureconf = new System.Windows.Forms.PictureBox();
             panelmain = new System.Windows.Forms.Panel();
+            buttonmodules = new System.Windows.Forms.Button();
             buttondemonstrations = new System.Windows.Forms.Button();
             buttondonate = new System.Windows.Forms.Button();
             linkLabelclear = new System.Windows.Forms.LinkLabel();
@@ -118,7 +119,6 @@ namespace GC_Studio
             openFileDialog = new System.Windows.Forms.OpenFileDialog();
             saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            buttonmodules = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -138,7 +138,7 @@ namespace GC_Studio
             // 
             pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             pictureBox1.Location = new System.Drawing.Point(0, 0);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(731, 41);
             pictureBox1.TabIndex = 0;
@@ -155,7 +155,7 @@ namespace GC_Studio
             BtnMini.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             BtnMini.ForeColor = System.Drawing.Color.WhiteSmoke;
             BtnMini.Location = new System.Drawing.Point(624, -2);
-            BtnMini.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            BtnMini.Margin = new System.Windows.Forms.Padding(2);
             BtnMini.Name = "BtnMini";
             BtnMini.Size = new System.Drawing.Size(50, 41);
             BtnMini.TabIndex = 12;
@@ -173,7 +173,7 @@ namespace GC_Studio
             BtnExit.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             BtnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
             BtnExit.Location = new System.Drawing.Point(673, -2);
-            BtnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            BtnExit.Margin = new System.Windows.Forms.Padding(2);
             BtnExit.Name = "BtnExit";
             BtnExit.Size = new System.Drawing.Size(50, 41);
             BtnExit.TabIndex = 11;
@@ -191,7 +191,7 @@ namespace GC_Studio
             button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             button1.ForeColor = System.Drawing.Color.WhiteSmoke;
             button1.Location = new System.Drawing.Point(575, -2);
-            button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button1.Margin = new System.Windows.Forms.Padding(2);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(50, 41);
             button1.TabIndex = 13;
@@ -259,7 +259,7 @@ namespace GC_Studio
             buttonclone.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             buttonclone.ForeColor = System.Drawing.Color.WhiteSmoke;
             buttonclone.Location = new System.Drawing.Point(262, 892);
-            buttonclone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonclone.Margin = new System.Windows.Forms.Padding(2);
             buttonclone.Name = "buttonclone";
             buttonclone.Size = new System.Drawing.Size(401, 103);
             buttonclone.TabIndex = 19;
@@ -280,7 +280,7 @@ namespace GC_Studio
             buttonwitout.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             buttonwitout.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttonwitout.Location = new System.Drawing.Point(346, 499);
-            buttonwitout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonwitout.Margin = new System.Windows.Forms.Padding(2);
             buttonwitout.Name = "buttonwitout";
             buttonwitout.Size = new System.Drawing.Size(211, 30);
             buttonwitout.TabIndex = 24;
@@ -302,7 +302,7 @@ namespace GC_Studio
             buttonbug.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             buttonbug.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttonbug.Location = new System.Drawing.Point(519, 546);
-            buttonbug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonbug.Margin = new System.Windows.Forms.Padding(2);
             buttonbug.Name = "buttonbug";
             buttonbug.Size = new System.Drawing.Size(211, 30);
             buttonbug.TabIndex = 25;
@@ -351,7 +351,7 @@ namespace GC_Studio
             pictureBox2.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new System.Drawing.Point(272, 900);
-            pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(65, 64);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -367,7 +367,7 @@ namespace GC_Studio
             pictureBox3.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new System.Drawing.Point(251, 184);
-            pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new System.Drawing.Size(65, 64);
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -422,7 +422,7 @@ namespace GC_Studio
             buttonopensol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             buttonopensol.ForeColor = System.Drawing.Color.WhiteSmoke;
             buttonopensol.Location = new System.Drawing.Point(244, 174);
-            buttonopensol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonopensol.Margin = new System.Windows.Forms.Padding(2);
             buttonopensol.Name = "buttonopensol";
             buttonopensol.Size = new System.Drawing.Size(401, 103);
             buttonopensol.TabIndex = 35;
@@ -437,7 +437,7 @@ namespace GC_Studio
             pictureBox4.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new System.Drawing.Point(251, 291);
-            pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new System.Drawing.Size(65, 64);
             pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -492,7 +492,7 @@ namespace GC_Studio
             buttonopenfol.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             buttonopenfol.ForeColor = System.Drawing.Color.WhiteSmoke;
             buttonopenfol.Location = new System.Drawing.Point(244, 283);
-            buttonopenfol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonopenfol.Margin = new System.Windows.Forms.Padding(2);
             buttonopenfol.Name = "buttonopenfol";
             buttonopenfol.Size = new System.Drawing.Size(401, 103);
             buttonopenfol.TabIndex = 39;
@@ -507,7 +507,7 @@ namespace GC_Studio
             pictureBox5.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox5.Image = (System.Drawing.Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new System.Drawing.Point(251, 399);
-            pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new System.Drawing.Size(65, 64);
             pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -562,7 +562,7 @@ namespace GC_Studio
             buttonnew.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             buttonnew.ForeColor = System.Drawing.Color.WhiteSmoke;
             buttonnew.Location = new System.Drawing.Point(244, 391);
-            buttonnew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonnew.Margin = new System.Windows.Forms.Padding(2);
             buttonnew.Name = "buttonnew";
             buttonnew.Size = new System.Drawing.Size(401, 103);
             buttonnew.TabIndex = 43;
@@ -576,7 +576,7 @@ namespace GC_Studio
             pictureconf.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             pictureconf.Image = (System.Drawing.Image)resources.GetObject("pictureconf.Image");
             pictureconf.Location = new System.Drawing.Point(527, -1);
-            pictureconf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureconf.Margin = new System.Windows.Forms.Padding(2);
             pictureconf.Name = "pictureconf";
             pictureconf.Size = new System.Drawing.Size(43, 41);
             pictureconf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -612,11 +612,33 @@ namespace GC_Studio
             panelmain.Controls.Add(buttonopensol);
             panelmain.Dock = System.Windows.Forms.DockStyle.Fill;
             panelmain.Location = new System.Drawing.Point(0, 0);
-            panelmain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            panelmain.Margin = new System.Windows.Forms.Padding(2);
             panelmain.Name = "panelmain";
             panelmain.Size = new System.Drawing.Size(731, 578);
             panelmain.TabIndex = 48;
             panelmain.Paint += panelmain_Paint;
+            // 
+            // buttonmodules
+            // 
+            buttonmodules.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            buttonmodules.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonmodules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            buttonmodules.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonmodules.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonmodules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            buttonmodules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonmodules.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
+            buttonmodules.ForeColor = System.Drawing.Color.CornflowerBlue;
+            buttonmodules.Location = new System.Drawing.Point(567, 52);
+            buttonmodules.Margin = new System.Windows.Forms.Padding(2);
+            buttonmodules.Name = "buttonmodules";
+            buttonmodules.Size = new System.Drawing.Size(162, 30);
+            buttonmodules.TabIndex = 52;
+            buttonmodules.Text = "Manage Module Packs";
+            buttonmodules.UseVisualStyleBackColor = false;
+            buttonmodules.Click += buttonmodules_Click;
+            buttonmodules.MouseLeave += buttonmodules_MouseLeave;
+            buttonmodules.MouseHover += buttonmodules_MouseHover;
             // 
             // buttondemonstrations
             // 
@@ -630,7 +652,7 @@ namespace GC_Studio
             buttondemonstrations.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             buttondemonstrations.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttondemonstrations.Location = new System.Drawing.Point(134, 529);
-            buttondemonstrations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttondemonstrations.Margin = new System.Windows.Forms.Padding(2);
             buttondemonstrations.Name = "buttondemonstrations";
             buttondemonstrations.Size = new System.Drawing.Size(157, 49);
             buttondemonstrations.TabIndex = 51;
@@ -652,7 +674,7 @@ namespace GC_Studio
             buttondonate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             buttondonate.ForeColor = System.Drawing.Color.WhiteSmoke;
             buttondonate.Location = new System.Drawing.Point(321, 546);
-            buttondonate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttondonate.Margin = new System.Windows.Forms.Padding(2);
             buttondonate.Name = "buttondonate";
             buttondonate.Size = new System.Drawing.Size(211, 30);
             buttondonate.TabIndex = 50;
@@ -746,7 +768,7 @@ namespace GC_Studio
             panelconfig.Controls.Add(label25);
             panelconfig.Dock = System.Windows.Forms.DockStyle.Fill;
             panelconfig.Location = new System.Drawing.Point(0, 0);
-            panelconfig.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            panelconfig.Margin = new System.Windows.Forms.Padding(2);
             panelconfig.Name = "panelconfig";
             panelconfig.Size = new System.Drawing.Size(731, 578);
             panelconfig.TabIndex = 49;
@@ -757,7 +779,7 @@ namespace GC_Studio
             button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button16.ForeColor = System.Drawing.Color.White;
             button16.Location = new System.Drawing.Point(405, 522);
-            button16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button16.Margin = new System.Windows.Forms.Padding(2);
             button16.Name = "button16";
             button16.Size = new System.Drawing.Size(127, 43);
             button16.TabIndex = 86;
@@ -771,7 +793,7 @@ namespace GC_Studio
             comboHide.FormattingEnabled = true;
             comboHide.Items.AddRange(new object[] { "Hide", "Show" });
             comboHide.Location = new System.Drawing.Point(271, 376);
-            comboHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            comboHide.Margin = new System.Windows.Forms.Padding(2);
             comboHide.Name = "comboHide";
             comboHide.Size = new System.Drawing.Size(112, 23);
             comboHide.TabIndex = 85;
@@ -797,7 +819,7 @@ namespace GC_Studio
             combomode.FormattingEnabled = true;
             combomode.Items.AddRange(new object[] { "Modern", "Legacy" });
             combomode.Location = new System.Drawing.Point(68, 376);
-            combomode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            combomode.Margin = new System.Windows.Forms.Padding(2);
             combomode.Name = "combomode";
             combomode.Size = new System.Drawing.Size(185, 23);
             combomode.TabIndex = 83;
@@ -820,7 +842,7 @@ namespace GC_Studio
             button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button14.ForeColor = System.Drawing.Color.White;
             button14.Location = new System.Drawing.Point(238, 471);
-            button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button14.Margin = new System.Windows.Forms.Padding(2);
             button14.Name = "button14";
             button14.Size = new System.Drawing.Size(141, 43);
             button14.TabIndex = 81;
@@ -833,7 +855,7 @@ namespace GC_Studio
             button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button13.ForeColor = System.Drawing.Color.White;
             button13.Location = new System.Drawing.Point(238, 421);
-            button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button13.Margin = new System.Windows.Forms.Padding(2);
             button13.Name = "button13";
             button13.Size = new System.Drawing.Size(141, 43);
             button13.TabIndex = 80;
@@ -846,7 +868,7 @@ namespace GC_Studio
             button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button12.ForeColor = System.Drawing.Color.White;
             button12.Location = new System.Drawing.Point(238, 522);
-            button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button12.Margin = new System.Windows.Forms.Padding(2);
             button12.Name = "button12";
             button12.Size = new System.Drawing.Size(141, 43);
             button12.TabIndex = 79;
@@ -859,7 +881,7 @@ namespace GC_Studio
             button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button11.ForeColor = System.Drawing.Color.White;
             button11.Location = new System.Drawing.Point(68, 471);
-            button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button11.Margin = new System.Windows.Forms.Padding(2);
             button11.Name = "button11";
             button11.Size = new System.Drawing.Size(141, 43);
             button11.TabIndex = 78;
@@ -872,7 +894,7 @@ namespace GC_Studio
             button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button10.ForeColor = System.Drawing.Color.White;
             button10.Location = new System.Drawing.Point(68, 420);
-            button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button10.Margin = new System.Windows.Forms.Padding(2);
             button10.Name = "button10";
             button10.Size = new System.Drawing.Size(141, 43);
             button10.TabIndex = 77;
@@ -910,7 +932,7 @@ namespace GC_Studio
             comboarch.FormattingEnabled = true;
             comboarch.Items.AddRange(new object[] { "Auto", "x86", "x64", "Developer" });
             comboarch.Location = new System.Drawing.Point(68, 292);
-            comboarch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            comboarch.Margin = new System.Windows.Forms.Padding(2);
             comboarch.Name = "comboarch";
             comboarch.Size = new System.Drawing.Size(185, 23);
             comboarch.TabIndex = 74;
@@ -933,7 +955,7 @@ namespace GC_Studio
             button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button7.ForeColor = System.Drawing.Color.White;
             button7.Location = new System.Drawing.Point(68, 523);
-            button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button7.Margin = new System.Windows.Forms.Padding(2);
             button7.Name = "button7";
             button7.Size = new System.Drawing.Size(141, 43);
             button7.TabIndex = 72;
@@ -953,7 +975,7 @@ namespace GC_Studio
             buttongcbext.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             buttongcbext.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongcbext.Location = new System.Drawing.Point(271, 278);
-            buttongcbext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttongcbext.Margin = new System.Windows.Forms.Padding(2);
             buttongcbext.Name = "buttongcbext";
             buttongcbext.Size = new System.Drawing.Size(170, 30);
             buttongcbext.TabIndex = 71;
@@ -976,7 +998,7 @@ namespace GC_Studio
             buttongccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             buttongccode.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongccode.Location = new System.Drawing.Point(271, 244);
-            buttongccode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttongccode.Margin = new System.Windows.Forms.Padding(2);
             buttongccode.Name = "buttongccode";
             buttongccode.Size = new System.Drawing.Size(170, 30);
             buttongccode.TabIndex = 70;
@@ -999,7 +1021,7 @@ namespace GC_Studio
             buttongstools.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             buttongstools.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttongstools.Location = new System.Drawing.Point(271, 209);
-            buttongstools.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttongstools.Margin = new System.Windows.Forms.Padding(2);
             buttongstools.Name = "buttongstools";
             buttongstools.Size = new System.Drawing.Size(170, 30);
             buttongstools.TabIndex = 69;
@@ -1022,7 +1044,7 @@ namespace GC_Studio
             buttoncompiler.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             buttoncompiler.ForeColor = System.Drawing.Color.CornflowerBlue;
             buttoncompiler.Location = new System.Drawing.Point(271, 174);
-            buttoncompiler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttoncompiler.Margin = new System.Windows.Forms.Padding(2);
             buttoncompiler.Name = "buttoncompiler";
             buttoncompiler.Size = new System.Drawing.Size(170, 30);
             buttoncompiler.TabIndex = 68;
@@ -1051,7 +1073,7 @@ namespace GC_Studio
             button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button9.ForeColor = System.Drawing.Color.White;
             button9.Location = new System.Drawing.Point(650, 540);
-            button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button9.Margin = new System.Windows.Forms.Padding(2);
             button9.Name = "button9";
             button9.Size = new System.Drawing.Size(67, 29);
             button9.TabIndex = 60;
@@ -1065,7 +1087,7 @@ namespace GC_Studio
             comboide.FormattingEnabled = true;
             comboide.Items.AddRange(new object[] { "SynWrite", "GCcode", "GCgraphical", "Geany" });
             comboide.Location = new System.Drawing.Point(68, 218);
-            comboide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            comboide.Margin = new System.Windows.Forms.Padding(2);
             comboide.Name = "comboide";
             comboide.Size = new System.Drawing.Size(185, 23);
             comboide.TabIndex = 66;
@@ -1077,7 +1099,7 @@ namespace GC_Studio
             comboupdate.FormattingEnabled = true;
             comboupdate.Items.AddRange(new object[] { "mainstream", "dev preview", "compiler only", "no updates" });
             comboupdate.Location = new System.Drawing.Point(68, 145);
-            comboupdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            comboupdate.Margin = new System.Windows.Forms.Padding(2);
             comboupdate.Name = "comboupdate";
             comboupdate.Size = new System.Drawing.Size(185, 23);
             comboupdate.TabIndex = 65;
@@ -1146,7 +1168,7 @@ namespace GC_Studio
             panelnewproj.Controls.Add(textBox1);
             panelnewproj.Dock = System.Windows.Forms.DockStyle.Fill;
             panelnewproj.Location = new System.Drawing.Point(0, 0);
-            panelnewproj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            panelnewproj.Margin = new System.Windows.Forms.Padding(2);
             panelnewproj.Name = "panelnewproj";
             panelnewproj.Size = new System.Drawing.Size(731, 578);
             panelnewproj.TabIndex = 51;
@@ -1158,7 +1180,7 @@ namespace GC_Studio
             button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button8.ForeColor = System.Drawing.Color.White;
             button8.Location = new System.Drawing.Point(652, 540);
-            button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button8.Margin = new System.Windows.Forms.Padding(2);
             button8.Name = "button8";
             button8.Size = new System.Drawing.Size(67, 29);
             button8.TabIndex = 59;
@@ -1227,7 +1249,7 @@ namespace GC_Studio
             pictureBox7.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox7.Image = (System.Drawing.Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.Location = new System.Drawing.Point(32, 479);
-            pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new System.Drawing.Size(65, 64);
             pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1240,7 +1262,7 @@ namespace GC_Studio
             pictureBox8.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox8.Image = (System.Drawing.Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.Location = new System.Drawing.Point(32, 179);
-            pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new System.Drawing.Size(65, 64);
             pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1253,7 +1275,7 @@ namespace GC_Studio
             pictureBox10.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox10.Image = (System.Drawing.Image)resources.GetObject("pictureBox10.Image");
             pictureBox10.Location = new System.Drawing.Point(32, 281);
-            pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new System.Drawing.Size(65, 64);
             pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1301,7 +1323,7 @@ namespace GC_Studio
             button6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             button6.ForeColor = System.Drawing.Color.WhiteSmoke;
             button6.Location = new System.Drawing.Point(24, 272);
-            button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button6.Margin = new System.Windows.Forms.Padding(2);
             button6.Name = "button6";
             button6.Size = new System.Drawing.Size(676, 96);
             button6.TabIndex = 55;
@@ -1334,7 +1356,7 @@ namespace GC_Studio
             button3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             button3.ForeColor = System.Drawing.Color.WhiteSmoke;
             button3.Location = new System.Drawing.Point(24, 471);
-            button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button3.Margin = new System.Windows.Forms.Padding(2);
             button3.Name = "button3";
             button3.Size = new System.Drawing.Size(676, 96);
             button3.TabIndex = 51;
@@ -1360,7 +1382,7 @@ namespace GC_Studio
             pictureBox9.BackColor = System.Drawing.Color.FromArgb(24, 31, 41);
             pictureBox9.Image = (System.Drawing.Image)resources.GetObject("pictureBox9.Image");
             pictureBox9.Location = new System.Drawing.Point(32, 378);
-            pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new System.Drawing.Size(65, 64);
             pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1380,7 +1402,7 @@ namespace GC_Studio
             button4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             button4.ForeColor = System.Drawing.Color.WhiteSmoke;
             button4.Location = new System.Drawing.Point(24, 172);
-            button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button4.Margin = new System.Windows.Forms.Padding(2);
             button4.Name = "button4";
             button4.Size = new System.Drawing.Size(676, 96);
             button4.TabIndex = 43;
@@ -1399,7 +1421,7 @@ namespace GC_Studio
             button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
             button5.ForeColor = System.Drawing.Color.WhiteSmoke;
             button5.Location = new System.Drawing.Point(24, 371);
-            button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button5.Margin = new System.Windows.Forms.Padding(2);
             button5.Name = "button5";
             button5.Size = new System.Drawing.Size(676, 96);
             button5.TabIndex = 47;
@@ -1426,7 +1448,7 @@ namespace GC_Studio
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button2.ForeColor = System.Drawing.Color.White;
             button2.Location = new System.Drawing.Point(634, 110);
-            button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            button2.Margin = new System.Windows.Forms.Padding(2);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(31, 30);
             button2.TabIndex = 31;
@@ -1455,7 +1477,7 @@ namespace GC_Studio
             textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             textBox2.ForeColor = System.Drawing.Color.White;
             textBox2.Location = new System.Drawing.Point(68, 114);
-            textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            textBox2.Margin = new System.Windows.Forms.Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new System.Drawing.Size(562, 29);
             textBox2.TabIndex = 29;
@@ -1481,31 +1503,11 @@ namespace GC_Studio
             textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             textBox1.ForeColor = System.Drawing.Color.White;
             textBox1.Location = new System.Drawing.Point(68, 62);
-            textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            textBox1.Margin = new System.Windows.Forms.Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new System.Drawing.Size(562, 29);
             textBox1.TabIndex = 16;
             textBox1.Text = "GCB Project";
-            // 
-            // buttonmodules
-            // 
-            buttonmodules.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttonmodules.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            buttonmodules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            buttonmodules.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            buttonmodules.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            buttonmodules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            buttonmodules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonmodules.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            buttonmodules.ForeColor = System.Drawing.Color.CornflowerBlue;
-            buttonmodules.Location = new System.Drawing.Point(567, 52);
-            buttonmodules.Margin = new System.Windows.Forms.Padding(2);
-            buttonmodules.Name = "buttonmodules";
-            buttonmodules.Size = new System.Drawing.Size(162, 30);
-            buttonmodules.TabIndex = 52;
-            buttonmodules.Text = "Manage Module Packs";
-            buttonmodules.UseVisualStyleBackColor = false;
-            buttonmodules.Click += buttonmodules_Click;
             // 
             // ToolBoxLite
             // 
@@ -1527,7 +1529,7 @@ namespace GC_Studio
             Controls.Add(panelnewproj);
             Controls.Add(panelconfig);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            Margin = new System.Windows.Forms.Padding(2);
             MinimumSize = new System.Drawing.Size(741, 585);
             Name = "ToolBoxLite";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

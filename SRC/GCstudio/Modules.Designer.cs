@@ -37,7 +37,6 @@
             // 
             checkedListBoxModules.BackColor = System.Drawing.Color.Silver;
             checkedListBoxModules.FormattingEnabled = true;
-            checkedListBoxModules.Items.AddRange(new object[] { "TestModule1", "TestModule2", "TestModule3" });
             checkedListBoxModules.Location = new System.Drawing.Point(12, 12);
             checkedListBoxModules.Name = "checkedListBoxModules";
             checkedListBoxModules.Size = new System.Drawing.Size(374, 346);
@@ -58,7 +57,6 @@
             buttonDeploy.TabIndex = 50;
             buttonDeploy.Text = "Deploy Packages";
             buttonDeploy.UseVisualStyleBackColor = false;
-            buttonDeploy.Click += buttonDeploy_Click;
             // 
             // buttonRem
             // 
@@ -90,6 +88,7 @@
             Name = "Modules";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "Modules";
+            Load += Modules_Load;
             ResumeLayout(false);
         }
 

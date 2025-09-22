@@ -221,10 +221,6 @@ namespace GC_Studio
             }
 
 
-
-
-
-
             CompilerArchitecture();
 
 
@@ -277,8 +273,34 @@ namespace GC_Studio
             arguments = Environment.GetCommandLineArgs();
             if (arguments.Length > 1)
             {
-
                 debuglog("INFO GCstudio, arguments detected, executing commands...");
+
+                // Check if any argument has a .mpk extension
+                string[] mpkFiles = arguments.Skip(1).Where(arg => arg.EndsWith(".mpk", StringComparison.OrdinalIgnoreCase)).ToArray();
+
+                string targetDirectory = AppDomain.CurrentDomain.BaseDirectory + "Modules";
+
+                if (mpkFiles.Length > 0)
+                {
+                    foreach (string mpkFile in mpkFiles)
+                    {
+                        try
+                        {
+                            string destPath = Path.Combine(targetDirectory, Path.GetFileName(mpkFile));
+                            File.Copy(mpkFile, destPath, true); // true = overwrite if exists
+                            debuglog($"INFO GCstudio, copied .mpk file: {mpkFile} to {destPath}");
+                        }
+                        catch (Exception ex)
+                        {
+                            debuglog($"ERROR GCstudio, failed to copy .mpk file: {mpkFile} > {ex.Message}");
+                            MessageBox.Show($"Failed to copy {mpkFile} to {targetDirectory}\n{ex.Message}", "Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    // Skip the switch statement if .mpk files were found and processed and start modules form
+                    Form modules = new GC_Studio.Modules();
+                    modules.ShowDialog();
+                    return;
+                }
 
                 switch (arguments[1])
                 {
@@ -1823,8 +1845,15 @@ namespace GC_Studio
             Form modules = new GC_Studio.Modules();
             modules.ShowDialog();
         }
+
+        private void buttonmodules_MouseHover(object sender, EventArgs e)
+        {
+            buttonmodules.ForeColor = Color.White;
+        }
+
+        private void buttonmodules_MouseLeave(object sender, EventArgs e)
+        {
+            buttonmodules.ForeColor = Color.CornflowerBlue;
+        }
     }
 }
-
-
-
