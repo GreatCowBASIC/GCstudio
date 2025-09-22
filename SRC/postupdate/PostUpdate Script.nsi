@@ -6,6 +6,7 @@
 ######################################################################
 # Includes
 
+!include "LogicLib.nsh"
 
 ######################################################################
 # Installer Configuration
@@ -19,6 +20,10 @@
 !define INSTALLER_NAME ".\postupdate.exe"
 !define MAIN_APP_EXE "postupdate.exe"
 !define INSTALL_TYPE "SetShellVarContext current"
+!define REG_ROOT "HKCU"
+!define REG_CLASSES "HKCR"
+!define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
+!define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 ######################################################################
 # Bynary Information
 
@@ -38,8 +43,9 @@ Caption "${APP_NAME} Post Update"
 OutFile "${INSTALLER_NAME}"
 BrandingText "${APP_NAME}"
 XPStyle on
+InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
 InstallDir "$EXEDIR"
-RequestExecutionLevel user
+#RequestExecutionLevel user
 
 ######################################################################
 # Main program, Post Update Files
@@ -59,6 +65,97 @@ File /r ".\post\*"
 #ExecWait "$INSTDIR\Net8x86.exe /install /quiet /norestart /log Log\Net8.log"
 #RuntimePressent:
 #Delete "$INSTDIR\Net8x86.exe"
+
+SectionEnd
+
+#######################################################################
+# Registry
+
+# Write Reg Keys
+Section -Icons_Reg
+
+#Add Path
+EnVar::SetHKCU
+EnVar::AddValue "Path" "$INSTDIR\vscode\bin;"
+
+
+#File Associations
+WriteRegStr ${REG_CLASSES} ".gcb" "" "GCB File"
+WriteRegStr ${REG_CLASSES} "GCB File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "GCB File\Defaulticon" "" "$INSTDIR\GCstudio.exe,0"
+
+WriteRegStr ${REG_CLASSES} ".asm" "" "ASM File"
+WriteRegStr ${REG_CLASSES} "ASM File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "ASM File\Defaulticon" "" "$INSTDIR\FileIcons\asm.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".s" "" "S File"
+WriteRegStr ${REG_CLASSES} "S File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "S File\Defaulticon" "" "$INSTDIR\FileIcons\asm.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".bas" "" "FBasic File"
+WriteRegStr ${REG_CLASSES} "FBasic File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "FBasic File\Defaulticon" "" "$INSTDIR\FileIcons\bas.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".bi" "" "Fbasic Library"
+WriteRegStr ${REG_CLASSES} "Fbasic Library\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "Fbasic Library\Defaulticon" "" "$INSTDIR\FileIcons\h.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".h" "" "GCB Library"
+WriteRegStr ${REG_CLASSES} "GCB Library\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "GCB Library\Defaulticon" "" "$INSTDIR\FileIcons\h.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".json" "" "Json File"
+WriteRegStr ${REG_CLASSES} "Json File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "Json File\Defaulticon" "" "$INSTDIR\FileIcons\json.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".dat" "" "Dat File"
+WriteRegStr ${REG_CLASSES} "Dat File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "Dat File\Defaulticon" "" "$INSTDIR\FileIcons\dat.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".code-workspace" "" "GCB Project"
+WriteRegStr ${REG_CLASSES} "GCB Project\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "GCB Project\Defaulticon" "" "$INSTDIR\FileIcons\project.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".nsi" "" "NSIS Script"
+WriteRegStr ${REG_CLASSES} "NSIS Script\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "NSIS Script\Defaulticon" "" "$INSTDIR\FileIcons\nsis.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".ps1" "" "PWSH Script"
+WriteRegStr ${REG_CLASSES} "PWSH Script\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "PWSH Script\Defaulticon" "" "$INSTDIR\FileIcons\pwsh.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".psm1" "" "PWSH Script Module"
+WriteRegStr ${REG_CLASSES} "PWSH Script Module\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "PWSH Script Module\Defaulticon" "" "$INSTDIR\FileIcons\pwsh.ico,0"
+
+WriteRegStr ${REG_CLASSES} ".mpk" "" "MPK File"
+WriteRegStr ${REG_CLASSES} "MPK File\shell\open\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "MPK File\Defaulticon" "" "$INSTDIR\FileIcons\mpk.ico,0"
+
+#Windows Context Menu
+#shell
+WriteRegStr ${REG_CLASSES} "Directory\shell\GCstudio" "" "Open with GC Studio"
+WriteRegStr ${REG_CLASSES} "Directory\shell\GCstudio\command" ""  "$INSTDIR\GCstudio.exe $\"%V$\""
+WriteRegStr ${REG_CLASSES} "Directory\shell\GCstudio" "Icon" "$INSTDIR\GCstudio.exe,0"
+
+WriteRegStr ${REG_CLASSES} "Directory\Background\shell\GCstudio" "" "Open with GC Studio"
+WriteRegStr ${REG_CLASSES} "Directory\Background\shell\GCstudio\command" ""  "$INSTDIR\GCstudio.exe $\"%V$\""
+WriteRegStr ${REG_CLASSES} "Directory\Background\shell\GCstudio" "Icon" "$INSTDIR\GCstudio.exe,0"
+
+WriteRegStr ${REG_ROOT} "Software\Classes\Directory\Background\shell\GCstudio" "" "Open with GC Studio"
+WriteRegStr ${REG_ROOT} "Software\Classes\Directory\Background\shell\GCstudio\command" ""  "$INSTDIR\GCstudio.exe $\"%V$\""
+WriteRegStr ${REG_ROOT} "Software\Classes\Directory\Background\shell\GCstudio" "Icon" "$INSTDIR\GCstudio.exe,0"
+
+#drive
+WriteRegStr ${REG_CLASSES} "Drive\shell\GCstudio" "" "Open with GC Studio"
+WriteRegStr ${REG_CLASSES} "Drive\shell\GCstudio\command" ""  "$INSTDIR\GCstudio.exe $\"%V$\""
+WriteRegStr ${REG_CLASSES} "Drive\shell\GCstudio" "Icon" "$INSTDIR\GCstudio.exe,0"
+
+#files
+WriteRegStr ${REG_CLASSES} "*\shell\GCstudio" "" "Open with GC Studio"
+WriteRegStr ${REG_CLASSES} "*\shell\GCstudio\command" ""  "$INSTDIR\GCstudio.exe $\"%1$\""
+WriteRegStr ${REG_CLASSES} "*\shell\GCstudio" "Icon" "$INSTDIR\GCstudio.exe,0"
+
 
 SectionEnd
 
