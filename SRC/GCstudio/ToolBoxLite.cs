@@ -1,12 +1,16 @@
-﻿using Ngine;
+﻿using Microsoft.VisualBasic.FileIO;
+using Ngine;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.FileIO;
 
 
 namespace GC_Studio
@@ -95,50 +99,6 @@ namespace GC_Studio
 
             }
 
-            /// Code for name change on compiler directory
-            /// 
-
-
-            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-            {
-                debuglog("INFO GCstudio, old GreatCowBasic directory detected, started automatic migration...");
-
-                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC"))
-                {
-                    try
-                    {
-                        Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\GreatCowBASIC", true);
-                    }
-                    catch
-                    {
-                    }
-                }
-                try
-                {
-                    FileSystem.MoveDirectory(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", AppDomain.CurrentDomain.BaseDirectory + "gcbasic", false);
-                }
-                catch
-                {
-                }
-            }
-
-            if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic"))
-            {
-                try
-                {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "GreatCowBasic", true);
-                }
-                catch
-                {
-                }
-            }
-
-
-
-
-
-
-            ///
 
             debuglog("INFO GCstudio, applying configuration...");
 
@@ -161,69 +121,72 @@ namespace GC_Studio
             comboHide.Text = Config.GCstudio.HideDonate;
 
 
-            ///Temporal Fix: Remove deprecated GCcode extensions
+            ///Task.json compilation
             ///
             try
             {
-                debuglog("INFO GCstudio, trying to remove deprecated GCcode extensions...");
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-python.python-2023.4.1-universal"))
+                debuglog("INFO GCstudio, compiling task.json for GCcode...");
+
+                string targetFile = AppDomain.CurrentDomain.BaseDirectory + "vscode/data/user-data/user/tasks.json";
+                string[] sourceFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "vscode/data/user-data/user/tasks", "*.json");
+
+                var allTasks = new List<JsonElement>();
+                string version = "2.0.0";
+
+                foreach (string file in sourceFiles)
                 {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-python.python-2023.4.1-universal", true);
+                    string content = File.ReadAllText(file);
+                    try
+                    {
+                        using (JsonDocument doc = JsonDocument.Parse(content))
+                        {
+                            if (version == "2.0.0" && doc.RootElement.TryGetProperty("version", out var verProp))
+                            {
+                                version = verProp.GetString() ?? "2.0.0";
+                            }
+
+                            if (doc.RootElement.TryGetProperty("tasks", out var tasksProp) && tasksProp.ValueKind == JsonValueKind.Array)
+                            {
+                                foreach (var task in tasksProp.EnumerateArray())
+                                {
+                                    allTasks.Add(task.Clone());
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog($"ERROR GCstudio, failed to parse {file}: {ex.Message}");
+                    }
                 }
 
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal"))
+                var output = new
                 {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-2023.2.100-universal", true);
-                }
+                    version,
+                    tasks = allTasks
+                };
 
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal"))
+                var options = new JsonSerializerOptions
                 {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-keymap-1.1.0-universal", true);
-                }
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
 
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal"))
-                {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.jupyter-renderers-1.0.15-universal", true);
-                }
-
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal"))
-                {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-cell-tags-0.1.8-universal", true);
-                }
-
-                if (Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal"))
-                {
-                    Directory.Delete(AppDomain.CurrentDomain.BaseDirectory + "vscode\\data\\extensions\\ms-toolsai.vscode-jupyter-slideshow-0.1.5-universal", true);
-                }
-
+                string combinedJson = JsonSerializer.Serialize(output, options);
+                File.WriteAllText(targetFile, combinedJson, Encoding.UTF8);
             }
             catch (Exception ex)
             {
-                debuglog("ERROR GCstudio, an error occurred while removing deprecated GCcode extensions" + " > " + ex.Message + " @ " + ex.StackTrace);
+                debuglog("ERROR GCstudio, an error occurred while compiling task.json" + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
 
 
-
-
-            ///Temporal Fix: case sensitive issue on use.ini
-            ///
-            try
-            {
-                debuglog("INFO GCstudio, trying to fix case sensitive issue on use.ini...");
-                string UseIni = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\use.ini");
-                UseIni = UseIni.Replace("-c Arduino", "-c arduino");
-                File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "gcbasic\\use.ini", UseIni);
-            }
-            catch (Exception ex)
-            {
-                debuglog("ERROR GCstudio, an error occurred while trying to fix use.ini" + " > " + ex.Message + " @ " + ex.StackTrace);
-            }
-
-
+            ///Auto architecture detection
             CompilerArchitecture();
 
 
+            ///Window size and position
             this.Size = new Size(Config.Window.sizeW, Config.Window.sizeH);
 
             this.Location = new Point(Config.Window.locx, Config.Window.locy);
