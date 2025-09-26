@@ -21,7 +21,7 @@ namespace GC_Studio
         ConfigSchema Config = new ConfigSchema();
         UpdateManifest CVS = new UpdateManifest();
         readonly string ReleasePath = "https://gcbasic.com/reps/stagebuild/updates/";
-        public const double AppVer = 1.01251;
+        public const double AppVer = 1.0125;
         string[] arguments;
         string UpdateChecksum = null;
         NumberStyles Style = NumberStyles.AllowDecimalPoint;
@@ -290,12 +290,7 @@ namespace GC_Studio
             debuglog("INFO GCstudio Loader, Clearing update cache...");
 
             MinSplash.Enabled = true;
-            //Clear Update Cache
-            try
-            {
-                System.IO.File.Delete("update.pkg");
-            }
-            catch { }
+
 
             try
             {
@@ -429,24 +424,37 @@ namespace GC_Studio
                 if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
                 {
 
-                    debuglog("INFO GCstudio Loader, Downloading the update package...");
+                            if (File.Exists("update.pkg"))
+                            {
+                                UpdateChecksum = dfe.CreateMD5Sum("update.pkg");
+                            }
 
-                    try
-                    {
-                        downloading = true;
-                        //BtnExit.Enabled = false;
-                        Version.Visible = false;
-                        ProgressUpdate.Visible = true;
-                        WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
-                        WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
-                        WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + CVS.UpdateInfo.ManifestPKG), "update.pkg");
-                    }
-                    catch (Exception ex)
-                    {
+                            if (UpdateChecksum == CVS.UpdateInfo.ManifestChecksum)
+                            {
+                                OnFileDownloadCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(null, false, null));
+                            }
+                            else
+                            {
 
-                        debuglog("ERROR GCstudio Loader, an error occurred while downloading the update pakage." + " > " + ex.Message + " @ " + ex.StackTrace);
+                                debuglog("INFO GCstudio Loader, Downloading the update package...");
 
-                    }
+                                try
+                                {
+                                    downloading = true;
+                                    //BtnExit.Enabled = false;
+                                    Version.Visible = false;
+                                    ProgressUpdate.Visible = true;
+                                    WebClientPKG.DownloadProgressChanged += OnDownloadProgressChanged;
+                                    WebClientPKG.DownloadFileCompleted += OnFileDownloadCompleted;
+                                    WebClientPKG.DownloadFileAsync(new Uri(ReleasePath + CVS.UpdateInfo.ManifestPKG), "update.pkg");
+                                }
+                                catch (Exception ex)
+                                {
+
+                                    debuglog("ERROR GCstudio Loader, an error occurred while downloading the update pakage." + " > " + ex.Message + " @ " + ex.StackTrace);
+
+                                }
+                            }
                 }
                 else
                 {
