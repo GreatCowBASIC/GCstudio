@@ -66,6 +66,7 @@ namespace GC_Studio
             columnHeader1 = new System.Windows.Forms.ColumnHeader();
             buttonabout = new System.Windows.Forms.Button();
             panelconfig = new System.Windows.Forms.Panel();
+            button10 = new System.Windows.Forms.Button();
             button16 = new System.Windows.Forms.Button();
             comboHide = new System.Windows.Forms.ComboBox();
             label30 = new System.Windows.Forms.Label();
@@ -709,6 +710,7 @@ namespace GC_Studio
             // 
             // panelconfig
             // 
+            panelconfig.Controls.Add(button10);
             panelconfig.Controls.Add(button16);
             panelconfig.Controls.Add(comboHide);
             panelconfig.Controls.Add(label30);
@@ -740,6 +742,18 @@ namespace GC_Studio
             panelconfig.Size = new System.Drawing.Size(1044, 963);
             panelconfig.TabIndex = 49;
             panelconfig.Visible = false;
+            // 
+            // button10
+            // 
+            button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button10.ForeColor = System.Drawing.Color.White;
+            button10.Location = new System.Drawing.Point(579, 700);
+            button10.Name = "button10";
+            button10.Size = new System.Drawing.Size(201, 72);
+            button10.TabIndex = 87;
+            button10.Text = "Export GC Studio Settings to VScode";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click_1;
             // 
             // button16
             // 
@@ -1019,7 +1033,7 @@ namespace GC_Studio
             // 
             comboide.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboide.FormattingEnabled = true;
-            comboide.Items.AddRange(new object[] { "SynWrite", "GCcode", "GCgraphical", "Geany" });
+            comboide.Items.AddRange(new object[] { "SynWrite", "GCcode", "GCgraphical", "VScode" });
             comboide.Location = new System.Drawing.Point(97, 363);
             comboide.Name = "comboide";
             comboide.Size = new System.Drawing.Size(263, 33);
@@ -1548,5 +1562,6 @@ namespace GC_Studio
         internal System.Windows.Forms.Button buttondemonstrations;
         private System.Windows.Forms.Button button16;
         internal System.Windows.Forms.Button buttonmodules;
+        private System.Windows.Forms.Button button10;
     }
 }

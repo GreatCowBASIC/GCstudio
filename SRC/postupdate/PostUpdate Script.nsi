@@ -75,8 +75,8 @@ SectionEnd
 Section -Icons_Reg
 
 #Add Path
-EnVar::SetHKCU
-EnVar::AddValue "Path" "$INSTDIR\vscode\bin;"
+#EnVar::SetHKCU
+#EnVar::AddValue "Path" "$INSTDIR\vscode\bin;"
 
 
 #File Associations
