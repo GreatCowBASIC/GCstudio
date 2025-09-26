@@ -159,17 +159,6 @@ namespace Update
                 debuglog("ERROR Updater, an error occurred while removing the CVS manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
-            try
-            {
-                debuglog("INFO Updater, removing update package...");
-                System.IO.File.Delete("update.pkg");
-            }
-            catch (Exception ex)
-            {
-                debuglog("ERROR Updater, an error occurred while removing the update package..." + " > " + ex.Message + " @ " + ex.StackTrace);
-            }
-
-
 
             try
             {
