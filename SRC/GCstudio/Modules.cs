@@ -16,40 +16,26 @@ namespace GC_Studio
 {
     public partial class Modules : Form
     {
-        List<Module> modulesList = new List<Module>();
-        string modulesDirectory;
-        string jsonFilePath;
+        private List<Module> modulesList = new List<Module>();
+        private string modulesDirectory;
+        private string jsonFilePath;
+        private readonly string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+
+
 
         public Modules()
         {
             InitializeComponent();
         }
 
+
+
         private void Modules_Load(object sender, EventArgs e)
         {
             modulesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules");
             jsonFilePath = Path.Combine(modulesDirectory, "modules.json");
 
-            // Load existing modules.json if it exists
-            if (File.Exists(jsonFilePath))
-            {
-                try
-                {
-                    string json = File.ReadAllText(jsonFilePath);
-                    modulesList = JsonSerializer.Deserialize<List<Module>>(json) ?? new List<Module>();
-                    debuglog("INFO GCstudio Modules, Loaded modules.json successfully.");
-                }
-                catch
-                {
-                    modulesList = new List<Module>();
-                    debuglog("ERROR GCstudio Modules, Failed to deserialize modules.json.");
-                }
-            }
-            else
-            {
-                modulesList = new List<Module>();
-                debuglog("INFO GCstudio Modules, modules.json not found, starting with empty list.");
-            }
+            LoadModulesList();
 
             // Scan directory for .mpk files and add new ones to modulesList
             if (Directory.Exists(modulesDirectory))
@@ -73,15 +59,12 @@ namespace GC_Studio
             }
             else
             {
-                debuglog("ERROR GCstudio Modules, Modules directory not found." + " > " + modulesDirectory);
+                debuglog("ERROR GCstudio Modules, Modules directory not found. > " + modulesDirectory);
                 MessageBox.Show("Directory not found: " + modulesDirectory);
                 return;
             }
 
-            // Save updated modulesList back to modules.json
-            var jsonOut = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(jsonFilePath, jsonOut);
-            debuglog("INFO GCstudio Modules, Saved modules list to modules.json.");
+            SaveModulesList();
 
             // Add modules to checkedListBoxModules
             checkedListBoxModules.Items.Clear();
@@ -96,6 +79,9 @@ namespace GC_Studio
             checkedListBoxModules.ItemCheck += CheckedListBoxModules_ItemCheck;
         }
 
+
+
+
         private void CheckedListBoxModules_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // Get the module name for the item being checked/unchecked
@@ -109,12 +95,106 @@ namespace GC_Studio
                 module.Enabled = (e.NewValue == CheckState.Checked);
                 debuglog($"INFO GCstudio Modules, Module '{moduleName}' Enabled set to {module.Enabled}.");
 
-                // Save the updated list to JSON
-                var jsonOut = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(jsonFilePath, jsonOut);
-                debuglog("INFO GCstudio Modules, Updated modules.json after ItemCheck.");
+                // If the item is being disabled, execute removal script and update Deployed
+                if (e.NewValue == CheckState.Unchecked)
+                {
+                    DeleteCurrentModuleScripts();
+
+                    // Get just the Script folder from the .mpk file to Modules\Scripts
+                    string mpkPath = Path.Combine(modulesDirectory, moduleName);
+                    string scriptsOutputDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules");
+
+                    if (File.Exists(mpkPath))
+                    {
+                        try
+                        {
+                            ProcessStartInfo extractProc = new ProcessStartInfo
+                            {
+                                FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "minidump.exe"),
+                                Arguments = $"x \"{mpkPath}\" \"Modules\\*\" -o\"{AppDomain.CurrentDomain.BaseDirectory}\" -y",
+                                WindowStyle = ProcessWindowStyle.Hidden,
+                                CreateNoWindow = true
+                            };
+                            Process extractProcess = Process.Start(extractProc);
+                            extractProcess.WaitForExit();
+                            debuglog($"INFO GCstudio Modules, Extracted Script folder from '{mpkPath}' to '{scriptsOutputDir}'.");
+                        }
+                        catch (Exception ex)
+                        {
+                            debuglog($"ERROR GCstudio Modules, Failed to extract Script folder from '{mpkPath}'. > {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        debuglog($"WARN GCstudio Modules, .mpk file '{mpkPath}' not found for Script extraction.");
+                    }
+
+                    // Execute removal script if it exists
+                    string removalScriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_rem");
+                    bool scriptExecuted = false;
+                    foreach (var ext in scriptExtensions)
+                    {
+                        string scriptPath = removalScriptBase + ext;
+                        if (File.Exists(scriptPath))
+                        {
+                            try
+                            {
+                                ProcessStartInfo scriptProc = new ProcessStartInfo
+                                {
+                                    WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory,
+                                    WindowStyle = ProcessWindowStyle.Hidden,
+                                    CreateNoWindow = true
+                                };
+                                if (ext == ".exe")
+                                {
+                                    scriptProc.FileName = scriptPath;
+                                    scriptProc.Arguments = "";
+                                }
+                                else if (ext == ".ps1")
+                                {
+                                    scriptProc.FileName = "powershell.exe";
+                                    scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                }
+                                else if (ext == ".bat")
+                                {
+                                    scriptProc.FileName = "cmd.exe";
+                                    scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                                }
+                                Process scriptProcess = Process.Start(scriptProc);
+                                scriptProcess.WaitForExit();
+                                debuglog($"INFO GCstudio Modules, Executed removal script '{scriptPath}' for module '{moduleName}'.");
+                                scriptExecuted = true;
+                                break; // Only execute the first found script
+                            }
+                            catch (Exception ex)
+                            {
+                                debuglog($"ERROR GCstudio Modules, Failed to execute removal script '{scriptPath}' for module '{moduleName}'. > {ex.Message}");
+                            }
+                        }
+                    }
+                    if (!scriptExecuted)
+                    {
+                        debuglog($"INFO GCstudio Modules, No removal script found for module '{moduleName}'.");
+                    }
+
+                    // Set Deployed to false and update JSON after script execution
+                    module.Deployed = false;
+                    SaveModulesList();
+                    debuglog("INFO GCstudio Modules, Updated modules.json after disabling module.");
+                    DeleteCurrentModuleScripts();
+
+                }
+                else
+                {
+                    // Save the updated list to JSON for other state changes
+                    SaveModulesList();
+                    debuglog("INFO GCstudio Modules, Updated modules.json after ItemCheck.");
+                }
             }
         }
+
+
+
 
         private void buttonRem_Click(object sender, EventArgs e)
         {
@@ -132,6 +212,37 @@ namespace GC_Studio
 
             // Build the file path
             string filePath = Path.Combine(modulesDirectory, moduleName);
+
+            DeleteCurrentModuleScripts();
+
+            // Get just the Script folder from the .mpk file to Modules\Scripts
+            string mpkPath = Path.Combine(modulesDirectory, moduleName);
+            string scriptsOutputDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules");
+
+            if (File.Exists(mpkPath))
+            {
+                try
+                {
+                    ProcessStartInfo extractProc = new ProcessStartInfo
+                    {
+                        FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "minidump.exe"),
+                        Arguments = $"x \"{mpkPath}\" \"Modules\\*\" -o\"{AppDomain.CurrentDomain.BaseDirectory}\" -y",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        CreateNoWindow = true
+                    };
+                    Process extractProcess = Process.Start(extractProc);
+                    extractProcess.WaitForExit();
+                    debuglog($"INFO GCstudio Modules, Extracted Script folder from '{mpkPath}' to '{scriptsOutputDir}'.");
+                }
+                catch (Exception ex)
+                {
+                    debuglog($"ERROR GCstudio Modules, Failed to extract Script folder from '{mpkPath}'. > {ex.Message}");
+                }
+            }
+            else
+            {
+                debuglog($"WARN GCstudio Modules, .mpk file '{mpkPath}' not found for Script extraction.");
+            }
 
             // Try to delete the .mpk file
             try
@@ -170,16 +281,120 @@ namespace GC_Studio
             debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from checkedListBoxModules.");
 
             // Update the JSON file
-            var jsonOut = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(jsonFilePath, jsonOut);
+            SaveModulesList();
             debuglog("INFO GCstudio Modules, Updated modules.json after removal.");
+
+            // Execute removal script
+            string removalScriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_rem");
+            bool scriptExecuted = false;
+            foreach (var ext in scriptExtensions)
+            {
+                string scriptPath = removalScriptBase + ext;
+                if (File.Exists(scriptPath))
+                {
+                    try
+                    {
+                        ProcessStartInfo scriptProc = new ProcessStartInfo
+                        {
+                            WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory,
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true
+                        };
+                        if (ext == ".exe")
+                        {
+                            scriptProc.FileName = scriptPath;
+                            scriptProc.Arguments = "";
+                        }
+                        else if (ext == ".ps1")
+                        {
+                            scriptProc.FileName = "powershell.exe";
+                            scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                        }
+                        else if (ext == ".bat")
+                        {
+                            scriptProc.FileName = "cmd.exe";
+                            scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                        }
+                        Process scriptProcess = Process.Start(scriptProc);
+                        scriptProcess.WaitForExit();
+                        debuglog($"INFO GCstudio Modules, Executed removal script '{scriptPath}' for module '{moduleName}'.");
+                        scriptExecuted = true;
+                        break; // Only execute the first found script
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog($"ERROR GCstudio Modules, Failed to execute removal script '{scriptPath}' for module '{moduleName}'. > {ex.Message}");
+                    }
+                }
+            }
+            if (!scriptExecuted)
+            {
+                debuglog($"INFO GCstudio Modules, No removal script found for module '{moduleName}'.");
+            }
+
+            // Delete all possible deployment and removal scripts for the module
+            DeleteCurrentModuleScripts();
         }
+
+
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void Modules_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            debuglog("INFO GCstudio Modules, Restarting application.");
+
+            ProcessStartInfo p = new ProcessStartInfo();
+            Process x;
+            try
+            {
+                p.FileName = "gcstudio.exe";
+                p.WindowStyle = ProcessWindowStyle.Normal;
+                x = Process.Start(p);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio  Modules, an error occurred when restarting application. > " + ex.Message + " @ " + ex.StackTrace);
+                MessageBox.Show("An error occurred when restarting application.");
+            }
+        }
+
+
+        /// <summary>
+        /// Deletes all current Script_dep and Script_rem files in Modules\Scripts.
+        /// </summary>
+        private void DeleteCurrentModuleScripts()
+        {
+            string[] scriptBases = new[]
+            {
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep"),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_rem")
+            };
+
+            foreach (var scriptBase in scriptBases)
+            {
+                foreach (var ext in scriptExtensions)
+                {
+                    string scriptPath = scriptBase + ext;
+                    try
+                    {
+                        if (File.Exists(scriptPath))
+                        {
+                            File.Delete(scriptPath);
+                            debuglog($"INFO GCstudio, Deleted script file '{scriptPath}' in DeleteCurrentModuleScripts.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog($"ERROR GCstudio, Failed to delete script file '{scriptPath}' in DeleteCurrentModuleScripts. > {ex.Message}");
+                    }
+                }
+            }
+        }
 
 
         /// <summary>
@@ -205,24 +420,36 @@ namespace GC_Studio
             catch { }
         }
 
-        private void Modules_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            debuglog("INFO GCstudio Modules, Restarting application.");
 
-            ProcessStartInfo p = new ProcessStartInfo();
-            Process x;
-            try
+        private void LoadModulesList()
+        {
+            if (File.Exists(jsonFilePath))
             {
-                p.FileName = "gcstudio.exe";               
-                p.WindowStyle = ProcessWindowStyle.Normal;
-                x = Process.Start(p);
-                Environment.Exit(0);
+                try
+                {
+                    string json = File.ReadAllText(jsonFilePath);
+                    modulesList = JsonSerializer.Deserialize<List<Module>>(json) ?? new List<Module>();
+                    debuglog("INFO GCstudio Modules, Loaded modules.json successfully.");
+                }
+                catch
+                {
+                    modulesList = new List<Module>();
+                    debuglog("ERROR GCstudio Modules, Failed to deserialize modules.json.");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                debuglog("ERROR GCstudio  Modules, an error occurred when restarting application." + " > " + ex.Message + " @ " + ex.StackTrace);
-                MessageBox.Show("An error occurred when restarting application.");
+                modulesList = new List<Module>();
+                debuglog("INFO GCstudio Modules, modules.json not found, starting with empty list.");
             }
         }
+
+        private void SaveModulesList()
+        {
+            var jsonOut = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(jsonFilePath, jsonOut);
+            debuglog("INFO GCstudio Modules, Saved modules list to modules.json.");
+        }
+
     }
 }

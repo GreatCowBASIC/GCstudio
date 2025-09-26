@@ -31,6 +31,7 @@ namespace GC_Studio
         readonly string DonateLink = "https://paypal.me/gcbasic";
         ListViewItem[] RecentItem = new ListViewItem[10];
         CultureInfo Provider = new CultureInfo("en-US");
+        List<Module> modulesList = new List<Module>();
 
         /// <summary>
         /// set focus function
@@ -101,7 +102,6 @@ namespace GC_Studio
 
 
             debuglog("INFO GCstudio, applying configuration...");
-
 
             comboupdate.Text = Config.GCstudio.ReleaseChanel;
             comboide.Text = Config.GCstudio.IDE;
@@ -197,7 +197,30 @@ namespace GC_Studio
                 this.WindowState = FormWindowState.Maximized;
             }
 
-            ///post updater
+            ///Load current modules.json
+            // Load modules.json
+            string modulesJsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "modules.json");
+            if (File.Exists(modulesJsonPath))
+            {
+                try
+                {
+                    string json = File.ReadAllText(modulesJsonPath);
+                    modulesList = JsonSerializer.Deserialize<List<Module>>(json) ?? new List<Module>();
+                    debuglog("INFO GCstudio, Loaded modules.json successfully.");
+                }
+                catch (Exception ex)
+                {
+                    modulesList = new List<Module>();
+                    debuglog("ERROR GCstudio, Failed to deserialize modules.json. > " + ex.Message);
+                }
+            }
+            else
+            {
+                modulesList = new List<Module>();
+                debuglog("INFO GCstudio, modules.json not found, starting with empty list.");
+            }
+
+            ///post updater and Module deployment
             if (File.Exists("post.dat"))
             {
                 debuglog("INFO GCstudio, post update flag detected, launching process...");
@@ -227,6 +250,200 @@ namespace GC_Studio
                     MessageBox.Show("Error starting the post updater.");
                     Environment.Exit(0);
                 }
+
+                // Extract and deploy all enabled modules
+                debuglog("INFO GCstudio, post update flag detected, extracting all enabled modules...");
+                foreach (var module in modulesList.Where(m => m.Enabled))
+                {
+
+                    DeleteCurrentModuleScripts();
+
+                    string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
+                    if (File.Exists(mpkPath))
+                    {
+                        try
+                        {
+                            ProcessStartInfo p = new ProcessStartInfo();
+                            p.FileName = "minidump.exe";
+                            p.Arguments = $"x \"{mpkPath}\" -y";
+                            p.WindowStyle = ProcessWindowStyle.Hidden;
+                            p.CreateNoWindow = true;
+                            Process x = Process.Start(p);
+                            x.WaitForExit();
+
+                            module.Deployed = true;
+                            debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
+
+                            // Check for deployment scripts
+                            string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
+                            string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+                            bool scriptExecuted = false;
+
+                            foreach (var ext in scriptExtensions)
+                            {
+                                string scriptPath = scriptBase + ext;
+                                if (File.Exists(scriptPath))
+                                {
+                                    try
+                                    {
+                                        ProcessStartInfo scriptProc = new ProcessStartInfo();
+                                        scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                        if (ext == ".exe")
+                                        {
+                                            scriptProc.FileName = scriptPath;
+                                            scriptProc.Arguments = "";
+                                        }
+                                        else if (ext == ".ps1")
+                                        {
+                                            scriptProc.FileName = "powershell.exe";
+                                            scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                        }
+                                        else if (ext == ".bat")
+                                        {
+                                            scriptProc.FileName = "cmd.exe";
+                                            scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                                        }
+                                        scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
+                                        scriptProc.CreateNoWindow = true;
+                                        Process scriptProcess = Process.Start(scriptProc);
+                                        scriptProcess.WaitForExit();
+                                        debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
+                                        scriptExecuted = true;
+                                        break; // Only execute the first found script
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
+                                    }
+                                }
+                            }
+                            if (!scriptExecuted)
+                            {
+                                debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
+                    }
+                }
+                // Update modules.json after extraction
+                try
+                {
+                    string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(modulesJsonPath, updatedJson);
+                    debuglog("INFO GCstudio, Updated modules.json after deployment.");
+                }
+                catch (Exception ex)
+                {
+                    debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
+                }
+                DeleteCurrentModuleScripts();
+            }
+            else
+            {
+                // Extract and deploy all enabled but not yet deployed modules
+                debuglog("INFO GCstudio, post update flag not detected, extracting enabled but not deployed modules...");
+                foreach (var module in modulesList.Where(m => m.Enabled && !m.Deployed))
+                {
+
+                    DeleteCurrentModuleScripts();
+
+                    string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
+                    if (File.Exists(mpkPath))
+                    {
+                        try
+                        {
+                            ProcessStartInfo p = new ProcessStartInfo();
+                            p.FileName = "minidump.exe";
+                            p.Arguments = $"x \"{mpkPath}\" -y";
+                            p.WindowStyle = ProcessWindowStyle.Hidden;
+                            p.CreateNoWindow = true;
+                            Process x = Process.Start(p);
+                            x.WaitForExit();
+
+                            module.Deployed = true;
+                            debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
+
+                            // Check for deployment scripts
+
+                            string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
+                            string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+                            bool scriptExecuted = false;
+
+                            foreach (var ext in scriptExtensions)
+                            {
+                                string scriptPath = scriptBase + ext;
+                                if (File.Exists(scriptPath))
+                                {
+                                    try
+                                    {
+                                        ProcessStartInfo scriptProc = new ProcessStartInfo();
+                                        scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                        if (ext == ".exe")
+                                        {
+                                            scriptProc.FileName = scriptPath;
+                                            scriptProc.Arguments = "";
+                                        }
+                                        else if (ext == ".ps1")
+                                        {
+                                            scriptProc.FileName = "powershell.exe";
+                                            scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                        }
+                                        else if (ext == ".bat")
+                                        {
+                                            scriptProc.FileName = "cmd.exe";
+                                            scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                                        }
+                                        scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
+                                        scriptProc.CreateNoWindow = true;
+                                        Process scriptProcess = Process.Start(scriptProc);
+                                        scriptProcess.WaitForExit();
+                                        debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
+                                        scriptExecuted = true;
+                                        break; // Only execute the first found script
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
+                                    }
+                                }
+                            }
+                            if (!scriptExecuted)
+                            {
+                                debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
+                    }
+                }
+                // Update modules.json after extraction
+                try
+                {
+                    string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(modulesJsonPath, updatedJson);
+                    debuglog("INFO GCstudio, Updated modules.json after deployment.");
+                }
+                catch (Exception ex)
+                {
+                    debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
+                }
+                DeleteCurrentModuleScripts();
+
             }
 
 
@@ -1758,6 +1975,58 @@ namespace GC_Studio
             Process.Start("explorer", Demonstrations);
         }
 
+
+        private void buttonmodules_Click(object sender, EventArgs e)
+        {
+            Form modules = new GC_Studio.Modules();
+            modules.ShowDialog();
+        }
+
+        private void buttonmodules_MouseHover(object sender, EventArgs e)
+        {
+            buttonmodules.ForeColor = Color.White;
+        }
+
+        private void buttonmodules_MouseLeave(object sender, EventArgs e)
+        {
+            buttonmodules.ForeColor = Color.CornflowerBlue;
+        }
+
+
+        /// <summary>
+        /// Deletes all current Script_dep and Script_rem files in Modules\Scripts.
+        /// </summary>
+        private void DeleteCurrentModuleScripts()
+        {
+            string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+            string[] scriptBases = new[]
+            {
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep"),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_rem")
+            };
+
+            foreach (var scriptBase in scriptBases)
+            {
+                foreach (var ext in scriptExtensions)
+                {
+                    string scriptPath = scriptBase + ext;
+                    try
+                    {
+                        if (File.Exists(scriptPath))
+                        {
+                            File.Delete(scriptPath);
+                            debuglog($"INFO GCstudio, Deleted script file '{scriptPath}' in DeleteCurrentModuleScripts.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog($"ERROR GCstudio, Failed to delete script file '{scriptPath}' in DeleteCurrentModuleScripts. > {ex.Message}");
+                    }
+                }
+            }
+        }
+
+
         /// <summary>
         /// Debug Logger
         /// </summary>
@@ -1781,20 +2050,6 @@ namespace GC_Studio
             catch { }
         }
 
-        private void buttonmodules_Click(object sender, EventArgs e)
-        {
-            Form modules = new GC_Studio.Modules();
-            modules.ShowDialog();
-        }
 
-        private void buttonmodules_MouseHover(object sender, EventArgs e)
-        {
-            buttonmodules.ForeColor = Color.White;
-        }
-
-        private void buttonmodules_MouseLeave(object sender, EventArgs e)
-        {
-            buttonmodules.ForeColor = Color.CornflowerBlue;
-        }
     }
 }
