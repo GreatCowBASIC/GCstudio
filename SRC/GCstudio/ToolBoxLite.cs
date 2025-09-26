@@ -70,9 +70,7 @@ namespace GC_Studio
                 // Create and send a WM_NCLBUTTONDOWN message.
                 const int WM_NCLBUTTONDOWN = 0x00A1;
                 const int HTCAPTION = 2;
-                Message msg =
-                    Message.Create(this.Handle, WM_NCLBUTTONDOWN,
-                        new IntPtr(HTCAPTION), IntPtr.Zero);
+                Message msg = Message.Create(this.Handle, WM_NCLBUTTONDOWN, new IntPtr(HTCAPTION), IntPtr.Zero);
                 this.DefWndProc(ref msg);
             }
         }
@@ -151,6 +149,22 @@ namespace GC_Studio
                                 {
                                     allTasks.Add(task.Clone());
                                 }
+                            }
+                        }
+
+                        // VScode tasks.json deployment
+                        if (Config.GCstudio.IDE == "VScode")
+                        {
+                            try
+                            {
+                                string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Code", "User", "tasks.json");
+                                debuglog($"INFO GCstudio, Deploying Tasks.json to VScode: {appDataCodeUserPath}");
+                                File.Copy(targetFile, appDataCodeUserPath, true);
+                                debuglog("INFO GCstudio, Tasks.json deployed successfully.");
+                            }
+                            catch (Exception ex)
+                            {
+                                debuglog($"ERROR GCstudio, failed to deploy Tasks.json to VScode: {ex.Message} @ {ex.StackTrace}");
                             }
                         }
                     }
@@ -1073,8 +1087,10 @@ namespace GC_Studio
                             break;
 
 
-                        case "Geany":
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
+                        case "VScode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                             break;
                     }
                 }
@@ -1143,8 +1159,10 @@ namespace GC_Studio
                             break;
 
 
-                        case "Geany":
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
+                        case "VScode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                             break;
                     }
                 }
@@ -1216,8 +1234,10 @@ namespace GC_Studio
                             break;
 
 
-                        case "Geany":
-                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\"", Config.GCstudio.IDE);
+                        case "VScode":
+                            addrecent(textBox1.Text, textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace");
+
+                            LaunchIDE("\"" + textBox2.Text + "\\" + textBox1.Text + "\\Visual Studio Project.code-workspace" + "\"", Config.GCstudio.IDE);
                             break;
                     }
                 }
@@ -1300,7 +1320,7 @@ namespace GC_Studio
             if ((comboarch.Text == "x64") && (Environment.Is64BitOperatingSystem == false))
             {
                 comboarch.Text = "x86";
-                MessageBox.Show("Your current operating system is a 32bit variant and can't run a 64bit compiler.", "32bit Operating System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("User is on a 32bit OS, switching architecture to x86.", "Architecture Switch", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             Config.GCstudio.Architecture = comboarch.Text;
             SaveConfig();
@@ -1457,8 +1477,9 @@ namespace GC_Studio
 
 
 
-                case "Geany":
-                    debuglog("INFO GCstudio, launching Geany...");
+                case "VScode":
+                    debuglog("INFO GCstudio, launching VScode (Experimental)...");
+
 
                     try
                     {
@@ -1476,20 +1497,35 @@ namespace GC_Studio
                         }
                         SaveConfig();
 
-                        p.FileName = AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe";
+                        string vsCodePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Programs", "Microsoft VS Code", "Code.exe");
+
+                        debuglog("INFO GCstudio, starting GCstudio process and log daemon...");
+                        this.ShowInTaskbar = false;
+                        this.Hide();
+
+                        p.FileName = vsCodePath;
                         p.Arguments = Args;
                         p.WindowStyle = ProcessWindowStyle.Normal;
+                        p.RedirectStandardOutput = true;
+                        p.RedirectStandardError = true;
                         x = Process.Start(p);
                         SetForegroundWindow(x.MainWindowHandle);
+                        x.OutputDataReceived += VScode_OutputDataReceived;
+                        x.ErrorDataReceived += VScode_ErrorDataReceived;
+                        x.BeginOutputReadLine();
+                        x.BeginErrorReadLine();
+                        x.WaitForExit();
+
+                        debuglog("INFO GCstudio, VScode process terminated, exiting daemon...");
 
                         Environment.Exit(0);
                         break;
                     }
                     catch (Exception ex)
                     {
-                        debuglog("INFO GCstudio, an error occurred while launching Geany; expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe" + " > " + ex.Message + " @ " + ex.StackTrace);
+                        debuglog("INFO GCstudio, an error occurred while launching VScode; is in PATH?  > " + ex.Message + " @ " + ex.StackTrace);
 
-                        MessageBox.Show("An error occurred when launching the IDE, expected ide location: " + AppDomain.CurrentDomain.BaseDirectory + "Geany\\bin\\Geany.exe");
+                        MessageBox.Show("An error occurred when launching the IDE.");
                         break;
                     }
 
@@ -1544,6 +1580,51 @@ namespace GC_Studio
             catch { }
         }
 
+
+
+        /// <summary>
+        /// VScode Log Daemon
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+        private void VScode_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            DataFileEngine dl = new DataFileEngine();
+            try
+            {
+                dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/VScode.log", true);
+                if (e.Data == null || e.Data == "")
+                {
+                    dl.RecordData("");
+                }
+                else
+                {
+                    dl.RecordData(e.Data + "<out");
+                }
+                dl.CloseWrite();
+            }
+            catch { }
+        }
+
+        private void VScode_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            DataFileEngine dl = new DataFileEngine();
+            try
+            {
+                dl.StreamW = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Log/VScode.log", true);
+                if (e.Data == null || e.Data == "")
+                {
+                    dl.RecordData("");
+                }
+                else
+                {
+                    dl.RecordData(e.Data + "<err");
+                }
+                dl.CloseWrite();
+            }
+            catch { }
+        }
 
 
 
@@ -1990,6 +2071,25 @@ namespace GC_Studio
         private void buttonmodules_MouseLeave(object sender, EventArgs e)
         {
             buttonmodules.ForeColor = Color.CornflowerBlue;
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            string targetFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "vscode", "data", "user-data", "user", "settings.json");
+            string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"Code", "User", "settings.json");
+
+            try
+            {
+                debuglog($"INFO GCstudio, Exporting settings.json to VScode user path: {appDataCodeUserPath}");
+                File.Copy(targetFile, appDataCodeUserPath, true);
+                debuglog("INFO GCstudio, settings exported successfully.");
+                MessageBox.Show("GC Code settings exported to VS Code.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                debuglog($"ERROR GCstudio, failed to export settings.json to VScode user path: {ex.Message} @ {ex.StackTrace}");
+                MessageBox.Show($"Failed to export settings.json:\n{ex.Message}", "Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
