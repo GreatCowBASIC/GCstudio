@@ -207,10 +207,87 @@ namespace GC_Studio
                 string[] sourceFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "IntelliSense", "*.json");
 
 
+                // Dictionary to hold merged properties
+                var merged = new Dictionary<string, object>();
 
+                foreach (string file in sourceFiles)
+                {
+                    string content = File.ReadAllText(file);
+                    using (JsonDocument doc = JsonDocument.Parse(content))
+                    {
+                        foreach (var prop in doc.RootElement.EnumerateObject())
+                        {
+                            if (prop.Value.ValueKind == JsonValueKind.Array)
+                            {
+                                // Merge arrays: concatenate items
+                                if (!merged.ContainsKey(prop.Name))
+                                    merged[prop.Name] = new List<JsonElement>();
 
+                                var arr = (List<JsonElement>)merged[prop.Name];
+                                foreach (var item in prop.Value.EnumerateArray())
+                                    arr.Add(item.Clone());
+                            }
+                            else if (prop.Value.ValueKind == JsonValueKind.Object)
+                            {
+                                // Merge objects: merge by key
+                                if (!merged.ContainsKey(prop.Name))
+                                    merged[prop.Name] = new Dictionary<string, JsonElement>();
 
+                                var dict = (Dictionary<string, JsonElement>)merged[prop.Name];
+                                foreach (var objProp in prop.Value.EnumerateObject())
+                                {
+                                    dict[objProp.Name] = objProp.Value.Clone();
+                                }
+                            }
+                            else
+                            {
+                                // For primitive values, keep the first encountered
+                                if (!merged.ContainsKey(prop.Name))
+                                    merged[prop.Name] = prop.Value.Clone();
+                            }
+                        }
+                    }
+                }
 
+                // Build output object for serialization
+                using var memoryStream = new MemoryStream();
+                using (var docBuilder = new Utf8JsonWriter(memoryStream, new JsonWriterOptions { Indented = true }))
+                {
+                    docBuilder.WriteStartObject();
+                    foreach (var kvp in merged)
+                    {
+                        if (kvp.Value is List<JsonElement> arr)
+                        {
+                            docBuilder.WritePropertyName(kvp.Key);
+                            docBuilder.WriteStartArray();
+                            foreach (var item in arr)
+                                item.WriteTo(docBuilder);
+                            docBuilder.WriteEndArray();
+                        }
+                        else if (kvp.Value is Dictionary<string, JsonElement> dict)
+                        {
+                            docBuilder.WritePropertyName(kvp.Key);
+                            docBuilder.WriteStartObject();
+                            foreach (var objKvp in dict)
+                            {
+                                docBuilder.WritePropertyName(objKvp.Key);
+                                objKvp.Value.WriteTo(docBuilder);
+                            }
+                            docBuilder.WriteEndObject();
+                        }
+                        else if (kvp.Value is JsonElement elem)
+                        {
+                            docBuilder.WritePropertyName(kvp.Key);
+                            elem.WriteTo(docBuilder);
+                        }
+                    }
+                    docBuilder.WriteEndObject();
+                    docBuilder.Flush();
+
+                    File.WriteAllText(targetFile, Encoding.UTF8.GetString(memoryStream.ToArray()));
+                }
+
+                debuglog("INFO GCstudio, IntelliSenseGCB.json compiled successfully.");
 
 
                 // VScode IntelliSenseGCB.json deployment
