@@ -126,7 +126,7 @@ namespace GC_Studio
                 debuglog("INFO GCstudio, compiling task.json for GCcode...");
 
                 string targetFile = AppDomain.CurrentDomain.BaseDirectory + "vscode/data/user-data/user/tasks.json";
-                string[] sourceFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "vscode/data/user-data/user/tasks", "*.json");
+                string[] sourceFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "tasks", "*.json");
 
                 var allTasks = new List<JsonElement>();
                 string version = "2.0.0";
@@ -188,10 +188,53 @@ namespace GC_Studio
 
                 string combinedJson = JsonSerializer.Serialize(output, options);
                 File.WriteAllText(targetFile, combinedJson, Encoding.UTF8);
+
+     
             }
             catch (Exception ex)
             {
                 debuglog("ERROR GCstudio, an error occurred while compiling task.json" + " > " + ex.Message + " @ " + ex.StackTrace);
+            }
+
+
+            ///IntelliSenseGCB.json compilation
+            ///
+            try
+            {
+                debuglog("INFO GCstudio, compiling IntelliSenseGCB.json for GCcode...");
+
+                string targetFile = AppDomain.CurrentDomain.BaseDirectory + "vscode/data/extensions/MierEngineering.GreatCowBasic-1.0.0/dist/IntelliSenseGCB.json";
+                string[] sourceFiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "IntelliSense", "*.json");
+
+
+
+
+
+
+
+
+                // VScode IntelliSenseGCB.json deployment
+                if (Config.GCstudio.IDE == "VScode")
+                {
+                    try
+                    {
+
+                        string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".vscode", "extensions", "mierengineering.gcbasic-1.0.1", "dist", "IntelliSenseGCB.json");
+                        debuglog($"INFO GCstudio, Deploying IntelliSenseGCB.json to VScode: {appDataCodeUserPath}");
+                        File.Copy(targetFile, appDataCodeUserPath, true);
+                        debuglog("INFO GCstudio, IntelliSenseGCB.json deployed successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog($"ERROR GCstudio, failed to deploy IntelliSenseGCB.json to VScode: {ex.Message} @ {ex.StackTrace}");
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio, an error occurred while compiling IntelliSenseGCB.json" + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
 
