@@ -1628,7 +1628,6 @@ namespace GC_Studio
 
 
 
-
         private void buttoncompiler_MouseLeave(object sender, EventArgs e)
         {
             buttoncompiler.ForeColor = Color.CornflowerBlue;
@@ -2076,20 +2075,54 @@ namespace GC_Studio
         private void button10_Click_1(object sender, EventArgs e)
         {
             string targetFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "vscode", "data", "user-data", "user", "settings.json");
-            string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"Code", "User", "settings.json");
+            string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Code", "User", "settings.json");
 
             try
             {
                 debuglog($"INFO GCstudio, Exporting settings.json to VScode user path: {appDataCodeUserPath}");
                 File.Copy(targetFile, appDataCodeUserPath, true);
                 debuglog("INFO GCstudio, settings exported successfully.");
-                MessageBox.Show("GC Code settings exported to VS Code.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 debuglog($"ERROR GCstudio, failed to export settings.json to VScode user path: {ex.Message} @ {ex.StackTrace}");
                 MessageBox.Show($"Failed to export settings.json:\n{ex.Message}", "Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Add default extensions to VSCode 
+            string vsCodePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "Programs", "Microsoft VS Code", "bin", "Code.cmd"
+            );
+
+            // Extensions to install
+            string[] extensions = new[] { "mierengineering.gcbasic", "aaron-bond.better-comments", "atishay-jain.all-autocomplete", "github.copilot", "grapecity.gc-excelviewer", "rioj7.command-variable", "tomoki1207.pdf" };
+
+            // Build the install command
+            string args = "--install-extension " + string.Join(" --install-extension ", extensions);
+
+            try
+            {
+                var p = new ProcessStartInfo
+                {
+                    FileName = vsCodePath,
+                    Arguments = args,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = true
+                };
+                Process.Start(p);
+                debuglog("INFO GCstudio, VSCode extensions install command executed: " + args);
+            }
+            catch (Exception ex)
+            {
+                debuglog("ERROR GCstudio, failed to run VSCode extension install: " + ex.Message + " @ " + ex.StackTrace);
+                MessageBox.Show("Failed to run VSCode extension install:\n" + ex.Message, "VSCode Extension Install Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Show success message after all operations
+            MessageBox.Show("GC Code settings exported to VS Code.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
