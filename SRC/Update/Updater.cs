@@ -4,8 +4,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Update
 {
@@ -14,9 +14,8 @@ namespace Update
         DataFileEngine dfe = new DataFileEngine();
         JsonConvert json = new JsonConvert();
         UpdateManifest CVS = new UpdateManifest();
-        public const double AppVer = 1.0203;
+        public const double AppVer = 1.0204;
         string[] arguments;
-
 
         public Updater()
         {
@@ -26,11 +25,23 @@ namespace Update
 
             InitializeComponent();
             this.Visible = false;
+            this.Shown += Updater_Shown;
+        }
+
+        private async void Updater_Shown(object sender, EventArgs e)
+        {
+            // Ensure all pending UI events are processed
+            Application.DoEvents();
+
+            // Smart delay: Wait for 200ms (adjust as needed)
+            await Task.Delay(200);
+
+            // Now start the update process
+            StartUpdate();
         }
 
         private void Updater_Load(object sender, EventArgs e)
         {
-
             debuglog("INFO Updater, setting round corners on splash...");
             RoundCorners(this);
 
@@ -40,14 +51,11 @@ namespace Update
 
             if (arguments.Length > 1)
             {
-
                 debuglog("INFO Updater, arguments found...");
-
 
                 switch (arguments[1])
                 {
                     case "/apply" or "-a" or "--apply":
-
                         this.Visible = true;
 
                         try
@@ -61,8 +69,7 @@ namespace Update
                             {
                                 process.Kill();
                             }
-                            InitialDelay.Enabled = true;
-                            debuglog("DEBUG Updater, initial delay for killing process: Enabled=" + InitialDelay.Enabled + ", Interval=" + InitialDelay.Interval.ToString() + "ms");
+                            // InitialDelay removed; update will start in Updater_Shown
                         }
                         catch (Exception ex)
                         {
@@ -84,23 +91,11 @@ namespace Update
                 debuglog("ERROR Updater, no argument detected, exiting");
                 Environment.Exit(0);
             }
-
-
-
-
-
-        }
-
-        private void InitialDelay_Tick(object sender, EventArgs e)
-        {
-            InitialDelay.Enabled = false;
-            StartUpdate();
         }
 
         private void StartUpdate()
         {
             debuglog("INFO Updater, starting the update, looking for CVS manifest...");
-
 
             try
             { 
@@ -130,7 +125,6 @@ namespace Update
                 Environment.Exit(0);
             }
 
-
             try
             {
                 debuglog("INFO Updater, applying update package...");
@@ -159,7 +153,6 @@ namespace Update
                 debuglog("ERROR Updater, an error occurred while removing the CVS manifest..." + " > " + ex.Message + " @ " + ex.StackTrace);
             }
 
-
             try
             {
                 debuglog("INFO Updater, update finished, starting the application...");
@@ -176,9 +169,6 @@ namespace Update
                 MessageBox.Show("Error starting the application.");
                 Environment.Exit(0);
             }
-
-
-
         }
 
         public void RoundCorners(Form form)
@@ -210,7 +200,6 @@ namespace Update
             e.Cancel = true;
         }
 
-
         /// <summary>
         /// Debug Logger
         /// </summary>
@@ -233,9 +222,5 @@ namespace Update
             }
             catch { }
         }
-
-
     }
-
-
 }
