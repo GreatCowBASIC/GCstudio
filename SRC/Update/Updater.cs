@@ -108,6 +108,7 @@ namespace Update
                     debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestVer=" + CVS.UpdateInfo.ManifestVer);
                     debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestMinVer=" + CVS.UpdateInfo.ManifestMinVer);
                     debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestChecksumr=" + CVS.UpdateInfo.ManifestChecksum);
+                    debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestPKG=" + CVS.UpdateInfo.ManifestPKG);
                     debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestTitle=" + CVS.UpdateInfo.ManifestTitle);
                     debuglog("DEBUG Updater, CVS.UpdateInfo.ManifestNotes=" + CVS.UpdateInfo.ManifestNotes);
                     debuglog("DEBUG Updater, CVS.UpdateInfo.AppExe=" + CVS.UpdateInfo.AppExe);
