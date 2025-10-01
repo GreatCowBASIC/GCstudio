@@ -2178,6 +2178,7 @@ namespace GC_Studio
 
         private void buttonmodules_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form modules = new GC_Studio.Modules();
             modules.ShowDialog();
         }
