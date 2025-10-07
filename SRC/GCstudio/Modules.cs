@@ -1,15 +1,10 @@
 ﻿using Ngine;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GC_Studio
@@ -100,6 +95,11 @@ namespace GC_Studio
                 {
                     DeleteCurrentModuleScripts();
 
+                    // Save modules.json before extraction and script execution
+                    module.Deployed = false;
+                    SaveModulesList();
+                    debuglog("INFO GCstudio Modules, Updated modules.json before disabling module.");
+
                     // Get just the Script folder from the .mpk file to Modules\Scripts
                     string mpkPath = Path.Combine(modulesDirectory, moduleName);
                     string scriptsOutputDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules");
@@ -177,10 +177,6 @@ namespace GC_Studio
                         debuglog($"INFO GCstudio Modules, No removal script found for module '{moduleName}'.");
                     }
 
-                    // Set Deployed to false and update JSON after script execution
-                    module.Deployed = false;
-                    SaveModulesList();
-                    debuglog("INFO GCstudio Modules, Updated modules.json after disabling module.");
                     DeleteCurrentModuleScripts();
                 }
                 else if (e.NewValue == CheckState.Unchecked && !module.Deployed)
@@ -231,6 +227,18 @@ namespace GC_Studio
                 string filePath = Path.Combine(modulesDirectory, moduleName);
 
                 DeleteCurrentModuleScripts();
+
+                // Remove from modulesList
+                modulesList.Remove(moduleToRemove);
+                debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from modulesList.");
+
+                // Remove from checkedListBoxModules
+                checkedListBoxModules.Items.Remove(moduleName);
+                debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from checkedListBoxModules.");
+
+                // Save modules.json before extraction and script execution
+                SaveModulesList();
+                debuglog("INFO GCstudio Modules, Updated modules.json before removal scripts.");
 
                 // Get just the Script folder from the .mpk file to Modules\Scripts
                 string mpkPath = Path.Combine(modulesDirectory, moduleName);
@@ -338,17 +346,7 @@ namespace GC_Studio
                 return;
             }
 
-            // Remove from modulesList
-            modulesList.Remove(moduleToRemove);
-            debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from modulesList.");
 
-            // Remove from checkedListBoxModules
-            checkedListBoxModules.Items.Remove(moduleName);
-            debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from checkedListBoxModules.");
-
-            // Update the JSON file
-            SaveModulesList();
-            debuglog("INFO GCstudio Modules, Updated modules.json after removal.");
         }
 
 
