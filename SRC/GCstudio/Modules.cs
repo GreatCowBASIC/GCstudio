@@ -37,6 +37,19 @@ namespace GC_Studio
             {
                 string[] files = Directory.GetFiles(modulesDirectory, "*.mpk");
                 debuglog($"INFO GCstudio Modules, Found {files.Length} .mpk files in directory.");
+                
+                // Get list of existing .mpk file names
+                var existingMpkFiles = files.Select(f => Path.GetFileName(f)).ToHashSet();
+                
+                // Remove modules from modulesList that no longer have corresponding .mpk files
+                var modulesToRemove = modulesList.Where(m => !existingMpkFiles.Contains(m.Name)).ToList();
+                foreach (var moduleToRemove in modulesToRemove)
+                {
+                    modulesList.Remove(moduleToRemove);
+                    debuglog($"INFO GCstudio Modules, Removed missing module '{moduleToRemove.Name}' from list.");
+                }
+                
+                // Add new .mpk files to modulesList
                 foreach (var file in files)
                 {
                     string fileName = Path.GetFileName(file);
@@ -76,7 +89,6 @@ namespace GC_Studio
 
 
 
-
         private void CheckedListBoxModules_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // Get the module name for the item being checked/unchecked
@@ -97,6 +109,7 @@ namespace GC_Studio
 
                     // Save modules.json before extraction and script execution
                     module.Deployed = false;
+                    module.Enabled = false;
                     SaveModulesList();
                     debuglog("INFO GCstudio Modules, Updated modules.json before disabling module.");
 
