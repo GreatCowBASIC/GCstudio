@@ -67,10 +67,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.GCstudio;
-            pictureBox1.Location = new System.Drawing.Point(0, 20);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox1.Location = new System.Drawing.Point(0, 33);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(480, 240);
+            pictureBox1.Size = new System.Drawing.Size(686, 400);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -81,13 +80,13 @@
             textBoxDescription.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
             textBoxDescription.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             textBoxDescription.ForeColor = System.Drawing.Color.White;
-            textBoxDescription.Location = new System.Drawing.Point(23, 62);
-            textBoxDescription.Margin = new System.Windows.Forms.Padding(7, 4, 3, 4);
+            textBoxDescription.Location = new System.Drawing.Point(33, 103);
+            textBoxDescription.Margin = new System.Windows.Forms.Padding(10, 7, 4, 7);
             textBoxDescription.Multiline = true;
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.ReadOnly = true;
             textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            textBoxDescription.Size = new System.Drawing.Size(833, 457);
+            textBoxDescription.Size = new System.Drawing.Size(1188, 759);
             textBoxDescription.TabIndex = 29;
             textBoxDescription.TabStop = false;
             textBoxDescription.Text = "Description";
@@ -101,10 +100,10 @@
             okButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             okButton.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             okButton.ForeColor = System.Drawing.Color.White;
-            okButton.Location = new System.Drawing.Point(768, 526);
-            okButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            okButton.Location = new System.Drawing.Point(1097, 877);
+            okButton.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             okButton.Name = "okButton";
-            okButton.Size = new System.Drawing.Size(87, 34);
+            okButton.Size = new System.Drawing.Size(124, 57);
             okButton.TabIndex = 30;
             okButton.Text = "OK";
             okButton.UseVisualStyleBackColor = false;
@@ -115,10 +114,9 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft YaHei", 22F);
             label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(167, 8);
-            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Location = new System.Drawing.Point(239, 13);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(160, 39);
+            label1.Size = new System.Drawing.Size(236, 57);
             label1.TabIndex = 31;
             label1.Text = "GC Studio";
             // 
@@ -129,9 +127,10 @@
             linkLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel1.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel1.Location = new System.Drawing.Point(30, 325);
+            linkLabel1.Location = new System.Drawing.Point(43, 542);
+            linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new System.Drawing.Size(160, 21);
+            linkLabel1.Size = new System.Drawing.Size(240, 31);
             linkLabel1.TabIndex = 32;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Acknowledgements";
@@ -144,9 +143,10 @@
             linkLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel2.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel2.Location = new System.Drawing.Point(30, 359);
+            linkLabel2.Location = new System.Drawing.Point(43, 598);
+            linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new System.Drawing.Size(65, 21);
+            linkLabel2.Size = new System.Drawing.Size(98, 31);
             linkLabel2.TabIndex = 33;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "License";
@@ -159,9 +159,10 @@
             linkLabel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel3.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel3.Location = new System.Drawing.Point(30, 394);
+            linkLabel3.Location = new System.Drawing.Point(43, 657);
+            linkLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new System.Drawing.Size(72, 21);
+            linkLabel3.Size = new System.Drawing.Size(108, 31);
             linkLabel3.TabIndex = 34;
             linkLabel3.TabStop = true;
             linkLabel3.Text = "Readme";
@@ -172,10 +173,9 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label2.ForeColor = System.Drawing.Color.White;
-            label2.Location = new System.Drawing.Point(19, 29);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Location = new System.Drawing.Point(27, 48);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(124, 17);
+            label2.Size = new System.Drawing.Size(179, 24);
             label2.TabIndex = 35;
             label2.Text = "GC BASIC Compiler:";
             // 
@@ -184,10 +184,9 @@
             labelcomp.AutoSize = true;
             labelcomp.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labelcomp.ForeColor = System.Drawing.Color.White;
-            labelcomp.Location = new System.Drawing.Point(172, 30);
-            labelcomp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelcomp.Location = new System.Drawing.Point(246, 50);
             labelcomp.Name = "labelcomp";
-            labelcomp.Size = new System.Drawing.Size(23, 17);
+            labelcomp.Size = new System.Drawing.Size(34, 24);
             labelcomp.TabIndex = 36;
             labelcomp.Text = "---";
             // 
@@ -196,22 +195,20 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             label3.ForeColor = System.Drawing.Color.White;
-            label3.Location = new System.Drawing.Point(134, 271);
-            label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label3.Location = new System.Drawing.Point(191, 452);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(199, 21);
+            label3.Size = new System.Drawing.Size(300, 31);
             label3.TabIndex = 37;
-            label3.Text = "Copyright © 2007 - 2024";
+            label3.Text = "Copyright © 2007 - 2025";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(19, 50);
-            label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label4.Location = new System.Drawing.Point(27, 83);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(128, 17);
+            label4.Size = new System.Drawing.Size(188, 24);
             label4.TabIndex = 38;
             label4.Text = "GC Studio Assembly:";
             // 
@@ -220,10 +217,9 @@
             labelassembly.AutoSize = true;
             labelassembly.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labelassembly.ForeColor = System.Drawing.Color.White;
-            labelassembly.Location = new System.Drawing.Point(172, 50);
-            labelassembly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelassembly.Location = new System.Drawing.Point(246, 83);
             labelassembly.Name = "labelassembly";
-            labelassembly.Size = new System.Drawing.Size(23, 17);
+            labelassembly.Size = new System.Drawing.Size(34, 24);
             labelassembly.TabIndex = 39;
             labelassembly.Text = "---";
             // 
@@ -232,10 +228,9 @@
             labelfbas.AutoSize = true;
             labelfbas.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labelfbas.ForeColor = System.Drawing.Color.White;
-            labelfbas.Location = new System.Drawing.Point(172, 94);
-            labelfbas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelfbas.Location = new System.Drawing.Point(246, 157);
             labelfbas.Name = "labelfbas";
-            labelfbas.Size = new System.Drawing.Size(23, 17);
+            labelfbas.Size = new System.Drawing.Size(34, 24);
             labelfbas.TabIndex = 41;
             labelfbas.Text = "---";
             // 
@@ -244,10 +239,9 @@
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label6.ForeColor = System.Drawing.Color.White;
-            label6.Location = new System.Drawing.Point(19, 94);
-            label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label6.Location = new System.Drawing.Point(27, 157);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(104, 17);
+            label6.Size = new System.Drawing.Size(151, 24);
             label6.TabIndex = 40;
             label6.Text = "FBasic Compiler:";
             // 
@@ -258,9 +252,10 @@
             linkLabel4.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel4.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel4.Location = new System.Drawing.Point(30, 428);
+            linkLabel4.Location = new System.Drawing.Point(43, 713);
+            linkLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel4.Name = "linkLabel4";
-            linkLabel4.Size = new System.Drawing.Size(134, 21);
+            linkLabel4.Size = new System.Drawing.Size(198, 31);
             linkLabel4.TabIndex = 42;
             linkLabel4.TabStop = true;
             linkLabel4.Text = "Full Change Log";
@@ -273,9 +268,10 @@
             linkLabel5.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel5.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel5.Location = new System.Drawing.Point(30, 463);
+            linkLabel5.Location = new System.Drawing.Point(43, 772);
+            linkLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel5.Name = "linkLabel5";
-            linkLabel5.Size = new System.Drawing.Size(89, 21);
+            linkLabel5.Size = new System.Drawing.Size(131, 31);
             linkLabel5.TabIndex = 43;
             linkLabel5.TabStop = true;
             linkLabel5.Text = "Road Map";
@@ -288,9 +284,10 @@
             linkLabel6.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel6.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel6.Location = new System.Drawing.Point(30, 497);
+            linkLabel6.Location = new System.Drawing.Point(43, 828);
+            linkLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel6.Name = "linkLabel6";
-            linkLabel6.Size = new System.Drawing.Size(110, 21);
+            linkLabel6.Size = new System.Drawing.Size(164, 31);
             linkLabel6.TabIndex = 44;
             linkLabel6.TabStop = true;
             linkLabel6.Text = "Report a Bug";
@@ -301,10 +298,9 @@
             labelver.AutoSize = true;
             labelver.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             labelver.ForeColor = System.Drawing.Color.White;
-            labelver.Location = new System.Drawing.Point(237, 252);
-            labelver.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelver.Location = new System.Drawing.Point(339, 420);
             labelver.Name = "labelver";
-            labelver.Size = new System.Drawing.Size(31, 21);
+            labelver.Size = new System.Drawing.Size(44, 31);
             labelver.TabIndex = 46;
             labelver.Text = "---";
             // 
@@ -313,10 +309,9 @@
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             label7.ForeColor = System.Drawing.Color.White;
-            label7.Location = new System.Drawing.Point(167, 252);
-            label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label7.Location = new System.Drawing.Point(239, 420);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(67, 21);
+            label7.Size = new System.Drawing.Size(100, 31);
             label7.TabIndex = 45;
             label7.Text = "Version";
             // 
@@ -325,10 +320,9 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label8.ForeColor = System.Drawing.Color.White;
-            label8.Location = new System.Drawing.Point(19, 73);
-            label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label8.Location = new System.Drawing.Point(27, 122);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(87, 17);
+            label8.Size = new System.Drawing.Size(123, 24);
             label8.TabIndex = 47;
             label8.Text = "GC Code IDE:";
             // 
@@ -337,10 +331,9 @@
             labelgccode.AutoSize = true;
             labelgccode.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labelgccode.ForeColor = System.Drawing.Color.White;
-            labelgccode.Location = new System.Drawing.Point(172, 73);
-            labelgccode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelgccode.Location = new System.Drawing.Point(246, 122);
             labelgccode.Name = "labelgccode";
-            labelgccode.Size = new System.Drawing.Size(23, 17);
+            labelgccode.Size = new System.Drawing.Size(34, 24);
             labelgccode.TabIndex = 48;
             labelgccode.Text = "---";
             // 
@@ -351,9 +344,10 @@
             linkLabel7.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             linkLabel7.LinkColor = System.Drawing.Color.CornflowerBlue;
-            linkLabel7.Location = new System.Drawing.Point(685, 21);
+            linkLabel7.Location = new System.Drawing.Point(979, 35);
+            linkLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel7.Name = "linkLabel7";
-            linkLabel7.Size = new System.Drawing.Size(151, 21);
+            linkLabel7.Size = new System.Drawing.Size(223, 31);
             linkLabel7.TabIndex = 50;
             linkLabel7.TabStop = true;
             linkLabel7.Text = "www.GCBasic.com";
@@ -374,11 +368,9 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(labelfbas);
             groupBox1.ForeColor = System.Drawing.Color.White;
-            groupBox1.Location = new System.Drawing.Point(513, 79);
-            groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            groupBox1.Location = new System.Drawing.Point(733, 132);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            groupBox1.Size = new System.Drawing.Size(325, 170);
+            groupBox1.Size = new System.Drawing.Size(464, 283);
             groupBox1.TabIndex = 51;
             groupBox1.TabStop = false;
             groupBox1.Text = "Modules:";
@@ -388,10 +380,9 @@
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label12.ForeColor = System.Drawing.Color.White;
-            label12.Location = new System.Drawing.Point(19, 136);
-            label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label12.Location = new System.Drawing.Point(27, 227);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(131, 17);
+            label12.Size = new System.Drawing.Size(194, 24);
             label12.TabIndex = 51;
             label12.Text = "Installation Directory:";
             // 
@@ -400,10 +391,9 @@
             labelinstall.AutoSize = true;
             labelinstall.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labelinstall.ForeColor = System.Drawing.Color.White;
-            labelinstall.Location = new System.Drawing.Point(172, 136);
-            labelinstall.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labelinstall.Location = new System.Drawing.Point(246, 227);
             labelinstall.Name = "labelinstall";
-            labelinstall.Size = new System.Drawing.Size(23, 17);
+            labelinstall.Size = new System.Drawing.Size(34, 24);
             labelinstall.TabIndex = 52;
             labelinstall.Text = "---";
             // 
@@ -412,10 +402,9 @@
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label11.ForeColor = System.Drawing.Color.White;
-            label11.Location = new System.Drawing.Point(19, 115);
-            label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label11.Location = new System.Drawing.Point(27, 192);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(106, 17);
+            label11.Size = new System.Drawing.Size(154, 24);
             label11.TabIndex = 49;
             label11.Text = "Tool Chain Build:";
             // 
@@ -424,10 +413,9 @@
             labeltoolchain.AutoSize = true;
             labeltoolchain.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             labeltoolchain.ForeColor = System.Drawing.Color.White;
-            labeltoolchain.Location = new System.Drawing.Point(172, 115);
-            labeltoolchain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            labeltoolchain.Location = new System.Drawing.Point(246, 192);
             labeltoolchain.Name = "labeltoolchain";
-            labeltoolchain.Size = new System.Drawing.Size(23, 17);
+            labeltoolchain.Size = new System.Drawing.Size(34, 24);
             labeltoolchain.TabIndex = 50;
             labeltoolchain.Text = "---";
             // 
@@ -436,10 +424,9 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft YaHei", 18F);
             label5.ForeColor = System.Drawing.Color.Silver;
-            label5.Location = new System.Drawing.Point(435, 352);
-            label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label5.Location = new System.Drawing.Point(621, 587);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(280, 31);
+            label5.Size = new System.Drawing.Size(425, 46);
             label5.TabIndex = 52;
             label5.Text = "GC Studio for Windows";
             // 
@@ -448,10 +435,9 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label9.ForeColor = System.Drawing.Color.DarkGray;
-            label9.Location = new System.Drawing.Point(425, 394);
-            label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label9.Location = new System.Drawing.Point(607, 657);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(316, 17);
+            label9.Size = new System.Drawing.Size(460, 24);
             label9.TabIndex = 49;
             label9.Text = "Our mission is to create the best programming tools";
             // 
@@ -460,10 +446,9 @@
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             label10.ForeColor = System.Drawing.Color.DarkGray;
-            label10.Location = new System.Drawing.Point(382, 415);
-            label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label10.Location = new System.Drawing.Point(546, 692);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(404, 17);
+            label10.Size = new System.Drawing.Size(592, 24);
             label10.TabIndex = 53;
             label10.Text = "For Microchip PIC, Atmel AVR and LogicGreen LGT microcontrollers.";
             // 
@@ -475,10 +460,10 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(705, 258);
-            button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button1.Location = new System.Drawing.Point(1007, 430);
+            button1.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(133, 49);
+            button1.Size = new System.Drawing.Size(190, 82);
             button1.TabIndex = 54;
             button1.Text = "Create a Debug Dump File";
             button1.UseVisualStyleBackColor = false;
@@ -489,19 +474,18 @@
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold);
             label13.ForeColor = System.Drawing.Color.DarkGray;
-            label13.Location = new System.Drawing.Point(496, 463);
-            label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label13.Location = new System.Drawing.Point(709, 772);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(165, 17);
+            label13.Size = new System.Drawing.Size(241, 25);
             label13.TabIndex = 55;
             label13.Text = "+ In Memory of Bill Roth.";
             // 
             // AboutBox
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(10, 14, 43);
-            ClientSize = new System.Drawing.Size(880, 583);
+            ClientSize = new System.Drawing.Size(1257, 972);
             Controls.Add(textBoxDescription);
             Controls.Add(label13);
             Controls.Add(button1);
@@ -524,12 +508,12 @@
             Controls.Add(groupBox1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             MaximizeBox = false;
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(888, 615);
+            MinimumSize = new System.Drawing.Size(1259, 988);
             Name = "AboutBox";
-            Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            Padding = new System.Windows.Forms.Padding(16, 17, 16, 17);
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "About GC Studio";
