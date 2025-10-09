@@ -111,7 +111,6 @@ namespace GC_Studio
                     module.Deployed = false;
                     module.Enabled = false;
                     SaveModulesList();
-                    debuglog("INFO GCstudio Modules, Updated modules.json before disabling module.");
 
                     // Get just the Script folder from the .mpk file to Modules\Scripts
                     string mpkPath = Path.Combine(modulesDirectory, moduleName);
@@ -202,7 +201,6 @@ namespace GC_Studio
                 {
                     // Save the updated list to JSON for other state changes
                     SaveModulesList();
-                    debuglog("INFO GCstudio Modules, Updated modules.json after ItemCheck.");
                 }
             }
         }
@@ -232,6 +230,13 @@ namespace GC_Studio
                 MessageBox.Show("Module not found in list.");
                 return;
             }
+            else 
+            {
+                modulesList.Remove(moduleToRemove);
+                checkedListBoxModules.Items.Remove(moduleName);
+                debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from modulesList.");
+                SaveModulesList();
+            }
 
             // Only proceed with extraction and script execution if Deployed == true
             if (moduleToRemove.Deployed)
@@ -240,18 +245,6 @@ namespace GC_Studio
                 string filePath = Path.Combine(modulesDirectory, moduleName);
 
                 DeleteCurrentModuleScripts();
-
-                // Remove from modulesList
-                modulesList.Remove(moduleToRemove);
-                debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from modulesList.");
-
-                // Remove from checkedListBoxModules
-                checkedListBoxModules.Items.Remove(moduleName);
-                debuglog($"INFO GCstudio Modules, Removed module '{moduleName}' from checkedListBoxModules.");
-
-                // Save modules.json before extraction and script execution
-                SaveModulesList();
-                debuglog("INFO GCstudio Modules, Updated modules.json before removal scripts.");
 
                 // Get just the Script folder from the .mpk file to Modules\Scripts
                 string mpkPath = Path.Combine(modulesDirectory, moduleName);
@@ -411,12 +404,12 @@ namespace GC_Studio
                         if (File.Exists(scriptPath))
                         {
                             File.Delete(scriptPath);
-                            debuglog($"INFO GCstudio, Deleted script file '{scriptPath}' in DeleteCurrentModuleScripts.");
+                            debuglog($"INFO GCstudio, Deleted script file '{scriptPath}'");
                         }
                     }
                     catch (Exception ex)
                     {
-                        debuglog($"ERROR GCstudio, Failed to delete script file '{scriptPath}' in DeleteCurrentModuleScripts. > {ex.Message}");
+                        debuglog($"ERROR GCstudio, Failed to delete script file '{scriptPath}' > {ex.Message}");
                     }
                 }
             }
