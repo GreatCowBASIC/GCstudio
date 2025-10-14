@@ -295,8 +295,23 @@ namespace GC_Studio
                 {
                     try
                     {
+                        string extensionsPath = Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                            ".vscode", "extensions"
+                        );
 
-                        string appDataCodeUserPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".vscode", "extensions", "mierengineering.gcbasic-1.0.1", "dist", "IntelliSenseGCB.json");
+                        // Find the first directory that starts with "mierengineering.gcbasic"
+                        string mierDir = Directory.GetDirectories(extensionsPath, "mierengineering.gcbasic*")
+                            .OrderByDescending(d => d) // Optional: get the latest if multiple
+                            .FirstOrDefault();
+
+                        if (mierDir == null)
+                        {
+                            debuglog("ERROR GCstudio, mierengineering.gcbasic extension directory not found.");
+                            return;
+                        }
+
+                        string appDataCodeUserPath = Path.Combine(mierDir, "dist", "IntelliSenseGCB.json");
                         debuglog($"INFO GCstudio, Deploying IntelliSenseGCB.json to VScode: {appDataCodeUserPath}");
                         File.Copy(targetFile, appDataCodeUserPath, true);
                         debuglog("INFO GCstudio, IntelliSenseGCB.json deployed successfully.");
