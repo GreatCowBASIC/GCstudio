@@ -201,10 +201,10 @@ namespace GC_Studio
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            debuglog("INFO GCstudio About, loading readme...");
+            debuglog("INFO GCstudio About, loading Privacy Policy...");
             try
             {
-                dfe.LoadRead("gcbasic\\Documentation\\readme.txt");
+                dfe.LoadRead("gcbasic\\Documentation\\PrivacyPolicy.txt");
                 textBoxDescription.Text = dfe.ReadAll();
                 dfe.CloseRead();
                 textBoxDescription.Visible = true;
