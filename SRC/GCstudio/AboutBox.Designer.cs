@@ -162,10 +162,10 @@
             linkLabel3.Location = new System.Drawing.Point(43, 657);
             linkLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new System.Drawing.Size(108, 31);
+            linkLabel3.Size = new System.Drawing.Size(169, 31);
             linkLabel3.TabIndex = 34;
             linkLabel3.TabStop = true;
-            linkLabel3.Text = "Readme";
+            linkLabel3.Text = "Privacy Policy";
             linkLabel3.LinkClicked += linkLabel3_LinkClicked;
             // 
             // label2
