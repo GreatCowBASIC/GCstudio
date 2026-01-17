@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mier Engineering")]
 [assembly: AssemblyProduct("GC Studio")]
-[assembly: AssemblyCopyright("Copyright © 2007 - 2025")]
+[assembly: AssemblyCopyright("Copyright © 2007 - 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

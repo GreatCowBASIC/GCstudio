@@ -199,7 +199,7 @@
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(300, 31);
             label3.TabIndex = 37;
-            label3.Text = "Copyright © 2007 - 2025";
+            label3.Text = "Copyright © 2007 - 2026";
             // 
             // label4
             // 
