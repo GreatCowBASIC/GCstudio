@@ -605,7 +605,7 @@ namespace GC_Studio
             buttonmodules.Name = "buttonmodules";
             buttonmodules.Size = new System.Drawing.Size(231, 50);
             buttonmodules.TabIndex = 52;
-            buttonmodules.Text = "Manage Module Packs";
+            buttonmodules.Text = "Package Manager";
             buttonmodules.UseVisualStyleBackColor = false;
             buttonmodules.Click += buttonmodules_Click;
             buttonmodules.MouseLeave += buttonmodules_MouseLeave;

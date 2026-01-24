@@ -400,198 +400,252 @@ namespace GC_Studio
                     Environment.Exit(0);
                 }
 
-                // Extract and deploy all enabled modules
-                debuglog("INFO GCstudio, post update flag detected, extracting all enabled modules...");
-                foreach (var module in modulesList.Where(m => m.Enabled))
+                // Check if pkx.exe is available for module refresh
+                if (IsPkxAvailable())
                 {
-
-                    DeleteCurrentModuleScripts();
-
-                    string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
-                    if (File.Exists(mpkPath))
+                    debuglog("INFO GCstudio, post update flag detected, using pkx.exe for module refresh...");
+                    LaunchPkx("/PM /UR");
+                }
+                else
+                {
+                    // Extract and deploy all enabled modules (legacy method)
+                    debuglog("INFO GCstudio, post update flag detected, extracting all enabled modules...");
+                    foreach (var module in modulesList.Where(m => m.Enabled))
                     {
-                        try
+
+                        DeleteCurrentModuleScripts();
+
+                        string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
+                        if (File.Exists(mpkPath))
                         {
-                            ProcessStartInfo p = new ProcessStartInfo();
-                            p.FileName = "minidump.exe";
-                            p.Arguments = $"x \"{mpkPath}\" -y";
-                            p.WindowStyle = ProcessWindowStyle.Hidden;
-                            p.CreateNoWindow = true;
-                            Process x = Process.Start(p);
-                            x.WaitForExit();
-
-                            module.Deployed = true;
-                            debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
-
-                            // Check for deployment scripts
-                            string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
-                            string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
-                            bool scriptExecuted = false;
-
-                            foreach (var ext in scriptExtensions)
+                            try
                             {
-                                string scriptPath = scriptBase + ext;
-                                if (File.Exists(scriptPath))
+                                ProcessStartInfo p = new ProcessStartInfo();
+                                p.FileName = "minidump.exe";
+                                p.Arguments = $"x \"{mpkPath}\" -y";
+                                p.WindowStyle = ProcessWindowStyle.Hidden;
+                                p.CreateNoWindow = true;
+                                Process x = Process.Start(p);
+                                x.WaitForExit();
+
+                                module.Deployed = true;
+                                debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
+
+                                // Check for deployment scripts
+                                string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
+                                string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+                                bool scriptExecuted = false;
+
+                                foreach (var ext in scriptExtensions)
                                 {
-                                    try
+                                    string scriptPath = scriptBase + ext;
+                                    if (File.Exists(scriptPath))
                                     {
-                                        ProcessStartInfo scriptProc = new ProcessStartInfo();
-                                        scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                                        if (ext == ".exe")
+                                        try
                                         {
-                                            scriptProc.FileName = scriptPath;
-                                            scriptProc.Arguments = "";
+                                            ProcessStartInfo scriptProc = new ProcessStartInfo();
+                                            scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                            if (ext == ".exe")
+                                            {
+                                                scriptProc.FileName = scriptPath;
+                                                scriptProc.Arguments = "";
+                                            }
+                                            else if (ext == ".ps1")
+                                            {
+                                                scriptProc.FileName = "powershell.exe";
+                                                scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                            }
+                                            else if (ext == ".bat")
+                                            {
+                                                scriptProc.FileName = "cmd.exe";
+                                                scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                                            }
+                                            scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
+                                            scriptProc.CreateNoWindow = true;
+                                            Process scriptProcess = Process.Start(scriptProc);
+                                            scriptProcess.WaitForExit();
+                                            debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
+                                            scriptExecuted = true;
+                                            break; // Only execute the first found script
                                         }
-                                        else if (ext == ".ps1")
+                                        catch (Exception ex)
                                         {
-                                            scriptProc.FileName = "powershell.exe";
-                                            scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                            debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
                                         }
-                                        else if (ext == ".bat")
-                                        {
-                                            scriptProc.FileName = "cmd.exe";
-                                            scriptProc.Arguments = $"/c \"{scriptPath}\"";
-                                        }
-                                        scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
-                                        scriptProc.CreateNoWindow = true;
-                                        Process scriptProcess = Process.Start(scriptProc);
-                                        scriptProcess.WaitForExit();
-                                        debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
-                                        scriptExecuted = true;
-                                        break; // Only execute the first found script
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
                                     }
                                 }
-                            }
-                            if (!scriptExecuted)
-                            {
-                                debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
-                            }
+                                if (!scriptExecuted)
+                                {
+                                    debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
+                                }
 
+                            }
+                            catch (Exception ex)
+                            {
+                                debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                            }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                            debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
                         }
                     }
-                    else
+                    // Update modules.json after extraction
+                    try
                     {
-                        debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
+                        string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
+                        File.WriteAllText(modulesJsonPath, updatedJson);
+                        debuglog("INFO GCstudio, Updated modules.json after deployment.");
                     }
+                    catch (Exception ex)
+                    {
+                        debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
+                    }
+                    DeleteCurrentModuleScripts();
                 }
-                // Update modules.json after extraction
-                try
-                {
-                    string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
-                    File.WriteAllText(modulesJsonPath, updatedJson);
-                    debuglog("INFO GCstudio, Updated modules.json after deployment.");
-                }
-                catch (Exception ex)
-                {
-                    debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
-                }
-                DeleteCurrentModuleScripts();
             }
             else
             {
-                // Extract and deploy all enabled but not yet deployed modules
-                debuglog("INFO GCstudio, post update flag not detected, extracting enabled but not deployed modules...");
-                foreach (var module in modulesList.Where(m => m.Enabled && !m.Deployed))
+                // Check if pkx.exe is available for startup check
+                if (IsPkxAvailable())
                 {
-
-                    DeleteCurrentModuleScripts();
-
-                    string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
-                    if (File.Exists(mpkPath))
+                    debuglog("INFO GCstudio, using pkx.exe for startup check...");
+                    string output = LaunchPkxAndCaptureOutput("/PM /SC");
+                    
+                    // Check if deprecated packages were uninstalled
+                    if (output.Contains("Deprecated Packages Uninstalled", StringComparison.OrdinalIgnoreCase))
                     {
-                        try
+                        debuglog("INFO GCstudio, Deprecated packages were automatically uninstalled by pkx.exe");
+                        MessageBox.Show(
+                            "An installed package was automatically removed because it has been deprecated. You can review the change in the Package Manager.",
+                            "Package Removed",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    
+                    // Check if package updates are available
+                    if (output.Contains("Package Update Available", StringComparison.OrdinalIgnoreCase))
+                    {
+                        debuglog("INFO GCstudio, Package updates detected by pkx.exe");
+                        DialogResult result = MessageBox.Show(
+                            "Package updates are available. Would you like to review them in the Package Manager?",
+                            "Package Updates Available",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information);
+                        
+                        if (result == DialogResult.Yes)
                         {
-                            ProcessStartInfo p = new ProcessStartInfo();
-                            p.FileName = "minidump.exe";
-                            p.Arguments = $"x \"{mpkPath}\" -y";
-                            p.WindowStyle = ProcessWindowStyle.Hidden;
-                            p.CreateNoWindow = true;
-                            Process x = Process.Start(p);
-                            x.WaitForExit();
-
-                            module.Deployed = true;
-                            debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
-
-                            // Check for deployment scripts
-
-                            string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
-                            string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
-                            bool scriptExecuted = false;
-
-                            foreach (var ext in scriptExtensions)
-                            {
-                                string scriptPath = scriptBase + ext;
-                                if (File.Exists(scriptPath))
-                                {
-                                    try
-                                    {
-                                        ProcessStartInfo scriptProc = new ProcessStartInfo();
-                                        scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                                        if (ext == ".exe")
-                                        {
-                                            scriptProc.FileName = scriptPath;
-                                            scriptProc.Arguments = "";
-                                        }
-                                        else if (ext == ".ps1")
-                                        {
-                                            scriptProc.FileName = "powershell.exe";
-                                            scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
-                                        }
-                                        else if (ext == ".bat")
-                                        {
-                                            scriptProc.FileName = "cmd.exe";
-                                            scriptProc.Arguments = $"/c \"{scriptPath}\"";
-                                        }
-                                        scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
-                                        scriptProc.CreateNoWindow = true;
-                                        Process scriptProcess = Process.Start(scriptProc);
-                                        scriptProcess.WaitForExit();
-                                        debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
-                                        scriptExecuted = true;
-                                        break; // Only execute the first found script
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
-                                    }
-                                }
-                            }
-                            if (!scriptExecuted)
-                            {
-                                debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
-                            }
-
+                            debuglog("INFO GCstudio, User chose to open Package Manager for updates.");
+                            LaunchPkx("/PM", hidden: false);
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                            debuglog("INFO GCstudio, User declined to open Package Manager.");
                         }
                     }
                     else
                     {
-                        debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
+                        debuglog("INFO GCstudio, No package updates available or pkx.exe startup check completed without updates.");
                     }
                 }
-                // Update modules.json after extraction
-                try
+                else
                 {
-                    string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
-                    File.WriteAllText(modulesJsonPath, updatedJson);
-                    debuglog("INFO GCstudio, Updated modules.json after deployment.");
+                    // Extract and deploy all enabled but not yet deployed modules (legacy method)
+                    debuglog("INFO GCstudio, post update flag not detected, extracting enabled but not deployed modules...");
+                    foreach (var module in modulesList.Where(m => m.Enabled && !m.Deployed))
+                    {
+
+                        DeleteCurrentModuleScripts();
+
+                        string mpkPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", module.Name);
+                        if (File.Exists(mpkPath))
+                        {
+                            try
+                            {
+                                ProcessStartInfo p = new ProcessStartInfo();
+                                p.FileName = "minidump.exe";
+                                p.Arguments = $"x \"{mpkPath}\" -y";
+                                p.WindowStyle = ProcessWindowStyle.Hidden;
+                                p.CreateNoWindow = true;
+                                Process x = Process.Start(p);
+                                x.WaitForExit();
+
+                                module.Deployed = true;
+                                debuglog($"INFO GCstudio, Extracted and deployed module '{module.Name}'.");
+
+                                // Check for deployment scripts
+
+                                string scriptBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Modules", "Scripts", "Script_dep");
+                                string[] scriptExtensions = new[] { ".exe", ".ps1", ".bat" };
+                                bool scriptExecuted = false;
+
+                                foreach (var ext in scriptExtensions)
+                                {
+                                    string scriptPath = scriptBase + ext;
+                                    if (File.Exists(scriptPath))
+                                    {
+                                        try
+                                        {
+                                            ProcessStartInfo scriptProc = new ProcessStartInfo();
+                                            scriptProc.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                            if (ext == ".exe")
+                                            {
+                                                scriptProc.FileName = scriptPath;
+                                                scriptProc.Arguments = "";
+                                            }
+                                            else if (ext == ".ps1")
+                                            {
+                                                scriptProc.FileName = "powershell.exe";
+                                                scriptProc.Arguments = $"-ExecutionPolicy Bypass -File \"{scriptPath}\"";
+                                            }
+                                            else if (ext == ".bat")
+                                            {
+                                                scriptProc.FileName = "cmd.exe";
+                                                scriptProc.Arguments = $"/c \"{scriptPath}\"";
+                                            }
+                                            scriptProc.WindowStyle = ProcessWindowStyle.Hidden;
+                                            scriptProc.CreateNoWindow = true;
+                                            Process scriptProcess = Process.Start(scriptProc);
+                                            scriptProcess.WaitForExit();
+                                            debuglog($"INFO GCstudio, Executed deployment script '{scriptPath}' for module '{module.Name}'.");
+                                            scriptExecuted = true;
+                                            break; // Only execute the first found script
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            debuglog($"ERROR GCstudio, Failed to execute deployment script '{scriptPath}' for module '{module.Name}'. > {ex.Message}");
+                                        }
+                                    }
+                                }
+                                if (!scriptExecuted)
+                                {
+                                    debuglog($"INFO GCstudio, No deployment script found for module '{module.Name}'.");
+                                }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                debuglog($"ERROR GCstudio, Failed to extract module '{module.Name}'. > {ex.Message}");
+                            }
+                        }
+                        else
+                        {
+                            debuglog($"WARN GCstudio, Module file '{mpkPath}' not found for extraction.");
+                        }
+                    }
+                    // Update modules.json after extraction
+                    try
+                    {
+                        string updatedJson = JsonSerializer.Serialize(modulesList, new JsonSerializerOptions { WriteIndented = true });
+                        File.WriteAllText(modulesJsonPath, updatedJson);
+                        debuglog("INFO GCstudio, Updated modules.json after deployment.");
+                    }
+                    catch (Exception ex)
+                    {
+                        debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
+                    }
+                    DeleteCurrentModuleScripts();
                 }
-                catch (Exception ex)
-                {
-                    debuglog("ERROR GCstudio, Failed to update modules.json after deployment. > " + ex.Message);
-                }
-                DeleteCurrentModuleScripts();
 
             }
 
@@ -613,24 +667,38 @@ namespace GC_Studio
 
                 if (mpkFiles.Length > 0)
                 {
-                    foreach (string mpkFile in mpkFiles)
+                    // Check if pkx.exe is available for installing .mpk files
+                    if (IsPkxAvailable())
                     {
-                        try
+                        debuglog("INFO GCstudio, using pkx.exe to install .mpk file(s)...");
+                        foreach (string mpkFile in mpkFiles)
                         {
-                            string destPath = Path.Combine(targetDirectory, Path.GetFileName(mpkFile));
-                            File.Copy(mpkFile, destPath, true); // true = overwrite if exists
-                            debuglog($"INFO GCstudio, copied .mpk file: {mpkFile} to {destPath}");
+                            LaunchPkx($"/PM /I \"{mpkFile}\"");
                         }
-                        catch (Exception ex)
-                        {
-                            debuglog($"ERROR GCstudio, failed to copy .mpk file: {mpkFile} > {ex.Message}");
-                            MessageBox.Show($"Failed to copy {mpkFile} to {targetDirectory}\n{ex.Message}", "Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        return;
                     }
-                    // Skip the switch statement if .mpk files were found and processed and start modules form
-                    Form modules = new GC_Studio.Modules();
-                    modules.ShowDialog();
-                    return;
+                    else
+                    {
+                        // Legacy method: copy to Modules directory and open Modules form
+                        foreach (string mpkFile in mpkFiles)
+                        {
+                            try
+                            {
+                                string destPath = Path.Combine(targetDirectory, Path.GetFileName(mpkFile));
+                                File.Copy(mpkFile, destPath, true); // true = overwrite if exists
+                                debuglog($"INFO GCstudio, copied .mpk file: {mpkFile} to {destPath}");
+                            }
+                            catch (Exception ex)
+                            {
+                                debuglog($"ERROR GCstudio, failed to copy .mpk file: {mpkFile} > {ex.Message}");
+                                MessageBox.Show($"Failed to copy {mpkFile} to {targetDirectory}\n{ex.Message}", "Copy Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        // Skip the switch statement if .mpk files were found and processed and start modules form
+                        Form modules = new GC_Studio.Modules();
+                        modules.ShowDialog();
+                        return;
+                    }
                 }
 
                 switch (arguments[1])
@@ -2193,9 +2261,19 @@ namespace GC_Studio
 
         private void buttonmodules_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form modules = new GC_Studio.Modules();
-            modules.ShowDialog();
+            // Check if pkx.exe is available for managing modules
+            if (IsPkxAvailable())
+            {
+                debuglog("INFO GCstudio, using pkx.exe for module management...");
+                LaunchPkx("/PM", hidden: false); // Show window for user interaction
+            }
+            else
+            {
+                // Legacy method: open Modules form
+                this.Hide();
+                Form modules = new GC_Studio.Modules();
+                modules.ShowDialog();
+            }
         }
 
         private void buttonmodules_MouseHover(object sender, EventArgs e)
@@ -2275,6 +2353,85 @@ namespace GC_Studio
     MessageBox.Show("GC Code settings, keybindings, and tasks exported to VS Code.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 }
 
+
+        /// <summary>
+        /// Check if PICkitXtra pkx.exe exists
+        /// </summary>
+        /// <returns>True if pkx.exe exists, false otherwise</returns>
+        private bool IsPkxAvailable()
+        {
+            string pkxPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PICkitXtra", "pkx.exe");
+            return File.Exists(pkxPath);
+        }
+
+        /// <summary>
+        /// Launch pkx.exe with specified arguments
+        /// </summary>
+        /// <param name="args">Command line arguments for pkx.exe</param>
+        /// <param name="hidden">True to launch hidden, false to show window</param>
+        private void LaunchPkx(string args, bool hidden = true)
+        {
+            try
+            {
+                string pkxPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PICkitXtra", "pkx.exe");
+                ProcessStartInfo p = new ProcessStartInfo();
+                p.FileName = pkxPath;
+                p.Arguments = args;
+                p.WindowStyle = hidden ? ProcessWindowStyle.Hidden : ProcessWindowStyle.Normal;
+                p.CreateNoWindow = hidden;
+                p.UseShellExecute = true;
+                Process x = Process.Start(p);
+                debuglog($"INFO GCstudio, Launched pkx.exe with args: {args} (hidden: {hidden})");
+            }
+            catch (Exception ex)
+            {
+                debuglog($"ERROR GCstudio, Failed to launch pkx.exe with args '{args}': {ex.Message} @ {ex.StackTrace}");
+                MessageBox.Show($"Failed to launch PICkitXtra.\n{ex.Message}", "PICkitXtra Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Launch pkx.exe and capture its output
+        /// </summary>
+        /// <param name="args">Command line arguments for pkx.exe</param>
+        /// <returns>Combined standard output and error output</returns>
+        private string LaunchPkxAndCaptureOutput(string args)
+        {
+            try
+            {
+                string pkxPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PICkitXtra", "pkx.exe");
+                ProcessStartInfo p = new ProcessStartInfo();
+                p.FileName = pkxPath;
+                p.Arguments = args;
+                p.WindowStyle = ProcessWindowStyle.Hidden;
+                p.CreateNoWindow = true;
+                p.UseShellExecute = false;
+                p.RedirectStandardOutput = true;
+                p.RedirectStandardError = true;
+                
+                Process x = Process.Start(p);
+                string output = x.StandardOutput.ReadToEnd();
+                string error = x.StandardError.ReadToEnd();
+                x.WaitForExit();
+                
+                debuglog($"INFO GCstudio, Executed pkx.exe with args: {args}");
+                if (!string.IsNullOrEmpty(output))
+                {
+                    debuglog($"DEBUG GCstudio, pkx.exe output: {output}");
+                }
+                if (!string.IsNullOrEmpty(error))
+                {
+                    debuglog($"DEBUG GCstudio, pkx.exe error: {error}");
+                }
+                
+                return output + error;
+            }
+            catch (Exception ex)
+            {
+                debuglog($"ERROR GCstudio, Failed to launch and capture output from pkx.exe with args '{args}': {ex.Message} @ {ex.StackTrace}");
+                return string.Empty;
+            }
+        }
 
         /// <summary>
         /// Deletes all current Script_dep and Script_rem files in Modules\Scripts.
